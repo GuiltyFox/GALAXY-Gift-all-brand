@@ -8,115 +8,115 @@
 
 .field btnLike:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006cc
+        value = 0x7f1004c4
     .end annotation
 .end field
 
 .field contentRating:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006d9
+        value = 0x7f1004d1
     .end annotation
 .end field
 
 .field contentView:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006c7
+        value = 0x7f1004bf
     .end annotation
 .end field
 
 .field imageHeader:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006cd
+        value = 0x7f1004c5
     .end annotation
 .end field
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006c4
+        value = 0x7f1004bb
     .end annotation
 .end field
 
 .field imageProfile:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001d9
+        value = 0x7f1001c4
     .end annotation
 .end field
 
 .field imgRating1:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100630
+        value = 0x7f100429
     .end annotation
 .end field
 
 .field imgRating2:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100631
+        value = 0x7f10042a
     .end annotation
 .end field
 
 .field imgRating3:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100632
+        value = 0x7f10042b
     .end annotation
 .end field
 
 .field imgRating4:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100633
+        value = 0x7f10042c
     .end annotation
 .end field
 
 .field imgRating5:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100634
+        value = 0x7f10042d
     .end annotation
 .end field
 
 .field layoutComment:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067c
+        value = 0x7f100473
     .end annotation
 .end field
 
 .field layoutLike:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067e
+        value = 0x7f100475
     .end annotation
 .end field
 
 .field textCreateDate:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006c9
+        value = 0x7f1004c1
     .end annotation
 .end field
 
 .field textCreateTime:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006ca
+        value = 0x7f1004c2
     .end annotation
 .end field
 
 .field textDisplay:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006c8
+        value = 0x7f1004c0
     .end annotation
 .end field
 
 .field textPost:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006cb
+        value = 0x7f1004c3
     .end annotation
 .end field
 
 .field textViewComment:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067d
+        value = 0x7f100474
     .end annotation
 .end field
 
 .field textViewLike:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100680
+        value = 0x7f100477
     .end annotation
 .end field
 
@@ -385,7 +385,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0092
+    const v3, 0x7f0e0065
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -546,7 +546,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020278
+    const v2, 0x7f02015f
 
     .line 200
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
@@ -590,7 +590,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0202a2
+    const v2, 0x7f02017c
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -685,7 +685,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f0202d8
+    const v3, 0x7f0201b0
 
     invoke-static {v1, v2, v0, v3}, Lcom/bzbs/marketplace/control/InitImage;->a(Landroid/app/Activity;Landroid/widget/ImageView;Ljava/lang/String;I)V
 
@@ -729,7 +729,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0202de
+    const v3, 0x7f0201b4
 
     invoke-static {v0, v1, v2, v3}, Lcom/bzbs/marketplace/control/InitImage;->a(Landroid/app/Activity;Landroid/widget/ImageView;Ljava/lang/String;I)V
 
@@ -822,7 +822,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0202a3
+    const v2, 0x7f02017d
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -892,7 +892,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0202de
+    const v3, 0x7f0201b4
 
     invoke-static {v0, v1, v2, v3}, Lcom/bzbs/marketplace/control/InitImage;->b(Landroid/app/Activity;Landroid/widget/ImageView;Ljava/io/File;I)V
 

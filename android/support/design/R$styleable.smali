@@ -18,11 +18,15 @@
 
 .field public static final ActionBar_contentInsetEnd:I = 0x15
 
+.field public static final ActionBar_contentInsetEndWithActions:I = 0x19
+
 .field public static final ActionBar_contentInsetLeft:I = 0x16
 
 .field public static final ActionBar_contentInsetRight:I = 0x17
 
 .field public static final ActionBar_contentInsetStart:I = 0x14
+
+.field public static final ActionBar_contentInsetStartWithNavigation:I = 0x18
 
 .field public static final ActionBar_customNavigationLayout:I = 0xd
 
@@ -106,11 +110,17 @@
 
 .field public static final AppBarLayout:[I
 
-.field public static final AppBarLayout_LayoutParams:[I
+.field public static final AppBarLayoutStates:[I
 
-.field public static final AppBarLayout_LayoutParams_layout_scrollFlags:I = 0x0
+.field public static final AppBarLayoutStates_state_collapsed:I = 0x0
 
-.field public static final AppBarLayout_LayoutParams_layout_scrollInterpolator:I = 0x1
+.field public static final AppBarLayoutStates_state_collapsible:I = 0x1
+
+.field public static final AppBarLayout_Layout:[I
+
+.field public static final AppBarLayout_Layout_layout_scrollFlags:I = 0x0
+
+.field public static final AppBarLayout_Layout_layout_scrollInterpolator:I = 0x1
 
 .field public static final AppBarLayout_android_background:I = 0x0
 
@@ -123,6 +133,32 @@
 .field public static final AppCompatImageView_android_src:I = 0x0
 
 .field public static final AppCompatImageView_srcCompat:I = 0x1
+
+.field public static final AppCompatSeekBar:[I
+
+.field public static final AppCompatSeekBar_android_thumb:I = 0x0
+
+.field public static final AppCompatSeekBar_tickMark:I = 0x1
+
+.field public static final AppCompatSeekBar_tickMarkTint:I = 0x2
+
+.field public static final AppCompatSeekBar_tickMarkTintMode:I = 0x3
+
+.field public static final AppCompatTextHelper:[I
+
+.field public static final AppCompatTextHelper_android_drawableBottom:I = 0x2
+
+.field public static final AppCompatTextHelper_android_drawableEnd:I = 0x6
+
+.field public static final AppCompatTextHelper_android_drawableLeft:I = 0x3
+
+.field public static final AppCompatTextHelper_android_drawableRight:I = 0x4
+
+.field public static final AppCompatTextHelper_android_drawableStart:I = 0x5
+
+.field public static final AppCompatTextHelper_android_drawableTop:I = 0x1
+
+.field public static final AppCompatTextHelper_android_textAppearance:I = 0x0
 
 .field public static final AppCompatTextView:[I
 
@@ -230,6 +266,8 @@
 
 .field public static final AppCompatTheme_colorAccent:I = 0x55
 
+.field public static final AppCompatTheme_colorBackgroundFloating:I = 0x5c
+
 .field public static final AppCompatTheme_colorButtonNormal:I = 0x59
 
 .field public static final AppCompatTheme_colorControlActivated:I = 0x57
@@ -271,6 +309,8 @@
 .field public static final AppCompatTheme_listChoiceBackgroundIndicator:I = 0x52
 
 .field public static final AppCompatTheme_listDividerAlertDialog:I = 0x2d
+
+.field public static final AppCompatTheme_listMenuViewStyle:I = 0x72
 
 .field public static final AppCompatTheme_listPopupWindowStyle:I = 0x4c
 
@@ -322,6 +362,8 @@
 
 .field public static final AppCompatTheme_textAppearanceListItemSmall:I = 0x4e
 
+.field public static final AppCompatTheme_textAppearancePopupMenuHeader:I = 0x2a
+
 .field public static final AppCompatTheme_textAppearanceSearchResultSubtitle:I = 0x43
 
 .field public static final AppCompatTheme_textAppearanceSearchResultTitle:I = 0x42
@@ -356,31 +398,43 @@
 
 .field public static final AppCompatTheme_windowNoTitle:I = 0x3
 
-.field public static final BottomSheetBehavior_Params:[I
+.field public static final BottomNavigationView:[I
 
-.field public static final BottomSheetBehavior_Params_behavior_hideable:I = 0x1
+.field public static final BottomNavigationView_itemBackground:I = 0x3
 
-.field public static final BottomSheetBehavior_Params_behavior_peekHeight:I = 0x0
+.field public static final BottomNavigationView_itemIconTint:I = 0x1
+
+.field public static final BottomNavigationView_itemTextColor:I = 0x2
+
+.field public static final BottomNavigationView_menu:I = 0x0
+
+.field public static final BottomSheetBehavior_Layout:[I
+
+.field public static final BottomSheetBehavior_Layout_behavior_hideable:I = 0x1
+
+.field public static final BottomSheetBehavior_Layout_behavior_peekHeight:I = 0x0
+
+.field public static final BottomSheetBehavior_Layout_behavior_skipCollapsed:I = 0x2
 
 .field public static final ButtonBarLayout:[I
 
 .field public static final ButtonBarLayout_allowStacking:I = 0x0
 
-.field public static final CollapsingAppBarLayout_LayoutParams:[I
-
-.field public static final CollapsingAppBarLayout_LayoutParams_layout_collapseMode:I = 0x0
-
-.field public static final CollapsingAppBarLayout_LayoutParams_layout_collapseParallaxMultiplier:I = 0x1
-
 .field public static final CollapsingToolbarLayout:[I
 
-.field public static final CollapsingToolbarLayout_collapsedTitleGravity:I = 0xb
+.field public static final CollapsingToolbarLayout_Layout:[I
+
+.field public static final CollapsingToolbarLayout_Layout_layout_collapseMode:I = 0x0
+
+.field public static final CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier:I = 0x1
+
+.field public static final CollapsingToolbarLayout_collapsedTitleGravity:I = 0xd
 
 .field public static final CollapsingToolbarLayout_collapsedTitleTextAppearance:I = 0x7
 
 .field public static final CollapsingToolbarLayout_contentScrim:I = 0x8
 
-.field public static final CollapsingToolbarLayout_expandedTitleGravity:I = 0xc
+.field public static final CollapsingToolbarLayout_expandedTitleGravity:I = 0xe
 
 .field public static final CollapsingToolbarLayout_expandedTitleMargin:I = 0x1
 
@@ -394,13 +448,25 @@
 
 .field public static final CollapsingToolbarLayout_expandedTitleTextAppearance:I = 0x6
 
+.field public static final CollapsingToolbarLayout_scrimAnimationDuration:I = 0xc
+
+.field public static final CollapsingToolbarLayout_scrimVisibleHeightTrigger:I = 0xb
+
 .field public static final CollapsingToolbarLayout_statusBarScrim:I = 0x9
 
 .field public static final CollapsingToolbarLayout_title:I = 0x0
 
-.field public static final CollapsingToolbarLayout_titleEnabled:I = 0xd
+.field public static final CollapsingToolbarLayout_titleEnabled:I = 0xf
 
 .field public static final CollapsingToolbarLayout_toolbarId:I = 0xa
+
+.field public static final ColorStateListItem:[I
+
+.field public static final ColorStateListItem_alpha:I = 0x2
+
+.field public static final ColorStateListItem_android_alpha:I = 0x1
+
+.field public static final ColorStateListItem_android_color:I = 0x0
 
 .field public static final CompoundButton:[I
 
@@ -412,17 +478,21 @@
 
 .field public static final CoordinatorLayout:[I
 
-.field public static final CoordinatorLayout_LayoutParams:[I
+.field public static final CoordinatorLayout_Layout:[I
 
-.field public static final CoordinatorLayout_LayoutParams_android_layout_gravity:I = 0x0
+.field public static final CoordinatorLayout_Layout_android_layout_gravity:I = 0x0
 
-.field public static final CoordinatorLayout_LayoutParams_layout_anchor:I = 0x2
+.field public static final CoordinatorLayout_Layout_layout_anchor:I = 0x2
 
-.field public static final CoordinatorLayout_LayoutParams_layout_anchorGravity:I = 0x4
+.field public static final CoordinatorLayout_Layout_layout_anchorGravity:I = 0x4
 
-.field public static final CoordinatorLayout_LayoutParams_layout_behavior:I = 0x1
+.field public static final CoordinatorLayout_Layout_layout_behavior:I = 0x1
 
-.field public static final CoordinatorLayout_LayoutParams_layout_keyline:I = 0x3
+.field public static final CoordinatorLayout_Layout_layout_dodgeInsetEdges:I = 0x6
+
+.field public static final CoordinatorLayout_Layout_layout_insetEdge:I = 0x5
+
+.field public static final CoordinatorLayout_Layout_layout_keyline:I = 0x3
 
 .field public static final CoordinatorLayout_keylines:I = 0x0
 
@@ -455,6 +525,10 @@
 .field public static final DrawerArrowToggle_thickness:I = 0x7
 
 .field public static final FloatingActionButton:[I
+
+.field public static final FloatingActionButton_Behavior_Layout:[I
+
+.field public static final FloatingActionButton_Behavior_Layout_behavior_autoHide:I = 0x0
 
 .field public static final FloatingActionButton_backgroundTint:I = 0xf
 
@@ -584,6 +658,8 @@
 
 .field public static final MenuView_preserveIconSpacing:I = 0x7
 
+.field public static final MenuView_subMenuArrow:I = 0x8
+
 .field public static final NavigationView:[I
 
 .field public static final NavigationView_android_background:I = 0x0
@@ -612,29 +688,33 @@
 
 .field public static final PopupWindowBackgroundState_state_above_anchor:I = 0x0
 
+.field public static final PopupWindow_android_popupAnimationStyle:I = 0x1
+
 .field public static final PopupWindow_android_popupBackground:I = 0x0
 
 .field public static final PopupWindow_overlapAnchor:I = 0x2
 
 .field public static final RecyclerView:[I
 
+.field public static final RecyclerView_android_descendantFocusability:I = 0x1
+
 .field public static final RecyclerView_android_orientation:I = 0x0
 
-.field public static final RecyclerView_layoutManager:I = 0x1
+.field public static final RecyclerView_layoutManager:I = 0x2
 
-.field public static final RecyclerView_reverseLayout:I = 0x3
+.field public static final RecyclerView_reverseLayout:I = 0x4
 
-.field public static final RecyclerView_spanCount:I = 0x2
+.field public static final RecyclerView_spanCount:I = 0x3
 
-.field public static final RecyclerView_stackFromEnd:I = 0x4
+.field public static final RecyclerView_stackFromEnd:I = 0x5
 
 .field public static final ScrimInsetsFrameLayout:[I
 
 .field public static final ScrimInsetsFrameLayout_insetForeground:I = 0x0
 
-.field public static final ScrollingViewBehavior_Params:[I
+.field public static final ScrollingViewBehavior_Layout:[I
 
-.field public static final ScrollingViewBehavior_Params_behavior_overlapTop:I = 0x0
+.field public static final ScrollingViewBehavior_Layout_behavior_overlapTop:I = 0x0
 
 .field public static final SearchView:[I
 
@@ -712,7 +792,15 @@
 
 .field public static final SwitchCompat_thumbTextPadding:I = 0x8
 
+.field public static final SwitchCompat_thumbTint:I = 0x3
+
+.field public static final SwitchCompat_thumbTintMode:I = 0x4
+
 .field public static final SwitchCompat_track:I = 0x5
+
+.field public static final SwitchCompat_trackTint:I = 0x6
+
+.field public static final SwitchCompat_trackTintMode:I = 0x7
 
 .field public static final TabItem:[I
 
@@ -768,6 +856,8 @@
 
 .field public static final TextAppearance_android_textColor:I = 0x3
 
+.field public static final TextAppearance_android_textColorHint:I = 0x5
+
 .field public static final TextAppearance_android_textSize:I = 0x0
 
 .field public static final TextAppearance_android_textStyle:I = 0x2
@@ -800,11 +890,23 @@
 
 .field public static final TextInputLayout_hintTextAppearance:I = 0x2
 
+.field public static final TextInputLayout_passwordToggleContentDescription:I = 0xd
+
+.field public static final TextInputLayout_passwordToggleDrawable:I = 0xc
+
+.field public static final TextInputLayout_passwordToggleEnabled:I = 0xb
+
+.field public static final TextInputLayout_passwordToggleTint:I = 0xe
+
+.field public static final TextInputLayout_passwordToggleTintMode:I = 0xf
+
 .field public static final Toolbar:[I
 
 .field public static final Toolbar_android_gravity:I = 0x0
 
 .field public static final Toolbar_android_minHeight:I = 0x1
+
+.field public static final Toolbar_buttonGravity:I = 0x15
 
 .field public static final Toolbar_collapseContentDescription:I = 0x17
 
@@ -812,11 +914,15 @@
 
 .field public static final Toolbar_contentInsetEnd:I = 0x6
 
+.field public static final Toolbar_contentInsetEndWithActions:I = 0xa
+
 .field public static final Toolbar_contentInsetLeft:I = 0x7
 
 .field public static final Toolbar_contentInsetRight:I = 0x8
 
 .field public static final Toolbar_contentInsetStart:I = 0x5
+
+.field public static final Toolbar_contentInsetStartWithNavigation:I = 0x9
 
 .field public static final Toolbar_logo:I = 0x4
 
@@ -837,6 +943,8 @@
 .field public static final Toolbar_subtitleTextColor:I = 0x1c
 
 .field public static final Toolbar_title:I = 0x2
+
+.field public static final Toolbar_titleMargin:I = 0xe
 
 .field public static final Toolbar_titleMarginBottom:I = 0x12
 
@@ -890,397 +998,445 @@
 
     const/4 v5, 0x1
 
-    const/4 v4, 0x0
+    const/4 v4, 0x2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
     const/4 v2, 0x3
 
-    .line 1134
+    .line 1316
     const/16 v0, 0x1d
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_17e
+    fill-array-data v0, :array_1ac
 
     sput-object v0, Landroid/support/design/R$styleable;->ActionBar:[I
 
-    .line 1135
+    .line 1317
     new-array v0, v5, [I
 
     const v1, 0x10100b3
 
-    aput v1, v0, v4
+    aput v1, v0, v3
 
     sput-object v0, Landroid/support/design/R$styleable;->ActionBarLayout:[I
 
-    .line 1164
+    .line 1348
     new-array v0, v5, [I
 
     const v1, 0x101013f
 
-    aput v1, v0, v4
+    aput v1, v0, v3
 
     sput-object v0, Landroid/support/design/R$styleable;->ActionMenuItemView:[I
 
-    .line 1166
-    new-array v0, v4, [I
+    .line 1350
+    new-array v0, v3, [I
 
     sput-object v0, Landroid/support/design/R$styleable;->ActionMenuView:[I
 
-    .line 1167
+    .line 1351
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_1bc
+    fill-array-data v0, :array_1ea
 
     sput-object v0, Landroid/support/design/R$styleable;->ActionMode:[I
 
-    .line 1174
-    new-array v0, v3, [I
+    .line 1358
+    new-array v0, v4, [I
 
-    fill-array-data v0, :array_1cc
+    fill-array-data v0, :array_1fa
 
     sput-object v0, Landroid/support/design/R$styleable;->ActivityChooserView:[I
 
-    .line 1177
+    .line 1361
     new-array v0, v6, [I
 
-    fill-array-data v0, :array_1d4
+    fill-array-data v0, :array_202
 
     sput-object v0, Landroid/support/design/R$styleable;->AlertDialog:[I
-
-    .line 1184
-    new-array v0, v2, [I
-
-    fill-array-data v0, :array_1e4
-
-    sput-object v0, Landroid/support/design/R$styleable;->AppBarLayout:[I
-
-    .line 1185
-    new-array v0, v3, [I
-
-    fill-array-data v0, :array_1ee
-
-    sput-object v0, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams:[I
-
-    .line 1191
-    new-array v0, v3, [I
-
-    fill-array-data v0, :array_1f6
-
-    sput-object v0, Landroid/support/design/R$styleable;->AppCompatImageView:[I
-
-    .line 1194
-    new-array v0, v3, [I
-
-    fill-array-data v0, :array_1fe
-
-    sput-object v0, Landroid/support/design/R$styleable;->AppCompatTextView:[I
-
-    .line 1197
-    const/16 v0, 0x73
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_206
-
-    sput-object v0, Landroid/support/design/R$styleable;->AppCompatTheme:[I
-
-    .line 1310
-    new-array v0, v3, [I
-
-    fill-array-data v0, :array_2f0
-
-    sput-object v0, Landroid/support/design/R$styleable;->BottomSheetBehavior_Params:[I
-
-    .line 1313
-    new-array v0, v5, [I
-
-    const v1, 0x7f010120
-
-    aput v1, v0, v4
-
-    sput-object v0, Landroid/support/design/R$styleable;->ButtonBarLayout:[I
-
-    .line 1315
-    new-array v0, v3, [I
-
-    fill-array-data v0, :array_2f8
-
-    sput-object v0, Landroid/support/design/R$styleable;->CollapsingAppBarLayout_LayoutParams:[I
-
-    .line 1318
-    const/16 v0, 0xe
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_300
-
-    sput-object v0, Landroid/support/design/R$styleable;->CollapsingToolbarLayout:[I
-
-    .line 1333
-    new-array v0, v2, [I
-
-    fill-array-data v0, :array_320
-
-    sput-object v0, Landroid/support/design/R$styleable;->CompoundButton:[I
-
-    .line 1337
-    new-array v0, v3, [I
-
-    fill-array-data v0, :array_32a
-
-    sput-object v0, Landroid/support/design/R$styleable;->CoordinatorLayout:[I
-
-    .line 1338
-    const/4 v0, 0x5
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_332
-
-    sput-object v0, Landroid/support/design/R$styleable;->CoordinatorLayout_LayoutParams:[I
-
-    .line 1346
-    new-array v0, v2, [I
-
-    fill-array-data v0, :array_340
-
-    sput-object v0, Landroid/support/design/R$styleable;->DesignTheme:[I
-
-    .line 1350
-    const/16 v0, 0x8
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_34a
-
-    sput-object v0, Landroid/support/design/R$styleable;->DrawerArrowToggle:[I
-
-    .line 1359
-    const/16 v0, 0x11
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_35e
-
-    sput-object v0, Landroid/support/design/R$styleable;->FloatingActionButton:[I
 
     .line 1368
     new-array v0, v2, [I
 
-    fill-array-data v0, :array_384
+    fill-array-data v0, :array_212
 
-    sput-object v0, Landroid/support/design/R$styleable;->ForegroundLinearLayout:[I
+    sput-object v0, Landroid/support/design/R$styleable;->AppBarLayout:[I
+
+    .line 1369
+    new-array v0, v4, [I
+
+    fill-array-data v0, :array_21c
+
+    sput-object v0, Landroid/support/design/R$styleable;->AppBarLayoutStates:[I
 
     .line 1372
-    const/16 v0, 0x9
+    new-array v0, v4, [I
 
-    new-array v0, v0, [I
+    fill-array-data v0, :array_224
 
-    fill-array-data v0, :array_38e
+    sput-object v0, Landroid/support/design/R$styleable;->AppBarLayout_Layout:[I
 
-    sput-object v0, Landroid/support/design/R$styleable;->LinearLayoutCompat:[I
+    .line 1378
+    new-array v0, v4, [I
 
-    .line 1373
+    fill-array-data v0, :array_22c
+
+    sput-object v0, Landroid/support/design/R$styleable;->AppCompatImageView:[I
+
+    .line 1381
     const/4 v0, 0x4
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_3a4
+    fill-array-data v0, :array_234
 
-    sput-object v0, Landroid/support/design/R$styleable;->LinearLayoutCompat_Layout:[I
+    sput-object v0, Landroid/support/design/R$styleable;->AppCompatSeekBar:[I
 
-    .line 1387
-    new-array v0, v3, [I
+    .line 1386
+    const/4 v0, 0x7
 
-    fill-array-data v0, :array_3b0
+    new-array v0, v0, [I
 
-    sput-object v0, Landroid/support/design/R$styleable;->ListPopupWindow:[I
+    fill-array-data v0, :array_240
 
-    .line 1390
-    new-array v0, v6, [I
+    sput-object v0, Landroid/support/design/R$styleable;->AppCompatTextHelper:[I
 
-    fill-array-data v0, :array_3b8
+    .line 1394
+    new-array v0, v4, [I
 
-    sput-object v0, Landroid/support/design/R$styleable;->MenuGroup:[I
+    fill-array-data v0, :array_252
+
+    sput-object v0, Landroid/support/design/R$styleable;->AppCompatTextView:[I
 
     .line 1397
-    const/16 v0, 0x11
+    const/16 v0, 0x73
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_3c8
+    fill-array-data v0, :array_25a
 
-    sput-object v0, Landroid/support/design/R$styleable;->MenuItem:[I
+    sput-object v0, Landroid/support/design/R$styleable;->AppCompatTheme:[I
 
-    .line 1415
-    const/16 v0, 0x9
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_3ee
-
-    sput-object v0, Landroid/support/design/R$styleable;->MenuView:[I
-
-    .line 1424
-    const/16 v0, 0xa
+    .line 1513
+    const/4 v0, 0x4
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_404
+    fill-array-data v0, :array_344
 
-    sput-object v0, Landroid/support/design/R$styleable;->NavigationView:[I
+    sput-object v0, Landroid/support/design/R$styleable;->BottomNavigationView:[I
 
-    .line 1435
+    .line 1518
     new-array v0, v2, [I
 
-    fill-array-data v0, :array_41c
+    fill-array-data v0, :array_350
 
-    sput-object v0, Landroid/support/design/R$styleable;->PopupWindow:[I
+    sput-object v0, Landroid/support/design/R$styleable;->BottomSheetBehavior_Layout:[I
 
-    .line 1436
+    .line 1522
     new-array v0, v5, [I
 
-    const v1, 0x7f01021b
+    const v1, 0x7f010123
 
-    aput v1, v0, v4
+    aput v1, v0, v3
 
-    sput-object v0, Landroid/support/design/R$styleable;->PopupWindowBackgroundState:[I
+    sput-object v0, Landroid/support/design/R$styleable;->ButtonBarLayout:[I
 
-    .line 1440
-    const/4 v0, 0x5
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_426
-
-    sput-object v0, Landroid/support/design/R$styleable;->RecyclerView:[I
-
-    .line 1446
-    new-array v0, v5, [I
-
-    const v1, 0x7f01025e
-
-    aput v1, v0, v4
-
-    sput-object v0, Landroid/support/design/R$styleable;->ScrimInsetsFrameLayout:[I
-
-    .line 1448
-    new-array v0, v5, [I
-
-    const v1, 0x7f01025f
-
-    aput v1, v0, v4
-
-    sput-object v0, Landroid/support/design/R$styleable;->ScrollingViewBehavior_Params:[I
-
-    .line 1450
-    const/16 v0, 0x11
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_434
-
-    sput-object v0, Landroid/support/design/R$styleable;->SearchView:[I
-
-    .line 1468
-    new-array v0, v2, [I
-
-    fill-array-data v0, :array_45a
-
-    sput-object v0, Landroid/support/design/R$styleable;->SnackbarLayout:[I
-
-    .line 1472
-    const/16 v0, 0x1d
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_464
-
-    sput-object v0, Landroid/support/design/R$styleable;->Spinner:[I
-
-    .line 1478
-    const/16 v0, 0xe
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_4a2
-
-    sput-object v0, Landroid/support/design/R$styleable;->SwitchCompat:[I
-
-    .line 1489
-    new-array v0, v2, [I
-
-    fill-array-data v0, :array_4c2
-
-    sput-object v0, Landroid/support/design/R$styleable;->TabItem:[I
-
-    .line 1493
+    .line 1524
     const/16 v0, 0x10
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_4cc
+    fill-array-data v0, :array_35a
 
-    sput-object v0, Landroid/support/design/R$styleable;->TabLayout:[I
+    sput-object v0, Landroid/support/design/R$styleable;->CollapsingToolbarLayout:[I
 
-    .line 1510
-    const/16 v0, 0x12
+    .line 1525
+    new-array v0, v4, [I
+
+    fill-array-data v0, :array_37e
+
+    sput-object v0, Landroid/support/design/R$styleable;->CollapsingToolbarLayout_Layout:[I
+
+    .line 1544
+    new-array v0, v2, [I
+
+    fill-array-data v0, :array_386
+
+    sput-object v0, Landroid/support/design/R$styleable;->ColorStateListItem:[I
+
+    .line 1548
+    new-array v0, v2, [I
+
+    fill-array-data v0, :array_390
+
+    sput-object v0, Landroid/support/design/R$styleable;->CompoundButton:[I
+
+    .line 1552
+    new-array v0, v4, [I
+
+    fill-array-data v0, :array_39a
+
+    sput-object v0, Landroid/support/design/R$styleable;->CoordinatorLayout:[I
+
+    .line 1553
+    const/4 v0, 0x7
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_4f0
+    fill-array-data v0, :array_3a2
 
-    sput-object v0, Landroid/support/design/R$styleable;->TextAppearance:[I
+    sput-object v0, Landroid/support/design/R$styleable;->CoordinatorLayout_Layout:[I
 
-    .line 1520
-    const/16 v0, 0xb
+    .line 1563
+    new-array v0, v2, [I
+
+    fill-array-data v0, :array_3b4
+
+    sput-object v0, Landroid/support/design/R$styleable;->DesignTheme:[I
+
+    .line 1567
+    const/16 v0, 0x8
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_3be
+
+    sput-object v0, Landroid/support/design/R$styleable;->DrawerArrowToggle:[I
+
+    .line 1576
+    const/16 v0, 0x11
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_3d2
+
+    sput-object v0, Landroid/support/design/R$styleable;->FloatingActionButton:[I
+
+    .line 1577
+    new-array v0, v5, [I
+
+    const v1, 0x7f0101e9
+
+    aput v1, v0, v3
+
+    sput-object v0, Landroid/support/design/R$styleable;->FloatingActionButton_Behavior_Layout:[I
+
+    .line 1587
+    new-array v0, v2, [I
+
+    fill-array-data v0, :array_3f8
+
+    sput-object v0, Landroid/support/design/R$styleable;->ForegroundLinearLayout:[I
+
+    .line 1591
+    const/16 v0, 0x9
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_402
+
+    sput-object v0, Landroid/support/design/R$styleable;->LinearLayoutCompat:[I
+
+    .line 1592
+    const/4 v0, 0x4
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_418
+
+    sput-object v0, Landroid/support/design/R$styleable;->LinearLayoutCompat_Layout:[I
+
+    .line 1606
+    new-array v0, v4, [I
+
+    fill-array-data v0, :array_424
+
+    sput-object v0, Landroid/support/design/R$styleable;->ListPopupWindow:[I
+
+    .line 1609
+    new-array v0, v6, [I
+
+    fill-array-data v0, :array_42c
+
+    sput-object v0, Landroid/support/design/R$styleable;->MenuGroup:[I
+
+    .line 1616
+    const/16 v0, 0x11
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_43c
+
+    sput-object v0, Landroid/support/design/R$styleable;->MenuItem:[I
+
+    .line 1634
+    const/16 v0, 0x9
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_462
+
+    sput-object v0, Landroid/support/design/R$styleable;->MenuView:[I
+
+    .line 1644
+    const/16 v0, 0xa
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_478
+
+    sput-object v0, Landroid/support/design/R$styleable;->NavigationView:[I
+
+    .line 1655
+    new-array v0, v2, [I
+
+    fill-array-data v0, :array_490
+
+    sput-object v0, Landroid/support/design/R$styleable;->PopupWindow:[I
+
+    .line 1656
+    new-array v0, v5, [I
+
+    const v1, 0x7f010223
+
+    aput v1, v0, v3
+
+    sput-object v0, Landroid/support/design/R$styleable;->PopupWindowBackgroundState:[I
+
+    .line 1661
+    new-array v0, v6, [I
+
+    fill-array-data v0, :array_49a
+
+    sput-object v0, Landroid/support/design/R$styleable;->RecyclerView:[I
+
+    .line 1668
+    new-array v0, v5, [I
+
+    const v1, 0x7f010266
+
+    aput v1, v0, v3
+
+    sput-object v0, Landroid/support/design/R$styleable;->ScrimInsetsFrameLayout:[I
+
+    .line 1670
+    new-array v0, v5, [I
+
+    const v1, 0x7f010267
+
+    aput v1, v0, v3
+
+    sput-object v0, Landroid/support/design/R$styleable;->ScrollingViewBehavior_Layout:[I
+
+    .line 1672
+    const/16 v0, 0x11
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_4aa
+
+    sput-object v0, Landroid/support/design/R$styleable;->SearchView:[I
+
+    .line 1690
+    new-array v0, v2, [I
+
+    fill-array-data v0, :array_4d0
+
+    sput-object v0, Landroid/support/design/R$styleable;->SnackbarLayout:[I
+
+    .line 1694
+    const/16 v0, 0x1d
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_4da
+
+    sput-object v0, Landroid/support/design/R$styleable;->Spinner:[I
+
+    .line 1700
+    const/16 v0, 0xe
 
     new-array v0, v0, [I
 
     fill-array-data v0, :array_518
 
+    sput-object v0, Landroid/support/design/R$styleable;->SwitchCompat:[I
+
+    .line 1715
+    new-array v0, v2, [I
+
+    fill-array-data v0, :array_538
+
+    sput-object v0, Landroid/support/design/R$styleable;->TabItem:[I
+
+    .line 1719
+    const/16 v0, 0x10
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_542
+
+    sput-object v0, Landroid/support/design/R$styleable;->TabLayout:[I
+
+    .line 1736
+    const/16 v0, 0x12
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_566
+
+    sput-object v0, Landroid/support/design/R$styleable;->TextAppearance:[I
+
+    .line 1747
+    const/16 v0, 0x10
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_58e
+
     sput-object v0, Landroid/support/design/R$styleable;->TextInputLayout:[I
 
-    .line 1532
+    .line 1764
     const/16 v0, 0x1d
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_532
+    fill-array-data v0, :array_5b2
 
     sput-object v0, Landroid/support/design/R$styleable;->Toolbar:[I
 
-    .line 1558
+    .line 1794
     const/16 v0, 0x1f
 
     new-array v0, v0, [I
 
-    fill-array-data v0, :array_570
+    fill-array-data v0, :array_5f0
 
     sput-object v0, Landroid/support/design/R$styleable;->View:[I
 
-    .line 1559
+    .line 1795
     new-array v0, v2, [I
 
-    fill-array-data v0, :array_5b2
+    fill-array-data v0, :array_632
 
     sput-object v0, Landroid/support/design/R$styleable;->ViewBackgroundHelper:[I
 
-    .line 1563
+    .line 1799
     new-array v0, v2, [I
 
-    fill-array-data v0, :array_5bc
+    fill-array-data v0, :array_63c
 
     sput-object v0, Landroid/support/design/R$styleable;->ViewStubCompat:[I
 
     return-void
 
-    .line 1134
+    .line 1316
     nop
 
-    :array_17e
+    :array_1ac
     .array-data 4
         0x7f010038
         0x7f010078
@@ -1310,11 +1466,11 @@
         0x7f010093
         0x7f010094
         0x7f010095
-        0x7f0100d5
+        0x7f0100d7
     .end array-data
 
-    .line 1167
-    :array_1bc
+    .line 1351
+    :array_1ea
     .array-data 4
         0x7f010038
         0x7f01007f
@@ -1324,15 +1480,15 @@
         0x7f010096
     .end array-data
 
-    .line 1174
-    :array_1cc
+    .line 1358
+    :array_1fa
     .array-data 4
         0x7f010097
         0x7f010098
     .end array-data
 
-    .line 1177
-    :array_1d4
+    .line 1361
+    :array_202
     .array-data 4
         0x10100f2
         0x7f010099
@@ -1342,42 +1498,68 @@
         0x7f01009d
     .end array-data
 
-    .line 1184
-    :array_1e4
+    .line 1368
+    :array_212
     .array-data 4
         0x10100d4
         0x7f010094
         0x7f01009e
     .end array-data
 
-    .line 1185
-    :array_1ee
+    .line 1369
+    :array_21c
     .array-data 4
         0x7f01009f
         0x7f0100a0
     .end array-data
 
-    .line 1191
-    :array_1f6
+    .line 1372
+    :array_224
+    .array-data 4
+        0x7f0100a1
+        0x7f0100a2
+    .end array-data
+
+    .line 1378
+    :array_22c
     .array-data 4
         0x1010119
-        0x7f0100a1
+        0x7f0100a3
     .end array-data
 
-    .line 1194
-    :array_1fe
+    .line 1381
+    :array_234
+    .array-data 4
+        0x1010142
+        0x7f0100a4
+        0x7f0100a5
+        0x7f0100a6
+    .end array-data
+
+    .line 1386
+    :array_240
     .array-data 4
         0x1010034
-        0x7f0100a5
+        0x101016d
+        0x101016e
+        0x101016f
+        0x1010170
+        0x1010392
+        0x1010393
     .end array-data
 
-    .line 1197
-    :array_206
+    .line 1394
+    :array_252
+    .array-data 4
+        0x1010034
+        0x7f0100a7
+    .end array-data
+
+    .line 1397
+    :array_25a
     .array-data 4
         0x1010057
         0x10100ae
-        0x7f0100a6
-        0x7f0100a7
         0x7f0100a8
         0x7f0100a9
         0x7f0100aa
@@ -1489,27 +1671,31 @@
         0x7f010114
         0x7f010115
         0x7f010116
-    .end array-data
-
-    .line 1310
-    :array_2f0
-    .array-data 4
         0x7f010117
         0x7f010118
     .end array-data
 
-    .line 1315
-    :array_2f8
+    .line 1513
+    :array_344
     .array-data 4
-        0x7f01014a
-        0x7f01014b
+        0x7f01021c
+        0x7f01021d
+        0x7f01021e
+        0x7f01021f
     .end array-data
 
-    .line 1318
-    :array_300
+    .line 1518
+    :array_350
+    .array-data 4
+        0x7f010119
+        0x7f01011a
+        0x7f01011b
+    .end array-data
+
+    .line 1524
+    :array_35a
     .array-data 4
         0x7f010078
-        0x7f01014c
         0x7f01014d
         0x7f01014e
         0x7f01014f
@@ -1522,65 +1708,78 @@
         0x7f010156
         0x7f010157
         0x7f010158
-    .end array-data
-
-    .line 1333
-    :array_320
-    .array-data 4
-        0x1010107
+        0x7f010159
         0x7f01015a
         0x7f01015b
     .end array-data
 
-    .line 1337
-    :array_32a
+    .line 1525
+    :array_37e
     .array-data 4
-        0x7f010173
-        0x7f010174
+        0x7f01015c
+        0x7f01015d
     .end array-data
 
-    .line 1338
-    :array_332
+    .line 1544
+    :array_386
+    .array-data 4
+        0x10101a5
+        0x101031f
+        0x7f01015e
+    .end array-data
+
+    .line 1548
+    :array_390
+    .array-data 4
+        0x1010107
+        0x7f01015f
+        0x7f010160
+    .end array-data
+
+    .line 1552
+    :array_39a
+    .array-data 4
+        0x7f010178
+        0x7f010179
+    .end array-data
+
+    .line 1553
+    :array_3a2
     .array-data 4
         0x10100b3
-        0x7f010175
-        0x7f010176
-        0x7f010177
-        0x7f010178
+        0x7f01017a
+        0x7f01017b
+        0x7f01017c
+        0x7f01017d
+        0x7f01017e
+        0x7f01017f
     .end array-data
 
-    .line 1346
-    :array_340
+    .line 1563
+    :array_3b4
     .array-data 4
-        0x7f010183
-        0x7f010184
-        0x7f010185
+        0x7f01018a
+        0x7f01018b
+        0x7f01018c
     .end array-data
 
-    .line 1350
-    :array_34a
+    .line 1567
+    :array_3be
     .array-data 4
-        0x7f0101a6
-        0x7f0101a7
-        0x7f0101a8
-        0x7f0101a9
-        0x7f0101aa
-        0x7f0101ab
-        0x7f0101ac
         0x7f0101ad
+        0x7f0101ae
+        0x7f0101af
+        0x7f0101b0
+        0x7f0101b1
+        0x7f0101b2
+        0x7f0101b3
+        0x7f0101b4
     .end array-data
 
-    .line 1359
-    :array_35e
+    .line 1576
+    :array_3d2
     .array-data 4
         0x7f010094
-        0x7f0101d4
-        0x7f0101d5
-        0x7f0101d6
-        0x7f0101d7
-        0x7f0101d8
-        0x7f0101d9
-        0x7f0101da
         0x7f0101db
         0x7f0101dc
         0x7f0101dd
@@ -1588,20 +1787,27 @@
         0x7f0101df
         0x7f0101e0
         0x7f0101e1
-        0x7f010331
-        0x7f010332
+        0x7f0101e2
+        0x7f0101e3
+        0x7f0101e4
+        0x7f0101e5
+        0x7f0101e6
+        0x7f0101e7
+        0x7f0101e8
+        0x7f01033e
+        0x7f01033f
     .end array-data
 
-    .line 1368
-    :array_384
+    .line 1587
+    :array_3f8
     .array-data 4
         0x1010109
         0x1010200
-        0x7f0101e2
+        0x7f0101ea
     .end array-data
 
-    .line 1372
-    :array_38e
+    .line 1591
+    :array_402
     .array-data 4
         0x10100af
         0x10100c4
@@ -1609,13 +1815,13 @@
         0x1010127
         0x1010128
         0x7f010083
-        0x7f0101f8
-        0x7f0101f9
-        0x7f0101fa
+        0x7f010200
+        0x7f010201
+        0x7f010202
     .end array-data
 
-    .line 1373
-    :array_3a4
+    .line 1592
+    :array_418
     .array-data 4
         0x10100b3
         0x10100f4
@@ -1623,15 +1829,15 @@
         0x1010181
     .end array-data
 
-    .line 1387
-    :array_3b0
+    .line 1606
+    :array_424
     .array-data 4
         0x10102ac
         0x10102ad
     .end array-data
 
-    .line 1390
-    :array_3b8
+    .line 1609
+    :array_42c
     .array-data 4
         0x101000e
         0x10100d0
@@ -1641,8 +1847,8 @@
         0x10101e0
     .end array-data
 
-    .line 1397
-    :array_3c8
+    .line 1616
+    :array_43c
     .array-data 4
         0x1010002
         0x101000e
@@ -1657,14 +1863,14 @@
         0x10101e4
         0x10101e5
         0x101026f
-        0x7f01020c
-        0x7f01020d
-        0x7f01020e
-        0x7f01020f
+        0x7f010214
+        0x7f010215
+        0x7f010216
+        0x7f010217
     .end array-data
 
-    .line 1415
-    :array_3ee
+    .line 1634
+    :array_462
     .array-data 4
         0x10100ae
         0x101012c
@@ -1673,75 +1879,76 @@
         0x101012f
         0x1010130
         0x1010131
-        0x7f010210
-        0x7f010211
+        0x7f010218
+        0x7f010219
     .end array-data
 
-    .line 1424
-    :array_404
+    .line 1644
+    :array_478
     .array-data 4
         0x10100d4
         0x10100dd
         0x101011f
         0x7f010094
-        0x7f010214
-        0x7f010215
-        0x7f010216
-        0x7f010217
-        0x7f010218
-        0x7f010219
+        0x7f01021c
+        0x7f01021d
+        0x7f01021e
+        0x7f01021f
+        0x7f010220
+        0x7f010221
     .end array-data
 
-    .line 1435
-    :array_41c
+    .line 1655
+    :array_490
     .array-data 4
         0x1010176
         0x10102c9
-        0x7f01021a
+        0x7f010222
     .end array-data
 
-    .line 1440
-    :array_426
+    .line 1661
+    :array_49a
     .array-data 4
         0x10100c4
-        0x7f010239
-        0x7f01023a
-        0x7f01023b
-        0x7f01023c
+        0x10100f1
+        0x7f010241
+        0x7f010242
+        0x7f010243
+        0x7f010244
     .end array-data
 
-    .line 1450
-    :array_434
+    .line 1672
+    :array_4aa
     .array-data 4
         0x10100da
         0x101011f
         0x1010220
         0x1010264
-        0x7f010260
-        0x7f010261
-        0x7f010262
-        0x7f010263
-        0x7f010264
-        0x7f010265
-        0x7f010266
-        0x7f010267
         0x7f010268
         0x7f010269
         0x7f01026a
         0x7f01026b
         0x7f01026c
+        0x7f01026d
+        0x7f01026e
+        0x7f01026f
+        0x7f010270
+        0x7f010271
+        0x7f010272
+        0x7f010273
+        0x7f010274
     .end array-data
 
-    .line 1468
-    :array_45a
+    .line 1690
+    :array_4d0
     .array-data 4
         0x101011f
         0x7f010094
-        0x7f0102b5
+        0x7f0102bd
     .end array-data
 
-    .line 1472
-    :array_464
+    .line 1694
+    :array_4da
     .array-data 4
         0x10100af
         0x10100b2
@@ -1751,14 +1958,6 @@
         0x101017b
         0x1010262
         0x7f010095
-        0x7f0102b6
-        0x7f0102b7
-        0x7f0102b8
-        0x7f0102b9
-        0x7f0102ba
-        0x7f0102bb
-        0x7f0102bc
-        0x7f0102bd
         0x7f0102be
         0x7f0102bf
         0x7f0102c0
@@ -1772,38 +1971,25 @@
         0x7f0102c8
         0x7f0102c9
         0x7f0102ca
+        0x7f0102cb
+        0x7f0102cc
+        0x7f0102cd
+        0x7f0102ce
+        0x7f0102cf
+        0x7f0102d0
+        0x7f0102d1
+        0x7f0102d2
     .end array-data
 
-    .line 1478
-    :array_4a2
+    .line 1700
+    :array_518
     .array-data 4
         0x1010124
         0x1010125
         0x1010142
-        0x7f0102d3
-        0x7f0102d4
-        0x7f0102d5
-        0x7f0102d6
-        0x7f0102d7
-        0x7f0102d8
-        0x7f0102d9
-        0x7f0102da
         0x7f0102db
         0x7f0102dc
         0x7f0102dd
-    .end array-data
-
-    .line 1489
-    :array_4c2
-    .array-data 4
-        0x1010002
-        0x10100f2
-        0x101014f
-    .end array-data
-
-    .line 1493
-    :array_4cc
-    .array-data 4
         0x7f0102de
         0x7f0102df
         0x7f0102e0
@@ -1812,6 +1998,19 @@
         0x7f0102e3
         0x7f0102e4
         0x7f0102e5
+    .end array-data
+
+    .line 1715
+    :array_538
+    .array-data 4
+        0x1010002
+        0x10100f2
+        0x101014f
+    .end array-data
+
+    .line 1719
+    :array_542
+    .array-data 4
         0x7f0102e6
         0x7f0102e7
         0x7f0102e8
@@ -1820,10 +2019,18 @@
         0x7f0102eb
         0x7f0102ec
         0x7f0102ed
+        0x7f0102ee
+        0x7f0102ef
+        0x7f0102f0
+        0x7f0102f1
+        0x7f0102f2
+        0x7f0102f3
+        0x7f0102f4
+        0x7f0102f5
     .end array-data
 
-    .line 1510
-    :array_4f0
+    .line 1736
+    :array_566
     .array-data 4
         0x1010095
         0x1010096
@@ -1842,27 +2049,32 @@
         0x10104b6
         0x10104b7
         0x7f010079
-        0x7f0100a5
+        0x7f0100a7
     .end array-data
 
-    .line 1520
-    :array_518
+    .line 1747
+    :array_58e
     .array-data 4
         0x101009a
         0x1010150
-        0x7f0102f6
-        0x7f0102f7
-        0x7f0102f8
-        0x7f0102f9
-        0x7f0102fa
-        0x7f0102fb
-        0x7f0102fc
-        0x7f0102fd
         0x7f0102fe
+        0x7f0102ff
+        0x7f010300
+        0x7f010301
+        0x7f010302
+        0x7f010303
+        0x7f010304
+        0x7f010305
+        0x7f010306
+        0x7f010307
+        0x7f010308
+        0x7f010309
+        0x7f01030a
+        0x7f01030b
     .end array-data
 
-    .line 1532
-    :array_532
+    .line 1764
+    :array_5b2
     .array-data 4
         0x10100af
         0x1010140
@@ -1876,27 +2088,27 @@
         0x7f010092
         0x7f010093
         0x7f010095
-        0x7f01031d
-        0x7f01031e
-        0x7f01031f
-        0x7f010320
-        0x7f010321
-        0x7f010322
-        0x7f010323
-        0x7f010324
-        0x7f010325
-        0x7f010326
-        0x7f010327
-        0x7f010328
-        0x7f010329
         0x7f01032a
         0x7f01032b
         0x7f01032c
         0x7f01032d
+        0x7f01032e
+        0x7f01032f
+        0x7f010330
+        0x7f010331
+        0x7f010332
+        0x7f010333
+        0x7f010334
+        0x7f010335
+        0x7f010336
+        0x7f010337
+        0x7f010338
+        0x7f010339
+        0x7f01033a
     .end array-data
 
-    .line 1558
-    :array_570
+    .line 1794
+    :array_5f0
     .array-data 4
         0x1010000
         0x1010063
@@ -1926,21 +2138,21 @@
         0x1010440
         0x101046b
         0x101046c
-        0x7f01032e
-        0x7f01032f
-        0x7f010330
+        0x7f01033b
+        0x7f01033c
+        0x7f01033d
     .end array-data
 
-    .line 1559
-    :array_5b2
+    .line 1795
+    :array_632
     .array-data 4
         0x10100d4
-        0x7f010331
-        0x7f010332
+        0x7f01033e
+        0x7f01033f
     .end array-data
 
-    .line 1563
-    :array_5bc
+    .line 1799
+    :array_63c
     .array-data 4
         0x10100d0
         0x10100f2
@@ -1952,7 +2164,7 @@
     .registers 1
 
     .prologue
-    .line 1133
+    .line 1315
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

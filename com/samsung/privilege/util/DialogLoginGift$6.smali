@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 263
+    .line 264
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$6;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$6;->b:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 266
+    .line 267
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$6;->a:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$6;->b:Ljava/lang/String;
@@ -50,9 +50,9 @@
 
     move-result-object v0
 
-    .line 267
+    .line 268
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 268
+    .line 269
     return-void
 .end method

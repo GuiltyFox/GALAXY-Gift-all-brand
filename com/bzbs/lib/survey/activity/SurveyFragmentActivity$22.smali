@@ -48,7 +48,7 @@
 
     iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$22;->c:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    sget v1, Lcom/bzbs/lib/survey/R$style;->ThemeDialogCustom:I
+    sget v1, Lcom/bzbs/lib/survey/R$style;->Theme_AppTheme:I
 
     invoke-direct {v3, v0, v1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 

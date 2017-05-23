@@ -117,7 +117,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 43
-    const v0, 0x7f040188
+    const v0, 0x7f04011c
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->setContentView(I)V
 
@@ -131,49 +131,8 @@
     .line 45
     invoke-direct {p0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->a()V
 
-    .line 48
-    const v0, 0x7f10026b
-
-    :try_start_18
-    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    .line 49
-    if-eqz v0, :cond_37
-
-    .line 50
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/bzbs/data/AppSetting;->b(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
-
-    move-result-object v1
-
-    .line 51
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-    :try_end_37
-    .catch Ljava/lang/Exception; {:try_start_18 .. :try_end_37} :catch_ce
-
     .line 57
-    :cond_37
-    :goto_37
-    const v0, 0x7f100198
+    const v0, 0x7f100185
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->findViewById(I)Landroid/view/View;
 
@@ -207,7 +166,7 @@
 
     const/16 v2, 0xb
 
-    if-lt v1, v2, :cond_60
+    if-lt v1, v2, :cond_3e
 
     .line 65
     invoke-virtual {v0, v4}, Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V
@@ -216,7 +175,7 @@
     invoke-virtual {v0, v3}, Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V
 
     .line 69
-    :cond_60
+    :cond_3e
     const-string/jumbo v1, "UTF-8"
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V
@@ -249,7 +208,7 @@
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
     .line 156
-    :try_start_84
+    :try_start_62
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->b:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -262,10 +221,10 @@
 
     move-result v0
 
-    if-lez v0, :cond_a1
+    if-lez v0, :cond_7f
 
     .line 157
-    const v0, 0x7f10017e
+    const v0, 0x7f100230
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->findViewById(I)Landroid/view/View;
 
@@ -277,13 +236,13 @@
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-    :try_end_a1
-    .catch Ljava/lang/Exception; {:try_start_84 .. :try_end_a1} :catch_cc
+    :try_end_7f
+    .catch Ljava/lang/Exception; {:try_start_62 .. :try_end_7f} :catch_aa
 
     .line 164
-    :cond_a1
-    :goto_a1
-    if-eqz p1, :cond_a9
+    :cond_7f
+    :goto_7f
+    if-eqz p1, :cond_87
 
     .line 165
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->a:Landroid/webkit/WebView;
@@ -291,11 +250,11 @@
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->restoreState(Landroid/os/Bundle;)Landroid/webkit/WebBackForwardList;
 
     .line 172
-    :goto_a8
+    :goto_86
     return-void
 
     .line 167
-    :cond_a9
+    :cond_87
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->c:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -327,19 +286,13 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    goto :goto_a8
+    goto :goto_86
 
     .line 160
-    :catch_cc
+    :catch_aa
     move-exception v0
 
-    goto :goto_a1
-
-    .line 53
-    :catch_ce
-    move-exception v0
-
-    goto/16 :goto_37
+    goto :goto_7f
 .end method
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z

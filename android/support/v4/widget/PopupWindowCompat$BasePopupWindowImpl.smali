@@ -121,7 +121,7 @@
     .prologue
     .line 56
     .line 57
-    invoke-static {p2}, Landroid/support/v4/view/ViewCompat;->h(Landroid/view/View;)I
+    invoke-static {p2}, Landroid/support/v4/view/ViewCompat;->g(Landroid/view/View;)I
 
     move-result v0
 

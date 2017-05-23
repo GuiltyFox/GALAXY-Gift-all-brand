@@ -14,15 +14,15 @@
     .registers 3
 
     .prologue
-    .line 631
+    .line 665
     iput-object p1, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 632
+    .line 666
     iput-object p2, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->b:Ljava/lang/Object;
 
-    .line 633
+    .line 667
     return-void
 .end method
 
@@ -34,7 +34,7 @@
     .end annotation
 
     .prologue
-    .line 704
+    .line 738
     invoke-static {}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -85,17 +85,17 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 706
+    .line 740
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
     invoke-static {v0, p2}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->a(Lcom/samsung/privilege/activity/WebViewSurveyActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 707
+    .line 741
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
     invoke-static {v0, p3}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->b(Lcom/samsung/privilege/activity/WebViewSurveyActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 709
+    .line 743
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->registerForContextMenu(Landroid/view/View;)V
 
-    .line 710
+    .line 744
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
@@ -117,7 +117,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->openContextMenu(Landroid/view/View;)V
 
-    .line 711
+    .line 745
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
@@ -128,7 +128,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->unregisterForContextMenu(Landroid/view/View;)V
 
-    .line 712
+    .line 746
     return-void
 .end method
 
@@ -138,7 +138,7 @@
     .end annotation
 
     .prologue
-    .line 652
+    .line 686
     invoke-static {}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -169,7 +169,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 655
+    .line 689
     return-void
 .end method
 
@@ -181,7 +181,7 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 673
+    .line 707
     invoke-static {}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -222,7 +222,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 675
+    .line 709
     cmpl-double v0, p1, v4
 
     if-nez v0, :cond_38
@@ -231,11 +231,11 @@
 
     if-nez v0, :cond_38
 
-    .line 681
+    .line 715
     :goto_37
     return-void
 
-    .line 678
+    .line 712
     :cond_38
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
@@ -247,10 +247,10 @@
 
     invoke-static {v0, v2, v3}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;J)Z
 
-    .line 679
+    .line 713
     const-string/jumbo v0, "like"
 
-    .line 680
+    .line 714
     double-to-int v1, p1
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
@@ -272,7 +272,7 @@
     .end annotation
 
     .prologue
-    .line 644
+    .line 678
     invoke-static {}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -303,12 +303,12 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 647
+    .line 681
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
     invoke-static {v0, p1}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->a(Lcom/samsung/privilege/activity/WebViewSurveyActivity;Z)Z
 
-    .line 648
+    .line 682
     return-void
 .end method
 
@@ -318,7 +318,7 @@
     .end annotation
 
     .prologue
-    .line 637
+    .line 671
     invoke-static {}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -327,12 +327,12 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 639
+    .line 673
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->b(Lcom/samsung/privilege/activity/WebViewSurveyActivity;)V
 
-    .line 640
+    .line 674
     return-void
 .end method
 
@@ -342,7 +342,7 @@
     .end annotation
 
     .prologue
-    .line 659
+    .line 693
     invoke-static {}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -351,10 +351,10 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 661
+    .line 695
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->shareFacebook()V
 
-    .line 662
+    .line 696
     return-void
 .end method
 
@@ -364,7 +364,7 @@
     .end annotation
 
     .prologue
-    .line 685
+    .line 719
     invoke-static {}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -373,7 +373,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 688
+    .line 722
     return-void
 .end method
 
@@ -385,7 +385,7 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 692
+    .line 726
     invoke-static {}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -426,7 +426,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 694
+    .line 728
     cmpl-double v0, p1, v4
 
     if-nez v0, :cond_38
@@ -435,11 +435,11 @@
 
     if-nez v0, :cond_38
 
-    .line 700
+    .line 734
     :goto_37
     return-void
 
-    .line 697
+    .line 731
     :cond_38
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
@@ -451,10 +451,10 @@
 
     invoke-static {v0, v2, v3}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;J)Z
 
-    .line 698
+    .line 732
     const-string/jumbo v0, "survey"
 
-    .line 699
+    .line 733
     double-to-int v1, p1
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$WebViewJavaScriptInterface;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
@@ -476,7 +476,7 @@
     .end annotation
 
     .prologue
-    .line 666
+    .line 700
     invoke-static {}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -485,6 +485,6 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 669
+    .line 703
     return-void
 .end method

@@ -266,7 +266,7 @@
     if-eqz v0, :cond_be
 
     .line 404
-    const v0, 0x7f0901d4
+    const v0, 0x7f0900bd
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -446,7 +446,7 @@
     if-eqz v0, :cond_d4
 
     .line 406
-    const v0, 0x7f0901d5
+    const v0, 0x7f0900be
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -469,7 +469,7 @@
     if-eqz v0, :cond_ea
 
     .line 408
-    const v0, 0x7f0901d6
+    const v0, 0x7f0900bf
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -492,7 +492,7 @@
     if-eqz v0, :cond_100
 
     .line 410
-    const v0, 0x7f0901d7
+    const v0, 0x7f0900c0
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -515,7 +515,7 @@
     if-eqz v0, :cond_116
 
     .line 412
-    const v0, 0x7f0901d8
+    const v0, 0x7f0900c1
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -710,7 +710,7 @@
 
     sget-object v1, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog;->b:Landroid/app/Activity;
 
-    const v2, 0x7f0c010a
+    const v2, 0x7f0c0102
 
     invoke-direct {v0, v1, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -721,7 +721,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f04012b
+    const v2, 0x7f0400bc
 
     const/4 v3, 0x0
 

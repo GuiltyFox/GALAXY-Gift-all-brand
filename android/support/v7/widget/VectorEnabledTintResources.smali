@@ -25,7 +25,7 @@
     .registers 6
 
     .prologue
-    .line 50
+    .line 54
     invoke-virtual {p2}, Landroid/content/res/Resources;->getAssets()Landroid/content/res/AssetManager;
 
     move-result-object v0
@@ -40,14 +40,14 @@
 
     invoke-direct {p0, v0, v1, v2}, Landroid/content/res/Resources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)V
 
-    .line 51
+    .line 55
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/support/v7/widget/VectorEnabledTintResources;->mContextRef:Ljava/lang/ref/WeakReference;
 
-    .line 52
+    .line 56
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .registers 2
 
     .prologue
-    .line 37
+    .line 41
     invoke-static {}, Landroid/support/v7/app/AppCompatDelegate;->k()Z
 
     move-result v0
@@ -85,7 +85,7 @@
     .registers 4
 
     .prologue
-    .line 61
+    .line 65
     iget-object v0, p0, Landroid/support/v7/widget/VectorEnabledTintResources;->mContextRef:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -94,10 +94,10 @@
 
     check-cast v0, Landroid/content/Context;
 
-    .line 62
+    .line 66
     if-eqz v0, :cond_13
 
-    .line 63
+    .line 67
     invoke-static {}, Landroid/support/v7/widget/AppCompatDrawableManager;->get()Landroid/support/v7/widget/AppCompatDrawableManager;
 
     move-result-object v1
@@ -106,7 +106,7 @@
 
     move-result-object v0
 
-    .line 65
+    .line 69
     :goto_12
     return-object v0
 
@@ -122,7 +122,7 @@
     .registers 3
 
     .prologue
-    .line 70
+    .line 74
     invoke-super {p0, p1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0

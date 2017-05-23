@@ -20,16 +20,16 @@
     .registers 3
 
     .prologue
-    .line 46
+    .line 50
     invoke-direct {p0}, Landroid/view/ActionMode;-><init>()V
 
-    .line 47
+    .line 51
     iput-object p1, p0, Landroid/support/v7/view/SupportActionModeWrapper;->a:Landroid/content/Context;
 
-    .line 48
+    .line 52
     iput-object p2, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    .line 49
+    .line 53
     return-void
 .end method
 
@@ -39,12 +39,12 @@
     .registers 2
 
     .prologue
-    .line 78
+    .line 82
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->c()V
 
-    .line 79
+    .line 83
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .registers 2
 
     .prologue
-    .line 108
+    .line 112
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->i()Landroid/view/View;
@@ -66,7 +66,7 @@
     .registers 3
 
     .prologue
-    .line 83
+    .line 87
     iget-object v1, p0, Landroid/support/v7/view/SupportActionModeWrapper;->a:Landroid/content/Context;
 
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
@@ -88,7 +88,7 @@
     .registers 2
 
     .prologue
-    .line 118
+    .line 122
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->a()Landroid/view/MenuInflater;
@@ -102,7 +102,7 @@
     .registers 2
 
     .prologue
-    .line 98
+    .line 102
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->g()Ljava/lang/CharSequence;
@@ -116,7 +116,7 @@
     .registers 2
 
     .prologue
-    .line 53
+    .line 57
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->j()Ljava/lang/Object;
@@ -130,7 +130,7 @@
     .registers 2
 
     .prologue
-    .line 88
+    .line 92
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->f()Ljava/lang/CharSequence;
@@ -144,7 +144,7 @@
     .registers 2
 
     .prologue
-    .line 123
+    .line 127
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->k()Z
@@ -158,12 +158,12 @@
     .registers 2
 
     .prologue
-    .line 73
+    .line 77
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->d()V
 
-    .line 74
+    .line 78
     return-void
 .end method
 
@@ -171,7 +171,7 @@
     .registers 2
 
     .prologue
-    .line 133
+    .line 137
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->h()Z
@@ -185,12 +185,12 @@
     .registers 3
 
     .prologue
-    .line 113
+    .line 117
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->a(Landroid/view/View;)V
 
-    .line 114
+    .line 118
     return-void
 .end method
 
@@ -198,12 +198,12 @@
     .registers 3
 
     .prologue
-    .line 103
+    .line 107
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->b(I)V
 
-    .line 104
+    .line 108
     return-void
 .end method
 
@@ -211,12 +211,12 @@
     .registers 3
 
     .prologue
-    .line 68
+    .line 72
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->a(Ljava/lang/CharSequence;)V
 
-    .line 69
+    .line 73
     return-void
 .end method
 
@@ -224,12 +224,12 @@
     .registers 3
 
     .prologue
-    .line 58
+    .line 62
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->a(Ljava/lang/Object;)V
 
-    .line 59
+    .line 63
     return-void
 .end method
 
@@ -237,12 +237,12 @@
     .registers 3
 
     .prologue
-    .line 93
+    .line 97
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->a(I)V
 
-    .line 94
+    .line 98
     return-void
 .end method
 
@@ -250,12 +250,12 @@
     .registers 3
 
     .prologue
-    .line 63
+    .line 67
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->b(Ljava/lang/CharSequence;)V
 
-    .line 64
+    .line 68
     return-void
 .end method
 
@@ -263,11 +263,11 @@
     .registers 3
 
     .prologue
-    .line 128
+    .line 132
     iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->a(Z)V
 
-    .line 129
+    .line 133
     return-void
 .end method

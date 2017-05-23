@@ -23,11 +23,11 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/support/v7/widget/ActivityChooserModel;)V
+.method constructor <init>(Landroid/support/v7/widget/ActivityChooserModel;)V
     .registers 3
 
     .prologue
-    .line 915
+    .line 921
     iput-object p1, p0, Landroid/support/v7/widget/ActivityChooserModel$DefaultSorter;->a:Landroid/support/v7/widget/ActivityChooserModel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,16 +39,7 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/ActivityChooserModel$DefaultSorter;->b:Ljava/util/Map;
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v7/widget/ActivityChooserModel;Landroid/support/v7/widget/ActivityChooserModel$1;)V
-    .registers 3
-
-    .prologue
-    .line 915
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/ActivityChooserModel$DefaultSorter;-><init>(Landroid/support/v7/widget/ActivityChooserModel;)V
-
+    .line 922
     return-void
 .end method
 
@@ -72,18 +63,18 @@
     .end annotation
 
     .prologue
-    .line 923
+    .line 926
     iget-object v4, p0, Landroid/support/v7/widget/ActivityChooserModel$DefaultSorter;->b:Ljava/util/Map;
 
-    .line 925
+    .line 928
     invoke-interface {v4}, Ljava/util/Map;->clear()V
 
-    .line 927
+    .line 930
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 928
+    .line 931
     const/4 v0, 0x0
 
     move v1, v0
@@ -91,19 +82,19 @@
     :goto_b
     if-ge v1, v2, :cond_2e
 
-    .line 929
+    .line 932
     invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/ActivityChooserModel$ActivityResolveInfo;
 
-    .line 930
+    .line 933
     const/4 v3, 0x0
 
     iput v3, v0, Landroid/support/v7/widget/ActivityChooserModel$ActivityResolveInfo;->weight:F
 
-    .line 931
+    .line 934
     new-instance v3, Landroid/content/ComponentName;
 
     iget-object v5, v0, Landroid/support/v7/widget/ActivityChooserModel$ActivityResolveInfo;->resolveInfo:Landroid/content/pm/ResolveInfo;
@@ -120,17 +111,17 @@
 
     invoke-direct {v3, v5, v6}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 934
+    .line 937
     invoke-interface {v4, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 928
+    .line 931
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_b
 
-    .line 937
+    .line 940
     :cond_2e
     invoke-interface {p3}, Ljava/util/List;->size()I
 
@@ -138,36 +129,36 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 938
+    .line 941
     const/high16 v2, 0x3f800000    # 1.0f
 
     move v3, v0
 
-    .line 939
+    .line 942
     :goto_37
     if-ltz v3, :cond_5a
 
-    .line 940
+    .line 943
     invoke-interface {p3, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;
 
-    .line 941
+    .line 944
     iget-object v1, v0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->activity:Landroid/content/ComponentName;
 
-    .line 942
+    .line 945
     invoke-interface {v4, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/support/v7/widget/ActivityChooserModel$ActivityResolveInfo;
 
-    .line 943
+    .line 946
     if-eqz v1, :cond_5e
 
-    .line 944
+    .line 947
     iget v5, v1, Landroid/support/v7/widget/ActivityChooserModel$ActivityResolveInfo;->weight:F
 
     iget v0, v0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;->weight:F
@@ -178,12 +169,12 @@
 
     iput v0, v1, Landroid/support/v7/widget/ActivityChooserModel$ActivityResolveInfo;->weight:F
 
-    .line 945
+    .line 948
     const v0, 0x3f733333    # 0.95f
 
     mul-float/2addr v0, v2
 
-    .line 939
+    .line 942
     :goto_55
     add-int/lit8 v1, v3, -0x1
 
@@ -193,11 +184,11 @@
 
     goto :goto_37
 
-    .line 949
+    .line 952
     :cond_5a
     invoke-static {p2}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 956
+    .line 959
     return-void
 
     :cond_5e

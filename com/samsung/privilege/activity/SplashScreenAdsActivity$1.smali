@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 48
+    .line 60
     iput-object p1, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity$1;->a:Lcom/samsung/privilege/activity/SplashScreenAdsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 63
+    .line 75
     :try_start_0
     iget-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity$1;->a:Lcom/samsung/privilege/activity/SplashScreenAdsActivity;
 
@@ -43,11 +43,11 @@
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_5} :catch_6
 
-    .line 67
+    .line 79
     :goto_5
     return-void
 
-    .line 64
+    .line 76
     :catch_6
     move-exception v0
 

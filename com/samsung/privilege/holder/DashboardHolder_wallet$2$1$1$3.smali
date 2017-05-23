@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 356
+    .line 354
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1$1$3;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1$1;
 
     iput-object p2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1$1$3;->a:Ljava/lang/String;
@@ -41,7 +41,7 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 359
+    .line 357
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -68,7 +68,7 @@
 
     move-result-object v0
 
-    .line 360
+    .line 358
     invoke-static {}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a()Ljava/lang/String;
 
     move-result-object v1
@@ -93,7 +93,7 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 361
+    .line 359
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1$1$3;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1$1;
 
     iget-object v1, v1, Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1$1;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1;
@@ -112,7 +112,7 @@
 
     iget-object v3, v3, Lcom/samsung/privilege/holder/DashboardHolder_wallet$2;->a:Landroid/app/Activity;
 
-    const v4, 0x7f090283
+    const v4, 0x7f0900ed
 
     invoke-virtual {v3, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -124,7 +124,7 @@
 
     invoke-static {v1}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a(Landroid/app/ProgressDialog;)Landroid/app/ProgressDialog;
 
-    .line 362
+    .line 360
     new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
@@ -137,19 +137,19 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/holder/DashboardHolder_wallet$2;->a:Landroid/app/Activity;
 
-    .line 363
+    .line 361
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/app/Activity;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
     sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
 
-    .line 364
+    .line 362
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    .line 365
+    .line 363
     invoke-virtual {v1, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -162,7 +162,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/holder/DashboardHolder_wallet$2;->a:Landroid/app/Activity;
 
-    .line 366
+    .line 364
     invoke-static {v1}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
@@ -173,7 +173,7 @@
 
     sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 367
+    .line 365
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -182,15 +182,15 @@
 
     invoke-direct {v1, p0}, Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1$1$3$1;-><init>(Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1$1$3;)V
 
-    .line 368
+    .line 366
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 416
+    .line 414
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    .line 418
+    .line 416
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -223,6 +223,6 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 419
+    .line 417
     return-void
 .end method

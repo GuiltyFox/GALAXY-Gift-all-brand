@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 84
+    .line 86
     iput-object p1, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$1;->a:Lcom/bzbs/marketplace/activity/ReviewActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 7
 
     .prologue
-    .line 88
+    .line 90
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$1;->a:Lcom/bzbs/marketplace/activity/ReviewActivity;
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getApplicationContext()Landroid/content/Context;
@@ -46,7 +46,7 @@
 
     move-result-object v0
 
-    .line 89
+    .line 91
     if-eqz v0, :cond_42
 
     const-string/jumbo v1, ""
@@ -57,7 +57,7 @@
 
     if-nez v0, :cond_42
 
-    .line 90
+    .line 92
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$1;->a:Lcom/bzbs/marketplace/activity/ReviewActivity;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->a(Lcom/bzbs/marketplace/activity/ReviewActivity;)Z
@@ -66,7 +66,7 @@
 
     if-eqz v0, :cond_2c
 
-    .line 91
+    .line 93
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$1;->a:Lcom/bzbs/marketplace/activity/ReviewActivity;
 
     iget-object v1, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$1;->a:Lcom/bzbs/marketplace/activity/ReviewActivity;
@@ -81,7 +81,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/bzbs/marketplace/dialog/util/DialogUtils;->a(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/bean/Campaign;)V
 
-    .line 93
+    .line 95
     :cond_2c
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$1;->a:Lcom/bzbs/marketplace/activity/ReviewActivity;
 
@@ -89,7 +89,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/marketplace/activity/ReviewActivity;->a(Lcom/bzbs/marketplace/activity/ReviewActivity;Z)Z
 
-    .line 94
+    .line 96
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
@@ -102,11 +102,11 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 104
+    .line 106
     :goto_41
     return-void
 
-    .line 101
+    .line 103
     :cond_42
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$1;->a:Lcom/bzbs/marketplace/activity/ReviewActivity;
 
@@ -116,7 +116,7 @@
 
     iget-object v2, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$1;->a:Lcom/bzbs/marketplace/activity/ReviewActivity;
 
-    iget-object v2, v2, Lcom/bzbs/marketplace/activity/ReviewActivity;->E:Lcom/facebook/CallbackManager;
+    iget-object v2, v2, Lcom/bzbs/marketplace/activity/ReviewActivity;->F:Lcom/facebook/CallbackManager;
 
     const-string/jumbo v3, "BZB Campaign Review"
 

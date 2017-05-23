@@ -18,7 +18,7 @@
     .registers 1
 
     .prologue
-    .line 33
+    .line 34
     const-class v0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -34,7 +34,7 @@
     .registers 1
 
     .prologue
-    .line 31
+    .line 32
     invoke-direct {p0}, Landroid/support/v7/app/AppCompatActivity;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
     .registers 6
 
     .prologue
-    .line 193
+    .line 205
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -55,7 +55,7 @@
 
     move-result-object v0
 
-    .line 194
+    .line 206
     if-eqz v0, :cond_91
 
     const-string/jumbo v1, ""
@@ -66,7 +66,7 @@
 
     if-nez v1, :cond_91
 
-    .line 195
+    .line 207
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
@@ -79,7 +79,7 @@
 
     if-eqz v1, :cond_3b
 
-    .line 196
+    .line 208
     new-instance v0, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->getApplicationContext()Landroid/content/Context;
@@ -90,22 +90,22 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 198
+    .line 210
     const-string/jumbo v1, "campaign_id"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 199
+    .line 211
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 221
+    .line 233
     :goto_37
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->finish()V
 
-    .line 222
+    .line 234
     return-void
 
-    .line 200
+    .line 212
     :cond_3b
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -119,7 +119,7 @@
 
     if-eqz v0, :cond_7c
 
-    .line 201
+    .line 213
     new-instance v0, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->getApplicationContext()Landroid/content/Context;
@@ -130,24 +130,24 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 202
+    .line 214
     new-instance v1, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;
 
     invoke-direct {v1}, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;-><init>()V
 
-    .line 203
+    .line 215
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;->setID(Ljava/lang/String;)V
 
-    .line 204
+    .line 216
     new-instance v2, Landroid/os/Bundle;
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    .line 205
+    .line 217
     const-string/jumbo v3, "ItemMarketPlace"
 
     invoke-static {v1}, Lorg/parceler/Parcels;->a(Ljava/lang/Object;)Landroid/os/Parcelable;
@@ -156,22 +156,22 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 206
+    .line 218
     const-string/jumbo v1, "ItemMarketPlace::Ads::Ins"
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v1, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 207
+    .line 219
     invoke-virtual {v0, v2}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 208
+    .line 220
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_37
 
-    .line 210
+    .line 222
     :cond_7c
     new-instance v0, Landroid/content/Intent;
 
@@ -183,17 +183,17 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 212
+    .line 224
     const-string/jumbo v1, "campaign_id"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 213
+    .line 225
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_37
 
-    .line 216
+    .line 228
     :cond_91
     new-instance v0, Landroid/content/Intent;
 
@@ -205,12 +205,12 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 218
+    .line 230
     const-string/jumbo v1, "campaign_id"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 219
+    .line 231
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_37
@@ -220,7 +220,7 @@
     .registers 1
 
     .prologue
-    .line 31
+    .line 32
     invoke-direct {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->g()V
 
     return-void
@@ -230,7 +230,7 @@
     .registers 2
 
     .prologue
-    .line 31
+    .line 32
     iget-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->c:Landroid/app/ProgressDialog;
 
     return-object v0
@@ -240,7 +240,7 @@
     .registers 1
 
     .prologue
-    .line 31
+    .line 32
     invoke-direct {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->i()V
 
     return-void
@@ -250,7 +250,7 @@
     .registers 1
 
     .prologue
-    .line 31
+    .line 32
     sget-object v0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->a:Ljava/lang/String;
 
     return-object v0
@@ -260,7 +260,7 @@
     .registers 7
 
     .prologue
-    .line 72
+    .line 84
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -313,7 +313,7 @@
 
     move-result-object v1
 
-    .line 74
+    .line 86
     const-string/jumbo v0, ""
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -322,7 +322,7 @@
 
     if-nez v0, :cond_d4
 
-    .line 75
+    .line 87
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -373,10 +373,10 @@
 
     invoke-static {v0, v2}, Lcom/bzbs/util/LocalFileHelper;->c(Ljava/lang/String;Landroid/content/Context;)J
 
-    .line 76
+    .line 88
     const-wide/16 v2, 0x0
 
-    .line 77
+    .line 89
     sget v0, Lcom/bzbs/data/AppSetting;->aa:I
 
     int-to-long v4, v0
@@ -385,35 +385,35 @@
 
     if-lez v0, :cond_83
 
-    .line 78
+    .line 90
     invoke-direct {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->h()V
 
-    .line 105
+    .line 117
     :goto_82
     return-void
 
-    .line 80
+    .line 92
     :cond_83
     const/4 v0, 0x0
 
-    .line 82
+    .line 94
     :try_start_84
     new-instance v2, Lorg/json/JSONArray;
 
     invoke-direct {v2, v1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 83
+    .line 95
     invoke-virtual {v2}, Lorg/json/JSONArray;->length()I
     :try_end_8c
     .catch Ljava/lang/Exception; {:try_start_84 .. :try_end_8c} :catch_d8
 
     move-result v0
 
-    .line 88
+    .line 100
     :goto_8d
     if-lez v0, :cond_d0
 
-    .line 89
+    .line 101
     new-instance v0, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->getApplicationContext()Landroid/content/Context;
@@ -424,28 +424,28 @@
 
     invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 90
+    .line 102
     const-string/jumbo v2, "header_en"
 
     const-string/jumbo v3, "ADS"
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 91
+    .line 103
     const-string/jumbo v2, "header"
 
     const-string/jumbo v3, "ADS"
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 92
+    .line 104
     const-string/jumbo v2, "cat"
 
     const-string/jumbo v3, ""
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 93
+    .line 105
     const-string/jumbo v2, "dashboard_key"
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->getApplicationContext()Landroid/content/Context;
@@ -458,32 +458,32 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 94
+    .line 106
     const-string/jumbo v2, "dashboard_json"
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 95
+    .line 107
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 97
+    .line 109
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->finish()V
 
     goto :goto_82
 
-    .line 99
+    .line 111
     :cond_d0
     invoke-direct {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->i()V
 
     goto :goto_82
 
-    .line 103
+    .line 115
     :cond_d4
     invoke-direct {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->h()V
 
     goto :goto_82
 
-    .line 84
+    .line 96
     :catch_d8
     move-exception v2
 
@@ -496,24 +496,24 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 108
+    .line 120
     new-instance v0, Landroid/app/ProgressDialog;
 
     invoke-direct {v0, p0}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->c:Landroid/app/ProgressDialog;
 
-    .line 109
+    .line 121
     iget-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->c:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setCancelable(Z)V
 
-    .line 110
+    .line 122
     iget-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->c:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->requestWindowFeature(I)Z
 
-    .line 111
+    .line 123
     iget-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->c:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->getWindow()Landroid/view/Window;
@@ -528,19 +528,19 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 112
+    .line 124
     iget-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->c:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->show()V
 
-    .line 114
+    .line 126
     iget-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->c:Landroid/app/ProgressDialog;
 
-    const v1, 0x7f040127
+    const v1, 0x7f0400b8
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setContentView(I)V
 
-    .line 115
+    .line 127
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -573,7 +573,7 @@
 
     move-result-object v0
 
-    .line 116
+    .line 128
     sget-object v1, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->a:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -596,29 +596,29 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 117
+    .line 129
     new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
 
-    .line 118
+    .line 130
     invoke-virtual {v1, p0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/app/Activity;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
     sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
 
-    .line 119
+    .line 131
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    .line 120
+    .line 132
     invoke-virtual {v1, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 121
+    .line 133
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -633,7 +633,7 @@
 
     sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 122
+    .line 134
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -642,15 +642,15 @@
 
     invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity$2;-><init>(Lcom/samsung/privilege/activity/SplashScreenAdsActivity;)V
 
-    .line 123
+    .line 135
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 173
+    .line 185
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    .line 174
+    .line 186
     return-void
 .end method
 
@@ -660,7 +660,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 177
+    .line 189
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -679,17 +679,17 @@
 
     move-result v0
 
-    .line 178
+    .line 190
     if-lez v0, :cond_1a
 
-    .line 179
+    .line 191
     invoke-direct {p0, v0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->a(I)V
 
-    .line 190
+    .line 202
     :goto_19
     return-void
 
-    .line 181
+    .line 193
     :cond_1a
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -713,12 +713,12 @@
 
     if-nez v0, :cond_33
 
-    .line 182
+    .line 194
     invoke-static {p0, v2}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;Z)V
 
     goto :goto_19
 
-    .line 184
+    .line 196
     :cond_33
     new-instance v0, Landroid/content/Intent;
 
@@ -730,10 +730,10 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 185
+    .line 197
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 187
+    .line 199
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->finish()V
 
     goto :goto_19
@@ -745,29 +745,54 @@
     .registers 6
 
     .prologue
-    .line 41
+    .line 42
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 42
-    const v0, 0x7f040180
+    .line 45
+    :try_start_3
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x15
+
+    if-lt v0, v1, :cond_17
+
+    .line 48
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "#6A75BA"
+
+    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setStatusBarColor(I)V
+    :try_end_17
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_17} :catch_37
+
+    .line 54
+    :cond_17
+    :goto_17
+    const v0, 0x7f040114
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->setContentView(I)V
 
-    .line 44
+    .line 56
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->b:Landroid/os/Handler;
 
-    .line 46
+    .line 58
     const/high16 v0, 0x7f050000
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->overridePendingTransition(II)V
 
-    .line 48
+    .line 60
     iget-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->b:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/activity/SplashScreenAdsActivity$1;
@@ -778,6 +803,12 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 69
+    .line 81
     return-void
+
+    .line 50
+    :catch_37
+    move-exception v0
+
+    goto :goto_17
 .end method

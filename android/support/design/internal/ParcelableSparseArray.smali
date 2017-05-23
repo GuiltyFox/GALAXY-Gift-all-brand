@@ -36,17 +36,19 @@
     .registers 1
 
     .prologue
-    .line 64
+    .line 68
     new-instance v0, Landroid/support/design/internal/ParcelableSparseArray$1;
 
     invoke-direct {v0}, Landroid/support/design/internal/ParcelableSparseArray$1;-><init>()V
 
+    .line 70
     invoke-static {v0}, Landroid/support/v4/os/ParcelableCompat;->a(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)Landroid/os/Parcelable$Creator;
 
     move-result-object v0
 
     sput-object v0, Landroid/support/design/internal/ParcelableSparseArray;->CREATOR:Landroid/os/Parcelable$Creator;
 
+    .line 68
     return-void
 .end method
 
@@ -54,10 +56,10 @@
     .registers 1
 
     .prologue
-    .line 31
+    .line 35
     invoke-direct {p0}, Landroid/util/SparseArray;-><init>()V
 
-    .line 32
+    .line 36
     return-void
 .end method
 
@@ -65,44 +67,44 @@
     .registers 9
 
     .prologue
-    .line 35
+    .line 39
     invoke-direct {p0}, Landroid/util/SparseArray;-><init>()V
 
-    .line 36
+    .line 40
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
-    .line 37
+    .line 41
     new-array v2, v1, [I
 
-    .line 38
+    .line 42
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->readIntArray([I)V
 
-    .line 39
+    .line 43
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelableArray(Ljava/lang/ClassLoader;)[Landroid/os/Parcelable;
 
     move-result-object v3
 
-    .line 40
+    .line 44
     const/4 v0, 0x0
 
     :goto_11
     if-ge v0, v1, :cond_1d
 
-    .line 41
+    .line 45
     aget v4, v2, v0
 
     aget-object v5, v3, v0
 
     invoke-virtual {p0, v4, v5}, Landroid/support/design/internal/ParcelableSparseArray;->put(ILjava/lang/Object;)V
 
-    .line 40
+    .line 44
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_11
 
-    .line 43
+    .line 47
     :cond_1d
     return-void
 .end method
@@ -113,7 +115,7 @@
     .registers 2
 
     .prologue
-    .line 47
+    .line 51
     const/4 v0, 0x0
 
     return v0
@@ -123,18 +125,18 @@
     .registers 8
 
     .prologue
-    .line 52
+    .line 56
     invoke-virtual {p0}, Landroid/support/design/internal/ParcelableSparseArray;->size()I
 
     move-result v2
 
-    .line 53
+    .line 57
     new-array v3, v2, [I
 
-    .line 54
+    .line 58
     new-array v4, v2, [Landroid/os/Parcelable;
 
-    .line 55
+    .line 59
     const/4 v0, 0x0
 
     move v1, v0
@@ -142,14 +144,14 @@
     :goto_a
     if-ge v1, v2, :cond_1e
 
-    .line 56
+    .line 60
     invoke-virtual {p0, v1}, Landroid/support/design/internal/ParcelableSparseArray;->keyAt(I)I
 
     move-result v0
 
     aput v0, v3, v1
 
-    .line 57
+    .line 61
     invoke-virtual {p0, v1}, Landroid/support/design/internal/ParcelableSparseArray;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -158,23 +160,23 @@
 
     aput-object v0, v4, v1
 
-    .line 55
+    .line 59
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_a
 
-    .line 59
+    .line 63
     :cond_1e
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 60
+    .line 64
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 61
+    .line 65
     invoke-virtual {p1, v4, p2}, Landroid/os/Parcel;->writeParcelableArray([Landroid/os/Parcelable;I)V
 
-    .line 62
+    .line 66
     return-void
 .end method

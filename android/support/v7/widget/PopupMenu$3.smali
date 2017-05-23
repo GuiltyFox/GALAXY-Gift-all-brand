@@ -35,10 +35,7 @@
     .line 186
     iget-object v0, p0, Landroid/support/v7/widget/PopupMenu$3;->a:Landroid/support/v7/widget/PopupMenu;
 
-    # getter for: Landroid/support/v7/widget/PopupMenu;->mPopup:Landroid/support/v7/view/menu/MenuPopupHelper;
-    invoke-static {v0}, Landroid/support/v7/widget/PopupMenu;->access$200(Landroid/support/v7/widget/PopupMenu;)Landroid/support/v7/view/menu/MenuPopupHelper;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/widget/PopupMenu;->mPopup:Landroid/support/v7/view/menu/MenuPopupHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuPopupHelper;->c()Landroid/support/v7/view/menu/MenuPopup;
 

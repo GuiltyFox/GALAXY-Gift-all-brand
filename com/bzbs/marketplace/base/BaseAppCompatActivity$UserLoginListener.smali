@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 399
+    .line 408
     iput-object p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 399
+    .line 408
     invoke-direct {p0, p1}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;-><init>(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 402
+    .line 411
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->b(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)Landroid/os/Handler;
@@ -52,7 +52,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 408
+    .line 417
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .registers 4
 
     .prologue
-    .line 411
+    .line 420
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->b(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)Landroid/os/Handler;
@@ -73,7 +73,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 417
+    .line 426
     return-void
 .end method
 
@@ -81,7 +81,7 @@
     .registers 4
 
     .prologue
-    .line 421
+    .line 430
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->b(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)Landroid/os/Handler;
@@ -94,7 +94,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 427
+    .line 436
     return-void
 .end method
 
@@ -102,7 +102,7 @@
     .registers 4
 
     .prologue
-    .line 431
+    .line 440
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->b(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)Landroid/os/Handler;
@@ -115,6 +115,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 437
+    .line 446
     return-void
 .end method

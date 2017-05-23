@@ -20,7 +20,7 @@
     .registers 3
 
     .prologue
-    .line 1843
+    .line 2026
     iput-object p1, p0, Landroid/support/design/widget/TabLayout$SlidingTabStrip$2;->this$1:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
     iput p2, p0, Landroid/support/design/widget/TabLayout$SlidingTabStrip$2;->val$position:I
@@ -36,22 +36,20 @@
     .registers 4
 
     .prologue
-    .line 1846
+    .line 2029
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$SlidingTabStrip$2;->this$1:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
     iget v1, p0, Landroid/support/design/widget/TabLayout$SlidingTabStrip$2;->val$position:I
 
-    # setter for: Landroid/support/design/widget/TabLayout$SlidingTabStrip;->mSelectedPosition:I
-    invoke-static {v0, v1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->access$2402(Landroid/support/design/widget/TabLayout$SlidingTabStrip;I)I
+    iput v1, v0, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->mSelectedPosition:I
 
-    .line 1847
+    .line 2030
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$SlidingTabStrip$2;->this$1:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
     const/4 v1, 0x0
 
-    # setter for: Landroid/support/design/widget/TabLayout$SlidingTabStrip;->mSelectionOffset:F
-    invoke-static {v0, v1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->access$2502(Landroid/support/design/widget/TabLayout$SlidingTabStrip;F)F
+    iput v1, v0, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->mSelectionOffset:F
 
-    .line 1848
+    .line 2031
     return-void
 .end method

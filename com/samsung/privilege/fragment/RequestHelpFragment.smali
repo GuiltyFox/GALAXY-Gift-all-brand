@@ -6,19 +6,19 @@
 # instance fields
 .field btnAddPicture:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006cf
+        value = 0x7f1004c7
     .end annotation
 .end field
 
 .field contentImagePost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006c3
+        value = 0x7f1004ba
     .end annotation
 .end field
 
 .field edtTextComment:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006c6
+        value = 0x7f1004bd
     .end annotation
 .end field
 
@@ -39,7 +39,7 @@
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006c4
+        value = 0x7f1004bb
     .end annotation
 .end field
 
@@ -53,7 +53,7 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066e
+        value = 0x7f100465
     .end annotation
 .end field
 
@@ -65,7 +65,7 @@
 
 .field pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006c2
+        value = 0x7f1004b9
     .end annotation
 .end field
 
@@ -75,13 +75,13 @@
 
 .field recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006d0
+        value = 0x7f1004c8
     .end annotation
 .end field
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006c1
+        value = 0x7f1004b8
     .end annotation
 .end field
 
@@ -91,7 +91,7 @@
 
 .field tvResult:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006ad
+        value = 0x7f1004a4
     .end annotation
 .end field
 
@@ -905,7 +905,7 @@
     .line 279
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->btnAddPicture:Landroid/widget/ImageView;
 
-    const v1, 0x7f02026d
+    const v1, 0x7f020159
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1602,7 +1602,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 131
-    const v0, 0x7f04015a
+    const v0, 0x7f0400e7
 
     return v0
 .end method
@@ -1648,7 +1648,7 @@
 
     check-cast v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->I:Lcom/tbruyelle/rxpermissions/RxPermissions;
+    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->J:Lcom/tbruyelle/rxpermissions/RxPermissions;
 
     const/4 v1, 0x1
 
@@ -1679,7 +1679,7 @@
     .registers 4
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1006cf
+            0x7f1004c7
         }
     .end annotation
 
@@ -1707,8 +1707,8 @@
     .registers 6
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1006c5,
-            0x7f100446
+            0x7f1004bc,
+            0x7f1004be
         }
     .end annotation
 
@@ -1722,7 +1722,7 @@
 
     move-result v0
 
-    const v1, 0x7f1006c5
+    const v1, 0x7f1004bc
 
     if-ne v0, v1, :cond_f
 
@@ -1756,7 +1756,7 @@
     .line 359
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
-    const v1, 0x7f090252
+    const v1, 0x7f0900db
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->getString(I)Ljava/lang/String;
 
@@ -1793,7 +1793,7 @@
 
     check-cast v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->I:Lcom/tbruyelle/rxpermissions/RxPermissions;
+    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->J:Lcom/tbruyelle/rxpermissions/RxPermissions;
 
     new-array v1, v2, [Ljava/lang/String;
 

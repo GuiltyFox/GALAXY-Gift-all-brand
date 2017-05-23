@@ -7,23 +7,14 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>()V
     .registers 1
 
     .prologue
-    .line 658
+    .line 660
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v7/widget/DefaultItemAnimator$1;)V
-    .registers 2
-
-    .prologue
-    .line 658
-    invoke-direct {p0}, Landroid/support/v7/widget/DefaultItemAnimator$VpaListenerAdapter;-><init>()V
-
+    .line 661
     return-void
 .end method
 
@@ -33,7 +24,7 @@
     .registers 2
 
     .prologue
-    .line 666
+    .line 670
     return-void
 .end method
 
@@ -41,7 +32,7 @@
     .registers 2
 
     .prologue
-    .line 663
+    .line 667
     return-void
 .end method
 
@@ -49,6 +40,6 @@
     .registers 2
 
     .prologue
-    .line 660
+    .line 664
     return-void
 .end method

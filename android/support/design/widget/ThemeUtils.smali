@@ -19,7 +19,7 @@
 
     const/4 v1, 0x0
 
-    sget v2, Landroid/support/design/R$attr;->colorPrimary:I
+    sget v2, Landroid/support/v7/appcompat/R$attr;->colorPrimary:I
 
     aput v2, v0, v1
 
@@ -44,14 +44,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 28
+    .line 30
     sget-object v1, Landroid/support/design/widget/ThemeUtils;->APPCOMPAT_CHECK_ATTRS:[I
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
 
     move-result-object v1
 
-    .line 29
+    .line 31
     invoke-virtual {v1, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v2
@@ -60,18 +60,18 @@
 
     const/4 v0, 0x1
 
-    .line 30
+    .line 32
     :cond_e
     if-eqz v1, :cond_13
 
-    .line 31
+    .line 33
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 33
+    .line 35
     :cond_13
     if-eqz v0, :cond_1e
 
-    .line 34
+    .line 36
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "You need to use a Theme.AppCompat theme (or descendant) with the design library."
@@ -80,7 +80,7 @@
 
     throw v0
 
-    .line 37
+    .line 39
     :cond_1e
     return-void
 .end method

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 2417
+    .line 2427
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +35,10 @@
     .registers 3
 
     .prologue
-    .line 2420
+    .line 2430
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    const v1, 0x7f100185
+    const v1, 0x7f100170
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->findViewById(I)Landroid/view/View;
 
@@ -46,11 +46,11 @@
 
     check-cast v0, Landroid/support/v4/widget/DrawerLayout;
 
-    .line 2421
+    .line 2431
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/DrawerLayout;->f(I)V
 
-    .line 2422
+    .line 2432
     return-void
 .end method

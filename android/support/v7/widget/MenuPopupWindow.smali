@@ -21,7 +21,7 @@
     .registers 5
 
     .prologue
-    .line 58
+    .line 62
     :try_start_0
     const-class v0, Landroid/widget/PopupWindow;
 
@@ -45,15 +45,15 @@
     :try_end_13
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_13} :catch_14
 
-    .line 63
+    .line 67
     :goto_13
     return-void
 
-    .line 60
+    .line 64
     :catch_14
     move-exception v0
 
-    .line 61
+    .line 65
     const-string/jumbo v0, "MenuPopupWindow"
 
     const-string/jumbo v1, "Could not find method setTouchModal() on PopupWindow. Oh well."
@@ -67,10 +67,10 @@
     .registers 5
 
     .prologue
-    .line 68
+    .line 72
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/support/v7/widget/ListPopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 69
+    .line 73
     return-void
 .end method
 
@@ -80,15 +80,15 @@
     .registers 4
 
     .prologue
-    .line 73
+    .line 77
     new-instance v0, Landroid/support/v7/widget/MenuPopupWindow$MenuDropDownListView;
 
     invoke-direct {v0, p1, p2}, Landroid/support/v7/widget/MenuPopupWindow$MenuDropDownListView;-><init>(Landroid/content/Context;Z)V
 
-    .line 74
+    .line 78
     invoke-virtual {v0, p0}, Landroid/support/v7/widget/MenuPopupWindow$MenuDropDownListView;->setHoverListener(Landroid/support/v7/widget/MenuItemHoverListener;)V
 
-    .line 75
+    .line 79
     return-object v0
 .end method
 
@@ -96,17 +96,17 @@
     .registers 4
 
     .prologue
-    .line 111
+    .line 115
     iget-object v0, p0, Landroid/support/v7/widget/MenuPopupWindow;->mHoverListener:Landroid/support/v7/widget/MenuItemHoverListener;
 
     if-eqz v0, :cond_9
 
-    .line 112
+    .line 116
     iget-object v0, p0, Landroid/support/v7/widget/MenuPopupWindow;->mHoverListener:Landroid/support/v7/widget/MenuItemHoverListener;
 
     invoke-interface {v0, p1, p2}, Landroid/support/v7/widget/MenuItemHoverListener;->onItemHoverEnter(Landroid/support/v7/view/menu/MenuBuilder;Landroid/view/MenuItem;)V
 
-    .line 114
+    .line 118
     :cond_9
     return-void
 .end method
@@ -115,17 +115,17 @@
     .registers 4
 
     .prologue
-    .line 119
+    .line 123
     iget-object v0, p0, Landroid/support/v7/widget/MenuPopupWindow;->mHoverListener:Landroid/support/v7/widget/MenuItemHoverListener;
 
     if-eqz v0, :cond_9
 
-    .line 120
+    .line 124
     iget-object v0, p0, Landroid/support/v7/widget/MenuPopupWindow;->mHoverListener:Landroid/support/v7/widget/MenuItemHoverListener;
 
     invoke-interface {v0, p1, p2}, Landroid/support/v7/widget/MenuItemHoverListener;->onItemHoverExit(Landroid/support/v7/view/menu/MenuBuilder;Landroid/view/MenuItem;)V
 
-    .line 122
+    .line 126
     :cond_9
     return-void
 .end method
@@ -134,21 +134,21 @@
     .registers 4
 
     .prologue
-    .line 79
+    .line 83
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
 
     if-lt v0, v1, :cond_d
 
-    .line 80
+    .line 84
     iget-object v0, p0, Landroid/support/v7/widget/MenuPopupWindow;->mPopup:Landroid/widget/PopupWindow;
 
     check-cast p1, Landroid/transition/Transition;
 
     invoke-virtual {v0, p1}, Landroid/widget/PopupWindow;->setEnterTransition(Landroid/transition/Transition;)V
 
-    .line 82
+    .line 86
     :cond_d
     return-void
 .end method
@@ -157,21 +157,21 @@
     .registers 4
 
     .prologue
-    .line 85
+    .line 89
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
 
     if-lt v0, v1, :cond_d
 
-    .line 86
+    .line 90
     iget-object v0, p0, Landroid/support/v7/widget/MenuPopupWindow;->mPopup:Landroid/widget/PopupWindow;
 
     check-cast p1, Landroid/transition/Transition;
 
     invoke-virtual {v0, p1}, Landroid/widget/PopupWindow;->setExitTransition(Landroid/transition/Transition;)V
 
-    .line 88
+    .line 92
     :cond_d
     return-void
 .end method
@@ -180,10 +180,10 @@
     .registers 2
 
     .prologue
-    .line 91
+    .line 95
     iput-object p1, p0, Landroid/support/v7/widget/MenuPopupWindow;->mHoverListener:Landroid/support/v7/widget/MenuItemHoverListener;
 
-    .line 92
+    .line 96
     return-void
 .end method
 
@@ -191,12 +191,12 @@
     .registers 7
 
     .prologue
-    .line 99
+    .line 103
     sget-object v0, Landroid/support/v7/widget/MenuPopupWindow;->sSetTouchModalMethod:Ljava/lang/reflect/Method;
 
     if-eqz v0, :cond_15
 
-    .line 101
+    .line 105
     :try_start_4
     sget-object v0, Landroid/support/v7/widget/MenuPopupWindow;->sSetTouchModalMethod:Ljava/lang/reflect/Method;
 
@@ -218,16 +218,16 @@
     :try_end_15
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_15} :catch_16
 
-    .line 106
+    .line 110
     :cond_15
     :goto_15
     return-void
 
-    .line 102
+    .line 106
     :catch_16
     move-exception v0
 
-    .line 103
+    .line 107
     const-string/jumbo v0, "MenuPopupWindow"
 
     const-string/jumbo v1, "Could not invoke setTouchModal() on PopupWindow. Oh well."

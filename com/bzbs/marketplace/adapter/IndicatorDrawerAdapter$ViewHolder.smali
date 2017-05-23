@@ -10,13 +10,13 @@
 
 .field contentPackSticker:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006d5
+        value = 0x7f1004cd
     .end annotation
 .end field
 
 .field imageParentSticker:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006d6
+        value = 0x7f1004ce
     .end annotation
 .end field
 
@@ -65,7 +65,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0f0037
+    const v2, 0x7f0e002a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -83,7 +83,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0202e1
+    const v3, 0x7f0201b7
 
     invoke-static {v0, v1, v2, v3}, Lcom/bzbs/marketplace/control/InitImage;->a(Landroid/app/Activity;Landroid/widget/ImageView;Ljava/lang/String;I)V
 

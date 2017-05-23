@@ -42,27 +42,25 @@
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_25
 
     .line 751
-    invoke-static {p1}, Landroid/support/v7/widget/ActionMenuPresenter;->e(Landroid/support/v7/widget/ActionMenuPresenter;)Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;
+    iget-object v0, p1, Landroid/support/v7/widget/ActionMenuPresenter;->g:Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;
 
-    move-result-object v0
+    if-nez v0, :cond_2b
 
-    if-nez v0, :cond_2d
-
-    invoke-static {p1}, Landroid/support/v7/widget/ActionMenuPresenter;->f(Landroid/support/v7/widget/ActionMenuPresenter;)Landroid/support/v7/view/menu/MenuView;
+    invoke-static {p1}, Landroid/support/v7/widget/ActionMenuPresenter;->c(Landroid/support/v7/widget/ActionMenuPresenter;)Landroid/support/v7/view/menu/MenuView;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/View;
 
-    :goto_24
+    :goto_22
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionMenuPresenter$ActionButtonSubmenu;->a(Landroid/view/View;)V
 
     .line 754
-    :cond_27
-    iget-object v0, p1, Landroid/support/v7/widget/ActionMenuPresenter;->g:Landroid/support/v7/widget/ActionMenuPresenter$PopupPresenterCallback;
+    :cond_25
+    iget-object v0, p1, Landroid/support/v7/widget/ActionMenuPresenter;->k:Landroid/support/v7/widget/ActionMenuPresenter$PopupPresenterCallback;
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionMenuPresenter$ActionButtonSubmenu;->a(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
 
@@ -70,12 +68,10 @@
     return-void
 
     .line 751
-    :cond_2d
-    invoke-static {p1}, Landroid/support/v7/widget/ActionMenuPresenter;->e(Landroid/support/v7/widget/ActionMenuPresenter;)Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;
+    :cond_2b
+    iget-object v0, p1, Landroid/support/v7/widget/ActionMenuPresenter;->g:Landroid/support/v7/widget/ActionMenuPresenter$OverflowMenuButton;
 
-    move-result-object v0
-
-    goto :goto_24
+    goto :goto_22
 .end method
 
 
@@ -89,14 +85,14 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Landroid/support/v7/widget/ActionMenuPresenter;->a(Landroid/support/v7/widget/ActionMenuPresenter;Landroid/support/v7/widget/ActionMenuPresenter$ActionButtonSubmenu;)Landroid/support/v7/widget/ActionMenuPresenter$ActionButtonSubmenu;
+    iput-object v1, v0, Landroid/support/v7/widget/ActionMenuPresenter;->i:Landroid/support/v7/widget/ActionMenuPresenter$ActionButtonSubmenu;
 
     .line 760
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$ActionButtonSubmenu;->a:Landroid/support/v7/widget/ActionMenuPresenter;
 
     const/4 v1, 0x0
 
-    iput v1, v0, Landroid/support/v7/widget/ActionMenuPresenter;->h:I
+    iput v1, v0, Landroid/support/v7/widget/ActionMenuPresenter;->l:I
 
     .line 762
     invoke-super {p0}, Landroid/support/v7/view/menu/MenuPopupHelper;->f()V

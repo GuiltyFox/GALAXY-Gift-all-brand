@@ -27,7 +27,7 @@
     .registers 1
 
     .prologue
-    .line 2119
+    .line 2187
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 3
 
     .prologue
-    .line 2122
+    .line 2190
     new-instance v0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     invoke-direct {v0, p1}, Landroid/support/v7/widget/LinearLayoutManager$SavedState;-><init>(Landroid/os/Parcel;)V
@@ -51,7 +51,7 @@
     .registers 3
 
     .prologue
-    .line 2127
+    .line 2195
     new-array v0, p1, [Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     return-object v0
@@ -61,7 +61,7 @@
     .registers 3
 
     .prologue
-    .line 2119
+    .line 2187
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager$SavedState$1;->a(Landroid/os/Parcel;)Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .registers 3
 
     .prologue
-    .line 2119
+    .line 2187
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/LinearLayoutManager$SavedState$1;->a(I)[Landroid/support/v7/widget/LinearLayoutManager$SavedState;
 
     move-result-object v0

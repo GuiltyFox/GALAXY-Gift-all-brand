@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 379
+    .line 385
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogSerialGift$9;->a:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,13 +35,13 @@
     .registers 3
 
     .prologue
-    .line 382
+    .line 388
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$9;->a:Landroid/content/Context;
 
     check-cast v0, Landroid/app/Activity;
 
     invoke-static {v0}, Lcom/samsung/privilege/util/ScreenUtil;->d(Landroid/app/Activity;)V
 
-    .line 383
+    .line 389
     return-void
 .end method

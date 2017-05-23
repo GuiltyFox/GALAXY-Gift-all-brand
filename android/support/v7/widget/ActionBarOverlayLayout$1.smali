@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 91
+    .line 95
     iput-object p1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout$1;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
     invoke-direct {p0}, Landroid/support/v4/view/ViewPropertyAnimatorListenerAdapter;-><init>()V
@@ -32,23 +32,21 @@
     .registers 4
 
     .prologue
-    .line 100
+    .line 104
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout$1;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
     const/4 v1, 0x0
 
-    # setter for: Landroid/support/v7/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
-    invoke-static {v0, v1}, Landroid/support/v7/widget/ActionBarOverlayLayout;->access$002(Landroid/support/v7/widget/ActionBarOverlayLayout;Landroid/support/v4/view/ViewPropertyAnimatorCompat;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    iput-object v1, v0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 101
+    .line 105
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout$1;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
     const/4 v1, 0x0
 
-    # setter for: Landroid/support/v7/widget/ActionBarOverlayLayout;->mAnimatingForFling:Z
-    invoke-static {v0, v1}, Landroid/support/v7/widget/ActionBarOverlayLayout;->access$102(Landroid/support/v7/widget/ActionBarOverlayLayout;Z)Z
+    iput-boolean v1, v0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mAnimatingForFling:Z
 
-    .line 102
+    .line 106
     return-void
 .end method
 
@@ -56,22 +54,20 @@
     .registers 4
 
     .prologue
-    .line 94
+    .line 98
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout$1;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
     const/4 v1, 0x0
 
-    # setter for: Landroid/support/v7/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
-    invoke-static {v0, v1}, Landroid/support/v7/widget/ActionBarOverlayLayout;->access$002(Landroid/support/v7/widget/ActionBarOverlayLayout;Landroid/support/v4/view/ViewPropertyAnimatorCompat;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    iput-object v1, v0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 95
+    .line 99
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout$1;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
     const/4 v1, 0x0
 
-    # setter for: Landroid/support/v7/widget/ActionBarOverlayLayout;->mAnimatingForFling:Z
-    invoke-static {v0, v1}, Landroid/support/v7/widget/ActionBarOverlayLayout;->access$102(Landroid/support/v7/widget/ActionBarOverlayLayout;Z)Z
+    iput-boolean v1, v0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mAnimatingForFling:Z
 
-    .line 96
+    .line 100
     return-void
 .end method

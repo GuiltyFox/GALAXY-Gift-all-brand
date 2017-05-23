@@ -28,42 +28,17 @@
     .registers 3
 
     .prologue
-    .line 1932
+    .line 2115
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1933
+    .line 2116
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mTabLayoutRef:Ljava/lang/ref/WeakReference;
 
-    .line 1934
-    return-void
-.end method
-
-.method static synthetic access$300(Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;)V
-    .registers 1
-
-    .prologue
-    .line 1927
-    invoke-direct {p0}, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->reset()V
-
-    return-void
-.end method
-
-.method private reset()V
-    .registers 2
-
-    .prologue
-    .line 1974
-    const/4 v0, 0x0
-
-    iput v0, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mScrollState:I
-
-    iput v0, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mPreviousScrollState:I
-
-    .line 1975
+    .line 2117
     return-void
 .end method
 
@@ -73,15 +48,15 @@
     .registers 3
 
     .prologue
-    .line 1938
+    .line 2121
     iget v0, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mScrollState:I
 
     iput v0, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mPreviousScrollState:I
 
-    .line 1939
+    .line 2122
     iput p1, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mScrollState:I
 
-    .line 1940
+    .line 2123
     return-void
 .end method
 
@@ -95,7 +70,7 @@
 
     const/4 v3, 0x1
 
-    .line 1945
+    .line 2128
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mTabLayoutRef:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -104,10 +79,10 @@
 
     check-cast v0, Landroid/support/design/widget/TabLayout;
 
-    .line 1946
+    .line 2129
     if-eqz v0, :cond_22
 
-    .line 1949
+    .line 2132
     iget v1, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mScrollState:I
 
     if-ne v1, v5, :cond_15
@@ -119,7 +94,7 @@
     :cond_15
     move v1, v3
 
-    .line 1954
+    .line 2137
     :goto_16
     iget v4, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mScrollState:I
 
@@ -132,19 +107,18 @@
     :cond_1e
     move v2, v3
 
-    .line 1956
+    .line 2139
     :cond_1f
-    # invokes: Landroid/support/design/widget/TabLayout;->setScrollPosition(IFZZ)V
-    invoke-static {v0, p1, p2, v1, v2}, Landroid/support/design/widget/TabLayout;->access$2600(Landroid/support/design/widget/TabLayout;IFZZ)V
+    invoke-virtual {v0, p1, p2, v1, v2}, Landroid/support/design/widget/TabLayout;->setScrollPosition(IFZZ)V
 
-    .line 1958
+    .line 2141
     :cond_22
     return-void
 
     :cond_23
     move v1, v2
 
-    .line 1949
+    .line 2132
     goto :goto_16
 .end method
 
@@ -152,7 +126,7 @@
     .registers 5
 
     .prologue
-    .line 1962
+    .line 2145
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mTabLayoutRef:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -161,48 +135,70 @@
 
     check-cast v0, Landroid/support/design/widget/TabLayout;
 
-    .line 1963
-    if-eqz v0, :cond_25
+    .line 2146
+    if-eqz v0, :cond_2b
 
     invoke-virtual {v0}, Landroid/support/design/widget/TabLayout;->getSelectedTabPosition()I
 
     move-result v1
 
-    if-eq v1, p1, :cond_25
+    if-eq v1, p1, :cond_2b
 
-    .line 1966
+    .line 2147
+    invoke-virtual {v0}, Landroid/support/design/widget/TabLayout;->getTabCount()I
+
+    move-result v1
+
+    if-ge p1, v1, :cond_2b
+
+    .line 2150
     iget v1, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mScrollState:I
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_23
 
     iget v1, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mScrollState:I
 
     const/4 v2, 0x2
 
-    if-ne v1, v2, :cond_26
+    if-ne v1, v2, :cond_2c
 
     iget v1, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mPreviousScrollState:I
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_2c
 
-    :cond_1d
+    :cond_23
     const/4 v1, 0x1
 
-    .line 1969
-    :goto_1e
+    .line 2153
+    :goto_24
     invoke-virtual {v0, p1}, Landroid/support/design/widget/TabLayout;->getTabAt(I)Landroid/support/design/widget/TabLayout$Tab;
 
     move-result-object v2
 
     invoke-virtual {v0, v2, v1}, Landroid/support/design/widget/TabLayout;->selectTab(Landroid/support/design/widget/TabLayout$Tab;Z)V
 
-    .line 1971
-    :cond_25
+    .line 2155
+    :cond_2b
     return-void
 
-    .line 1966
-    :cond_26
+    .line 2150
+    :cond_2c
     const/4 v1, 0x0
 
-    goto :goto_1e
+    goto :goto_24
+.end method
+
+.method reset()V
+    .registers 2
+
+    .prologue
+    .line 2158
+    const/4 v0, 0x0
+
+    iput v0, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mScrollState:I
+
+    iput v0, p0, Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;->mPreviousScrollState:I
+
+    .line 2159
+    return-void
 .end method

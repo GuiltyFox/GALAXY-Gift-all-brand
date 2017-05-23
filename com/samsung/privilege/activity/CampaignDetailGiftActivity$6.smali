@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 758
+    .line 761
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$6;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 8
 
     .prologue
-    .line 762
+    .line 765
     :try_start_0
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$6;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -47,7 +47,7 @@
 
     move-result-object v0
 
-    .line 768
+    .line 771
     new-instance v1, Landroid/content/Intent;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$6;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -60,7 +60,7 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 770
+    .line 773
     const-string/jumbo v2, "campaign_id"
 
     iget-object v3, v0, Lcom/bzbs/bean/Campaign;->ID:Ljava/lang/String;
@@ -71,7 +71,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 771
+    .line 774
     const-string/jumbo v2, "campaign_history"
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$6;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -88,17 +88,17 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 772
+    .line 775
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$6;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v2, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 774
+    .line 777
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$6;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->finish()V
 
-    .line 783
+    .line 786
     const-string/jumbo v1, "Gift Campaign Details"
 
     const-string/jumbo v2, "Click Relate Deal"
@@ -133,11 +133,11 @@
     :try_end_64
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_64} :catch_65
 
-    .line 787
+    .line 790
     :goto_64
     return-void
 
-    .line 784
+    .line 787
     :catch_65
     move-exception v0
 

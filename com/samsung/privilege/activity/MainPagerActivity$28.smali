@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 2089
+    .line 2090
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$28;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 3
 
     .prologue
-    .line 2092
+    .line 2093
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$28;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$28;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
@@ -46,6 +46,6 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogNotification;->a(Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 2093
+    .line 2094
     return-void
 .end method

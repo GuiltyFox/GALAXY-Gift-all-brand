@@ -6,7 +6,7 @@
 # instance fields
 .field LayoutMainComman:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b9
+        value = 0x7f10025e
     .end annotation
 .end field
 
@@ -14,43 +14,43 @@
 
 .field btnClose:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002bb
+        value = 0x7f100260
     .end annotation
 .end field
 
 .field btnOK:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100204
+        value = 0x7f1001ef
     .end annotation
 .end field
 
 .field imgCampaign:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b2
+        value = 0x7f100247
     .end annotation
 .end field
 
 .field layoutRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b0
+        value = 0x7f100253
     .end annotation
 .end field
 
 .field svCondition:Landroid/widget/ScrollView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b5
+        value = 0x7f10024a
     .end annotation
 .end field
 
 .field tvCampaignDesc:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b3
+        value = 0x7f100255
     .end annotation
 .end field
 
 .field tvError:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002ca
+        value = 0x7f10039b
     .end annotation
 .end field
 
@@ -85,12 +85,12 @@
     .prologue
     const/high16 v6, 0x41f00000    # 30.0f
 
-    const v5, 0x7f0202e1
+    const v5, 0x7f0201b7
 
     .line 189
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     iget-object v2, p0, Lcom/bzbs/marketplace/dialog/ErrorBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ErrorBlurDialog;
 
@@ -100,7 +100,7 @@
 
     sub-int/2addr v1, v2
 
-    sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
+    sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->B:I
 
     iget-object v3, p0, Lcom/bzbs/marketplace/dialog/ErrorBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ErrorBlurDialog;
 
@@ -119,7 +119,7 @@
 
     const/4 v2, -0x1
 
-    sget v3, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v3, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     iget-object v4, p0, Lcom/bzbs/marketplace/dialog/ErrorBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ErrorBlurDialog;
 
@@ -231,7 +231,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/dialog/ErrorBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ErrorBlurDialog;
 
-    const v2, 0x7f0901bb
+    const v2, 0x7f090279
 
     invoke-virtual {v1, v2}, Lcom/bzbs/marketplace/dialog/ErrorBlurDialog;->getString(I)Ljava/lang/String;
 

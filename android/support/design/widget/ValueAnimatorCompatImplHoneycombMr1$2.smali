@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/support/design/widget/ValueAnimatorCompatImplHoneycombMr1;->setListener(Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;)V
+    value = Landroid/support/design/widget/ValueAnimatorCompatImplHoneycombMr1;->addListener(Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;)V
 .end annotation
 
 

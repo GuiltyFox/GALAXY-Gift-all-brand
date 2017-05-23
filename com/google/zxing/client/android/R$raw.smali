@@ -4,4 +4,4 @@
 
 
 # static fields
-.field public static final zxing_beep:I = 0x7f080004
+.field public static final zxing_beep:I = 0x7f080003

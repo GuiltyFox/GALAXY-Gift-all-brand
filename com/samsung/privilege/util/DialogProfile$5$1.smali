@@ -268,7 +268,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogProfile$5;->b:Landroid/app/Dialog;
 
-    const v1, 0x7f10060f
+    const v1, 0x7f100407
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -293,7 +293,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogProfile$5;->b:Landroid/app/Dialog;
 
-    const v1, 0x7f100611
+    const v1, 0x7f100409
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -335,7 +335,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogProfile$5;->b:Landroid/app/Dialog;
 
-    const v1, 0x7f10060f
+    const v1, 0x7f100407
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -360,7 +360,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogProfile$5;->b:Landroid/app/Dialog;
 
-    const v1, 0x7f100611
+    const v1, 0x7f100409
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -389,7 +389,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f04017f
+    const v2, 0x7f040113
 
     invoke-direct {v1, v0, v2, v3}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
@@ -400,7 +400,7 @@
 
     move-result-object v0
 
-    const v6, 0x7f04017f
+    const v6, 0x7f040113
 
     invoke-direct {v2, v0, v6, v4}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
@@ -411,7 +411,7 @@
 
     move-result-object v0
 
-    const v7, 0x7f04017f
+    const v7, 0x7f040113
 
     invoke-direct {v6, v0, v7, v5}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
@@ -420,7 +420,7 @@
 
     move-result-object v0
 
-    const v7, 0x7f100613
+    const v7, 0x7f10040b
 
     invoke-virtual {v0, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -440,7 +440,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100611
+    const v1, 0x7f100409
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -460,7 +460,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f10060f
+    const v1, 0x7f100407
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -491,7 +491,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogProfile$5;->b:Landroid/app/Dialog;
 
-    const v1, 0x7f10060f
+    const v1, 0x7f100407
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -516,7 +516,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogProfile$5;->b:Landroid/app/Dialog;
 
-    const v1, 0x7f100611
+    const v1, 0x7f100409
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -550,7 +550,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f090305
+    const v1, 0x7f09013e
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

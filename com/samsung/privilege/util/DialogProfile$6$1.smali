@@ -51,7 +51,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogProfile$6;->b:Landroid/app/Dialog;
 
-    const v1, 0x7f100603
+    const v1, 0x7f1003fb
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -109,7 +109,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0902e6
+    const v1, 0x7f090126
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

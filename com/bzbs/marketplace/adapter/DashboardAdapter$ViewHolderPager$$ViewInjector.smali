@@ -45,9 +45,9 @@
     .end annotation
 
     .prologue
-    const v3, 0x7f100675
+    const v3, 0x7f10046b
 
-    const v2, 0x7f100286
+    const v2, 0x7f1002da
 
     .line 11
     const-string/jumbo v0, "field \'viewPager\'"

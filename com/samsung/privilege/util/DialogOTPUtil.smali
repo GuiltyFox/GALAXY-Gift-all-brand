@@ -69,7 +69,7 @@
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_144
+    if-ne v1, v2, :cond_13b
 
     .line 54
     new-instance v4, Landroid/app/Dialog;
@@ -81,7 +81,7 @@
     invoke-direct {v4, v0, v1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 56
-    const v1, 0x7f04011f
+    const v1, 0x7f0400b1
 
     invoke-virtual {v4, v1}, Landroid/app/Dialog;->setContentView(I)V
 
@@ -91,7 +91,7 @@
     sput-boolean v1, Lcom/samsung/privilege/util/DialogOTPUtil;->e:Z
 
     .line 60
-    const v1, 0x7f10058f
+    const v1, 0x7f100372
 
     invoke-virtual {v4, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -100,7 +100,7 @@
     check-cast v1, Landroid/widget/LinearLayout;
 
     .line 61
-    const v2, 0x7f100594
+    const v2, 0x7f100377
 
     invoke-virtual {v4, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -108,17 +108,8 @@
 
     check-cast v2, Landroid/widget/LinearLayout;
 
-    .line 63
-    const v3, 0x7f1005fa
-
-    invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/widget/TextView;
-
     .line 64
-    const v3, 0x7f1005f8
+    const v3, 0x7f1003f2
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -127,7 +118,7 @@
     check-cast v11, Landroid/widget/EditText;
 
     .line 65
-    const v3, 0x7f100593
+    const v3, 0x7f100376
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -136,7 +127,7 @@
     check-cast v3, Landroid/widget/TextView;
 
     .line 66
-    const v3, 0x7f100598
+    const v3, 0x7f10037b
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -147,7 +138,7 @@
     sput-object v3, Lcom/samsung/privilege/util/DialogOTPUtil;->d:Landroid/widget/EditText;
 
     .line 68
-    const v3, 0x7f10059c
+    const v3, 0x7f10037f
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -156,7 +147,7 @@
     check-cast v3, Landroid/widget/TextView;
 
     .line 69
-    const v3, 0x7f10059e
+    const v3, 0x7f100381
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -165,7 +156,7 @@
     check-cast v3, Landroid/widget/TextView;
 
     .line 71
-    const v3, 0x7f100595
+    const v3, 0x7f100378
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -176,7 +167,7 @@
     check-cast v7, Landroid/widget/TextView;
 
     .line 72
-    const v3, 0x7f100597
+    const v3, 0x7f10037a
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -185,7 +176,7 @@
     check-cast v3, Landroid/widget/RelativeLayout;
 
     .line 73
-    const v3, 0x7f100592
+    const v3, 0x7f100375
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -196,7 +187,7 @@
     check-cast v16, Landroid/widget/RelativeLayout;
 
     .line 74
-    const v3, 0x7f10059d
+    const v3, 0x7f100380
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -207,7 +198,7 @@
     check-cast v17, Landroid/widget/RelativeLayout;
 
     .line 75
-    const v3, 0x7f1005f9
+    const v3, 0x7f1003f3
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -218,7 +209,7 @@
     check-cast v18, Landroid/widget/RelativeLayout;
 
     .line 76
-    const v3, 0x7f10059b
+    const v3, 0x7f10037e
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -229,7 +220,7 @@
     check-cast v19, Landroid/widget/RelativeLayout;
 
     .line 77
-    const v3, 0x7f100596
+    const v3, 0x7f100379
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -242,7 +233,7 @@
     .line 79
     sget-object v3, Lcom/samsung/privilege/util/DialogOTPUtil;->a:Ljava/lang/String;
 
-    if-eqz v3, :cond_c2
+    if-eqz v3, :cond_b9
 
     sget-object v3, Lcom/samsung/privilege/util/DialogOTPUtil;->a:Ljava/lang/String;
 
@@ -252,7 +243,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_c2
+    if-nez v3, :cond_b9
 
     .line 80
     sget-object v3, Lcom/samsung/privilege/util/DialogOTPUtil;->a:Ljava/lang/String;
@@ -260,7 +251,7 @@
     invoke-virtual {v11, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 83
-    :cond_c2
+    :cond_b9
     const/4 v3, 0x0
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->setVisibility(I)V
@@ -388,11 +379,11 @@
     invoke-virtual {v4}, Landroid/app/Dialog;->show()V
 
     .line 184
-    :goto_143
+    :goto_13a
     return-void
 
     .line 182
-    :cond_144
+    :cond_13b
     const/4 v5, 0x0
 
     const-string/jumbo v6, ""
@@ -413,7 +404,7 @@
 
     invoke-static/range {v1 .. v9}, Lcom/samsung/privilege/util/DialogOTPUtil;->b(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    goto :goto_143
+    goto :goto_13a
 .end method
 
 .method public static a(Ljava/lang/String;)V
@@ -504,7 +495,7 @@
     const/4 v4, 0x0
 
     .line 187
-    const v0, 0x7f10058f
+    const v0, 0x7f100372
 
     invoke-virtual {p2, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -513,7 +504,7 @@
     check-cast v10, Landroid/widget/LinearLayout;
 
     .line 188
-    const v0, 0x7f100594
+    const v0, 0x7f100377
 
     invoke-virtual {p2, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -521,17 +512,8 @@
 
     check-cast v11, Landroid/widget/LinearLayout;
 
-    .line 190
-    const v0, 0x7f1005fa
-
-    invoke-virtual {p2, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
     .line 191
-    const v0, 0x7f1005f8
+    const v0, 0x7f1003f2
 
     invoke-virtual {p2, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -540,7 +522,7 @@
     check-cast v0, Landroid/widget/EditText;
 
     .line 192
-    const v1, 0x7f100593
+    const v1, 0x7f100376
 
     invoke-virtual {p2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -549,7 +531,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 193
-    const v1, 0x7f100598
+    const v1, 0x7f10037b
 
     invoke-virtual {p2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -558,7 +540,7 @@
     check-cast v6, Landroid/widget/EditText;
 
     .line 194
-    const v1, 0x7f10059c
+    const v1, 0x7f10037f
 
     invoke-virtual {p2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -567,7 +549,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 195
-    const v1, 0x7f10059e
+    const v1, 0x7f100381
 
     invoke-virtual {p2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -576,7 +558,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 197
-    const v1, 0x7f100595
+    const v1, 0x7f100378
 
     invoke-virtual {p2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -585,7 +567,7 @@
     check-cast v12, Landroid/widget/TextView;
 
     .line 198
-    const v1, 0x7f100597
+    const v1, 0x7f10037a
 
     invoke-virtual {p2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -594,7 +576,7 @@
     check-cast v9, Landroid/widget/RelativeLayout;
 
     .line 199
-    const v1, 0x7f100592
+    const v1, 0x7f100375
 
     invoke-virtual {p2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -603,7 +585,7 @@
     check-cast v8, Landroid/widget/RelativeLayout;
 
     .line 200
-    const v1, 0x7f10059d
+    const v1, 0x7f100380
 
     invoke-virtual {p2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -612,7 +594,7 @@
     check-cast v7, Landroid/widget/RelativeLayout;
 
     .line 201
-    const v1, 0x7f1005f9
+    const v1, 0x7f1003f3
 
     invoke-virtual {p2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -621,7 +603,7 @@
     check-cast v1, Landroid/widget/RelativeLayout;
 
     .line 202
-    const v1, 0x7f10059b
+    const v1, 0x7f10037e
 
     invoke-virtual {p2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -630,7 +612,7 @@
     check-cast v1, Landroid/widget/RelativeLayout;
 
     .line 203
-    const v1, 0x7f100596
+    const v1, 0x7f100379
 
     invoke-virtual {p2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -653,7 +635,7 @@
 
     const/16 v2, 0x9
 
-    if-gt v1, v2, :cond_a0
+    if-gt v1, v2, :cond_97
 
     .line 206
     const-string/jumbo v0, "Please enter valid telephone number!"
@@ -661,15 +643,15 @@
     invoke-static {v0, p0, p1}, Lcom/samsung/privilege/util/DialogOTPUtil;->b(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
 
     .line 308
-    :cond_9f
-    :goto_9f
+    :cond_96
+    :goto_96
     return-void
 
     .line 210
-    :cond_a0
+    :cond_97
     sget-boolean v1, Lcom/samsung/privilege/util/DialogOTPUtil;->e:Z
 
-    if-eq v1, v5, :cond_9f
+    if-eq v1, v5, :cond_96
 
     .line 213
     sput-boolean v5, Lcom/samsung/privilege/util/DialogOTPUtil;->e:Z
@@ -822,7 +804,7 @@
     .line 224
     const-string/jumbo v1, ""
 
-    const v2, 0x7f090283
+    const v2, 0x7f0900ed
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -838,12 +820,12 @@
     invoke-virtual {v8, v4}, Landroid/widget/RelativeLayout;->setEnabled(Z)V
 
     .line 226
-    const v1, 0x7f02005a
+    const v1, 0x7f02005d
 
     invoke-virtual {v9, v1}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
     .line 227
-    const v1, 0x7f02036b
+    const v1, 0x7f020225
 
     invoke-virtual {v7, v1}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
@@ -915,7 +897,7 @@
     .line 307
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    goto/16 :goto_9f
+    goto/16 :goto_96
 .end method
 
 .method private static b(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
@@ -1118,7 +1100,7 @@
     .line 311
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090283
+    const v3, 0x7f0900ed
 
     invoke-virtual {p1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

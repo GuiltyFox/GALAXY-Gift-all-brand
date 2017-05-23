@@ -256,7 +256,7 @@
     const/4 v1, 0x0
 
     .line 1085
-    const v0, 0x7f1001d3
+    const v0, 0x7f1001be
 
     :try_start_4
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
@@ -329,7 +329,7 @@
     check-cast v1, Landroid/view/LayoutInflater;
 
     .line 1098
-    const v3, 0x7f040048
+    const v3, 0x7f040042
 
     const/4 v7, 0x0
 
@@ -340,7 +340,7 @@
     move-result-object v7
 
     .line 1100
-    const v1, 0x7f1001d4
+    const v1, 0x7f1001bf
 
     invoke-virtual {v7, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -352,7 +352,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1103
-    const v1, 0x7f1001d5
+    const v1, 0x7f1001c0
 
     invoke-virtual {v7, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -361,7 +361,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 1104
-    const v2, 0x7f1001d7
+    const v2, 0x7f1001c2
 
     invoke-virtual {v7, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -370,7 +370,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 1105
-    const v3, 0x7f1001d6
+    const v3, 0x7f1001c1
 
     invoke-virtual {v7, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -632,7 +632,7 @@
 
     .line 1210
     :goto_75
-    const v0, 0x7f1001d9
+    const v0, 0x7f1001c4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -698,7 +698,7 @@
     move-result-object v1
 
     .line 1220
-    const v0, 0x7f1001da
+    const v0, 0x7f1001c5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -734,7 +734,7 @@
     if-eqz v0, :cond_629
 
     .line 1230
-    const v0, 0x7f1001db
+    const v0, 0x7f1001c6
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -745,7 +745,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 1231
-    const v0, 0x7f1001dc
+    const v0, 0x7f1001c7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -757,7 +757,7 @@
 
     .line 1241
     :goto_eb
-    const v0, 0x7f10013b
+    const v0, 0x7f10016c
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -774,7 +774,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1242
-    const v0, 0x7f1001db
+    const v0, 0x7f1001c6
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -791,7 +791,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 1243
-    const v0, 0x7f1001dc
+    const v0, 0x7f1001c7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -808,7 +808,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 1244
-    const v0, 0x7f1001e7
+    const v0, 0x7f1001d2
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1021,7 +1021,7 @@
     if-eqz v1, :cond_655
 
     .line 1271
-    const v0, 0x7f1001de
+    const v0, 0x7f1001c9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1029,7 +1029,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f09030f
+    const v1, 0x7f090148
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -1068,7 +1068,7 @@
     if-eqz v1, :cond_699
 
     .line 1284
-    const v0, 0x7f1001ea
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1076,7 +1076,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f09032e
+    const v1, 0x7f090167
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -1140,7 +1140,7 @@
     move-result-object v1
 
     .line 1309
-    const v0, 0x7f1001e1
+    const v0, 0x7f1001cc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1166,7 +1166,7 @@
     invoke-direct {v1, v0}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
     .line 1316
-    const v0, 0x7f1001ed
+    const v0, 0x7f1001d8
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1199,7 +1199,7 @@
     if-eqz v0, :cond_776
 
     .line 1320
-    const v0, 0x7f1001a5
+    const v0, 0x7f100192
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1207,7 +1207,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f09031d
+    const v1, 0x7f090156
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -1227,7 +1227,7 @@
     if-ltz v0, :cond_2d7
 
     .line 1332
-    const v0, 0x7f1001a7
+    const v0, 0x7f100194
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1250,7 +1250,7 @@
     if-ltz v0, :cond_2ed
 
     .line 1335
-    const v0, 0x7f1001a8
+    const v0, 0x7f100195
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1273,7 +1273,7 @@
     if-ltz v0, :cond_303
 
     .line 1338
-    const v0, 0x7f1001a9
+    const v0, 0x7f100196
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1296,7 +1296,7 @@
     if-ltz v0, :cond_319
 
     .line 1341
-    const v0, 0x7f1001aa
+    const v0, 0x7f100197
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1319,7 +1319,7 @@
     if-ltz v0, :cond_32f
 
     .line 1344
-    const v0, 0x7f1001ab
+    const v0, 0x7f100198
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1342,7 +1342,7 @@
     if-ltz v0, :cond_345
 
     .line 1347
-    const v0, 0x7f1001ac
+    const v0, 0x7f100199
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1365,7 +1365,7 @@
     if-ltz v0, :cond_35b
 
     .line 1350
-    const v0, 0x7f1001ad
+    const v0, 0x7f10019a
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1399,7 +1399,7 @@
     if-eqz v0, :cond_7ee
 
     .line 1355
-    const v0, 0x7f1001e3
+    const v0, 0x7f1001ce
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1413,7 +1413,7 @@
 
     .line 1363
     :goto_37e
-    const v0, 0x7f1001a2
+    const v0, 0x7f10018f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1662,7 +1662,7 @@
 
     .line 1379
     :goto_47a
-    const v0, 0x7f1001b4
+    const v0, 0x7f10019f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1674,7 +1674,7 @@
 
     .line 1384
     :goto_486
-    const v0, 0x7f1001b9
+    const v0, 0x7f1001a4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1691,7 +1691,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1385
-    const v0, 0x7f1001bb
+    const v0, 0x7f1001a6
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1708,7 +1708,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1386
-    const v0, 0x7f1001bd
+    const v0, 0x7f1001a8
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1725,7 +1725,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1387
-    const v0, 0x7f1001bf
+    const v0, 0x7f1001aa
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1742,7 +1742,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1388
-    const v0, 0x7f1001c1
+    const v0, 0x7f1001ac
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1785,7 +1785,7 @@
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 1394
-    const v0, 0x7f1001c4
+    const v0, 0x7f1001af
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1831,7 +1831,7 @@
 
     .line 1418
     :goto_52e
-    const v1, 0x7f1001c5
+    const v1, 0x7f1001b0
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1840,7 +1840,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 1419
-    const v2, 0x7f1001c3
+    const v2, 0x7f1001ae
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1877,7 +1877,7 @@
 
     .line 1428
     :goto_55b
-    const v0, 0x7f1001ce
+    const v0, 0x7f1001b9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1886,7 +1886,7 @@
     check-cast v0, Lcom/samsung/privilege/control/toggle/ToggleButton;
 
     .line 1429
-    const v1, 0x7f1001cf
+    const v1, 0x7f1001ba
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1895,7 +1895,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 1430
-    const v2, 0x7f1001cd
+    const v2, 0x7f1001b8
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2049,7 +2049,7 @@
     move-exception v0
 
     .line 1222
-    const v0, 0x7f1001da
+    const v0, 0x7f1001c5
 
     :try_start_5fb
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
@@ -2101,7 +2101,7 @@
 
     .line 1237
     :cond_629
-    const v0, 0x7f1001db
+    const v0, 0x7f1001c6
 
     :try_start_62c
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
@@ -2113,7 +2113,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 1238
-    const v0, 0x7f1001dc
+    const v0, 0x7f1001c7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2164,7 +2164,7 @@
     if-eqz v0, :cond_677
 
     .line 1273
-    const v0, 0x7f1001de
+    const v0, 0x7f1001c9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2172,7 +2172,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090310
+    const v1, 0x7f090149
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2184,7 +2184,7 @@
 
     .line 1275
     :cond_677
-    const v0, 0x7f1001de
+    const v0, 0x7f1001c9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2200,7 +2200,7 @@
 
     .line 1278
     :cond_688
-    const v0, 0x7f1001de
+    const v0, 0x7f1001c9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2229,7 +2229,7 @@
     if-eqz v1, :cond_6bb
 
     .line 1286
-    const v0, 0x7f1001ea
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2237,7 +2237,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f09032d
+    const v1, 0x7f090166
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2262,7 +2262,7 @@
     if-eqz v1, :cond_6dd
 
     .line 1288
-    const v0, 0x7f1001ea
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2270,7 +2270,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f09032b
+    const v1, 0x7f090164
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2295,7 +2295,7 @@
     if-eqz v1, :cond_6ff
 
     .line 1290
-    const v0, 0x7f1001ea
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2303,7 +2303,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f09032c
+    const v1, 0x7f090165
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2328,7 +2328,7 @@
     if-eqz v1, :cond_721
 
     .line 1292
-    const v0, 0x7f1001ea
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2336,7 +2336,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090330
+    const v1, 0x7f090169
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2361,7 +2361,7 @@
     if-eqz v0, :cond_743
 
     .line 1294
-    const v0, 0x7f1001ea
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2369,7 +2369,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f09032f
+    const v1, 0x7f090168
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2381,7 +2381,7 @@
 
     .line 1296
     :cond_743
-    const v0, 0x7f1001ea
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2397,7 +2397,7 @@
 
     .line 1299
     :cond_754
-    const v0, 0x7f1001ea
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2413,7 +2413,7 @@
 
     .line 1311
     :cond_765
-    const v0, 0x7f1001e1
+    const v0, 0x7f1001cc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2438,7 +2438,7 @@
     if-eqz v0, :cond_794
 
     .line 1322
-    const v0, 0x7f1001a5
+    const v0, 0x7f100192
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2446,7 +2446,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f09031e
+    const v1, 0x7f090157
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2467,7 +2467,7 @@
     if-eqz v0, :cond_7b2
 
     .line 1324
-    const v0, 0x7f1001a5
+    const v0, 0x7f100192
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2475,7 +2475,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f09031f
+    const v1, 0x7f090158
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2496,7 +2496,7 @@
     if-eqz v0, :cond_7d0
 
     .line 1326
-    const v0, 0x7f1001a5
+    const v0, 0x7f100192
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2504,7 +2504,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090320
+    const v1, 0x7f090159
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2525,7 +2525,7 @@
     if-eqz v0, :cond_2c1
 
     .line 1328
-    const v0, 0x7f1001a5
+    const v0, 0x7f100192
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2533,7 +2533,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090321
+    const v1, 0x7f09015a
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2545,7 +2545,7 @@
 
     .line 1357
     :cond_7ee
-    const v0, 0x7f1001e3
+    const v0, 0x7f1001ce
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2559,7 +2559,7 @@
 
     .line 1360
     :cond_7fc
-    const v0, 0x7f1001e3
+    const v0, 0x7f1001ce
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2575,7 +2575,7 @@
 
     .line 1381
     :cond_80d
-    const v0, 0x7f1001af
+    const v0, 0x7f10019e
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2809,7 +2809,7 @@
     .line 209
     const/16 v0, 0x15
 
-    invoke-static {p0, v0}, Lpl/aprilapps/easyphotopicker/EasyImage;->a(Landroid/app/Activity;I)V
+    invoke-static {p0, v0}, Lpl/aprilapps/easyphotopicker/EasyImage;->b(Landroid/app/Activity;I)V
 
     .line 214
     :goto_10
@@ -2852,7 +2852,7 @@
     .line 220
     const/16 v0, 0xb
 
-    invoke-static {p0, v0}, Lpl/aprilapps/easyphotopicker/EasyImage;->openGallery(Landroid/app/Activity;I)V
+    invoke-static {p0, v0}, Lpl/aprilapps/easyphotopicker/EasyImage;->a(Landroid/app/Activity;I)V
 
     .line 228
     :goto_10
@@ -2920,7 +2920,7 @@
     move-result-object v1
 
     .line 242
-    const v0, 0x7f1001a7
+    const v0, 0x7f100194
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2931,7 +2931,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 243
-    const v0, 0x7f1001a8
+    const v0, 0x7f100195
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2942,7 +2942,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 244
-    const v0, 0x7f1001a9
+    const v0, 0x7f100196
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2953,7 +2953,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 245
-    const v0, 0x7f1001aa
+    const v0, 0x7f100197
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2964,7 +2964,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 246
-    const v0, 0x7f1001ab
+    const v0, 0x7f100198
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2975,7 +2975,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 247
-    const v0, 0x7f1001ac
+    const v0, 0x7f100199
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2986,7 +2986,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 248
-    const v0, 0x7f1001ad
+    const v0, 0x7f10019a
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3014,7 +3014,7 @@
     if-eqz v0, :cond_353
 
     .line 251
-    const v0, 0x7f1001e3
+    const v0, 0x7f1001ce
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3023,7 +3023,7 @@
     invoke-virtual {v0, v8}, Landroid/view/View;->setEnabled(Z)V
 
     .line 252
-    const v0, 0x7f1001e4
+    const v0, 0x7f1001cf
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3032,7 +3032,7 @@
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 254
-    const v0, 0x7f1001e5
+    const v0, 0x7f1001d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3041,7 +3041,7 @@
     invoke-virtual {v0, v8}, Landroid/view/View;->setVisibility(I)V
 
     .line 255
-    const v0, 0x7f1001e8
+    const v0, 0x7f1001d3
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3068,7 +3068,7 @@
     if-eqz v0, :cond_c5
 
     .line 270
-    const v0, 0x7f1001d9
+    const v0, 0x7f1001c4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3085,7 +3085,7 @@
 
     .line 283
     :cond_c5
-    const v0, 0x7f1001e1
+    const v0, 0x7f1001cc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3147,7 +3147,7 @@
     invoke-virtual {v6, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 310
-    const v0, 0x7f1001e4
+    const v0, 0x7f1001cf
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3163,7 +3163,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 328
-    const v0, 0x7f1001a2
+    const v0, 0x7f10018f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3174,7 +3174,7 @@
     invoke-virtual {v0, v9}, Landroid/widget/EditText;->setEnabled(Z)V
 
     .line 329
-    const v0, 0x7f1001a2
+    const v0, 0x7f10018f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3191,7 +3191,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 330
-    const v0, 0x7f1001a3
+    const v0, 0x7f100190
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3204,7 +3204,7 @@
     .line 334
     new-array v1, v10, [Ljava/lang/String;
 
-    const v0, 0x7f09030f
+    const v0, 0x7f090148
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3212,7 +3212,7 @@
 
     aput-object v0, v1, v8
 
-    const v0, 0x7f090310
+    const v0, 0x7f090149
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3227,12 +3227,12 @@
 
     move-result-object v0
 
-    const v3, 0x7f04017f
+    const v3, 0x7f040113
 
     invoke-direct {v2, v0, v3, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
     .line 337
-    const v0, 0x7f1001de
+    const v0, 0x7f1001c9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3248,7 +3248,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 361
-    const v0, 0x7f1001de
+    const v0, 0x7f1001c9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3259,7 +3259,7 @@
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setEnabled(Z)V
 
     .line 362
-    const v0, 0x7f1001de
+    const v0, 0x7f1001c9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3276,7 +3276,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 363
-    const v0, 0x7f1001df
+    const v0, 0x7f1001ca
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3291,7 +3291,7 @@
 
     new-array v1, v0, [Ljava/lang/String;
 
-    const v0, 0x7f09032e
+    const v0, 0x7f090167
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3299,7 +3299,7 @@
 
     aput-object v0, v1, v8
 
-    const v0, 0x7f09032d
+    const v0, 0x7f090166
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3307,7 +3307,7 @@
 
     aput-object v0, v1, v9
 
-    const v0, 0x7f09032b
+    const v0, 0x7f090164
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3317,7 +3317,7 @@
 
     const/4 v0, 0x3
 
-    const v2, 0x7f09032c
+    const v2, 0x7f090165
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3327,7 +3327,7 @@
 
     const/4 v0, 0x4
 
-    const v2, 0x7f090330
+    const v2, 0x7f090169
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3335,7 +3335,7 @@
 
     aput-object v2, v1, v0
 
-    const v0, 0x7f09032f
+    const v0, 0x7f090168
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3350,12 +3350,12 @@
 
     move-result-object v0
 
-    const v3, 0x7f04017f
+    const v3, 0x7f040113
 
     invoke-direct {v2, v0, v3, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
     .line 370
-    const v0, 0x7f1001ea
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3376,7 +3376,7 @@
     move-result-object v1
 
     .line 397
-    const v0, 0x7f1001ed
+    const v0, 0x7f1001d8
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3433,7 +3433,7 @@
     invoke-virtual {v6, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 415
-    const v0, 0x7f1001a5
+    const v0, 0x7f100192
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3444,7 +3444,7 @@
     .line 416
     new-array v1, v11, [Ljava/lang/String;
 
-    const v2, 0x7f09031d
+    const v2, 0x7f090156
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3452,7 +3452,7 @@
 
     aput-object v2, v1, v8
 
-    const v2, 0x7f09031e
+    const v2, 0x7f090157
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3460,7 +3460,7 @@
 
     aput-object v2, v1, v9
 
-    const v2, 0x7f09031f
+    const v2, 0x7f090158
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3470,7 +3470,7 @@
 
     const/4 v2, 0x3
 
-    const v3, 0x7f090320
+    const v3, 0x7f090159
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3480,7 +3480,7 @@
 
     const/4 v2, 0x4
 
-    const v3, 0x7f090321
+    const v3, 0x7f09015a
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3491,7 +3491,7 @@
     .line 417
     new-instance v2, Landroid/widget/ArrayAdapter;
 
-    const v3, 0x7f04017f
+    const v3, 0x7f040113
 
     invoke-direct {v2, p0, v3, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
@@ -3503,7 +3503,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 434
-    const v0, 0x7f1001c5
+    const v0, 0x7f1001b0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3512,7 +3512,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 435
-    const v1, 0x7f1001c3
+    const v1, 0x7f1001ae
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3521,7 +3521,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 436
-    const v2, 0x7f1001c4
+    const v2, 0x7f1001af
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3537,7 +3537,7 @@
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/control/toggle/ToggleButton;->a(Lcom/samsung/privilege/control/toggle/ToggleButton$OnToggleChanged;)V
 
     .line 452
-    const v1, 0x7f1001cd
+    const v1, 0x7f1001b8
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3546,7 +3546,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 453
-    const v2, 0x7f1001cf
+    const v2, 0x7f1001ba
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3555,7 +3555,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 454
-    const v3, 0x7f1001ce
+    const v3, 0x7f1001b9
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3588,7 +3588,7 @@
     if-eqz v1, :cond_3a5
 
     .line 470
-    const v1, 0x7f0901b6
+    const v1, 0x7f0900b9
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3597,7 +3597,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 471
-    const v0, 0x7f10019b
+    const v0, 0x7f100188
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3608,7 +3608,7 @@
     .line 483
     :cond_2e4
     :goto_2e4
-    const v0, 0x7f1001d2
+    const v0, 0x7f1001bd
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3617,7 +3617,7 @@
     check-cast v0, Landroid/widget/ImageView;
 
     .line 484
-    const v1, 0x7f1001d3
+    const v1, 0x7f1001be
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3629,7 +3629,7 @@
     invoke-virtual {v1, v7}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 487
-    const v2, 0x7f1001d0
+    const v2, 0x7f1001bb
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3645,7 +3645,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 548
-    const v0, 0x7f10019f
+    const v0, 0x7f10018c
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3654,7 +3654,7 @@
     check-cast v0, Landroid/widget/ImageView;
 
     .line 549
-    const v1, 0x7f1001a0
+    const v1, 0x7f10018d
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3666,7 +3666,7 @@
     invoke-virtual {v1, v7}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 552
-    const v2, 0x7f10019d
+    const v2, 0x7f10018a
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3682,7 +3682,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 613
-    const v0, 0x7f1001b3
+    const v0, 0x7f10019d
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3698,7 +3698,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 621
-    const v0, 0x7f1001b7
+    const v0, 0x7f1001a2
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3718,7 +3718,7 @@
 
     .line 257
     :cond_353
-    const v0, 0x7f1001e3
+    const v0, 0x7f1001ce
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3727,7 +3727,7 @@
     invoke-virtual {v0, v9}, Landroid/view/View;->setEnabled(Z)V
 
     .line 258
-    const v0, 0x7f1001e4
+    const v0, 0x7f1001cf
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3736,7 +3736,7 @@
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 260
-    const v0, 0x7f1001e5
+    const v0, 0x7f1001d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3745,7 +3745,7 @@
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 261
-    const v0, 0x7f1001e8
+    const v0, 0x7f1001d3
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3754,7 +3754,7 @@
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 263
-    const v0, 0x7f1001b5
+    const v0, 0x7f1001a0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3763,7 +3763,7 @@
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 264
-    const v0, 0x7f1001b3
+    const v0, 0x7f10019d
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3772,7 +3772,7 @@
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 265
-    const v0, 0x7f1001af
+    const v0, 0x7f10019e
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3781,7 +3781,7 @@
     invoke-virtual {v0, v8}, Landroid/view/View;->setVisibility(I)V
 
     .line 266
-    const v0, 0x7f1001b4
+    const v0, 0x7f10019f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3810,7 +3810,7 @@
     if-eqz v1, :cond_3cc
 
     .line 473
-    const v1, 0x7f0901b2
+    const v1, 0x7f0900b5
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3819,7 +3819,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 474
-    const v0, 0x7f10019b
+    const v0, 0x7f100188
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3848,7 +3848,7 @@
     if-eqz v1, :cond_3e9
 
     .line 477
-    const v0, 0x7f10019b
+    const v0, 0x7f100188
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3877,7 +3877,7 @@
     if-eqz v1, :cond_2e4
 
     .line 479
-    const v1, 0x7f0901b4
+    const v1, 0x7f0900b7
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3886,7 +3886,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 480
-    const v0, 0x7f10019b
+    const v0, 0x7f100188
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3901,9 +3901,9 @@
     .registers 7
 
     .prologue
-    const v5, 0x7f1001c7
+    const v5, 0x7f1001b2
 
-    const v4, 0x7f1001c6
+    const v4, 0x7f1001b1
 
     const/16 v3, 0x8
 
@@ -3931,7 +3931,7 @@
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
     .line 636
-    const v0, 0x7f1001c9
+    const v0, 0x7f1001b4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3940,7 +3940,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 637
-    const v0, 0x7f1001cb
+    const v0, 0x7f1001b6
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3949,7 +3949,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 638
-    const v0, 0x7f1001ca
+    const v0, 0x7f1001b5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -4001,7 +4001,7 @@
     if-lt v0, v1, :cond_4a
 
     .line 668
-    const v0, 0x7f1001c9
+    const v0, 0x7f1001b4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -4010,7 +4010,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 669
-    const v1, 0x7f1001cb
+    const v1, 0x7f1001b6
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -4019,7 +4019,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 670
-    const v2, 0x7f1001ca
+    const v2, 0x7f1001b5
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -4151,7 +4151,7 @@
     .line 1146
     const-string/jumbo v1, ""
 
-    const v2, 0x7f090283
+    const v2, 0x7f0900ed
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -4274,7 +4274,7 @@
     .line 1452
     const-string/jumbo v1, ""
 
-    const v2, 0x7f090283
+    const v2, 0x7f0900ed
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -4460,7 +4460,7 @@
     if-nez v2, :cond_20
 
     .line 1538
-    const v2, 0x7f090252
+    const v2, 0x7f0900db
 
     move-object/from16 v0, p0
 
@@ -4479,7 +4479,7 @@
 
     .line 1542
     :cond_20
-    const v2, 0x7f1001e7
+    const v2, 0x7f1001d2
 
     move-object/from16 v0, p0
 
@@ -4490,7 +4490,7 @@
     check-cast v2, Landroid/widget/EditText;
 
     .line 1543
-    const v3, 0x7f1001db
+    const v3, 0x7f1001c6
 
     move-object/from16 v0, p0
 
@@ -4501,7 +4501,7 @@
     check-cast v3, Landroid/widget/EditText;
 
     .line 1544
-    const v4, 0x7f1001dc
+    const v4, 0x7f1001c7
 
     move-object/from16 v0, p0
 
@@ -4512,7 +4512,7 @@
     check-cast v4, Landroid/widget/EditText;
 
     .line 1545
-    const v5, 0x7f1001de
+    const v5, 0x7f1001c9
 
     move-object/from16 v0, p0
 
@@ -4523,7 +4523,7 @@
     check-cast v5, Landroid/widget/TextView;
 
     .line 1546
-    const v6, 0x7f1001ea
+    const v6, 0x7f1001d5
 
     move-object/from16 v0, p0
 
@@ -4534,7 +4534,7 @@
     check-cast v6, Landroid/widget/TextView;
 
     .line 1547
-    const v7, 0x7f1001e1
+    const v7, 0x7f1001cc
 
     move-object/from16 v0, p0
 
@@ -4545,7 +4545,7 @@
     check-cast v7, Landroid/widget/TextView;
 
     .line 1548
-    const v8, 0x7f1001e3
+    const v8, 0x7f1001ce
 
     move-object/from16 v0, p0
 
@@ -4556,7 +4556,7 @@
     check-cast v8, Landroid/widget/EditText;
 
     .line 1549
-    const v9, 0x7f1001a2
+    const v9, 0x7f10018f
 
     move-object/from16 v0, p0
 
@@ -4567,7 +4567,7 @@
     check-cast v9, Landroid/widget/EditText;
 
     .line 1550
-    const v10, 0x7f1001af
+    const v10, 0x7f10019e
 
     move-object/from16 v0, p0
 
@@ -4597,7 +4597,7 @@
     if-gtz v11, :cond_a5
 
     .line 1554
-    const v2, 0x7f0902f2
+    const v2, 0x7f090130
 
     move-object/from16 v0, p0
 
@@ -4632,7 +4632,7 @@
     if-gtz v11, :cond_c7
 
     .line 1557
-    const v2, 0x7f0902f3
+    const v2, 0x7f090131
 
     move-object/from16 v0, p0
 
@@ -4751,7 +4751,7 @@
     if-nez v11, :cond_171
 
     .line 1583
-    const v2, 0x7f0902f4
+    const v2, 0x7f090132
 
     move-object/from16 v0, p0
 
@@ -4770,7 +4770,7 @@
 
     .line 1567
     :cond_140
-    const v2, 0x7f0902ef
+    const v2, 0x7f09012e
 
     move-object/from16 v0, p0
 
@@ -4803,7 +4803,7 @@
     if-eqz v11, :cond_10b
 
     .line 1575
-    const v2, 0x7f0902ee
+    const v2, 0x7f09012d
 
     move-object/from16 v0, p0
 
@@ -4859,7 +4859,7 @@
     if-eq v11, v12, :cond_1aa
 
     .line 1604
-    const v3, 0x7f0902db
+    const v3, 0x7f09011c
 
     move-object/from16 v0, p0
 
@@ -5039,7 +5039,7 @@
 
     .line 1625
     :cond_253
-    const v3, 0x7f1001e5
+    const v3, 0x7f1001d0
 
     move-object/from16 v0, p0
 
@@ -5159,7 +5159,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f09030f
+    const v3, 0x7f090148
 
     move-object/from16 v0, p0
 
@@ -5364,7 +5364,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f09032e
+    const v3, 0x7f090167
 
     move-object/from16 v0, p0
 
@@ -5419,7 +5419,7 @@
 
     .line 1705
     :goto_3d4
-    const v2, 0x7f1001ed
+    const v2, 0x7f1001d8
 
     move-object/from16 v0, p0
 
@@ -5535,7 +5535,7 @@
     .line 1718
     :cond_445
     :goto_445
-    const v2, 0x7f1001a5
+    const v2, 0x7f100192
 
     move-object/from16 v0, p0
 
@@ -5558,7 +5558,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f09031d
+    const v4, 0x7f090156
 
     move-object/from16 v0, p0
 
@@ -5597,7 +5597,7 @@
     const-string/jumbo v3, ""
 
     .line 1738
-    const v2, 0x7f1001a7
+    const v2, 0x7f100194
 
     move-object/from16 v0, p0
 
@@ -5647,7 +5647,7 @@
 
     .line 1742
     :cond_4b3
-    const v2, 0x7f1001a8
+    const v2, 0x7f100195
 
     move-object/from16 v0, p0
 
@@ -5693,7 +5693,7 @@
 
     .line 1746
     :cond_4e0
-    const v2, 0x7f1001a9
+    const v2, 0x7f100196
 
     move-object/from16 v0, p0
 
@@ -5739,7 +5739,7 @@
 
     .line 1750
     :cond_50d
-    const v2, 0x7f1001aa
+    const v2, 0x7f100197
 
     move-object/from16 v0, p0
 
@@ -5785,7 +5785,7 @@
 
     .line 1754
     :cond_53a
-    const v2, 0x7f1001ab
+    const v2, 0x7f100198
 
     move-object/from16 v0, p0
 
@@ -5831,7 +5831,7 @@
 
     .line 1758
     :cond_567
-    const v2, 0x7f1001ac
+    const v2, 0x7f100199
 
     move-object/from16 v0, p0
 
@@ -5877,7 +5877,7 @@
 
     .line 1762
     :cond_594
-    const v2, 0x7f1001ad
+    const v2, 0x7f10019a
 
     move-object/from16 v0, p0
 
@@ -5965,7 +5965,7 @@
 
     .line 1797
     :cond_5ed
-    const v2, 0x7f1001ce
+    const v2, 0x7f1001b9
 
     move-object/from16 v0, p0
 
@@ -6031,7 +6031,7 @@
     :goto_62b
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090283
+    const v3, 0x7f0900ed
 
     move-object/from16 v0, p0
 
@@ -6190,7 +6190,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090310
+    const v3, 0x7f090149
 
     move-object/from16 v0, p0
 
@@ -6255,7 +6255,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f09032d
+    const v3, 0x7f090166
 
     move-object/from16 v0, p0
 
@@ -6305,7 +6305,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f09032b
+    const v3, 0x7f090164
 
     move-object/from16 v0, p0
 
@@ -6355,7 +6355,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f09032c
+    const v3, 0x7f090165
 
     move-object/from16 v0, p0
 
@@ -6405,7 +6405,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090330
+    const v3, 0x7f090169
 
     move-object/from16 v0, p0
 
@@ -6455,7 +6455,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f09032f
+    const v3, 0x7f090168
 
     move-object/from16 v0, p0
 
@@ -6564,7 +6564,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0902f0
+    const v3, 0x7f09012f
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -6599,7 +6599,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f09031e
+    const v4, 0x7f090157
 
     move-object/from16 v0, p0
 
@@ -6645,7 +6645,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f09031f
+    const v4, 0x7f090158
 
     move-object/from16 v0, p0
 
@@ -6691,7 +6691,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f090320
+    const v4, 0x7f090159
 
     move-object/from16 v0, p0
 
@@ -7253,7 +7253,7 @@
     iput-object v1, v0, Lcom/bzbs/bean/CameraData;->gBitmapImage:Landroid/graphics/Bitmap;
 
     .line 774
-    const v0, 0x7f1001d9
+    const v0, 0x7f1001c4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -7511,7 +7511,7 @@
 
     .line 967
     :cond_9c
-    const v0, 0x7f1001d9
+    const v0, 0x7f1001c4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -7523,7 +7523,7 @@
     if-eqz v0, :cond_b
 
     .line 969
-    const v1, 0x7f020380
+    const v1, 0x7f020247
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -7552,7 +7552,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 126
-    const v0, 0x7f040042
+    const v0, 0x7f04003d
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->setContentView(I)V
 
@@ -7583,7 +7583,7 @@
     invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
     .line 135
-    const v0, 0x7f1000b7
+    const v0, 0x7f1000ba
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -7745,7 +7745,7 @@
 
     .line 893
     :pswitch_a
-    const v0, 0x7f1001e1
+    const v0, 0x7f1001cc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -7937,7 +7937,7 @@
 
     .line 184
     :sswitch_2e
-    const v0, 0x7f1001c9
+    const v0, 0x7f1001b4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -7946,7 +7946,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 185
-    const v1, 0x7f1001cb
+    const v1, 0x7f1001b6
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -7955,7 +7955,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 186
-    const v2, 0x7f1001ca
+    const v2, 0x7f1001b5
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 

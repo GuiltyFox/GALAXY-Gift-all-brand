@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f1006ad
+    const v6, 0x7f1004a4
 
-    const v5, 0x7f1006ac
+    const v5, 0x7f1004a3
 
-    const v2, 0x7f1006ab
+    const v2, 0x7f1004a2
 
-    const v4, 0x7f10066e
+    const v4, 0x7f100465
 
-    const v3, 0x7f100193
+    const v3, 0x7f100180
 
     .line 11
     const-string/jumbo v0, "field \'recyclerViewMarketPlaceList\'"
@@ -116,7 +116,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/MarketPlaceDashboardFragment;->tvResult:Landroid/widget/TextView;
 
     .line 17
-    const v0, 0x7f1006ae
+    const v0, 0x7f1004a5
 
     const-string/jumbo v1, "field \'expandedImage\'"
 
@@ -127,7 +127,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 18
-    const v1, 0x7f1006ae
+    const v1, 0x7f1004a5
 
     const-string/jumbo v2, "field \'expandedImage\'"
 

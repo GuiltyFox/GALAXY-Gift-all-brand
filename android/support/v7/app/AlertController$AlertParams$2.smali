@@ -135,9 +135,7 @@
 
     iget-object v1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->b:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v1}, Landroid/support/v7/app/AlertController;->l(Landroid/support/v7/app/AlertController;)I
-
-    move-result v1
+    iget v1, v1, Landroid/support/v7/app/AlertController;->m:I
 
     const/4 v2, 0x0
 

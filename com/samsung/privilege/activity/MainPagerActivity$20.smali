@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1620
+    .line 1619
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->a:Ljava/lang/String;
@@ -41,7 +41,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1628
+    .line 1627
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
@@ -52,7 +52,7 @@
 
     move-result-object v0
 
-    .line 1629
+    .line 1628
     if-eqz v0, :cond_26
 
     const-string/jumbo v1, ""
@@ -63,7 +63,7 @@
 
     if-nez v0, :cond_26
 
-    .line 1630
+    .line 1629
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->a:Ljava/lang/String;
 
     const-string/jumbo v1, "qr"
@@ -74,17 +74,17 @@
 
     if-eqz v0, :cond_27
 
-    .line 1631
+    .line 1630
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->doScanQRCode(Landroid/view/View;)V
 
-    .line 1643
+    .line 1642
     :cond_26
     :goto_26
     return-void
 
-    .line 1632
+    .line 1631
     :cond_27
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->a:Ljava/lang/String;
 
@@ -96,14 +96,14 @@
 
     if-eqz v0, :cond_38
 
-    .line 1633
+    .line 1632
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->doMyAccount(Landroid/view/View;)V
 
     goto :goto_26
 
-    .line 1634
+    .line 1633
     :cond_38
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->a:Ljava/lang/String;
 
@@ -115,14 +115,14 @@
 
     if-eqz v0, :cond_49
 
-    .line 1635
+    .line 1634
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->doHistory(Landroid/view/View;)V
 
     goto :goto_26
 
-    .line 1636
+    .line 1635
     :cond_49
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->a:Ljava/lang/String;
 
@@ -134,14 +134,14 @@
 
     if-eqz v0, :cond_5a
 
-    .line 1637
+    .line 1636
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->doRequestHelp(Landroid/view/View;)V
 
     goto :goto_26
 
-    .line 1638
+    .line 1637
     :cond_5a
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->a:Ljava/lang/String;
 
@@ -153,7 +153,7 @@
 
     if-eqz v0, :cond_26
 
-    .line 1639
+    .line 1638
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;

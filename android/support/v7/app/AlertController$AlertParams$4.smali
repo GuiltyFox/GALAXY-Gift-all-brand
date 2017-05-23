@@ -80,13 +80,11 @@
 
     iget-object v1, p0, Landroid/support/v7/app/AlertController$AlertParams$4;->b:Landroid/support/v7/app/AlertController;
 
-    .line 973
-    invoke-static {v1}, Landroid/support/v7/app/AlertController;->g(Landroid/support/v7/app/AlertController;)Landroid/support/v7/app/AppCompatDialog;
-
-    move-result-object v1
+    iget-object v1, v1, Landroid/support/v7/app/AlertController;->a:Landroid/support/v7/app/AppCompatDialog;
 
     iget-object v2, p0, Landroid/support/v7/app/AlertController$AlertParams$4;->a:Landroid/widget/ListView;
 
+    .line 973
     invoke-virtual {v2, p3}, Landroid/widget/ListView;->isItemChecked(I)Z
 
     move-result v2

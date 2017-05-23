@@ -8,6 +8,6 @@
     .registers 1
 
     .prologue
-    .line 54
+    .line 58
     return-void
 .end method

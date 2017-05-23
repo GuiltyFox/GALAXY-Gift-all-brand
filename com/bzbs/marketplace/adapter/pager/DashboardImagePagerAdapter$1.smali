@@ -52,7 +52,7 @@
 
     .prologue
     .line 57
-    sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     iget-object v0, p0, Lcom/bzbs/marketplace/adapter/pager/DashboardImagePagerAdapter$1;->e:Lcom/bzbs/marketplace/adapter/pager/DashboardImagePagerAdapter;
 
@@ -152,7 +152,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0202de
+    const v2, 0x7f0201b4
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 

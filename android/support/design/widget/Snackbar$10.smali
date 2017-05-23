@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 590
+    .line 600
     iput-object p1, p0, Landroid/support/design/widget/Snackbar$10;->this$0:Landroid/support/design/widget/Snackbar;
 
     iput p2, p0, Landroid/support/design/widget/Snackbar$10;->val$event:I
@@ -39,15 +39,14 @@
     .registers 4
 
     .prologue
-    .line 593
+    .line 603
     iget-object v0, p0, Landroid/support/design/widget/Snackbar$10;->this$0:Landroid/support/design/widget/Snackbar;
 
     iget v1, p0, Landroid/support/design/widget/Snackbar$10;->val$event:I
 
-    # invokes: Landroid/support/design/widget/Snackbar;->onViewHidden(I)V
-    invoke-static {v0, v1}, Landroid/support/design/widget/Snackbar;->access$300(Landroid/support/design/widget/Snackbar;I)V
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/Snackbar;->onViewHidden(I)V
 
-    .line 594
+    .line 604
     return-void
 .end method
 
@@ -55,7 +54,7 @@
     .registers 2
 
     .prologue
-    .line 600
+    .line 610
     return-void
 .end method
 
@@ -63,6 +62,6 @@
     .registers 2
 
     .prologue
-    .line 597
+    .line 607
     return-void
 .end method

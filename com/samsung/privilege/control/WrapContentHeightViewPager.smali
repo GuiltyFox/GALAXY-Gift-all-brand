@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static a:Ljava/lang/String;
+.field private static d:Ljava/lang/String;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/samsung/privilege/control/WrapContentHeightViewPager;->a:Ljava/lang/String;
+    sput-object v0, Lcom/samsung/privilege/control/WrapContentHeightViewPager;->d:Ljava/lang/String;
 
     return-void
 .end method

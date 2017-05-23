@@ -23,10 +23,10 @@
     .registers 1
 
     .prologue
-    .line 2599
+    .line 2671
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2833
+    .line 2905
     return-void
 .end method
 
@@ -34,20 +34,20 @@
     .registers 7
 
     .prologue
-    .line 2695
+    .line 2767
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     if-nez v0, :cond_5
 
-    .line 2710
+    .line 2782
     :cond_4
     return-void
 
-    .line 2698
+    .line 2770
     :cond_5
     add-int v2, p1, p2
 
-    .line 2699
+    .line 2771
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -61,7 +61,7 @@
     :goto_10
     if-ltz v1, :cond_4
 
-    .line 2700
+    .line 2772
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -70,12 +70,12 @@
 
     check-cast v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;
 
-    .line 2701
+    .line 2773
     iget v3, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
     if-ge v3, p1, :cond_22
 
-    .line 2699
+    .line 2771
     :goto_1e
     add-int/lit8 v0, v1, -0x1
 
@@ -83,20 +83,20 @@
 
     goto :goto_10
 
-    .line 2704
+    .line 2776
     :cond_22
     iget v3, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
     if-ge v3, v2, :cond_2c
 
-    .line 2705
+    .line 2777
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
     goto :goto_1e
 
-    .line 2707
+    .line 2779
     :cond_2c
     iget v3, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
@@ -111,16 +111,16 @@
     .registers 6
 
     .prologue
-    .line 2725
+    .line 2797
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     if-nez v0, :cond_5
 
-    .line 2735
+    .line 2807
     :cond_4
     return-void
 
-    .line 2728
+    .line 2800
     :cond_5
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
@@ -135,7 +135,7 @@
     :goto_e
     if-ltz v1, :cond_4
 
-    .line 2729
+    .line 2801
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -144,12 +144,12 @@
 
     check-cast v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;
 
-    .line 2730
+    .line 2802
     iget v2, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
     if-ge v2, p1, :cond_20
 
-    .line 2728
+    .line 2800
     :goto_1c
     add-int/lit8 v0, v1, -0x1
 
@@ -157,7 +157,7 @@
 
     goto :goto_e
 
-    .line 2733
+    .line 2805
     :cond_20
     iget v2, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
@@ -174,32 +174,32 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 2742
+    .line 2814
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     if-nez v0, :cond_7
 
     move v0, v1
 
-    .line 2764
+    .line 2836
     :goto_6
     return v0
 
-    .line 2745
+    .line 2817
     :cond_7
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->f(I)Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;
 
     move-result-object v0
 
-    .line 2747
+    .line 2819
     if-eqz v0, :cond_12
 
-    .line 2748
+    .line 2820
     iget-object v2, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 2751
+    .line 2823
     :cond_12
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
@@ -207,13 +207,13 @@
 
     move-result v3
 
-    .line 2752
+    .line 2824
     const/4 v2, 0x0
 
     :goto_19
     if-ge v2, v3, :cond_3e
 
-    .line 2753
+    .line 2825
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -222,16 +222,16 @@
 
     check-cast v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;
 
-    .line 2754
+    .line 2826
     iget v0, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
     if-lt v0, p1, :cond_39
 
-    .line 2759
+    .line 2831
     :goto_27
     if-eq v2, v1, :cond_3c
 
-    .line 2760
+    .line 2832
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -240,17 +240,17 @@
 
     check-cast v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;
 
-    .line 2761
+    .line 2833
     iget-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v1, v2}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 2762
+    .line 2834
     iget v0, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
     goto :goto_6
 
-    .line 2752
+    .line 2824
     :cond_39
     add-int/lit8 v2, v2, 0x1
 
@@ -259,7 +259,7 @@
     :cond_3c
     move v0, v1
 
-    .line 2764
+    .line 2836
     goto :goto_6
 
     :cond_3e
@@ -274,12 +274,12 @@
     .registers 4
 
     .prologue
-    .line 2610
+    .line 2682
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     if-eqz v0, :cond_24
 
-    .line 2611
+    .line 2683
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -293,7 +293,7 @@
     :goto_d
     if-ltz v1, :cond_24
 
-    .line 2612
+    .line 2684
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -302,17 +302,17 @@
 
     check-cast v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;
 
-    .line 2613
+    .line 2685
     iget v0, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
     if-lt v0, p1, :cond_20
 
-    .line 2614
+    .line 2686
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 2611
+    .line 2683
     :cond_20
     add-int/lit8 v0, v1, -0x1
 
@@ -320,7 +320,7 @@
 
     goto :goto_d
 
-    .line 2618
+    .line 2690
     :cond_24
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b(I)I
 
@@ -335,19 +335,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2812
+    .line 2884
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     if-nez v0, :cond_7
 
     move-object v0, v1
 
-    .line 2827
+    .line 2899
     :cond_6
     :goto_6
     return-object v0
 
-    .line 2815
+    .line 2887
     :cond_7
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
@@ -355,7 +355,7 @@
 
     move-result v3
 
-    .line 2816
+    .line 2888
     const/4 v0, 0x0
 
     move v2, v0
@@ -363,7 +363,7 @@
     :goto_f
     if-ge v2, v3, :cond_33
 
-    .line 2817
+    .line 2889
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -372,17 +372,17 @@
 
     check-cast v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;
 
-    .line 2818
+    .line 2890
     iget v4, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
     if-lt v4, p2, :cond_1f
 
     move-object v0, v1
 
-    .line 2819
+    .line 2891
     goto :goto_6
 
-    .line 2821
+    .line 2893
     :cond_1f
     iget v4, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
@@ -400,7 +400,7 @@
 
     if-nez v4, :cond_6
 
-    .line 2816
+    .line 2888
     :cond_2f
     add-int/lit8 v0, v2, 0x1
 
@@ -411,7 +411,7 @@
     :cond_33
     move-object v0, v1
 
-    .line 2827
+    .line 2899
     goto :goto_6
 .end method
 
@@ -419,25 +419,25 @@
     .registers 3
 
     .prologue
-    .line 2676
+    .line 2748
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     if-eqz v0, :cond_a
 
-    .line 2677
+    .line 2749
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     const/4 v1, -0x1
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->fill([II)V
 
-    .line 2679
+    .line 2751
     :cond_a
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
-    .line 2680
+    .line 2752
     return-void
 .end method
 
@@ -445,7 +445,7 @@
     .registers 7
 
     .prologue
-    .line 2683
+    .line 2755
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     if-eqz v0, :cond_9
@@ -456,18 +456,18 @@
 
     if-lt p1, v0, :cond_a
 
-    .line 2692
+    .line 2764
     :cond_9
     :goto_9
     return-void
 
-    .line 2686
+    .line 2758
     :cond_a
     add-int v0, p1, p2
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->e(I)V
 
-    .line 2687
+    .line 2759
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     add-int v1, p1, p2
@@ -484,7 +484,7 @@
 
     invoke-static {v0, v1, v2, p1, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 2689
+    .line 2761
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     iget-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
@@ -501,7 +501,7 @@
 
     invoke-static {v0, v1, v2, v3}, Ljava/util/Arrays;->fill([IIII)V
 
-    .line 2691
+    .line 2763
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->c(II)V
 
     goto :goto_9
@@ -511,17 +511,17 @@
     .registers 5
 
     .prologue
-    .line 2651
+    .line 2723
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->e(I)V
 
-    .line 2652
+    .line 2724
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
-    iget v1, p2, Landroid/support/v7/widget/StaggeredGridLayoutManager$Span;->d:I
+    iget v1, p2, Landroid/support/v7/widget/StaggeredGridLayoutManager$Span;->e:I
 
     aput v1, v0, p1
 
-    .line 2653
+    .line 2725
     return-void
 .end method
 
@@ -529,19 +529,19 @@
     .registers 7
 
     .prologue
-    .line 2768
+    .line 2840
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     if-nez v0, :cond_b
 
-    .line 2769
+    .line 2841
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
-    .line 2771
+    .line 2843
     :cond_b
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
@@ -549,7 +549,7 @@
 
     move-result v2
 
-    .line 2772
+    .line 2844
     const/4 v0, 0x0
 
     move v1, v0
@@ -557,7 +557,7 @@
     :goto_13
     if-ge v1, v2, :cond_38
 
-    .line 2773
+    .line 2845
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -566,19 +566,19 @@
 
     check-cast v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;
 
-    .line 2774
+    .line 2846
     iget v3, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
     iget v4, p1, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
     if-ne v3, v4, :cond_28
 
-    .line 2778
+    .line 2850
     iget-object v3, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v3, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 2781
+    .line 2853
     :cond_28
     iget v0, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
@@ -586,16 +586,16 @@
 
     if-lt v0, v3, :cond_34
 
-    .line 2782
+    .line 2854
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0, v1, p1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 2788
+    .line 2860
     :goto_33
     return-void
 
-    .line 2772
+    .line 2844
     :cond_34
     add-int/lit8 v0, v1, 0x1
 
@@ -603,7 +603,7 @@
 
     goto :goto_13
 
-    .line 2787
+    .line 2859
     :cond_38
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
@@ -618,17 +618,17 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 2625
+    .line 2697
     iget-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     if-nez v1, :cond_6
 
-    .line 2638
+    .line 2710
     :cond_5
     :goto_5
     return v0
 
-    .line 2628
+    .line 2700
     :cond_6
     iget-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
@@ -636,15 +636,15 @@
 
     if-ge p1, v1, :cond_5
 
-    .line 2631
+    .line 2703
     invoke-direct {p0, p1}, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->g(I)I
 
     move-result v1
 
-    .line 2632
+    .line 2704
     if-ne v1, v0, :cond_1d
 
-    .line 2633
+    .line 2705
     iget-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     iget-object v2, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
@@ -653,14 +653,14 @@
 
     invoke-static {v1, p1, v2, v0}, Ljava/util/Arrays;->fill([IIII)V
 
-    .line 2634
+    .line 2706
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     array-length v0, v0
 
     goto :goto_5
 
-    .line 2637
+    .line 2709
     :cond_1d
     iget-object v2, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
@@ -668,7 +668,7 @@
 
     invoke-static {v2, p1, v3, v0}, Ljava/util/Arrays;->fill([IIII)V
 
-    .line 2638
+    .line 2710
     add-int/lit8 v0, v1, 0x1
 
     goto :goto_5
@@ -678,7 +678,7 @@
     .registers 7
 
     .prologue
-    .line 2713
+    .line 2785
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     if-eqz v0, :cond_9
@@ -689,18 +689,18 @@
 
     if-lt p1, v0, :cond_a
 
-    .line 2722
+    .line 2794
     :cond_9
     :goto_9
     return-void
 
-    .line 2716
+    .line 2788
     :cond_a
     add-int v0, p1, p2
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->e(I)V
 
-    .line 2717
+    .line 2789
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     iget-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
@@ -717,7 +717,7 @@
 
     invoke-static {v0, p1, v1, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 2719
+    .line 2791
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     add-int v1, p1, p2
@@ -726,7 +726,7 @@
 
     invoke-static {v0, p1, v1, v2}, Ljava/util/Arrays;->fill([IIII)V
 
-    .line 2721
+    .line 2793
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->d(II)V
 
     goto :goto_9
@@ -736,7 +736,7 @@
     .registers 3
 
     .prologue
-    .line 2643
+    .line 2715
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     if-eqz v0, :cond_9
@@ -747,11 +747,11 @@
 
     if-lt p1, v0, :cond_b
 
-    .line 2644
+    .line 2716
     :cond_9
     const/4 v0, -0x1
 
-    .line 2646
+    .line 2718
     :goto_a
     return v0
 
@@ -767,21 +767,21 @@
     .registers 3
 
     .prologue
-    .line 2656
+    .line 2728
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     array-length v0, v0
 
-    .line 2657
+    .line 2729
     :goto_3
     if-gt v0, p1, :cond_8
 
-    .line 2658
+    .line 2730
     mul-int/lit8 v0, v0, 0x2
 
     goto :goto_3
 
-    .line 2660
+    .line 2732
     :cond_8
     return v0
 .end method
@@ -794,12 +794,12 @@
 
     const/4 v3, -0x1
 
-    .line 2664
+    .line 2736
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     if-nez v0, :cond_18
 
-    .line 2665
+    .line 2737
     const/16 v0, 0xa
 
     invoke-static {p1, v0}, Ljava/lang/Math;->max(II)I
@@ -812,17 +812,17 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
-    .line 2666
+    .line 2738
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     invoke-static {v0, v3}, Ljava/util/Arrays;->fill([II)V
 
-    .line 2673
+    .line 2745
     :cond_17
     :goto_17
     return-void
 
-    .line 2667
+    .line 2739
     :cond_18
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
@@ -830,10 +830,10 @@
 
     if-lt p1, v0, :cond_17
 
-    .line 2668
+    .line 2740
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
-    .line 2669
+    .line 2741
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->d(I)I
 
     move-result v1
@@ -842,14 +842,14 @@
 
     iput-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
-    .line 2670
+    .line 2742
     iget-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     array-length v2, v0
 
     invoke-static {v0, v4, v1, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 2671
+    .line 2743
     iget-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->a:[I
 
     array-length v0, v0
@@ -869,19 +869,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2791
+    .line 2863
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     if-nez v0, :cond_7
 
     move-object v0, v1
 
-    .line 2800
+    .line 2872
     :cond_6
     :goto_6
     return-object v0
 
-    .line 2794
+    .line 2866
     :cond_7
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
@@ -896,7 +896,7 @@
     :goto_10
     if-ltz v2, :cond_22
 
-    .line 2795
+    .line 2867
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;->b:Ljava/util/List;
 
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -905,12 +905,12 @@
 
     check-cast v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;
 
-    .line 2796
+    .line 2868
     iget v3, v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
     if-eq v3, p1, :cond_6
 
-    .line 2794
+    .line 2866
     add-int/lit8 v0, v2, -0x1
 
     move v2, v0
@@ -920,6 +920,6 @@
     :cond_22
     move-object v0, v1
 
-    .line 2800
+    .line 2872
     goto :goto_6
 .end method

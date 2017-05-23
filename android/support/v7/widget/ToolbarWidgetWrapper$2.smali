@@ -22,14 +22,14 @@
     .registers 4
 
     .prologue
-    .line 564
+    .line 568
     iput-object p1, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     iput p2, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->a:I
 
     invoke-direct {p0}, Landroid/support/v4/view/ViewPropertyAnimatorListenerAdapter;-><init>()V
 
-    .line 565
+    .line 569
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->c:Z
@@ -43,12 +43,12 @@
     .registers 3
 
     .prologue
-    .line 581
+    .line 585
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->c:Z
 
-    .line 582
+    .line 586
     return-void
 .end method
 
@@ -56,25 +56,22 @@
     .registers 4
 
     .prologue
-    .line 574
+    .line 578
     iget-boolean v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->c:Z
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_d
 
-    .line 575
+    .line 579
     iget-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
-    # getter for: Landroid/support/v7/widget/ToolbarWidgetWrapper;->mToolbar:Landroid/support/v7/widget/Toolbar;
-    invoke-static {v0}, Landroid/support/v7/widget/ToolbarWidgetWrapper;->access$000(Landroid/support/v7/widget/ToolbarWidgetWrapper;)Landroid/support/v7/widget/Toolbar;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/widget/ToolbarWidgetWrapper;->mToolbar:Landroid/support/v7/widget/Toolbar;
 
     iget v1, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->a:I
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/Toolbar;->setVisibility(I)V
 
-    .line 577
-    :cond_f
+    .line 581
+    :cond_d
     return-void
 .end method
 
@@ -82,18 +79,15 @@
     .registers 4
 
     .prologue
-    .line 569
+    .line 573
     iget-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
-    # getter for: Landroid/support/v7/widget/ToolbarWidgetWrapper;->mToolbar:Landroid/support/v7/widget/Toolbar;
-    invoke-static {v0}, Landroid/support/v7/widget/ToolbarWidgetWrapper;->access$000(Landroid/support/v7/widget/ToolbarWidgetWrapper;)Landroid/support/v7/widget/Toolbar;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/widget/ToolbarWidgetWrapper;->mToolbar:Landroid/support/v7/widget/Toolbar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/Toolbar;->setVisibility(I)V
 
-    .line 570
+    .line 574
     return-void
 .end method

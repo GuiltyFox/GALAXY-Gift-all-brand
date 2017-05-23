@@ -24,17 +24,19 @@
 
 .field public static final abc_slide_out_top:I = 0x7f050009
 
-.field public static final design_bottom_sheet_slide_in:I = 0x7f05001b
+.field public static final design_appbar_state_list_animator:I = 0x7f050011
 
-.field public static final design_bottom_sheet_slide_out:I = 0x7f05001c
+.field public static final design_bottom_sheet_slide_in:I = 0x7f050012
 
-.field public static final design_fab_in:I = 0x7f05001d
+.field public static final design_bottom_sheet_slide_out:I = 0x7f050013
 
-.field public static final design_fab_out:I = 0x7f05001e
+.field public static final design_fab_in:I = 0x7f050014
 
-.field public static final design_snackbar_in:I = 0x7f05001f
+.field public static final design_fab_out:I = 0x7f050015
 
-.field public static final design_snackbar_out:I = 0x7f050020
+.field public static final design_snackbar_in:I = 0x7f050016
+
+.field public static final design_snackbar_out:I = 0x7f050017
 
 
 # direct methods

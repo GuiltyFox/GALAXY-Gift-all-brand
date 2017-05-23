@@ -6,7 +6,7 @@
 # instance fields
 .field containerWinner:Landroid/widget/FrameLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100244
+        value = 0x7f10022f
     .end annotation
 .end field
 
@@ -31,19 +31,19 @@
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/WinnersActivity;->C:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/WinnersActivity;->D:Landroid/os/Bundle;
 
     .line 49
     new-instance v0, Lcom/samsung/privilege/fragment/WinnerListFragment;
 
     invoke-direct {v0}, Lcom/samsung/privilege/fragment/WinnerListFragment;-><init>()V
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/WinnersActivity;->D:Landroid/support/v4/app/Fragment;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/WinnersActivity;->E:Landroid/support/v4/app/Fragment;
 
     .line 50
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WinnersActivity;->D:Landroid/support/v4/app/Fragment;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WinnersActivity;->E:Landroid/support/v4/app/Fragment;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/WinnersActivity;->C:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WinnersActivity;->D:Landroid/os/Bundle;
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/Fragment;->setArguments(Landroid/os/Bundle;)V
 
@@ -56,9 +56,9 @@
 
     move-result-object v0
 
-    const v1, 0x7f100244
+    const v1, 0x7f10022f
 
-    iget-object v2, p0, Lcom/samsung/privilege/activity/WinnersActivity;->D:Landroid/support/v4/app/Fragment;
+    iget-object v2, p0, Lcom/samsung/privilege/activity/WinnersActivity;->E:Landroid/support/v4/app/Fragment;
 
     .line 53
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/app/FragmentTransaction;->a(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
@@ -92,7 +92,7 @@
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnersActivity;->b(I)V
 
     .line 33
-    const v0, 0x7f090210
+    const v0, 0x7f0900cb
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnersActivity;->getString(I)Ljava/lang/String;
 
@@ -101,7 +101,7 @@
     invoke-virtual {p0, v0, v1}, Lcom/samsung/privilege/activity/WinnersActivity;->a(Ljava/lang/String;Z)V
 
     .line 34
-    const v0, 0x7f02027f
+    const v0, 0x7f020162
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnersActivity;->a(I)V
 
@@ -124,7 +124,7 @@
 
     .prologue
     .line 24
-    const v0, 0x7f04005c
+    const v0, 0x7f040054
 
     return v0
 .end method
@@ -163,7 +163,7 @@
     .line 62
     iget-object v0, p0, Lcom/samsung/privilege/activity/WinnersActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v1, 0x7f090252
+    const v1, 0x7f0900db
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/WinnersActivity;->getString(I)Ljava/lang/String;
 

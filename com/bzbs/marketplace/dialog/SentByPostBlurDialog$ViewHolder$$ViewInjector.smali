@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f1002b5
+    const v6, 0x7f100256
 
-    const v5, 0x7f1002b4
+    const v5, 0x7f100255
 
-    const v4, 0x7f1002b3
+    const v4, 0x7f100253
 
-    const v2, 0x7f1002b2
+    const v3, 0x7f10024a
 
-    const v3, 0x7f1002b0
+    const v2, 0x7f100247
 
     .line 11
     const-string/jumbo v0, "field \'imgCampaign\'"
@@ -78,7 +78,7 @@
     .line 13
     const-string/jumbo v0, "field \'tvCampaignDesc\'"
 
-    invoke-virtual {p1, p3, v4, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p3, v5, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -87,7 +87,7 @@
     .line 14
     const-string/jumbo v1, "field \'tvCampaignDesc\'"
 
-    invoke-virtual {p1, v0, v4, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v5, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -98,7 +98,7 @@
     .line 15
     const-string/jumbo v0, "field \'tvShowTimeRedeem\'"
 
-    invoke-virtual {p1, p3, v5, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p3, v6, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -107,7 +107,7 @@
     .line 16
     const-string/jumbo v1, "field \'tvShowTimeRedeem\'"
 
-    invoke-virtual {p1, v0, v5, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v6, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -116,7 +116,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog$ViewHolder;->tvShowTimeRedeem:Landroid/widget/TextView;
 
     .line 17
-    const v0, 0x7f1002c5
+    const v0, 0x7f100396
 
     const-string/jumbo v1, "field \'tvDraws1\'"
 
@@ -127,7 +127,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 18
-    const v1, 0x7f1002c5
+    const v1, 0x7f100396
 
     const-string/jumbo v2, "field \'tvDraws1\'"
 
@@ -140,7 +140,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog$ViewHolder;->tvDraws1:Landroid/widget/TextView;
 
     .line 19
-    const v0, 0x7f1002c6
+    const v0, 0x7f100397
 
     const-string/jumbo v1, "field \'tvDraws2\'"
 
@@ -151,7 +151,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 20
-    const v1, 0x7f1002c6
+    const v1, 0x7f100397
 
     const-string/jumbo v2, "field \'tvDraws2\'"
 
@@ -164,7 +164,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog$ViewHolder;->tvDraws2:Landroid/widget/TextView;
 
     .line 21
-    const v0, 0x7f1002c7
+    const v0, 0x7f100398
 
     const-string/jumbo v1, "field \'tvDraws3\'"
 
@@ -175,7 +175,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 22
-    const v1, 0x7f1002c7
+    const v1, 0x7f100398
 
     const-string/jumbo v2, "field \'tvDraws3\'"
 
@@ -188,7 +188,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog$ViewHolder;->tvDraws3:Landroid/widget/TextView;
 
     .line 23
-    const v0, 0x7f1002c8
+    const v0, 0x7f100399
 
     const-string/jumbo v1, "field \'tvDraws4\'"
 
@@ -199,7 +199,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 24
-    const v1, 0x7f1002c8
+    const v1, 0x7f100399
 
     const-string/jumbo v2, "field \'tvDraws4\'"
 
@@ -214,7 +214,7 @@
     .line 25
     const-string/jumbo v0, "field \'svCondition\'"
 
-    invoke-virtual {p1, p3, v6, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p3, v3, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -223,7 +223,7 @@
     .line 26
     const-string/jumbo v1, "field \'svCondition\'"
 
-    invoke-virtual {p1, v0, v6, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v3, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -232,7 +232,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog$ViewHolder;->svCondition:Landroid/widget/ScrollView;
 
     .line 27
-    const v0, 0x7f1002bb
+    const v0, 0x7f100260
 
     const-string/jumbo v1, "field \'btnClose\'"
 
@@ -243,7 +243,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 28
-    const v1, 0x7f1002bb
+    const v1, 0x7f100260
 
     const-string/jumbo v2, "field \'btnClose\'"
 
@@ -258,7 +258,7 @@
     .line 29
     const-string/jumbo v0, "field \'layoutRoot\'"
 
-    invoke-virtual {p1, p3, v3, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p3, v4, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -267,7 +267,7 @@
     .line 30
     const-string/jumbo v1, "field \'layoutRoot\'"
 
-    invoke-virtual {p1, v0, v3, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v4, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 

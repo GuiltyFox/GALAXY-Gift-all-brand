@@ -37,15 +37,15 @@
     .registers 4
 
     .prologue
-    .line 820
+    .line 842
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;-><init>(II)V
 
-    .line 821
+    .line 843
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
 
-    .line 822
+    .line 844
     return-void
 .end method
 
@@ -53,13 +53,13 @@
     .registers 4
 
     .prologue
-    .line 825
+    .line 847
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;-><init>(II)V
 
-    .line 826
+    .line 848
     iput-boolean p3, p0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
 
-    .line 827
+    .line 849
     return-void
 .end method
 
@@ -67,10 +67,10 @@
     .registers 3
 
     .prologue
-    .line 807
+    .line 829
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 808
+    .line 830
     return-void
 .end method
 
@@ -78,15 +78,15 @@
     .registers 3
 
     .prologue
-    .line 815
+    .line 837
     invoke-direct {p0, p1}, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 816
+    .line 838
     iget-boolean v0, p1, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
 
     iput-boolean v0, p0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
 
-    .line 817
+    .line 839
     return-void
 .end method
 
@@ -94,9 +94,9 @@
     .registers 2
 
     .prologue
-    .line 811
+    .line 833
     invoke-direct {p0, p1}, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 812
+    .line 834
     return-void
 .end method

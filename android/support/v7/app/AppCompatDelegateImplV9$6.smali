@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 825
+    .line 829
     iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$6;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
     invoke-direct {p0}, Landroid/support/v4/view/ViewPropertyAnimatorListenerAdapter;-><init>()V
@@ -34,7 +34,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 838
+    .line 842
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$6;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV9;->n:Landroid/support/v7/widget/ActionBarContextView;
@@ -43,19 +43,19 @@
 
     invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->c(Landroid/view/View;F)V
 
-    .line 839
+    .line 843
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$6;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV9;->q:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     invoke-virtual {v0, v2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(Landroid/support/v4/view/ViewPropertyAnimatorListener;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 840
+    .line 844
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$6;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
     iput-object v2, v0, Landroid/support/v7/app/AppCompatDelegateImplV9;->q:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 841
+    .line 845
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .registers 4
 
     .prologue
-    .line 828
+    .line 832
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$6;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV9;->n:Landroid/support/v7/widget/ActionBarContextView;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setVisibility(I)V
 
-    .line 829
+    .line 833
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$6;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV9;->n:Landroid/support/v7/widget/ActionBarContextView;
@@ -81,7 +81,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->sendAccessibilityEvent(I)V
 
-    .line 831
+    .line 835
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$6;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV9;->n:Landroid/support/v7/widget/ActionBarContextView;
@@ -90,9 +90,11 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_28
+    instance-of v0, v0, Landroid/view/View;
 
-    .line 832
+    if-eqz v0, :cond_2a
+
+    .line 836
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$6;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
     iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV9;->n:Landroid/support/v7/widget/ActionBarContextView;
@@ -105,7 +107,7 @@
 
     invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->v(Landroid/view/View;)V
 
-    .line 834
-    :cond_28
+    .line 838
+    :cond_2a
     return-void
 .end method

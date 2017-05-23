@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 560
+    .line 572
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogSerialGift$13$1;->a:Lcom/samsung/privilege/util/DialogSerialGift$13;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 569
+    .line 581
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 574
+    .line 586
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .registers 4
 
     .prologue
-    .line 563
+    .line 575
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$13$1;->a:Lcom/samsung/privilege/util/DialogSerialGift$13;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogSerialGift$13;->c:Landroid/view/View;
@@ -60,6 +60,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 564
+    .line 576
     return-void
 .end method

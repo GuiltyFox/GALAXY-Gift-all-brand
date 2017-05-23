@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 330
+    .line 334
     iput-object p1, p0, Landroid/support/v7/view/menu/MenuPopupHelper$1;->a:Landroid/support/v7/view/menu/MenuPopupHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,11 +35,11 @@
     .registers 2
 
     .prologue
-    .line 333
+    .line 337
     iget-object v0, p0, Landroid/support/v7/view/menu/MenuPopupHelper$1;->a:Landroid/support/v7/view/menu/MenuPopupHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuPopupHelper;->f()V
 
-    .line 334
+    .line 338
     return-void
 .end method

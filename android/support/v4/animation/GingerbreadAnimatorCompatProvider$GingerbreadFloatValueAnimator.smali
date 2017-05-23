@@ -51,47 +51,47 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 51
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 40
+    .line 38
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->a:Ljava/util/List;
 
-    .line 41
+    .line 39
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->b:Ljava/util/List;
 
-    .line 45
+    .line 43
     const-wide/16 v0, 0xc8
 
     iput-wide v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->e:J
 
-    .line 46
+    .line 44
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->f:F
 
-    .line 48
+    .line 46
     iput-boolean v2, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->g:Z
 
-    .line 49
+    .line 47
     iput-boolean v2, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->h:Z
 
-    .line 54
+    .line 52
     new-instance v0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator$1;
 
     invoke-direct {v0, p0}, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator$1;-><init>(Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;)V
 
     iput-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->i:Ljava/lang/Runnable;
 
-    .line 52
+    .line 50
     return-void
 .end method
 
@@ -99,7 +99,7 @@
     .registers 2
 
     .prologue
-    .line 38
+    .line 36
     iput p1, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->f:F
 
     return p1
@@ -109,7 +109,7 @@
     .registers 3
 
     .prologue
-    .line 38
+    .line 36
     invoke-direct {p0}, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->e()J
 
     move-result-wide v0
@@ -121,7 +121,7 @@
     .registers 3
 
     .prologue
-    .line 38
+    .line 36
     iget-wide v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->d:J
 
     return-wide v0
@@ -131,7 +131,7 @@
     .registers 3
 
     .prologue
-    .line 38
+    .line 36
     iget-wide v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->e:J
 
     return-wide v0
@@ -141,7 +141,7 @@
     .registers 3
 
     .prologue
-    .line 73
+    .line 71
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->b:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -155,7 +155,7 @@
     :goto_9
     if-ltz v1, :cond_1a
 
-    .line 74
+    .line 72
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->b:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -166,14 +166,14 @@
 
     invoke-interface {v0, p0}, Landroid/support/v4/animation/AnimatorUpdateListenerCompat;->a(Landroid/support/v4/animation/ValueAnimatorCompat;)V
 
-    .line 73
+    .line 71
     add-int/lit8 v0, v1, -0x1
 
     move v1, v0
 
     goto :goto_9
 
-    .line 76
+    .line 74
     :cond_1a
     return-void
 .end method
@@ -182,7 +182,7 @@
     .registers 1
 
     .prologue
-    .line 38
+    .line 36
     invoke-direct {p0}, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->d()V
 
     return-void
@@ -192,7 +192,7 @@
     .registers 2
 
     .prologue
-    .line 38
+    .line 36
     iget v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->f:F
 
     return v0
@@ -202,7 +202,7 @@
     .registers 3
 
     .prologue
-    .line 108
+    .line 106
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->c:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getDrawingTime()J
@@ -216,7 +216,7 @@
     .registers 3
 
     .prologue
-    .line 112
+    .line 110
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->a:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -230,7 +230,7 @@
     :goto_9
     if-ltz v1, :cond_1a
 
-    .line 113
+    .line 111
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->a:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -241,14 +241,14 @@
 
     invoke-interface {v0, p0}, Landroid/support/v4/animation/AnimatorListenerCompat;->a(Landroid/support/v4/animation/ValueAnimatorCompat;)V
 
-    .line 112
+    .line 110
     add-int/lit8 v0, v1, -0x1
 
     move v1, v0
 
     goto :goto_9
 
-    .line 115
+    .line 113
     :cond_1a
     return-void
 .end method
@@ -257,7 +257,7 @@
     .registers 1
 
     .prologue
-    .line 38
+    .line 36
     invoke-direct {p0}, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->g()V
 
     return-void
@@ -267,7 +267,7 @@
     .registers 2
 
     .prologue
-    .line 38
+    .line 36
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->i:Ljava/lang/Runnable;
 
     return-object v0
@@ -277,7 +277,7 @@
     .registers 3
 
     .prologue
-    .line 118
+    .line 116
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->a:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -291,7 +291,7 @@
     :goto_9
     if-ltz v1, :cond_1a
 
-    .line 119
+    .line 117
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->a:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -302,14 +302,14 @@
 
     invoke-interface {v0, p0}, Landroid/support/v4/animation/AnimatorListenerCompat;->b(Landroid/support/v4/animation/ValueAnimatorCompat;)V
 
-    .line 118
+    .line 116
     add-int/lit8 v0, v1, -0x1
 
     move v1, v0
 
     goto :goto_9
 
-    .line 121
+    .line 119
     :cond_1a
     return-void
 .end method
@@ -318,7 +318,7 @@
     .registers 3
 
     .prologue
-    .line 124
+    .line 122
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->a:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -332,7 +332,7 @@
     :goto_9
     if-ltz v1, :cond_1a
 
-    .line 125
+    .line 123
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->a:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -343,14 +343,14 @@
 
     invoke-interface {v0, p0}, Landroid/support/v4/animation/AnimatorListenerCompat;->c(Landroid/support/v4/animation/ValueAnimatorCompat;)V
 
-    .line 124
+    .line 122
     add-int/lit8 v0, v1, -0x1
 
     move v1, v0
 
     goto :goto_9
 
-    .line 127
+    .line 125
     :cond_1a
     return-void
 .end method
@@ -361,37 +361,37 @@
     .registers 5
 
     .prologue
-    .line 97
+    .line 95
     iget-boolean v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->g:Z
 
     if-eqz v0, :cond_5
 
-    .line 105
+    .line 103
     :goto_4
     return-void
 
-    .line 100
+    .line 98
     :cond_5
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->g:Z
 
-    .line 101
+    .line 99
     invoke-direct {p0}, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->f()V
 
-    .line 102
+    .line 100
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->f:F
 
-    .line 103
+    .line 101
     invoke-direct {p0}, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->e()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->d:J
 
-    .line 104
+    .line 102
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->c:Landroid/view/View;
 
     iget-object v1, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->i:Ljava/lang/Runnable;
@@ -407,15 +407,15 @@
     .registers 4
 
     .prologue
-    .line 90
+    .line 88
     iget-boolean v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->g:Z
 
     if-nez v0, :cond_6
 
-    .line 91
+    .line 89
     iput-wide p1, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->e:J
 
-    .line 93
+    .line 91
     :cond_6
     return-void
 .end method
@@ -424,12 +424,12 @@
     .registers 3
 
     .prologue
-    .line 85
+    .line 83
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->a:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 86
+    .line 84
     return-void
 .end method
 
@@ -437,12 +437,12 @@
     .registers 3
 
     .prologue
-    .line 143
+    .line 141
     iget-object v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->b:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 144
+    .line 142
     return-void
 .end method
 
@@ -450,10 +450,10 @@
     .registers 2
 
     .prologue
-    .line 80
+    .line 78
     iput-object p1, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->c:Landroid/view/View;
 
-    .line 81
+    .line 79
     return-void
 .end method
 
@@ -461,30 +461,30 @@
     .registers 2
 
     .prologue
-    .line 131
+    .line 129
     iget-boolean v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->h:Z
 
     if-eqz v0, :cond_5
 
-    .line 139
+    .line 137
     :goto_4
     return-void
 
-    .line 134
+    .line 132
     :cond_5
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->h:Z
 
-    .line 135
+    .line 133
     iget-boolean v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->g:Z
 
     if-eqz v0, :cond_f
 
-    .line 136
+    .line 134
     invoke-direct {p0}, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->h()V
 
-    .line 138
+    .line 136
     :cond_f
     invoke-direct {p0}, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->g()V
 
@@ -495,7 +495,7 @@
     .registers 2
 
     .prologue
-    .line 148
+    .line 146
     iget v0, p0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;->f:F
 
     return v0

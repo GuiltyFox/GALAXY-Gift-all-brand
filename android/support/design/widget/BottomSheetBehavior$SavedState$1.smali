@@ -3,7 +3,7 @@
 .source "BottomSheetBehavior.java"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;
 
 
 # annotations
@@ -14,7 +14,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Landroid/os/Parcelable$Creator",
+        "Landroid/support/v4/os/ParcelableCompatCreatorCallbacks",
         "<",
         "Landroid/support/design/widget/BottomSheetBehavior$SavedState;",
         ">;"
@@ -27,7 +27,7 @@
     .registers 1
 
     .prologue
-    .line 661
+    .line 788
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,24 +35,24 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroid/support/design/widget/BottomSheetBehavior$SavedState;
-    .registers 3
+.method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/design/widget/BottomSheetBehavior$SavedState;
+    .registers 4
 
     .prologue
-    .line 664
+    .line 791
     new-instance v0, Landroid/support/design/widget/BottomSheetBehavior$SavedState;
 
-    invoke-direct {v0, p1}, Landroid/support/design/widget/BottomSheetBehavior$SavedState;-><init>(Landroid/os/Parcel;)V
+    invoke-direct {v0, p1, p2}, Landroid/support/design/widget/BottomSheetBehavior$SavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 3
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
+    .registers 4
 
     .prologue
-    .line 661
-    invoke-virtual {p0, p1}, Landroid/support/design/widget/BottomSheetBehavior$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/support/design/widget/BottomSheetBehavior$SavedState;
+    .line 788
+    invoke-virtual {p0, p1, p2}, Landroid/support/design/widget/BottomSheetBehavior$SavedState$1;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/design/widget/BottomSheetBehavior$SavedState;
 
     move-result-object v0
 
@@ -63,7 +63,7 @@
     .registers 3
 
     .prologue
-    .line 669
+    .line 796
     new-array v0, p1, [Landroid/support/design/widget/BottomSheetBehavior$SavedState;
 
     return-object v0
@@ -73,7 +73,7 @@
     .registers 3
 
     .prologue
-    .line 661
+    .line 788
     invoke-virtual {p0, p1}, Landroid/support/design/widget/BottomSheetBehavior$SavedState$1;->newArray(I)[Landroid/support/design/widget/BottomSheetBehavior$SavedState;
 
     move-result-object v0

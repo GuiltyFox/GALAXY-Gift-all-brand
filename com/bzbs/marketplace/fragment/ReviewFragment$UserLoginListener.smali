@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 502
+    .line 521
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 502
+    .line 521
     invoke-direct {p0, p1}, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener;-><init>(Lcom/bzbs/marketplace/fragment/ReviewFragment;)V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 505
+    .line 524
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->n(Lcom/bzbs/marketplace/fragment/ReviewFragment;)Landroid/os/Handler;
@@ -52,7 +52,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 517
+    .line 536
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .registers 4
 
     .prologue
-    .line 521
+    .line 540
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->o(Lcom/bzbs/marketplace/fragment/ReviewFragment;)Landroid/os/Handler;
@@ -73,7 +73,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 534
+    .line 553
     return-void
 .end method
 
@@ -81,7 +81,7 @@
     .registers 2
 
     .prologue
-    .line 539
+    .line 558
     return-void
 .end method
 
@@ -89,6 +89,6 @@
     .registers 2
 
     .prologue
-    .line 544
+    .line 563
     return-void
 .end method

@@ -57,11 +57,11 @@
     .prologue
     const/4 v6, 0x0
 
-    const v5, 0x7f100613
+    const v5, 0x7f10040b
 
-    const v4, 0x7f100611
+    const v4, 0x7f100409
 
-    const v3, 0x7f10060f
+    const v3, 0x7f100407
 
     .line 110
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogProfile$1;->a:Landroid/widget/EditText;

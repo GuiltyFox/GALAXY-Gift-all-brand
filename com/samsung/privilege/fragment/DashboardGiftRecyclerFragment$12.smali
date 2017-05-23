@@ -47,7 +47,7 @@
     .registers 7
 
     .prologue
-    const v4, 0x7f0902e0
+    const v4, 0x7f090120
 
     .line 2956
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->a:Landroid/widget/EditText;
@@ -106,7 +106,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v3, 0x7f090329
+    const v3, 0x7f090162
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -150,7 +150,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v3, 0x7f09032a
+    const v3, 0x7f090163
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 

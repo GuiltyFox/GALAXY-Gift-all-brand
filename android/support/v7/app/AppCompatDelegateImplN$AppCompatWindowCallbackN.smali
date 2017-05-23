@@ -21,3 +21,54 @@
     .line 40
     return-void
 .end method
+
+
+# virtual methods
+.method public onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+    .registers 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Landroid/view/KeyboardShortcutGroup;",
+            ">;",
+            "Landroid/view/Menu;",
+            "I)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 45
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplN$AppCompatWindowCallbackN;->b:Landroid/support/v7/app/AppCompatDelegateImplN;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/support/v7/app/AppCompatDelegateImplN;->a(IZ)Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState;
+
+    move-result-object v0
+
+    .line 46
+    if-eqz v0, :cond_14
+
+    iget-object v1, v0, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState;->j:Landroid/support/v7/view/menu/MenuBuilder;
+
+    if-eqz v1, :cond_14
+
+    .line 49
+    iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV9$PanelFeatureState;->j:Landroid/support/v7/view/menu/MenuBuilder;
+
+    invoke-super {p0, p1, v0, p3}, Landroid/support/v7/app/AppCompatDelegateImplV23$AppCompatWindowCallbackV23;->onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+
+    .line 54
+    :goto_13
+    return-void
+
+    .line 52
+    :cond_14
+    invoke-super {p0, p1, p2, p3}, Landroid/support/v7/app/AppCompatDelegateImplV23$AppCompatWindowCallbackV23;->onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+
+    goto :goto_13
+.end method

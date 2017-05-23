@@ -35,7 +35,7 @@
     return-void
 .end method
 
-.method private constructor <init>(Landroid/support/v7/widget/RecyclerView$ViewHolder;Landroid/support/v7/widget/RecyclerView$ViewHolder;IIII)V
+.method constructor <init>(Landroid/support/v7/widget/RecyclerView$ViewHolder;Landroid/support/v7/widget/RecyclerView$ViewHolder;IIII)V
     .registers 7
 
     .prologue
@@ -55,16 +55,6 @@
     iput p6, p0, Landroid/support/v7/widget/DefaultItemAnimator$ChangeInfo;->f:I
 
     .line 81
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v7/widget/RecyclerView$ViewHolder;Landroid/support/v7/widget/RecyclerView$ViewHolder;IIIILandroid/support/v7/widget/DefaultItemAnimator$1;)V
-    .registers 8
-
-    .prologue
-    .line 66
-    invoke-direct/range {p0 .. p6}, Landroid/support/v7/widget/DefaultItemAnimator$ChangeInfo;-><init>(Landroid/support/v7/widget/RecyclerView$ViewHolder;Landroid/support/v7/widget/RecyclerView$ViewHolder;IIII)V
-
     return-void
 .end method
 

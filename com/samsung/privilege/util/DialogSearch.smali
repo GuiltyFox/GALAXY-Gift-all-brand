@@ -142,7 +142,7 @@
     :goto_19
     new-instance v0, Landroid/app/Dialog;
 
-    const v2, 0x7f0c0107
+    const v2, 0x7f0c00ff
 
     invoke-direct {v0, p0, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -151,14 +151,14 @@
     .line 90
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v2, 0x7f04012c
+    const v2, 0x7f0400bd
 
     invoke-virtual {v0, v2}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 93
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v2, 0x7f1000b7
+    const v2, 0x7f1000ba
 
     invoke-virtual {v0, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -183,7 +183,7 @@
     .line 95
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v2, 0x7f100139
+    const v2, 0x7f10013c
 
     invoke-virtual {v0, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -220,7 +220,7 @@
     :goto_68
     sget-object v1, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v3, 0x7f10063b
+    const v3, 0x7f100435
 
     invoke-virtual {v1, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -278,7 +278,7 @@
     .line 196
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v1, 0x7f1005f5
+    const v1, 0x7f1003ef
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -296,7 +296,7 @@
     .line 204
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v1, 0x7f1005f6
+    const v1, 0x7f1003f0
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -307,7 +307,7 @@
     .line 205
     sget-object v1, Lcom/samsung/privilege/util/DialogSearch;->b:Landroid/content/Context;
 
-    const v2, 0x7f05003e
+    const v2, 0x7f050030
 
     invoke-static {v1, v2}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 

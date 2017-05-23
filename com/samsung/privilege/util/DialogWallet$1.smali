@@ -38,7 +38,7 @@
     .line 47
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogWallet$1;->a:Landroid/content/Context;
 
-    const v1, 0x7f050022
+    const v1, 0x7f050019
 
     invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -56,7 +56,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f10066a
+    const v2, 0x7f10045f
 
     invoke-virtual {v1, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

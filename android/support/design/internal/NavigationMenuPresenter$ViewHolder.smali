@@ -8,9 +8,9 @@
     .registers 2
 
     .prologue
-    .line 269
+    .line 283
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 270
+    .line 284
     return-void
 .end method

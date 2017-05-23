@@ -8,7 +8,7 @@
     .registers 5
 
     .prologue
-    .line 287
+    .line 301
     sget v0, Landroid/support/design/R$layout;->design_navigation_item_subheader:I
 
     const/4 v1, 0x0
@@ -19,6 +19,6 @@
 
     invoke-direct {p0, v0}, Landroid/support/design/internal/NavigationMenuPresenter$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 288
+    .line 302
     return-void
 .end method

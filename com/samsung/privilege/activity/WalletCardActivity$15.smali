@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1370
+    .line 1368
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$15;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,10 +39,10 @@
 
     const/4 v3, 0x0
 
-    .line 1373
+    .line 1371
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$15;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->ac:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->ab:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -54,7 +54,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$15;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v2, 0x7f0903d6
+    const v2, 0x7f0901e2
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -66,7 +66,7 @@
 
     if-eqz v0, :cond_3c
 
-    .line 1374
+    .line 1372
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$15;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$15;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -79,7 +79,7 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;Landroid/view/View;Landroid/view/View;ZZ)V
 
-    .line 1375
+    .line 1373
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$15;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->l(Lcom/samsung/privilege/activity/WalletCardActivity;)Z
@@ -88,17 +88,17 @@
 
     if-ne v0, v4, :cond_3c
 
-    .line 1376
+    .line 1374
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$15;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/util/ScreenUtil;->d(Landroid/app/Activity;)V
 
-    .line 1377
+    .line 1375
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$15;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0, v3}, Lcom/samsung/privilege/activity/WalletCardActivity;->b(Lcom/samsung/privilege/activity/WalletCardActivity;Z)Z
 
-    .line 1380
+    .line 1378
     :cond_3c
     return-void
 .end method

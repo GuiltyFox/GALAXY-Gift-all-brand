@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 134
+    .line 138
     iput-object p1, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
     invoke-direct {p0}, Landroid/support/v4/view/ViewPropertyAnimatorListenerAdapter;-><init>()V
@@ -34,95 +34,79 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 137
-    iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
-
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->a(Landroid/support/v7/app/WindowDecorActionBar;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_23
-
-    iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
-
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->b(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/view/View;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_23
-
-    .line 138
-    iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
-
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->b(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;F)V
-
-    .line 139
-    iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
-
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->c(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContainer;
-
-    move-result-object v0
-
-    invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;F)V
-
     .line 141
-    :cond_23
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->c(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContainer;
+    iget-boolean v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->k:Z
 
-    move-result-object v0
+    if-eqz v0, :cond_1b
+
+    iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
+
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->f:Landroid/view/View;
+
+    if-eqz v0, :cond_1b
+
+    .line 142
+    iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
+
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->f:Landroid/view/View;
+
+    invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;F)V
+
+    .line 143
+    iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
+
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->c:Landroid/support/v7/widget/ActionBarContainer;
+
+    invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;F)V
+
+    .line 145
+    :cond_1b
+    iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
+
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->c:Landroid/support/v7/widget/ActionBarContainer;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContainer;->setVisibility(I)V
 
-    .line 142
+    .line 146
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->c(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContainer;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->c:Landroid/support/v7/widget/ActionBarContainer;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContainer;->setTransitioning(Z)V
 
-    .line 143
+    .line 147
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Landroid/support/v7/app/WindowDecorActionBar;->a(Landroid/support/v7/app/WindowDecorActionBar;Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;)Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;
+    iput-object v1, v0, Landroid/support/v7/app/WindowDecorActionBar;->n:Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;
 
-    .line 144
+    .line 148
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
     invoke-virtual {v0}, Landroid/support/v7/app/WindowDecorActionBar;->j()V
 
-    .line 145
+    .line 149
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->d(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarOverlayLayout;
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->b:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
-    move-result-object v0
+    if-eqz v0, :cond_43
 
-    if-eqz v0, :cond_54
-
-    .line 146
+    .line 150
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$1;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->d(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarOverlayLayout;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->b:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
     invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->v(Landroid/view/View;)V
 
-    .line 148
-    :cond_54
+    .line 152
+    :cond_43
     return-void
 .end method

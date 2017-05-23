@@ -4,6 +4,8 @@
 
 
 # static fields
+.field static final COLLAPSIBLE_FLAGS:I = 0xa
+
 .field static final FLAG_QUICK_RETURN:I = 0x5
 
 .field static final FLAG_SNAP:I = 0x11
@@ -30,15 +32,15 @@
     .registers 4
 
     .prologue
-    .line 561
+    .line 669
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 544
+    .line 652
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
-    .line 562
+    .line 670
     return-void
 .end method
 
@@ -46,15 +48,15 @@
     .registers 5
 
     .prologue
-    .line 565
+    .line 673
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
-    .line 544
+    .line 652
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
-    .line 566
+    .line 674
     return-void
 .end method
 
@@ -64,23 +66,23 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 548
+    .line 656
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 544
+    .line 652
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
-    .line 549
-    sget-object v0, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams:[I
+    .line 657
+    sget-object v0, Landroid/support/design/R$styleable;->AppBarLayout_Layout:[I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 550
-    sget v1, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams_layout_scrollFlags:I
+    .line 658
+    sget v1, Landroid/support/design/R$styleable;->AppBarLayout_Layout_layout_scrollFlags:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -88,8 +90,8 @@
 
     iput v1, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
-    .line 551
-    sget v1, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams_layout_scrollInterpolator:I
+    .line 659
+    sget v1, Landroid/support/design/R$styleable;->AppBarLayout_Layout_layout_scrollInterpolator:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
@@ -97,25 +99,25 @@
 
     if-eqz v1, :cond_29
 
-    .line 552
-    sget v1, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams_layout_scrollInterpolator:I
+    .line 660
+    sget v1, Landroid/support/design/R$styleable;->AppBarLayout_Layout_layout_scrollInterpolator:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
-    .line 554
+    .line 662
     invoke-static {p1, v1}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
     move-result-object v1
 
     iput-object v1, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 557
+    .line 665
     :cond_29
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 558
+    .line 666
     return-void
 .end method
 
@@ -123,25 +125,25 @@
     .registers 3
 
     .prologue
-    .line 581
+    .line 689
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/widget/LinearLayout$LayoutParams;)V
 
-    .line 544
+    .line 652
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
-    .line 582
+    .line 690
     iget v0, p1, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
     iput v0, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
-    .line 583
+    .line 691
     iget-object v0, p1, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollInterpolator:Landroid/view/animation/Interpolator;
 
     iput-object v0, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 584
+    .line 692
     return-void
 .end method
 
@@ -149,15 +151,15 @@
     .registers 3
 
     .prologue
-    .line 569
+    .line 677
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 544
+    .line 652
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
-    .line 570
+    .line 678
     return-void
 .end method
 
@@ -165,15 +167,15 @@
     .registers 3
 
     .prologue
-    .line 573
+    .line 681
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 544
+    .line 652
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
-    .line 574
+    .line 682
     return-void
 .end method
 
@@ -181,15 +183,15 @@
     .registers 3
 
     .prologue
-    .line 577
+    .line 685
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/widget/LinearLayout$LayoutParams;)V
 
-    .line 544
+    .line 652
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
-    .line 578
+    .line 686
     return-void
 .end method
 
@@ -199,7 +201,7 @@
     .registers 2
 
     .prologue
-    .line 610
+    .line 718
     iget v0, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
     return v0
@@ -209,20 +211,48 @@
     .registers 2
 
     .prologue
-    .line 634
+    .line 742
     iget-object v0, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollInterpolator:Landroid/view/animation/Interpolator;
 
     return-object v0
+.end method
+
+.method isCollapsible()Z
+    .registers 3
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 749
+    iget v1, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
+
+    and-int/lit8 v1, v1, 0x1
+
+    if-ne v1, v0, :cond_e
+
+    iget v1, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
+
+    and-int/lit8 v1, v1, 0xa
+
+    if-eqz v1, :cond_e
+
+    :goto_d
+    return v0
+
+    :cond_e
+    const/4 v0, 0x0
+
+    goto :goto_d
 .end method
 
 .method public setScrollFlags(I)V
     .registers 2
 
     .prologue
-    .line 598
+    .line 706
     iput p1, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
-    .line 599
+    .line 707
     return-void
 .end method
 
@@ -230,9 +260,9 @@
     .registers 2
 
     .prologue
-    .line 623
+    .line 731
     iput-object p1, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 624
+    .line 732
     return-void
 .end method

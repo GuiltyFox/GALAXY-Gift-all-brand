@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 113
+    .line 117
     iput-object p1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout$3;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,21 +35,17 @@
     .registers 4
 
     .prologue
-    .line 115
+    .line 119
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout$3;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
-    # invokes: Landroid/support/v7/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V
-    invoke-static {v0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->access$200(Landroid/support/v7/widget/ActionBarOverlayLayout;)V
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V
 
-    .line 116
+    .line 120
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout$3;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout$3;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
-    # getter for: Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
-    invoke-static {v1}, Landroid/support/v7/widget/ActionBarOverlayLayout;->access$400(Landroid/support/v7/widget/ActionBarOverlayLayout;)Landroid/support/v7/widget/ActionBarContainer;
-
-    move-result-object v1
+    iget-object v1, v1, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
     invoke-static {v1}, Landroid/support/v4/view/ViewCompat;->r(Landroid/view/View;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
@@ -57,12 +53,9 @@
 
     iget-object v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout$3;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
-    .line 117
-    # getter for: Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
-    invoke-static {v2}, Landroid/support/v7/widget/ActionBarOverlayLayout;->access$400(Landroid/support/v7/widget/ActionBarOverlayLayout;)Landroid/support/v7/widget/ActionBarContainer;
+    iget-object v2, v2, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
-    move-result-object v2
-
+    .line 121
     invoke-virtual {v2}, Landroid/support/v7/widget/ActionBarContainer;->getHeight()I
 
     move-result v2
@@ -77,20 +70,15 @@
 
     iget-object v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout$3;->a:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
-    .line 118
-    # getter for: Landroid/support/v7/widget/ActionBarOverlayLayout;->mTopAnimatorListener:Landroid/support/v4/view/ViewPropertyAnimatorListener;
-    invoke-static {v2}, Landroid/support/v7/widget/ActionBarOverlayLayout;->access$300(Landroid/support/v7/widget/ActionBarOverlayLayout;)Landroid/support/v4/view/ViewPropertyAnimatorListener;
+    iget-object v2, v2, Landroid/support/v7/widget/ActionBarOverlayLayout;->mTopAnimatorListener:Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
-    move-result-object v2
-
+    .line 122
     invoke-virtual {v1, v2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(Landroid/support/v4/view/ViewPropertyAnimatorListener;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     move-result-object v1
 
-    .line 116
-    # setter for: Landroid/support/v7/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
-    invoke-static {v0, v1}, Landroid/support/v7/widget/ActionBarOverlayLayout;->access$002(Landroid/support/v7/widget/ActionBarOverlayLayout;Landroid/support/v4/view/ViewPropertyAnimatorCompat;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    iput-object v1, v0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 119
+    .line 123
     return-void
 .end method

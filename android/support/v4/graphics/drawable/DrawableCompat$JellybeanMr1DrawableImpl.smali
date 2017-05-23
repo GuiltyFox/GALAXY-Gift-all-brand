@@ -27,24 +27,3 @@
 
     return v0
 .end method
-
-.method public d(Landroid/graphics/drawable/Drawable;)I
-    .registers 3
-
-    .prologue
-    .line 174
-    invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a(Landroid/graphics/drawable/Drawable;)I
-
-    move-result v0
-
-    .line 175
-    if-ltz v0, :cond_7
-
-    :goto_6
-    return v0
-
-    :cond_7
-    const/4 v0, 0x0
-
-    goto :goto_6
-.end method

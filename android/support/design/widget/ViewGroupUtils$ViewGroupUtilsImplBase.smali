@@ -7,23 +7,14 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>()V
     .registers 1
 
     .prologue
-    .line 30
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/design/widget/ViewGroupUtils$1;)V
-    .registers 2
-
-    .prologue
-    .line 30
-    invoke-direct {p0}, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplBase;-><init>()V
-
+    .line 32
     return-void
 .end method
 
@@ -33,10 +24,10 @@
     .registers 6
 
     .prologue
-    .line 33
+    .line 36
     invoke-virtual {p1, p2, p3}, Landroid/view/ViewGroup;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 37
+    .line 40
     invoke-virtual {p2}, Landroid/view/View;->getScrollX()I
 
     move-result v0
@@ -47,6 +38,6 @@
 
     invoke-virtual {p3, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 38
+    .line 41
     return-void
 .end method

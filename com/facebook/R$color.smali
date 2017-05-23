@@ -4,31 +4,31 @@
 
 
 # static fields
-.field public static final com_facebook_blue:I = 0x7f0f004b
+.field public static final com_facebook_blue:I = 0x7f0e003a
 
-.field public static final com_facebook_button_background_color:I = 0x7f0f004c
+.field public static final com_facebook_button_background_color:I = 0x7f0e003b
 
-.field public static final com_facebook_button_background_color_disabled:I = 0x7f0f004d
+.field public static final com_facebook_button_background_color_disabled:I = 0x7f0e003c
 
-.field public static final com_facebook_button_background_color_pressed:I = 0x7f0f004e
+.field public static final com_facebook_button_background_color_pressed:I = 0x7f0e003d
 
-.field public static final com_facebook_button_like_background_color_selected:I = 0x7f0f004f
+.field public static final com_facebook_button_like_background_color_selected:I = 0x7f0e003e
 
-.field public static final com_facebook_button_login_silver_background_color:I = 0x7f0f0050
+.field public static final com_facebook_button_login_silver_background_color:I = 0x7f0e003f
 
-.field public static final com_facebook_button_login_silver_background_color_pressed:I = 0x7f0f0051
+.field public static final com_facebook_button_login_silver_background_color_pressed:I = 0x7f0e0040
 
-.field public static final com_facebook_button_send_background_color:I = 0x7f0f0052
+.field public static final com_facebook_button_send_background_color:I = 0x7f0e0041
 
-.field public static final com_facebook_button_send_background_color_pressed:I = 0x7f0f0053
+.field public static final com_facebook_button_send_background_color_pressed:I = 0x7f0e0042
 
-.field public static final com_facebook_likeboxcountview_border_color:I = 0x7f0f0054
+.field public static final com_facebook_likeboxcountview_border_color:I = 0x7f0e0043
 
-.field public static final com_facebook_likeboxcountview_text_color:I = 0x7f0f0055
+.field public static final com_facebook_likeboxcountview_text_color:I = 0x7f0e0044
 
-.field public static final com_facebook_likeview_text_color:I = 0x7f0f0056
+.field public static final com_facebook_likeview_text_color:I = 0x7f0e0045
 
-.field public static final com_facebook_share_button_text_color:I = 0x7f0f0057
+.field public static final com_facebook_share_button_text_color:I = 0x7f0e0046
 
 
 # direct methods

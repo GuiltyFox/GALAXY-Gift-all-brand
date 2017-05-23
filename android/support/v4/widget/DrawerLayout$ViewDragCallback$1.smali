@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 2061
+    .line 2057
     iput-object p1, p0, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback$1;->a:Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,11 +35,11 @@
     .registers 2
 
     .prologue
-    .line 2063
+    .line 2059
     iget-object v0, p0, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback$1;->a:Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;
 
-    invoke-static {v0}, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->a(Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;)V
+    invoke-virtual {v0}, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->b()V
 
-    .line 2064
+    .line 2060
     return-void
 .end method

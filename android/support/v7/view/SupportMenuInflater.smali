@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final a:[Ljava/lang/Class;
+.field static final a:[Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -14,7 +14,7 @@
     .end annotation
 .end field
 
-.field private static final b:[Ljava/lang/Class;
+.field static final b:[Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
@@ -26,11 +26,11 @@
 
 
 # instance fields
-.field private final c:[Ljava/lang/Object;
+.field final c:[Ljava/lang/Object;
 
-.field private final d:[Ljava/lang/Object;
+.field final d:[Ljava/lang/Object;
 
-.field private e:Landroid/content/Context;
+.field e:Landroid/content/Context;
 
 .field private f:Ljava/lang/Object;
 
@@ -40,7 +40,7 @@
     .registers 3
 
     .prologue
-    .line 72
+    .line 76
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Class;
@@ -53,7 +53,7 @@
 
     sput-object v0, Landroid/support/v7/view/SupportMenuInflater;->a:[Ljava/lang/Class;
 
-    .line 74
+    .line 78
     sget-object v0, Landroid/support/v7/view/SupportMenuInflater;->a:[Ljava/lang/Class;
 
     sput-object v0, Landroid/support/v7/view/SupportMenuInflater;->b:[Ljava/lang/Class;
@@ -65,13 +65,13 @@
     .registers 4
 
     .prologue
-    .line 90
+    .line 94
     invoke-direct {p0, p1}, Landroid/view/MenuInflater;-><init>(Landroid/content/Context;)V
 
-    .line 91
+    .line 95
     iput-object p1, p0, Landroid/support/v7/view/SupportMenuInflater;->e:Landroid/content/Context;
 
-    .line 92
+    .line 96
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -82,46 +82,36 @@
 
     iput-object v0, p0, Landroid/support/v7/view/SupportMenuInflater;->c:[Ljava/lang/Object;
 
-    .line 93
+    .line 97
     iget-object v0, p0, Landroid/support/v7/view/SupportMenuInflater;->c:[Ljava/lang/Object;
 
     iput-object v0, p0, Landroid/support/v7/view/SupportMenuInflater;->d:[Ljava/lang/Object;
 
-    .line 94
+    .line 98
     return-void
-.end method
-
-.method static synthetic a(Landroid/support/v7/view/SupportMenuInflater;)Landroid/content/Context;
-    .registers 2
-
-    .prologue
-    .line 58
-    iget-object v0, p0, Landroid/support/v7/view/SupportMenuInflater;->e:Landroid/content/Context;
-
-    return-object v0
 .end method
 
 .method private a(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
     .prologue
-    .line 220
+    .line 224
     instance-of v0, p1, Landroid/app/Activity;
 
     if-eqz v0, :cond_5
 
-    .line 226
+    .line 230
     :cond_4
     :goto_4
     return-object p1
 
-    .line 223
+    .line 227
     :cond_5
     instance-of v0, p1, Landroid/content/ContextWrapper;
 
     if-eqz v0, :cond_4
 
-    .line 224
+    .line 228
     check-cast p1, Landroid/content/ContextWrapper;
 
     invoke-virtual {p1}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
@@ -145,28 +135,28 @@
 
     const/4 v6, 0x0
 
-    .line 134
+    .line 138
     new-instance v7, Landroid/support/v7/view/SupportMenuInflater$MenuState;
 
     invoke-direct {v7, p0, p3}, Landroid/support/v7/view/SupportMenuInflater$MenuState;-><init>(Landroid/support/v7/view/SupportMenuInflater;Landroid/view/Menu;)V
 
-    .line 136
+    .line 140
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v0
 
-    .line 143
+    .line 147
     :cond_c
     const/4 v2, 0x2
 
     if-ne v0, v2, :cond_4c
 
-    .line 144
+    .line 148
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 145
+    .line 149
     const-string/jumbo v2, "menu"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -175,7 +165,7 @@
 
     if-eqz v2, :cond_32
 
-    .line 147
+    .line 151
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v0
@@ -189,17 +179,17 @@
 
     move v0, v6
 
-    .line 157
+    .line 161
     :goto_24
-    if-nez v0, :cond_ea
+    if-nez v0, :cond_e6
 
-    .line 158
-    packed-switch v3, :pswitch_data_ec
+    .line 162
+    packed-switch v3, :pswitch_data_e8
 
     :cond_29
     move v3, v5
 
-    .line 208
+    .line 212
     :goto_2a
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -213,7 +203,7 @@
 
     goto :goto_24
 
-    .line 151
+    .line 155
     :cond_32
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -239,33 +229,33 @@
 
     throw v1
 
-    .line 153
+    .line 157
     :cond_4c
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v0
 
-    .line 154
+    .line 158
     if-ne v0, v1, :cond_c
 
     goto :goto_20
 
-    .line 160
+    .line 164
     :pswitch_53
     if-eqz v5, :cond_57
 
     move v3, v5
 
-    .line 161
+    .line 165
     goto :goto_2a
 
-    .line 164
+    .line 168
     :cond_57
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 165
+    .line 169
     const-string/jumbo v8, "group"
 
     invoke-virtual {v3, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -274,14 +264,14 @@
 
     if-eqz v8, :cond_69
 
-    .line 166
+    .line 170
     invoke-virtual {v7, p2}, Landroid/support/v7/view/SupportMenuInflater$MenuState;->a(Landroid/util/AttributeSet;)V
 
     move v3, v5
 
     goto :goto_2a
 
-    .line 167
+    .line 171
     :cond_69
     const-string/jumbo v8, "item"
 
@@ -291,14 +281,14 @@
 
     if-eqz v8, :cond_77
 
-    .line 168
+    .line 172
     invoke-virtual {v7, p2}, Landroid/support/v7/view/SupportMenuInflater$MenuState;->b(Landroid/util/AttributeSet;)V
 
     move v3, v5
 
     goto :goto_2a
 
-    .line 169
+    .line 173
     :cond_77
     const-string/jumbo v8, "menu"
 
@@ -308,17 +298,17 @@
 
     if-eqz v8, :cond_89
 
-    .line 171
+    .line 175
     invoke-virtual {v7}, Landroid/support/v7/view/SupportMenuInflater$MenuState;->c()Landroid/view/SubMenu;
 
     move-result-object v3
 
-    .line 174
+    .line 178
     invoke-direct {p0, p1, p2, v3}, Landroid/support/v7/view/SupportMenuInflater;->a(Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/view/Menu;)V
 
     move v3, v5
 
-    .line 175
+    .line 179
     goto :goto_2a
 
     :cond_89
@@ -326,16 +316,16 @@
 
     move v3, v1
 
-    .line 179
+    .line 183
     goto :goto_2a
 
-    .line 182
+    .line 186
     :pswitch_8c
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 183
+    .line 187
     if-eqz v5, :cond_9b
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -348,10 +338,10 @@
 
     move v3, v6
 
-    .line 185
+    .line 189
     goto :goto_2a
 
-    .line 186
+    .line 190
     :cond_9b
     const-string/jumbo v8, "group"
 
@@ -361,14 +351,14 @@
 
     if-eqz v8, :cond_a9
 
-    .line 187
+    .line 191
     invoke-virtual {v7}, Landroid/support/v7/view/SupportMenuInflater$MenuState;->a()V
 
     move v3, v5
 
     goto :goto_2a
 
-    .line 188
+    .line 192
     :cond_a9
     const-string/jumbo v8, "item"
 
@@ -376,50 +366,46 @@
 
     move-result v8
 
-    if-eqz v8, :cond_d4
+    if-eqz v8, :cond_d0
 
-    .line 191
+    .line 195
     invoke-virtual {v7}, Landroid/support/v7/view/SupportMenuInflater$MenuState;->d()Z
 
     move-result v3
 
     if-nez v3, :cond_29
 
-    .line 192
-    invoke-static {v7}, Landroid/support/v7/view/SupportMenuInflater$MenuState;->a(Landroid/support/v7/view/SupportMenuInflater$MenuState;)Landroid/support/v4/view/ActionProvider;
+    .line 196
+    iget-object v3, v7, Landroid/support/v7/view/SupportMenuInflater$MenuState;->a:Landroid/support/v4/view/ActionProvider;
 
-    move-result-object v3
+    if-eqz v3, :cond_ca
 
-    if-eqz v3, :cond_ce
+    iget-object v3, v7, Landroid/support/v7/view/SupportMenuInflater$MenuState;->a:Landroid/support/v4/view/ActionProvider;
 
-    .line 193
-    invoke-static {v7}, Landroid/support/v7/view/SupportMenuInflater$MenuState;->a(Landroid/support/v7/view/SupportMenuInflater$MenuState;)Landroid/support/v4/view/ActionProvider;
-
-    move-result-object v3
-
+    .line 197
     invoke-virtual {v3}, Landroid/support/v4/view/ActionProvider;->hasSubMenu()Z
 
     move-result v3
 
-    if-eqz v3, :cond_ce
+    if-eqz v3, :cond_ca
 
-    .line 194
+    .line 198
     invoke-virtual {v7}, Landroid/support/v7/view/SupportMenuInflater$MenuState;->c()Landroid/view/SubMenu;
 
     move v3, v5
 
     goto/16 :goto_2a
 
-    .line 196
-    :cond_ce
+    .line 200
+    :cond_ca
     invoke-virtual {v7}, Landroid/support/v7/view/SupportMenuInflater$MenuState;->b()V
 
     move v3, v5
 
     goto/16 :goto_2a
 
-    .line 199
-    :cond_d4
+    .line 203
+    :cond_d0
     const-string/jumbo v8, "menu"
 
     invoke-virtual {v3, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -432,11 +418,11 @@
 
     move v3, v5
 
-    .line 200
+    .line 204
     goto/16 :goto_2a
 
-    .line 205
-    :pswitch_e1
+    .line 209
+    :pswitch_dd
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "Unexpected end of document"
@@ -445,61 +431,33 @@
 
     throw v0
 
-    .line 210
-    :cond_ea
+    .line 214
+    :cond_e6
     return-void
 
-    .line 158
+    .line 162
     nop
 
-    :pswitch_data_ec
+    :pswitch_data_e8
     .packed-switch 0x1
-        :pswitch_e1
+        :pswitch_dd
         :pswitch_53
         :pswitch_8c
     .end packed-switch
 .end method
 
-.method static synthetic a()[Ljava/lang/Class;
-    .registers 1
 
-    .prologue
-    .line 58
-    sget-object v0, Landroid/support/v7/view/SupportMenuInflater;->b:[Ljava/lang/Class;
-
-    return-object v0
-.end method
-
-.method static synthetic b()[Ljava/lang/Class;
-    .registers 1
-
-    .prologue
-    .line 58
-    sget-object v0, Landroid/support/v7/view/SupportMenuInflater;->a:[Ljava/lang/Class;
-
-    return-object v0
-.end method
-
-.method static synthetic b(Landroid/support/v7/view/SupportMenuInflater;)[Ljava/lang/Object;
+# virtual methods
+.method a()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 58
-    iget-object v0, p0, Landroid/support/v7/view/SupportMenuInflater;->d:[Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method private c()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 213
+    .line 217
     iget-object v0, p0, Landroid/support/v7/view/SupportMenuInflater;->f:Ljava/lang/Object;
 
     if-nez v0, :cond_c
 
-    .line 214
+    .line 218
     iget-object v0, p0, Landroid/support/v7/view/SupportMenuInflater;->e:Landroid/content/Context;
 
     invoke-direct {p0, v0}, Landroid/support/v7/view/SupportMenuInflater;->a(Ljava/lang/Object;)Ljava/lang/Object;
@@ -508,59 +466,35 @@
 
     iput-object v0, p0, Landroid/support/v7/view/SupportMenuInflater;->f:Ljava/lang/Object;
 
-    .line 216
+    .line 220
     :cond_c
     iget-object v0, p0, Landroid/support/v7/view/SupportMenuInflater;->f:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method static synthetic c(Landroid/support/v7/view/SupportMenuInflater;)Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 58
-    invoke-direct {p0}, Landroid/support/v7/view/SupportMenuInflater;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic d(Landroid/support/v7/view/SupportMenuInflater;)[Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 58
-    iget-object v0, p0, Landroid/support/v7/view/SupportMenuInflater;->c:[Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-
-# virtual methods
 .method public inflate(ILandroid/view/Menu;)V
     .registers 7
 
     .prologue
-    .line 108
+    .line 112
     instance-of v0, p2, Landroid/support/v4/internal/view/SupportMenu;
 
     if-nez v0, :cond_8
 
-    .line 109
+    .line 113
     invoke-super {p0, p1, p2}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
-    .line 126
+    .line 130
     :cond_7
     :goto_7
     return-void
 
-    .line 113
+    .line 117
     :cond_8
     const/4 v1, 0x0
 
-    .line 115
+    .line 119
     :try_start_9
     iget-object v0, p0, Landroid/support/v7/view/SupportMenuInflater;->e:Landroid/content/Context;
 
@@ -572,30 +506,30 @@
 
     move-result-object v1
 
-    .line 116
+    .line 120
     invoke-static {v1}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
     move-result-object v0
 
-    .line 118
+    .line 122
     invoke-direct {p0, v1, v0, p2}, Landroid/support/v7/view/SupportMenuInflater;->a(Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/view/Menu;)V
     :try_end_1a
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_9 .. :try_end_1a} :catch_20
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_1a} :catch_31
     .catchall {:try_start_9 .. :try_end_1a} :catchall_2a
 
-    .line 124
+    .line 128
     if-eqz v1, :cond_7
 
     invoke-interface {v1}, Landroid/content/res/XmlResourceParser;->close()V
 
     goto :goto_7
 
-    .line 119
+    .line 123
     :catch_20
     move-exception v0
 
-    .line 120
+    .line 124
     :try_start_21
     new-instance v2, Landroid/view/InflateException;
 
@@ -607,7 +541,7 @@
     :try_end_2a
     .catchall {:try_start_21 .. :try_end_2a} :catchall_2a
 
-    .line 124
+    .line 128
     :catchall_2a
     move-exception v0
 
@@ -618,11 +552,11 @@
     :cond_30
     throw v0
 
-    .line 121
+    .line 125
     :catch_31
     move-exception v0
 
-    .line 122
+    .line 126
     :try_start_32
     new-instance v2, Landroid/view/InflateException;
 

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/support/v4/widget/SwipeRefreshLayout;->b(F)V
+    value = Landroid/support/v4/widget/SwipeRefreshLayout;->c(F)V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 969
+    .line 986
     iput-object p1, p0, Landroid/support/v4/widget/SwipeRefreshLayout$5;->a:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,24 +35,22 @@
     .registers 4
 
     .prologue
-    .line 977
+    .line 994
     iget-object v0, p0, Landroid/support/v4/widget/SwipeRefreshLayout$5;->a:Landroid/support/v4/widget/SwipeRefreshLayout;
 
-    invoke-static {v0}, Landroid/support/v4/widget/SwipeRefreshLayout;->g(Landroid/support/v4/widget/SwipeRefreshLayout;)Z
+    iget-boolean v0, v0, Landroid/support/v4/widget/SwipeRefreshLayout;->d:Z
 
-    move-result v0
+    if-nez v0, :cond_c
 
-    if-nez v0, :cond_e
-
-    .line 978
+    .line 995
     iget-object v0, p0, Landroid/support/v4/widget/SwipeRefreshLayout$5;->a:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->a(Landroid/support/v4/widget/SwipeRefreshLayout;Landroid/view/animation/Animation$AnimationListener;)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->a(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 980
-    :cond_e
+    .line 997
+    :cond_c
     return-void
 .end method
 
@@ -60,7 +58,7 @@
     .registers 2
 
     .prologue
-    .line 984
+    .line 1001
     return-void
 .end method
 
@@ -68,6 +66,6 @@
     .registers 2
 
     .prologue
-    .line 973
+    .line 990
     return-void
 .end method

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 427
+    .line 428
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1$1$1;->a:Lcom/samsung/privilege/util/DialogLoginGift$8$1$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 430
+    .line 431
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1$1$1;->a:Lcom/samsung/privilege/util/DialogLoginGift$8$1$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$8$1$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8$1;
@@ -46,6 +46,6 @@
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 431
+    .line 432
     return-void
 .end method

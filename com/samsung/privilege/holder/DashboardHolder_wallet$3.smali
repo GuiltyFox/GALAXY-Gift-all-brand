@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 493
+    .line 491
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$3;->a:Landroid/app/Activity;
 
     iput-object p2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$3;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -43,7 +43,7 @@
     .registers 8
 
     .prologue
-    .line 496
+    .line 494
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$3;->a:Landroid/app/Activity;
 
     const-string/jumbo v1, ""
@@ -58,6 +58,6 @@
 
     invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Lcom/samsung/privilege/holder/DashboardHolder_wallet;Z)V
 
-    .line 497
+    .line 495
     return-void
 .end method

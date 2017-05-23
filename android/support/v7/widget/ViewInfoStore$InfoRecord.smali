@@ -29,7 +29,7 @@
     .registers 2
 
     .prologue
-    .line 309
+    .line 307
     new-instance v0, Landroid/support/v4/util/Pools$SimplePool;
 
     const/16 v1, 0x14
@@ -45,10 +45,10 @@
     .registers 1
 
     .prologue
-    .line 311
+    .line 309
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 312
+    .line 310
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .registers 1
 
     .prologue
-    .line 315
+    .line 313
     sget-object v0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->d:Landroid/support/v4/util/Pools$Pool;
 
     invoke-interface {v0}, Landroid/support/v4/util/Pools$Pool;->a()Ljava/lang/Object;
@@ -65,7 +65,7 @@
 
     check-cast v0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
 
-    .line 316
+    .line 314
     if-nez v0, :cond_f
 
     new-instance v0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;
@@ -82,23 +82,23 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 320
+    .line 318
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->a:I
 
-    .line 321
+    .line 319
     iput-object v1, p0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->b:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
-    .line 322
+    .line 320
     iput-object v1, p0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->c:Landroid/support/v7/widget/RecyclerView$ItemAnimator$ItemHolderInfo;
 
-    .line 323
+    .line 321
     sget-object v0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->d:Landroid/support/v4/util/Pools$Pool;
 
     invoke-interface {v0, p0}, Landroid/support/v4/util/Pools$Pool;->a(Ljava/lang/Object;)Z
 
-    .line 324
+    .line 322
     return-void
 .end method
 
@@ -106,7 +106,7 @@
     .registers 1
 
     .prologue
-    .line 328
+    .line 326
     :cond_0
     sget-object v0, Landroid/support/v7/widget/ViewInfoStore$InfoRecord;->d:Landroid/support/v4/util/Pools$Pool;
 
@@ -116,6 +116,6 @@
 
     if-nez v0, :cond_0
 
-    .line 329
+    .line 327
     return-void
 .end method

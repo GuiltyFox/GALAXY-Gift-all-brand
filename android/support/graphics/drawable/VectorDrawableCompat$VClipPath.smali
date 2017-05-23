@@ -8,10 +8,10 @@
     .registers 1
 
     .prologue
-    .line 1434
+    .line 1618
     invoke-direct {p0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;-><init>()V
 
-    .line 1436
+    .line 1620
     return-void
 .end method
 
@@ -19,10 +19,10 @@
     .registers 2
 
     .prologue
-    .line 1439
+    .line 1623
     invoke-direct {p0, p1}, Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;-><init>(Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;)V
 
-    .line 1440
+    .line 1624
     return-void
 .end method
 
@@ -30,40 +30,40 @@
     .registers 3
 
     .prologue
-    .line 1458
+    .line 1642
     const/4 v0, 0x0
 
-    .line 1459
+    .line 1643
     invoke-virtual {p1, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1460
+    .line 1644
     if-eqz v0, :cond_9
 
-    .line 1461
+    .line 1645
     iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;->n:Ljava/lang/String;
 
-    .line 1464
+    .line 1648
     :cond_9
     const/4 v0, 0x1
 
-    .line 1465
+    .line 1649
     invoke-virtual {p1, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1466
+    .line 1650
     if-eqz v0, :cond_16
 
-    .line 1467
+    .line 1651
     invoke-static {v0}, Landroid/support/graphics/drawable/PathParser;->a(Ljava/lang/String;)[Landroid/support/graphics/drawable/PathParser$PathDataNode;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;->m:[Landroid/support/graphics/drawable/PathParser$PathDataNode;
 
-    .line 1469
+    .line 1653
     :cond_16
     return-void
 .end method
@@ -74,21 +74,21 @@
     .registers 6
 
     .prologue
-    .line 1444
+    .line 1628
     const-string/jumbo v0, "pathData"
 
     invoke-static {p4, v0}, Landroid/support/graphics/drawable/TypedArrayUtils;->a(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 1445
+    .line 1629
     if-nez v0, :cond_a
 
-    .line 1452
+    .line 1636
     :goto_9
     return-void
 
-    .line 1448
+    .line 1632
     :cond_a
     sget-object v0, Landroid/support/graphics/drawable/AndroidResources;->d:[I
 
@@ -96,10 +96,10 @@
 
     move-result-object v0
 
-    .line 1450
+    .line 1634
     invoke-direct {p0, v0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;->a(Landroid/content/res/TypedArray;)V
 
-    .line 1451
+    .line 1635
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     goto :goto_9
@@ -109,7 +109,7 @@
     .registers 2
 
     .prologue
-    .line 1473
+    .line 1657
     const/4 v0, 0x1
 
     return v0

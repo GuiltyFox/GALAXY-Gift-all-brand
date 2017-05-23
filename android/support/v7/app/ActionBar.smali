@@ -8,10 +8,10 @@
     .registers 1
 
     .prologue
-    .line 88
+    .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1342
+    .line 1359
     return-void
 .end method
 
@@ -24,7 +24,7 @@
     .registers 3
 
     .prologue
-    .line 1050
+    .line 1061
     const/4 v0, 0x0
 
     return-object v0
@@ -34,14 +34,14 @@
     .registers 4
 
     .prologue
-    .line 1014
+    .line 1020
     const/4 v0, 0x0
 
     cmpl-float v0, p1, v0
 
     if-eqz v0, :cond_e
 
-    .line 1015
+    .line 1021
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Setting a non-zero elevation is not supported in this action bar configuration."
@@ -50,7 +50,7 @@
 
     throw v0
 
-    .line 1018
+    .line 1024
     :cond_e
     return-void
 .end method
@@ -59,7 +59,7 @@
     .registers 2
 
     .prologue
-    .line 1042
+    .line 1051
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .registers 4
 
     .prologue
-    .line 1070
+    .line 1085
     const/4 v0, 0x0
 
     return v0
@@ -86,7 +86,7 @@
     .registers 2
 
     .prologue
-    .line 1080
+    .line 1097
     return-void
 .end method
 
@@ -94,7 +94,7 @@
     .registers 2
 
     .prologue
-    .line 841
+    .line 846
     return-void
 .end method
 
@@ -102,10 +102,10 @@
     .registers 4
 
     .prologue
-    .line 959
+    .line 965
     if-eqz p1, :cond_b
 
-    .line 960
+    .line 966
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Hide on content scroll is not supported in this action bar configuration."
@@ -114,7 +114,7 @@
 
     throw v0
 
-    .line 963
+    .line 969
     :cond_b
     return-void
 .end method
@@ -126,7 +126,7 @@
     .registers 2
 
     .prologue
-    .line 853
+    .line 858
     const/4 v0, 0x0
 
     return-object v0
@@ -136,7 +136,7 @@
     .registers 2
 
     .prologue
-    .line 1034
+    .line 1041
     return-void
 .end method
 
@@ -144,7 +144,7 @@
     .registers 2
 
     .prologue
-    .line 986
+    .line 992
     const/4 v0, 0x0
 
     return v0
@@ -154,7 +154,7 @@
     .registers 2
 
     .prologue
-    .line 1038
+    .line 1046
     return-void
 .end method
 
@@ -162,7 +162,7 @@
     .registers 2
 
     .prologue
-    .line 1046
+    .line 1056
     return-void
 .end method
 
@@ -170,7 +170,7 @@
     .registers 2
 
     .prologue
-    .line 1060
+    .line 1073
     const/4 v0, 0x0
 
     return v0
@@ -180,7 +180,7 @@
     .registers 2
 
     .prologue
-    .line 1075
+    .line 1091
     const/4 v0, 0x0
 
     return v0
@@ -190,7 +190,7 @@
     .registers 2
 
     .prologue
-    .line 1088
+    .line 1105
     const/4 v0, 0x0
 
     return v0
@@ -200,6 +200,6 @@
     .registers 1
 
     .prologue
-    .line 1095
+    .line 1112
     return-void
 .end method

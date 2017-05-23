@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 2469
+    .line 2467
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$28$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$28;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,17 +35,17 @@
     .registers 3
 
     .prologue
-    .line 2472
+    .line 2470
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$28$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$28;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$28;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->x:Landroid/widget/ProgressBar;
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->w:Landroid/widget/ProgressBar;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 2473
+    .line 2471
     return-void
 .end method

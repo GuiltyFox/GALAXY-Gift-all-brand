@@ -145,13 +145,13 @@
     .line 243
     iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$onClickRating;->a:Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->btnOK:Landroid/widget/Button;
+    iget-object v0, v0, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->layoutOK:Landroid/widget/LinearLayout;
 
     new-instance v1, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$onClickRating$1;
 
     invoke-direct {v1, p0}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$onClickRating$1;-><init>(Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$onClickRating;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 273
     :goto_5d
@@ -193,13 +193,13 @@
     .line 262
     iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$onClickRating;->a:Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->btnOK:Landroid/widget/Button;
+    iget-object v0, v0, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->layoutOK:Landroid/widget/LinearLayout;
 
     new-instance v1, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$onClickRating$2;
 
     invoke-direct {v1, p0}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$onClickRating$2;-><init>(Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$onClickRating;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto :goto_5d
 .end method

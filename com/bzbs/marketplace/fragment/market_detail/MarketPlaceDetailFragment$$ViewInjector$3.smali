@@ -20,7 +20,7 @@
     .registers 3
 
     .prologue
-    .line 85
+    .line 83
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector$3;->b:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector;
 
     iput-object p2, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector$3;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
@@ -36,11 +36,11 @@
     .registers 3
 
     .prologue
-    .line 89
+    .line 87
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector$3;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
 
     invoke-virtual {v0, p1}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->onClickCalculate(Landroid/view/View;)V
 
-    .line 90
+    .line 88
     return-void
 .end method

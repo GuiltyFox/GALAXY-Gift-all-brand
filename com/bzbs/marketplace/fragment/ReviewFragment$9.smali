@@ -3,7 +3,7 @@
 .source "ReviewFragment.java"
 
 # interfaces
-.implements Lit/sephiroth/android/library/widget/AdapterView$OnItemClickListener;
+.implements Landroid/support/v4/view/ViewPager$OnPageChangeListener;
 
 
 # annotations
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 601
+    .line 604
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$9;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,45 +31,42 @@
 
 
 # virtual methods
-.method public a(Lit/sephiroth/android/library/widget/AdapterView;Landroid/view/View;IJ)V
-    .registers 8
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lit/sephiroth/android/library/widget/AdapterView",
-            "<*>;",
-            "Landroid/view/View;",
-            "IJ)V"
-        }
-    .end annotation
+.method public onPageScrollStateChanged(I)V
+    .registers 2
 
     .prologue
-    .line 604
-    invoke-virtual {p1}, Lit/sephiroth/android/library/widget/AdapterView;->getId()I
+    .line 617
+    return-void
+.end method
 
-    move-result v0
+.method public onPageScrolled(IFI)V
+    .registers 4
 
-    const v1, 0x7f1006d4
+    .prologue
+    .line 607
+    return-void
+.end method
 
-    if-ne v0, v1, :cond_19
+.method public onPageSelected(I)V
+    .registers 3
 
-    .line 605
+    .prologue
+    .line 611
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$9;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->p(Lcom/bzbs/marketplace/fragment/ReviewFragment;)Lcom/bzbs/marketplace/adapter/IndicatorDrawerAdapter;
 
     move-result-object v0
 
-    invoke-virtual {v0, p3}, Lcom/bzbs/marketplace/adapter/IndicatorDrawerAdapter;->a(I)V
+    invoke-virtual {v0, p1}, Lcom/bzbs/marketplace/adapter/IndicatorDrawerAdapter;->a(I)V
 
-    .line 606
+    .line 612
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$9;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->viewPager:Landroid/support/v4/view/ViewPager;
+    iget-object v0, v0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->listViewHorizontal:Lit/sephiroth/android/library/widget/HListView;
 
-    invoke-virtual {v0, p3}, Landroid/support/v4/view/ViewPager;->setCurrentItem(I)V
+    invoke-virtual {v0, p1}, Lit/sephiroth/android/library/widget/HListView;->c(I)V
 
-    .line 608
-    :cond_19
+    .line 613
     return-void
 .end method

@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 136
+    .line 164
     iput-object p1, p0, Landroid/support/design/widget/BottomSheetDialog$2;->this$0:Landroid/support/design/widget/BottomSheetDialog;
 
     invoke-direct {p0}, Landroid/support/design/widget/BottomSheetBehavior$BottomSheetCallback;-><init>()V
@@ -32,7 +32,7 @@
     .registers 3
 
     .prologue
-    .line 147
+    .line 175
     return-void
 .end method
 
@@ -40,17 +40,17 @@
     .registers 4
 
     .prologue
-    .line 140
+    .line 168
     const/4 v0, 0x5
 
     if-ne p2, v0, :cond_8
 
-    .line 141
+    .line 169
     iget-object v0, p0, Landroid/support/design/widget/BottomSheetDialog$2;->this$0:Landroid/support/design/widget/BottomSheetDialog;
 
-    invoke-virtual {v0}, Landroid/support/design/widget/BottomSheetDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/support/design/widget/BottomSheetDialog;->cancel()V
 
-    .line 143
+    .line 171
     :cond_8
     return-void
 .end method

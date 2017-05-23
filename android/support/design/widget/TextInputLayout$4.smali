@@ -3,12 +3,12 @@
 .source "TextInputLayout.java"
 
 # interfaces
-.implements Landroid/support/design/widget/ValueAnimatorCompat$AnimatorUpdateListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/support/design/widget/TextInputLayout;->animateToExpansionFraction(F)V
+    value = Landroid/support/design/widget/TextInputLayout;->updatePasswordToggleView()V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 910
+    .line 1010
     iput-object p1, p0, Landroid/support/design/widget/TextInputLayout$4;->this$0:Landroid/support/design/widget/TextInputLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,24 +31,15 @@
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/support/design/widget/ValueAnimatorCompat;)V
-    .registers 4
+.method public onClick(Landroid/view/View;)V
+    .registers 3
 
     .prologue
-    .line 913
+    .line 1013
     iget-object v0, p0, Landroid/support/design/widget/TextInputLayout$4;->this$0:Landroid/support/design/widget/TextInputLayout;
 
-    # getter for: Landroid/support/design/widget/TextInputLayout;->mCollapsingTextHelper:Landroid/support/design/widget/CollapsingTextHelper;
-    invoke-static {v0}, Landroid/support/design/widget/TextInputLayout;->access$500(Landroid/support/design/widget/TextInputLayout;)Landroid/support/design/widget/CollapsingTextHelper;
+    invoke-virtual {v0}, Landroid/support/design/widget/TextInputLayout;->passwordVisibilityToggleRequested()V
 
-    move-result-object v0
-
-    invoke-virtual {p1}, Landroid/support/design/widget/ValueAnimatorCompat;->getAnimatedFloatValue()F
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/support/design/widget/CollapsingTextHelper;->setExpansionFraction(F)V
-
-    .line 914
+    .line 1014
     return-void
 .end method

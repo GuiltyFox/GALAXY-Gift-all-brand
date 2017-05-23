@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 176
+    .line 184
     iput-object p1, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener$2;->b:Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener;
 
     iput-object p2, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener$2;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 179
+    .line 187
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener$2;->b:Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener;->a:Lcom/bzbs/marketplace/activity/ReviewActivity;
@@ -52,7 +52,7 @@
 
     move-result-object v0
 
-    .line 180
+    .line 188
     if-eqz v0, :cond_3e
 
     const-string/jumbo v1, ""
@@ -63,14 +63,14 @@
 
     if-nez v0, :cond_3e
 
-    .line 181
+    .line 189
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener$2;->b:Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener;->a:Lcom/bzbs/marketplace/activity/ReviewActivity;
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->l()V
 
-    .line 182
+    .line 190
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener$2;->a:Ljava/lang/String;
 
     const-string/jumbo v1, "review"
@@ -81,7 +81,7 @@
 
     if-eqz v0, :cond_3f
 
-    .line 183
+    .line 191
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener$2;->b:Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener;->a:Lcom/bzbs/marketplace/activity/ReviewActivity;
@@ -102,12 +102,12 @@
 
     invoke-static {v0, v1, v2}, Lcom/bzbs/marketplace/dialog/util/DialogUtils;->a(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/bean/Campaign;)V
 
-    .line 188
+    .line 196
     :cond_3e
     :goto_3e
     return-void
 
-    .line 184
+    .line 192
     :cond_3f
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener$2;->a:Ljava/lang/String;
 

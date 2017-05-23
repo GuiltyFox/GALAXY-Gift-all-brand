@@ -3,7 +3,7 @@
 .source "DialogLoginGift.java"
 
 # interfaces
-.implements Landroid/app/DatePickerDialog$OnDateSetListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -13,20 +13,20 @@
 
 
 # instance fields
-.field final synthetic a:Landroid/widget/TextView;
+.field final synthetic a:Landroid/content/Context;
 
-.field final synthetic b:Ljava/text/SimpleDateFormat;
+.field final synthetic b:Landroid/widget/TextView;
 
 
 # direct methods
-.method constructor <init>(Landroid/widget/TextView;Ljava/text/SimpleDateFormat;)V
+.method constructor <init>(Landroid/content/Context;Landroid/widget/TextView;)V
     .registers 3
 
     .prologue
-    .line 1660
-    iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$29;->a:Landroid/widget/TextView;
+    .line 1671
+    iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$29;->a:Landroid/content/Context;
 
-    iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$29;->b:Ljava/text/SimpleDateFormat;
+    iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$29;->b:Landroid/widget/TextView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,33 +35,17 @@
 
 
 # virtual methods
-.method public onDateSet(Landroid/widget/DatePicker;III)V
-    .registers 8
+.method public onClick(Landroid/view/View;)V
+    .registers 4
 
     .prologue
-    .line 1662
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    .line 1676
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$29;->a:Landroid/content/Context;
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$29;->b:Landroid/widget/TextView;
 
-    .line 1663
-    invoke-virtual {v0, p2, p3, p4}, Ljava/util/Calendar;->set(III)V
+    invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogMonthYear;->a(Landroid/content/Context;Landroid/widget/TextView;)V
 
-    .line 1664
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$29;->a:Landroid/widget/TextView;
-
-    iget-object v2, p0, Lcom/samsung/privilege/util/DialogLoginGift$29;->b:Ljava/text/SimpleDateFormat;
-
-    invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 1665
+    .line 1677
     return-void
 .end method

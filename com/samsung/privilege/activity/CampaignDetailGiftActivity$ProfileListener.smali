@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 668
+    .line 669
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ProfileListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 668
+    .line 669
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ProfileListener;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 1
 
     .prologue
-    .line 672
+    .line 673
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .registers 11
 
     .prologue
-    .line 676
+    .line 677
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ProfileListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     const/4 v1, 0x0
@@ -62,6 +62,6 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 677
+    .line 678
     return-void
 .end method

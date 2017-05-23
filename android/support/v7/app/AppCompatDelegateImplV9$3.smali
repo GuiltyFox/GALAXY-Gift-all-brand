@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/support/v7/app/AppCompatDelegateImplV9;->v()Landroid/view/ViewGroup;
+    value = Landroid/support/v7/app/AppCompatDelegateImplV9;->x()Landroid/view/ViewGroup;
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 452
+    .line 456
     iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$3;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,17 +35,17 @@
     .registers 4
 
     .prologue
-    .line 455
+    .line 459
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$3;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
     iget v1, p1, Landroid/graphics/Rect;->top:I
 
-    invoke-static {v0, v1}, Landroid/support/v7/app/AppCompatDelegateImplV9;->c(Landroid/support/v7/app/AppCompatDelegateImplV9;I)I
+    invoke-virtual {v0, v1}, Landroid/support/v7/app/AppCompatDelegateImplV9;->g(I)I
 
     move-result v0
 
     iput v0, p1, Landroid/graphics/Rect;->top:I
 
-    .line 456
+    .line 460
     return-void
 .end method

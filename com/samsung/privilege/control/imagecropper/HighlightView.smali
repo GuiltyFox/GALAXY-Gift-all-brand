@@ -100,7 +100,7 @@
     move-result-object v0
 
     .line 57
-    const v1, 0x7f020228
+    const v1, 0x7f020120
 
     .line 58
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -110,7 +110,7 @@
     iput-object v1, p0, Lcom/samsung/privilege/control/imagecropper/HighlightView;->l:Landroid/graphics/drawable/Drawable;
 
     .line 59
-    const v1, 0x7f020227
+    const v1, 0x7f02011f
 
     .line 60
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -120,7 +120,7 @@
     iput-object v1, p0, Lcom/samsung/privilege/control/imagecropper/HighlightView;->m:Landroid/graphics/drawable/Drawable;
 
     .line 61
-    const v1, 0x7f0202ea
+    const v1, 0x7f0201bf
 
     .line 62
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;

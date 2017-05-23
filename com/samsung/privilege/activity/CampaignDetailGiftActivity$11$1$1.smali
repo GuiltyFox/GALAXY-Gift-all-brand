@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 989
+    .line 992
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 3
 
     .prologue
-    .line 991
+    .line 994
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1;->c:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;
@@ -56,7 +56,7 @@
 
     if-ne v0, v1, :cond_25
 
-    .line 992
+    .line 995
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1;
 
     iget v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1;->b:I
@@ -65,7 +65,7 @@
 
     if-ne v0, v1, :cond_25
 
-    .line 993
+    .line 996
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1;->c:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;
@@ -76,7 +76,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->doRedeem(Landroid/view/View;)V
 
-    .line 996
+    .line 999
     :cond_25
     return-void
 .end method

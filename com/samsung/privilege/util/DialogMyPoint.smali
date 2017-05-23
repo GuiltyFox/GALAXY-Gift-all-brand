@@ -65,7 +65,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_ad
+    if-nez v0, :cond_9c
 
     .line 29
     sput-object p0, Lcom/samsung/privilege/util/DialogMyPoint;->b:Landroid/content/Context;
@@ -84,14 +84,14 @@
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
     :try_end_19
-    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_19} :catch_ba
+    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_19} :catch_a3
 
     .line 40
     :cond_19
     :goto_19
     new-instance v0, Landroid/app/Dialog;
 
-    const v1, 0x7f0c0107
+    const v1, 0x7f0c00ff
 
     invoke-direct {v0, p0, v1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -100,14 +100,14 @@
     .line 42
     sget-object v0, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
 
-    const v1, 0x7f04011c
+    const v1, 0x7f0400ae
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 44
     sget-object v0, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
 
-    const v1, 0x7f1005ef
+    const v1, 0x7f1003ea
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -155,44 +155,28 @@
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V
 
     .line 58
-    sget-object v1, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
-
-    const v2, 0x7f1005f0
-
-    invoke-virtual {v1, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v1, Landroid/widget/ImageView;
+    const-string/jumbo v2, "1054"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_9d
 
     .line 59
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "1054"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_ae
-
-    .line 60
-    const v2, 0x7f020332
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 61
     sget-object v1, Lcom/bzbs/data/AppSetting;->X:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 67
-    :goto_7e
+    .line 64
+    :goto_6d
     sget-object v0, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
 
-    const v1, 0x7f10016f
+    const v1, 0x7f1003c4
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -200,14 +184,14 @@
 
     check-cast v0, Landroid/widget/RelativeLayout;
 
-    .line 68
+    .line 65
     new-instance v1, Lcom/samsung/privilege/util/DialogMyPoint$1;
 
     invoke-direct {v1}, Lcom/samsung/privilege/util/DialogMyPoint$1;-><init>()V
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 75
+    .line 72
     sget-object v0, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -218,12 +202,12 @@
 
     move-result-object v0
 
-    .line 76
+    .line 73
     const/16 v1, 0x11
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 77
+    .line 74
     sget-object v1, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -232,30 +216,25 @@
 
     invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 79
+    .line 76
     sget-object v0, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
-    .line 81
-    :cond_ad
+    .line 78
+    :cond_9c
     return-void
 
-    .line 63
-    :cond_ae
-    const v2, 0x7f020331
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 64
+    .line 61
+    :cond_9d
     sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    goto :goto_7e
+    goto :goto_6d
 
     .line 37
-    :catch_ba
+    :catch_a3
     move-exception v0
 
     goto/16 :goto_19

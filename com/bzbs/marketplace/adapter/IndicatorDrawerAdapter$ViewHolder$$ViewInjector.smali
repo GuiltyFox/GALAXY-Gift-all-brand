@@ -45,9 +45,9 @@
     .end annotation
 
     .prologue
-    const v3, 0x7f1006d6
+    const v3, 0x7f1004ce
 
-    const v2, 0x7f1006d5
+    const v2, 0x7f1004cd
 
     .line 11
     const-string/jumbo v0, "field \'imageParentSticker\'"

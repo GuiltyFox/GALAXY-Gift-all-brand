@@ -71,12 +71,12 @@
     invoke-direct {v4, p1, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 64
-    const v0, 0x7f04011a
+    const v0, 0x7f0400ac
 
     invoke-virtual {v4, v0}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 66
-    const v0, 0x7f1000b7
+    const v0, 0x7f1000ba
 
     invoke-virtual {v4, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -85,7 +85,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 67
-    const v1, 0x7f10016b
+    const v1, 0x7f10035a
 
     invoke-virtual {v4, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -94,7 +94,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 68
-    const v2, 0x7f1002d3
+    const v2, 0x7f100251
 
     invoke-virtual {v4, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -103,7 +103,7 @@
     check-cast v2, Landroid/widget/ImageView;
 
     .line 69
-    const v3, 0x7f100170
+    const v3, 0x7f100252
 
     invoke-virtual {v4, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -196,7 +196,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 28
-    const v0, 0x7f04003d
+    const v0, 0x7f040038
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/MessageDialogActivity;->setContentView(I)V
 

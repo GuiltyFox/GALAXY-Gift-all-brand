@@ -8,7 +8,7 @@
     .registers 2
 
     .prologue
-    .line 40
+    .line 41
     invoke-virtual {p0}, Landroid/view/View;->getLayoutDirection()I
 
     move-result v0
@@ -20,10 +20,10 @@
     .registers 5
 
     .prologue
-    .line 56
+    .line 57
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/View;->setPaddingRelative(IIII)V
 
-    .line 57
+    .line 58
     return-void
 .end method
 
@@ -31,7 +31,7 @@
     .registers 2
 
     .prologue
-    .line 48
+    .line 49
     invoke-virtual {p0}, Landroid/view/View;->getPaddingStart()I
 
     move-result v0
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 52
+    .line 53
     invoke-virtual {p0}, Landroid/view/View;->getPaddingEnd()I
 
     move-result v0
@@ -55,7 +55,7 @@
     .registers 2
 
     .prologue
-    .line 60
+    .line 61
     invoke-virtual {p0}, Landroid/view/View;->getWindowSystemUiVisibility()I
 
     move-result v0
@@ -67,10 +67,22 @@
     .registers 2
 
     .prologue
-    .line 64
+    .line 65
     invoke-virtual {p0}, Landroid/view/View;->isPaddingRelative()Z
 
     move-result v0
 
     return v0
+.end method
+
+.method public static f(Landroid/view/View;)Landroid/view/Display;
+    .registers 2
+
+    .prologue
+    .line 69
+    invoke-virtual {p0}, Landroid/view/View;->getDisplay()Landroid/view/Display;
+
+    move-result-object v0
+
+    return-object v0
 .end method

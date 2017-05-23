@@ -6,19 +6,19 @@
 # instance fields
 .field btnAds:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006a6
+        value = 0x7f10049c
     .end annotation
 .end field
 
 .field btnError:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006a3
+        value = 0x7f10049a
     .end annotation
 .end field
 
 .field mainDlPb1:Landroid/widget/ProgressBar;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006a7
+        value = 0x7f10049d
     .end annotation
 .end field
 
@@ -28,19 +28,19 @@
 
 .field textViewPoint:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100686
+        value = 0x7f10047d
     .end annotation
 .end field
 
 .field textViewSubtitle:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006a5
+        value = 0x7f10049b
     .end annotation
 .end field
 
 .field tvPercentLoader:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100279
+        value = 0x7f100264
     .end annotation
 .end field
 
@@ -50,7 +50,7 @@
 
 .field viewShadow:Landroid/view/View;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006a4
+        value = 0x7f10049e
     .end annotation
 .end field
 
@@ -471,7 +471,7 @@
     invoke-direct {v1, v2}, Landroid/support/v7/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 222
-    const v2, 0x7f090132
+    const v2, 0x7f090260
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -485,7 +485,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090382
+    const v3, 0x7f09019b
 
     invoke-virtual {p0, v3}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -499,7 +499,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f090373
+    const v2, 0x7f09018c
 
     .line 229
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
@@ -797,7 +797,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f09043a
+    const v3, 0x7f09023e
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -1021,7 +1021,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v2, 0x7f0900a4
+    const v2, 0x7f090246
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -1148,7 +1148,7 @@
     .line 158
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->btnError:Landroid/widget/Button;
 
-    const v1, 0x7f0903fc
+    const v1, 0x7f090202
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -1177,7 +1177,7 @@
     .line 115
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->btnAds:Landroid/widget/Button;
 
-    const v1, 0x7f09009e
+    const v1, 0x7f090245
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -1201,7 +1201,7 @@
     :cond_ff
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->textViewPoint:Landroid/widget/TextView;
 
-    const v1, 0x7f0900a5
+    const v1, 0x7f090247
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -1278,7 +1278,7 @@
 
     check-cast v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->I:Lcom/tbruyelle/rxpermissions/RxPermissions;
+    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->J:Lcom/tbruyelle/rxpermissions/RxPermissions;
 
     const/4 v1, 0x1
 
@@ -1740,7 +1740,7 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1006a6
+            0x7f10049c
         }
     .end annotation
 
@@ -1835,7 +1835,7 @@
 
     check-cast v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->E:Lcom/facebook/CallbackManager;
+    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->F:Lcom/facebook/CallbackManager;
 
     const-string/jumbo v3, "BZB Campaign Ads"
 

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 62
+    .line 66
     iput-object p1, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,111 +35,91 @@
     .registers 8
 
     .prologue
-    .line 66
+    .line 70
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
-    # getter for: Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsets:Landroid/graphics/Rect;
-    invoke-static {v0}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->access$000(Landroid/support/design/internal/ScrimInsetsFrameLayout;)Landroid/graphics/Rect;
+    iget-object v0, v0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsets:Landroid/graphics/Rect;
 
-    move-result-object v0
+    if-nez v0, :cond_f
 
-    if-nez v0, :cond_12
-
-    .line 67
+    .line 71
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
     new-instance v1, Landroid/graphics/Rect;
 
     invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
 
-    # setter for: Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsets:Landroid/graphics/Rect;
-    invoke-static {v0, v1}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->access$002(Landroid/support/design/internal/ScrimInsetsFrameLayout;Landroid/graphics/Rect;)Landroid/graphics/Rect;
+    iput-object v1, v0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsets:Landroid/graphics/Rect;
 
-    .line 69
-    :cond_12
+    .line 73
+    :cond_f
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
-    # getter for: Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsets:Landroid/graphics/Rect;
-    invoke-static {v0}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->access$000(Landroid/support/design/internal/ScrimInsetsFrameLayout;)Landroid/graphics/Rect;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsets:Landroid/graphics/Rect;
 
     invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->a()I
 
     move-result v1
 
+    .line 74
     invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->b()I
 
     move-result v2
 
+    .line 75
     invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->c()I
 
     move-result v3
 
+    .line 76
     invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->d()I
 
     move-result v4
 
+    .line 73
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 73
+    .line 77
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
+    invoke-virtual {v0, p2}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->onInsetsChanged(Landroid/support/v4/view/WindowInsetsCompat;)V
+
+    .line 78
     iget-object v1, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
-    # getter for: Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsets:Landroid/graphics/Rect;
-    invoke-static {v1}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->access$000(Landroid/support/design/internal/ScrimInsetsFrameLayout;)Landroid/graphics/Rect;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->onInsetsChanged(Landroid/graphics/Rect;)V
-
-    .line 74
-    iget-object v1, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
-
-    iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
-
-    # getter for: Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsets:Landroid/graphics/Rect;
-    invoke-static {v0}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->access$000(Landroid/support/design/internal/ScrimInsetsFrameLayout;)Landroid/graphics/Rect;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
+    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->e()Z
 
     move-result v0
 
-    if-nez v0, :cond_4c
+    if-eqz v0, :cond_39
 
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
-    # getter for: Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsetForeground:Landroid/graphics/drawable/Drawable;
-    invoke-static {v0}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->access$100(Landroid/support/design/internal/ScrimInsetsFrameLayout;)Landroid/graphics/drawable/Drawable;
+    iget-object v0, v0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsetForeground:Landroid/graphics/drawable/Drawable;
 
-    move-result-object v0
+    if-nez v0, :cond_47
 
-    if-nez v0, :cond_5a
-
-    :cond_4c
+    :cond_39
     const/4 v0, 0x1
 
-    :goto_4d
+    :goto_3a
     invoke-virtual {v1, v0}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->setWillNotDraw(Z)V
 
-    .line 75
+    .line 79
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->d(Landroid/view/View;)V
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->c(Landroid/view/View;)V
 
-    .line 76
-    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->f()Landroid/support/v4/view/WindowInsetsCompat;
+    .line 80
+    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->g()Landroid/support/v4/view/WindowInsetsCompat;
 
     move-result-object v0
 
     return-object v0
 
-    .line 74
-    :cond_5a
+    .line 78
+    :cond_47
     const/4 v0, 0x0
 
-    goto :goto_4d
+    goto :goto_3a
 .end method

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 238
+    .line 244
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogSerialGift$1;->a:Landroid/app/Dialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,11 +35,11 @@
     .registers 3
 
     .prologue
-    .line 240
+    .line 246
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$1;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 241
+    .line 247
     return-void
 .end method

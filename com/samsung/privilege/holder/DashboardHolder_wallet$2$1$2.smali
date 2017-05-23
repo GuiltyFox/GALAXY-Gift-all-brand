@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 474
+    .line 472
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1$2;->a:Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,13 +35,13 @@
     .registers 2
 
     .prologue
-    .line 478
+    .line 476
     invoke-static {}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->b()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 479
+    .line 477
     return-void
 .end method

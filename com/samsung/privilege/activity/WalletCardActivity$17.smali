@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1444
+    .line 1442
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$17;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$17;->a:Landroid/app/Dialog;
@@ -39,11 +39,11 @@
     .registers 3
 
     .prologue
-    .line 1447
+    .line 1445
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$17;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1448
+    .line 1446
     return-void
 .end method

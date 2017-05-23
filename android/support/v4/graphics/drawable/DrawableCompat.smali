@@ -274,7 +274,7 @@
     .line 416
     sget-object v0, Landroid/support/v4/graphics/drawable/DrawableCompat;->a:Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;
 
-    invoke-interface {v0, p0}, Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;->e(Landroid/graphics/drawable/Drawable;)I
+    invoke-interface {v0, p0}, Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;->d(Landroid/graphics/drawable/Drawable;)I
 
     move-result v0
 
@@ -288,7 +288,7 @@
     .line 430
     sget-object v0, Landroid/support/v4/graphics/drawable/DrawableCompat;->a:Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;
 
-    invoke-interface {v0, p0}, Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;->f(Landroid/graphics/drawable/Drawable;)Z
+    invoke-interface {v0, p0}, Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;->e(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0
 
@@ -302,14 +302,27 @@
     .line 439
     sget-object v0, Landroid/support/v4/graphics/drawable/DrawableCompat;->a:Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;
 
-    invoke-interface {v0, p0}, Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;->g(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
+    invoke-interface {v0, p0}, Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;->f(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static f(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+.method public static f(Landroid/graphics/drawable/Drawable;)V
+    .registers 2
+
+    .prologue
+    .line 446
+    sget-object v0, Landroid/support/v4/graphics/drawable/DrawableCompat;->a:Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;
+
+    invoke-interface {v0, p0}, Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;->g(Landroid/graphics/drawable/Drawable;)V
+
+    .line 447
+    return-void
+.end method
+
+.method public static g(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .registers 2
 
     .prologue
@@ -323,7 +336,7 @@
     return-object v0
 .end method
 
-.method public static g(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+.method public static h(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -351,18 +364,4 @@
     .line 515
     :cond_a
     return-object p0
-.end method
-
-.method public static h(Landroid/graphics/drawable/Drawable;)I
-    .registers 2
-
-    .prologue
-    .line 543
-    sget-object v0, Landroid/support/v4/graphics/drawable/DrawableCompat;->a:Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;
-
-    invoke-interface {v0, p0}, Landroid/support/v4/graphics/drawable/DrawableCompat$DrawableImpl;->d(Landroid/graphics/drawable/Drawable;)I
-
-    move-result v0
-
-    return v0
 .end method

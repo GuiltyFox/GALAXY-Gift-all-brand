@@ -37,16 +37,6 @@
     return-void
 .end method
 
-.method static synthetic a(Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
-    .registers 3
-
-    .prologue
-    .line 81
-    invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->d(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
-
-    return-void
-.end method
-
 .method private a(Landroid/view/View;)V
     .registers 3
 
@@ -77,99 +67,17 @@
     return-void
 .end method
 
-.method private d(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
-    .registers 7
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 294
-    const/high16 v0, 0x7e000000
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 296
-    instance-of v2, v0, Landroid/support/v4/view/ViewPropertyAnimatorListener;
-
-    if-eqz v2, :cond_37
-
-    .line 297
-    check-cast v0, Landroid/support/v4/view/ViewPropertyAnimatorListener;
-
-    .line 299
-    :goto_d
-    invoke-static {p1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(Landroid/support/v4/view/ViewPropertyAnimatorCompat;)Ljava/lang/Runnable;
-
-    move-result-object v2
-
-    .line 300
-    invoke-static {p1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b(Landroid/support/v4/view/ViewPropertyAnimatorCompat;)Ljava/lang/Runnable;
-
-    move-result-object v3
-
-    .line 301
-    invoke-static {p1, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Ljava/lang/Runnable;)Ljava/lang/Runnable;
-
-    .line 302
-    invoke-static {p1, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Ljava/lang/Runnable;)Ljava/lang/Runnable;
-
-    .line 303
-    if-eqz v2, :cond_20
-
-    .line 304
-    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
-
-    .line 306
-    :cond_20
-    if-eqz v0, :cond_28
-
-    .line 307
-    invoke-interface {v0, p2}, Landroid/support/v4/view/ViewPropertyAnimatorListener;->onAnimationStart(Landroid/view/View;)V
-
-    .line 308
-    invoke-interface {v0, p2}, Landroid/support/v4/view/ViewPropertyAnimatorListener;->onAnimationEnd(Landroid/view/View;)V
-
-    .line 310
-    :cond_28
-    if-eqz v3, :cond_2d
-
-    .line 311
-    invoke-interface {v3}, Ljava/lang/Runnable;->run()V
-
-    .line 313
-    :cond_2d
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->a:Ljava/util/WeakHashMap;
-
-    if-eqz v0, :cond_36
-
-    .line 314
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->a:Ljava/util/WeakHashMap;
-
-    invoke-virtual {v0, p2}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 316
-    :cond_36
-    return-void
-
-    :cond_37
-    move-object v0, v1
-
-    goto :goto_d
-.end method
-
 .method private e(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
     .registers 5
 
     .prologue
-    const/4 v1, 0x0
-
     .line 347
-    .line 348
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->a:Ljava/util/WeakHashMap;
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_2b
+    .line 348
+    iget-object v1, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->a:Ljava/util/WeakHashMap;
+
+    if-eqz v1, :cond_d
 
     .line 349
     iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->a:Ljava/util/WeakHashMap;
@@ -181,13 +89,13 @@
     check-cast v0, Ljava/lang/Runnable;
 
     .line 351
-    :goto_d
+    :cond_d
     if-nez v0, :cond_24
 
     .line 352
     new-instance v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl$Starter;
 
-    invoke-direct {v0, p0, p1, p2, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl$Starter;-><init>(Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;Landroid/support/v4/view/ViewPropertyAnimatorCompat$1;)V
+    invoke-direct {v0, p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl$Starter;-><init>(Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
     .line 353
     iget-object v1, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->a:Ljava/util/WeakHashMap;
@@ -216,11 +124,6 @@
 
     .line 360
     return-void
-
-    :cond_2b
-    move-object v0, v1
-
-    goto :goto_d
 .end method
 
 
@@ -321,7 +224,7 @@
     invoke-direct {p0, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->a(Landroid/view/View;)V
 
     .line 269
-    invoke-direct {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->d(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
+    invoke-virtual {p0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->d(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
     .line 270
     return-void
@@ -336,4 +239,82 @@
 
     .line 105
     return-void
+.end method
+
+.method d(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
+    .registers 7
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 294
+    const/high16 v0, 0x7e000000
+
+    invoke-virtual {p2, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 296
+    instance-of v2, v0, Landroid/support/v4/view/ViewPropertyAnimatorListener;
+
+    if-eqz v2, :cond_31
+
+    .line 297
+    check-cast v0, Landroid/support/v4/view/ViewPropertyAnimatorListener;
+
+    .line 299
+    :goto_d
+    iget-object v2, p1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Ljava/lang/Runnable;
+
+    .line 300
+    iget-object v3, p1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/Runnable;
+
+    .line 301
+    iput-object v1, p1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Ljava/lang/Runnable;
+
+    .line 302
+    iput-object v1, p1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/Runnable;
+
+    .line 303
+    if-eqz v2, :cond_1a
+
+    .line 304
+    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
+
+    .line 306
+    :cond_1a
+    if-eqz v0, :cond_22
+
+    .line 307
+    invoke-interface {v0, p2}, Landroid/support/v4/view/ViewPropertyAnimatorListener;->onAnimationStart(Landroid/view/View;)V
+
+    .line 308
+    invoke-interface {v0, p2}, Landroid/support/v4/view/ViewPropertyAnimatorListener;->onAnimationEnd(Landroid/view/View;)V
+
+    .line 310
+    :cond_22
+    if-eqz v3, :cond_27
+
+    .line 311
+    invoke-interface {v3}, Ljava/lang/Runnable;->run()V
+
+    .line 313
+    :cond_27
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->a:Ljava/util/WeakHashMap;
+
+    if-eqz v0, :cond_30
+
+    .line 314
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;->a:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v0, p2}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 316
+    :cond_30
+    return-void
+
+    :cond_31
+    move-object v0, v1
+
+    goto :goto_d
 .end method

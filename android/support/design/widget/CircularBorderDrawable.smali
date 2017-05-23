@@ -141,12 +141,14 @@
 
     iget v4, p0, Landroid/support/design/widget/CircularBorderDrawable;->mTopInnerStrokeColor:I
 
+    .line 191
     invoke-static {v4, v7}, Landroid/support/v4/graphics/ColorUtils;->b(II)I
 
     move-result v4
 
     iget v6, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
 
+    .line 190
     invoke-static {v4, v6}, Landroid/support/v4/graphics/ColorUtils;->a(II)I
 
     move-result v4
@@ -158,12 +160,14 @@
 
     iget v4, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBottomInnerStrokeColor:I
 
+    .line 193
     invoke-static {v4, v7}, Landroid/support/v4/graphics/ColorUtils;->b(II)I
 
     move-result v4
 
     iget v6, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
 
+    .line 192
     invoke-static {v4, v6}, Landroid/support/v4/graphics/ColorUtils;->a(II)I
 
     move-result v4

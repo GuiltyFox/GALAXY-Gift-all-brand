@@ -105,7 +105,7 @@
     .registers 9
 
     .prologue
-    const v5, 0x7f090258
+    const v5, 0x7f0900e0
 
     const/4 v6, 0x1
 
@@ -147,7 +147,7 @@
     :goto_1d
     new-instance v0, Landroid/app/Dialog;
 
-    const v1, 0x7f0c0107
+    const v1, 0x7f0c00ff
 
     invoke-direct {v0, p0, v1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -156,14 +156,14 @@
     .line 98
     sget-object v0, Lcom/samsung/privilege/util/DialogNotification;->m:Landroid/app/Dialog;
 
-    const v1, 0x7f04011e
+    const v1, 0x7f0400b0
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 100
     sget-object v0, Lcom/samsung/privilege/util/DialogNotification;->m:Landroid/app/Dialog;
 
-    const v1, 0x7f1005f7
+    const v1, 0x7f1003f1
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -214,7 +214,7 @@
 
     sget-object v2, Lcom/samsung/privilege/util/DialogNotification;->b:Landroid/content/Context;
 
-    const v3, 0x7f090256
+    const v3, 0x7f0900de
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -234,7 +234,7 @@
     :goto_77
     sget-object v0, Lcom/samsung/privilege/util/DialogNotification;->m:Landroid/app/Dialog;
 
-    const v1, 0x7f100195
+    const v1, 0x7f100182
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -292,7 +292,7 @@
     .line 154
     sget-object v0, Lcom/samsung/privilege/util/DialogNotification;->m:Landroid/app/Dialog;
 
-    const v1, 0x7f1005f5
+    const v1, 0x7f1003ef
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -322,7 +322,7 @@
     .line 172
     sget-object v0, Lcom/samsung/privilege/util/DialogNotification;->m:Landroid/app/Dialog;
 
-    const v1, 0x7f100113
+    const v1, 0x7f100116
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -340,7 +340,7 @@
     .line 180
     sget-object v0, Lcom/samsung/privilege/util/DialogNotification;->m:Landroid/app/Dialog;
 
-    const v1, 0x7f1005f6
+    const v1, 0x7f1003f0
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -351,7 +351,7 @@
     .line 181
     sget-object v1, Lcom/samsung/privilege/util/DialogNotification;->b:Landroid/content/Context;
 
-    const v2, 0x7f05003e
+    const v2, 0x7f050030
 
     invoke-static {v1, v2}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -449,7 +449,7 @@
 
     sget-object v2, Lcom/samsung/privilege/util/DialogNotification;->b:Landroid/content/Context;
 
-    const v3, 0x7f090257
+    const v3, 0x7f0900df
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -601,14 +601,14 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 573
+    .line 577
     :cond_50
     :goto_50
     const-string/jumbo v0, "Click"
 
     invoke-static {v0, p0}, Lcom/samsung/privilege/util/DialogNotification;->b(Ljava/lang/String;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 574
+    .line 578
     return-void
 
     .line 392
@@ -1574,8 +1574,61 @@
 
     goto/16 :goto_50
 
-    .line 570
+    .line 569
     :cond_3e9
+    iget-object v0, p0, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+
+    const-string/jumbo v1, "marketplace"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_41f
+
+    .line 570
+    new-instance v0, Landroid/content/Intent;
+
+    sget-object v1, Lcom/samsung/privilege/util/DialogNotification;->b:Landroid/content/Context;
+
+    const-class v2, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 571
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "com.samsung.privilege.service"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 572
+    sget-object v1, Lcom/samsung/privilege/util/DialogNotification;->b:Landroid/content/Context;
+
+    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    goto/16 :goto_50
+
+    .line 574
+    :cond_41f
     sget-object v0, Lcom/samsung/privilege/util/DialogNotification;->b:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
@@ -1591,7 +1644,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 577
+    .line 581
     iget-object v0, p1, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v2, "campaign"
@@ -1612,7 +1665,7 @@
 
     if-eqz v0, :cond_11c
 
-    .line 578
+    .line 582
     :cond_17
     iget-object v0, p1, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
@@ -1628,7 +1681,7 @@
 
     if-nez v0, :cond_e4
 
-    .line 579
+    .line 583
     iget-object v0, p1, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
     sget-object v1, Lcom/samsung/privilege/util/DialogNotification;->b:Landroid/content/Context;
@@ -1643,7 +1696,7 @@
 
     if-eqz v0, :cond_6b
 
-    .line 580
+    .line 584
     const-string/jumbo v0, "Notification"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1692,12 +1745,12 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 626
+    .line 630
     :cond_6a
     :goto_6a
     return-void
 
-    .line 582
+    .line 586
     :cond_6b
     iget-object v0, p1, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
@@ -1709,7 +1762,7 @@
 
     if-eqz v0, :cond_ad
 
-    .line 583
+    .line 587
     const-string/jumbo v0, "Notification"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1760,7 +1813,7 @@
 
     goto :goto_6a
 
-    .line 585
+    .line 589
     :cond_ad
     const-string/jumbo v0, "Notification"
 
@@ -1812,7 +1865,7 @@
 
     goto :goto_6a
 
-    .line 589
+    .line 593
     :cond_e4
     const-string/jumbo v0, "Notification"
 
@@ -1864,7 +1917,7 @@
 
     goto/16 :goto_6a
 
-    .line 591
+    .line 595
     :cond_11c
     iget-object v0, p1, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
@@ -1876,7 +1929,7 @@
 
     if-eqz v0, :cond_140
 
-    .line 592
+    .line 596
     iget-object v0, p1, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
     const-string/jumbo v1, "|"
@@ -1885,12 +1938,12 @@
 
     move-result v0
 
-    .line 593
+    .line 597
     const/4 v1, -0x1
 
     if-le v0, v1, :cond_6a
 
-    .line 594
+    .line 598
     iget-object v0, p1, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
     const-string/jumbo v1, "f-"
@@ -1903,7 +1956,7 @@
 
     goto/16 :goto_6a
 
-    .line 602
+    .line 606
     :cond_140
     iget-object v0, p1, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
@@ -1915,7 +1968,7 @@
 
     if-eqz v0, :cond_167
 
-    .line 603
+    .line 607
     const-string/jumbo v0, "Notification"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1940,7 +1993,7 @@
 
     goto/16 :goto_6a
 
-    .line 604
+    .line 608
     :cond_167
     iget-object v0, p1, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
@@ -1952,7 +2005,7 @@
 
     if-eqz v0, :cond_190
 
-    .line 605
+    .line 609
     const-string/jumbo v0, "Notification"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1979,7 +2032,7 @@
 
     goto/16 :goto_6a
 
-    .line 606
+    .line 610
     :cond_190
     iget-object v0, p1, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
@@ -1991,7 +2044,7 @@
 
     if-eqz v0, :cond_22f
 
-    .line 608
+    .line 612
     iget-object v0, p1, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
     if-eqz v0, :cond_1f5
@@ -2006,7 +2059,7 @@
 
     if-nez v0, :cond_1f5
 
-    .line 609
+    .line 613
     iget-object v0, p1, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
     sget-object v2, Lcom/samsung/privilege/util/DialogNotification;->b:Landroid/content/Context;
@@ -2023,11 +2076,11 @@
 
     move v0, v1
 
-    .line 618
+    .line 622
     :goto_1b9
     if-ne v0, v1, :cond_1f7
 
-    .line 619
+    .line 623
     const-string/jumbo v0, "Notification"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2078,7 +2131,7 @@
 
     goto/16 :goto_6a
 
-    .line 612
+    .line 616
     :cond_1f3
     const/4 v0, 0x0
 
@@ -2087,10 +2140,10 @@
     :cond_1f5
     move v0, v1
 
-    .line 615
+    .line 619
     goto :goto_1b9
 
-    .line 621
+    .line 625
     :cond_1f7
     const-string/jumbo v0, "Notification"
 
@@ -2142,7 +2195,7 @@
 
     goto/16 :goto_6a
 
-    .line 624
+    .line 628
     :cond_22f
     const-string/jumbo v0, "Notification"
 
@@ -2196,7 +2249,7 @@
     .line 196
     sget-object v0, Lcom/samsung/privilege/util/DialogNotification;->m:Landroid/app/Dialog;
 
-    const v1, 0x7f100113
+    const v1, 0x7f100116
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

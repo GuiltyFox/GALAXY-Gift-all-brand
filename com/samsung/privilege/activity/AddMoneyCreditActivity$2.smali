@@ -51,7 +51,7 @@
     .line 256
     iget-object v0, p0, Lcom/samsung/privilege/activity/AddMoneyCreditActivity$2;->b:Lcom/samsung/privilege/activity/AddMoneyCreditActivity;
 
-    const v1, 0x7f1000cc
+    const v1, 0x7f1000cf
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 

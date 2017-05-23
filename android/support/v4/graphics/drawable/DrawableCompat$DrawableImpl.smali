@@ -43,11 +43,11 @@
 .method public abstract d(Landroid/graphics/drawable/Drawable;)I
 .end method
 
-.method public abstract e(Landroid/graphics/drawable/Drawable;)I
+.method public abstract e(Landroid/graphics/drawable/Drawable;)Z
 .end method
 
-.method public abstract f(Landroid/graphics/drawable/Drawable;)Z
+.method public abstract f(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
 .end method
 
-.method public abstract g(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
+.method public abstract g(Landroid/graphics/drawable/Drawable;)V
 .end method

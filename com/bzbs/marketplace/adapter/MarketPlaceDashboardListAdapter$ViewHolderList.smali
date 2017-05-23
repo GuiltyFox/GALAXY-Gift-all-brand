@@ -8,25 +8,25 @@
 
 .field contentItemList:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006b1
+        value = 0x7f1004a8
     .end annotation
 .end field
 
 .field contentList:Landroid/support/v7/widget/CardView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005a6
+        value = 0x7f10038c
     .end annotation
 .end field
 
 .field imageViewCover:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006af
+        value = 0x7f1004a6
     .end annotation
 .end field
 
 .field recyclerViewMarketPlaceList:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006ab
+        value = 0x7f1004a2
     .end annotation
 .end field
 
@@ -72,7 +72,7 @@
     .registers 9
 
     .prologue
-    const v5, 0x7f0202dd
+    const v5, 0x7f0201b3
 
     const/4 v4, 0x0
 
@@ -234,7 +234,7 @@
     move-result v1
 
     .line 119
-    sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     iget-object v0, p0, Lcom/bzbs/marketplace/adapter/MarketPlaceDashboardListAdapter$ViewHolderList;->a:Lcom/bzbs/marketplace/adapter/MarketPlaceDashboardListAdapter;
 
@@ -290,9 +290,9 @@
     .line 126
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
-    sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     div-int/lit8 v2, v2, 0x3
 

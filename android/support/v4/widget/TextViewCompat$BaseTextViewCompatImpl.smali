@@ -31,6 +31,17 @@
     return v0
 .end method
 
+.method public a(Landroid/widget/TextView;I)V
+    .registers 3
+
+    .prologue
+    .line 86
+    invoke-static {p1, p2}, Landroid/support/v4/widget/TextViewCompatGingerbread;->a(Landroid/widget/TextView;I)V
+
+    .line 87
+    return-void
+.end method
+
 .method public a(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
     .registers 6
 
@@ -40,4 +51,16 @@
 
     .line 58
     return-void
+.end method
+
+.method public b(Landroid/widget/TextView;)[Landroid/graphics/drawable/Drawable;
+    .registers 3
+
+    .prologue
+    .line 91
+    invoke-static {p1}, Landroid/support/v4/widget/TextViewCompatGingerbread;->b(Landroid/widget/TextView;)[Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    return-object v0
 .end method

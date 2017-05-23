@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 675
+    .line 684
     iput-object p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 6
 
     .prologue
-    .line 677
+    .line 686
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
@@ -44,7 +44,7 @@
 
     iput-wide v2, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->d:D
 
-    .line 678
+    .line 687
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
@@ -53,7 +53,7 @@
 
     iput-wide v2, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->e:D
 
-    .line 679
+    .line 688
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .registers 2
 
     .prologue
-    .line 688
+    .line 697
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .registers 2
 
     .prologue
-    .line 685
+    .line 694
     return-void
 .end method
 
@@ -77,6 +77,6 @@
     .registers 4
 
     .prologue
-    .line 682
+    .line 691
     return-void
 .end method

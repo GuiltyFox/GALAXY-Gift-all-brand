@@ -38,33 +38,27 @@
     .line 107
     iget-object v0, p0, Landroid/support/v7/widget/PopupMenu$1;->a:Landroid/support/v7/widget/PopupMenu;
 
-    # getter for: Landroid/support/v7/widget/PopupMenu;->mMenuItemClickListener:Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
-    invoke-static {v0}, Landroid/support/v7/widget/PopupMenu;->access$000(Landroid/support/v7/widget/PopupMenu;)Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
+    iget-object v0, v0, Landroid/support/v7/widget/PopupMenu;->mMenuItemClickListener:Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
 
-    move-result-object v0
-
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_f
 
     .line 108
     iget-object v0, p0, Landroid/support/v7/widget/PopupMenu$1;->a:Landroid/support/v7/widget/PopupMenu;
 
-    # getter for: Landroid/support/v7/widget/PopupMenu;->mMenuItemClickListener:Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
-    invoke-static {v0}, Landroid/support/v7/widget/PopupMenu;->access$000(Landroid/support/v7/widget/PopupMenu;)Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/widget/PopupMenu;->mMenuItemClickListener:Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
 
     invoke-interface {v0, p2}, Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;->onMenuItemClick(Landroid/view/MenuItem;)Z
 
     move-result v0
 
     .line 110
-    :goto_12
+    :goto_e
     return v0
 
-    :cond_13
+    :cond_f
     const/4 v0, 0x0
 
-    goto :goto_12
+    goto :goto_e
 .end method
 
 .method public onMenuModeChange(Landroid/support/v7/view/menu/MenuBuilder;)V

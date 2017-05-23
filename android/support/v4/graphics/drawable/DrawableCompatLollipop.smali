@@ -125,3 +125,93 @@
 
     return-object v0
 .end method
+
+.method public static d(Landroid/graphics/drawable/Drawable;)V
+    .registers 5
+
+    .prologue
+    .line 79
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->clearColorFilter()V
+
+    .line 85
+    instance-of v0, p0, Landroid/graphics/drawable/InsetDrawable;
+
+    if-eqz v0, :cond_11
+
+    .line 86
+    check-cast p0, Landroid/graphics/drawable/InsetDrawable;
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/InsetDrawable;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->d(Landroid/graphics/drawable/Drawable;)V
+
+    .line 103
+    :cond_10
+    :goto_10
+    return-void
+
+    .line 87
+    :cond_11
+    instance-of v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapper;
+
+    if-eqz v0, :cond_1f
+
+    .line 88
+    check-cast p0, Landroid/support/v4/graphics/drawable/DrawableWrapper;
+
+    invoke-interface {p0}, Landroid/support/v4/graphics/drawable/DrawableWrapper;->a()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->d(Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_10
+
+    .line 89
+    :cond_1f
+    instance-of v0, p0, Landroid/graphics/drawable/DrawableContainer;
+
+    if-eqz v0, :cond_10
+
+    .line 90
+    check-cast p0, Landroid/graphics/drawable/DrawableContainer;
+
+    .line 92
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableContainer;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
+
+    .line 93
+    if-eqz v0, :cond_10
+
+    .line 95
+    const/4 v1, 0x0
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->getChildCount()I
+
+    move-result v2
+
+    :goto_32
+    if-ge v1, v2, :cond_10
+
+    .line 96
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->getChild(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    .line 97
+    if-eqz v3, :cond_3d
+
+    .line 98
+    invoke-static {v3}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->d(Landroid/graphics/drawable/Drawable;)V
+
+    .line 95
+    :cond_3d
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_32
+.end method

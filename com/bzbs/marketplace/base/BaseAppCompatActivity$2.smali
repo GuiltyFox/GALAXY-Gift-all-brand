@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 199
+    .line 206
     iput-object p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$2;->b:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     iput-object p2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$2;->a:Landroid/os/Bundle;
@@ -39,19 +39,19 @@
     .registers 2
 
     .prologue
-    .line 202
+    .line 209
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$2;->a:Landroid/os/Bundle;
 
     if-nez v0, :cond_b
 
-    .line 203
+    .line 210
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$2;->b:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/sticker/StickerUtil;->d(Landroid/content/Context;)V
 
-    .line 205
+    .line 212
     :cond_b
     return-void
 .end method

@@ -13,10 +13,10 @@
 .method public abstract a(Landroid/support/v7/widget/CardViewDelegate;F)V
 .end method
 
-.method public abstract a(Landroid/support/v7/widget/CardViewDelegate;I)V
+.method public abstract a(Landroid/support/v7/widget/CardViewDelegate;Landroid/content/Context;Landroid/content/res/ColorStateList;FFF)V
 .end method
 
-.method public abstract a(Landroid/support/v7/widget/CardViewDelegate;Landroid/content/Context;IFFF)V
+.method public abstract a(Landroid/support/v7/widget/CardViewDelegate;Landroid/content/res/ColorStateList;)V
 .end method
 
 .method public abstract b(Landroid/support/v7/widget/CardViewDelegate;)F
@@ -44,4 +44,7 @@
 .end method
 
 .method public abstract h(Landroid/support/v7/widget/CardViewDelegate;)V
+.end method
+
+.method public abstract i(Landroid/support/v7/widget/CardViewDelegate;)Landroid/content/res/ColorStateList;
 .end method

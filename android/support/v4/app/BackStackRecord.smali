@@ -369,86 +369,6 @@
     goto :goto_28
 .end method
 
-.method private a(Landroid/support/v4/app/BackStackRecord$TransitionState;ZLandroid/support/v4/app/Fragment;)Landroid/support/v4/util/ArrayMap;
-    .registers 8
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/support/v4/app/BackStackRecord$TransitionState;",
-            "Z",
-            "Landroid/support/v4/app/Fragment;",
-            ")",
-            "Landroid/support/v4/util/ArrayMap",
-            "<",
-            "Ljava/lang/String;",
-            "Landroid/view/View;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    const/4 v3, 0x1
-
-    .line 1378
-    invoke-direct {p0, p1, p3, p2}, Landroid/support/v4/app/BackStackRecord;->b(Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/app/Fragment;Z)Landroid/support/v4/util/ArrayMap;
-
-    move-result-object v0
-
-    .line 1382
-    if-eqz p2, :cond_16
-
-    .line 1383
-    iget-object v1, p3, Landroid/support/v4/app/Fragment;->mExitTransitionCallback:Landroid/support/v4/app/SharedElementCallback;
-
-    if-eqz v1, :cond_12
-
-    .line 1384
-    iget-object v1, p3, Landroid/support/v4/app/Fragment;->mExitTransitionCallback:Landroid/support/v4/app/SharedElementCallback;
-
-    iget-object v2, p0, Landroid/support/v4/app/BackStackRecord;->v:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v2, v0}, Landroid/support/v4/app/SharedElementCallback;->a(Ljava/util/List;Ljava/util/Map;)V
-
-    .line 1387
-    :cond_12
-    invoke-direct {p0, p1, v0, v3}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/util/ArrayMap;Z)V
-
-    .line 1395
-    :goto_15
-    return-object v0
-
-    .line 1389
-    :cond_16
-    iget-object v1, p3, Landroid/support/v4/app/Fragment;->mEnterTransitionCallback:Landroid/support/v4/app/SharedElementCallback;
-
-    if-eqz v1, :cond_21
-
-    .line 1390
-    iget-object v1, p3, Landroid/support/v4/app/Fragment;->mEnterTransitionCallback:Landroid/support/v4/app/SharedElementCallback;
-
-    iget-object v2, p0, Landroid/support/v4/app/BackStackRecord;->v:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v2, v0}, Landroid/support/v4/app/SharedElementCallback;->a(Ljava/util/List;Ljava/util/Map;)V
-
-    .line 1393
-    :cond_21
-    invoke-direct {p0, p1, v0, v3}, Landroid/support/v4/app/BackStackRecord;->b(Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/util/ArrayMap;Z)V
-
-    goto :goto_15
-.end method
-
-.method static synthetic a(Landroid/support/v4/app/BackStackRecord;Landroid/support/v4/app/BackStackRecord$TransitionState;ZLandroid/support/v4/app/Fragment;)Landroid/support/v4/util/ArrayMap;
-    .registers 5
-
-    .prologue
-    .line 197
-    invoke-direct {p0, p1, p2, p3}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord$TransitionState;ZLandroid/support/v4/app/Fragment;)Landroid/support/v4/util/ArrayMap;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method private static a(Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/support/v4/util/ArrayMap;)Landroid/support/v4/util/ArrayMap;
     .registers 8
     .annotation system Ldalvik/annotation/Signature;
@@ -951,177 +871,6 @@
     return-void
 .end method
 
-.method private a(Landroid/support/v4/app/BackStackRecord$TransitionState;ILjava/lang/Object;)V
-    .registers 9
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 1463
-    iget-object v0, p0, Landroid/support/v4/app/BackStackRecord;->b:Landroid/support/v4/app/FragmentManagerImpl;
-
-    iget-object v0, v0, Landroid/support/v4/app/FragmentManagerImpl;->g:Ljava/util/ArrayList;
-
-    if-eqz v0, :cond_54
-
-    move v1, v2
-
-    .line 1464
-    :goto_8
-    iget-object v0, p0, Landroid/support/v4/app/BackStackRecord;->b:Landroid/support/v4/app/FragmentManagerImpl;
-
-    iget-object v0, v0, Landroid/support/v4/app/FragmentManagerImpl;->g:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-ge v1, v0, :cond_54
-
-    .line 1465
-    iget-object v0, p0, Landroid/support/v4/app/BackStackRecord;->b:Landroid/support/v4/app/FragmentManagerImpl;
-
-    iget-object v0, v0, Landroid/support/v4/app/FragmentManagerImpl;->g:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v4/app/Fragment;
-
-    .line 1466
-    iget-object v3, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
-
-    if-eqz v3, :cond_43
-
-    iget-object v3, v0, Landroid/support/v4/app/Fragment;->mContainer:Landroid/view/ViewGroup;
-
-    if-eqz v3, :cond_43
-
-    iget v3, v0, Landroid/support/v4/app/Fragment;->mContainerId:I
-
-    if-ne v3, p2, :cond_43
-
-    .line 1468
-    iget-boolean v3, v0, Landroid/support/v4/app/Fragment;->mHidden:Z
-
-    if-eqz v3, :cond_47
-
-    .line 1469
-    iget-object v3, p1, Landroid/support/v4/app/BackStackRecord$TransitionState;->b:Ljava/util/ArrayList;
-
-    iget-object v4, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_43
-
-    .line 1470
-    iget-object v3, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
-
-    const/4 v4, 0x1
-
-    invoke-static {p3, v3, v4}, Landroid/support/v4/app/FragmentTransitionCompat21;->a(Ljava/lang/Object;Landroid/view/View;Z)V
-
-    .line 1472
-    iget-object v3, p1, Landroid/support/v4/app/BackStackRecord$TransitionState;->b:Ljava/util/ArrayList;
-
-    iget-object v0, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
-
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 1464
-    :cond_43
-    :goto_43
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_8
-
-    .line 1475
-    :cond_47
-    iget-object v3, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
-
-    invoke-static {p3, v3, v2}, Landroid/support/v4/app/FragmentTransitionCompat21;->a(Ljava/lang/Object;Landroid/view/View;Z)V
-
-    .line 1477
-    iget-object v3, p1, Landroid/support/v4/app/BackStackRecord$TransitionState;->b:Ljava/util/ArrayList;
-
-    iget-object v0, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
-
-    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    goto :goto_43
-
-    .line 1482
-    :cond_54
-    return-void
-.end method
-
-.method private a(Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLandroid/support/v4/util/ArrayMap;)V
-    .registers 10
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/support/v4/app/BackStackRecord$TransitionState;",
-            "Landroid/support/v4/app/Fragment;",
-            "Landroid/support/v4/app/Fragment;",
-            "Z",
-            "Landroid/support/v4/util/ArrayMap",
-            "<",
-            "Ljava/lang/String;",
-            "Landroid/view/View;",
-            ">;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 1354
-    if-eqz p4, :cond_1d
-
-    iget-object v0, p3, Landroid/support/v4/app/Fragment;->mEnterTransitionCallback:Landroid/support/v4/app/SharedElementCallback;
-
-    .line 1357
-    :goto_4
-    if-eqz v0, :cond_1c
-
-    .line 1358
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-virtual {p5}, Landroid/support/v4/util/ArrayMap;->keySet()Ljava/util/Set;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    .line 1359
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-virtual {p5}, Landroid/support/v4/util/ArrayMap;->values()Ljava/util/Collection;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    .line 1360
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/app/SharedElementCallback;->b(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
-
-    .line 1362
-    :cond_1c
-    return-void
-
-    .line 1354
-    :cond_1d
-    iget-object v0, p2, Landroid/support/v4/app/Fragment;->mEnterTransitionCallback:Landroid/support/v4/app/SharedElementCallback;
-
-    goto :goto_4
-.end method
-
 .method private a(Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/util/ArrayMap;Z)V
     .registers 9
     .annotation system Ldalvik/annotation/Signature;
@@ -1350,92 +1099,6 @@
 
     .line 1506
     :cond_1f
-    return-void
-.end method
-
-.method static synthetic a(Landroid/support/v4/app/BackStackRecord;Landroid/support/v4/app/BackStackRecord$TransitionState;ILjava/lang/Object;)V
-    .registers 4
-
-    .prologue
-    .line 197
-    invoke-direct {p0, p1, p2, p3}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord$TransitionState;ILjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method static synthetic a(Landroid/support/v4/app/BackStackRecord;Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLandroid/support/v4/util/ArrayMap;)V
-    .registers 6
-
-    .prologue
-    .line 197
-    invoke-direct/range {p0 .. p5}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLandroid/support/v4/util/ArrayMap;)V
-
-    return-void
-.end method
-
-.method static synthetic a(Landroid/support/v4/app/BackStackRecord;Landroid/support/v4/util/ArrayMap;Landroid/support/v4/app/BackStackRecord$TransitionState;)V
-    .registers 3
-
-    .prologue
-    .line 197
-    invoke-direct {p0, p1, p2}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/util/ArrayMap;Landroid/support/v4/app/BackStackRecord$TransitionState;)V
-
-    return-void
-.end method
-
-.method private a(Landroid/support/v4/util/ArrayMap;Landroid/support/v4/app/BackStackRecord$TransitionState;)V
-    .registers 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/support/v4/util/ArrayMap",
-            "<",
-            "Ljava/lang/String;",
-            "Landroid/view/View;",
-            ">;",
-            "Landroid/support/v4/app/BackStackRecord$TransitionState;",
-            ")V"
-        }
-    .end annotation
-
-    .prologue
-    .line 1365
-    iget-object v0, p0, Landroid/support/v4/app/BackStackRecord;->v:Ljava/util/ArrayList;
-
-    if-eqz v0, :cond_1d
-
-    invoke-virtual {p1}, Landroid/support/v4/util/ArrayMap;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1d
-
-    .line 1367
-    iget-object v0, p0, Landroid/support/v4/app/BackStackRecord;->v:Ljava/util/ArrayList;
-
-    const/4 v1, 0x0
-
-    .line 1368
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/support/v4/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    .line 1369
-    if-eqz v0, :cond_1d
-
-    .line 1370
-    iget-object v1, p2, Landroid/support/v4/app/BackStackRecord$TransitionState;->c:Landroid/support/v4/app/FragmentTransitionCompat21$EpicenterView;
-
-    iput-object v0, v1, Landroid/support/v4/app/FragmentTransitionCompat21$EpicenterView;->a:Landroid/view/View;
-
-    .line 1373
-    :cond_1d
     return-void
 .end method
 
@@ -1965,7 +1628,7 @@
 
     move-object/from16 v3, v32
 
-    invoke-direct {v0, v1, v2, v3}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord$TransitionState;ILjava/lang/Object;)V
+    invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord$TransitionState;ILjava/lang/Object;)V
 
     .line 1302
     move-object/from16 v0, v32
@@ -3149,6 +2812,74 @@
     return-object p0
 .end method
 
+.method a(Landroid/support/v4/app/BackStackRecord$TransitionState;ZLandroid/support/v4/app/Fragment;)Landroid/support/v4/util/ArrayMap;
+    .registers 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/support/v4/app/BackStackRecord$TransitionState;",
+            "Z",
+            "Landroid/support/v4/app/Fragment;",
+            ")",
+            "Landroid/support/v4/util/ArrayMap",
+            "<",
+            "Ljava/lang/String;",
+            "Landroid/view/View;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    const/4 v3, 0x1
+
+    .line 1378
+    invoke-direct {p0, p1, p3, p2}, Landroid/support/v4/app/BackStackRecord;->b(Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/app/Fragment;Z)Landroid/support/v4/util/ArrayMap;
+
+    move-result-object v0
+
+    .line 1382
+    if-eqz p2, :cond_16
+
+    .line 1383
+    iget-object v1, p3, Landroid/support/v4/app/Fragment;->mExitTransitionCallback:Landroid/support/v4/app/SharedElementCallback;
+
+    if-eqz v1, :cond_12
+
+    .line 1384
+    iget-object v1, p3, Landroid/support/v4/app/Fragment;->mExitTransitionCallback:Landroid/support/v4/app/SharedElementCallback;
+
+    iget-object v2, p0, Landroid/support/v4/app/BackStackRecord;->v:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v2, v0}, Landroid/support/v4/app/SharedElementCallback;->a(Ljava/util/List;Ljava/util/Map;)V
+
+    .line 1387
+    :cond_12
+    invoke-direct {p0, p1, v0, v3}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/util/ArrayMap;Z)V
+
+    .line 1395
+    :goto_15
+    return-object v0
+
+    .line 1389
+    :cond_16
+    iget-object v1, p3, Landroid/support/v4/app/Fragment;->mEnterTransitionCallback:Landroid/support/v4/app/SharedElementCallback;
+
+    if-eqz v1, :cond_21
+
+    .line 1390
+    iget-object v1, p3, Landroid/support/v4/app/Fragment;->mEnterTransitionCallback:Landroid/support/v4/app/SharedElementCallback;
+
+    iget-object v2, p0, Landroid/support/v4/app/BackStackRecord;->v:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v2, v0}, Landroid/support/v4/app/SharedElementCallback;->a(Ljava/util/List;Ljava/util/Map;)V
+
+    .line 1393
+    :cond_21
+    invoke-direct {p0, p1, v0, v3}, Landroid/support/v4/app/BackStackRecord;->b(Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/util/ArrayMap;Z)V
+
+    goto :goto_15
+.end method
+
 .method a(I)V
     .registers 8
 
@@ -3419,6 +3150,233 @@
     iput-object p1, p0, Landroid/support/v4/app/BackStackRecord;->d:Landroid/support/v4/app/BackStackRecord$Op;
 
     goto :goto_8
+.end method
+
+.method a(Landroid/support/v4/app/BackStackRecord$TransitionState;ILjava/lang/Object;)V
+    .registers 9
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 1463
+    iget-object v0, p0, Landroid/support/v4/app/BackStackRecord;->b:Landroid/support/v4/app/FragmentManagerImpl;
+
+    iget-object v0, v0, Landroid/support/v4/app/FragmentManagerImpl;->g:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_54
+
+    move v1, v2
+
+    .line 1464
+    :goto_8
+    iget-object v0, p0, Landroid/support/v4/app/BackStackRecord;->b:Landroid/support/v4/app/FragmentManagerImpl;
+
+    iget-object v0, v0, Landroid/support/v4/app/FragmentManagerImpl;->g:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-ge v1, v0, :cond_54
+
+    .line 1465
+    iget-object v0, p0, Landroid/support/v4/app/BackStackRecord;->b:Landroid/support/v4/app/FragmentManagerImpl;
+
+    iget-object v0, v0, Landroid/support/v4/app/FragmentManagerImpl;->g:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v4/app/Fragment;
+
+    .line 1466
+    iget-object v3, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
+
+    if-eqz v3, :cond_43
+
+    iget-object v3, v0, Landroid/support/v4/app/Fragment;->mContainer:Landroid/view/ViewGroup;
+
+    if-eqz v3, :cond_43
+
+    iget v3, v0, Landroid/support/v4/app/Fragment;->mContainerId:I
+
+    if-ne v3, p2, :cond_43
+
+    .line 1468
+    iget-boolean v3, v0, Landroid/support/v4/app/Fragment;->mHidden:Z
+
+    if-eqz v3, :cond_47
+
+    .line 1469
+    iget-object v3, p1, Landroid/support/v4/app/BackStackRecord$TransitionState;->b:Ljava/util/ArrayList;
+
+    iget-object v4, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
+
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_43
+
+    .line 1470
+    iget-object v3, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
+
+    const/4 v4, 0x1
+
+    invoke-static {p3, v3, v4}, Landroid/support/v4/app/FragmentTransitionCompat21;->a(Ljava/lang/Object;Landroid/view/View;Z)V
+
+    .line 1472
+    iget-object v3, p1, Landroid/support/v4/app/BackStackRecord$TransitionState;->b:Ljava/util/ArrayList;
+
+    iget-object v0, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
+
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 1464
+    :cond_43
+    :goto_43
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_8
+
+    .line 1475
+    :cond_47
+    iget-object v3, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
+
+    invoke-static {p3, v3, v2}, Landroid/support/v4/app/FragmentTransitionCompat21;->a(Ljava/lang/Object;Landroid/view/View;Z)V
+
+    .line 1477
+    iget-object v3, p1, Landroid/support/v4/app/BackStackRecord$TransitionState;->b:Ljava/util/ArrayList;
+
+    iget-object v0, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
+
+    invoke-virtual {v3, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    goto :goto_43
+
+    .line 1482
+    :cond_54
+    return-void
+.end method
+
+.method a(Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLandroid/support/v4/util/ArrayMap;)V
+    .registers 10
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/support/v4/app/BackStackRecord$TransitionState;",
+            "Landroid/support/v4/app/Fragment;",
+            "Landroid/support/v4/app/Fragment;",
+            "Z",
+            "Landroid/support/v4/util/ArrayMap",
+            "<",
+            "Ljava/lang/String;",
+            "Landroid/view/View;",
+            ">;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 1354
+    if-eqz p4, :cond_1d
+
+    iget-object v0, p3, Landroid/support/v4/app/Fragment;->mEnterTransitionCallback:Landroid/support/v4/app/SharedElementCallback;
+
+    .line 1357
+    :goto_4
+    if-eqz v0, :cond_1c
+
+    .line 1358
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-virtual {p5}, Landroid/support/v4/util/ArrayMap;->keySet()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    .line 1359
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-virtual {p5}, Landroid/support/v4/util/ArrayMap;->values()Ljava/util/Collection;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    .line 1360
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/app/SharedElementCallback;->b(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+
+    .line 1362
+    :cond_1c
+    return-void
+
+    .line 1354
+    :cond_1d
+    iget-object v0, p2, Landroid/support/v4/app/Fragment;->mEnterTransitionCallback:Landroid/support/v4/app/SharedElementCallback;
+
+    goto :goto_4
+.end method
+
+.method a(Landroid/support/v4/util/ArrayMap;Landroid/support/v4/app/BackStackRecord$TransitionState;)V
+    .registers 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/support/v4/util/ArrayMap",
+            "<",
+            "Ljava/lang/String;",
+            "Landroid/view/View;",
+            ">;",
+            "Landroid/support/v4/app/BackStackRecord$TransitionState;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 1365
+    iget-object v0, p0, Landroid/support/v4/app/BackStackRecord;->v:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_1d
+
+    invoke-virtual {p1}, Landroid/support/v4/util/ArrayMap;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1d
+
+    .line 1367
+    iget-object v0, p0, Landroid/support/v4/app/BackStackRecord;->v:Ljava/util/ArrayList;
+
+    const/4 v1, 0x0
+
+    .line 1368
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/support/v4/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    .line 1369
+    if-eqz v0, :cond_1d
+
+    .line 1370
+    iget-object v1, p2, Landroid/support/v4/app/BackStackRecord$TransitionState;->c:Landroid/support/v4/app/FragmentTransitionCompat21$EpicenterView;
+
+    iput-object v0, v1, Landroid/support/v4/app/FragmentTransitionCompat21$EpicenterView;->a:Landroid/view/View;
+
+    .line 1373
+    :cond_1d
+    return-void
 .end method
 
 .method public a(Landroid/util/SparseArray;Landroid/util/SparseArray;)V

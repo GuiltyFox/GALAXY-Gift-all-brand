@@ -47,7 +47,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/AddMoneyCreditActivity$1;->a:Lcom/samsung/privilege/activity/AddMoneyCreditActivity;
 
-    const v2, 0x7f1000cb
+    const v2, 0x7f1000ce
 
     invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 
@@ -146,7 +146,7 @@
 
     iget-object v6, v6, Lcom/samsung/privilege/activity/AddMoneyCreditActivity$1;->a:Lcom/samsung/privilege/activity/AddMoneyCreditActivity;
 
-    const v7, 0x7f0903a5
+    const v7, 0x7f0901b1
 
     invoke-virtual {v6, v7}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->getString(I)Ljava/lang/String;
 
@@ -161,7 +161,7 @@
     move-result-object v6
 
     .line 136
-    const v2, 0x7f1000cf
+    const v2, 0x7f1000d2
 
     invoke-virtual {v5, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -172,7 +172,7 @@
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 138
-    const v2, 0x7f1000ce
+    const v2, 0x7f1000d1
 
     invoke-virtual {v5, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

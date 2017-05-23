@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 967
+    .line 1090
     iput-object p1, p0, Landroid/support/design/widget/TabLayout$1;->this$0:Landroid/support/design/widget/TabLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 5
 
     .prologue
-    .line 970
+    .line 1093
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$1;->this$0:Landroid/support/design/widget/TabLayout;
 
     invoke-virtual {p1}, Landroid/support/design/widget/ValueAnimatorCompat;->getAnimatedIntValue()I
@@ -46,6 +46,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/design/widget/TabLayout;->scrollTo(II)V
 
-    .line 971
+    .line 1094
     return-void
 .end method

@@ -59,9 +59,9 @@
     .registers 13
 
     .prologue
-    const v9, 0x7f090470
+    const v9, 0x7f090265
 
-    const v8, 0x7f0202de
+    const v8, 0x7f0201b4
 
     const/4 v7, 0x1
 
@@ -796,7 +796,7 @@
 
     move-result-object v0
 
-    const v5, 0x7f0202de
+    const v5, 0x7f0201b4
 
     invoke-virtual {v0, v5}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -914,7 +914,7 @@
 
     iget-object v6, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v7, 0x7f09037d
+    const v7, 0x7f090196
 
     invoke-virtual {v6, v7}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -1070,7 +1070,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f0202de
+    const v3, 0x7f0201b4
 
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -1188,7 +1188,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v6, 0x7f09037d
+    const v6, 0x7f090196
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -1376,7 +1376,7 @@
 
     iget-object v6, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v7, 0x7f090378
+    const v7, 0x7f090191
 
     invoke-virtual {v6, v7}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -1447,7 +1447,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f090470
+    const v6, 0x7f090265
 
     invoke-virtual {v5, v6}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -1513,7 +1513,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v6, 0x7f090378
+    const v6, 0x7f090191
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -1584,7 +1584,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f090470
+    const v3, 0x7f090265
 
     invoke-virtual {v1, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -1805,7 +1805,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0a0023
+    const v2, 0x7f0a0024
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -2069,7 +2069,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0202dd
+    const v1, 0x7f0201b3
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -2498,7 +2498,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0202dd
+    const v1, 0x7f0201b3
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -2696,7 +2696,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090470
+    const v2, 0x7f090265
 
     invoke-virtual {v1, v2}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -2753,7 +2753,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0202dd
+    const v1, 0x7f0201b3
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -2952,7 +2952,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090470
+    const v2, 0x7f090265
 
     invoke-virtual {v1, v2}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -3160,7 +3160,7 @@
 
     move-result-object v1
 
-    const v5, 0x7f0a0023
+    const v5, 0x7f0a0024
 
     invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3383,7 +3383,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0202de
+    const v1, 0x7f0201b4
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -3581,7 +3581,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090470
+    const v2, 0x7f090265
 
     invoke-virtual {v1, v2}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -3683,7 +3683,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0a0023
+    const v4, 0x7f0a0024
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -3926,7 +3926,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v5, 0x7f09037d
+    const v5, 0x7f090196
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -4088,7 +4088,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f0202de
+    const v3, 0x7f0201b4
 
     invoke-virtual {v0, v3}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -4146,7 +4146,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v5, 0x7f090378
+    const v5, 0x7f090191
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -4217,7 +4217,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f090470
+    const v3, 0x7f090265
 
     invoke-virtual {v1, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -4318,7 +4318,7 @@
     if-eqz v1, :cond_28
 
     .line 974
-    const v0, 0x7f0400e7
+    const v0, 0x7f040078
 
     goto :goto_16
 
@@ -4350,7 +4350,7 @@
     if-eqz v1, :cond_46
 
     .line 978
-    const v0, 0x7f0400f5
+    const v0, 0x7f040085
 
     goto :goto_16
 
@@ -4369,13 +4369,13 @@
     if-eqz v0, :cond_57
 
     .line 980
-    const v0, 0x7f0400f4
+    const v0, 0x7f040084
 
     goto :goto_16
 
     .line 982
     :cond_57
-    const v0, 0x7f0400f3
+    const v0, 0x7f040083
 
     goto :goto_16
 
@@ -4394,7 +4394,7 @@
     if-eqz v1, :cond_6c
 
     .line 986
-    const v0, 0x7f0400f0
+    const v0, 0x7f040080
 
     goto :goto_16
 
@@ -4413,7 +4413,7 @@
     if-eqz v1, :cond_7d
 
     .line 988
-    const v0, 0x7f0400f1
+    const v0, 0x7f040081
 
     goto :goto_16
 
@@ -4432,7 +4432,7 @@
     if-eqz v1, :cond_8e
 
     .line 990
-    const v0, 0x7f0400ec
+    const v0, 0x7f04007d
 
     goto :goto_16
 
@@ -4451,7 +4451,7 @@
     if-eqz v1, :cond_a0
 
     .line 992
-    const v0, 0x7f0400f2
+    const v0, 0x7f040082
 
     goto/16 :goto_16
 
@@ -4487,13 +4487,13 @@
     if-eqz v0, :cond_c3
 
     .line 997
-    const v0, 0x7f0400ef
+    const v0, 0x7f04007f
 
     goto/16 :goto_16
 
     .line 1000
     :cond_c3
-    const v0, 0x7f0400ee
+    const v0, 0x7f04007e
 
     goto/16 :goto_16
 
@@ -4533,7 +4533,7 @@
     if-eqz v1, :cond_ef
 
     .line 1005
-    const v0, 0x7f0400ea
+    const v0, 0x7f04007b
 
     goto/16 :goto_16
 
@@ -4552,13 +4552,13 @@
     if-eqz v0, :cond_101
 
     .line 1009
-    const v0, 0x7f0400e9
+    const v0, 0x7f04007a
 
     goto/16 :goto_16
 
     .line 1012
     :cond_101
-    const v0, 0x7f0400e8
+    const v0, 0x7f040079
 
     goto/16 :goto_16
 
@@ -4581,7 +4581,7 @@
     if-eqz v1, :cond_11c
 
     .line 1018
-    const v0, 0x7f0400e6
+    const v0, 0x7f040077
 
     goto/16 :goto_16
 
@@ -4600,13 +4600,13 @@
     if-eqz v0, :cond_12e
 
     .line 1022
-    const v0, 0x7f0400e5
+    const v0, 0x7f040076
 
     goto/16 :goto_16
 
     .line 1025
     :cond_12e
-    const v0, 0x7f0400e4
+    const v0, 0x7f040075
 
     goto/16 :goto_16
 .end method
@@ -5107,7 +5107,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400e7
+    const v1, 0x7f040078
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5130,7 +5130,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400f5
+    const v1, 0x7f040085
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5153,7 +5153,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400f4
+    const v1, 0x7f040084
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5176,7 +5176,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400f3
+    const v1, 0x7f040083
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5199,7 +5199,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400f0
+    const v1, 0x7f040080
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5222,7 +5222,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400f1
+    const v1, 0x7f040081
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5245,7 +5245,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400ec
+    const v1, 0x7f04007d
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5268,7 +5268,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400f2
+    const v1, 0x7f040082
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5291,7 +5291,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400ef
+    const v1, 0x7f04007f
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5314,7 +5314,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400ee
+    const v1, 0x7f04007e
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5337,7 +5337,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400e9
+    const v1, 0x7f04007a
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5360,7 +5360,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400e8
+    const v1, 0x7f040079
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5383,7 +5383,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400e5
+    const v1, 0x7f040076
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5406,7 +5406,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400e4
+    const v1, 0x7f040075
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5429,7 +5429,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400ea
+    const v1, 0x7f04007b
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5452,7 +5452,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400e6
+    const v1, 0x7f040077
 
     invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -5467,7 +5467,7 @@
 
     .line 912
     :pswitch_data_160
-    .packed-switch 0x7f0400e4
+    .packed-switch 0x7f040075
         :pswitch_11e
         :pswitch_108
         :pswitch_14a
@@ -5477,7 +5477,6 @@
         :pswitch_134
         :pswitch_4
         :pswitch_84
-        :pswitch_4
         :pswitch_c6
         :pswitch_b0
         :pswitch_5a

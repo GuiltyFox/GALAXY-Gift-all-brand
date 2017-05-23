@@ -12,60 +12,17 @@
 # instance fields
 .field private mInsetDrawable:Landroid/graphics/drawable/InsetDrawable;
 
-.field private final mInterpolator:Landroid/view/animation/Interpolator;
-
 
 # direct methods
-.method constructor <init>(Landroid/support/design/widget/VisibilityAwareImageButton;Landroid/support/design/widget/ShadowViewDelegate;)V
-    .registers 5
+.method constructor <init>(Landroid/support/design/widget/VisibilityAwareImageButton;Landroid/support/design/widget/ShadowViewDelegate;Landroid/support/design/widget/ValueAnimatorCompat$Creator;)V
+    .registers 4
 
     .prologue
     .line 44
-    invoke-direct {p0, p1, p2}, Landroid/support/design/widget/FloatingActionButtonIcs;-><init>(Landroid/support/design/widget/VisibilityAwareImageButton;Landroid/support/design/widget/ShadowViewDelegate;)V
+    invoke-direct {p0, p1, p2, p3}, Landroid/support/design/widget/FloatingActionButtonIcs;-><init>(Landroid/support/design/widget/VisibilityAwareImageButton;Landroid/support/design/widget/ShadowViewDelegate;Landroid/support/design/widget/ValueAnimatorCompat$Creator;)V
 
-    .line 46
-    invoke-virtual {p1}, Landroid/support/design/widget/VisibilityAwareImageButton;->isInEditMode()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_d
-
-    const/4 v0, 0x0
-
-    :goto_a
-    iput-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mInterpolator:Landroid/view/animation/Interpolator;
-
-    .line 49
+    .line 45
     return-void
-
-    .line 46
-    :cond_d
-    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
-
-    invoke-virtual {v0}, Landroid/support/design/widget/VisibilityAwareImageButton;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const v1, 0x10c000d
-
-    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
-
-    move-result-object v0
-
-    goto :goto_a
-.end method
-
-.method private setupAnimator(Landroid/animation/Animator;)Landroid/animation/Animator;
-    .registers 3
-
-    .prologue
-    .line 150
-    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mInterpolator:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {p1, v0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    .line 151
-    return-object p1
 .end method
 
 
@@ -74,7 +31,7 @@
     .registers 2
 
     .prologue
-    .line 115
+    .line 132
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
 
     invoke-virtual {v0}, Landroid/support/design/widget/VisibilityAwareImageButton;->getElevation()F
@@ -90,7 +47,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 160
+    .line 173
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
 
     invoke-interface {v0}, Landroid/support/design/widget/ShadowViewDelegate;->isCompatPaddingEnabled()Z
@@ -99,14 +56,14 @@
 
     if-eqz v0, :cond_2e
 
-    .line 161
+    .line 174
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
 
     invoke-interface {v0}, Landroid/support/design/widget/ShadowViewDelegate;->getRadius()F
 
     move-result v0
 
-    .line 162
+    .line 175
     invoke-virtual {p0}, Landroid/support/design/widget/FloatingActionButtonLollipop;->getElevation()F
 
     move-result v1
@@ -115,40 +72,42 @@
 
     add-float/2addr v1, v2
 
-    .line 163
+    .line 177
     invoke-static {v1, v0, v4}, Landroid/support/design/widget/ShadowDrawableWrapper;->calculateHorizontalPadding(FFZ)F
 
     move-result v2
 
     float-to-double v2, v2
 
+    .line 176
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v2
 
     double-to-int v2, v2
 
-    .line 165
+    .line 179
     invoke-static {v1, v0, v4}, Landroid/support/design/widget/ShadowDrawableWrapper;->calculateVerticalPadding(FFZ)F
 
     move-result v0
 
     float-to-double v0, v0
 
+    .line 178
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
 
     double-to-int v0, v0
 
-    .line 167
+    .line 180
     invoke-virtual {p1, v2, v0, v2, v0}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 171
+    .line 184
     :goto_2d
     return-void
 
-    .line 169
+    .line 182
     :cond_2e
     invoke-virtual {p1, v4, v4, v4, v4}, Landroid/graphics/Rect;->set(IIII)V
 
@@ -159,7 +118,7 @@
     .registers 1
 
     .prologue
-    .line 142
+    .line 159
     return-void
 .end method
 
@@ -167,7 +126,7 @@
     .registers 2
 
     .prologue
-    .line 156
+    .line 168
     new-instance v0, Landroid/support/design/widget/CircularBorderDrawableLollipop;
 
     invoke-direct {v0}, Landroid/support/design/widget/CircularBorderDrawableLollipop;-><init>()V
@@ -179,10 +138,10 @@
     .registers 1
 
     .prologue
-    .line 120
+    .line 137
     invoke-virtual {p0}, Landroid/support/design/widget/FloatingActionButtonLollipop;->updatePadding()V
 
-    .line 121
+    .line 138
     return-void
 .end method
 
@@ -190,33 +149,287 @@
     .registers 2
 
     .prologue
-    .line 137
+    .line 154
     return-void
 .end method
 
-.method public onElevationChanged(F)V
-    .registers 3
+.method onElevationsChanged(FF)V
+    .registers 16
 
     .prologue
-    .line 89
-    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
+    const/4 v12, 0x0
 
-    invoke-virtual {v0, p1}, Landroid/support/design/widget/VisibilityAwareImageButton;->setElevation(F)V
+    const-wide/16 v10, 0x64
+
+    const-wide/16 v8, 0x0
+
+    const/4 v7, 0x1
+
+    const/4 v6, 0x0
+
+    .line 85
+    new-instance v0, Landroid/animation/StateListAnimator;
+
+    invoke-direct {v0}, Landroid/animation/StateListAnimator;-><init>()V
+
+    .line 88
+    new-instance v1, Landroid/animation/AnimatorSet;
+
+    invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
+
+    .line 89
+    iget-object v2, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
+
+    const-string/jumbo v3, "elevation"
+
+    new-array v4, v7, [F
+
+    aput p1, v4, v6
+
+    invoke-static {v2, v3, v4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
+
+    sget-object v4, Landroid/view/View;->TRANSLATION_Z:Landroid/util/Property;
+
+    new-array v5, v7, [F
+
+    aput p2, v5, v6
 
     .line 90
+    invoke-static {v3, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v3
+
+    .line 91
+    invoke-virtual {v3, v10, v11}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v3
+
+    .line 90
+    invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    .line 92
+    sget-object v2, Landroid/support/design/widget/FloatingActionButtonLollipop;->ANIM_INTERPOLATOR:Landroid/view/animation/Interpolator;
+
+    invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 93
+    sget-object v2, Landroid/support/design/widget/FloatingActionButtonLollipop;->PRESSED_ENABLED_STATE_SET:[I
+
+    invoke-virtual {v0, v2, v1}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
+
+    .line 96
+    new-instance v1, Landroid/animation/AnimatorSet;
+
+    invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
+
+    .line 97
+    iget-object v2, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
+
+    const-string/jumbo v3, "elevation"
+
+    new-array v4, v7, [F
+
+    aput p1, v4, v6
+
+    invoke-static {v2, v3, v4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
+
+    sget-object v4, Landroid/view/View;->TRANSLATION_Z:Landroid/util/Property;
+
+    new-array v5, v7, [F
+
+    aput p2, v5, v6
+
+    .line 98
+    invoke-static {v3, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v3
+
+    .line 99
+    invoke-virtual {v3, v10, v11}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v3
+
+    .line 98
+    invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    .line 100
+    sget-object v2, Landroid/support/design/widget/FloatingActionButtonLollipop;->ANIM_INTERPOLATOR:Landroid/view/animation/Interpolator;
+
+    invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 101
+    sget-object v2, Landroid/support/design/widget/FloatingActionButtonLollipop;->FOCUSED_ENABLED_STATE_SET:[I
+
+    invoke-virtual {v0, v2, v1}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
+
+    .line 104
+    new-instance v1, Landroid/animation/AnimatorSet;
+
+    invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
+
+    .line 107
+    new-instance v2, Landroid/animation/AnimatorSet;
+
+    invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
+
+    .line 108
+    iget-object v3, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
+
+    sget-object v4, Landroid/view/View;->TRANSLATION_Z:Landroid/util/Property;
+
+    new-array v5, v7, [F
+
+    aput v12, v5, v6
+
+    invoke-static {v3, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v3
+
+    .line 109
+    invoke-virtual {v3, v10, v11}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v3
+
+    .line 108
+    invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    move-result-object v3
+
+    .line 110
+    invoke-virtual {v3, v10, v11}, Landroid/animation/AnimatorSet$Builder;->after(J)Landroid/animation/AnimatorSet$Builder;
+
+    .line 111
+    iget-object v3, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
+
+    const-string/jumbo v4, "elevation"
+
+    new-array v5, v7, [F
+
+    aput p1, v5, v6
+
+    invoke-static {v3, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    move-result-object v3
+
+    .line 112
+    invoke-virtual {v3, v2}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    .line 113
+    sget-object v2, Landroid/support/design/widget/FloatingActionButtonLollipop;->ANIM_INTERPOLATOR:Landroid/view/animation/Interpolator;
+
+    invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 114
+    sget-object v2, Landroid/support/design/widget/FloatingActionButtonLollipop;->ENABLED_STATE_SET:[I
+
+    invoke-virtual {v0, v2, v1}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
+
+    .line 117
+    new-instance v1, Landroid/animation/AnimatorSet;
+
+    invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
+
+    .line 118
+    iget-object v2, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
+
+    const-string/jumbo v3, "elevation"
+
+    new-array v4, v7, [F
+
+    aput v12, v4, v6
+
+    invoke-static {v2, v3, v4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
+
+    sget-object v4, Landroid/view/View;->TRANSLATION_Z:Landroid/util/Property;
+
+    new-array v5, v7, [F
+
+    aput v12, v5, v6
+
+    .line 119
+    invoke-static {v3, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    .line 120
+    sget-object v2, Landroid/support/design/widget/FloatingActionButtonLollipop;->ANIM_INTERPOLATOR:Landroid/view/animation/Interpolator;
+
+    invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 121
+    sget-object v2, Landroid/support/design/widget/FloatingActionButtonLollipop;->EMPTY_STATE_SET:[I
+
+    invoke-virtual {v0, v2, v1}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
+
+    .line 123
+    iget-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
+
+    invoke-virtual {v1, v0}, Landroid/support/design/widget/VisibilityAwareImageButton;->setStateListAnimator(Landroid/animation/StateListAnimator;)V
+
+    .line 125
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
 
     invoke-interface {v0}, Landroid/support/design/widget/ShadowViewDelegate;->isCompatPaddingEnabled()Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_104
 
-    .line 91
+    .line 126
     invoke-virtual {p0}, Landroid/support/design/widget/FloatingActionButtonLollipop;->updatePadding()V
 
-    .line 93
-    :cond_10
+    .line 128
+    :cond_104
     return-void
 .end method
 
@@ -224,7 +437,7 @@
     .registers 8
 
     .prologue
-    .line 125
+    .line 142
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
 
     invoke-interface {v0}, Landroid/support/design/widget/ShadowViewDelegate;->isCompatPaddingEnabled()Z
@@ -233,7 +446,7 @@
 
     if-eqz v0, :cond_21
 
-    .line 126
+    .line 143
     new-instance v0, Landroid/graphics/drawable/InsetDrawable;
 
     iget-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mRippleDrawable:Landroid/graphics/drawable/Drawable;
@@ -250,18 +463,18 @@
 
     iput-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mInsetDrawable:Landroid/graphics/drawable/InsetDrawable;
 
-    .line 128
+    .line 145
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
 
     iget-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mInsetDrawable:Landroid/graphics/drawable/InsetDrawable;
 
     invoke-interface {v0, v1}, Landroid/support/design/widget/ShadowViewDelegate;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 132
+    .line 149
     :goto_20
     return-void
 
-    .line 130
+    .line 147
     :cond_21
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
 
@@ -272,111 +485,11 @@
     goto :goto_20
 .end method
 
-.method onTranslationZChanged(F)V
-    .registers 9
-
-    .prologue
-    const/4 v5, 0x1
-
-    const/4 v6, 0x0
-
-    .line 97
-    new-instance v0, Landroid/animation/StateListAnimator;
-
-    invoke-direct {v0}, Landroid/animation/StateListAnimator;-><init>()V
-
-    .line 99
-    sget-object v1, Landroid/support/design/widget/FloatingActionButtonLollipop;->PRESSED_ENABLED_STATE_SET:[I
-
-    iget-object v2, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
-
-    const-string/jumbo v3, "translationZ"
-
-    new-array v4, v5, [F
-
-    aput p1, v4, v6
-
-    invoke-static {v2, v3, v4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    invoke-direct {p0, v2}, Landroid/support/design/widget/FloatingActionButtonLollipop;->setupAnimator(Landroid/animation/Animator;)Landroid/animation/Animator;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
-
-    .line 101
-    sget-object v1, Landroid/support/design/widget/FloatingActionButtonLollipop;->FOCUSED_ENABLED_STATE_SET:[I
-
-    iget-object v2, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
-
-    const-string/jumbo v3, "translationZ"
-
-    new-array v4, v5, [F
-
-    aput p1, v4, v6
-
-    invoke-static {v2, v3, v4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    invoke-direct {p0, v2}, Landroid/support/design/widget/FloatingActionButtonLollipop;->setupAnimator(Landroid/animation/Animator;)Landroid/animation/Animator;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
-
-    .line 104
-    sget-object v1, Landroid/support/design/widget/FloatingActionButtonLollipop;->EMPTY_STATE_SET:[I
-
-    iget-object v2, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
-
-    const-string/jumbo v3, "translationZ"
-
-    new-array v4, v5, [F
-
-    const/4 v5, 0x0
-
-    aput v5, v4, v6
-
-    invoke-static {v2, v3, v4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v2
-
-    invoke-direct {p0, v2}, Landroid/support/design/widget/FloatingActionButtonLollipop;->setupAnimator(Landroid/animation/Animator;)Landroid/animation/Animator;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/animation/StateListAnimator;->addState([ILandroid/animation/Animator;)V
-
-    .line 106
-    iget-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
-
-    invoke-virtual {v1, v0}, Landroid/support/design/widget/VisibilityAwareImageButton;->setStateListAnimator(Landroid/animation/StateListAnimator;)V
-
-    .line 108
-    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
-
-    invoke-interface {v0}, Landroid/support/design/widget/ShadowViewDelegate;->isCompatPaddingEnabled()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5a
-
-    .line 109
-    invoke-virtual {p0}, Landroid/support/design/widget/FloatingActionButtonLollipop;->updatePadding()V
-
-    .line 111
-    :cond_5a
-    return-void
-.end method
-
 .method requirePreDrawListener()Z
     .registers 2
 
     .prologue
-    .line 146
+    .line 163
     const/4 v0, 0x0
 
     return v0
@@ -388,42 +501,42 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 55
+    .line 51
     invoke-virtual {p0}, Landroid/support/design/widget/FloatingActionButtonLollipop;->createShapeDrawable()Landroid/graphics/drawable/GradientDrawable;
 
     move-result-object v0
 
-    invoke-static {v0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->f(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->g(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShapeDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 56
+    .line 52
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShapeDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
 
-    .line 57
+    .line 53
     if-eqz p2, :cond_17
 
-    .line 58
+    .line 54
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShapeDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0, p2}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 62
+    .line 58
     :cond_17
     if-lez p4, :cond_48
 
-    .line 63
+    .line 59
     invoke-virtual {p0, p4, p1}, Landroid/support/design/widget/FloatingActionButtonLollipop;->createBorderDrawable(ILandroid/content/res/ColorStateList;)Landroid/support/design/widget/CircularBorderDrawable;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mBorderDrawable:Landroid/support/design/widget/CircularBorderDrawable;
 
-    .line 64
+    .line 60
     new-instance v0, Landroid/graphics/drawable/LayerDrawable;
 
     const/4 v1, 0x2
@@ -444,7 +557,7 @@
 
     invoke-direct {v0, v1}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
 
-    .line 70
+    .line 66
     :goto_31
     new-instance v1, Landroid/graphics/drawable/RippleDrawable;
 
@@ -456,26 +569,26 @@
 
     iput-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mRippleDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 73
+    .line 69
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mRippleDrawable:Landroid/graphics/drawable/Drawable;
 
     iput-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mContentBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 75
+    .line 71
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
 
     iget-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mRippleDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-interface {v0, v1}, Landroid/support/design/widget/ShadowViewDelegate;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 76
+    .line 72
     return-void
 
-    .line 66
+    .line 62
     :cond_48
     iput-object v4, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mBorderDrawable:Landroid/support/design/widget/CircularBorderDrawable;
 
-    .line 67
+    .line 63
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShapeDrawable:Landroid/graphics/drawable/Drawable;
 
     goto :goto_31
@@ -485,14 +598,14 @@
     .registers 4
 
     .prologue
-    .line 80
+    .line 76
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mRippleDrawable:Landroid/graphics/drawable/Drawable;
 
     instance-of v0, v0, Landroid/graphics/drawable/RippleDrawable;
 
     if-eqz v0, :cond_12
 
-    .line 81
+    .line 77
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mRippleDrawable:Landroid/graphics/drawable/Drawable;
 
     check-cast v0, Landroid/graphics/drawable/RippleDrawable;
@@ -503,11 +616,11 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/RippleDrawable;->setColor(Landroid/content/res/ColorStateList;)V
 
-    .line 85
+    .line 81
     :goto_11
     return-void
 
-    .line 83
+    .line 79
     :cond_12
     invoke-super {p0, p1}, Landroid/support/design/widget/FloatingActionButtonIcs;->setRippleColor(I)V
 

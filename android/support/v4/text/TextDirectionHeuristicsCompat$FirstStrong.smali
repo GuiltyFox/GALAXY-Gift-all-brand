@@ -64,7 +64,7 @@
 
     move-result v0
 
-    invoke-static {v0}, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->a(I)I
+    invoke-static {v0}, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->b(I)I
 
     move-result v0
 

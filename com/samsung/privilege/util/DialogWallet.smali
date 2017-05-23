@@ -50,7 +50,7 @@
     .registers 5
 
     .prologue
-    const v2, 0x7f10066a
+    const v2, 0x7f10045f
 
     .line 23
     move-object v0, p0
@@ -93,14 +93,14 @@
     .line 36
     sget-object v0, Lcom/samsung/privilege/util/DialogWallet;->b:Landroid/app/Dialog;
 
-    const v1, 0x7f040139
+    const v1, 0x7f0400ca
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 40
     sget-object v0, Lcom/samsung/privilege/util/DialogWallet;->b:Landroid/app/Dialog;
 
-    const v1, 0x7f10016b
+    const v1, 0x7f10035a
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -114,7 +114,7 @@
     .line 43
     sget-object v0, Lcom/samsung/privilege/util/DialogWallet;->b:Landroid/app/Dialog;
 
-    const v1, 0x7f10016f
+    const v1, 0x7f1003c4
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -171,7 +171,7 @@
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
     .line 75
-    const v0, 0x7f050021
+    const v0, 0x7f050018
 
     invoke-static {p0, v0}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 

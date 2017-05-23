@@ -53,15 +53,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f100687
+    const v6, 0x7f10047e
 
-    const v5, 0x7f100686
+    const v5, 0x7f10047d
 
-    const v4, 0x7f100685
+    const v4, 0x7f10047c
 
-    const v3, 0x7f100684
+    const v3, 0x7f10047b
 
-    const v2, 0x7f100683
+    const v2, 0x7f10047a
 
     .line 9
     invoke-super {p0, p1, p2, p3}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$$ViewInjector;->inject(Lbutterknife/ButterKnife$Finder;Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;Ljava/lang/Object;)V
@@ -147,7 +147,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewPoint:Landroid/widget/TextView;
 
     .line 20
-    const v0, 0x7f100688
+    const v0, 0x7f10047f
 
     const-string/jumbo v1, "field \'textViewTimeLeft\'"
 
@@ -158,7 +158,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 21
-    const v1, 0x7f100688
+    const v1, 0x7f10047f
 
     const-string/jumbo v2, "field \'textViewTimeLeft\'"
 
@@ -171,7 +171,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewTimeLeft:Landroid/widget/TextView;
 
     .line 22
-    const v0, 0x7f10069e
+    const v0, 0x7f100495
 
     const-string/jumbo v1, "field \'textViewDetailShopTel\'"
 
@@ -182,7 +182,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 23
-    const v1, 0x7f10069e
+    const v1, 0x7f100495
 
     const-string/jumbo v2, "field \'textViewDetailShopTel\'"
 
@@ -215,7 +215,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->txtHeaderPoint:Landroid/widget/TextView;
 
     .line 26
-    const v0, 0x7f10069f
+    const v0, 0x7f100496
 
     const-string/jumbo v1, "field \'textViewDetailShopAddress\'"
 
@@ -226,7 +226,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 27
-    const v1, 0x7f10069f
+    const v1, 0x7f100496
 
     const-string/jumbo v2, "field \'textViewDetailShopAddress\'"
 
@@ -239,7 +239,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewDetailShopAddress:Landroid/widget/TextView;
 
     .line 28
-    const v0, 0x7f1006a0
+    const v0, 0x7f100497
 
     const-string/jumbo v1, "field \'textViewDetailShopWebsite\'"
 
@@ -250,7 +250,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 29
-    const v1, 0x7f1006a0
+    const v1, 0x7f100497
 
     const-string/jumbo v2, "field \'textViewDetailShopWebsite\'"
 
@@ -263,7 +263,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewDetailShopWebsite:Landroid/widget/TextView;
 
     .line 30
-    const v0, 0x7f10069d
+    const v0, 0x7f100494
 
     const-string/jumbo v1, "field \'textViewDetailShopDelivered\'"
 
@@ -274,7 +274,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 31
-    const v1, 0x7f10069d
+    const v1, 0x7f100494
 
     const-string/jumbo v2, "field \'textViewDetailShopDelivered\'"
 
@@ -287,7 +287,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewDetailShopDelivered:Landroid/widget/TextView;
 
     .line 32
-    const v0, 0x7f100689
+    const v0, 0x7f100480
 
     const-string/jumbo v1, "field \'contentInput\'"
 
@@ -298,7 +298,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 33
-    const v1, 0x7f100689
+    const v1, 0x7f100480
 
     const-string/jumbo v2, "field \'contentInput\'"
 
@@ -311,7 +311,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->contentInput:Landroid/support/v7/widget/CardView;
 
     .line 34
-    const v0, 0x7f1006a2
+    const v0, 0x7f100499
 
     const-string/jumbo v1, "field \'btnSubmit\'"
 
@@ -322,7 +322,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 35
-    const v1, 0x7f1006a2
+    const v1, 0x7f100499
 
     const-string/jumbo v2, "field \'btnSubmit\'"
 
@@ -335,7 +335,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->btnSubmit:Landroid/widget/TextView;
 
     .line 36
-    const v0, 0x7f1006a3
+    const v0, 0x7f10049a
 
     const-string/jumbo v1, "field \'btnError\'"
 
@@ -346,7 +346,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 37
-    const v1, 0x7f1006a3
+    const v1, 0x7f10049a
 
     const-string/jumbo v2, "field \'btnError\'"
 
@@ -359,7 +359,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->btnError:Landroid/widget/TextView;
 
     .line 38
-    const v0, 0x7f1006a1
+    const v0, 0x7f100498
 
     const-string/jumbo v1, "field \'contentSubmit\' and method \'onSubmit\'"
 
@@ -370,7 +370,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 39
-    const v1, 0x7f1006a1
+    const v1, 0x7f100498
 
     const-string/jumbo v2, "field \'contentSubmit\'"
 
@@ -390,7 +390,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 48
-    const v0, 0x7f100690
+    const v0, 0x7f100487
 
     const-string/jumbo v1, "field \'textPointNeed\'"
 
@@ -401,7 +401,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 49
-    const v1, 0x7f100690
+    const v1, 0x7f100487
 
     const-string/jumbo v2, "field \'textPointNeed\'"
 
@@ -414,7 +414,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textPointNeed:Landroid/widget/TextView;
 
     .line 50
-    const v0, 0x7f100691
+    const v0, 0x7f100488
 
     const-string/jumbo v1, "field \'textPointPackage\'"
 
@@ -425,7 +425,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 51
-    const v1, 0x7f100691
+    const v1, 0x7f100488
 
     const-string/jumbo v2, "field \'textPointPackage\'"
 
@@ -438,7 +438,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textPointPackage:Landroid/widget/TextView;
 
     .line 52
-    const v0, 0x7f100692
+    const v0, 0x7f100489
 
     const-string/jumbo v1, "field \'textPointPackageBaht\'"
 
@@ -449,7 +449,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 53
-    const v1, 0x7f100692
+    const v1, 0x7f100489
 
     const-string/jumbo v2, "field \'textPointPackageBaht\'"
 
@@ -462,7 +462,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textPointPackageBaht:Landroid/widget/TextView;
 
     .line 54
-    const v0, 0x7f100693
+    const v0, 0x7f10048a
 
     const-string/jumbo v1, "field \'textDealPrice\'"
 
@@ -473,7 +473,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 55
-    const v1, 0x7f100693
+    const v1, 0x7f10048a
 
     const-string/jumbo v2, "field \'textDealPrice\'"
 
@@ -486,7 +486,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textDealPrice:Landroid/widget/TextView;
 
     .line 56
-    const v0, 0x7f10068e
+    const v0, 0x7f100485
 
     const-string/jumbo v1, "field \'layoutCalculateHidden\'"
 
@@ -497,7 +497,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 57
-    const v1, 0x7f10068e
+    const v1, 0x7f100485
 
     const-string/jumbo v2, "field \'layoutCalculateHidden\'"
 
@@ -510,7 +510,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->layoutCalculateHidden:Landroid/widget/LinearLayout;
 
     .line 58
-    const v0, 0x7f100695
+    const v0, 0x7f10048c
 
     const-string/jumbo v1, "field \'textBuyNow\'"
 
@@ -521,7 +521,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 59
-    const v1, 0x7f100695
+    const v1, 0x7f10048c
 
     const-string/jumbo v2, "field \'textBuyNow\'"
 
@@ -534,7 +534,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textBuyNow:Landroid/widget/TextView;
 
     .line 60
-    const v0, 0x7f100696
+    const v0, 0x7f10048d
 
     const-string/jumbo v1, "field \'imageExpand\'"
 
@@ -545,7 +545,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 61
-    const v1, 0x7f100696
+    const v1, 0x7f10048d
 
     const-string/jumbo v2, "field \'imageExpand\'"
 
@@ -558,7 +558,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->imageExpand:Landroid/widget/ImageView;
 
     .line 62
-    const v0, 0x7f100697
+    const v0, 0x7f10048e
 
     const-string/jumbo v1, "field \'layoutLine\'"
 
@@ -569,7 +569,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 63
-    const v1, 0x7f100697
+    const v1, 0x7f10048e
 
     const-string/jumbo v2, "field \'layoutLine\'"
 
@@ -582,7 +582,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->layoutLine:Landroid/widget/LinearLayout;
 
     .line 64
-    const v0, 0x7f10068d
+    const v0, 0x7f100484
 
     const-string/jumbo v1, "field \'contentCalculate\'"
 
@@ -593,7 +593,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 65
-    const v1, 0x7f10068d
+    const v1, 0x7f100484
 
     const-string/jumbo v2, "field \'contentCalculate\'"
 
@@ -606,21 +606,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->contentCalculate:Landroid/support/v7/widget/CardView;
 
     .line 66
-    const v0, 0x7f1006a4
-
-    const-string/jumbo v1, "field \'viewShadow\'"
-
-    invoke-virtual {p1, p3, v0, v1}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    .line 67
-    iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->viewShadow:Landroid/view/View;
-
-    .line 68
-    const v0, 0x7f10068a
+    const v0, 0x7f100481
 
     const-string/jumbo v1, "field \'spinnerColor\'"
 
@@ -630,8 +616,8 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 69
-    const v1, 0x7f10068a
+    .line 67
+    const v1, 0x7f100481
 
     const-string/jumbo v2, "field \'spinnerColor\'"
 
@@ -643,8 +629,8 @@
 
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->spinnerColor:Lcom/rey/material/widget/Spinner;
 
-    .line 70
-    const v0, 0x7f10068b
+    .line 68
+    const v0, 0x7f100482
 
     const-string/jumbo v1, "field \'spinnerSize\'"
 
@@ -654,8 +640,8 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 71
-    const v1, 0x7f10068b
+    .line 69
+    const v1, 0x7f100482
 
     const-string/jumbo v2, "field \'spinnerSize\'"
 
@@ -667,8 +653,8 @@
 
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->spinnerSize:Lcom/rey/material/widget/Spinner;
 
-    .line 72
-    const v0, 0x7f10068c
+    .line 70
+    const v0, 0x7f100483
 
     const-string/jumbo v1, "field \'edtQuantity\'"
 
@@ -678,8 +664,8 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 73
-    const v1, 0x7f10068c
+    .line 71
+    const v1, 0x7f100483
 
     const-string/jumbo v2, "field \'edtQuantity\'"
 
@@ -691,8 +677,8 @@
 
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->edtQuantity:Landroid/support/v7/widget/AppCompatEditText;
 
-    .line 74
-    const v0, 0x7f100681
+    .line 72
+    const v0, 0x7f100478
 
     const-string/jumbo v1, "method \'onShare\'"
 
@@ -702,15 +688,15 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 75
+    .line 73
     new-instance v1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector$2;
 
     invoke-direct {v1, p0, p2}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector$2;-><init>(Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector;Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 83
-    const v0, 0x7f100694
+    .line 81
+    const v0, 0x7f10048b
 
     const-string/jumbo v1, "method \'onClickCalculate\'"
 
@@ -720,15 +706,15 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 84
+    .line 82
     new-instance v1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector$3;
 
     invoke-direct {v1, p0, p2}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector$3;-><init>(Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector;Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 92
-    const v0, 0x7f10068f
+    .line 90
+    const v0, 0x7f100486
 
     const-string/jumbo v1, "method \'onClickCalculate\'"
 
@@ -738,14 +724,14 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 93
+    .line 91
     new-instance v1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector$4;
 
     invoke-direct {v1, p0, p2}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector$4;-><init>(Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$$ViewInjector;Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 101
+    .line 99
     return-void
 .end method
 
@@ -784,91 +770,88 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 104
+    .line 102
     invoke-super {p0, p1}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$$ViewInjector;->reset(Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;)V
 
-    .line 106
+    .line 104
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewDiscount:Landroid/widget/TextView;
 
-    .line 107
+    .line 105
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewFullPrice:Landroid/widget/TextView;
 
-    .line 108
+    .line 106
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewPrice:Landroid/widget/TextView;
 
-    .line 109
+    .line 107
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewPoint:Landroid/widget/TextView;
 
-    .line 110
+    .line 108
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewTimeLeft:Landroid/widget/TextView;
 
-    .line 111
+    .line 109
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewDetailShopTel:Landroid/widget/TextView;
 
-    .line 112
+    .line 110
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->txtHeaderPoint:Landroid/widget/TextView;
 
-    .line 113
+    .line 111
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewDetailShopAddress:Landroid/widget/TextView;
 
-    .line 114
+    .line 112
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewDetailShopWebsite:Landroid/widget/TextView;
 
-    .line 115
+    .line 113
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textViewDetailShopDelivered:Landroid/widget/TextView;
 
-    .line 116
+    .line 114
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->contentInput:Landroid/support/v7/widget/CardView;
 
-    .line 117
+    .line 115
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->btnSubmit:Landroid/widget/TextView;
 
-    .line 118
+    .line 116
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->btnError:Landroid/widget/TextView;
 
-    .line 119
+    .line 117
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->contentSubmit:Landroid/widget/RelativeLayout;
 
-    .line 120
+    .line 118
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textPointNeed:Landroid/widget/TextView;
 
-    .line 121
+    .line 119
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textPointPackage:Landroid/widget/TextView;
 
-    .line 122
+    .line 120
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textPointPackageBaht:Landroid/widget/TextView;
 
-    .line 123
+    .line 121
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textDealPrice:Landroid/widget/TextView;
 
-    .line 124
+    .line 122
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->layoutCalculateHidden:Landroid/widget/LinearLayout;
 
-    .line 125
+    .line 123
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->textBuyNow:Landroid/widget/TextView;
 
-    .line 126
+    .line 124
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->imageExpand:Landroid/widget/ImageView;
 
-    .line 127
+    .line 125
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->layoutLine:Landroid/widget/LinearLayout;
 
-    .line 128
+    .line 126
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->contentCalculate:Landroid/support/v7/widget/CardView;
 
-    .line 129
-    iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->viewShadow:Landroid/view/View;
-
-    .line 130
+    .line 127
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->spinnerColor:Lcom/rey/material/widget/Spinner;
 
-    .line 131
+    .line 128
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->spinnerSize:Lcom/rey/material/widget/Spinner;
 
-    .line 132
+    .line 129
     iput-object v0, p1, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->edtQuantity:Landroid/support/v7/widget/AppCompatEditText;
 
-    .line 133
+    .line 130
     return-void
 .end method
 

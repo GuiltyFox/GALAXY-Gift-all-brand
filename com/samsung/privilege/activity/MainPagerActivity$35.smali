@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 2342
+    .line 2352
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$35;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$35;->a:Landroid/app/Dialog;
@@ -39,11 +39,11 @@
     .registers 3
 
     .prologue
-    .line 2344
+    .line 2354
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$35;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 2345
+    .line 2355
     return-void
 .end method

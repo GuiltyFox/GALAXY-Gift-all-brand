@@ -6,10 +6,6 @@
 # static fields
 .field private static final LOG_TAG:Ljava/lang/String; = "DrawableUtils"
 
-.field private static sDrawableContainerStateField:Ljava/lang/reflect/Field;
-
-.field private static sDrawableContainerStateFieldFetched:Z
-
 .field private static sSetConstantStateMethod:Ljava/lang/reflect/Method;
 
 .field private static sSetConstantStateMethodFetched:Z
@@ -20,123 +16,22 @@
     .registers 1
 
     .prologue
-    .line 40
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method static setContainerConstantState(Landroid/graphics/drawable/DrawableContainer;Landroid/graphics/drawable/Drawable$ConstantState;)Z
-    .registers 4
+    .registers 3
 
     .prologue
-    .line 44
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x9
-
-    if-lt v0, v1, :cond_b
-
-    .line 46
+    .line 42
     invoke-static {p0, p1}, Landroid/support/design/widget/DrawableUtils;->setContainerConstantStateV9(Landroid/graphics/drawable/DrawableContainer;Landroid/graphics/drawable/Drawable$ConstantState;)Z
 
     move-result v0
 
-    .line 49
-    :goto_a
     return v0
-
-    :cond_b
-    invoke-static {p0, p1}, Landroid/support/design/widget/DrawableUtils;->setContainerConstantStateV7(Landroid/graphics/drawable/DrawableContainer;Landroid/graphics/drawable/Drawable$ConstantState;)Z
-
-    move-result v0
-
-    goto :goto_a
-.end method
-
-.method private static setContainerConstantStateV7(Landroid/graphics/drawable/DrawableContainer;Landroid/graphics/drawable/Drawable$ConstantState;)Z
-    .registers 5
-
-    .prologue
-    const/4 v0, 0x1
-
-    .line 78
-    sget-boolean v1, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateFieldFetched:Z
-
-    if-nez v1, :cond_18
-
-    .line 80
-    :try_start_5
-    const-class v1, Landroid/graphics/drawable/DrawableContainer;
-
-    const-string/jumbo v2, "mDrawableContainerStateField"
-
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v1
-
-    sput-object v1, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateField:Ljava/lang/reflect/Field;
-
-    .line 82
-    sget-object v1, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateField:Ljava/lang/reflect/Field;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_16
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_5 .. :try_end_16} :catch_22
-
-    .line 86
-    :goto_16
-    sput-boolean v0, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateFieldFetched:Z
-
-    .line 88
-    :cond_18
-    sget-object v1, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateField:Ljava/lang/reflect/Field;
-
-    if-eqz v1, :cond_37
-
-    .line 90
-    :try_start_1c
-    sget-object v1, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateField:Ljava/lang/reflect/Field;
-
-    invoke-virtual {v1, p0, p1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_21
-    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_21} :catch_2d
-
-    .line 96
-    :goto_21
-    return v0
-
-    .line 83
-    :catch_22
-    move-exception v1
-
-    .line 84
-    const-string/jumbo v1, "DrawableUtils"
-
-    const-string/jumbo v2, "Could not fetch mDrawableContainerStateField. Oh well."
-
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_16
-
-    .line 92
-    :catch_2d
-    move-exception v0
-
-    .line 93
-    const-string/jumbo v0, "DrawableUtils"
-
-    const-string/jumbo v1, "Could not set mDrawableContainerStateField. Oh well."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 96
-    :cond_37
-    const/4 v0, 0x0
-
-    goto :goto_21
 .end method
 
 .method private static setContainerConstantStateV9(Landroid/graphics/drawable/DrawableContainer;Landroid/graphics/drawable/Drawable$ConstantState;)Z
@@ -147,12 +42,12 @@
 
     const/4 v0, 0x1
 
-    .line 55
+    .line 47
     sget-boolean v2, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethodFetched:Z
 
     if-nez v2, :cond_21
 
-    .line 57
+    .line 49
     :try_start_6
     const-class v2, Landroid/graphics/drawable/DrawableContainer;
 
@@ -174,7 +69,7 @@
 
     sput-object v2, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethod:Ljava/lang/reflect/Method;
 
-    .line 59
+    .line 51
     sget-object v2, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethod:Ljava/lang/reflect/Method;
 
     const/4 v3, 0x1
@@ -183,17 +78,17 @@
     :try_end_1f
     .catch Ljava/lang/NoSuchMethodException; {:try_start_6 .. :try_end_1f} :catch_31
 
-    .line 63
+    .line 55
     :goto_1f
     sput-boolean v0, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethodFetched:Z
 
-    .line 65
+    .line 57
     :cond_21
     sget-object v2, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethod:Ljava/lang/reflect/Method;
 
     if-eqz v2, :cond_46
 
-    .line 67
+    .line 59
     :try_start_25
     sget-object v2, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethod:Ljava/lang/reflect/Method;
 
@@ -209,15 +104,15 @@
     :try_end_30
     .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_30} :catch_3c
 
-    .line 73
+    .line 65
     :goto_30
     return v0
 
-    .line 60
+    .line 52
     :catch_31
     move-exception v2
 
-    .line 61
+    .line 53
     const-string/jumbo v2, "DrawableUtils"
 
     const-string/jumbo v3, "Could not fetch setConstantState(). Oh well."
@@ -226,11 +121,11 @@
 
     goto :goto_1f
 
-    .line 69
+    .line 61
     :catch_3c
     move-exception v0
 
-    .line 70
+    .line 62
     const-string/jumbo v0, "DrawableUtils"
 
     const-string/jumbo v2, "Could not invoke setConstantState(). Oh well."
@@ -240,6 +135,6 @@
     :cond_46
     move v0, v1
 
-    .line 73
+    .line 65
     goto :goto_30
 .end method

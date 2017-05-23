@@ -38,53 +38,43 @@
     .line 120
     iget-object v0, p0, Landroid/support/v7/app/AlertController$1;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->a(Landroid/support/v7/app/AlertController;)Landroid/widget/Button;
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->c:Landroid/widget/Button;
 
-    move-result-object v0
-
-    if-ne p1, v0, :cond_34
+    if-ne p1, v0, :cond_2a
 
     iget-object v0, p0, Landroid/support/v7/app/AlertController$1;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->b(Landroid/support/v7/app/AlertController;)Landroid/os/Message;
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->d:Landroid/os/Message;
 
-    move-result-object v0
-
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_2a
 
     .line 121
     iget-object v0, p0, Landroid/support/v7/app/AlertController$1;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->b(Landroid/support/v7/app/AlertController;)Landroid/os/Message;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->d:Landroid/os/Message;
 
     invoke-static {v0}, Landroid/os/Message;->obtain(Landroid/os/Message;)Landroid/os/Message;
 
     move-result-object v0
 
     .line 130
-    :goto_1a
-    if-eqz v0, :cond_1f
+    :goto_14
+    if-eqz v0, :cond_19
 
     .line 131
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     .line 135
-    :cond_1f
+    :cond_19
     iget-object v0, p0, Landroid/support/v7/app/AlertController$1;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->h(Landroid/support/v7/app/AlertController;)Landroid/os/Handler;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->p:Landroid/os/Handler;
 
     const/4 v1, 0x1
 
     iget-object v2, p0, Landroid/support/v7/app/AlertController$1;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v2}, Landroid/support/v7/app/AlertController;->g(Landroid/support/v7/app/AlertController;)Landroid/support/v7/app/AppCompatDialog;
-
-    move-result-object v2
+    iget-object v2, v2, Landroid/support/v7/app/AlertController;->a:Landroid/support/v7/app/AppCompatDialog;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -97,70 +87,58 @@
     return-void
 
     .line 122
-    :cond_34
+    :cond_2a
     iget-object v0, p0, Landroid/support/v7/app/AlertController$1;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->c(Landroid/support/v7/app/AlertController;)Landroid/widget/Button;
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->e:Landroid/widget/Button;
 
-    move-result-object v0
-
-    if-ne p1, v0, :cond_4f
+    if-ne p1, v0, :cond_3f
 
     iget-object v0, p0, Landroid/support/v7/app/AlertController$1;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->d(Landroid/support/v7/app/AlertController;)Landroid/os/Message;
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->f:Landroid/os/Message;
 
-    move-result-object v0
-
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_3f
 
     .line 123
     iget-object v0, p0, Landroid/support/v7/app/AlertController$1;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->d(Landroid/support/v7/app/AlertController;)Landroid/os/Message;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->f:Landroid/os/Message;
 
     invoke-static {v0}, Landroid/os/Message;->obtain(Landroid/os/Message;)Landroid/os/Message;
 
     move-result-object v0
 
-    goto :goto_1a
+    goto :goto_14
 
     .line 124
-    :cond_4f
+    :cond_3f
     iget-object v0, p0, Landroid/support/v7/app/AlertController$1;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->e(Landroid/support/v7/app/AlertController;)Landroid/widget/Button;
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->g:Landroid/widget/Button;
 
-    move-result-object v0
-
-    if-ne p1, v0, :cond_6a
+    if-ne p1, v0, :cond_54
 
     iget-object v0, p0, Landroid/support/v7/app/AlertController$1;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->f(Landroid/support/v7/app/AlertController;)Landroid/os/Message;
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->h:Landroid/os/Message;
 
-    move-result-object v0
-
-    if-eqz v0, :cond_6a
+    if-eqz v0, :cond_54
 
     .line 125
     iget-object v0, p0, Landroid/support/v7/app/AlertController$1;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->f(Landroid/support/v7/app/AlertController;)Landroid/os/Message;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->h:Landroid/os/Message;
 
     invoke-static {v0}, Landroid/os/Message;->obtain(Landroid/os/Message;)Landroid/os/Message;
 
     move-result-object v0
 
-    goto :goto_1a
+    goto :goto_14
 
     .line 127
-    :cond_6a
+    :cond_54
     const/4 v0, 0x0
 
-    goto :goto_1a
+    goto :goto_14
 .end method

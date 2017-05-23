@@ -11,25 +11,16 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/support/v7/widget/ActionMenuView;)V
+.method constructor <init>(Landroid/support/v7/widget/ActionMenuView;)V
     .registers 2
 
     .prologue
-    .line 770
+    .line 789
     iput-object p1, p0, Landroid/support/v7/widget/ActionMenuView$ActionMenuPresenterCallback;->a:Landroid/support/v7/widget/ActionMenuView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v7/widget/ActionMenuView;Landroid/support/v7/widget/ActionMenuView$1;)V
-    .registers 3
-
-    .prologue
-    .line 770
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/ActionMenuView$ActionMenuPresenterCallback;-><init>(Landroid/support/v7/widget/ActionMenuView;)V
-
+    .line 790
     return-void
 .end method
 
@@ -39,7 +30,7 @@
     .registers 3
 
     .prologue
-    .line 773
+    .line 794
     return-void
 .end method
 
@@ -47,7 +38,7 @@
     .registers 3
 
     .prologue
-    .line 777
+    .line 798
     const/4 v0, 0x0
 
     return v0

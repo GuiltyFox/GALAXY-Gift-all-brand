@@ -53,3 +53,15 @@
 
     goto :goto_d
 .end method
+
+.method static a(Landroid/widget/TextView;)[Landroid/graphics/drawable/Drawable;
+    .registers 2
+
+    .prologue
+    .line 50
+    invoke-virtual {p0}, Landroid/widget/TextView;->getCompoundDrawablesRelative()[Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    return-object v0
+.end method

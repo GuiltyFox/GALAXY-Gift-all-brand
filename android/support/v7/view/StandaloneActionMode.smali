@@ -36,19 +36,19 @@
     .registers 7
 
     .prologue
-    .line 46
+    .line 50
     invoke-direct {p0}, Landroid/support/v7/view/ActionMode;-><init>()V
 
-    .line 47
+    .line 51
     iput-object p1, p0, Landroid/support/v7/view/StandaloneActionMode;->a:Landroid/content/Context;
 
-    .line 48
+    .line 52
     iput-object p2, p0, Landroid/support/v7/view/StandaloneActionMode;->b:Landroid/support/v7/widget/ActionBarContextView;
 
-    .line 49
+    .line 53
     iput-object p3, p0, Landroid/support/v7/view/StandaloneActionMode;->c:Landroid/support/v7/view/ActionMode$Callback;
 
-    .line 51
+    .line 55
     new-instance v0, Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-virtual {p2}, Landroid/support/v7/widget/ActionBarContextView;->getContext()Landroid/content/Context;
@@ -65,15 +65,15 @@
 
     iput-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->g:Landroid/support/v7/view/menu/MenuBuilder;
 
-    .line 53
+    .line 57
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->g:Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-virtual {v0, p0}, Landroid/support/v7/view/menu/MenuBuilder;->setCallback(Landroid/support/v7/view/menu/MenuBuilder$Callback;)V
 
-    .line 54
+    .line 58
     iput-boolean p4, p0, Landroid/support/v7/view/StandaloneActionMode;->f:Z
 
-    .line 55
+    .line 59
     return-void
 .end method
 
@@ -83,7 +83,7 @@
     .registers 3
 
     .prologue
-    .line 132
+    .line 136
     new-instance v0, Landroid/support/v7/view/SupportMenuInflater;
 
     iget-object v1, p0, Landroid/support/v7/view/StandaloneActionMode;->b:Landroid/support/v7/widget/ActionBarContextView;
@@ -101,7 +101,7 @@
     .registers 3
 
     .prologue
-    .line 69
+    .line 73
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->a:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -110,7 +110,7 @@
 
     invoke-virtual {p0, v0}, Landroid/support/v7/view/StandaloneActionMode;->b(Ljava/lang/CharSequence;)V
 
-    .line 70
+    .line 74
     return-void
 .end method
 
@@ -118,12 +118,12 @@
     .registers 3
 
     .prologue
-    .line 90
+    .line 94
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->b:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->setCustomView(Landroid/view/View;)V
 
-    .line 91
+    .line 95
     if-eqz p1, :cond_f
 
     new-instance v0, Ljava/lang/ref/WeakReference;
@@ -133,10 +133,10 @@
     :goto_c
     iput-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->d:Ljava/lang/ref/WeakReference;
 
-    .line 92
+    .line 96
     return-void
 
-    .line 91
+    .line 95
     :cond_f
     const/4 v0, 0x0
 
@@ -147,12 +147,12 @@
     .registers 3
 
     .prologue
-    .line 64
+    .line 68
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->b:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->setSubtitle(Ljava/lang/CharSequence;)V
 
-    .line 65
+    .line 69
     return-void
 .end method
 
@@ -160,15 +160,15 @@
     .registers 3
 
     .prologue
-    .line 79
+    .line 83
     invoke-super {p0, p1}, Landroid/support/v7/view/ActionMode;->a(Z)V
 
-    .line 80
+    .line 84
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->b:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->setTitleOptional(Z)V
 
-    .line 81
+    .line 85
     return-void
 .end method
 
@@ -176,7 +176,7 @@
     .registers 2
 
     .prologue
-    .line 112
+    .line 116
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->g:Landroid/support/v7/view/menu/MenuBuilder;
 
     return-object v0
@@ -186,7 +186,7 @@
     .registers 3
 
     .prologue
-    .line 74
+    .line 78
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->a:Landroid/content/Context;
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -195,7 +195,7 @@
 
     invoke-virtual {p0, v0}, Landroid/support/v7/view/StandaloneActionMode;->a(Ljava/lang/CharSequence;)V
 
-    .line 75
+    .line 79
     return-void
 .end method
 
@@ -203,12 +203,12 @@
     .registers 3
 
     .prologue
-    .line 59
+    .line 63
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->b:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 60
+    .line 64
     return-void
 .end method
 
@@ -216,29 +216,29 @@
     .registers 3
 
     .prologue
-    .line 101
+    .line 105
     iget-boolean v0, p0, Landroid/support/v7/view/StandaloneActionMode;->e:Z
 
     if-eqz v0, :cond_5
 
-    .line 108
+    .line 112
     :goto_4
     return-void
 
-    .line 104
+    .line 108
     :cond_5
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v7/view/StandaloneActionMode;->e:Z
 
-    .line 106
+    .line 110
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->b:Landroid/support/v7/widget/ActionBarContextView;
 
     const/16 v1, 0x20
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->sendAccessibilityEvent(I)V
 
-    .line 107
+    .line 111
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->c:Landroid/support/v7/view/ActionMode$Callback;
 
     invoke-interface {v0, p0}, Landroid/support/v7/view/ActionMode$Callback;->a(Landroid/support/v7/view/ActionMode;)V
@@ -250,14 +250,14 @@
     .registers 3
 
     .prologue
-    .line 96
+    .line 100
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->c:Landroid/support/v7/view/ActionMode$Callback;
 
     iget-object v1, p0, Landroid/support/v7/view/StandaloneActionMode;->g:Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-interface {v0, p0, v1}, Landroid/support/v7/view/ActionMode$Callback;->b(Landroid/support/v7/view/ActionMode;Landroid/view/Menu;)Z
 
-    .line 97
+    .line 101
     return-void
 .end method
 
@@ -265,7 +265,7 @@
     .registers 2
 
     .prologue
-    .line 117
+    .line 121
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->b:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->getTitle()Ljava/lang/CharSequence;
@@ -279,7 +279,7 @@
     .registers 2
 
     .prologue
-    .line 122
+    .line 126
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->b:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->getSubtitle()Ljava/lang/CharSequence;
@@ -293,7 +293,7 @@
     .registers 2
 
     .prologue
-    .line 85
+    .line 89
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->b:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->isTitleOptional()Z
@@ -307,7 +307,7 @@
     .registers 2
 
     .prologue
-    .line 127
+    .line 131
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->d:Ljava/lang/ref/WeakReference;
 
     if-eqz v0, :cond_d
@@ -333,7 +333,7 @@
     .registers 4
 
     .prologue
-    .line 136
+    .line 140
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->c:Landroid/support/v7/view/ActionMode$Callback;
 
     invoke-interface {v0, p0, p2}, Landroid/support/v7/view/ActionMode$Callback;->a(Landroid/support/v7/view/ActionMode;Landroid/view/MenuItem;)Z
@@ -347,14 +347,14 @@
     .registers 3
 
     .prologue
-    .line 155
+    .line 159
     invoke-virtual {p0}, Landroid/support/v7/view/StandaloneActionMode;->d()V
 
-    .line 156
+    .line 160
     iget-object v0, p0, Landroid/support/v7/view/StandaloneActionMode;->b:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->showOverflowMenu()Z
 
-    .line 157
+    .line 161
     return-void
 .end method

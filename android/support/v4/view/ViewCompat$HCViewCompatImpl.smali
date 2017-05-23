@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 1152
+    .line 1166
     invoke-direct {p0}, Landroid/support/v4/view/ViewCompat$BaseViewCompatImpl;-><init>()V
 
     return-void
@@ -20,7 +20,7 @@
     .registers 4
 
     .prologue
-    .line 1315
+    .line 1329
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatHC;->a(II)I
 
     move-result v0
@@ -32,7 +32,7 @@
     .registers 5
 
     .prologue
-    .line 1179
+    .line 1193
     invoke-static {p1, p2, p3}, Landroid/support/v4/view/ViewCompatHC;->a(III)I
 
     move-result v0
@@ -44,7 +44,7 @@
     .registers 3
 
     .prologue
-    .line 1155
+    .line 1169
     invoke-static {}, Landroid/support/v4/view/ViewCompatHC;->a()J
 
     move-result-wide v0
@@ -56,10 +56,10 @@
     .registers 3
 
     .prologue
-    .line 1209
+    .line 1223
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatHC;->a(Landroid/view/View;F)V
 
-    .line 1210
+    .line 1224
     return-void
 .end method
 
@@ -67,10 +67,10 @@
     .registers 4
 
     .prologue
-    .line 1163
+    .line 1177
     invoke-static {p1, p2, p3}, Landroid/support/v4/view/ViewCompatHC;->a(Landroid/view/View;ILandroid/graphics/Paint;)V
 
-    .line 1164
+    .line 1178
     return-void
 .end method
 
@@ -78,10 +78,10 @@
     .registers 3
 
     .prologue
-    .line 1213
+    .line 1227
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatHC;->b(Landroid/view/View;F)V
 
-    .line 1214
+    .line 1228
     return-void
 .end method
 
@@ -89,10 +89,10 @@
     .registers 3
 
     .prologue
-    .line 1305
+    .line 1319
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatHC;->a(Landroid/view/View;Z)V
 
-    .line 1306
+    .line 1320
     return-void
 .end method
 
@@ -100,10 +100,10 @@
     .registers 3
 
     .prologue
-    .line 1217
+    .line 1231
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatHC;->c(Landroid/view/View;F)V
 
-    .line 1218
+    .line 1232
     return-void
 .end method
 
@@ -111,10 +111,10 @@
     .registers 3
 
     .prologue
-    .line 1310
+    .line 1324
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatHC;->b(Landroid/view/View;Z)V
 
-    .line 1311
+    .line 1325
     return-void
 .end method
 
@@ -122,10 +122,10 @@
     .registers 3
 
     .prologue
-    .line 1241
+    .line 1255
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatHC;->d(Landroid/view/View;F)V
 
-    .line 1242
+    .line 1256
     return-void
 .end method
 
@@ -133,7 +133,7 @@
     .registers 3
 
     .prologue
-    .line 1159
+    .line 1173
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatHC;->a(Landroid/view/View;)F
 
     move-result v0
@@ -145,10 +145,10 @@
     .registers 3
 
     .prologue
-    .line 1245
+    .line 1259
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatHC;->e(Landroid/view/View;F)V
 
-    .line 1246
+    .line 1260
     return-void
 .end method
 
@@ -156,10 +156,10 @@
     .registers 3
 
     .prologue
-    .line 1320
+    .line 1334
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatHC;->b(Landroid/view/View;I)V
 
-    .line 1321
+    .line 1335
     return-void
 .end method
 
@@ -167,7 +167,7 @@
     .registers 3
 
     .prologue
-    .line 1167
+    .line 1181
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatHC;->b(Landroid/view/View;)I
 
     move-result v0
@@ -175,14 +175,36 @@
     return v0
 .end method
 
+.method public f(Landroid/view/View;F)V
+    .registers 3
+
+    .prologue
+    .line 1263
+    invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatHC;->f(Landroid/view/View;F)V
+
+    .line 1264
+    return-void
+.end method
+
 .method public f(Landroid/view/View;I)V
     .registers 3
 
     .prologue
-    .line 1325
+    .line 1339
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatHC;->a(Landroid/view/View;I)V
 
-    .line 1326
+    .line 1340
+    return-void
+.end method
+
+.method public g(Landroid/view/View;F)V
+    .registers 3
+
+    .prologue
+    .line 1267
+    invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatHC;->g(Landroid/view/View;F)V
+
+    .line 1268
     return-void
 .end method
 
@@ -190,7 +212,7 @@
     .registers 3
 
     .prologue
-    .line 1183
+    .line 1197
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatHC;->c(Landroid/view/View;)I
 
     move-result v0
@@ -202,7 +224,7 @@
     .registers 3
 
     .prologue
-    .line 1191
+    .line 1205
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatHC;->d(Landroid/view/View;)I
 
     move-result v0
@@ -214,7 +236,7 @@
     .registers 3
 
     .prologue
-    .line 1195
+    .line 1209
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatHC;->e(Landroid/view/View;)F
 
     move-result v0
@@ -226,7 +248,7 @@
     .registers 3
 
     .prologue
-    .line 1199
+    .line 1213
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatHC;->f(Landroid/view/View;)F
 
     move-result v0
@@ -238,7 +260,7 @@
     .registers 3
 
     .prologue
-    .line 1282
+    .line 1296
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatHC;->g(Landroid/view/View;)F
 
     move-result v0
@@ -246,13 +268,25 @@
     return v0
 .end method
 
-.method public y(Landroid/view/View;)V
+.method public q(Landroid/view/View;)Landroid/graphics/Matrix;
+    .registers 3
+
+    .prologue
+    .line 1218
+    invoke-static {p1}, Landroid/support/v4/view/ViewCompatHC;->h(Landroid/view/View;)Landroid/graphics/Matrix;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public z(Landroid/view/View;)V
     .registers 2
 
     .prologue
-    .line 1300
-    invoke-static {p1}, Landroid/support/v4/view/ViewCompatHC;->h(Landroid/view/View;)V
+    .line 1314
+    invoke-static {p1}, Landroid/support/v4/view/ViewCompatHC;->i(Landroid/view/View;)V
 
-    .line 1301
+    .line 1315
     return-void
 .end method

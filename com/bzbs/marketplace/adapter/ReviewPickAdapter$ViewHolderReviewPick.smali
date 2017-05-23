@@ -8,7 +8,7 @@
 
 .field itemPick:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006d7
+        value = 0x7f1004cf
     .end annotation
 .end field
 

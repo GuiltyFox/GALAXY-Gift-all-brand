@@ -1,221 +1,163 @@
 .class final Lcom/samsung/privilege/util/DialogLoginGift$25;
-.super Lcom/bzbs/lib/http/okhttp/ResponseListener;
+.super Ljava/lang/Object;
 .source "DialogLoginGift.java"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogLoginGift;->b(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
+    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic a:J
+.field final synthetic a:Landroid/content/Context;
 
-.field final synthetic b:Landroid/os/Handler;
+.field final synthetic b:Landroid/widget/ImageView;
 
-.field final synthetic c:Landroid/content/Context;
-
-.field final synthetic d:Ljava/lang/String;
-
-.field final synthetic e:Ljava/lang/String;
+.field final synthetic c:Landroid/app/Dialog;
 
 
 # direct methods
-.method constructor <init>(JLandroid/os/Handler;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 8
+.method constructor <init>(Landroid/content/Context;Landroid/widget/ImageView;Landroid/app/Dialog;)V
+    .registers 4
 
     .prologue
-    .line 1372
-    iput-wide p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->a:J
+    .line 1613
+    iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->a:Landroid/content/Context;
 
-    iput-object p3, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->b:Landroid/os/Handler;
+    iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->b:Landroid/widget/ImageView;
 
-    iput-object p4, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->c:Landroid/content/Context;
+    iput-object p3, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->c:Landroid/app/Dialog;
 
-    iput-object p5, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->d:Ljava/lang/String;
-
-    iput-object p6, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->e:Ljava/lang/String;
-
-    invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
-    .registers 13
+.method public onClick(Landroid/view/View;)V
+    .registers 5
 
     .prologue
-    .line 1479
-    invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .line 1616
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->a:Landroid/content/Context;
 
-    .line 1482
-    :try_start_3
-    new-instance v0, Ljava/util/Date;
-
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
-
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v0
-
-    .line 1483
-    const-string/jumbo v2, "Login"
-
-    const-string/jumbo v3, "GetProfile"
-
-    const-string/jumbo v4, "Failure"
-
-    iget-wide v6, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->a:J
-
-    sub-long/2addr v0, v6
-
-    invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
-    :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_51
-
-    .line 1488
-    :goto_1b
-    invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string/jumbo v1, "1033"
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string/jumbo v2, "(GetProfileData|onFailure)response_code="
+    move-result v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_6a
 
-    move-result-object v1
+    .line 1617
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->a:Landroid/content/Context;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string/jumbo v1, "1054"
 
-    move-result-object v1
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
 
-    const-string/jumbo v2, ",response="
+    .line 1618
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->b:Landroid/widget/ImageView;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const v1, 0x7f020177
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 1623
+    :goto_1f
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->a:Landroid/content/Context;
 
-    move-result-object v1
+    invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 1625
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->c:Landroid/app/Dialog;
 
-    move-result-object v1
+    const v1, 0x7f1003fd
 
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1490
-    const-string/jumbo v0, "Get Profile Data Fail!!!"
-
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->c:Landroid/content/Context;
-
-    iget-object v2, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->b:Landroid/os/Handler;
-
-    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
-
-    .line 1491
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->c:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->X(Landroid/content/Context;)V
-
-    .line 1492
-    return-void
-
-    .line 1484
-    :catch_51
-    move-exception v0
-
-    goto :goto_1b
-.end method
-
-.method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
-    .registers 13
-
-    .prologue
-    .line 1376
-    :try_start_0
-    new-instance v0, Ljava/util/Date;
-
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
-
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v0
-
-    .line 1377
-    const-string/jumbo v2, "Login"
-
-    const-string/jumbo v3, "GetProfile"
-
-    const-string/jumbo v4, "Success"
-
-    iget-wide v6, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->a:J
-
-    sub-long/2addr v0, v6
-
-    invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
-    :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_49
-
-    .line 1382
-    :goto_18
-    invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    check-cast v0, Landroid/widget/TextView;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->a:Landroid/content/Context;
 
-    const-string/jumbo v2, "(GetProfileData|onComplete)response_code="
+    const v2, 0x7f09014a
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string/jumbo v2, ",response="
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 1626
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->c:Landroid/app/Dialog;
+
+    const v1, 0x7f10040d
+
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->a:Landroid/content/Context;
+
+    const v2, 0x7f090146
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 1627
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->c:Landroid/app/Dialog;
+
+    const v1, 0x7f1003fa
+
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->a:Landroid/content/Context;
+
+    const v2, 0x7f090145
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1384
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->b:Landroid/os/Handler;
-
-    new-instance v1, Lcom/samsung/privilege/util/DialogLoginGift$25$1;
-
-    invoke-direct {v1, p0, p4}, Lcom/samsung/privilege/util/DialogLoginGift$25$1;-><init>(Lcom/samsung/privilege/util/DialogLoginGift$25;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 1475
+    .line 1628
     return-void
 
-    .line 1378
-    :catch_49
-    move-exception v0
+    .line 1620
+    :cond_6a
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->a:Landroid/content/Context;
 
-    goto :goto_18
+    const-string/jumbo v1, "1033"
+
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
+
+    .line 1621
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->b:Landroid/widget/ImageView;
+
+    const v1, 0x7f020178
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    goto :goto_1f
 .end method

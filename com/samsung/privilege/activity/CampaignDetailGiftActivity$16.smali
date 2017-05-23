@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1715
+    .line 1716
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$16;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 1746
+    .line 1747
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .registers 6
 
     .prologue
-    .line 1718
+    .line 1719
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$16;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->k(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/support/v4/view/ViewPager;
@@ -58,7 +58,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1719
+    .line 1720
     return-void
 .end method
 
@@ -66,8 +66,8 @@
     .registers 5
 
     .prologue
-    .line 1724
     .line 1725
+    .line 1726
     :try_start_0
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$16;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -87,7 +87,7 @@
 
     if-eqz v0, :cond_20
 
-    .line 1726
+    .line 1727
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$16;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
@@ -102,7 +102,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 1732
+    .line 1733
     :cond_20
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$16;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -112,7 +112,7 @@
 
     if-eqz v0, :cond_6e
 
-    .line 1733
+    .line 1734
     const/4 v0, 0x0
 
     move v1, v0
@@ -132,7 +132,7 @@
 
     if-ge v1, v0, :cond_55
 
-    .line 1734
+    .line 1735
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$16;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->m(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/widget/LinearLayout;
@@ -143,7 +143,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f10010a
+    const v2, 0x7f10010d
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -151,18 +151,18 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    const v2, 0x7f0202af
+    const v2, 0x7f020188
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1733
+    .line 1734
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_2a
 
-    .line 1736
+    .line 1737
     :cond_55
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$16;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -174,7 +174,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f10010a
+    const v1, 0x7f10010d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -182,18 +182,18 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    const v1, 0x7f0202ae
+    const v1, 0x7f020187
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
     :try_end_6e
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_6e} :catch_6f
 
-    .line 1741
+    .line 1742
     :cond_6e
     :goto_6e
     return-void
 
-    .line 1738
+    .line 1739
     :catch_6f
     move-exception v0
 

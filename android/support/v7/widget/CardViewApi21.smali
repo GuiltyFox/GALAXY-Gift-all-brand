@@ -11,10 +11,24 @@
     .registers 1
 
     .prologue
-    .line 21
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method private j(Landroid/support/v7/widget/CardViewDelegate;)Landroid/support/v7/widget/RoundRectDrawable;
+    .registers 3
+
+    .prologue
+    .line 119
+    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->c()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v7/widget/RoundRectDrawable;
+
+    return-object v0
 .end method
 
 
@@ -23,14 +37,10 @@
     .registers 3
 
     .prologue
-    .line 52
-    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->getBackground()Landroid/graphics/drawable/Drawable;
+    .line 55
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->j(Landroid/support/v7/widget/CardViewDelegate;)Landroid/support/v7/widget/RoundRectDrawable;
 
     move-result-object v0
-
-    check-cast v0, Landroid/support/v7/widget/RoundRectDrawable;
-
-    check-cast v0, Landroid/support/v7/widget/RoundRectDrawable;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RoundRectDrawable;->getPadding()F
 
@@ -43,7 +53,7 @@
     .registers 1
 
     .prologue
-    .line 41
+    .line 44
     return-void
 .end method
 
@@ -51,69 +61,61 @@
     .registers 4
 
     .prologue
-    .line 36
-    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->getBackground()Landroid/graphics/drawable/Drawable;
+    .line 39
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->j(Landroid/support/v7/widget/CardViewDelegate;)Landroid/support/v7/widget/RoundRectDrawable;
 
     move-result-object v0
-
-    check-cast v0, Landroid/support/v7/widget/RoundRectDrawable;
-
-    check-cast v0, Landroid/support/v7/widget/RoundRectDrawable;
 
     invoke-virtual {v0, p2}, Landroid/support/v7/widget/RoundRectDrawable;->setRadius(F)V
 
-    .line 37
+    .line 40
     return-void
 .end method
 
-.method public a(Landroid/support/v7/widget/CardViewDelegate;I)V
-    .registers 4
-
-    .prologue
-    .line 107
-    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/v7/widget/RoundRectDrawable;
-
-    check-cast v0, Landroid/support/v7/widget/RoundRectDrawable;
-
-    invoke-virtual {v0, p2}, Landroid/support/v7/widget/RoundRectDrawable;->setColor(I)V
-
-    .line 108
-    return-void
-.end method
-
-.method public a(Landroid/support/v7/widget/CardViewDelegate;Landroid/content/Context;IFFF)V
+.method public a(Landroid/support/v7/widget/CardViewDelegate;Landroid/content/Context;Landroid/content/res/ColorStateList;FFF)V
     .registers 9
 
     .prologue
-    .line 26
+    .line 28
     new-instance v0, Landroid/support/v7/widget/RoundRectDrawable;
 
-    invoke-direct {v0, p3, p4}, Landroid/support/v7/widget/RoundRectDrawable;-><init>(IF)V
-
-    .line 27
-    invoke-interface {p1, v0}, Landroid/support/v7/widget/CardViewDelegate;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    move-object v0, p1
-
-    .line 28
-    check-cast v0, Landroid/view/View;
+    invoke-direct {v0, p3, p4}, Landroid/support/v7/widget/RoundRectDrawable;-><init>(Landroid/content/res/ColorStateList;F)V
 
     .line 29
+    invoke-interface {p1, v0}, Landroid/support/v7/widget/CardViewDelegate;->a(Landroid/graphics/drawable/Drawable;)V
+
+    .line 31
+    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->d()Landroid/view/View;
+
+    move-result-object v0
+
+    .line 32
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setClipToOutline(Z)V
 
-    .line 30
+    .line 33
     invoke-virtual {v0, p5}, Landroid/view/View;->setElevation(F)V
 
-    .line 31
+    .line 34
     invoke-virtual {p0, p1, p6}, Landroid/support/v7/widget/CardViewApi21;->b(Landroid/support/v7/widget/CardViewDelegate;F)V
 
-    .line 32
+    .line 35
+    return-void
+.end method
+
+.method public a(Landroid/support/v7/widget/CardViewDelegate;Landroid/content/res/ColorStateList;)V
+    .registers 4
+
+    .prologue
+    .line 110
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->j(Landroid/support/v7/widget/CardViewDelegate;)Landroid/support/v7/widget/RoundRectDrawable;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Landroid/support/v7/widget/RoundRectDrawable;->setColor(Landroid/content/res/ColorStateList;)V
+
+    .line 111
     return-void
 .end method
 
@@ -121,7 +123,7 @@
     .registers 4
 
     .prologue
-    .line 57
+    .line 60
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->d(Landroid/support/v7/widget/CardViewDelegate;)F
 
     move-result v0
@@ -137,29 +139,27 @@
     .registers 6
 
     .prologue
-    .line 45
-    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->getBackground()Landroid/graphics/drawable/Drawable;
+    .line 48
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->j(Landroid/support/v7/widget/CardViewDelegate;)Landroid/support/v7/widget/RoundRectDrawable;
 
     move-result-object v0
 
-    check-cast v0, Landroid/support/v7/widget/RoundRectDrawable;
-
-    check-cast v0, Landroid/support/v7/widget/RoundRectDrawable;
-
-    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->getUseCompatPadding()Z
+    .line 49
+    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->a()Z
 
     move-result v1
 
-    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->getPreventCornerOverlap()Z
+    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->b()Z
 
     move-result v2
 
+    .line 48
     invoke-virtual {v0, p2, v1, v2}, Landroid/support/v7/widget/RoundRectDrawable;->setPadding(FZZ)V
 
-    .line 47
+    .line 50
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->f(Landroid/support/v7/widget/CardViewDelegate;)V
 
-    .line 48
+    .line 51
     return-void
 .end method
 
@@ -167,7 +167,7 @@
     .registers 4
 
     .prologue
-    .line 62
+    .line 65
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->d(Landroid/support/v7/widget/CardViewDelegate;)F
 
     move-result v0
@@ -180,15 +180,17 @@
 .end method
 
 .method public c(Landroid/support/v7/widget/CardViewDelegate;F)V
-    .registers 3
+    .registers 4
 
     .prologue
-    .line 72
-    check-cast p1, Landroid/view/View;
+    .line 75
+    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->d()Landroid/view/View;
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->setElevation(F)V
+    move-result-object v0
 
-    .line 73
+    invoke-virtual {v0, p2}, Landroid/view/View;->setElevation(F)V
+
+    .line 76
     return-void
 .end method
 
@@ -196,14 +198,10 @@
     .registers 3
 
     .prologue
-    .line 67
-    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->getBackground()Landroid/graphics/drawable/Drawable;
+    .line 70
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->j(Landroid/support/v7/widget/CardViewDelegate;)Landroid/support/v7/widget/RoundRectDrawable;
 
     move-result-object v0
-
-    check-cast v0, Landroid/support/v7/widget/RoundRectDrawable;
-
-    check-cast v0, Landroid/support/v7/widget/RoundRectDrawable;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RoundRectDrawable;->getRadius()F
 
@@ -216,10 +214,12 @@
     .registers 3
 
     .prologue
-    .line 77
-    check-cast p1, Landroid/view/View;
+    .line 80
+    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->d()Landroid/view/View;
 
-    invoke-virtual {p1}, Landroid/view/View;->getElevation()F
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->getElevation()F
 
     move-result v0
 
@@ -232,33 +232,33 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 82
-    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->getUseCompatPadding()Z
+    .line 85
+    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->a()Z
 
     move-result v0
 
     if-nez v0, :cond_b
 
-    .line 83
-    invoke-interface {p1, v1, v1, v1, v1}, Landroid/support/v7/widget/CardViewDelegate;->setShadowPadding(IIII)V
+    .line 86
+    invoke-interface {p1, v1, v1, v1, v1}, Landroid/support/v7/widget/CardViewDelegate;->a(IIII)V
 
-    .line 93
+    .line 96
     :goto_a
     return-void
 
-    .line 86
+    .line 89
     :cond_b
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->a(Landroid/support/v7/widget/CardViewDelegate;)F
 
     move-result v0
 
-    .line 87
+    .line 90
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->d(Landroid/support/v7/widget/CardViewDelegate;)F
 
     move-result v1
 
-    .line 88
-    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->getPreventCornerOverlap()Z
+    .line 92
+    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->b()Z
 
     move-result v2
 
@@ -268,14 +268,15 @@
 
     float-to-double v2, v2
 
+    .line 91
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v2
 
     double-to-int v2, v2
 
-    .line 90
-    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->getPreventCornerOverlap()Z
+    .line 94
+    invoke-interface {p1}, Landroid/support/v7/widget/CardViewDelegate;->b()Z
 
     move-result v3
 
@@ -285,14 +286,15 @@
 
     float-to-double v0, v0
 
+    .line 93
     invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v0
 
     double-to-int v0, v0
 
-    .line 92
-    invoke-interface {p1, v2, v0, v2, v0}, Landroid/support/v7/widget/CardViewDelegate;->setShadowPadding(IIII)V
+    .line 95
+    invoke-interface {p1, v2, v0, v2, v0}, Landroid/support/v7/widget/CardViewDelegate;->a(IIII)V
 
     goto :goto_a
 .end method
@@ -301,14 +303,14 @@
     .registers 3
 
     .prologue
-    .line 97
+    .line 100
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->a(Landroid/support/v7/widget/CardViewDelegate;)F
 
     move-result v0
 
     invoke-virtual {p0, p1, v0}, Landroid/support/v7/widget/CardViewApi21;->b(Landroid/support/v7/widget/CardViewDelegate;F)V
 
-    .line 98
+    .line 101
     return-void
 .end method
 
@@ -316,13 +318,29 @@
     .registers 3
 
     .prologue
-    .line 102
+    .line 105
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->a(Landroid/support/v7/widget/CardViewDelegate;)F
 
     move-result v0
 
     invoke-virtual {p0, p1, v0}, Landroid/support/v7/widget/CardViewApi21;->b(Landroid/support/v7/widget/CardViewDelegate;F)V
 
-    .line 103
+    .line 106
     return-void
+.end method
+
+.method public i(Landroid/support/v7/widget/CardViewDelegate;)Landroid/content/res/ColorStateList;
+    .registers 3
+
+    .prologue
+    .line 115
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/CardViewApi21;->j(Landroid/support/v7/widget/CardViewDelegate;)Landroid/support/v7/widget/RoundRectDrawable;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/RoundRectDrawable;->getColor()Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    return-object v0
 .end method

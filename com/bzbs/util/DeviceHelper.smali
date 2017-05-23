@@ -148,13 +148,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 53
+    .line 75
     :try_start_1
     invoke-virtual {p0}, Lcom/bzbs/util/DeviceHelper;->c()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 57
+    .line 79
     if-eqz v1, :cond_11
 
     const-string/jumbo v2, "004999010640000"
@@ -167,7 +167,7 @@
 
     move-object v1, v0
 
-    .line 61
+    .line 83
     :cond_11
     if-eqz v1, :cond_20
 
@@ -187,7 +187,7 @@
 
     move-object v1, v0
 
-    .line 66
+    .line 88
     :cond_20
     if-eqz v1, :cond_64
 
@@ -200,7 +200,7 @@
 
     if-nez v2, :cond_64
 
-    .line 67
+    .line 89
     invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v2
@@ -209,7 +209,7 @@
 
     move-result-object v2
 
-    .line 68
+    .line 90
     invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
     :try_end_36
     .catch Ljava/lang/Exception; {:try_start_22 .. :try_end_36} :catch_49
@@ -222,7 +222,7 @@
 
     if-nez v2, :cond_64
 
-    .line 76
+    .line 98
     :goto_3d
     if-eqz v0, :cond_4c
 
@@ -235,12 +235,12 @@
 
     if-nez v1, :cond_4c
 
-    .line 87
+    .line 109
     :cond_48
     :goto_48
     return-object v0
 
-    .line 72
+    .line 94
     :catch_49
     move-exception v0
 
@@ -248,13 +248,13 @@
 
     goto :goto_3d
 
-    .line 80
+    .line 102
     :cond_4c
     invoke-virtual {p0}, Lcom/bzbs/util/DeviceHelper;->i()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 81
+    .line 103
     if-eqz v0, :cond_5b
 
     const-string/jumbo v1, ""
@@ -265,7 +265,7 @@
 
     if-eqz v1, :cond_48
 
-    .line 85
+    .line 107
     :cond_5b
     const-string/jumbo v0, ""
     :try_end_5e
@@ -273,11 +273,11 @@
 
     goto :goto_48
 
-    .line 86
+    .line 108
     :catch_5f
     move-exception v0
 
-    .line 87
+    .line 109
     const-string/jumbo v0, ""
 
     goto :goto_48
@@ -292,8 +292,8 @@
     .registers 6
 
     .prologue
-    .line 108
-    .line 109
+    .line 130
+    .line 131
     :try_start_0
     const-string/jumbo v0, "android.os.SystemProperties"
 
@@ -301,7 +301,7 @@
 
     move-result-object v0
 
-    .line 110
+    .line 132
     const-string/jumbo v1, "get"
 
     const/4 v2, 0x2
@@ -324,7 +324,7 @@
 
     move-result-object v1
 
-    .line 111
+    .line 133
     const/4 v2, 0x2
 
     new-array v2, v2, [Ljava/lang/Object;
@@ -351,15 +351,15 @@
     :try_end_30
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_30} :catch_31
 
-    .line 114
+    .line 136
     :goto_30
     return-object v0
 
-    .line 113
+    .line 135
     :catch_31
     move-exception v0
 
-    .line 114
+    .line 136
     const-string/jumbo v0, ""
 
     goto :goto_30
@@ -369,7 +369,7 @@
     .registers 3
 
     .prologue
-    .line 139
+    .line 161
     :try_start_0
     iget-object v0, p0, Lcom/bzbs/util/DeviceHelper;->a:Landroid/content/Context;
 
@@ -381,7 +381,7 @@
 
     check-cast v0, Landroid/net/wifi/WifiManager;
 
-    .line 140
+    .line 162
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
 
     move-result-object v0
@@ -392,15 +392,15 @@
 
     move-result-object v0
 
-    .line 142
+    .line 164
     :goto_13
     return-object v0
 
-    .line 141
+    .line 163
     :catch_14
     move-exception v0
 
-    .line 142
+    .line 164
     const-string/jumbo v0, ""
 
     goto :goto_13
@@ -410,21 +410,21 @@
     .registers 2
 
     .prologue
-    .line 148
+    .line 170
     :try_start_0
     const-string v0, "SM-G935F"
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2} :catch_3
 
-    .line 150
+    .line 172
     :goto_2
     return-object v0
 
-    .line 149
+    .line 171
     :catch_3
     move-exception v0
 
-    .line 150
+    .line 172
     const-string/jumbo v0, ""
 
     goto :goto_2
@@ -434,21 +434,21 @@
     .registers 2
 
     .prologue
-    .line 156
+    .line 178
     :try_start_0
     const-string v0, "samsung"
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2} :catch_3
 
-    .line 158
+    .line 180
     :goto_2
     return-object v0
 
-    .line 157
+    .line 179
     :catch_3
     move-exception v0
 
-    .line 158
+    .line 180
     const-string/jumbo v0, ""
 
     goto :goto_2
@@ -458,7 +458,7 @@
     .registers 3
 
     .prologue
-    .line 164
+    .line 186
     :try_start_0
     iget-object v0, p0, Lcom/bzbs/util/DeviceHelper;->a:Landroid/content/Context;
 
@@ -474,15 +474,15 @@
 
     move-result-object v0
 
-    .line 167
+    .line 189
     :goto_d
     return-object v0
 
-    .line 166
+    .line 188
     :catch_e
     move-exception v0
 
-    .line 167
+    .line 189
     const-string/jumbo v0, ""
 
     goto :goto_d

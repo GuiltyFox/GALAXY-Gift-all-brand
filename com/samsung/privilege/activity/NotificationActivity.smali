@@ -123,7 +123,7 @@
 
     .prologue
     .line 96
-    const v0, 0x7f100195
+    const v0, 0x7f100182
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/NotificationActivity;->findViewById(I)Landroid/view/View;
 
@@ -163,7 +163,7 @@
 
     .prologue
     .line 104
-    const v0, 0x7f100113
+    const v0, 0x7f100116
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/NotificationActivity;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +187,7 @@
 
     .prologue
     .line 140
-    const v0, 0x7f100113
+    const v0, 0x7f100116
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/NotificationActivity;->findViewById(I)Landroid/view/View;
 
@@ -218,7 +218,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 59
-    const v0, 0x7f04003e
+    const v0, 0x7f040039
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/NotificationActivity;->setContentView(I)V
 

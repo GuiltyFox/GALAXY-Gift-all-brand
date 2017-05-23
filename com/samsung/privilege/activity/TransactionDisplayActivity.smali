@@ -331,17 +331,17 @@
     invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 37
-    const v0, 0x7f040056
+    const v0, 0x7f04004e
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->setContentView(I)V
 
     .line 38
-    const v0, 0x7f050043
+    const v0, 0x7f050032
 
     invoke-virtual {p0, v0, v12}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->overridePendingTransition(II)V
 
     .line 40
-    const v0, 0x7f100201
+    const v0, 0x7f1001ec
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -350,7 +350,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 41
-    const v1, 0x7f100203
+    const v1, 0x7f1001ee
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -359,7 +359,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 42
-    const v2, 0x7f10014c
+    const v2, 0x7f10014d
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -370,7 +370,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->a:Landroid/widget/RelativeLayout;
 
     .line 43
-    const v2, 0x7f100173
+    const v2, 0x7f1001eb
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -381,7 +381,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->b:Landroid/widget/ImageView;
 
     .line 44
-    const v2, 0x7f100204
+    const v2, 0x7f1001ef
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -390,7 +390,7 @@
     check-cast v2, Landroid/widget/Button;
 
     .line 45
-    const v3, 0x7f100202
+    const v3, 0x7f1001ed
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -479,7 +479,7 @@
     invoke-virtual {v2, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 75
-    const v1, 0x7f05004c
+    const v1, 0x7f05003a
 
     invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -488,7 +488,7 @@
     iput-object v1, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->d:Landroid/view/animation/Animation;
 
     .line 76
-    const v1, 0x7f050025
+    const v1, 0x7f05001a
 
     invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -571,7 +571,7 @@
     .line 119
     const/4 v0, 0x0
 
-    const v1, 0x7f050047
+    const v1, 0x7f050035
 
     invoke-virtual {p0, v0, v1}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->overridePendingTransition(II)V
 

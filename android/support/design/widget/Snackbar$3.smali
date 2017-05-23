@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 427
+    .line 436
     iput-object p1, p0, Landroid/support/design/widget/Snackbar$3;->this$0:Landroid/support/design/widget/Snackbar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,16 +35,10 @@
     .registers 7
 
     .prologue
-    .line 435
-    # getter for: Landroid/support/design/widget/Snackbar;->sHandler:Landroid/os/Handler;
-    invoke-static {}, Landroid/support/design/widget/Snackbar;->access$100()Landroid/os/Handler;
+    .line 444
+    sget-object v0, Landroid/support/design/widget/Snackbar;->sHandler:Landroid/os/Handler;
 
-    move-result-object v0
-
-    # getter for: Landroid/support/design/widget/Snackbar;->sHandler:Landroid/os/Handler;
-    invoke-static {}, Landroid/support/design/widget/Snackbar;->access$100()Landroid/os/Handler;
-
-    move-result-object v1
+    sget-object v1, Landroid/support/design/widget/Snackbar;->sHandler:Landroid/os/Handler;
 
     const/4 v2, 0x1
 
@@ -58,7 +52,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 436
+    .line 445
     return-void
 .end method
 
@@ -66,16 +60,10 @@
     .registers 5
 
     .prologue
-    .line 430
-    # getter for: Landroid/support/design/widget/Snackbar;->sHandler:Landroid/os/Handler;
-    invoke-static {}, Landroid/support/design/widget/Snackbar;->access$100()Landroid/os/Handler;
+    .line 439
+    sget-object v0, Landroid/support/design/widget/Snackbar;->sHandler:Landroid/os/Handler;
 
-    move-result-object v0
-
-    # getter for: Landroid/support/design/widget/Snackbar;->sHandler:Landroid/os/Handler;
-    invoke-static {}, Landroid/support/design/widget/Snackbar;->access$100()Landroid/os/Handler;
-
-    move-result-object v1
+    sget-object v1, Landroid/support/design/widget/Snackbar;->sHandler:Landroid/os/Handler;
 
     const/4 v2, 0x0
 
@@ -87,6 +75,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 431
+    .line 440
     return-void
 .end method

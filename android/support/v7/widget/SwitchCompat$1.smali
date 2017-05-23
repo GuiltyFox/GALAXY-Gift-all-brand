@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1014
+    .line 1015
     iput-object p1, p0, Landroid/support/v7/widget/SwitchCompat$1;->b:Landroid/support/v7/widget/SwitchCompat;
 
     iput-boolean p2, p0, Landroid/support/v7/widget/SwitchCompat$1;->a:Z
@@ -39,53 +39,48 @@
     .registers 4
 
     .prologue
-    .line 1020
+    .line 1021
     iget-object v0, p0, Landroid/support/v7/widget/SwitchCompat$1;->b:Landroid/support/v7/widget/SwitchCompat;
 
-    # getter for: Landroid/support/v7/widget/SwitchCompat;->mPositionAnimator:Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;
-    invoke-static {v0}, Landroid/support/v7/widget/SwitchCompat;->access$100(Landroid/support/v7/widget/SwitchCompat;)Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;
+    iget-object v0, v0, Landroid/support/v7/widget/SwitchCompat;->mPositionAnimator:Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;
 
-    move-result-object v0
+    if-ne v0, p1, :cond_16
 
-    if-ne v0, p1, :cond_19
-
-    .line 1022
+    .line 1023
     iget-object v1, p0, Landroid/support/v7/widget/SwitchCompat$1;->b:Landroid/support/v7/widget/SwitchCompat;
 
     iget-boolean v0, p0, Landroid/support/v7/widget/SwitchCompat$1;->a:Z
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_17
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    :goto_10
-    # invokes: Landroid/support/v7/widget/SwitchCompat;->setThumbPosition(F)V
-    invoke-static {v1, v0}, Landroid/support/v7/widget/SwitchCompat;->access$200(Landroid/support/v7/widget/SwitchCompat;F)V
+    :goto_e
+    invoke-virtual {v1, v0}, Landroid/support/v7/widget/SwitchCompat;->setThumbPosition(F)V
 
-    .line 1023
+    .line 1024
     iget-object v0, p0, Landroid/support/v7/widget/SwitchCompat$1;->b:Landroid/support/v7/widget/SwitchCompat;
 
     const/4 v1, 0x0
 
-    # setter for: Landroid/support/v7/widget/SwitchCompat;->mPositionAnimator:Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;
-    invoke-static {v0, v1}, Landroid/support/v7/widget/SwitchCompat;->access$102(Landroid/support/v7/widget/SwitchCompat;Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;)Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;
+    iput-object v1, v0, Landroid/support/v7/widget/SwitchCompat;->mPositionAnimator:Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;
 
-    .line 1025
-    :cond_19
+    .line 1026
+    :cond_16
     return-void
 
-    .line 1022
-    :cond_1a
+    .line 1023
+    :cond_17
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_e
 .end method
 
 .method public onAnimationRepeat(Landroid/view/animation/Animation;)V
     .registers 2
 
     .prologue
-    .line 1028
+    .line 1029
     return-void
 .end method
 
@@ -93,6 +88,6 @@
     .registers 2
 
     .prologue
-    .line 1016
+    .line 1017
     return-void
 .end method

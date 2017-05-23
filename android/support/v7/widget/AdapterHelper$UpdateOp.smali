@@ -18,22 +18,22 @@
     .registers 5
 
     .prologue
-    .line 643
+    .line 652
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 644
+    .line 653
     iput p1, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->a:I
 
-    .line 645
+    .line 654
     iput p2, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->b:I
 
-    .line 646
+    .line 655
     iput p3, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->d:I
 
-    .line 647
+    .line 656
     iput-object p4, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->c:Ljava/lang/Object;
 
-    .line 648
+    .line 657
     return-void
 .end method
 
@@ -43,43 +43,43 @@
     .registers 2
 
     .prologue
-    .line 651
+    .line 660
     iget v0, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->a:I
 
     packed-switch v0, :pswitch_data_1a
 
-    .line 661
+    .line 670
     :pswitch_5
     const-string/jumbo v0, "??"
 
     :goto_8
     return-object v0
 
-    .line 653
+    .line 662
     :pswitch_9
     const-string/jumbo v0, "add"
 
     goto :goto_8
 
-    .line 655
+    .line 664
     :pswitch_d
     const-string/jumbo v0, "rm"
 
     goto :goto_8
 
-    .line 657
+    .line 666
     :pswitch_11
     const-string/jumbo v0, "up"
 
     goto :goto_8
 
-    .line 659
+    .line 668
     :pswitch_15
     const-string/jumbo v0, "mv"
 
     goto :goto_8
 
-    .line 651
+    .line 660
     nop
 
     :pswitch_data_1a
@@ -103,15 +103,15 @@
 
     const/4 v1, 0x0
 
-    .line 673
+    .line 682
     if-ne p0, p1, :cond_5
 
-    .line 705
+    .line 714
     :cond_4
     :goto_4
     return v0
 
-    .line 676
+    .line 685
     :cond_5
     if-eqz p1, :cond_11
 
@@ -128,14 +128,14 @@
     :cond_11
     move v0, v1
 
-    .line 677
+    .line 686
     goto :goto_4
 
-    .line 680
+    .line 689
     :cond_13
     check-cast p1, Landroid/support/v7/widget/AdapterHelper$UpdateOp;
 
-    .line 682
+    .line 691
     iget v2, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->a:I
 
     iget v3, p1, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->a:I
@@ -144,10 +144,10 @@
 
     move v0, v1
 
-    .line 683
+    .line 692
     goto :goto_4
 
-    .line 685
+    .line 694
     :cond_1d
     iget v2, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->a:I
 
@@ -167,7 +167,7 @@
 
     if-ne v2, v0, :cond_3a
 
-    .line 687
+    .line 696
     iget v2, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->d:I
 
     iget v3, p1, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->b:I
@@ -180,7 +180,7 @@
 
     if-eq v2, v3, :cond_4
 
-    .line 691
+    .line 700
     :cond_3a
     iget v2, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->d:I
 
@@ -190,10 +190,10 @@
 
     move v0, v1
 
-    .line 692
+    .line 701
     goto :goto_4
 
-    .line 694
+    .line 703
     :cond_42
     iget v2, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->b:I
 
@@ -203,16 +203,16 @@
 
     move v0, v1
 
-    .line 695
+    .line 704
     goto :goto_4
 
-    .line 697
+    .line 706
     :cond_4a
     iget-object v2, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->c:Ljava/lang/Object;
 
     if-eqz v2, :cond_5a
 
-    .line 698
+    .line 707
     iget-object v2, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->c:Ljava/lang/Object;
 
     iget-object v3, p1, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->c:Ljava/lang/Object;
@@ -225,10 +225,10 @@
 
     move v0, v1
 
-    .line 699
+    .line 708
     goto :goto_4
 
-    .line 701
+    .line 710
     :cond_5a
     iget-object v2, p1, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->c:Ljava/lang/Object;
 
@@ -236,7 +236,7 @@
 
     move v0, v1
 
-    .line 702
+    .line 711
     goto :goto_4
 .end method
 
@@ -244,24 +244,24 @@
     .registers 3
 
     .prologue
-    .line 710
+    .line 719
     iget v0, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->a:I
 
-    .line 711
+    .line 720
     mul-int/lit8 v0, v0, 0x1f
 
     iget v1, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->b:I
 
     add-int/2addr v0, v1
 
-    .line 712
+    .line 721
     mul-int/lit8 v0, v0, 0x1f
 
     iget v1, p0, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->d:I
 
     add-int/2addr v0, v1
 
-    .line 713
+    .line 722
     return v0
 .end method
 
@@ -269,7 +269,7 @@
     .registers 3
 
     .prologue
-    .line 666
+    .line 675
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -292,6 +292,7 @@
 
     move-result-object v0
 
+    .line 676
     invoke-virtual {p0}, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->a()Ljava/lang/String;
 
     move-result-object v1

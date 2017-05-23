@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 92
+    .line 94
     iput-object p1, p0, Landroid/support/v4/app/FragmentActivity$1;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -32,20 +32,20 @@
     .registers 4
 
     .prologue
-    .line 95
+    .line 97
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_24
 
-    .line 106
+    .line 108
     invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
 
-    .line 108
+    .line 110
     :cond_8
     :goto_8
     return-void
 
-    .line 97
+    .line 99
     :pswitch_9
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$1;->a:Landroid/support/v4/app/FragmentActivity;
 
@@ -53,7 +53,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 98
+    .line 100
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$1;->a:Landroid/support/v4/app/FragmentActivity;
 
     const/4 v1, 0x0
@@ -62,13 +62,13 @@
 
     goto :goto_8
 
-    .line 102
+    .line 104
     :pswitch_16
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$1;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->onResumeFragments()V
 
-    .line 103
+    .line 105
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$1;->a:Landroid/support/v4/app/FragmentActivity;
 
     iget-object v0, v0, Landroid/support/v4/app/FragmentActivity;->mFragments:Landroid/support/v4/app/FragmentController;
@@ -77,7 +77,7 @@
 
     goto :goto_8
 
-    .line 95
+    .line 97
     nop
 
     :pswitch_data_24

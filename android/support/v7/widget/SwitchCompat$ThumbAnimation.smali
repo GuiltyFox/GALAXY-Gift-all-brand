@@ -14,37 +14,27 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/support/v7/widget/SwitchCompat;FF)V
+.method constructor <init>(Landroid/support/v7/widget/SwitchCompat;FF)V
     .registers 5
 
     .prologue
-    .line 1427
+    .line 1428
     iput-object p1, p0, Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;->d:Landroid/support/v7/widget/SwitchCompat;
 
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
 
-    .line 1428
+    .line 1429
     iput p2, p0, Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;->a:F
 
-    .line 1429
+    .line 1430
     iput p3, p0, Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;->b:F
 
-    .line 1430
+    .line 1431
     sub-float v0, p3, p2
 
     iput v0, p0, Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;->c:F
 
-    .line 1431
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v7/widget/SwitchCompat;FFLandroid/support/v7/widget/SwitchCompat$1;)V
-    .registers 5
-
-    .prologue
-    .line 1422
-    invoke-direct {p0, p1, p2, p3}, Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;-><init>(Landroid/support/v7/widget/SwitchCompat;FF)V
-
+    .line 1432
     return-void
 .end method
 
@@ -54,7 +44,7 @@
     .registers 6
 
     .prologue
-    .line 1435
+    .line 1436
     iget-object v0, p0, Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;->d:Landroid/support/v7/widget/SwitchCompat;
 
     iget v1, p0, Landroid/support/v7/widget/SwitchCompat$ThumbAnimation;->a:F
@@ -65,9 +55,8 @@
 
     add-float/2addr v1, v2
 
-    # invokes: Landroid/support/v7/widget/SwitchCompat;->setThumbPosition(F)V
-    invoke-static {v0, v1}, Landroid/support/v7/widget/SwitchCompat;->access$200(Landroid/support/v7/widget/SwitchCompat;F)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/SwitchCompat;->setThumbPosition(F)V
 
-    .line 1436
+    .line 1437
     return-void
 .end method

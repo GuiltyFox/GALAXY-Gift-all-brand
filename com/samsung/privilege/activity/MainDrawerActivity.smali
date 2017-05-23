@@ -29,7 +29,7 @@
 
     .prologue
     .line 105
-    const v0, 0x7f09043a
+    const v0, 0x7f09023e
 
     const/4 v1, 0x0
 
@@ -95,7 +95,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/ActionBarActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 27
-    const v0, 0x7f040039
+    const v0, 0x7f040034
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/MainDrawerActivity;->setContentView(I)V
 
@@ -130,7 +130,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->a:[Ljava/lang/String;
 
     .line 32
-    const v0, 0x7f100185
+    const v0, 0x7f100170
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/MainDrawerActivity;->findViewById(I)Landroid/view/View;
 
@@ -141,7 +141,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->b:Landroid/support/v4/widget/DrawerLayout;
 
     .line 33
-    const v0, 0x7f100187
+    const v0, 0x7f100172
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/MainDrawerActivity;->findViewById(I)Landroid/view/View;
 

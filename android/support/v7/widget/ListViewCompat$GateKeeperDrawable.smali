@@ -12,15 +12,15 @@
     .registers 3
 
     .prologue
-    .line 364
+    .line 368
     invoke-direct {p0, p1}, Landroid/support/v7/graphics/drawable/DrawableWrapper;-><init>(Landroid/graphics/drawable/Drawable;)V
 
-    .line 365
+    .line 369
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
-    .line 366
+    .line 370
     return-void
 .end method
 
@@ -30,10 +30,10 @@
     .registers 2
 
     .prologue
-    .line 369
+    .line 373
     iput-boolean p1, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
-    .line 370
+    .line 374
     return-void
 .end method
 
@@ -41,15 +41,15 @@
     .registers 3
 
     .prologue
-    .line 382
+    .line 386
     iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
     if-eqz v0, :cond_7
 
-    .line 383
+    .line 387
     invoke-super {p0, p1}, Landroid/support/v7/graphics/drawable/DrawableWrapper;->draw(Landroid/graphics/Canvas;)V
 
-    .line 385
+    .line 389
     :cond_7
     return-void
 .end method
@@ -58,15 +58,15 @@
     .registers 4
 
     .prologue
-    .line 389
+    .line 393
     iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
     if-eqz v0, :cond_7
 
-    .line 390
+    .line 394
     invoke-super {p0, p1, p2}, Landroid/support/v7/graphics/drawable/DrawableWrapper;->setHotspot(FF)V
 
-    .line 392
+    .line 396
     :cond_7
     return-void
 .end method
@@ -75,15 +75,15 @@
     .registers 6
 
     .prologue
-    .line 396
+    .line 400
     iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
     if-eqz v0, :cond_7
 
-    .line 397
+    .line 401
     invoke-super {p0, p1, p2, p3, p4}, Landroid/support/v7/graphics/drawable/DrawableWrapper;->setHotspotBounds(IIII)V
 
-    .line 399
+    .line 403
     :cond_7
     return-void
 .end method
@@ -92,17 +92,17 @@
     .registers 3
 
     .prologue
-    .line 374
+    .line 378
     iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
     if-eqz v0, :cond_9
 
-    .line 375
+    .line 379
     invoke-super {p0, p1}, Landroid/support/v7/graphics/drawable/DrawableWrapper;->setState([I)Z
 
     move-result v0
 
-    .line 377
+    .line 381
     :goto_8
     return v0
 
@@ -116,17 +116,17 @@
     .registers 4
 
     .prologue
-    .line 403
+    .line 407
     iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
     if-eqz v0, :cond_9
 
-    .line 404
+    .line 408
     invoke-super {p0, p1, p2}, Landroid/support/v7/graphics/drawable/DrawableWrapper;->setVisible(ZZ)Z
 
     move-result v0
 
-    .line 406
+    .line 410
     :goto_8
     return v0
 

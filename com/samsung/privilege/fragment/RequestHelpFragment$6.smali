@@ -66,7 +66,7 @@
 
     const/16 v1, 0x2329
 
-    invoke-static {v0, v1}, Lpl/aprilapps/easyphotopicker/EasyImage;->a(Landroid/app/Activity;I)V
+    invoke-static {v0, v1}, Lpl/aprilapps/easyphotopicker/EasyImage;->b(Landroid/app/Activity;I)V
 
     .line 334
     :cond_18
@@ -151,7 +151,7 @@
 
     const/16 v1, 0x1f41
 
-    invoke-static {v0, v1}, Lpl/aprilapps/easyphotopicker/EasyImage;->openGallery(Landroid/app/Activity;I)V
+    invoke-static {v0, v1}, Lpl/aprilapps/easyphotopicker/EasyImage;->a(Landroid/app/Activity;I)V
 
     .line 316
     :cond_17
@@ -211,7 +211,7 @@
 
     check-cast v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->I:Lcom/tbruyelle/rxpermissions/RxPermissions;
+    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->J:Lcom/tbruyelle/rxpermissions/RxPermissions;
 
     new-array v1, v4, [Ljava/lang/String;
 
@@ -240,7 +240,7 @@
 
     check-cast v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->I:Lcom/tbruyelle/rxpermissions/RxPermissions;
+    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->J:Lcom/tbruyelle/rxpermissions/RxPermissions;
 
     const/4 v1, 0x2
 

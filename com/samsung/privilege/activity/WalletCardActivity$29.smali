@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 2650
+    .line 2648
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$29;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$29;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 5
 
     .prologue
-    .line 2654
+    .line 2652
     :try_start_0
     new-instance v0, Lorg/json/JSONArray;
 
@@ -51,7 +51,7 @@
 
     move-result-object v0
 
-    .line 2656
+    .line 2654
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$29;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->r(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;
@@ -60,7 +60,7 @@
 
     if-eqz v1, :cond_44
 
-    .line 2657
+    .line 2655
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$29;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->r(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;
@@ -71,7 +71,7 @@
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    .line 2658
+    .line 2656
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$29;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->r(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;
@@ -80,7 +80,7 @@
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->a(Ljava/util/List;)V
 
-    .line 2659
+    .line 2657
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$29;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->r(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;
@@ -91,11 +91,11 @@
     :try_end_30
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_30} :catch_60
 
-    .line 2668
+    .line 2666
     :goto_30
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$29;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v1, 0x7f100205
+    const v1, 0x7f1001f0
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->findViewById(I)Landroid/view/View;
 
@@ -109,10 +109,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 2679
+    .line 2677
     return-void
 
-    .line 2661
+    .line 2659
     :cond_44
     :try_start_44
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$29;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -125,7 +125,7 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;)Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;
 
-    .line 2662
+    .line 2660
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$29;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->s(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/support/v7/widget/RecyclerView;
@@ -144,7 +144,7 @@
 
     goto :goto_30
 
-    .line 2664
+    .line 2662
     :catch_60
     move-exception v0
 

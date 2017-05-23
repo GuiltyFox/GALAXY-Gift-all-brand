@@ -32,15 +32,17 @@
 
 .field m:F
 
-.field private n:Z
+.field private n:Landroid/content/res/ColorStateList;
 
-.field private final o:I
+.field private o:Z
 
 .field private final p:I
 
-.field private q:Z
+.field private final q:I
 
 .field private r:Z
+
+.field private s:Z
 
 
 # direct methods
@@ -48,7 +50,7 @@
     .registers 2
 
     .prologue
-    .line 37
+    .line 40
     const-wide v0, 0x4046800000000000L    # 45.0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->toRadians(D)D
@@ -64,7 +66,7 @@
     return-void
 .end method
 
-.method constructor <init>(Landroid/content/res/Resources;IFFF)V
+.method constructor <init>(Landroid/content/res/Resources;Landroid/content/res/ColorStateList;FFF)V
     .registers 9
 
     .prologue
@@ -74,29 +76,20 @@
 
     const/4 v2, 0x0
 
-    .line 89
+    .line 94
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 75
-    iput-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Z
-
-    .line 81
-    iput-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->q:Z
+    .line 80
+    iput-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->o:Z
 
     .line 86
-    iput-boolean v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->r:Z
-
-    .line 90
-    sget v0, Landroid/support/v7/cardview/R$color;->cardview_shadow_start_color:I
-
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v0
-
-    iput v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->o:I
+    iput-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->r:Z
 
     .line 91
-    sget v0, Landroid/support/v7/cardview/R$color;->cardview_shadow_end_color:I
+    iput-boolean v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->s:Z
+
+    .line 95
+    sget v0, Landroid/support/v7/cardview/R$color;->cardview_shadow_start_color:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -104,7 +97,16 @@
 
     iput v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->p:I
 
-    .line 92
+    .line 96
+    sget v0, Landroid/support/v7/cardview/R$color;->cardview_shadow_end_color:I
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v0
+
+    iput v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->q:I
+
+    .line 97
     sget v0, Landroid/support/v7/cardview/R$dimen;->cardview_compat_inset_shadow:I
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -113,33 +115,31 @@
 
     iput v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->b:I
 
-    .line 93
+    .line 98
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->d:Landroid/graphics/Paint;
 
-    .line 94
-    iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->d:Landroid/graphics/Paint;
+    .line 99
+    invoke-direct {p0, p2}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->b(Landroid/content/res/ColorStateList;)V
 
-    invoke-virtual {v0, p2}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 95
+    .line 100
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->e:Landroid/graphics/Paint;
 
-    .line 96
+    .line 101
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->e:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 97
+    .line 102
     const/high16 v0, 0x3f000000    # 0.5f
 
     add-float/2addr v0, p3
@@ -150,14 +150,14 @@
 
     iput v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
 
-    .line 98
+    .line 103
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
 
-    .line 99
+    .line 104
     new-instance v0, Landroid/graphics/Paint;
 
     iget-object v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->e:Landroid/graphics/Paint;
@@ -166,15 +166,15 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->f:Landroid/graphics/Paint;
 
-    .line 100
+    .line 105
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->f:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 101
+    .line 106
     invoke-virtual {p0, p4, p5}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->a(FF)V
 
-    .line 102
+    .line 107
     return-void
 .end method
 
@@ -184,10 +184,10 @@
     .prologue
     const/high16 v0, 0x3fc00000    # 1.5f
 
-    .line 173
+    .line 183
     if-eqz p2, :cond_10
 
-    .line 174
+    .line 184
     mul-float/2addr v0, p0
 
     float-to-double v0, v0
@@ -206,7 +206,7 @@
 
     double-to-float v0, v0
 
-    .line 176
+    .line 186
     :goto_f
     return v0
 
@@ -228,7 +228,7 @@
 
     const/high16 v10, 0x40000000    # 2.0f
 
-    .line 226
+    .line 253
     iget v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
 
     neg-float v2, v2
@@ -237,7 +237,7 @@
 
     sub-float/2addr v2, v4
 
-    .line 227
+    .line 254
     iget v4, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
 
     iget v5, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->b:I
@@ -252,7 +252,7 @@
 
     add-float v8, v4, v5
 
-    .line 228
+    .line 255
     iget-object v4, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->width()F
@@ -269,7 +269,7 @@
 
     move v6, v0
 
-    .line 229
+    .line 256
     :goto_24
     iget-object v4, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
 
@@ -287,13 +287,13 @@
 
     move v7, v0
 
-    .line 231
+    .line 258
     :goto_32
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v9
 
-    .line 232
+    .line 259
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->left:F
@@ -308,19 +308,20 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 233
+    .line 260
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
     iget-object v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->e:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 234
+    .line 261
     if-eqz v6, :cond_5f
 
-    .line 235
+    .line 262
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
 
+    .line 263
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
 
     move-result v0
@@ -337,18 +338,19 @@
 
     move-object v0, p1
 
+    .line 262
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 239
+    .line 266
     :cond_5f
     invoke-virtual {p1, v9}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 241
+    .line 268
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v9
 
-    .line 242
+    .line 269
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->right:F
@@ -363,24 +365,25 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 243
+    .line 270
     const/high16 v0, 0x43340000    # 180.0f
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
-    .line 244
+    .line 271
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
     iget-object v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->e:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 245
+    .line 272
     if-eqz v6, :cond_97
 
-    .line 246
+    .line 273
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
 
+    .line 274
     invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
 
     move-result v0
@@ -401,18 +404,19 @@
 
     move-object v0, p1
 
+    .line 273
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 250
+    .line 277
     :cond_97
     invoke-virtual {p1, v9}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 252
+    .line 279
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v6
 
-    .line 253
+    .line 280
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->left:F
@@ -427,24 +431,25 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 254
+    .line 281
     const/high16 v0, 0x43870000    # 270.0f
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
-    .line 255
+    .line 282
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
     iget-object v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->e:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 256
+    .line 283
     if-eqz v7, :cond_cc
 
-    .line 257
+    .line 284
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
 
+    .line 285
     invoke-virtual {v0}, Landroid/graphics/RectF;->height()F
 
     move-result v0
@@ -461,18 +466,19 @@
 
     move-object v0, p1
 
+    .line 284
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 260
+    .line 287
     :cond_cc
     invoke-virtual {p1, v6}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 262
+    .line 289
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v6
 
-    .line 263
+    .line 290
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->right:F
@@ -487,24 +493,25 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 264
+    .line 291
     const/high16 v0, 0x42b40000    # 90.0f
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
-    .line 265
+    .line 292
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
     iget-object v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->e:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 266
+    .line 293
     if-eqz v7, :cond_101
 
-    .line 267
+    .line 294
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
 
+    .line 295
     invoke-virtual {v0}, Landroid/graphics/RectF;->height()F
 
     move-result v0
@@ -521,25 +528,26 @@
 
     move-object v0, p1
 
+    .line 294
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 270
+    .line 297
     :cond_101
     invoke-virtual {p1, v6}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 271
+    .line 298
     return-void
 
     :cond_105
     move v6, v3
 
-    .line 228
+    .line 255
     goto/16 :goto_24
 
     :cond_108
     move v7, v3
 
-    .line 229
+    .line 256
     goto/16 :goto_32
 .end method
 
@@ -547,10 +555,10 @@
     .registers 9
 
     .prologue
-    .line 182
+    .line 192
     if-eqz p2, :cond_c
 
-    .line 183
+    .line 193
     float-to-double v0, p0
 
     const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
@@ -567,23 +575,64 @@
 
     double-to-float p0, v0
 
-    .line 185
+    .line 195
     :cond_c
     return p0
+.end method
+
+.method private b(Landroid/content/res/ColorStateList;)V
+    .registers 6
+
+    .prologue
+    .line 110
+    if-nez p1, :cond_7
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object p1
+
+    :cond_7
+    iput-object p1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Landroid/content/res/ColorStateList;
+
+    .line 111
+    iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->d:Landroid/graphics/Paint;
+
+    iget-object v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {p0}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->getState()[I
+
+    move-result-object v2
+
+    iget-object v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v3}, Landroid/content/res/ColorStateList;->getDefaultColor()I
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 112
+    return-void
 .end method
 
 .method private b(Landroid/graphics/Rect;)V
     .registers 8
 
     .prologue
-    .line 311
+    .line 338
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->k:F
 
     const/high16 v1, 0x3fc00000    # 1.5f
 
     mul-float/2addr v0, v1
 
-    .line 312
+    .line 339
     iget-object v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
 
     iget v2, p1, Landroid/graphics/Rect;->left:I
@@ -616,10 +665,10 @@
 
     invoke-virtual {v1, v2, v3, v4, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 314
-    invoke-direct {p0}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->f()V
+    .line 341
+    invoke-direct {p0}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g()V
 
-    .line 315
+    .line 342
     return-void
 .end method
 
@@ -627,29 +676,29 @@
     .registers 5
 
     .prologue
-    .line 108
+    .line 118
     const/high16 v0, 0x3f000000    # 0.5f
 
     add-float/2addr v0, p1
 
     float-to-int v0, v0
 
-    .line 109
+    .line 119
     rem-int/lit8 v1, v0, 0x2
 
     const/4 v2, 0x1
 
     if-ne v1, v2, :cond_b
 
-    .line 110
+    .line 120
     add-int/lit8 v0, v0, -0x1
 
-    .line 112
+    .line 122
     :cond_b
     return v0
 .end method
 
-.method private f()V
+.method private g()V
     .registers 14
 
     .prologue
@@ -663,7 +712,7 @@
 
     const/4 v1, 0x0
 
-    .line 274
+    .line 301
     new-instance v0, Landroid/graphics/RectF;
 
     iget v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
@@ -680,12 +729,12 @@
 
     invoke-direct {v0, v2, v3, v4, v5}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 275
+    .line 302
     new-instance v2, Landroid/graphics/RectF;
 
     invoke-direct {v2, v0}, Landroid/graphics/RectF;-><init>(Landroid/graphics/RectF;)V
 
-    .line 276
+    .line 303
     iget v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->l:F
 
     neg-float v3, v3
@@ -696,19 +745,19 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 278
+    .line 305
     iget-object v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
     if-nez v3, :cond_c1
 
-    .line 279
+    .line 306
     new-instance v3, Landroid/graphics/Path;
 
     invoke-direct {v3}, Landroid/graphics/Path;-><init>()V
 
     iput-object v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
-    .line 283
+    .line 310
     :goto_2d
     iget-object v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
@@ -716,7 +765,7 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
 
-    .line 284
+    .line 311
     iget-object v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
     iget v4, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
@@ -725,7 +774,7 @@
 
     invoke-virtual {v3, v4, v1}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 285
+    .line 312
     iget-object v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
     iget v4, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->l:F
@@ -734,7 +783,7 @@
 
     invoke-virtual {v3, v4, v1}, Landroid/graphics/Path;->rLineTo(FF)V
 
-    .line 287
+    .line 314
     iget-object v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
     const/high16 v4, 0x43340000    # 180.0f
@@ -743,7 +792,7 @@
 
     invoke-virtual {v3, v2, v4, v5, v9}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    .line 289
+    .line 316
     iget-object v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
     const/high16 v3, 0x43870000    # 270.0f
@@ -752,12 +801,12 @@
 
     invoke-virtual {v2, v0, v3, v4, v9}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    .line 290
+    .line 317
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->close()V
 
-    .line 291
+    .line 318
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
 
     iget v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
@@ -768,7 +817,7 @@
 
     div-float v2, v0, v2
 
-    .line 292
+    .line 319
     iget-object v7, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->e:Landroid/graphics/Paint;
 
     new-instance v0, Landroid/graphics/RadialGradient;
@@ -781,15 +830,15 @@
 
     new-array v4, v10, [I
 
-    iget v5, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->o:I
+    iget v5, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->p:I
 
     aput v5, v4, v9
 
-    iget v5, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->o:I
+    iget v5, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->p:I
 
     aput v5, v4, v11
 
-    iget v5, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->p:I
+    iget v5, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->q:I
 
     aput v5, v4, v12
 
@@ -811,7 +860,7 @@
 
     invoke-virtual {v7, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 300
+    .line 327
     iget-object v8, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->f:Landroid/graphics/Paint;
 
     new-instance v0, Landroid/graphics/LinearGradient;
@@ -834,15 +883,15 @@
 
     new-array v5, v10, [I
 
-    iget v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->o:I
+    iget v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->p:I
 
     aput v3, v5, v9
 
-    iget v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->o:I
+    iget v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->p:I
 
     aput v3, v5, v11
 
-    iget v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->p:I
+    iget v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->q:I
 
     aput v3, v5, v12
 
@@ -858,15 +907,15 @@
 
     invoke-virtual {v8, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 304
+    .line 331
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->f:Landroid/graphics/Paint;
 
     invoke-virtual {v0, v9}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 305
+    .line 332
     return-void
 
-    .line 281
+    .line 308
     :cond_c1
     iget-object v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->i:Landroid/graphics/Path;
 
@@ -874,7 +923,7 @@
 
     goto/16 :goto_2d
 
-    .line 300
+    .line 327
     :array_c8
     .array-data 4
         0x0
@@ -889,7 +938,7 @@
     .registers 2
 
     .prologue
-    .line 318
+    .line 345
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
 
     return v0
@@ -899,14 +948,14 @@
     .registers 5
 
     .prologue
-    .line 200
+    .line 227
     const/4 v0, 0x0
 
     cmpg-float v0, p1, v0
 
     if-gez v0, :cond_26
 
-    .line 201
+    .line 228
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -937,7 +986,7 @@
 
     throw v0
 
-    .line 204
+    .line 231
     :cond_26
     const/high16 v0, 0x3f000000    # 0.5f
 
@@ -947,27 +996,27 @@
 
     int-to-float v0, v0
 
-    .line 205
+    .line 232
     iget v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
 
     cmpl-float v1, v1, v0
 
     if-nez v1, :cond_32
 
-    .line 211
+    .line 238
     :goto_31
     return-void
 
-    .line 208
+    .line 235
     :cond_32
     iput v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
 
-    .line 209
+    .line 236
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->o:Z
 
-    .line 210
+    .line 237
     invoke-virtual {p0}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->invalidateSelf()V
 
     goto :goto_31
@@ -981,12 +1030,12 @@
 
     const/4 v1, 0x0
 
-    .line 134
+    .line 144
     cmpg-float v0, p1, v1
 
     if-gez v0, :cond_27
 
-    .line 135
+    .line 145
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1017,13 +1066,13 @@
 
     throw v0
 
-    .line 138
+    .line 148
     :cond_27
     cmpg-float v0, p2, v1
 
     if-gez v0, :cond_4c
 
-    .line 139
+    .line 149
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1054,7 +1103,7 @@
 
     throw v0
 
-    .line 142
+    .line 152
     :cond_4c
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->d(F)I
 
@@ -1062,30 +1111,30 @@
 
     int-to-float v0, v0
 
-    .line 143
+    .line 153
     invoke-direct {p0, p2}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->d(F)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    .line 144
+    .line 154
     cmpl-float v2, v0, v1
 
     if-lez v2, :cond_61
 
-    .line 146
-    iget-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->r:Z
+    .line 156
+    iget-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->s:Z
 
     if-nez v0, :cond_60
 
-    .line 147
-    iput-boolean v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->r:Z
+    .line 157
+    iput-boolean v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->s:Z
 
     :cond_60
     move v0, v1
 
-    .line 150
+    .line 160
     :cond_61
     iget v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->m:F
 
@@ -1099,18 +1148,18 @@
 
     if-nez v2, :cond_6e
 
-    .line 159
+    .line 169
     :goto_6d
     return-void
 
-    .line 153
+    .line 163
     :cond_6e
     iput v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->m:F
 
-    .line 154
+    .line 164
     iput v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->k:F
 
-    .line 155
+    .line 165
     const/high16 v2, 0x3fc00000    # 1.5f
 
     mul-float/2addr v0, v2
@@ -1131,7 +1180,7 @@
 
     iput v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->l:F
 
-    .line 156
+    .line 166
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->b:I
 
     int-to-float v0, v0
@@ -1140,28 +1189,26 @@
 
     iput v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->j:F
 
-    .line 157
-    iput-boolean v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Z
+    .line 167
+    iput-boolean v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->o:Z
 
-    .line 158
+    .line 168
     invoke-virtual {p0}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->invalidateSelf()V
 
     goto :goto_6d
 .end method
 
-.method public a(I)V
-    .registers 3
+.method a(Landroid/content/res/ColorStateList;)V
+    .registers 2
 
     .prologue
-    .line 354
-    iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->d:Landroid/graphics/Paint;
+    .line 381
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->b(Landroid/content/res/ColorStateList;)V
 
-    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 355
+    .line 382
     invoke-virtual {p0}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->invalidateSelf()V
 
-    .line 356
+    .line 383
     return-void
 .end method
 
@@ -1169,10 +1216,10 @@
     .registers 2
 
     .prologue
-    .line 322
+    .line 349
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 323
+    .line 350
     return-void
 .end method
 
@@ -1180,13 +1227,13 @@
     .registers 2
 
     .prologue
-    .line 116
-    iput-boolean p1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->q:Z
+    .line 126
+    iput-boolean p1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->r:Z
 
-    .line 117
+    .line 127
     invoke-virtual {p0}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->invalidateSelf()V
 
-    .line 118
+    .line 128
     return-void
 .end method
 
@@ -1194,7 +1241,7 @@
     .registers 2
 
     .prologue
-    .line 334
+    .line 361
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->m:F
 
     return v0
@@ -1204,12 +1251,12 @@
     .registers 3
 
     .prologue
-    .line 326
+    .line 353
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->k:F
 
     invoke-virtual {p0, p1, v0}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->a(FF)V
 
-    .line 327
+    .line 354
     return-void
 .end method
 
@@ -1217,7 +1264,7 @@
     .registers 2
 
     .prologue
-    .line 338
+    .line 365
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->k:F
 
     return v0
@@ -1227,12 +1274,12 @@
     .registers 3
 
     .prologue
-    .line 330
+    .line 357
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->m:F
 
     invoke-virtual {p0, v0, p1}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->a(FF)V
 
-    .line 331
+    .line 358
     return-void
 .end method
 
@@ -1242,7 +1289,7 @@
     .prologue
     const/high16 v3, 0x40000000    # 2.0f
 
-    .line 342
+    .line 369
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->k:F
 
     iget v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
@@ -1259,13 +1306,14 @@
 
     add-float/2addr v1, v2
 
+    .line 370
     invoke-static {v0, v1}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
 
     mul-float/2addr v0, v3
 
-    .line 344
+    .line 371
     iget v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->k:F
 
     iget v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->b:I
@@ -1289,24 +1337,24 @@
 
     const/4 v1, 0x0
 
-    .line 215
-    iget-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Z
+    .line 242
+    iget-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->o:Z
 
     if-eqz v0, :cond_11
 
-    .line 216
+    .line 243
     invoke-virtual {p0}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->b(Landroid/graphics/Rect;)V
 
-    .line 217
+    .line 244
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->o:Z
 
-    .line 219
+    .line 246
     :cond_11
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->m:F
 
@@ -1314,10 +1362,10 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 220
+    .line 247
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->a(Landroid/graphics/Canvas;)V
 
-    .line 221
+    .line 248
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->m:F
 
     neg-float v0, v0
@@ -1326,7 +1374,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 222
+    .line 249
     sget-object v0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->c:Landroid/support/v7/widget/RoundRectDrawableWithShadow$RoundRectHelper;
 
     iget-object v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->g:Landroid/graphics/RectF;
@@ -1337,7 +1385,7 @@
 
     invoke-interface {v0, p1, v1, v2, v3}, Landroid/support/v7/widget/RoundRectDrawableWithShadow$RoundRectHelper;->a(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/graphics/Paint;)V
 
-    .line 223
+    .line 250
     return-void
 .end method
 
@@ -1349,7 +1397,7 @@
 
     const/high16 v3, 0x40000000    # 2.0f
 
-    .line 348
+    .line 375
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->k:F
 
     iget v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
@@ -1374,7 +1422,7 @@
 
     mul-float/2addr v0, v3
 
-    .line 350
+    .line 377
     iget v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->k:F
 
     mul-float/2addr v1, v4
@@ -1392,11 +1440,21 @@
     return v0
 .end method
 
+.method f()Landroid/content/res/ColorStateList;
+    .registers 2
+
+    .prologue
+    .line 386
+    iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Landroid/content/res/ColorStateList;
+
+    return-object v0
+.end method
+
 .method public getOpacity()I
     .registers 2
 
     .prologue
-    .line 196
+    .line 223
     const/4 v0, -0x3
 
     return v0
@@ -1406,12 +1464,12 @@
     .registers 6
 
     .prologue
-    .line 163
+    .line 173
     iget v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->k:F
 
     iget v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
 
-    iget-boolean v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->q:Z
+    iget-boolean v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->r:Z
 
     invoke-static {v0, v1, v2}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->a(FFZ)F
 
@@ -1425,12 +1483,12 @@
 
     double-to-int v0, v0
 
-    .line 165
+    .line 175
     iget v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->k:F
 
     iget v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->h:F
 
-    iget-boolean v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->q:Z
+    iget-boolean v3, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->r:Z
 
     invoke-static {v1, v2, v3}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->b(FFZ)F
 
@@ -1444,51 +1502,137 @@
 
     double-to-int v1, v2
 
-    .line 167
+    .line 177
     invoke-virtual {p1, v1, v0, v1, v0}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 168
+    .line 178
     const/4 v0, 0x1
 
     return v0
+.end method
+
+.method public isStateful()Z
+    .registers 2
+
+    .prologue
+    .line 213
+    iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Landroid/content/res/ColorStateList;
+
+    if-eqz v0, :cond_c
+
+    iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->isStateful()Z
+
+    move-result v0
+
+    if-nez v0, :cond_12
+
+    :cond_c
+    invoke-super {p0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_14
+
+    :cond_12
+    const/4 v0, 0x1
+
+    :goto_13
+    return v0
+
+    :cond_14
+    const/4 v0, 0x0
+
+    goto :goto_13
 .end method
 
 .method protected onBoundsChange(Landroid/graphics/Rect;)V
     .registers 3
 
     .prologue
-    .line 129
+    .line 139
     invoke-super {p0, p1}, Landroid/graphics/drawable/Drawable;->onBoundsChange(Landroid/graphics/Rect;)V
 
-    .line 130
+    .line 140
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->o:Z
 
-    .line 131
+    .line 141
     return-void
+.end method
+
+.method protected onStateChange([I)Z
+    .registers 5
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 201
+    iget-object v1, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Landroid/content/res/ColorStateList;
+
+    iget-object v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->n:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v2}, Landroid/content/res/ColorStateList;->getDefaultColor()I
+
+    move-result v2
+
+    invoke-virtual {v1, p1, v2}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+
+    move-result v1
+
+    .line 202
+    iget-object v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->d:Landroid/graphics/Paint;
+
+    invoke-virtual {v2}, Landroid/graphics/Paint;->getColor()I
+
+    move-result v2
+
+    if-ne v2, v1, :cond_17
+
+    .line 203
+    const/4 v0, 0x0
+
+    .line 208
+    :goto_16
+    return v0
+
+    .line 205
+    :cond_17
+    iget-object v2, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->d:Landroid/graphics/Paint;
+
+    invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 206
+    iput-boolean v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->o:Z
+
+    .line 207
+    invoke-virtual {p0}, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->invalidateSelf()V
+
+    goto :goto_16
 .end method
 
 .method public setAlpha(I)V
     .registers 3
 
     .prologue
-    .line 122
+    .line 132
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->d:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 123
+    .line 133
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->e:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 124
+    .line 134
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->f:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 125
+    .line 135
     return-void
 .end method
 
@@ -1496,11 +1640,11 @@
     .registers 3
 
     .prologue
-    .line 191
+    .line 218
     iget-object v0, p0, Landroid/support/v7/widget/RoundRectDrawableWithShadow;->d:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 192
+    .line 219
     return-void
 .end method

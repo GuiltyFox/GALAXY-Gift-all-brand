@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 329
+    .line 328
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,14 +35,14 @@
     .registers 4
 
     .prologue
-    .line 332
+    .line 331
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->c(Lcom/samsung/privilege/activity/WalletCardActivity;)V
 
-    .line 333
+    .line 332
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -53,6 +53,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Ljava/lang/String;Z)V
 
-    .line 334
+    .line 333
     return-void
 .end method

@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f1006c3
+    const v6, 0x7f1004bb
 
-    const v2, 0x7f1006c1
+    const v5, 0x7f1004ba
 
-    const v5, 0x7f1006c0
+    const v2, 0x7f1004b8
 
-    const v4, 0x7f10066e
+    const v4, 0x7f1004b7
 
-    const v3, 0x7f100446
+    const v3, 0x7f100465
 
     .line 11
     const-string/jumbo v0, "field \'recyclerView\'"
@@ -76,22 +76,18 @@
     iput-object v0, p2, Lcom/samsung/privilege/fragment/ReplyFragment;->recyclerView:Landroid/support/v7/widget/RecyclerView;
 
     .line 13
-    const v0, 0x7f1006c4
+    const-string/jumbo v0, "field \'imagePost\'"
 
-    const-string/jumbo v1, "field \'imagePost\'"
-
-    invoke-virtual {p1, p3, v0, v1}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p3, v6, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/View;
 
     .line 14
-    const v1, 0x7f1006c4
+    const-string/jumbo v1, "field \'imagePost\'"
 
-    const-string/jumbo v2, "field \'imagePost\'"
-
-    invoke-virtual {p1, v0, v1, v2}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v6, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -100,7 +96,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/fragment/ReplyFragment;->imagePost:Landroid/widget/ImageView;
 
     .line 15
-    const v0, 0x7f1006c5
+    const v0, 0x7f1004bc
 
     const-string/jumbo v1, "field \'contentCancel\'"
 
@@ -111,7 +107,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 16
-    const v1, 0x7f1006c5
+    const v1, 0x7f1004bc
 
     const-string/jumbo v2, "field \'contentCancel\'"
 
@@ -126,7 +122,7 @@
     .line 17
     const-string/jumbo v0, "field \'contentImagePost\'"
 
-    invoke-virtual {p1, p3, v6, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p3, v5, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -135,7 +131,7 @@
     .line 18
     const-string/jumbo v1, "field \'contentImagePost\'"
 
-    invoke-virtual {p1, v0, v6, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v5, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -144,7 +140,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/fragment/ReplyFragment;->contentImagePost:Landroid/widget/LinearLayout;
 
     .line 19
-    const v0, 0x7f1006c6
+    const v0, 0x7f1004bd
 
     const-string/jumbo v1, "field \'edtTextComment\'"
 
@@ -155,7 +151,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 20
-    const v1, 0x7f1006c6
+    const v1, 0x7f1004bd
 
     const-string/jumbo v2, "field \'edtTextComment\'"
 
@@ -168,18 +164,22 @@
     iput-object v0, p2, Lcom/samsung/privilege/fragment/ReplyFragment;->edtTextComment:Landroid/widget/EditText;
 
     .line 21
-    const-string/jumbo v0, "field \'btnPost\' and method \'onClickPost\'"
+    const v0, 0x7f1004be
 
-    invoke-virtual {p1, p3, v3, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    const-string/jumbo v1, "field \'btnPost\' and method \'onClickPost\'"
+
+    invoke-virtual {p1, p3, v0, v1}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/View;
 
     .line 22
-    const-string/jumbo v1, "field \'btnPost\'"
+    const v1, 0x7f1004be
 
-    invoke-virtual {p1, v0, v3, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    const-string/jumbo v2, "field \'btnPost\'"
+
+    invoke-virtual {p1, v0, v1, v2}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -197,7 +197,7 @@
     .line 31
     const-string/jumbo v0, "field \'contentPost\'"
 
-    invoke-virtual {p1, p3, v5, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p3, v4, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -206,7 +206,7 @@
     .line 32
     const-string/jumbo v1, "field \'contentPost\'"
 
-    invoke-virtual {p1, v0, v5, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v4, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -217,7 +217,7 @@
     .line 33
     const-string/jumbo v0, "field \'mSwipeRefreshLayout\'"
 
-    invoke-virtual {p1, p3, v4, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p3, v3, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -226,7 +226,7 @@
     .line 34
     const-string/jumbo v1, "field \'mSwipeRefreshLayout\'"
 
-    invoke-virtual {p1, v0, v4, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v3, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 

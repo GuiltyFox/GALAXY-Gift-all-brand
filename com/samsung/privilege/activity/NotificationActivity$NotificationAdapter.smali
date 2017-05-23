@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f04003f
+    const v1, 0x7f04003a
 
     const/4 v2, 0x0
 
@@ -196,7 +196,7 @@
     .line 287
     iget-object v0, p1, Lcom/samsung/privilege/activity/NotificationActivity$NotificationAdapter$NotificationViewHolder;->b:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f020078
+    const v1, 0x7f020079
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
@@ -208,7 +208,7 @@
     :cond_6c
     iget-object v0, p1, Lcom/samsung/privilege/activity/NotificationActivity$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
 
-    const v1, 0x7f0202ab
+    const v1, 0x7f020185
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -225,7 +225,7 @@
     :cond_7c
     iget-object v0, p1, Lcom/samsung/privilege/activity/NotificationActivity$NotificationAdapter$NotificationViewHolder;->b:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f020077
+    const v1, 0x7f020078
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 

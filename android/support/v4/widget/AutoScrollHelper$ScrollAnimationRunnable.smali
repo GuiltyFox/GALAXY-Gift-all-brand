@@ -11,25 +11,16 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/support/v4/widget/AutoScrollHelper;)V
+.method constructor <init>(Landroid/support/v4/widget/AutoScrollHelper;)V
     .registers 2
 
     .prologue
-    .line 684
+    .line 685
     iput-object p1, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v4/widget/AutoScrollHelper;Landroid/support/v4/widget/AutoScrollHelper$1;)V
-    .registers 3
-
-    .prologue
-    .line 684
-    invoke-direct {p0, p1}, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;-><init>(Landroid/support/v4/widget/AutoScrollHelper;)V
-
+    .line 686
     return-void
 .end method
 
@@ -41,121 +32,109 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 687
+    .line 690
     iget-object v0, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
 
-    invoke-static {v0}, Landroid/support/v4/widget/AutoScrollHelper;->a(Landroid/support/v4/widget/AutoScrollHelper;)Z
+    iget-boolean v0, v0, Landroid/support/v4/widget/AutoScrollHelper;->e:Z
 
-    move-result v0
+    if-nez v0, :cond_8
 
-    if-nez v0, :cond_a
-
-    .line 715
-    :goto_9
+    .line 718
+    :goto_7
     return-void
 
-    .line 691
-    :cond_a
+    .line 694
+    :cond_8
     iget-object v0, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
 
-    invoke-static {v0}, Landroid/support/v4/widget/AutoScrollHelper;->b(Landroid/support/v4/widget/AutoScrollHelper;)Z
+    iget-boolean v0, v0, Landroid/support/v4/widget/AutoScrollHelper;->c:Z
 
-    move-result v0
+    if-eqz v0, :cond_19
 
-    if-eqz v0, :cond_20
-
-    .line 692
+    .line 695
     iget-object v0, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
 
-    invoke-static {v0, v2}, Landroid/support/v4/widget/AutoScrollHelper;->a(Landroid/support/v4/widget/AutoScrollHelper;Z)Z
+    iput-boolean v2, v0, Landroid/support/v4/widget/AutoScrollHelper;->c:Z
 
-    .line 693
+    .line 696
     iget-object v0, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
 
-    invoke-static {v0}, Landroid/support/v4/widget/AutoScrollHelper;->c(Landroid/support/v4/widget/AutoScrollHelper;)Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v4/widget/AutoScrollHelper;->a:Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;->a()V
 
-    .line 696
-    :cond_20
+    .line 699
+    :cond_19
     iget-object v0, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
 
-    invoke-static {v0}, Landroid/support/v4/widget/AutoScrollHelper;->c(Landroid/support/v4/widget/AutoScrollHelper;)Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
+    iget-object v0, v0, Landroid/support/v4/widget/AutoScrollHelper;->a:Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;
 
-    move-result-object v0
-
-    .line 697
+    .line 700
     invoke-virtual {v0}, Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;->c()Z
 
     move-result v1
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_2b
 
     iget-object v1, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
 
-    invoke-static {v1}, Landroid/support/v4/widget/AutoScrollHelper;->d(Landroid/support/v4/widget/AutoScrollHelper;)Z
+    invoke-virtual {v1}, Landroid/support/v4/widget/AutoScrollHelper;->a()Z
 
     move-result v1
 
-    if-nez v1, :cond_3a
+    if-nez v1, :cond_30
 
-    .line 698
-    :cond_34
+    .line 701
+    :cond_2b
     iget-object v0, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
 
-    invoke-static {v0, v2}, Landroid/support/v4/widget/AutoScrollHelper;->b(Landroid/support/v4/widget/AutoScrollHelper;Z)Z
+    iput-boolean v2, v0, Landroid/support/v4/widget/AutoScrollHelper;->e:Z
 
-    goto :goto_9
+    goto :goto_7
 
-    .line 702
-    :cond_3a
+    .line 705
+    :cond_30
     iget-object v1, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
 
-    invoke-static {v1}, Landroid/support/v4/widget/AutoScrollHelper;->e(Landroid/support/v4/widget/AutoScrollHelper;)Z
+    iget-boolean v1, v1, Landroid/support/v4/widget/AutoScrollHelper;->d:Z
 
-    move-result v1
+    if-eqz v1, :cond_3f
 
-    if-eqz v1, :cond_4c
-
-    .line 703
+    .line 706
     iget-object v1, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
 
-    invoke-static {v1, v2}, Landroid/support/v4/widget/AutoScrollHelper;->c(Landroid/support/v4/widget/AutoScrollHelper;Z)Z
-
-    .line 704
-    iget-object v1, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
-
-    invoke-static {v1}, Landroid/support/v4/widget/AutoScrollHelper;->f(Landroid/support/v4/widget/AutoScrollHelper;)V
+    iput-boolean v2, v1, Landroid/support/v4/widget/AutoScrollHelper;->d:Z
 
     .line 707
-    :cond_4c
+    iget-object v1, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
+
+    invoke-virtual {v1}, Landroid/support/v4/widget/AutoScrollHelper;->b()V
+
+    .line 710
+    :cond_3f
     invoke-virtual {v0}, Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;->d()V
 
-    .line 709
+    .line 712
     invoke-virtual {v0}, Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;->g()I
 
     move-result v1
 
-    .line 710
+    .line 713
     invoke-virtual {v0}, Landroid/support/v4/widget/AutoScrollHelper$ClampedScroller;->h()I
 
     move-result v0
 
-    .line 711
+    .line 714
     iget-object v2, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
 
     invoke-virtual {v2, v1, v0}, Landroid/support/v4/widget/AutoScrollHelper;->a(II)V
 
-    .line 714
+    .line 717
     iget-object v0, p0, Landroid/support/v4/widget/AutoScrollHelper$ScrollAnimationRunnable;->a:Landroid/support/v4/widget/AutoScrollHelper;
 
-    invoke-static {v0}, Landroid/support/v4/widget/AutoScrollHelper;->g(Landroid/support/v4/widget/AutoScrollHelper;)Landroid/view/View;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v4/widget/AutoScrollHelper;->b:Landroid/view/View;
 
     invoke-static {v0, p0}, Landroid/support/v4/view/ViewCompat;->a(Landroid/view/View;Ljava/lang/Runnable;)V
 
-    goto :goto_9
+    goto :goto_7
 .end method

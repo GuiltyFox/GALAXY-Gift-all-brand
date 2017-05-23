@@ -4,33 +4,33 @@
 
 
 # instance fields
-.field private a:J
-
-.field private b:I
-
-.field private c:Z
-
-.field private d:Z
+.field private d:J
 
 .field private e:I
 
 .field private f:Z
 
-.field private g:D
+.field private g:Z
 
-.field private h:D
+.field private h:I
 
-.field private i:Landroid/os/Handler;
+.field private i:Z
 
-.field private j:Z
+.field private j:D
 
-.field private k:Z
+.field private k:D
 
-.field private l:F
+.field private l:Landroid/os/Handler;
 
-.field private m:F
+.field private m:Z
 
-.field private n:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
+.field private n:Z
+
+.field private o:F
+
+.field private p:F
+
+.field private q:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
 
 
 # direct methods
@@ -52,47 +52,47 @@
     .line 50
     const-wide/16 v0, 0x5dc
 
-    iput-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->a:J
+    iput-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->d:J
 
     .line 52
-    iput v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->b:I
+    iput v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->e:I
 
     .line 54
-    iput-boolean v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->c:Z
-
-    .line 56
-    iput-boolean v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->d:Z
-
-    .line 58
-    iput v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->e:I
-
-    .line 60
     iput-boolean v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->f:Z
 
+    .line 56
+    iput-boolean v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->g:Z
+
+    .line 58
+    iput v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h:I
+
+    .line 60
+    iput-boolean v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->i:Z
+
     .line 62
-    iput-wide v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->g:D
+    iput-wide v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j:D
 
     .line 64
-    iput-wide v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h:D
+    iput-wide v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->k:D
 
     .line 67
-    iput-boolean v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j:Z
+    iput-boolean v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->m:Z
 
     .line 68
-    iput-boolean v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->k:Z
+    iput-boolean v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->n:Z
 
     .line 69
-    iput v6, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->l:F
+    iput v6, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->o:F
 
-    iput v6, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->m:F
+    iput v6, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->p:F
 
     .line 70
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->n:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
+    iput-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->q:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
 
     .line 76
-    invoke-direct {p0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->k()V
+    invoke-direct {p0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j()V
 
     .line 77
     return-void
@@ -116,47 +116,47 @@
     .line 50
     const-wide/16 v0, 0x5dc
 
-    iput-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->a:J
+    iput-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->d:J
 
     .line 52
-    iput v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->b:I
+    iput v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->e:I
 
     .line 54
-    iput-boolean v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->c:Z
-
-    .line 56
-    iput-boolean v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->d:Z
-
-    .line 58
-    iput v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->e:I
-
-    .line 60
     iput-boolean v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->f:Z
 
+    .line 56
+    iput-boolean v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->g:Z
+
+    .line 58
+    iput v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h:I
+
+    .line 60
+    iput-boolean v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->i:Z
+
     .line 62
-    iput-wide v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->g:D
+    iput-wide v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j:D
 
     .line 64
-    iput-wide v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h:D
+    iput-wide v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->k:D
 
     .line 67
-    iput-boolean v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j:Z
+    iput-boolean v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->m:Z
 
     .line 68
-    iput-boolean v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->k:Z
+    iput-boolean v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->n:Z
 
     .line 69
-    iput v6, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->l:F
+    iput v6, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->o:F
 
-    iput v6, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->m:F
+    iput v6, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->p:F
 
     .line 70
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->n:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
+    iput-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->q:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
 
     .line 81
-    invoke-direct {p0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->k()V
+    invoke-direct {p0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j()V
 
     .line 82
     return-void
@@ -167,7 +167,7 @@
 
     .prologue
     .line 35
-    iget-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->g:D
+    iget-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j:D
 
     return-wide v0
 .end method
@@ -179,12 +179,12 @@
     const/4 v1, 0x0
 
     .line 131
-    iget-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->i:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->l:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
     .line 132
-    iget-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->i:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->l:Landroid/os/Handler;
 
     invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
@@ -207,7 +207,7 @@
 
     .prologue
     .line 35
-    iget-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->n:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
+    iget-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->q:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
 
     return-object v0
 .end method
@@ -217,7 +217,7 @@
 
     .prologue
     .line 35
-    iget-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h:D
+    iget-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->k:D
 
     return-wide v0
 .end method
@@ -227,12 +227,12 @@
 
     .prologue
     .line 35
-    iget-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->a:J
+    iget-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->d:J
 
     return-wide v0
 .end method
 
-.method private k()V
+.method private j()V
     .registers 2
 
     .prologue
@@ -241,16 +241,16 @@
 
     invoke-direct {v0, p0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager$MyHandler;-><init>(Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;)V
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->i:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->l:Landroid/os/Handler;
 
     .line 86
-    invoke-direct {p0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->l()V
+    invoke-direct {p0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->k()V
 
     .line 87
     return-void
 .end method
 
-.method private l()V
+.method private k()V
     .registers 6
 
     .prologue
@@ -272,7 +272,7 @@
     .line 142
     const-class v0, Landroid/support/v4/view/ViewPager;
 
-    const-string/jumbo v2, "d"
+    const-string/jumbo v2, "f"
 
     invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
@@ -300,10 +300,10 @@
 
     invoke-direct {v2, v3, v0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;-><init>(Landroid/content/Context;Landroid/view/animation/Interpolator;)V
 
-    iput-object v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->n:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
+    iput-object v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->q:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
 
     .line 146
-    iget-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->n:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
+    iget-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->q:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
 
     invoke-virtual {v1, p0, v0}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
     :try_end_31
@@ -341,31 +341,31 @@
     move-result v0
 
     .line 188
-    iget-boolean v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->d:Z
+    iget-boolean v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->g:Z
 
     if-eqz v2, :cond_16
 
     .line 189
     if-nez v0, :cond_5f
 
-    iget-boolean v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j:Z
+    iget-boolean v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->m:Z
 
     if-eqz v0, :cond_5f
 
     .line 190
-    iput-boolean v5, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->k:Z
+    iput-boolean v5, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->n:Z
 
     .line 191
-    invoke-virtual {p0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->i()V
+    invoke-virtual {p0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h()V
 
     .line 197
     :cond_16
     :goto_16
-    iget v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->e:I
+    iget v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h:I
 
     if-eq v0, v6, :cond_1e
 
-    iget v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->e:I
+    iget v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h:I
 
     if-ne v0, v5, :cond_84
 
@@ -375,7 +375,7 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->l:F
+    iput v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->o:F
 
     .line 199
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
@@ -385,9 +385,9 @@
     if-nez v0, :cond_2e
 
     .line 200
-    iget v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->l:F
+    iget v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->o:F
 
-    iput v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->m:F
+    iput v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->p:F
 
     .line 202
     :cond_2e
@@ -409,9 +409,9 @@
     :goto_39
     if-nez v2, :cond_43
 
-    iget v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->m:F
+    iget v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->p:F
 
-    iget v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->l:F
+    iget v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->o:F
 
     cmpg-float v3, v3, v4
 
@@ -422,9 +422,9 @@
 
     if-ne v2, v3, :cond_84
 
-    iget v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->m:F
+    iget v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->p:F
 
-    iget v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->l:F
+    iget v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->o:F
 
     cmpl-float v3, v3, v4
 
@@ -432,7 +432,7 @@
 
     .line 212
     :cond_4f
-    iget v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->e:I
+    iget v3, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h:I
 
     if-ne v3, v6, :cond_72
 
@@ -461,12 +461,12 @@
 
     if-ne v0, v5, :cond_16
 
-    iget-boolean v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->k:Z
+    iget-boolean v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->n:Z
 
     if-eqz v0, :cond_16
 
     .line 193
-    invoke-virtual {p0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h()V
+    invoke-virtual {p0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->g()V
 
     goto :goto_16
 
@@ -487,7 +487,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    iget-boolean v1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->f:Z
+    iget-boolean v1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->i:Z
 
     invoke-virtual {p0, v0, v1}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->setCurrentItem(IZ)V
 
@@ -517,12 +517,52 @@
     goto :goto_5e
 .end method
 
+.method public g()V
+    .registers 7
+
+    .prologue
+    .line 93
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->m:Z
+
+    .line 94
+    iget-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->d:J
+
+    long-to-double v0, v0
+
+    iget-object v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->q:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
+
+    invoke-virtual {v2}, Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;->getDuration()I
+
+    move-result v2
+
+    int-to-double v2, v2
+
+    iget-wide v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j:D
+
+    div-double/2addr v2, v4
+
+    iget-wide v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->k:D
+
+    mul-double/2addr v2, v4
+
+    add-double/2addr v0, v2
+
+    double-to-long v0, v0
+
+    invoke-direct {p0, v0, v1}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->a(J)V
+
+    .line 95
+    return-void
+.end method
+
 .method public getDirection()I
     .registers 2
 
     .prologue
     .line 279
-    iget v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->b:I
+    iget v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->e:I
 
     if-nez v0, :cond_6
 
@@ -542,7 +582,7 @@
 
     .prologue
     .line 261
-    iget-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->a:J
+    iget-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->d:J
 
     return-wide v0
 .end method
@@ -552,62 +592,22 @@
 
     .prologue
     .line 334
-    iget v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->e:I
+    iget v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h:I
 
     return v0
 .end method
 
 .method public h()V
-    .registers 7
-
-    .prologue
-    .line 93
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j:Z
-
-    .line 94
-    iget-wide v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->a:J
-
-    long-to-double v0, v0
-
-    iget-object v2, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->n:Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;
-
-    invoke-virtual {v2}, Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;->getDuration()I
-
-    move-result v2
-
-    int-to-double v2, v2
-
-    iget-wide v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->g:D
-
-    div-double/2addr v2, v4
-
-    iget-wide v4, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h:D
-
-    mul-double/2addr v2, v4
-
-    add-double/2addr v0, v2
-
-    double-to-long v0, v0
-
-    invoke-direct {p0, v0, v1}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->a(J)V
-
-    .line 95
-    return-void
-.end method
-
-.method public i()V
     .registers 3
 
     .prologue
     const/4 v1, 0x0
 
     .line 111
-    iput-boolean v1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j:Z
+    iput-boolean v1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->m:Z
 
     .line 112
-    iget-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->i:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->l:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
@@ -615,7 +615,7 @@
     return-void
 .end method
 
-.method public j()V
+.method public i()V
     .registers 5
 
     .prologue
@@ -647,7 +647,7 @@
 
     .line 163
     :cond_12
-    iget v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->b:I
+    iget v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->e:I
 
     if-nez v0, :cond_26
 
@@ -658,14 +658,14 @@
     if-gez v0, :cond_29
 
     .line 165
-    iget-boolean v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->c:Z
+    iget-boolean v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->f:Z
 
     if-eqz v0, :cond_11
 
     .line 166
     add-int/lit8 v0, v2, -0x1
 
-    iget-boolean v1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->f:Z
+    iget-boolean v1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->i:Z
 
     invoke-virtual {p0, v0, v1}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->setCurrentItem(IZ)V
 
@@ -682,14 +682,14 @@
     if-ne v0, v2, :cond_36
 
     .line 169
-    iget-boolean v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->c:Z
+    iget-boolean v0, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->f:Z
 
     if-eqz v0, :cond_11
 
     .line 170
     const/4 v0, 0x0
 
-    iget-boolean v1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->f:Z
+    iget-boolean v1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->i:Z
 
     invoke-virtual {p0, v0, v1}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->setCurrentItem(IZ)V
 
@@ -707,7 +707,7 @@
 
     .prologue
     .line 126
-    iput-wide p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->g:D
+    iput-wide p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j:D
 
     .line 127
     return-void
@@ -718,7 +718,7 @@
 
     .prologue
     .line 362
-    iput-boolean p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->f:Z
+    iput-boolean p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->i:Z
 
     .line 363
     return-void
@@ -729,7 +729,7 @@
 
     .prologue
     .line 306
-    iput-boolean p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->c:Z
+    iput-boolean p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->f:Z
 
     .line 307
     return-void
@@ -740,7 +740,7 @@
 
     .prologue
     .line 288
-    iput p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->b:I
+    iput p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->e:I
 
     .line 289
     return-void
@@ -751,7 +751,7 @@
 
     .prologue
     .line 270
-    iput-wide p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->a:J
+    iput-wide p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->d:J
 
     .line 271
     return-void
@@ -762,7 +762,7 @@
 
     .prologue
     .line 344
-    iput p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->e:I
+    iput p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h:I
 
     .line 345
     return-void
@@ -773,7 +773,7 @@
 
     .prologue
     .line 324
-    iput-boolean p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->d:Z
+    iput-boolean p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->g:Z
 
     .line 325
     return-void
@@ -784,7 +784,7 @@
 
     .prologue
     .line 119
-    iput-wide p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->h:D
+    iput-wide p1, p0, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->k:D
 
     .line 120
     return-void

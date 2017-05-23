@@ -17,16 +17,16 @@
     .registers 3
 
     .prologue
-    .line 629
+    .line 638
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 630
+    .line 639
     iput p1, p0, Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuSeparatorItem;->mPaddingTop:I
 
-    .line 631
+    .line 640
     iput p2, p0, Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuSeparatorItem;->mPaddingBottom:I
 
-    .line 632
+    .line 641
     return-void
 .end method
 
@@ -36,7 +36,7 @@
     .registers 2
 
     .prologue
-    .line 639
+    .line 648
     iget v0, p0, Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuSeparatorItem;->mPaddingBottom:I
 
     return v0
@@ -46,7 +46,7 @@
     .registers 2
 
     .prologue
-    .line 635
+    .line 644
     iget v0, p0, Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuSeparatorItem;->mPaddingTop:I
 
     return v0

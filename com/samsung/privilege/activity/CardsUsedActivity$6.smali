@@ -224,7 +224,7 @@
     .line 585
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$6;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v1, 0x7f100533
+    const v1, 0x7f100308
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -235,7 +235,7 @@
     .line 586
     iget-object v1, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$6;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v2, 0x7f100534
+    const v2, 0x7f100309
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -353,7 +353,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$6;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v3, 0x7f0903a5
+    const v3, 0x7f0901b1
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -372,7 +372,7 @@
     .line 592
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$6;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v1, 0x7f10014e
+    const v1, 0x7f10014f
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 

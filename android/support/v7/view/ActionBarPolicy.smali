@@ -12,13 +12,13 @@
     .registers 2
 
     .prologue
-    .line 44
+    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
+    .line 49
     iput-object p1, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
-    .line 46
+    .line 50
     return-void
 .end method
 
@@ -26,7 +26,7 @@
     .registers 2
 
     .prologue
-    .line 41
+    .line 45
     new-instance v0, Landroid/support/v7/view/ActionBarPolicy;
 
     invoke-direct {v0, p0}, Landroid/support/v7/view/ActionBarPolicy;-><init>(Landroid/content/Context;)V
@@ -50,29 +50,29 @@
 
     const/16 v3, 0x1e0
 
-    .line 54
+    .line 58
     iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 55
+    .line 59
     invoke-static {v0}, Landroid/support/v4/content/res/ConfigurationHelper;->b(Landroid/content/res/Resources;)I
 
     move-result v1
 
-    .line 56
+    .line 60
     invoke-static {v0}, Landroid/support/v4/content/res/ConfigurationHelper;->a(Landroid/content/res/Resources;)I
 
     move-result v2
 
-    .line 57
+    .line 61
     invoke-static {v0}, Landroid/support/v4/content/res/ConfigurationHelper;->c(Landroid/content/res/Resources;)I
 
     move-result v0
 
-    .line 59
+    .line 63
     if-gt v0, v4, :cond_28
 
     if-gt v1, v4, :cond_28
@@ -86,15 +86,15 @@
 
     if-le v2, v7, :cond_2a
 
-    .line 62
+    .line 66
     :cond_28
     const/4 v0, 0x5
 
-    .line 71
+    .line 75
     :goto_29
     return v0
 
-    .line 63
+    .line 67
     :cond_2a
     const/16 v0, 0x1f4
 
@@ -109,24 +109,24 @@
 
     if-le v2, v5, :cond_38
 
-    .line 66
+    .line 70
     :cond_36
     const/4 v0, 0x4
 
     goto :goto_29
 
-    .line 67
+    .line 71
     :cond_38
     const/16 v0, 0x168
 
     if-lt v1, v0, :cond_3e
 
-    .line 69
+    .line 73
     const/4 v0, 0x3
 
     goto :goto_29
 
-    .line 71
+    .line 75
     :cond_3e
     const/4 v0, 0x2
 
@@ -139,14 +139,14 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 76
+    .line 80
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x13
 
     if-lt v1, v2, :cond_8
 
-    .line 79
+    .line 83
     :cond_7
     :goto_7
     return v0
@@ -158,7 +158,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Landroid/support/v4/view/ViewConfigurationCompat;->b(Landroid/view/ViewConfiguration;)Z
+    invoke-static {v1}, Landroid/support/v4/view/ViewConfigurationCompat;->a(Landroid/view/ViewConfiguration;)Z
 
     move-result v1
 
@@ -173,7 +173,7 @@
     .registers 2
 
     .prologue
-    .line 84
+    .line 88
     iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -195,7 +195,7 @@
     .registers 3
 
     .prologue
-    .line 88
+    .line 92
     iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -217,7 +217,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 92
+    .line 96
     iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     const/4 v1, 0x0
@@ -230,45 +230,45 @@
 
     move-result-object v1
 
-    .line 94
+    .line 98
     sget v0, Landroid/support/v7/appcompat/R$styleable;->ActionBar_height:I
 
     invoke-virtual {v1, v0, v4}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
     move-result v0
 
-    .line 95
+    .line 99
     iget-object v2, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    .line 96
+    .line 100
     invoke-virtual {p0}, Landroid/support/v7/view/ActionBarPolicy;->d()Z
 
     move-result v3
 
     if-nez v3, :cond_28
 
-    .line 98
+    .line 102
     sget v3, Landroid/support/v7/appcompat/R$dimen;->abc_action_bar_stacked_max_height:I
 
-    .line 99
+    .line 103
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
-    .line 98
+    .line 102
     invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    .line 101
+    .line 105
     :cond_28
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 102
+    .line 106
     return v0
 .end method
 
@@ -276,7 +276,7 @@
     .registers 3
 
     .prologue
-    .line 108
+    .line 112
     iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
@@ -304,7 +304,7 @@
     .registers 3
 
     .prologue
-    .line 113
+    .line 117
     iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;

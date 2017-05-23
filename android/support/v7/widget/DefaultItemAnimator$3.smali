@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 166
+    .line 167
     iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$3;->a:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -59,32 +59,28 @@
 
     check-cast v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    .line 167
+    .line 168
     iget-object v2, p0, Landroid/support/v7/widget/DefaultItemAnimator$3;->b:Landroid/support/v7/widget/DefaultItemAnimator;
 
-    # invokes: Landroid/support/v7/widget/DefaultItemAnimator;->animateAddImpl(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
-    invoke-static {v2, v0}, Landroid/support/v7/widget/DefaultItemAnimator;->access$400(Landroid/support/v7/widget/DefaultItemAnimator;Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
+    invoke-virtual {v2, v0}, Landroid/support/v7/widget/DefaultItemAnimator;->animateAddImpl(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
 
     goto :goto_6
 
-    .line 169
+    .line 170
     :cond_18
     iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$3;->a:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 170
+    .line 171
     iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$3;->b:Landroid/support/v7/widget/DefaultItemAnimator;
 
-    # getter for: Landroid/support/v7/widget/DefaultItemAnimator;->mAdditionsList:Ljava/util/ArrayList;
-    invoke-static {v0}, Landroid/support/v7/widget/DefaultItemAnimator;->access$500(Landroid/support/v7/widget/DefaultItemAnimator;)Ljava/util/ArrayList;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/widget/DefaultItemAnimator;->mAdditionsList:Ljava/util/ArrayList;
 
     iget-object v1, p0, Landroid/support/v7/widget/DefaultItemAnimator$3;->a:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 171
+    .line 172
     return-void
 .end method

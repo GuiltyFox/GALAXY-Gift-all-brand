@@ -1,5 +1,5 @@
 .class public abstract Landroid/support/v4/app/ActivityCompatApi23$SharedElementCallback23;
-.super Landroid/support/v4/app/ActivityCompat21$SharedElementCallback21;
+.super Landroid/support/v4/app/ActivityCompatApi21$SharedElementCallback21;
 .source "ActivityCompatApi23.java"
 
 
@@ -9,7 +9,7 @@
 
     .prologue
     .line 71
-    invoke-direct {p0}, Landroid/support/v4/app/ActivityCompat21$SharedElementCallback21;-><init>()V
+    invoke-direct {p0}, Landroid/support/v4/app/ActivityCompatApi21$SharedElementCallback21;-><init>()V
 
     return-void
 .end method

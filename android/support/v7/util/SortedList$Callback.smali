@@ -59,11 +59,13 @@
 .method public abstract onChanged(II)V
 .end method
 
-.method public abstract onInserted(II)V
-.end method
+.method public onChanged(IILjava/lang/Object;)V
+    .registers 4
 
-.method public abstract onMoved(II)V
-.end method
+    .prologue
+    .line 710
+    invoke-virtual {p0, p1, p2}, Landroid/support/v7/util/SortedList$Callback;->onChanged(II)V
 
-.method public abstract onRemoved(II)V
+    .line 711
+    return-void
 .end method

@@ -691,7 +691,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02022a
+    const v2, 0x7f020121
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -704,7 +704,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020232
+    const v2, 0x7f020129
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -717,7 +717,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020233
+    const v2, 0x7f02012a
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -730,7 +730,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020234
+    const v2, 0x7f02012b
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -743,7 +743,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020235
+    const v2, 0x7f02012c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -756,7 +756,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020236
+    const v2, 0x7f02012d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -769,7 +769,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020237
+    const v2, 0x7f02012e
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -782,7 +782,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020238
+    const v2, 0x7f02012f
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -795,7 +795,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020239
+    const v2, 0x7f020130
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -808,7 +808,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02022b
+    const v2, 0x7f020122
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -821,7 +821,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02022c
+    const v2, 0x7f020123
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -834,7 +834,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02022d
+    const v2, 0x7f020124
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -847,7 +847,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02022e
+    const v2, 0x7f020125
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -860,7 +860,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f02022f
+    const v2, 0x7f020126
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -873,7 +873,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020230
+    const v2, 0x7f020127
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -886,7 +886,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f020231
+    const v2, 0x7f020128
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1142,7 +1142,7 @@
     invoke-static {v3, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 213
-    const v2, 0x7f10065a
+    const v2, 0x7f100450
 
     move-object/from16 v0, p1
 
@@ -1155,7 +1155,7 @@
     check-cast v10, Landroid/widget/LinearLayout;
 
     .line 215
-    const v2, 0x7f1002b2
+    const v2, 0x7f100247
 
     move-object/from16 v0, p1
 
@@ -1168,7 +1168,7 @@
     check-cast v3, Landroid/widget/ImageView;
 
     .line 216
-    const v2, 0x7f1002b3
+    const v2, 0x7f100255
 
     move-object/from16 v0, p1
 
@@ -1181,7 +1181,7 @@
     check-cast v4, Landroid/widget/TextView;
 
     .line 217
-    const v2, 0x7f100662
+    const v2, 0x7f100458
 
     move-object/from16 v0, p1
 
@@ -1192,7 +1192,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 218
-    const v2, 0x7f1002ce
+    const v2, 0x7f10024c
 
     move-object/from16 v0, p1
 
@@ -1203,7 +1203,7 @@
     check-cast v8, Landroid/widget/TextView;
 
     .line 219
-    const v2, 0x7f10065b
+    const v2, 0x7f100451
 
     move-object/from16 v0, p1
 
@@ -1216,7 +1216,7 @@
     check-cast v11, Landroid/widget/TextView;
 
     .line 220
-    const v2, 0x7f10065c
+    const v2, 0x7f100452
 
     move-object/from16 v0, p1
 
@@ -1229,7 +1229,7 @@
     check-cast v12, Landroid/widget/TextView;
 
     .line 221
-    const v2, 0x7f100661
+    const v2, 0x7f100457
 
     move-object/from16 v0, p1
 
@@ -1240,7 +1240,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 223
-    const v2, 0x7f100173
+    const v2, 0x7f1001eb
 
     move-object/from16 v0, p1
 
@@ -1253,7 +1253,7 @@
     check-cast v19, Landroid/widget/ImageView;
 
     .line 224
-    const v2, 0x7f100150
+    const v2, 0x7f100151
 
     move-object/from16 v0, p1
 
@@ -1264,7 +1264,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 225
-    const v2, 0x7f1002ed
+    const v2, 0x7f100273
 
     move-object/from16 v0, p1
 
@@ -1275,7 +1275,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 226
-    const v2, 0x7f100200
+    const v2, 0x7f1001ea
 
     move-object/from16 v0, p1
 
@@ -1286,7 +1286,7 @@
     check-cast v13, Landroid/widget/LinearLayout;
 
     .line 228
-    const v2, 0x7f1002e7
+    const v2, 0x7f10026d
 
     move-object/from16 v0, p1
 
@@ -1299,7 +1299,7 @@
     check-cast v21, Landroid/widget/ImageView;
 
     .line 229
-    const v2, 0x7f1002f0
+    const v2, 0x7f100276
 
     move-object/from16 v0, p1
 
@@ -1310,7 +1310,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 230
-    const v2, 0x7f1002e6
+    const v2, 0x7f10026c
 
     move-object/from16 v0, p1
 
@@ -1321,7 +1321,7 @@
     check-cast v14, Landroid/widget/LinearLayout;
 
     .line 232
-    const v2, 0x7f1002e4
+    const v2, 0x7f10026a
 
     move-object/from16 v0, p1
 
@@ -1332,7 +1332,7 @@
     check-cast v2, Landroid/widget/RelativeLayout;
 
     .line 233
-    const v2, 0x7f10065d
+    const v2, 0x7f100453
 
     move-object/from16 v0, p1
 
@@ -1343,14 +1343,14 @@
     check-cast v2, Landroid/widget/LinearLayout;
 
     .line 234
-    const v2, 0x7f10065e
+    const v2, 0x7f100454
 
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     .line 237
-    const v2, 0x7f1002e9
+    const v2, 0x7f10026f
 
     move-object/from16 v0, p1
 
@@ -1361,7 +1361,7 @@
     check-cast v15, Landroid/widget/LinearLayout;
 
     .line 238
-    const v2, 0x7f1002eb
+    const v2, 0x7f100271
 
     move-object/from16 v0, p1
 
@@ -1372,7 +1372,7 @@
     check-cast v16, Landroid/widget/LinearLayout;
 
     .line 239
-    const v2, 0x7f1002ee
+    const v2, 0x7f100274
 
     move-object/from16 v0, p1
 
@@ -1383,7 +1383,7 @@
     check-cast v17, Landroid/widget/LinearLayout;
 
     .line 241
-    const v2, 0x7f10016d
+    const v2, 0x7f10027a
 
     move-object/from16 v0, p1
 
@@ -1394,7 +1394,7 @@
     check-cast v20, Landroid/widget/TextView;
 
     .line 244
-    const v2, 0x7f10065f
+    const v2, 0x7f100455
 
     move-object/from16 v0, p1
 
@@ -1407,7 +1407,7 @@
     check-cast v22, Landroid/widget/TextView;
 
     .line 245
-    const v2, 0x7f100660
+    const v2, 0x7f100456
 
     move-object/from16 v0, p1
 
@@ -1420,7 +1420,7 @@
     .line 247
     sget-object v5, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->k:Landroid/app/Activity;
 
-    const v6, 0x7f05004c
+    const v6, 0x7f05003a
 
     invoke-static {v5, v6}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -1429,14 +1429,14 @@
     .line 248
     sget-object v5, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->k:Landroid/app/Activity;
 
-    const v6, 0x7f050025
+    const v6, 0x7f05001a
 
     invoke-static {v5, v6}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object v9
 
     .line 249
-    const v5, 0x7f1002b4
+    const v5, 0x7f100256
 
     move-object/from16 v0, p1
 
@@ -1469,7 +1469,7 @@
 
     sget-object v18, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->k:Landroid/app/Activity;
 
-    const v24, 0x7f090148
+    const v24, 0x7f090097
 
     move-object/from16 v0, v18
 
@@ -1509,7 +1509,7 @@
     invoke-virtual {v8, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 256
-    const v5, 0x7f10016c
+    const v5, 0x7f100279
 
     move-object/from16 v0, p1
 
@@ -1570,13 +1570,13 @@
 
     move-result-object v5
 
-    const v6, 0x7f0202e1
+    const v6, 0x7f0201b7
 
     invoke-virtual {v5, v6}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
     move-result-object v5
 
-    const v6, 0x7f0202e1
+    const v6, 0x7f0201b7
 
     invoke-virtual {v5, v6}, Lcom/bumptech/glide/DrawableRequestBuilder;->b(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -1928,14 +1928,14 @@
     :goto_3a9
     sget-object v2, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->k:Landroid/app/Activity;
 
-    const v3, 0x7f090149
+    const v3, 0x7f090098
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     .line 371
     sget-object v2, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->k:Landroid/app/Activity;
 
-    const v3, 0x7f09034b
+    const v3, 0x7f09016c
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -2403,7 +2403,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0044
+    const v3, 0x7f0e0033
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2421,7 +2421,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0042
+    const v3, 0x7f0e0031
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2439,7 +2439,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0046
+    const v3, 0x7f0e0035
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2457,7 +2457,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0047
+    const v3, 0x7f0e0036
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2475,7 +2475,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0045
+    const v3, 0x7f0e0034
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2493,7 +2493,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0041
+    const v3, 0x7f0e0030
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2511,7 +2511,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0f0043
+    const v3, 0x7f0e0032
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -2580,7 +2580,7 @@
 
     .line 492
     :cond_611
-    const v2, 0x7f1002f1
+    const v2, 0x7f100277
 
     move-object/from16 v0, p1
 
@@ -3059,7 +3059,7 @@
 
     sget-object v0, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->k:Landroid/app/Activity;
 
-    const v1, 0x7f0c010a
+    const v1, 0x7f0c0102
 
     invoke-direct {v2, v0, v1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -3070,7 +3070,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040134
+    const v1, 0x7f0400c5
 
     const/4 v3, 0x0
 
@@ -3084,7 +3084,7 @@
     .line 164
     new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    sget v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     invoke-virtual {p0, v6}, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->a(F)I
 
@@ -3092,7 +3092,7 @@
 
     sub-int/2addr v0, v4
 
-    sget v4, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
+    sget v4, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->B:I
 
     const/high16 v5, 0x42700000    # 60.0f
 
@@ -3109,7 +3109,7 @@
 
     const/4 v0, -0x1
 
-    sget v5, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v5, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     invoke-virtual {p0, v6}, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->a(F)I
 
@@ -3124,7 +3124,7 @@
     invoke-direct {v4, v0, v5}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
     .line 166
-    const v0, 0x7f1002b0
+    const v0, 0x7f100253
 
     invoke-virtual {v3, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3136,7 +3136,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 168
-    const v0, 0x7f1002bb
+    const v0, 0x7f100260
 
     invoke-virtual {v3, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3145,7 +3145,7 @@
     check-cast v0, Landroid/widget/Button;
 
     .line 170
-    const v1, 0x7f1002b2
+    const v1, 0x7f100247
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

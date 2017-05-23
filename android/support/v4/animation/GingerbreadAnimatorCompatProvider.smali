@@ -11,10 +11,10 @@
     .registers 1
 
     .prologue
-    .line 31
+    .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
+    .line 36
     return-void
 .end method
 
@@ -24,7 +24,7 @@
     .registers 2
 
     .prologue
-    .line 35
+    .line 33
     new-instance v0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;
 
     invoke-direct {v0}, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider$GingerbreadFloatValueAnimator;-><init>()V
@@ -36,6 +36,6 @@
     .registers 2
 
     .prologue
-    .line 154
+    .line 152
     return-void
 .end method

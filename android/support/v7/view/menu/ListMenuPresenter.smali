@@ -20,9 +20,9 @@
 
 .field f:I
 
-.field g:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
+.field g:I
 
-.field private h:I
+.field h:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
 .field private i:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
@@ -34,16 +34,16 @@
     .registers 3
 
     .prologue
-    .line 76
+    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 77
-    iput p1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->f:I
+    .line 81
+    iput p1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->g:I
 
-    .line 78
-    iput p2, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->e:I
+    .line 82
+    iput p2, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->f:I
 
-    .line 79
+    .line 83
     return-void
 .end method
 
@@ -51,15 +51,15 @@
     .registers 4
 
     .prologue
-    .line 66
+    .line 70
     const/4 v0, 0x0
 
     invoke-direct {p0, p2, v0}, Landroid/support/v7/view/menu/ListMenuPresenter;-><init>(II)V
 
-    .line 67
+    .line 71
     iput-object p1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->a:Landroid/content/Context;
 
-    .line 68
+    .line 72
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->a:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -68,18 +68,8 @@
 
     iput-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->b:Landroid/view/LayoutInflater;
 
-    .line 69
+    .line 73
     return-void
-.end method
-
-.method static synthetic a(Landroid/support/v7/view/menu/ListMenuPresenter;)I
-    .registers 2
-
-    .prologue
-    .line 39
-    iget v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->h:I
-
-    return v0
 .end method
 
 
@@ -88,12 +78,12 @@
     .registers 5
 
     .prologue
-    .line 100
+    .line 104
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->d:Landroid/support/v7/view/menu/ExpandedMenuView;
 
     if-nez v0, :cond_28
 
-    .line 101
+    .line 105
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->b:Landroid/view/LayoutInflater;
 
     sget v1, Landroid/support/v7/appcompat/R$layout;->abc_expanded_menu_layout:I
@@ -108,32 +98,32 @@
 
     iput-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->d:Landroid/support/v7/view/menu/ExpandedMenuView;
 
-    .line 103
-    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->g:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
+    .line 107
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->h:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
     if-nez v0, :cond_1c
 
-    .line 104
+    .line 108
     new-instance v0, Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
     invoke-direct {v0, p0}, Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;-><init>(Landroid/support/v7/view/menu/ListMenuPresenter;)V
 
-    iput-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->g:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
+    iput-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->h:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
-    .line 106
+    .line 110
     :cond_1c
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->d:Landroid/support/v7/view/menu/ExpandedMenuView;
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->g:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
+    iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->h:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/ExpandedMenuView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 107
+    .line 111
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->d:Landroid/support/v7/view/menu/ExpandedMenuView;
 
     invoke-virtual {v0, p0}, Landroid/support/v7/view/menu/ExpandedMenuView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 109
+    .line 113
     :cond_28
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->d:Landroid/support/v7/view/menu/ExpandedMenuView;
 
@@ -144,21 +134,21 @@
     .registers 2
 
     .prologue
-    .line 120
-    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->g:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
+    .line 124
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->h:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
     if-nez v0, :cond_b
 
-    .line 121
+    .line 125
     new-instance v0, Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
     invoke-direct {v0, p0}, Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;-><init>(Landroid/support/v7/view/menu/ListMenuPresenter;)V
 
-    iput-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->g:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
+    iput-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->h:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
-    .line 123
+    .line 127
     :cond_b
-    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->g:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->h:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
     return-object v0
 .end method
@@ -167,28 +157,28 @@
     .registers 4
 
     .prologue
-    .line 185
+    .line 189
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    .line 186
+    .line 190
     iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->d:Landroid/support/v7/view/menu/ExpandedMenuView;
 
     if-eqz v1, :cond_e
 
-    .line 187
+    .line 191
     iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->d:Landroid/support/v7/view/menu/ExpandedMenuView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->saveHierarchyState(Landroid/util/SparseArray;)V
 
-    .line 189
+    .line 193
     :cond_e
     const-string/jumbo v1, "android:menu:list"
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
 
-    .line 190
+    .line 194
     return-void
 .end method
 
@@ -196,22 +186,22 @@
     .registers 4
 
     .prologue
-    .line 193
+    .line 197
     const-string/jumbo v0, "android:menu:list"
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
 
     move-result-object v0
 
-    .line 194
+    .line 198
     if-eqz v0, :cond_e
 
-    .line 195
+    .line 199
     iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->d:Landroid/support/v7/view/menu/ExpandedMenuView;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->restoreHierarchyState(Landroid/util/SparseArray;)V
 
-    .line 197
+    .line 201
     :cond_e
     return-void
 .end method
@@ -220,7 +210,7 @@
     .registers 4
 
     .prologue
-    .line 181
+    .line 185
     const/4 v0, 0x0
 
     return v0
@@ -230,7 +220,7 @@
     .registers 4
 
     .prologue
-    .line 177
+    .line 181
     const/4 v0, 0x0
 
     return v0
@@ -240,7 +230,7 @@
     .registers 2
 
     .prologue
-    .line 173
+    .line 177
     const/4 v0, 0x0
 
     return v0
@@ -250,7 +240,7 @@
     .registers 2
 
     .prologue
-    .line 205
+    .line 209
     iget v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->j:I
 
     return v0
@@ -260,21 +250,21 @@
     .registers 5
 
     .prologue
-    .line 83
-    iget v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->e:I
+    .line 87
+    iget v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->f:I
 
     if-eqz v0, :cond_21
 
-    .line 84
+    .line 88
     new-instance v0, Landroid/view/ContextThemeWrapper;
 
-    iget v1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->e:I
+    iget v1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->f:I
 
     invoke-direct {v0, p1, v1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
 
     iput-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->a:Landroid/content/Context;
 
-    .line 85
+    .line 89
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->a:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -283,40 +273,40 @@
 
     iput-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->b:Landroid/view/LayoutInflater;
 
-    .line 92
+    .line 96
     :cond_15
     :goto_15
     iput-object p2, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->c:Landroid/support/v7/view/menu/MenuBuilder;
 
-    .line 93
-    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->g:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
+    .line 97
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->h:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
     if-eqz v0, :cond_20
 
-    .line 94
-    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->g:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
+    .line 98
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->h:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
     invoke-virtual {v0}, Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;->notifyDataSetChanged()V
 
-    .line 96
+    .line 100
     :cond_20
     return-void
 
-    .line 86
+    .line 90
     :cond_21
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->a:Landroid/content/Context;
 
     if-eqz v0, :cond_15
 
-    .line 87
+    .line 91
     iput-object p1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->a:Landroid/content/Context;
 
-    .line 88
+    .line 92
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->b:Landroid/view/LayoutInflater;
 
     if-nez v0, :cond_15
 
-    .line 89
+    .line 93
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->a:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
@@ -332,17 +322,17 @@
     .registers 4
 
     .prologue
-    .line 150
+    .line 154
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->i:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
     if-eqz v0, :cond_9
 
-    .line 151
+    .line 155
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->i:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/support/v7/view/menu/MenuPresenter$Callback;->a(Landroid/support/v7/view/menu/MenuBuilder;Z)V
 
-    .line 153
+    .line 157
     :cond_9
     return-void
 .end method
@@ -360,10 +350,10 @@
     .end annotation
 
     .prologue
-    .line 168
+    .line 172
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->c:Landroid/support/v7/view/menu/MenuBuilder;
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->g:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
+    iget-object v1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->h:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
     invoke-virtual {v1, p3}, Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;->a(I)Landroid/support/v7/view/menu/MenuItemImpl;
 
@@ -373,7 +363,7 @@
 
     invoke-virtual {v0, v1, p0, v2}, Landroid/support/v7/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem;Landroid/support/v7/view/menu/MenuPresenter;I)Z
 
-    .line 169
+    .line 173
     return-void
 .end method
 
@@ -381,12 +371,12 @@
     .registers 2
 
     .prologue
-    .line 221
+    .line 225
     check-cast p1, Landroid/os/Bundle;
 
     invoke-virtual {p0, p1}, Landroid/support/v7/view/menu/ListMenuPresenter;->b(Landroid/os/Bundle;)V
 
-    .line 222
+    .line 226
     return-void
 .end method
 
@@ -394,25 +384,25 @@
     .registers 2
 
     .prologue
-    .line 210
+    .line 214
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->d:Landroid/support/v7/view/menu/ExpandedMenuView;
 
     if-nez v0, :cond_6
 
-    .line 211
+    .line 215
     const/4 v0, 0x0
 
-    .line 216
+    .line 220
     :goto_5
     return-object v0
 
-    .line 214
+    .line 218
     :cond_6
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 215
+    .line 219
     invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/ListMenuPresenter;->a(Landroid/os/Bundle;)V
 
     goto :goto_5
@@ -422,7 +412,7 @@
     .registers 4
 
     .prologue
-    .line 138
+    .line 142
     invoke-virtual {p1}, Landroid/support/v7/view/menu/SubMenuBuilder;->hasVisibleItems()Z
 
     move-result v0
@@ -431,11 +421,11 @@
 
     const/4 v0, 0x0
 
-    .line 145
+    .line 149
     :goto_7
     return v0
 
-    .line 141
+    .line 145
     :cond_8
     new-instance v0, Landroid/support/v7/view/menu/MenuDialogHelper;
 
@@ -445,17 +435,17 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/MenuDialogHelper;->a(Landroid/os/IBinder;)V
 
-    .line 142
+    .line 146
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->i:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
     if-eqz v0, :cond_1a
 
-    .line 143
+    .line 147
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->i:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
     invoke-interface {v0, p1}, Landroid/support/v7/view/menu/MenuPresenter$Callback;->a(Landroid/support/v7/view/menu/MenuBuilder;)Z
 
-    .line 145
+    .line 149
     :cond_1a
     const/4 v0, 0x1
 
@@ -466,10 +456,10 @@
     .registers 2
 
     .prologue
-    .line 133
+    .line 137
     iput-object p1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->i:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
-    .line 134
+    .line 138
     return-void
 .end method
 
@@ -477,16 +467,16 @@
     .registers 3
 
     .prologue
-    .line 128
-    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->g:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
+    .line 132
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->h:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
     if-eqz v0, :cond_9
 
-    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->g:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->h:Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;
 
     invoke-virtual {v0}, Landroid/support/v7/view/menu/ListMenuPresenter$MenuAdapter;->notifyDataSetChanged()V
 
-    .line 129
+    .line 133
     :cond_9
     return-void
 .end method

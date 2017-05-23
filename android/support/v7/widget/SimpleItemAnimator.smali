@@ -173,7 +173,7 @@
 
     if-eq v3, v5, :cond_36
 
-    .line 84
+    .line 85
     :cond_1c
     invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
@@ -181,12 +181,14 @@
 
     add-int/2addr v1, v4
 
+    .line 86
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
     move-result v6
 
     add-int/2addr v6, v5
 
+    .line 84
     invoke-virtual {v0, v4, v5, v1, v6}, Landroid/view/View;->layout(IIII)V
 
     move-object v0, p0

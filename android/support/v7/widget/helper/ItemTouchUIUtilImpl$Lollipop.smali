@@ -101,7 +101,7 @@
 
     move-result v0
 
-    invoke-static {p1, v0}, Landroid/support/v4/view/ViewCompat;->f(Landroid/view/View;F)V
+    invoke-static {p1, v0}, Landroid/support/v4/view/ViewCompat;->h(Landroid/view/View;F)V
 
     .line 69
     :cond_15
@@ -154,7 +154,7 @@
     add-float/2addr v1, v2
 
     .line 40
-    invoke-static {p3, v1}, Landroid/support/v4/view/ViewCompat;->f(Landroid/view/View;F)V
+    invoke-static {p3, v1}, Landroid/support/v4/view/ViewCompat;->h(Landroid/view/View;F)V
 
     .line 41
     sget v1, Landroid/support/v7/recyclerview/R$id;->item_touch_helper_previous_elevation:I

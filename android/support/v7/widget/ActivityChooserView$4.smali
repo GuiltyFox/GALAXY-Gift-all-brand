@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 265
+    .line 269
     iput-object p1, p0, Landroid/support/v7/widget/ActivityChooserView$4;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
@@ -32,15 +32,14 @@
     .registers 2
 
     .prologue
-    .line 268
+    .line 272
     invoke-super {p0}, Landroid/database/DataSetObserver;->onChanged()V
 
-    .line 269
+    .line 273
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$4;->a:Landroid/support/v7/widget/ActivityChooserView;
 
-    # invokes: Landroid/support/v7/widget/ActivityChooserView;->updateAppearance()V
-    invoke-static {v0}, Landroid/support/v7/widget/ActivityChooserView;->access$400(Landroid/support/v7/widget/ActivityChooserView;)V
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActivityChooserView;->updateAppearance()V
 
-    .line 270
+    .line 274
     return-void
 .end method

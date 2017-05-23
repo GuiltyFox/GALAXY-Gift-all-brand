@@ -1,5 +1,5 @@
 .class Landroid/support/v7/widget/CardViewJellybeanMr1;
-.super Landroid/support/v7/widget/CardViewEclairMr1;
+.super Landroid/support/v7/widget/CardViewGingerbread;
 .source "CardViewJellybeanMr1.java"
 
 
@@ -9,7 +9,7 @@
 
     .prologue
     .line 22
-    invoke-direct {p0}, Landroid/support/v7/widget/CardViewEclairMr1;-><init>()V
+    invoke-direct {p0}, Landroid/support/v7/widget/CardViewGingerbread;-><init>()V
 
     return-void
 .end method

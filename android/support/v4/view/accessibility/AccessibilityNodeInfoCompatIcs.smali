@@ -74,12 +74,12 @@
     .registers 2
 
     .prologue
-    .line 164
+    .line 152
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
+    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 165
+    .line 153
     return-void
 .end method
 
@@ -140,12 +140,12 @@
     .registers 2
 
     .prologue
-    .line 172
+    .line 156
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
+    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setChecked(Z)V
 
-    .line 173
+    .line 157
     return-void
 .end method
 
@@ -206,12 +206,12 @@
     .registers 2
 
     .prologue
-    .line 176
+    .line 164
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setFocusable(Z)V
+    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
-    .line 177
+    .line 165
     return-void
 .end method
 
@@ -259,12 +259,12 @@
     .registers 2
 
     .prologue
-    .line 180
+    .line 172
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setFocused(Z)V
+    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 181
+    .line 173
     return-void
 .end method
 
@@ -286,12 +286,12 @@
     .registers 2
 
     .prologue
-    .line 184
+    .line 176
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setLongClickable(Z)V
+    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setFocusable(Z)V
 
-    .line 185
+    .line 177
     return-void
 .end method
 
@@ -313,12 +313,12 @@
     .registers 2
 
     .prologue
-    .line 200
+    .line 180
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
+    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setFocused(Z)V
 
-    .line 201
+    .line 181
     return-void
 .end method
 
@@ -326,12 +326,12 @@
     .registers 2
 
     .prologue
-    .line 204
+    .line 184
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setSelected(Z)V
+    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setLongClickable(Z)V
 
-    .line 205
+    .line 185
     return-void
 .end method
 
@@ -349,6 +349,19 @@
     return v0
 .end method
 
+.method public static h(Ljava/lang/Object;Z)V
+    .registers 2
+
+    .prologue
+    .line 200
+    check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
+
+    .line 201
+    return-void
+.end method
+
 .method public static h(Ljava/lang/Object;)Z
     .registers 2
 
@@ -361,6 +374,19 @@
     move-result v0
 
     return v0
+.end method
+
+.method public static i(Ljava/lang/Object;Z)V
+    .registers 2
+
+    .prologue
+    .line 204
+    check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setSelected(Z)V
+
+    .line 205
+    return-void
 .end method
 
 .method public static i(Ljava/lang/Object;)Z

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1207
+    .line 1216
     iput-object p1, p0, Landroid/support/v7/widget/SearchView$9;->a:Landroid/support/v7/widget/SearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,13 +35,12 @@
     .registers 5
 
     .prologue
-    .line 1214
+    .line 1223
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$9;->a:Landroid/support/v7/widget/SearchView;
 
-    # invokes: Landroid/support/v7/widget/SearchView;->onSubmitQuery()V
-    invoke-static {v0}, Landroid/support/v7/widget/SearchView;->access$900(Landroid/support/v7/widget/SearchView;)V
+    invoke-virtual {v0}, Landroid/support/v7/widget/SearchView;->onSubmitQuery()V
 
-    .line 1215
+    .line 1224
     const/4 v0, 0x1
 
     return v0

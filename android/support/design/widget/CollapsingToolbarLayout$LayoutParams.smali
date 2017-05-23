@@ -24,20 +24,20 @@
     .registers 4
 
     .prologue
-    .line 1043
+    .line 1171
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    .line 1025
+    .line 1153
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mCollapseMode:I
 
-    .line 1026
+    .line 1154
     const/high16 v0, 0x3f000000    # 0.5f
 
     iput v0, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mParallaxMult:F
 
-    .line 1044
+    .line 1172
     return-void
 .end method
 
@@ -45,20 +45,20 @@
     .registers 5
 
     .prologue
-    .line 1047
+    .line 1175
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    .line 1025
+    .line 1153
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mCollapseMode:I
 
-    .line 1026
+    .line 1154
     const/high16 v0, 0x3f000000    # 0.5f
 
     iput v0, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mParallaxMult:F
 
-    .line 1048
+    .line 1176
     return-void
 .end method
 
@@ -70,24 +70,24 @@
 
     const/high16 v2, 0x3f000000    # 0.5f
 
-    .line 1029
+    .line 1157
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 1025
+    .line 1153
     iput v3, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mCollapseMode:I
 
-    .line 1026
+    .line 1154
     iput v2, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mParallaxMult:F
 
-    .line 1031
-    sget-object v0, Landroid/support/design/R$styleable;->CollapsingAppBarLayout_LayoutParams:[I
+    .line 1159
+    sget-object v0, Landroid/support/design/R$styleable;->CollapsingToolbarLayout_Layout:[I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 1033
-    sget v1, Landroid/support/design/R$styleable;->CollapsingAppBarLayout_LayoutParams_layout_collapseMode:I
+    .line 1161
+    sget v1, Landroid/support/design/R$styleable;->CollapsingToolbarLayout_Layout_layout_collapseMode:I
 
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getInt(II)I
 
@@ -95,8 +95,8 @@
 
     iput v1, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mCollapseMode:I
 
-    .line 1036
-    sget v1, Landroid/support/design/R$styleable;->CollapsingAppBarLayout_LayoutParams_layout_collapseParallaxMultiplier:I
+    .line 1164
+    sget v1, Landroid/support/design/R$styleable;->CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
@@ -104,10 +104,10 @@
 
     invoke-virtual {p0, v1}, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->setParallaxMultiplier(F)V
 
-    .line 1039
+    .line 1167
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 1040
+    .line 1168
     return-void
 .end method
 
@@ -115,20 +115,20 @@
     .registers 3
 
     .prologue
-    .line 1051
+    .line 1179
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1025
+    .line 1153
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mCollapseMode:I
 
-    .line 1026
+    .line 1154
     const/high16 v0, 0x3f000000    # 0.5f
 
     iput v0, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mParallaxMult:F
 
-    .line 1052
+    .line 1180
     return-void
 .end method
 
@@ -136,20 +136,20 @@
     .registers 3
 
     .prologue
-    .line 1055
+    .line 1183
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 1025
+    .line 1153
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mCollapseMode:I
 
-    .line 1026
+    .line 1154
     const/high16 v0, 0x3f000000    # 0.5f
 
     iput v0, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mParallaxMult:F
 
-    .line 1056
+    .line 1184
     return-void
 .end method
 
@@ -157,20 +157,20 @@
     .registers 3
 
     .prologue
-    .line 1059
+    .line 1187
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/widget/FrameLayout$LayoutParams;)V
 
-    .line 1025
+    .line 1153
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mCollapseMode:I
 
-    .line 1026
+    .line 1154
     const/high16 v0, 0x3f000000    # 0.5f
 
     iput v0, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mParallaxMult:F
 
-    .line 1060
+    .line 1188
     return-void
 .end method
 
@@ -180,7 +180,7 @@
     .registers 2
 
     .prologue
-    .line 1080
+    .line 1208
     iget v0, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mCollapseMode:I
 
     return v0
@@ -190,7 +190,7 @@
     .registers 2
 
     .prologue
-    .line 1103
+    .line 1231
     iget v0, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mParallaxMult:F
 
     return v0
@@ -200,10 +200,10 @@
     .registers 2
 
     .prologue
-    .line 1069
+    .line 1197
     iput p1, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mCollapseMode:I
 
-    .line 1070
+    .line 1198
     return-void
 .end method
 
@@ -211,9 +211,9 @@
     .registers 2
 
     .prologue
-    .line 1093
+    .line 1221
     iput p1, p0, Landroid/support/design/widget/CollapsingToolbarLayout$LayoutParams;->mParallaxMult:F
 
-    .line 1094
+    .line 1222
     return-void
 .end method

@@ -24,15 +24,15 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 3130
+    .line 3165
     invoke-direct {p0, v0, v0}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 3111
+    .line 3146
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/view/ViewPager$LayoutParams;->c:F
 
-    .line 3131
+    .line 3166
     return-void
 .end method
 
@@ -40,24 +40,22 @@
     .registers 6
 
     .prologue
-    .line 3134
+    .line 3169
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 3111
+    .line 3146
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/view/ViewPager$LayoutParams;->c:F
 
-    .line 3136
-    invoke-static {}, Landroid/support/v4/view/ViewPager;->g()[I
-
-    move-result-object v0
+    .line 3171
+    sget-object v0, Landroid/support/v4/view/ViewPager;->a:[I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 3137
+    .line 3172
     const/4 v1, 0x0
 
     const/16 v2, 0x30
@@ -68,9 +66,9 @@
 
     iput v1, p0, Landroid/support/v4/view/ViewPager$LayoutParams;->b:I
 
-    .line 3138
+    .line 3173
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 3139
+    .line 3174
     return-void
 .end method

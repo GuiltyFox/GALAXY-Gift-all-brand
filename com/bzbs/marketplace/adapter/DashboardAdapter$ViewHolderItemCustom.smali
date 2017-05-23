@@ -8,7 +8,7 @@
 
 .field contentLayout:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100674
+        value = 0x7f10046a
     .end annotation
 .end field
 

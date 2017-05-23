@@ -51,7 +51,7 @@
     invoke-direct {v1, v0, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 299
-    const v0, 0x7f040137
+    const v0, 0x7f0400c8
 
     invoke-virtual {v1, v0}, Landroid/app/Dialog;->setContentView(I)V
 
@@ -75,7 +75,7 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/AddMoneyActivity$4;->a:Lcom/samsung/privilege/activity/AddMoneyActivity;
 
-    const v3, 0x7f0903a1
+    const v3, 0x7f0901ae
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/AddMoneyActivity;->getString(I)Ljava/lang/String;
 
@@ -88,7 +88,7 @@
     move-result-object v2
 
     .line 306
-    const v0, 0x7f100669
+    const v0, 0x7f10045e
 
     invoke-virtual {v1, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -102,7 +102,7 @@
 
     .line 311
     :goto_3e
-    const v0, 0x7f10016f
+    const v0, 0x7f1003c4
 
     invoke-virtual {v1, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

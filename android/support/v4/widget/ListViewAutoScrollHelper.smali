@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final a:Landroid/widget/ListView;
+.field private final f:Landroid/widget/ListView;
 
 
 # direct methods
@@ -16,7 +16,7 @@
     invoke-direct {p0, p1}, Landroid/support/v4/widget/AutoScrollHelper;-><init>(Landroid/view/View;)V
 
     .line 32
-    iput-object p1, p0, Landroid/support/v4/widget/ListViewAutoScrollHelper;->a:Landroid/widget/ListView;
+    iput-object p1, p0, Landroid/support/v4/widget/ListViewAutoScrollHelper;->f:Landroid/widget/ListView;
 
     .line 33
     return-void
@@ -29,7 +29,7 @@
 
     .prologue
     .line 37
-    iget-object v0, p0, Landroid/support/v4/widget/ListViewAutoScrollHelper;->a:Landroid/widget/ListView;
+    iget-object v0, p0, Landroid/support/v4/widget/ListViewAutoScrollHelper;->f:Landroid/widget/ListView;
 
     invoke-static {v0, p2}, Landroid/support/v4/widget/ListViewCompat;->a(Landroid/widget/ListView;I)V
 
@@ -54,7 +54,7 @@
     const/4 v0, 0x0
 
     .line 48
-    iget-object v1, p0, Landroid/support/v4/widget/ListViewAutoScrollHelper;->a:Landroid/widget/ListView;
+    iget-object v1, p0, Landroid/support/v4/widget/ListViewAutoScrollHelper;->f:Landroid/widget/ListView;
 
     .line 49
     invoke-virtual {v1}, Landroid/widget/ListView;->getCount()I

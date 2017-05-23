@@ -26,7 +26,7 @@
     .registers 6
 
     .prologue
-    .line 98
+    .line 100
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$1;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$1;->b:Landroid/os/Handler;
@@ -48,13 +48,13 @@
     .registers 7
 
     .prologue
-    .line 101
+    .line 103
     invoke-super {p0, p1}, Lcom/samsung/privilege/util/AddOnPermissions;->a(Z)V
 
-    .line 102
+    .line 104
     if-eqz p1, :cond_13
 
-    .line 103
+    .line 105
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$1;->a:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$1;->b:Landroid/os/Handler;
@@ -67,17 +67,17 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->b(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 107
+    .line 109
     :goto_12
     return-void
 
-    .line 105
+    .line 107
     :cond_13
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$1;->a:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$1;->a:Landroid/content/Context;
 
-    const v2, 0x7f09026e
+    const v2, 0x7f0900ec
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

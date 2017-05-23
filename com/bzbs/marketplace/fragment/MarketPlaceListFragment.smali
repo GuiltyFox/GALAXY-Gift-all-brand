@@ -38,7 +38,7 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066e
+        value = 0x7f100465
     .end annotation
 .end field
 
@@ -54,13 +54,13 @@
 
 .field recyclerViewMarketPlaceList:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006ab
+        value = 0x7f1004a2
     .end annotation
 .end field
 
 .field rootFooter:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006ac
+        value = 0x7f1004a3
     .end annotation
 .end field
 
@@ -70,7 +70,7 @@
 
 .field tvResult:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006ad
+        value = 0x7f1004a4
     .end annotation
 .end field
 
@@ -632,9 +632,9 @@
     .line 145
     :array_62
     .array-data 4
-        0x7f0f0037
-        0x7f0f0033
-        0x7f0f0011
+        0x7f0e002a
+        0x7f0e0026
+        0x7f0e0011
     .end array-data
 .end method
 
@@ -907,7 +907,7 @@
 
     .prologue
     .line 94
-    const v0, 0x7f040151
+    const v0, 0x7f0400de
 
     return v0
 .end method
@@ -1000,7 +1000,7 @@
 
     check-cast v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->y:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
+    iget-object v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->z:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
 
     iput-object v0, p0, Lcom/bzbs/marketplace/fragment/MarketPlaceListFragment;->h:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
 

@@ -1,5 +1,5 @@
 .class Landroid/support/design/widget/TextInputLayout$SavedState;
-.super Landroid/view/View$BaseSavedState;
+.super Landroid/support/v4/view/AbsSavedState;
 .source "TextInputLayout.java"
 
 
@@ -25,31 +25,39 @@
     .registers 1
 
     .prologue
-    .line 777
+    .line 909
     new-instance v0, Landroid/support/design/widget/TextInputLayout$SavedState$1;
 
     invoke-direct {v0}, Landroid/support/design/widget/TextInputLayout$SavedState$1;-><init>()V
+
+    invoke-static {v0}, Landroid/support/v4/os/ParcelableCompat;->a(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)Landroid/os/Parcelable$Creator;
+
+    move-result-object v0
 
     sput-object v0, Landroid/support/design/widget/TextInputLayout$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    .registers 4
 
     .prologue
-    .line 759
-    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
+    .line 891
+    invoke-direct {p0, p1, p2}, Landroid/support/v4/view/AbsSavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    .line 760
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    .line 892
+    sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, Ljava/lang/CharSequence;
+
     iput-object v0, p0, Landroid/support/design/widget/TextInputLayout$SavedState;->error:Ljava/lang/CharSequence;
 
-    .line 762
+    .line 894
     return-void
 .end method
 
@@ -57,10 +65,10 @@
     .registers 2
 
     .prologue
-    .line 755
-    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
+    .line 887
+    invoke-direct {p0, p1}, Landroid/support/v4/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 756
+    .line 888
     return-void
 .end method
 
@@ -70,7 +78,7 @@
     .registers 3
 
     .prologue
-    .line 772
+    .line 904
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -81,6 +89,7 @@
 
     move-result-object v0
 
+    .line 905
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -122,14 +131,14 @@
     .registers 4
 
     .prologue
-    .line 766
-    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+    .line 898
+    invoke-super {p0, p1, p2}, Landroid/support/v4/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 767
+    .line 899
     iget-object v0, p0, Landroid/support/design/widget/TextInputLayout$SavedState;->error:Ljava/lang/CharSequence;
 
     invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
-    .line 768
+    .line 900
     return-void
 .end method

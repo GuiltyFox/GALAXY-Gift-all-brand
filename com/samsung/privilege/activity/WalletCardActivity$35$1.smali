@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 3160
+    .line 3158
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$35$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$35;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$35$1;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 3164
+    .line 3162
     :try_start_0
     new-instance v0, Lorg/json/JSONArray;
 
@@ -51,14 +51,14 @@
 
     move-result-object v0
 
-    .line 3166
+    .line 3164
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     if-lez v1, :cond_51
 
-    .line 3167
+    .line 3165
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -71,7 +71,7 @@
 
     check-cast v0, Lcom/bzbs/bean/QueueItem;
 
-    .line 3168
+    .line 3166
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$35$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$35;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$35;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -82,7 +82,7 @@
 
     if-eqz v1, :cond_51
 
-    .line 3169
+    .line 3167
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$35$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$35;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$35;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -99,7 +99,7 @@
 
     if-lez v1, :cond_51
 
-    .line 3170
+    .line 3168
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$35$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$35;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$35;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -116,7 +116,7 @@
 
     iput-object v0, v1, Lcom/bzbs/bean/Place;->mQueueItem:Lcom/bzbs/bean/QueueItem;
 
-    .line 3171
+    .line 3169
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$35$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$35;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$35;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -129,12 +129,12 @@
     :try_end_51
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_51} :catch_52
 
-    .line 3178
+    .line 3176
     :cond_51
     :goto_51
     return-void
 
-    .line 3175
+    .line 3173
     :catch_52
     move-exception v0
 

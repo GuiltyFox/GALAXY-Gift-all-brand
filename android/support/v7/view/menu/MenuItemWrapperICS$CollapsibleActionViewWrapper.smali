@@ -15,7 +15,7 @@
     .registers 3
 
     .prologue
-    .line 382
+    .line 386
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -24,15 +24,15 @@
 
     move-object v0, p1
 
-    .line 383
+    .line 387
     check-cast v0, Landroid/view/CollapsibleActionView;
 
     iput-object v0, p0, Landroid/support/v7/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;->a:Landroid/view/CollapsibleActionView;
 
-    .line 384
+    .line 388
     invoke-virtual {p0, p1}, Landroid/support/v7/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;->addView(Landroid/view/View;)V
 
-    .line 385
+    .line 389
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .registers 2
 
     .prologue
-    .line 398
+    .line 402
     iget-object v0, p0, Landroid/support/v7/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;->a:Landroid/view/CollapsibleActionView;
 
     check-cast v0, Landroid/view/View;
@@ -54,12 +54,12 @@
     .registers 2
 
     .prologue
-    .line 394
+    .line 398
     iget-object v0, p0, Landroid/support/v7/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;->a:Landroid/view/CollapsibleActionView;
 
     invoke-interface {v0}, Landroid/view/CollapsibleActionView;->onActionViewCollapsed()V
 
-    .line 395
+    .line 399
     return-void
 .end method
 
@@ -67,11 +67,11 @@
     .registers 2
 
     .prologue
-    .line 389
+    .line 393
     iget-object v0, p0, Landroid/support/v7/view/menu/MenuItemWrapperICS$CollapsibleActionViewWrapper;->a:Landroid/view/CollapsibleActionView;
 
     invoke-interface {v0}, Landroid/view/CollapsibleActionView;->onActionViewExpanded()V
 
-    .line 390
+    .line 394
     return-void
 .end method

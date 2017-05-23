@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 321
+    .line 328
     iput-object p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-direct {p0}, Lcom/bzbs/marketplace/asynctask/point/PointAsynctask$CallbackModel;-><init>()V
@@ -32,36 +32,36 @@
     .registers 13
 
     .prologue
-    const v7, 0x7f090287
+    const v7, 0x7f0900f0
 
     const/16 v6, 0x8
 
     const/4 v1, 0x1
 
-    .line 326
+    .line 333
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v2, 0x7f0901c6
+    const v2, 0x7f09027d
 
     invoke-virtual {v0, v2}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 327
+    .line 334
     const/4 v2, 0x0
 
-    .line 328
+    .line 335
     invoke-virtual {p4}, Lcom/bzbs/marketplace/model/PointModel;->getPoints()I
 
     move-result v3
 
     if-le v3, v1, :cond_112
 
-    .line 331
+    .line 338
     :goto_16
     if-nez v1, :cond_22
 
-    .line 332
+    .line 339
     const-string/jumbo v1, "s"
 
     const-string/jumbo v2, ""
@@ -70,15 +70,15 @@
 
     move-result-object v0
 
-    .line 334
+    .line 341
     :cond_22
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v1, v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->k:Landroid/widget/TextView;
+    iget-object v1, v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l:Landroid/widget/TextView;
 
     iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v3, 0x7f0903f6
+    const v3, 0x7f0901fc
 
     invoke-virtual {v2, v3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -86,7 +86,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 335
+    .line 342
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     iget-object v1, v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->j:Landroid/widget/TextView;
@@ -123,28 +123,28 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 336
+    .line 343
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v1, v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l:Landroid/widget/TextView;
+    iget-object v1, v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->m:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 338
+    .line 345
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->j:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 339
+    .line 346
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->m:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 341
+    .line 348
     invoke-virtual {p4}, Lcom/bzbs/marketplace/model/PointModel;->getPoints()I
 
     move-result v0
@@ -153,10 +153,10 @@
 
     if-lt v0, v1, :cond_c9
 
-    .line 342
+    .line 349
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->k:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l:Landroid/widget/TextView;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -172,7 +172,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, " <font color=\'#3ba9f6\'><big>"
+    const-string/jumbo v2, " <font color=\'#ffffff\'><big>"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -202,7 +202,7 @@
 
     iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v3, 0x7f090289
+    const v3, 0x7f0900f2
 
     invoke-virtual {v2, v3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -222,7 +222,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 347
+    .line 354
     :goto_bc
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
@@ -236,14 +236,14 @@
 
     invoke-static {v0, v2, v3}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;J)Z
 
-    .line 348
+    .line 355
     return-void
 
-    .line 344
+    .line 351
     :cond_c9
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->k:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l:Landroid/widget/TextView;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -259,7 +259,7 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, " <font color=\'#3ba9f6\'><big>"
+    const-string/jumbo v2, " <font color=\'#ffffff\'><big>"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -289,7 +289,7 @@
 
     iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v3, 0x7f090288
+    const v3, 0x7f0900f1
 
     invoke-virtual {v2, v3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -321,18 +321,18 @@
     .registers 9
 
     .prologue
-    .line 354
+    .line 361
     const-string/jumbo v0, ""
 
-    .line 355
+    .line 362
     if-eqz p3, :cond_a
 
-    .line 356
+    .line 363
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
 
-    .line 359
+    .line 366
     :cond_a
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
@@ -370,6 +370,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 361
+    .line 368
     return-void
 .end method

@@ -8,7 +8,7 @@
     .registers 5
 
     .prologue
-    .line 295
+    .line 309
     sget v0, Landroid/support/design/R$layout;->design_navigation_item_separator:I
 
     const/4 v1, 0x0
@@ -19,6 +19,6 @@
 
     invoke-direct {p0, v0}, Landroid/support/design/internal/NavigationMenuPresenter$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 296
+    .line 310
     return-void
 .end method

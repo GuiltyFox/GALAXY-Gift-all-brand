@@ -3,7 +3,7 @@
 .source "BottomSheetDialog.java"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -15,22 +15,14 @@
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/BottomSheetDialog;
 
-.field final synthetic val$coordinator:Landroid/support/design/widget/CoordinatorLayout;
-
-.field final synthetic val$finalView:Landroid/view/View;
-
 
 # direct methods
-.method constructor <init>(Landroid/support/design/widget/BottomSheetDialog;Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;)V
-    .registers 4
+.method constructor <init>(Landroid/support/design/widget/BottomSheetDialog;)V
+    .registers 2
 
     .prologue
-    .line 90
+    .line 122
     iput-object p1, p0, Landroid/support/design/widget/BottomSheetDialog$1;->this$0:Landroid/support/design/widget/BottomSheetDialog;
-
-    iput-object p2, p0, Landroid/support/design/widget/BottomSheetDialog$1;->val$coordinator:Landroid/support/design/widget/CoordinatorLayout;
-
-    iput-object p3, p0, Landroid/support/design/widget/BottomSheetDialog$1;->val$finalView:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,60 +31,39 @@
 
 
 # virtual methods
-.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .registers 8
+.method public onClick(Landroid/view/View;)V
+    .registers 3
 
     .prologue
-    const/4 v0, 0x1
+    .line 125
+    iget-object v0, p0, Landroid/support/design/widget/BottomSheetDialog$1;->this$0:Landroid/support/design/widget/BottomSheetDialog;
 
-    .line 93
-    iget-object v1, p0, Landroid/support/design/widget/BottomSheetDialog$1;->this$0:Landroid/support/design/widget/BottomSheetDialog;
+    iget-boolean v0, v0, Landroid/support/design/widget/BottomSheetDialog;->mCancelable:Z
 
-    invoke-virtual {v1}, Landroid/support/design/widget/BottomSheetDialog;->isShowing()Z
+    if-eqz v0, :cond_1b
 
-    move-result v1
+    iget-object v0, p0, Landroid/support/design/widget/BottomSheetDialog$1;->this$0:Landroid/support/design/widget/BottomSheetDialog;
 
-    if-eqz v1, :cond_29
+    invoke-virtual {v0}, Landroid/support/design/widget/BottomSheetDialog;->isShowing()Z
 
-    invoke-static {p2}, Landroid/support/v4/view/MotionEventCompat;->a(Landroid/view/MotionEvent;)I
+    move-result v0
 
-    move-result v1
+    if-eqz v0, :cond_1b
 
-    if-ne v1, v0, :cond_29
+    iget-object v0, p0, Landroid/support/design/widget/BottomSheetDialog$1;->this$0:Landroid/support/design/widget/BottomSheetDialog;
 
-    iget-object v1, p0, Landroid/support/design/widget/BottomSheetDialog$1;->val$coordinator:Landroid/support/design/widget/CoordinatorLayout;
+    invoke-virtual {v0}, Landroid/support/design/widget/BottomSheetDialog;->shouldWindowCloseOnTouchOutside()Z
 
-    iget-object v2, p0, Landroid/support/design/widget/BottomSheetDialog$1;->val$finalView:Landroid/view/View;
+    move-result v0
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+    if-eqz v0, :cond_1b
 
-    move-result v3
+    .line 126
+    iget-object v0, p0, Landroid/support/design/widget/BottomSheetDialog$1;->this$0:Landroid/support/design/widget/BottomSheetDialog;
 
-    float-to-int v3, v3
+    invoke-virtual {v0}, Landroid/support/design/widget/BottomSheetDialog;->cancel()V
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v4
-
-    float-to-int v4, v4
-
-    invoke-virtual {v1, v2, v3, v4}, Landroid/support/design/widget/CoordinatorLayout;->isPointInChildBounds(Landroid/view/View;II)Z
-
-    move-result v1
-
-    if-nez v1, :cond_29
-
-    .line 97
-    iget-object v1, p0, Landroid/support/design/widget/BottomSheetDialog$1;->this$0:Landroid/support/design/widget/BottomSheetDialog;
-
-    invoke-virtual {v1}, Landroid/support/design/widget/BottomSheetDialog;->cancel()V
-
-    .line 100
-    :goto_28
-    return v0
-
-    :cond_29
-    const/4 v0, 0x0
-
-    goto :goto_28
+    .line 128
+    :cond_1b
+    return-void
 .end method

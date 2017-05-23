@@ -65,10 +65,10 @@
     .registers 3
 
     .prologue
-    .line 1743
+    .line 1728
     invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatIcs;->a(Ljava/lang/Object;Z)V
 
-    .line 1744
+    .line 1729
     return-void
 .end method
 
@@ -121,10 +121,10 @@
     .registers 3
 
     .prologue
-    .line 1753
+    .line 1733
     invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatIcs;->b(Ljava/lang/Object;Z)V
 
-    .line 1754
+    .line 1734
     return-void
 .end method
 
@@ -177,10 +177,10 @@
     .registers 3
 
     .prologue
-    .line 1758
+    .line 1743
     invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatIcs;->c(Ljava/lang/Object;Z)V
 
-    .line 1759
+    .line 1744
     return-void
 .end method
 
@@ -222,10 +222,10 @@
     .registers 3
 
     .prologue
-    .line 1763
+    .line 1753
     invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatIcs;->d(Ljava/lang/Object;Z)V
 
-    .line 1764
+    .line 1754
     return-void
 .end method
 
@@ -256,10 +256,10 @@
     .registers 3
 
     .prologue
-    .line 1768
+    .line 1758
     invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatIcs;->e(Ljava/lang/Object;Z)V
 
-    .line 1769
+    .line 1759
     return-void
 .end method
 
@@ -279,10 +279,10 @@
     .registers 3
 
     .prologue
-    .line 1788
+    .line 1763
     invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatIcs;->f(Ljava/lang/Object;Z)V
 
-    .line 1789
+    .line 1764
     return-void
 .end method
 
@@ -290,10 +290,10 @@
     .registers 3
 
     .prologue
-    .line 1793
+    .line 1768
     invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatIcs;->g(Ljava/lang/Object;Z)V
 
-    .line 1794
+    .line 1769
     return-void
 .end method
 
@@ -309,6 +309,17 @@
     return v0
 .end method
 
+.method public h(Ljava/lang/Object;Z)V
+    .registers 3
+
+    .prologue
+    .line 1788
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatIcs;->h(Ljava/lang/Object;Z)V
+
+    .line 1789
+    return-void
+.end method
+
 .method public h(Ljava/lang/Object;)Z
     .registers 3
 
@@ -319,6 +330,17 @@
     move-result v0
 
     return v0
+.end method
+
+.method public i(Ljava/lang/Object;Z)V
+    .registers 3
+
+    .prologue
+    .line 1793
+    invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompatIcs;->i(Ljava/lang/Object;Z)V
+
+    .line 1794
+    return-void
 .end method
 
 .method public i(Ljava/lang/Object;)Z

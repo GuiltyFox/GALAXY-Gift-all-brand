@@ -30,7 +30,7 @@
 
     .prologue
     .line 140
-    const v0, 0x7f1000d0
+    const v0, 0x7f1000d3
 
     :try_start_3
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -40,7 +40,7 @@
     check-cast v0, Landroid/widget/LinearLayout;
 
     .line 141
-    const v1, 0x7f020077
+    const v1, 0x7f020078
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
     :try_end_f

@@ -624,6 +624,8 @@
 
 .field public static final TextAppearance_android_textColor:I = 0x3
 
+.field public static final TextAppearance_android_textColorHint:I = 0x5
+
 .field public static final TextAppearance_android_textSize:I = 0x0
 
 .field public static final TextAppearance_android_textStyle:I = 0x2
@@ -736,7 +738,7 @@
 
     const/4 v2, 0x0
 
-    .line 1015
+    .line 1081
     const/16 v0, 0x1d
 
     new-array v0, v0, [I
@@ -745,7 +747,7 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->ActionBar:[I
 
-    .line 1016
+    .line 1082
     new-array v0, v4, [I
 
     const v1, 0x10100b3
@@ -754,7 +756,7 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->ActionBarLayout:[I
 
-    .line 1047
+    .line 1113
     new-array v0, v4, [I
 
     const v1, 0x101013f
@@ -763,40 +765,40 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->ActionMenuItemView:[I
 
-    .line 1049
+    .line 1115
     new-array v0, v2, [I
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->ActionMenuView:[I
 
-    .line 1050
+    .line 1116
     new-array v0, v6, [I
 
     fill-array-data v0, :array_144
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->ActionMode:[I
 
-    .line 1057
+    .line 1123
     new-array v0, v5, [I
 
     fill-array-data v0, :array_154
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->ActivityChooserView:[I
 
-    .line 1060
+    .line 1126
     new-array v0, v6, [I
 
     fill-array-data v0, :array_15c
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->AlertDialog:[I
 
-    .line 1067
+    .line 1133
     new-array v0, v5, [I
 
     fill-array-data v0, :array_16c
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->AppCompatImageView:[I
 
-    .line 1070
+    .line 1136
     const/4 v0, 0x4
 
     new-array v0, v0, [I
@@ -805,7 +807,7 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->AppCompatSeekBar:[I
 
-    .line 1075
+    .line 1141
     const/4 v0, 0x7
 
     new-array v0, v0, [I
@@ -814,14 +816,14 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->AppCompatTextHelper:[I
 
-    .line 1083
+    .line 1149
     new-array v0, v5, [I
 
     fill-array-data v0, :array_192
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->AppCompatTextView:[I
 
-    .line 1086
+    .line 1152
     const/16 v0, 0x73
 
     new-array v0, v0, [I
@@ -830,30 +832,30 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->AppCompatTheme:[I
 
-    .line 1202
+    .line 1268
     new-array v0, v4, [I
 
-    const v1, 0x7f010120
+    const v1, 0x7f010123
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->ButtonBarLayout:[I
 
-    .line 1204
+    .line 1270
     new-array v0, v3, [I
 
     fill-array-data v0, :array_284
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->ColorStateListItem:[I
 
-    .line 1208
+    .line 1274
     new-array v0, v3, [I
 
     fill-array-data v0, :array_28e
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->CompoundButton:[I
 
-    .line 1212
+    .line 1278
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -862,7 +864,7 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->DrawerArrowToggle:[I
 
-    .line 1221
+    .line 1287
     const/16 v0, 0x9
 
     new-array v0, v0, [I
@@ -871,7 +873,7 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->LinearLayoutCompat:[I
 
-    .line 1222
+    .line 1288
     const/4 v0, 0x4
 
     new-array v0, v0, [I
@@ -880,21 +882,21 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->LinearLayoutCompat_Layout:[I
 
-    .line 1236
+    .line 1302
     new-array v0, v5, [I
 
     fill-array-data v0, :array_2ce
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->ListPopupWindow:[I
 
-    .line 1239
+    .line 1305
     new-array v0, v6, [I
 
     fill-array-data v0, :array_2d6
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->MenuGroup:[I
 
-    .line 1246
+    .line 1312
     const/16 v0, 0x11
 
     new-array v0, v0, [I
@@ -903,7 +905,7 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->MenuItem:[I
 
-    .line 1264
+    .line 1330
     const/16 v0, 0x9
 
     new-array v0, v0, [I
@@ -912,23 +914,23 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->MenuView:[I
 
-    .line 1274
+    .line 1340
     new-array v0, v3, [I
 
     fill-array-data v0, :array_322
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->PopupWindow:[I
 
-    .line 1275
+    .line 1341
     new-array v0, v4, [I
 
-    const v1, 0x7f01021b
+    const v1, 0x7f010223
 
     aput v1, v0, v2
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->PopupWindowBackgroundState:[I
 
-    .line 1280
+    .line 1346
     const/16 v0, 0x11
 
     new-array v0, v0, [I
@@ -937,7 +939,7 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->SearchView:[I
 
-    .line 1298
+    .line 1364
     const/16 v0, 0x1d
 
     new-array v0, v0, [I
@@ -946,7 +948,7 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->Spinner:[I
 
-    .line 1304
+    .line 1370
     const/16 v0, 0xe
 
     new-array v0, v0, [I
@@ -955,7 +957,7 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->SwitchCompat:[I
 
-    .line 1319
+    .line 1385
     const/16 v0, 0x12
 
     new-array v0, v0, [I
@@ -964,7 +966,7 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->TextAppearance:[I
 
-    .line 1329
+    .line 1396
     const/16 v0, 0x1d
 
     new-array v0, v0, [I
@@ -973,7 +975,7 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->Toolbar:[I
 
-    .line 1359
+    .line 1426
     const/16 v0, 0x1f
 
     new-array v0, v0, [I
@@ -982,14 +984,14 @@
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->View:[I
 
-    .line 1360
+    .line 1427
     new-array v0, v3, [I
 
     fill-array-data v0, :array_458
 
     sput-object v0, Landroid/support/v7/appcompat/R$styleable;->ViewBackgroundHelper:[I
 
-    .line 1364
+    .line 1431
     new-array v0, v3, [I
 
     fill-array-data v0, :array_462
@@ -998,7 +1000,7 @@
 
     return-void
 
-    .line 1015
+    .line 1081
     :array_106
     .array-data 4
         0x7f010038
@@ -1029,10 +1031,10 @@
         0x7f010093
         0x7f010094
         0x7f010095
-        0x7f0100d5
+        0x7f0100d7
     .end array-data
 
-    .line 1050
+    .line 1116
     :array_144
     .array-data 4
         0x7f010038
@@ -1043,14 +1045,14 @@
         0x7f010096
     .end array-data
 
-    .line 1057
+    .line 1123
     :array_154
     .array-data 4
         0x7f010097
         0x7f010098
     .end array-data
 
-    .line 1060
+    .line 1126
     :array_15c
     .array-data 4
         0x10100f2
@@ -1061,23 +1063,23 @@
         0x7f01009d
     .end array-data
 
-    .line 1067
+    .line 1133
     :array_16c
     .array-data 4
         0x1010119
-        0x7f0100a1
+        0x7f0100a3
     .end array-data
 
-    .line 1070
+    .line 1136
     :array_174
     .array-data 4
         0x1010142
-        0x7f0100a2
-        0x7f0100a3
         0x7f0100a4
+        0x7f0100a5
+        0x7f0100a6
     .end array-data
 
-    .line 1075
+    .line 1141
     :array_180
     .array-data 4
         0x1010034
@@ -1089,20 +1091,18 @@
         0x1010393
     .end array-data
 
-    .line 1083
+    .line 1149
     :array_192
     .array-data 4
         0x1010034
-        0x7f0100a5
+        0x7f0100a7
     .end array-data
 
-    .line 1086
+    .line 1152
     :array_19a
     .array-data 4
         0x1010057
         0x10100ae
-        0x7f0100a6
-        0x7f0100a7
         0x7f0100a8
         0x7f0100a9
         0x7f0100aa
@@ -1214,38 +1214,40 @@
         0x7f010114
         0x7f010115
         0x7f010116
+        0x7f010117
+        0x7f010118
     .end array-data
 
-    .line 1204
+    .line 1270
     :array_284
     .array-data 4
         0x10101a5
         0x101031f
-        0x7f010159
+        0x7f01015e
     .end array-data
 
-    .line 1208
+    .line 1274
     :array_28e
     .array-data 4
         0x1010107
-        0x7f01015a
-        0x7f01015b
+        0x7f01015f
+        0x7f010160
     .end array-data
 
-    .line 1212
+    .line 1278
     :array_298
     .array-data 4
-        0x7f0101a6
-        0x7f0101a7
-        0x7f0101a8
-        0x7f0101a9
-        0x7f0101aa
-        0x7f0101ab
-        0x7f0101ac
         0x7f0101ad
+        0x7f0101ae
+        0x7f0101af
+        0x7f0101b0
+        0x7f0101b1
+        0x7f0101b2
+        0x7f0101b3
+        0x7f0101b4
     .end array-data
 
-    .line 1221
+    .line 1287
     :array_2ac
     .array-data 4
         0x10100af
@@ -1254,12 +1256,12 @@
         0x1010127
         0x1010128
         0x7f010083
-        0x7f0101f8
-        0x7f0101f9
-        0x7f0101fa
+        0x7f010200
+        0x7f010201
+        0x7f010202
     .end array-data
 
-    .line 1222
+    .line 1288
     :array_2c2
     .array-data 4
         0x10100b3
@@ -1268,14 +1270,14 @@
         0x1010181
     .end array-data
 
-    .line 1236
+    .line 1302
     :array_2ce
     .array-data 4
         0x10102ac
         0x10102ad
     .end array-data
 
-    .line 1239
+    .line 1305
     :array_2d6
     .array-data 4
         0x101000e
@@ -1286,7 +1288,7 @@
         0x10101e0
     .end array-data
 
-    .line 1246
+    .line 1312
     :array_2e6
     .array-data 4
         0x1010002
@@ -1302,13 +1304,13 @@
         0x10101e4
         0x10101e5
         0x101026f
-        0x7f01020c
-        0x7f01020d
-        0x7f01020e
-        0x7f01020f
+        0x7f010214
+        0x7f010215
+        0x7f010216
+        0x7f010217
     .end array-data
 
-    .line 1264
+    .line 1330
     :array_30c
     .array-data 4
         0x10100ae
@@ -1318,41 +1320,41 @@
         0x101012f
         0x1010130
         0x1010131
-        0x7f010210
-        0x7f010211
+        0x7f010218
+        0x7f010219
     .end array-data
 
-    .line 1274
+    .line 1340
     :array_322
     .array-data 4
         0x1010176
         0x10102c9
-        0x7f01021a
+        0x7f010222
     .end array-data
 
-    .line 1280
+    .line 1346
     :array_32c
     .array-data 4
         0x10100da
         0x101011f
         0x1010220
         0x1010264
-        0x7f010260
-        0x7f010261
-        0x7f010262
-        0x7f010263
-        0x7f010264
-        0x7f010265
-        0x7f010266
-        0x7f010267
         0x7f010268
         0x7f010269
         0x7f01026a
         0x7f01026b
         0x7f01026c
+        0x7f01026d
+        0x7f01026e
+        0x7f01026f
+        0x7f010270
+        0x7f010271
+        0x7f010272
+        0x7f010273
+        0x7f010274
     .end array-data
 
-    .line 1298
+    .line 1364
     :array_352
     .array-data 4
         0x10100af
@@ -1363,14 +1365,6 @@
         0x101017b
         0x1010262
         0x7f010095
-        0x7f0102b6
-        0x7f0102b7
-        0x7f0102b8
-        0x7f0102b9
-        0x7f0102ba
-        0x7f0102bb
-        0x7f0102bc
-        0x7f0102bd
         0x7f0102be
         0x7f0102bf
         0x7f0102c0
@@ -1384,28 +1378,36 @@
         0x7f0102c8
         0x7f0102c9
         0x7f0102ca
+        0x7f0102cb
+        0x7f0102cc
+        0x7f0102cd
+        0x7f0102ce
+        0x7f0102cf
+        0x7f0102d0
+        0x7f0102d1
+        0x7f0102d2
     .end array-data
 
-    .line 1304
+    .line 1370
     :array_390
     .array-data 4
         0x1010124
         0x1010125
         0x1010142
-        0x7f0102d3
-        0x7f0102d4
-        0x7f0102d5
-        0x7f0102d6
-        0x7f0102d7
-        0x7f0102d8
-        0x7f0102d9
-        0x7f0102da
         0x7f0102db
         0x7f0102dc
         0x7f0102dd
+        0x7f0102de
+        0x7f0102df
+        0x7f0102e0
+        0x7f0102e1
+        0x7f0102e2
+        0x7f0102e3
+        0x7f0102e4
+        0x7f0102e5
     .end array-data
 
-    .line 1319
+    .line 1385
     :array_3b0
     .array-data 4
         0x1010095
@@ -1425,10 +1427,10 @@
         0x10104b6
         0x10104b7
         0x7f010079
-        0x7f0100a5
+        0x7f0100a7
     .end array-data
 
-    .line 1329
+    .line 1396
     :array_3d8
     .array-data 4
         0x10100af
@@ -1443,26 +1445,26 @@
         0x7f010092
         0x7f010093
         0x7f010095
-        0x7f01031d
-        0x7f01031e
-        0x7f01031f
-        0x7f010320
-        0x7f010321
-        0x7f010322
-        0x7f010323
-        0x7f010324
-        0x7f010325
-        0x7f010326
-        0x7f010327
-        0x7f010328
-        0x7f010329
         0x7f01032a
         0x7f01032b
         0x7f01032c
         0x7f01032d
+        0x7f01032e
+        0x7f01032f
+        0x7f010330
+        0x7f010331
+        0x7f010332
+        0x7f010333
+        0x7f010334
+        0x7f010335
+        0x7f010336
+        0x7f010337
+        0x7f010338
+        0x7f010339
+        0x7f01033a
     .end array-data
 
-    .line 1359
+    .line 1426
     :array_416
     .array-data 4
         0x1010000
@@ -1493,20 +1495,20 @@
         0x1010440
         0x101046b
         0x101046c
-        0x7f01032e
-        0x7f01032f
-        0x7f010330
+        0x7f01033b
+        0x7f01033c
+        0x7f01033d
     .end array-data
 
-    .line 1360
+    .line 1427
     :array_458
     .array-data 4
         0x10100d4
-        0x7f010331
-        0x7f010332
+        0x7f01033e
+        0x7f01033f
     .end array-data
 
-    .line 1364
+    .line 1431
     :array_462
     .array-data 4
         0x10100d0

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 536
+    .line 534
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5$2;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;
 
     iput-object p2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5$2;->a:Ljava/lang/String;
@@ -39,10 +39,10 @@
     .registers 8
 
     .prologue
-    .line 538
+    .line 536
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 540
+    .line 538
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5$2;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;
 
     iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
@@ -63,7 +63,7 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a(Landroid/app/Activity;Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 542
+    .line 540
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -96,6 +96,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 543
+    .line 541
     return-void
 .end method

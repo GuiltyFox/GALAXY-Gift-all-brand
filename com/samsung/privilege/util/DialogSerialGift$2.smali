@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 308
+    .line 314
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogSerialGift$2;->a:Lcom/bzbs/bean/Purchasing;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogSerialGift$2;->b:Landroid/content/Context;
@@ -39,7 +39,7 @@
     .registers 6
 
     .prologue
-    .line 311
+    .line 317
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -68,7 +68,7 @@
 
     move-result-object v0
 
-    .line 313
+    .line 319
     new-instance v1, Landroid/content/Intent;
 
     iget-object v2, p0, Lcom/samsung/privilege/util/DialogSerialGift$2;->b:Landroid/content/Context;
@@ -77,18 +77,18 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 314
+    .line 320
     const-string/jumbo v2, "url"
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 315
+    .line 321
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$2;->b:Landroid/content/Context;
 
     check-cast v0, Landroid/app/Activity;
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 316
+    .line 322
     return-void
 .end method

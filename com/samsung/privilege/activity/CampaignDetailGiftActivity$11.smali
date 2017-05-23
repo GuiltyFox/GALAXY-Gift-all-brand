@@ -30,7 +30,7 @@
     .registers 9
 
     .prologue
-    .line 964
+    .line 967
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;->g:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-wide p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;->a:J
@@ -56,10 +56,10 @@
     .registers 13
 
     .prologue
-    .line 1004
+    .line 1007
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 1007
+    .line 1010
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -69,7 +69,7 @@
 
     move-result-wide v0
 
-    .line 1008
+    .line 1011
     const-string/jumbo v2, "Campaign"
 
     const-string/jumbo v3, "loadCampaign"
@@ -84,7 +84,7 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_66
 
-    .line 1013
+    .line 1016
     :goto_1b
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
@@ -120,7 +120,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1015
+    .line 1018
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;->g:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
@@ -133,7 +133,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1022
+    .line 1025
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;->g:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->j(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/lang/String;
@@ -146,21 +146,21 @@
 
     if-nez v0, :cond_60
 
-    .line 1023
+    .line 1026
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;->g:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 1026
+    .line 1029
     :cond_60
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;->g:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0, p4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 1027
+    .line 1030
     return-void
 
-    .line 1009
+    .line 1012
     :catch_66
     move-exception v0
 
@@ -171,7 +171,7 @@
     .registers 13
 
     .prologue
-    .line 968
+    .line 971
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -181,7 +181,7 @@
 
     move-result-wide v0
 
-    .line 969
+    .line 972
     const-string/jumbo v2, "Campaign"
 
     const-string/jumbo v3, "loadCampaign"
@@ -196,7 +196,7 @@
     :try_end_18
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_4d
 
-    .line 974
+    .line 977
     :goto_18
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
@@ -232,7 +232,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 976
+    .line 979
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;->g:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
@@ -245,10 +245,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1000
+    .line 1003
     return-void
 
-    .line 970
+    .line 973
     :catch_4d
     move-exception v0
 

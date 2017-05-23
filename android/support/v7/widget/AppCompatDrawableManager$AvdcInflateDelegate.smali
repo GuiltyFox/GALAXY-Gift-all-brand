@@ -7,23 +7,14 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>()V
     .registers 1
 
     .prologue
-    .line 744
+    .line 754
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v7/widget/AppCompatDrawableManager$1;)V
-    .registers 2
-
-    .prologue
-    .line 744
-    invoke-direct {p0}, Landroid/support/v7/widget/AppCompatDrawableManager$AvdcInflateDelegate;-><init>()V
-
+    .line 755
     return-void
 .end method
 
@@ -33,8 +24,8 @@
     .registers 8
 
     .prologue
-    .line 749
-    .line 750
+    .line 761
+    .line 762
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -46,22 +37,22 @@
 
     move-result-object v0
 
-    .line 753
+    .line 765
     :goto_8
     return-object v0
 
-    .line 751
+    .line 763
     :catch_9
     move-exception v0
 
-    .line 752
+    .line 764
     const-string/jumbo v1, "AvdcInflateDelegate"
 
     const-string/jumbo v2, "Exception while inflating <animated-vector>"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 753
+    .line 765
     const/4 v0, 0x0
 
     goto :goto_8

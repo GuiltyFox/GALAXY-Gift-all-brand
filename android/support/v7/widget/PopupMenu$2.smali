@@ -38,26 +38,20 @@
     .line 123
     iget-object v0, p0, Landroid/support/v7/widget/PopupMenu$2;->a:Landroid/support/v7/widget/PopupMenu;
 
-    # getter for: Landroid/support/v7/widget/PopupMenu;->mOnDismissListener:Landroid/support/v7/widget/PopupMenu$OnDismissListener;
-    invoke-static {v0}, Landroid/support/v7/widget/PopupMenu;->access$100(Landroid/support/v7/widget/PopupMenu;)Landroid/support/v7/widget/PopupMenu$OnDismissListener;
+    iget-object v0, v0, Landroid/support/v7/widget/PopupMenu;->mOnDismissListener:Landroid/support/v7/widget/PopupMenu$OnDismissListener;
 
-    move-result-object v0
-
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_f
 
     .line 124
     iget-object v0, p0, Landroid/support/v7/widget/PopupMenu$2;->a:Landroid/support/v7/widget/PopupMenu;
 
-    # getter for: Landroid/support/v7/widget/PopupMenu;->mOnDismissListener:Landroid/support/v7/widget/PopupMenu$OnDismissListener;
-    invoke-static {v0}, Landroid/support/v7/widget/PopupMenu;->access$100(Landroid/support/v7/widget/PopupMenu;)Landroid/support/v7/widget/PopupMenu$OnDismissListener;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/widget/PopupMenu;->mOnDismissListener:Landroid/support/v7/widget/PopupMenu$OnDismissListener;
 
     iget-object v1, p0, Landroid/support/v7/widget/PopupMenu$2;->a:Landroid/support/v7/widget/PopupMenu;
 
     invoke-interface {v0, v1}, Landroid/support/v7/widget/PopupMenu$OnDismissListener;->onDismiss(Landroid/support/v7/widget/PopupMenu;)V
 
     .line 126
-    :cond_13
+    :cond_f
     return-void
 .end method

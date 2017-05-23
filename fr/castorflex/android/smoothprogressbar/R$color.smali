@@ -4,4 +4,4 @@
 
 
 # static fields
-.field public static final spb_default_color:I = 0x7f0f00c4
+.field public static final spb_default_color:I = 0x7f0e008b

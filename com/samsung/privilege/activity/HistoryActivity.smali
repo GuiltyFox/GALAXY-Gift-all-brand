@@ -121,7 +121,7 @@
     :cond_6
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090283
+    const v1, 0x7f0900ed
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -414,7 +414,7 @@
     .line 490
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090283
+    const v3, 0x7f0900ed
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -870,7 +870,7 @@
     .line 507
     const-string/jumbo v3, ""
 
-    const v4, 0x7f090283
+    const v4, 0x7f0900ed
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -1071,7 +1071,7 @@
     .line 669
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090283
+    const v3, 0x7f0900ed
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -1212,7 +1212,7 @@
 
     .prologue
     .line 114
-    const v0, 0x7f100162
+    const v0, 0x7f100163
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -1262,7 +1262,7 @@
 
     .prologue
     .line 127
-    const v0, 0x7f100113
+    const v0, 0x7f100116
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -1374,7 +1374,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 83
-    const v0, 0x7f040035
+    const v0, 0x7f040031
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->setContentView(I)V
 
@@ -1386,7 +1386,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->b:Landroid/os/Handler;
 
     .line 88
-    const v0, 0x7f1000b7
+    const v0, 0x7f1000ba
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 

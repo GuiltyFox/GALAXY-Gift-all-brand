@@ -105,7 +105,7 @@
 
     iget-object v3, v3, Lcom/samsung/privilege/activity/ProfileActivity$26;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v4, 0x7f0902e6
+    const v4, 0x7f090126
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -154,7 +154,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/ProfileActivity$26;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v4, 0x7f1001d3
+    const v4, 0x7f1001be
 
     invoke-virtual {v0, v4}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -180,7 +180,7 @@
     move-result-object v1
 
     .line 1892
-    const v5, 0x7f1001d6
+    const v5, 0x7f1001c1
 
     invoke-virtual {v1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -29,7 +29,7 @@
     .registers 6
 
     .prologue
-    .line 1209
+    .line 1274
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$22;->a:Landroid/app/Dialog;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$22;->b:Landroid/content/Context;
@@ -51,12 +51,12 @@
     .registers 8
 
     .prologue
-    .line 1211
+    .line 1276
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$22;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1213
+    .line 1278
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -77,7 +77,7 @@
 
     move-result-object v0
 
-    .line 1214
+    .line 1279
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
     move-result-object v1
@@ -86,7 +86,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "transfer_yes="
+    const-string/jumbo v3, "transfer_no="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -102,19 +102,28 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1216
+    .line 1281
     new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpParams;
 
     invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpParams;-><init>()V
 
-    .line 1218
+    .line 1284
     const-string/jumbo v2, "isTransfer"
 
-    const-string/jumbo v3, "true"
+    const-string/jumbo v3, "false"
 
     invoke-virtual {v1, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1220
+    .line 1285
+    invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "isTransfer=false"
+
+    invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1287
     new-instance v2, Ljava/util/Date;
 
     invoke-direct {v2}, Ljava/util/Date;-><init>()V
@@ -123,38 +132,38 @@
 
     move-result-wide v2
 
-    .line 1221
+    .line 1288
     new-instance v4, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v4}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
 
     iget-object v5, p0, Lcom/samsung/privilege/util/DialogLoginGift$22;->b:Landroid/content/Context;
 
-    .line 1222
+    .line 1289
     invoke-virtual {v4, v5}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/content/Context;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v4
 
     sget-boolean v5, Lcom/bzbs/data/AppSetting;->Q:Z
 
-    .line 1223
+    .line 1290
     invoke-virtual {v4, v5}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v4
 
-    .line 1224
+    .line 1291
     invoke-virtual {v4, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 1225
+    .line 1292
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpParams;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$22;->b:Landroid/content/Context;
 
-    .line 1226
+    .line 1293
     invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
@@ -165,7 +174,7 @@
 
     sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->b:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 1227
+    .line 1294
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -174,14 +183,25 @@
 
     invoke-direct {v1, p0, v2, v3}, Lcom/samsung/privilege/util/DialogLoginGift$22$1;-><init>(Lcom/samsung/privilege/util/DialogLoginGift$22;J)V
 
-    .line 1228
+    .line 1295
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 1265
+    .line 1322
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    .line 1269
+    .line 1324
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$22;->c:Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$22;->d:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/samsung/privilege/util/DialogLoginGift$22;->b:Landroid/content/Context;
+
+    iget-object v3, p0, Lcom/samsung/privilege/util/DialogLoginGift$22;->e:Landroid/os/Handler;
+
+    invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
+
+    .line 1325
     return-void
 .end method

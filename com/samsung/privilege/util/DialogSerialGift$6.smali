@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 354
+    .line 360
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogSerialGift$6;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogSerialGift$6;->b:Landroid/widget/LinearLayout;
@@ -43,7 +43,7 @@
     .registers 5
 
     .prologue
-    .line 357
+    .line 363
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$6;->a:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogSerialGift$6;->b:Landroid/widget/LinearLayout;
@@ -52,6 +52,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogSerialGift;->a(Landroid/content/Context;Landroid/view/View;Landroid/view/View;)V
 
-    .line 358
+    .line 364
     return-void
 .end method

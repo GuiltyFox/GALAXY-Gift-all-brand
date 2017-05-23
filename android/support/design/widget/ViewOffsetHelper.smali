@@ -20,36 +20,13 @@
     .registers 2
 
     .prologue
-    .line 41
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 40
     iput-object p1, p0, Landroid/support/design/widget/ViewOffsetHelper;->mView:Landroid/view/View;
 
-    .line 43
-    return-void
-.end method
-
-.method private static tickleInvalidationFlag(Landroid/view/View;)V
-    .registers 3
-
-    .prologue
-    .line 69
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->o(Landroid/view/View;)F
-
-    move-result v0
-
-    .line 70
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    add-float/2addr v1, v0
-
-    invoke-static {p0, v1}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;F)V
-
-    .line 71
-    invoke-static {p0, v0}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;F)V
-
-    .line 72
+    .line 41
     return-void
 .end method
 
@@ -57,7 +34,7 @@
     .registers 5
 
     .prologue
-    .line 55
+    .line 53
     iget-object v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mView:Landroid/view/View;
 
     iget v1, p0, Landroid/support/design/widget/ViewOffsetHelper;->mOffsetTop:I
@@ -76,7 +53,7 @@
 
     invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->e(Landroid/view/View;I)V
 
-    .line 56
+    .line 54
     iget-object v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mView:Landroid/view/View;
 
     iget v1, p0, Landroid/support/design/widget/ViewOffsetHelper;->mOffsetLeft:I
@@ -95,47 +72,37 @@
 
     invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->f(Landroid/view/View;I)V
 
-    .line 59
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-ge v0, v1, :cond_3c
-
-    .line 60
-    iget-object v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mView:Landroid/view/View;
-
-    invoke-static {v0}, Landroid/support/design/widget/ViewOffsetHelper;->tickleInvalidationFlag(Landroid/view/View;)V
-
-    .line 61
-    iget-object v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mView:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    .line 62
-    instance-of v1, v0, Landroid/view/View;
-
-    if-eqz v1, :cond_3c
-
-    .line 63
-    check-cast v0, Landroid/view/View;
-
-    invoke-static {v0}, Landroid/support/design/widget/ViewOffsetHelper;->tickleInvalidationFlag(Landroid/view/View;)V
-
-    .line 66
-    :cond_3c
+    .line 55
     return-void
 .end method
 
 
 # virtual methods
+.method public getLayoutLeft()I
+    .registers 2
+
+    .prologue
+    .line 100
+    iget v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mLayoutLeft:I
+
+    return v0
+.end method
+
+.method public getLayoutTop()I
+    .registers 2
+
+    .prologue
+    .line 96
+    iget v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mLayoutTop:I
+
+    return v0
+.end method
+
 .method public getLeftAndRightOffset()I
     .registers 2
 
     .prologue
-    .line 109
+    .line 92
     iget v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mOffsetLeft:I
 
     return v0
@@ -145,7 +112,7 @@
     .registers 2
 
     .prologue
-    .line 105
+    .line 88
     iget v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mOffsetTop:I
 
     return v0
@@ -155,7 +122,7 @@
     .registers 2
 
     .prologue
-    .line 47
+    .line 45
     iget-object v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
@@ -164,7 +131,7 @@
 
     iput v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mLayoutTop:I
 
-    .line 48
+    .line 46
     iget-object v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getLeft()I
@@ -173,10 +140,10 @@
 
     iput v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mLayoutLeft:I
 
-    .line 51
+    .line 49
     invoke-direct {p0}, Landroid/support/design/widget/ViewOffsetHelper;->updateOffsets()V
 
-    .line 52
+    .line 50
     return-void
 .end method
 
@@ -184,21 +151,21 @@
     .registers 3
 
     .prologue
-    .line 96
+    .line 79
     iget v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mOffsetLeft:I
 
     if-eq v0, p1, :cond_b
 
-    .line 97
+    .line 80
     iput p1, p0, Landroid/support/design/widget/ViewOffsetHelper;->mOffsetLeft:I
 
-    .line 98
+    .line 81
     invoke-direct {p0}, Landroid/support/design/widget/ViewOffsetHelper;->updateOffsets()V
 
-    .line 99
+    .line 82
     const/4 v0, 0x1
 
-    .line 101
+    .line 84
     :goto_a
     return v0
 
@@ -212,21 +179,21 @@
     .registers 3
 
     .prologue
-    .line 81
+    .line 64
     iget v0, p0, Landroid/support/design/widget/ViewOffsetHelper;->mOffsetTop:I
 
     if-eq v0, p1, :cond_b
 
-    .line 82
+    .line 65
     iput p1, p0, Landroid/support/design/widget/ViewOffsetHelper;->mOffsetTop:I
 
-    .line 83
+    .line 66
     invoke-direct {p0}, Landroid/support/design/widget/ViewOffsetHelper;->updateOffsets()V
 
-    .line 84
+    .line 67
     const/4 v0, 0x1
 
-    .line 86
+    .line 69
     :goto_a
     return v0
 

@@ -17,7 +17,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/location/LocationManager;)V
-    .registers 5
+    .registers 4
 
     .prologue
     .line 63
@@ -26,9 +26,7 @@
     .line 60
     new-instance v0, Landroid/support/v7/app/TwilightManager$TwilightState;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Landroid/support/v7/app/TwilightManager$TwilightState;-><init>(Landroid/support/v7/app/TwilightManager$1;)V
+    invoke-direct {v0}, Landroid/support/v7/app/TwilightManager$TwilightState;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/app/TwilightManager;->d:Landroid/support/v7/app/TwilightManager$TwilightState;
 

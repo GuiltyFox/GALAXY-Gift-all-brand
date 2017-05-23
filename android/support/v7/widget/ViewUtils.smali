@@ -14,14 +14,14 @@
     .registers 5
 
     .prologue
-    .line 37
+    .line 41
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x12
 
     if-lt v0, v1, :cond_2c
 
-    .line 39
+    .line 43
     :try_start_6
     const-class v0, Landroid/view/View;
 
@@ -49,7 +49,7 @@
 
     sput-object v0, Landroid/support/v7/widget/ViewUtils;->sComputeFitSystemWindowsMethod:Ljava/lang/reflect/Method;
 
-    .line 41
+    .line 45
     sget-object v0, Landroid/support/v7/widget/ViewUtils;->sComputeFitSystemWindowsMethod:Ljava/lang/reflect/Method;
 
     invoke-virtual {v0}, Ljava/lang/reflect/Method;->isAccessible()Z
@@ -58,7 +58,7 @@
 
     if-nez v0, :cond_2c
 
-    .line 42
+    .line 46
     sget-object v0, Landroid/support/v7/widget/ViewUtils;->sComputeFitSystemWindowsMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x1
@@ -67,16 +67,16 @@
     :try_end_2c
     .catch Ljava/lang/NoSuchMethodException; {:try_start_6 .. :try_end_2c} :catch_2d
 
-    .line 48
+    .line 52
     :cond_2c
     :goto_2c
     return-void
 
-    .line 44
+    .line 48
     :catch_2d
     move-exception v0
 
-    .line 45
+    .line 49
     const-string/jumbo v0, "ViewUtils"
 
     const-string/jumbo v1, "Could not find method computeFitSystemWindows. Oh well."
@@ -90,7 +90,7 @@
     .registers 1
 
     .prologue
-    .line 50
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -100,7 +100,7 @@
     .registers 3
 
     .prologue
-    .line 65
+    .line 69
     or-int v0, p0, p1
 
     return v0
@@ -110,12 +110,12 @@
     .registers 6
 
     .prologue
-    .line 73
+    .line 77
     sget-object v0, Landroid/support/v7/widget/ViewUtils;->sComputeFitSystemWindowsMethod:Ljava/lang/reflect/Method;
 
     if-eqz v0, :cond_12
 
-    .line 75
+    .line 79
     :try_start_4
     sget-object v0, Landroid/support/v7/widget/ViewUtils;->sComputeFitSystemWindowsMethod:Ljava/lang/reflect/Method;
 
@@ -135,16 +135,16 @@
     :try_end_12
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_12} :catch_13
 
-    .line 80
+    .line 84
     :cond_12
     :goto_12
     return-void
 
-    .line 76
+    .line 80
     :catch_13
     move-exception v0
 
-    .line 77
+    .line 81
     const-string/jumbo v1, "ViewUtils"
 
     const-string/jumbo v2, "Could not invoke computeFitSystemWindows"
@@ -160,8 +160,8 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 53
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->h(Landroid/view/View;)I
+    .line 57
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->g(Landroid/view/View;)I
 
     move-result v1
 
@@ -180,14 +180,14 @@
     .registers 4
 
     .prologue
-    .line 87
+    .line 91
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x10
 
     if-lt v0, v1, :cond_24
 
-    .line 91
+    .line 95
     :try_start_6
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -203,19 +203,19 @@
 
     move-result-object v0
 
-    .line 92
+    .line 96
     invoke-virtual {v0}, Ljava/lang/reflect/Method;->isAccessible()Z
 
     move-result v1
 
     if-nez v1, :cond_1e
 
-    .line 93
+    .line 97
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
-    .line 95
+    .line 99
     :cond_1e
     const/4 v1, 0x0
 
@@ -227,16 +227,16 @@
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_6 .. :try_end_24} :catch_30
     .catch Ljava/lang/IllegalAccessException; {:try_start_6 .. :try_end_24} :catch_3b
 
-    .line 104
+    .line 108
     :cond_24
     :goto_24
     return-void
 
-    .line 96
+    .line 100
     :catch_25
     move-exception v0
 
-    .line 97
+    .line 101
     const-string/jumbo v0, "ViewUtils"
 
     const-string/jumbo v1, "Could not find method makeOptionalFitsSystemWindows. Oh well..."
@@ -245,11 +245,11 @@
 
     goto :goto_24
 
-    .line 98
+    .line 102
     :catch_30
     move-exception v0
 
-    .line 99
+    .line 103
     const-string/jumbo v1, "ViewUtils"
 
     const-string/jumbo v2, "Could not invoke makeOptionalFitsSystemWindows"
@@ -258,11 +258,11 @@
 
     goto :goto_24
 
-    .line 100
+    .line 104
     :catch_3b
     move-exception v0
 
-    .line 101
+    .line 105
     const-string/jumbo v1, "ViewUtils"
 
     const-string/jumbo v2, "Could not invoke makeOptionalFitsSystemWindows"

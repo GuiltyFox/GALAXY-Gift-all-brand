@@ -11,7 +11,7 @@
 
 .field private b:Z
 
-.field private c:Landroid/view/View;
+.field c:Landroid/view/View;
 
 
 # direct methods
@@ -19,20 +19,20 @@
     .registers 3
 
     .prologue
-    .line 436
+    .line 441
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 437
+    .line 442
     if-eqz p1, :cond_7
 
     if-nez p2, :cond_8
 
-    .line 441
+    .line 446
     :cond_7
     :goto_7
     return-void
 
-    .line 440
+    .line 445
     :cond_8
     iput-object p1, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->c:Landroid/view/View;
 
@@ -43,42 +43,32 @@
     .registers 5
 
     .prologue
-    .line 444
+    .line 449
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 445
+    .line 450
     if-eqz p1, :cond_7
 
     if-nez p2, :cond_8
 
-    .line 451
+    .line 456
     :cond_7
     :goto_7
     return-void
 
-    .line 448
+    .line 453
     :cond_8
     iput-object p3, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->a:Landroid/view/animation/Animation$AnimationListener;
 
-    .line 449
+    .line 454
     iput-object p1, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->c:Landroid/view/View;
 
-    .line 450
+    .line 455
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->b:Z
 
     goto :goto_7
-.end method
-
-.method static synthetic a(Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;)Landroid/view/View;
-    .registers 2
-
-    .prologue
-    .line 431
-    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->c:Landroid/view/View;
-
-    return-object v0
 .end method
 
 
@@ -87,7 +77,7 @@
     .registers 5
 
     .prologue
-    .line 464
+    .line 469
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->c:Landroid/view/View;
 
     if-eqz v0, :cond_20
@@ -96,7 +86,7 @@
 
     if-eqz v0, :cond_20
 
-    .line 475
+    .line 480
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->c:Landroid/view/View;
 
     invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->G(Landroid/view/View;)Z
@@ -111,7 +101,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 476
+    .line 481
     :cond_16
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->c:Landroid/view/View;
 
@@ -121,23 +111,23 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    .line 486
+    .line 491
     :cond_20
     :goto_20
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->a:Landroid/view/animation/Animation$AnimationListener;
 
     if-eqz v0, :cond_29
 
-    .line 487
+    .line 492
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->a:Landroid/view/animation/Animation$AnimationListener;
 
     invoke-interface {v0, p1}, Landroid/view/animation/Animation$AnimationListener;->onAnimationEnd(Landroid/view/animation/Animation;)V
 
-    .line 489
+    .line 494
     :cond_29
     return-void
 
-    .line 483
+    .line 488
     :cond_2a
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->c:Landroid/view/View;
 
@@ -154,17 +144,17 @@
     .registers 3
 
     .prologue
-    .line 493
+    .line 498
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->a:Landroid/view/animation/Animation$AnimationListener;
 
     if-eqz v0, :cond_9
 
-    .line 494
+    .line 499
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->a:Landroid/view/animation/Animation$AnimationListener;
 
     invoke-interface {v0, p1}, Landroid/view/animation/Animation$AnimationListener;->onAnimationRepeat(Landroid/view/animation/Animation;)V
 
-    .line 496
+    .line 501
     :cond_9
     return-void
 .end method
@@ -173,17 +163,17 @@
     .registers 3
 
     .prologue
-    .line 456
+    .line 461
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->a:Landroid/view/animation/Animation$AnimationListener;
 
     if-eqz v0, :cond_9
 
-    .line 457
+    .line 462
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$AnimateOnHWLayerIfNeededListener;->a:Landroid/view/animation/Animation$AnimationListener;
 
     invoke-interface {v0, p1}, Landroid/view/animation/Animation$AnimationListener;->onAnimationStart(Landroid/view/animation/Animation;)V
 
-    .line 459
+    .line 464
     :cond_9
     return-void
 .end method

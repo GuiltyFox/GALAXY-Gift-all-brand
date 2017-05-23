@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 162
+    .line 163
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$2;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$2;->b:Lcom/facebook/login/widget/LoginButton;
@@ -39,7 +39,7 @@
     .registers 5
 
     .prologue
-    .line 165
+    .line 166
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$2;->a:Landroid/content/Context;
 
     const/4 v1, 0x0
@@ -48,6 +48,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/widget/ImageButton;Lcom/facebook/login/widget/LoginButton;)V
 
-    .line 166
+    .line 167
     return-void
 .end method

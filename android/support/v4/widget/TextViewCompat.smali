@@ -101,6 +101,19 @@
     return v0
 .end method
 
+.method public static a(Landroid/widget/TextView;I)V
+    .registers 3
+
+    .prologue
+    .line 278
+    sget-object v0, Landroid/support/v4/widget/TextViewCompat;->a:Landroid/support/v4/widget/TextViewCompat$TextViewCompatImpl;
+
+    invoke-interface {v0, p0, p1}, Landroid/support/v4/widget/TextViewCompat$TextViewCompatImpl;->a(Landroid/widget/TextView;I)V
+
+    .line 279
+    return-void
+.end method
+
 .method public static a(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
     .registers 11
 
@@ -122,4 +135,18 @@
 
     .line 206
     return-void
+.end method
+
+.method public static b(Landroid/widget/TextView;)[Landroid/graphics/drawable/Drawable;
+    .registers 2
+
+    .prologue
+    .line 285
+    sget-object v0, Landroid/support/v4/widget/TextViewCompat;->a:Landroid/support/v4/widget/TextViewCompat$TextViewCompatImpl;
+
+    invoke-interface {v0, p0}, Landroid/support/v4/widget/TextViewCompat$TextViewCompatImpl;->b(Landroid/widget/TextView;)[Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    return-object v0
 .end method

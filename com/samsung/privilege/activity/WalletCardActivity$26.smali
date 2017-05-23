@@ -20,7 +20,7 @@
     .registers 3
 
     .prologue
-    .line 2169
+    .line 2167
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$26;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$26;->a:Ljava/lang/String;
@@ -36,10 +36,10 @@
     .registers 8
 
     .prologue
-    .line 2234
+    .line 2232
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 2235
+    .line 2233
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v0
@@ -74,7 +74,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2236
+    .line 2234
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .registers 8
 
     .prologue
-    .line 2172
+    .line 2170
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v0
@@ -117,7 +117,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2174
+    .line 2172
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$26;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/WalletCardActivity$26$1;
@@ -126,6 +126,6 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 2230
+    .line 2228
     return-void
 .end method

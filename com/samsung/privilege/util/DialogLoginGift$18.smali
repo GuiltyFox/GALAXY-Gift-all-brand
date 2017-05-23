@@ -15,26 +15,30 @@
 # instance fields
 .field final synthetic a:Landroid/app/Dialog;
 
-.field final synthetic b:Landroid/widget/ImageView;
+.field final synthetic b:Ljava/lang/String;
 
-.field final synthetic c:Landroid/content/Context;
+.field final synthetic c:Ljava/lang/String;
 
-.field final synthetic d:Z
+.field final synthetic d:Landroid/content/Context;
+
+.field final synthetic e:Landroid/os/Handler;
 
 
 # direct methods
-.method constructor <init>(Landroid/app/Dialog;Landroid/widget/ImageView;Landroid/content/Context;Z)V
-    .registers 5
+.method constructor <init>(Landroid/app/Dialog;Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
+    .registers 6
 
     .prologue
-    .line 1116
+    .line 1131
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->a:Landroid/app/Dialog;
 
-    iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->b:Landroid/widget/ImageView;
+    iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->b:Ljava/lang/String;
 
-    iput-object p3, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->c:Landroid/content/Context;
+    iput-object p3, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->c:Ljava/lang/String;
 
-    iput-boolean p4, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->d:Z
+    iput-object p4, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->d:Landroid/content/Context;
+
+    iput-object p5, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->e:Landroid/os/Handler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,29 +51,22 @@
     .registers 6
 
     .prologue
-    .line 1118
+    .line 1133
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1119
-    invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
+    .line 1135
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->b:Ljava/lang/String;
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->c:Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+    iget-object v2, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->d:Landroid/content/Context;
 
-    .line 1121
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->b:Landroid/widget/ImageView;
+    iget-object v3, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->e:Landroid/os/Handler;
 
-    new-instance v1, Lcom/samsung/privilege/util/DialogLoginGift$18$1;
+    invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
 
-    invoke-direct {v1, p0}, Lcom/samsung/privilege/util/DialogLoginGift$18$1;-><init>(Lcom/samsung/privilege/util/DialogLoginGift$18;)V
-
-    const-wide/16 v2, 0x1f4
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/widget/ImageView;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 1127
+    .line 1136
     return-void
 .end method

@@ -51,7 +51,7 @@
     return-object v0
 .end method
 
-.method public e(Landroid/graphics/drawable/Drawable;)I
+.method public d(Landroid/graphics/drawable/Drawable;)I
     .registers 3
 
     .prologue

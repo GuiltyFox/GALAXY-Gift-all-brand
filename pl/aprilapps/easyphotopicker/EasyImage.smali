@@ -261,17 +261,17 @@
     .registers 4
 
     .prologue
-    .line 230
-    invoke-static {p0, p1}, Lpl/aprilapps/easyphotopicker/EasyImage;->b(Landroid/content/Context;I)Landroid/content/Intent;
+    .line 215
+    invoke-static {p0, p1}, Lpl/aprilapps/easyphotopicker/EasyImage;->a(Landroid/content/Context;I)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 231
-    const/16 v1, 0x1d23
+    .line 216
+    const/16 v1, 0x1d22
 
     invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 232
+    .line 217
     return-void
 .end method
 
@@ -573,6 +573,24 @@
     goto :goto_18
 .end method
 
+.method public static b(Landroid/app/Activity;I)V
+    .registers 4
+
+    .prologue
+    .line 230
+    invoke-static {p0, p1}, Lpl/aprilapps/easyphotopicker/EasyImage;->b(Landroid/content/Context;I)Landroid/content/Intent;
+
+    move-result-object v0
+
+    .line 231
+    const/16 v1, 0x1d23
+
+    invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
+
+    .line 232
+    return-void
+.end method
+
 .method private static b(Landroid/content/Intent;Landroid/app/Activity;Lpl/aprilapps/easyphotopicker/EasyImage$Callbacks;)V
     .registers 6
 
@@ -674,67 +692,5 @@
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     .line 139
-    return-void
-.end method
-
-.method public static openGallery(Landroid/app/Activity;I)V
-    .registers 4
-
-    .prologue
-    .line 215
-    invoke-static {p0, p1}, Lpl/aprilapps/easyphotopicker/EasyImage;->a(Landroid/content/Context;I)Landroid/content/Intent;
-
-    move-result-object v0
-
-    .line 216
-    const/16 v1, 0x1d22
-
-    invoke-virtual {p0, v0, v1}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
-
-    .line 217
-    return-void
-.end method
-
-.method public static openGallery(Landroid/app/Fragment;I)V
-    .registers 4
-
-    .prologue
-    .line 225
-    invoke-virtual {p0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lpl/aprilapps/easyphotopicker/EasyImage;->a(Landroid/content/Context;I)Landroid/content/Intent;
-
-    move-result-object v0
-
-    .line 226
-    const/16 v1, 0x1d22
-
-    invoke-virtual {p0, v0, v1}, Landroid/app/Fragment;->startActivityForResult(Landroid/content/Intent;I)V
-
-    .line 227
-    return-void
-.end method
-
-.method public static openGallery(Landroid/support/v4/app/Fragment;I)V
-    .registers 4
-
-    .prologue
-    .line 220
-    invoke-virtual {p0}, Landroid/support/v4/app/Fragment;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lpl/aprilapps/easyphotopicker/EasyImage;->a(Landroid/content/Context;I)Landroid/content/Intent;
-
-    move-result-object v0
-
-    .line 221
-    const/16 v1, 0x1d22
-
-    invoke-virtual {p0, v0, v1}, Landroid/support/v4/app/Fragment;->startActivityForResult(Landroid/content/Intent;I)V
-
-    .line 222
     return-void
 .end method

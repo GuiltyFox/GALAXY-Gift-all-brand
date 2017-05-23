@@ -46,9 +46,7 @@
     .line 578
     iget-object v0, p0, Landroid/support/v7/app/AlertController$5;->c:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->j(Landroid/support/v7/app/AlertController;)Landroid/widget/ListView;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->b:Landroid/widget/ListView;
 
     iget-object v1, p0, Landroid/support/v7/app/AlertController$5;->a:Landroid/view/View;
 

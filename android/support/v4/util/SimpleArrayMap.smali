@@ -97,6 +97,24 @@
     goto :goto_d
 .end method
 
+.method public constructor <init>(Landroid/support/v4/util/SimpleArrayMap;)V
+    .registers 2
+
+    .prologue
+    .line 231
+    invoke-direct {p0}, Landroid/support/v4/util/SimpleArrayMap;-><init>()V
+
+    .line 232
+    if-eqz p1, :cond_8
+
+    .line 233
+    invoke-virtual {p0, p1}, Landroid/support/v4/util/SimpleArrayMap;->a(Landroid/support/v4/util/SimpleArrayMap;)V
+
+    .line 235
+    :cond_8
+    return-void
+.end method
+
 .method private static a([I[Ljava/lang/Object;I)V
     .registers 7
 
@@ -780,6 +798,82 @@
     .line 264
     :cond_26
     return-void
+.end method
+
+.method public a(Landroid/support/v4/util/SimpleArrayMap;)V
+    .registers 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/support/v4/util/SimpleArrayMap",
+            "<+TK;+TV;>;)V"
+        }
+    .end annotation
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 429
+    iget v1, p1, Landroid/support/v4/util/SimpleArrayMap;->h:I
+
+    .line 430
+    iget v2, p0, Landroid/support/v4/util/SimpleArrayMap;->h:I
+
+    add-int/2addr v2, v1
+
+    invoke-virtual {p0, v2}, Landroid/support/v4/util/SimpleArrayMap;->a(I)V
+
+    .line 431
+    iget v2, p0, Landroid/support/v4/util/SimpleArrayMap;->h:I
+
+    if-nez v2, :cond_22
+
+    .line 432
+    if-lez v1, :cond_21
+
+    .line 433
+    iget-object v2, p1, Landroid/support/v4/util/SimpleArrayMap;->f:[I
+
+    iget-object v3, p0, Landroid/support/v4/util/SimpleArrayMap;->f:[I
+
+    invoke-static {v2, v0, v3, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 434
+    iget-object v2, p1, Landroid/support/v4/util/SimpleArrayMap;->g:[Ljava/lang/Object;
+
+    iget-object v3, p0, Landroid/support/v4/util/SimpleArrayMap;->g:[Ljava/lang/Object;
+
+    shl-int/lit8 v4, v1, 0x1
+
+    invoke-static {v2, v0, v3, v0, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 435
+    iput v1, p0, Landroid/support/v4/util/SimpleArrayMap;->h:I
+
+    .line 442
+    :cond_21
+    return-void
+
+    .line 438
+    :cond_22
+    :goto_22
+    if-ge v0, v1, :cond_21
+
+    .line 439
+    invoke-virtual {p1, v0}, Landroid/support/v4/util/SimpleArrayMap;->b(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v0}, Landroid/support/v4/util/SimpleArrayMap;->c(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {p0, v2, v3}, Landroid/support/v4/util/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 438
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_22
 .end method
 
 .method b(Ljava/lang/Object;)I

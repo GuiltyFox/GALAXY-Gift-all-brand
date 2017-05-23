@@ -7,23 +7,14 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>()V
     .registers 1
 
     .prologue
-    .line 52
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v4/view/WindowInsetsCompat$1;)V
-    .registers 2
-
-    .prologue
-    .line 52
-    invoke-direct {p0}, Landroid/support/v4/view/WindowInsetsCompat$WindowInsetsCompatBaseImpl;-><init>()V
-
+    .line 54
     return-void
 .end method
 
@@ -33,7 +24,7 @@
     .registers 3
 
     .prologue
-    .line 95
+    .line 98
     const/4 v0, 0x0
 
     return-object v0
@@ -43,7 +34,7 @@
     .registers 7
 
     .prologue
-    .line 100
+    .line 103
     const/4 v0, 0x0
 
     return-object v0
@@ -53,7 +44,7 @@
     .registers 3
 
     .prologue
-    .line 70
+    .line 73
     const/4 v0, 0x0
 
     return v0
@@ -63,7 +54,7 @@
     .registers 3
 
     .prologue
-    .line 55
+    .line 58
     const/4 v0, 0x0
 
     return v0
@@ -73,7 +64,7 @@
     .registers 3
 
     .prologue
-    .line 65
+    .line 68
     const/4 v0, 0x0
 
     return v0
@@ -83,7 +74,7 @@
     .registers 3
 
     .prologue
-    .line 60
+    .line 63
     const/4 v0, 0x0
 
     return v0
@@ -93,7 +84,17 @@
     .registers 3
 
     .prologue
-    .line 85
+    .line 78
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public g(Ljava/lang/Object;)Z
+    .registers 3
+
+    .prologue
+    .line 88
     const/4 v0, 0x0
 
     return v0

@@ -100,7 +100,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040142
+    const v1, 0x7f0400d2
 
     const/4 v2, 0x0
 
@@ -197,7 +197,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
-    const v3, 0x7f0900af
+    const v3, 0x7f090067
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getString(I)Ljava/lang/String;
 
@@ -248,7 +248,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0900d2
+    const v5, 0x7f09007d
 
     invoke-virtual {v4, v5}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -311,7 +311,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0202de
+    const v2, 0x7f0201b4
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -477,7 +477,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
-    const v6, 0x7f0900d3
+    const v6, 0x7f09007e
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getString(I)Ljava/lang/String;
 
@@ -505,7 +505,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
-    const v4, 0x7f0900d4
+    const v4, 0x7f09007f
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getString(I)Ljava/lang/String;
 
@@ -537,7 +537,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
-    const v3, 0x7f0900d5
+    const v3, 0x7f090080
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getString(I)Ljava/lang/String;
 

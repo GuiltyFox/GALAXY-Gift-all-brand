@@ -146,22 +146,50 @@
 
 .field public static final abc_text_cursor_material:I = 0x7f020048
 
-.field public static final abc_text_select_handle_left_mtrl_alpha:I = 0x7f020049
+.field public static final abc_text_select_handle_left_mtrl_dark:I = 0x7f020049
 
-.field public static final abc_text_select_handle_middle_mtrl_alpha:I = 0x7f02004a
+.field public static final abc_text_select_handle_left_mtrl_light:I = 0x7f02004a
 
-.field public static final abc_text_select_handle_right_mtrl_alpha:I = 0x7f02004b
+.field public static final abc_text_select_handle_middle_mtrl_dark:I = 0x7f02004b
 
-.field public static final abc_textfield_activated_mtrl_alpha:I = 0x7f02004c
+.field public static final abc_text_select_handle_middle_mtrl_light:I = 0x7f02004c
 
-.field public static final abc_textfield_default_mtrl_alpha:I = 0x7f02004d
+.field public static final abc_text_select_handle_right_mtrl_dark:I = 0x7f02004d
 
-.field public static final abc_textfield_search_activated_mtrl_alpha:I = 0x7f02004e
+.field public static final abc_text_select_handle_right_mtrl_light:I = 0x7f02004e
 
-.field public static final abc_textfield_search_default_mtrl_alpha:I = 0x7f02004f
+.field public static final abc_textfield_activated_mtrl_alpha:I = 0x7f02004f
 
-.field public static final abc_textfield_search_material:I = 0x7f020050
+.field public static final abc_textfield_default_mtrl_alpha:I = 0x7f020050
 
-.field public static final abc_vector_test:I = 0x7f020051
+.field public static final abc_textfield_search_activated_mtrl_alpha:I = 0x7f020051
 
-.field public static final notification_template_icon_bg:I = 0x7f020393
+.field public static final abc_textfield_search_default_mtrl_alpha:I = 0x7f020052
+
+.field public static final abc_textfield_search_material:I = 0x7f020053
+
+.field public static final abc_vector_test:I = 0x7f020054
+
+.field public static final notification_action_background:I = 0x7f0201e9
+
+.field public static final notification_bg:I = 0x7f0201ea
+
+.field public static final notification_bg_low:I = 0x7f0201eb
+
+.field public static final notification_bg_low_normal:I = 0x7f0201ec
+
+.field public static final notification_bg_low_pressed:I = 0x7f0201ed
+
+.field public static final notification_bg_normal:I = 0x7f0201ee
+
+.field public static final notification_bg_normal_pressed:I = 0x7f0201ef
+
+.field public static final notification_icon_background:I = 0x7f0201f0
+
+.field public static final notification_template_icon_bg:I = 0x7f020259
+
+.field public static final notification_template_icon_low_bg:I = 0x7f02025a
+
+.field public static final notification_tile_bg:I = 0x7f0201f1
+
+.field public static final notify_panel_notification_icon_bg:I = 0x7f0201f2

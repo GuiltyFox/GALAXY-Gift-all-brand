@@ -19,10 +19,10 @@
     .registers 1
 
     .prologue
-    .line 1680
+    .line 1863
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1681
+    .line 1864
     return-void
 .end method
 
@@ -30,10 +30,10 @@
     .registers 3
 
     .prologue
-    .line 1691
+    .line 1874
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1692
+    .line 1875
     return-void
 .end method
 
@@ -41,14 +41,14 @@
     .registers 2
 
     .prologue
-    .line 1951
+    .line 2151
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
 
-    .line 1952
+    .line 2152
     iget-object v0, v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->mBehaviorTag:Ljava/lang/Object;
 
     return-object v0
@@ -58,17 +58,17 @@
     .registers 3
 
     .prologue
-    .line 1939
+    .line 2139
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
 
-    .line 1940
+    .line 2140
     iput-object p1, v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->mBehaviorTag:Ljava/lang/Object;
 
-    .line 1941
+    .line 2141
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .end annotation
 
     .prologue
-    .line 1785
+    .line 1991
     invoke-virtual {p0, p1, p2}, Landroid/support/design/widget/CoordinatorLayout$Behavior;->getScrimOpacity(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;)F
 
     move-result v0
@@ -107,6 +107,25 @@
     goto :goto_a
 .end method
 
+.method public getInsetDodgeRect(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;Landroid/graphics/Rect;)Z
+    .registers 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/support/design/widget/CoordinatorLayout;",
+            "TV;",
+            "Landroid/graphics/Rect;",
+            ")Z"
+        }
+    .end annotation
+
+    .prologue
+    .line 2452
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public getScrimColor(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;)I
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
@@ -118,7 +137,7 @@
     .end annotation
 
     .prologue
-    .line 1752
+    .line 1957
     const/high16 v0, -0x1000000
 
     return v0
@@ -135,7 +154,7 @@
     .end annotation
 
     .prologue
-    .line 1769
+    .line 1975
     const/4 v0, 0x0
 
     return v0
@@ -151,8 +170,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 1872
+    .line 2072
     const/4 v0, 0x0
 
     return v0
@@ -171,7 +193,7 @@
     .end annotation
 
     .prologue
-    .line 1811
+    .line 2017
     const/4 v0, 0x0
 
     return v0
@@ -191,8 +213,16 @@
     .end annotation
 
     .prologue
-    .line 2173
+    .line 2374
     return-object p3
+.end method
+
+.method public onAttachedToLayoutParams(Landroid/support/design/widget/CoordinatorLayout$LayoutParams;)V
+    .registers 2
+
+    .prologue
+    .line 1886
+    return-void
 .end method
 
 .method public onDependentViewChanged(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)Z
@@ -208,7 +238,7 @@
     .end annotation
 
     .prologue
-    .line 1840
+    .line 2046
     const/4 v0, 0x0
 
     return v0
@@ -227,7 +257,15 @@
     .end annotation
 
     .prologue
-    .line 1858
+    .line 2064
+    return-void
+.end method
+
+.method public onDetachedFromLayoutParams()V
+    .registers 1
+
+    .prologue
+    .line 1896
     return-void
 .end method
 
@@ -244,7 +282,7 @@
     .end annotation
 
     .prologue
-    .line 1714
+    .line 1918
     const/4 v0, 0x0
 
     return v0
@@ -261,7 +299,7 @@
     .end annotation
 
     .prologue
-    .line 1926
+    .line 2126
     const/4 v0, 0x0
 
     return v0
@@ -278,7 +316,7 @@
     .end annotation
 
     .prologue
-    .line 1898
+    .line 2098
     const/4 v0, 0x0
 
     return v0
@@ -297,7 +335,7 @@
     .end annotation
 
     .prologue
-    .line 2126
+    .line 2326
     const/4 v0, 0x0
 
     return v0
@@ -316,7 +354,7 @@
     .end annotation
 
     .prologue
-    .line 2154
+    .line 2354
     const/4 v0, 0x0
 
     return v0
@@ -335,7 +373,7 @@
     .end annotation
 
     .prologue
-    .line 2095
+    .line 2295
     return-void
 .end method
 
@@ -352,7 +390,7 @@
     .end annotation
 
     .prologue
-    .line 2062
+    .line 2262
     return-void
 .end method
 
@@ -370,8 +408,27 @@
     .end annotation
 
     .prologue
-    .line 2005
+    .line 2205
     return-void
+.end method
+
+.method public onRequestChildRectangleOnScreen(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;Landroid/graphics/Rect;Z)Z
+    .registers 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/support/design/widget/CoordinatorLayout;",
+            "TV;",
+            "Landroid/graphics/Rect;",
+            "Z)Z"
+        }
+    .end annotation
+
+    .prologue
+    .line 2396
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public onRestoreInstanceState(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;Landroid/os/Parcelable;)V
@@ -387,7 +444,7 @@
     .end annotation
 
     .prologue
-    .line 2190
+    .line 2413
     return-void
 .end method
 
@@ -403,7 +460,7 @@
     .end annotation
 
     .prologue
-    .line 2211
+    .line 2434
     sget-object v0, Landroid/view/View$BaseSavedState;->EMPTY_STATE:Landroid/view/AbsSavedState;
 
     return-object v0
@@ -423,7 +480,7 @@
     .end annotation
 
     .prologue
-    .line 1979
+    .line 2179
     const/4 v0, 0x0
 
     return v0
@@ -442,7 +499,7 @@
     .end annotation
 
     .prologue
-    .line 2029
+    .line 2229
     return-void
 .end method
 
@@ -459,7 +516,7 @@
     .end annotation
 
     .prologue
-    .line 1733
+    .line 1937
     const/4 v0, 0x0
 
     return v0

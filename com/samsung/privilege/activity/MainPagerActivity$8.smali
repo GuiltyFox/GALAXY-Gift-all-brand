@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 882
+    .line 881
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$8;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,10 +37,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 886
+    .line 885
     const/4 v0, 0x0
 
-    .line 887
+    .line 886
     :try_start_2
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$8;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
@@ -50,7 +50,7 @@
 
     if-eqz v2, :cond_1f
 
-    .line 888
+    .line 887
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$8;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->d(Lcom/samsung/privilege/activity/MainPagerActivity;)Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;
@@ -65,19 +65,19 @@
 
     move v0, v1
 
-    .line 895
+    .line 894
     :cond_17
     :goto_17
     if-ne v0, v1, :cond_1e
 
-    .line 896
+    .line 895
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$8;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->e(Lcom/samsung/privilege/activity/MainPagerActivity;)V
     :try_end_1e
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_1e} :catch_21
 
-    .line 901
+    .line 900
     :cond_1e
     :goto_1e
     return-void
@@ -85,10 +85,10 @@
     :cond_1f
     move v0, v1
 
-    .line 892
+    .line 891
     goto :goto_17
 
-    .line 898
+    .line 897
     :catch_21
     move-exception v0
 

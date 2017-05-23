@@ -9,29 +9,21 @@
 # instance fields
 .field private final mMenuItem:Landroid/support/v7/view/menu/MenuItemImpl;
 
+.field needsEmptyIcon:Z
+
 
 # direct methods
-.method private constructor <init>(Landroid/support/v7/view/menu/MenuItemImpl;)V
+.method constructor <init>(Landroid/support/v7/view/menu/MenuItemImpl;)V
     .registers 2
 
     .prologue
-    .line 610
+    .line 619
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 611
+    .line 620
     iput-object p1, p0, Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuTextItem;->mMenuItem:Landroid/support/v7/view/menu/MenuItemImpl;
 
-    .line 612
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v7/view/menu/MenuItemImpl;Landroid/support/design/internal/NavigationMenuPresenter$1;)V
-    .registers 3
-
-    .prologue
-    .line 606
-    invoke-direct {p0, p1}, Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuTextItem;-><init>(Landroid/support/v7/view/menu/MenuItemImpl;)V
-
+    .line 621
     return-void
 .end method
 
@@ -41,7 +33,7 @@
     .registers 2
 
     .prologue
-    .line 615
+    .line 624
     iget-object v0, p0, Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuTextItem;->mMenuItem:Landroid/support/v7/view/menu/MenuItemImpl;
 
     return-object v0

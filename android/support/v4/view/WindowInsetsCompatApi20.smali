@@ -87,3 +87,17 @@
 
     return v0
 .end method
+
+.method public static f(Ljava/lang/Object;)Z
+    .registers 2
+
+    .prologue
+    .line 47
+    check-cast p0, Landroid/view/WindowInsets;
+
+    invoke-virtual {p0}, Landroid/view/WindowInsets;->hasSystemWindowInsets()Z
+
+    move-result v0
+
+    return v0
+.end method

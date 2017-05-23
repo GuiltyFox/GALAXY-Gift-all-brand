@@ -117,13 +117,13 @@
     .line 184
     iget-object v0, p0, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->j:Landroid/view/View;
 
-    const v1, 0x7f1000ce
+    const v1, 0x7f1000d1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    const v1, 0x7f02036e
+    const v1, 0x7f020238
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 
@@ -137,18 +137,18 @@
     .line 191
     iget-object v0, p0, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->j:Landroid/view/View;
 
-    const v1, 0x7f1000ce
+    const v1, 0x7f1000d1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    const v1, 0x7f020371
+    const v1, 0x7f02023b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 
     .line 193
-    const v0, 0x7f1000cc
+    const v0, 0x7f1000cf
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 
@@ -179,7 +179,7 @@
     move-result-object v1
 
     .line 196
-    const v0, 0x7f1000cd
+    const v0, 0x7f1000d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 
@@ -475,7 +475,7 @@
     invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;)V
 
     .line 87
-    const v0, 0x7f1000b7
+    const v0, 0x7f1000ba
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 
@@ -522,7 +522,7 @@
     move-result-object v1
 
     .line 92
-    const v0, 0x7f1000ca
+    const v0, 0x7f1000cd
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 
@@ -683,7 +683,7 @@
     .line 104
     const-string/jumbo v1, ""
 
-    const v2, 0x7f090283
+    const v2, 0x7f0900ed
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->getString(I)Ljava/lang/String;
 
@@ -789,12 +789,12 @@
     invoke-direct {v2, p0, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 243
-    const v0, 0x7f040136
+    const v0, 0x7f0400c7
 
     invoke-virtual {v2, v0}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 245
-    const v0, 0x7f1000cd
+    const v0, 0x7f1000d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 
@@ -803,7 +803,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 247
-    const v1, 0x7f100666
+    const v1, 0x7f10045b
 
     invoke-virtual {v2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -812,7 +812,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 248
-    const v3, 0x7f0903c0
+    const v3, 0x7f0901cc
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->getString(I)Ljava/lang/String;
 
@@ -837,7 +837,7 @@
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 252
-    const v0, 0x7f100667
+    const v0, 0x7f10045c
 
     invoke-virtual {v2, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -853,7 +853,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 283
-    const v0, 0x7f10058c
+    const v0, 0x7f10036f
 
     invoke-virtual {v2, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -907,7 +907,7 @@
     if-eqz v0, :cond_51
 
     .line 205
-    const v0, 0x7f1000cc
+    const v0, 0x7f1000cf
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 
@@ -940,7 +940,7 @@
 
     .line 210
     :goto_1f
-    const v0, 0x7f1000cc
+    const v0, 0x7f1000cf
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 
@@ -979,7 +979,7 @@
     move-result-object v1
 
     .line 214
-    const v0, 0x7f1000cd
+    const v0, 0x7f1000d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 
@@ -1021,7 +1021,7 @@
     if-eqz v0, :cond_51
 
     .line 224
-    const v0, 0x7f1000cc
+    const v0, 0x7f1000cf
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 
@@ -1049,7 +1049,7 @@
 
     .line 229
     :goto_1f
-    const v0, 0x7f1000cc
+    const v0, 0x7f1000cf
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 
@@ -1088,7 +1088,7 @@
     move-result-object v1
 
     .line 233
-    const v0, 0x7f1000cd
+    const v0, 0x7f1000d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 

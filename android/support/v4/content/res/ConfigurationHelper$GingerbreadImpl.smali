@@ -7,23 +7,14 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>()V
     .registers 1
 
     .prologue
-    .line 51
+    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v4/content/res/ConfigurationHelper$1;)V
-    .registers 2
-
-    .prologue
-    .line 51
-    invoke-direct {p0}, Landroid/support/v4/content/res/ConfigurationHelper$GingerbreadImpl;-><init>()V
-
+    .line 53
     return-void
 .end method
 
@@ -33,7 +24,7 @@
     .registers 3
 
     .prologue
-    .line 54
+    .line 57
     invoke-static {p1}, Landroid/support/v4/content/res/ConfigurationHelperGingerbread;->a(Landroid/content/res/Resources;)I
 
     move-result v0
@@ -45,7 +36,7 @@
     .registers 3
 
     .prologue
-    .line 59
+    .line 62
     invoke-static {p1}, Landroid/support/v4/content/res/ConfigurationHelperGingerbread;->b(Landroid/content/res/Resources;)I
 
     move-result v0
@@ -57,7 +48,7 @@
     .registers 3
 
     .prologue
-    .line 64
+    .line 67
     invoke-static {p1}, Landroid/support/v4/content/res/ConfigurationHelperGingerbread;->c(Landroid/content/res/Resources;)I
 
     move-result v0

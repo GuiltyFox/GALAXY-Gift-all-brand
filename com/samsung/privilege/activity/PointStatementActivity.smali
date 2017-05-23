@@ -88,7 +88,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 30
-    const v0, 0x7f040041
+    const v0, 0x7f04003c
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/PointStatementActivity;->setContentView(I)V
 
@@ -96,7 +96,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/PointStatementActivity;->a()V
 
     .line 33
-    const v0, 0x7f100198
+    const v0, 0x7f100185
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/PointStatementActivity;->findViewById(I)Landroid/view/View;
 
@@ -263,7 +263,7 @@
 
     .line 112
     :pswitch_1d
-    const v0, 0x7f100198
+    const v0, 0x7f100185
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/PointStatementActivity;->findViewById(I)Landroid/view/View;
 

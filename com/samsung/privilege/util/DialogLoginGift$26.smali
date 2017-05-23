@@ -3,7 +3,7 @@
 .source "DialogLoginGift.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/app/DatePickerDialog$OnDateSetListener;
 
 
 # annotations
@@ -13,24 +13,20 @@
 
 
 # instance fields
-.field final synthetic a:Landroid/content/Context;
+.field final synthetic a:Landroid/widget/TextView;
 
-.field final synthetic b:Landroid/widget/ImageView;
-
-.field final synthetic c:Landroid/app/Dialog;
+.field final synthetic b:Ljava/text/SimpleDateFormat;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Landroid/widget/ImageView;Landroid/app/Dialog;)V
-    .registers 4
+.method constructor <init>(Landroid/widget/TextView;Ljava/text/SimpleDateFormat;)V
+    .registers 3
 
     .prologue
-    .line 1611
-    iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
+    .line 1633
+    iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/widget/TextView;
 
-    iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->b:Landroid/widget/ImageView;
-
-    iput-object p3, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->c:Landroid/app/Dialog;
+    iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->b:Ljava/text/SimpleDateFormat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,125 +35,33 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 5
+.method public onDateSet(Landroid/widget/DatePicker;III)V
+    .registers 8
 
     .prologue
-    .line 1614
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
+    .line 1635
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    const-string/jumbo v1, "1033"
+    .line 1636
+    invoke-virtual {v0, p2, p3, p4}, Ljava/util/Calendar;->set(III)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 1637
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/widget/TextView;
 
-    move-result v0
+    iget-object v2, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->b:Ljava/text/SimpleDateFormat;
 
-    if-eqz v0, :cond_6a
-
-    .line 1615
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
-
-    const-string/jumbo v1, "1054"
-
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
-
-    .line 1616
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->b:Landroid/widget/ImageView;
-
-    const v1, 0x7f020298
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 1621
-    :goto_1f
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
-
-    .line 1623
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->c:Landroid/app/Dialog;
-
-    const v1, 0x7f100605
-
-    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
-
-    const v2, 0x7f090311
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 1624
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->c:Landroid/app/Dialog;
-
-    const v1, 0x7f100615
-
-    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v2, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/TextView;
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
-
-    const v2, 0x7f09030d
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 1625
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->c:Landroid/app/Dialog;
-
-    const v1, 0x7f100602
-
-    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
-
-    const v2, 0x7f09030c
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 1626
+    .line 1638
     return-void
-
-    .line 1618
-    :cond_6a
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
-
-    const-string/jumbo v1, "1033"
-
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
-
-    .line 1619
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->b:Landroid/widget/ImageView;
-
-    const v1, 0x7f020299
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    goto :goto_1f
 .end method

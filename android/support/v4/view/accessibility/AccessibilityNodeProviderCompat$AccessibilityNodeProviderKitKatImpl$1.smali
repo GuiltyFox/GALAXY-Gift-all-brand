@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 96
+    .line 102
     iput-object p1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;->b:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl;
 
     iput-object p2, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
@@ -39,21 +39,21 @@
     .registers 3
 
     .prologue
-    .line 123
+    .line 129
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
-    .line 124
+    .line 130
     invoke-virtual {v0, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a(I)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
 
     move-result-object v0
 
-    .line 125
+    .line 131
     if-nez v0, :cond_a
 
-    .line 126
+    .line 132
     const/4 v0, 0x0
 
-    .line 128
+    .line 134
     :goto_9
     return-object v0
 
@@ -80,36 +80,36 @@
     .end annotation
 
     .prologue
-    .line 106
+    .line 112
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
-    .line 107
+    .line 113
     invoke-virtual {v0, p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a(Ljava/lang/String;I)Ljava/util/List;
 
     move-result-object v3
 
-    .line 108
+    .line 114
     if-nez v3, :cond_a
 
-    .line 109
+    .line 115
     const/4 v0, 0x0
 
-    .line 117
+    .line 123
     :goto_9
     return-object v0
 
-    .line 111
+    .line 117
     :cond_a
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 112
+    .line 118
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v4
 
-    .line 113
+    .line 119
     const/4 v0, 0x0
 
     move v2, v0
@@ -117,21 +117,21 @@
     :goto_15
     if-ge v2, v4, :cond_28
 
-    .line 114
+    .line 120
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
 
-    .line 115
+    .line 121
     invoke-virtual {v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a()Ljava/lang/Object;
 
     move-result-object v0
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 113
+    .line 119
     add-int/lit8 v0, v2, 0x1
 
     move v2, v0
@@ -141,7 +141,7 @@
     :cond_28
     move-object v0, v1
 
-    .line 117
+    .line 123
     goto :goto_9
 .end method
 
@@ -149,7 +149,7 @@
     .registers 5
 
     .prologue
-    .line 100
+    .line 106
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a(IILandroid/os/Bundle;)Z
@@ -163,20 +163,20 @@
     .registers 3
 
     .prologue
-    .line 134
+    .line 140
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->b(I)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
 
     move-result-object v0
 
-    .line 135
+    .line 141
     if-nez v0, :cond_a
 
-    .line 136
+    .line 142
     const/4 v0, 0x0
 
-    .line 138
+    .line 144
     :goto_9
     return-object v0
 

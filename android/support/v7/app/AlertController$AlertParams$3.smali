@@ -55,9 +55,7 @@
 
     iget-object v1, p0, Landroid/support/v7/app/AlertController$AlertParams$3;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v1}, Landroid/support/v7/app/AlertController;->g(Landroid/support/v7/app/AlertController;)Landroid/support/v7/app/AppCompatDialog;
-
-    move-result-object v1
+    iget-object v1, v1, Landroid/support/v7/app/AlertController;->a:Landroid/support/v7/app/AppCompatDialog;
 
     invoke-interface {v0, v1, p3}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
@@ -66,18 +64,16 @@
 
     iget-boolean v0, v0, Landroid/support/v7/app/AlertController$AlertParams;->E:Z
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_18
 
     .line 961
     iget-object v0, p0, Landroid/support/v7/app/AlertController$AlertParams$3;->a:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->g(Landroid/support/v7/app/AlertController;)Landroid/support/v7/app/AppCompatDialog;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->a:Landroid/support/v7/app/AppCompatDialog;
 
     invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDialog;->dismiss()V
 
     .line 963
-    :cond_1c
+    :cond_18
     return-void
 .end method

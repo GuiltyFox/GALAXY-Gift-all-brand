@@ -8,25 +8,16 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/support/v4/widget/CursorAdapter;)V
+.method constructor <init>(Landroid/support/v4/widget/CursorAdapter;)V
     .registers 2
 
     .prologue
-    .line 478
+    .line 491
     iput-object p1, p0, Landroid/support/v4/widget/CursorAdapter$MyDataSetObserver;->a:Landroid/support/v4/widget/CursorAdapter;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v4/widget/CursorAdapter;Landroid/support/v4/widget/CursorAdapter$1;)V
-    .registers 3
-
-    .prologue
-    .line 478
-    invoke-direct {p0, p1}, Landroid/support/v4/widget/CursorAdapter$MyDataSetObserver;-><init>(Landroid/support/v4/widget/CursorAdapter;)V
-
+    .line 492
     return-void
 .end method
 
@@ -36,19 +27,19 @@
     .registers 3
 
     .prologue
-    .line 481
+    .line 496
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter$MyDataSetObserver;->a:Landroid/support/v4/widget/CursorAdapter;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/support/v4/widget/CursorAdapter;->a:Z
 
-    .line 482
+    .line 497
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter$MyDataSetObserver;->a:Landroid/support/v4/widget/CursorAdapter;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/CursorAdapter;->notifyDataSetChanged()V
 
-    .line 483
+    .line 498
     return-void
 .end method
 
@@ -56,18 +47,18 @@
     .registers 3
 
     .prologue
-    .line 487
+    .line 502
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter$MyDataSetObserver;->a:Landroid/support/v4/widget/CursorAdapter;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Landroid/support/v4/widget/CursorAdapter;->a:Z
 
-    .line 488
+    .line 503
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter$MyDataSetObserver;->a:Landroid/support/v4/widget/CursorAdapter;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/CursorAdapter;->notifyDataSetInvalidated()V
 
-    .line 489
+    .line 504
     return-void
 .end method

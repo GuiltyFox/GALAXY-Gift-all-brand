@@ -33,7 +33,7 @@
     .registers 8
 
     .prologue
-    .line 486
+    .line 487
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$10;->a:Landroid/widget/TextView;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$10;->b:Landroid/widget/EditText;
@@ -59,7 +59,7 @@
     .registers 9
 
     .prologue
-    .line 488
+    .line 489
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$10;->a:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -78,11 +78,11 @@
 
     if-eqz v0, :cond_14
 
-    .line 501
+    .line 502
     :goto_13
     return-void
 
-    .line 490
+    .line 491
     :cond_14
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$10;->b:Landroid/widget/EditText;
 
@@ -102,7 +102,7 @@
 
     if-gt v0, v1, :cond_30
 
-    .line 491
+    .line 492
     const-string/jumbo v0, "Please enter valid OTP number!"
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$10;->c:Landroid/content/Context;
@@ -113,7 +113,7 @@
 
     goto :goto_13
 
-    .line 495
+    .line 496
     :cond_30
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$10;->c:Landroid/content/Context;
 
@@ -125,7 +125,7 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 496
+    .line 497
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$10;->b:Landroid/widget/EditText;
 
     invoke-virtual {v1}, Landroid/widget/EditText;->getWindowToken()Landroid/os/IBinder;
@@ -136,7 +136,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 498
+    .line 499
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$10;->e:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$10;->c:Landroid/content/Context;
@@ -177,7 +177,7 @@
 
     invoke-static/range {v0 .. v6}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 500
+    .line 501
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$10;->g:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V

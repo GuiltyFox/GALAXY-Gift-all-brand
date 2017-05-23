@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 1628
+    .line 1811
     iput-object p1, p0, Landroid/support/design/widget/CoordinatorLayout$OnPreDrawListener;->this$0:Landroid/support/design/widget/CoordinatorLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,14 +29,14 @@
     .registers 3
 
     .prologue
-    .line 1631
+    .line 1814
     iget-object v0, p0, Landroid/support/design/widget/CoordinatorLayout$OnPreDrawListener;->this$0:Landroid/support/design/widget/CoordinatorLayout;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/support/design/widget/CoordinatorLayout;->dispatchOnDependentViewChanged(Z)V
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/CoordinatorLayout;->onChildViewsChanged(I)V
 
-    .line 1632
+    .line 1815
     const/4 v0, 0x1
 
     return v0

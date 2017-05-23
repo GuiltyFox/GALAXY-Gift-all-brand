@@ -8,7 +8,7 @@
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/Object;)V
+.method constructor <init>(Ljava/lang/Object;)V
     .registers 2
 
     .prologue
@@ -29,9 +29,7 @@
     .line 480
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;
 
-    invoke-static {}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->u()Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
-
-    move-result-object v1
+    sget-object v1, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
 
     invoke-interface {v1, p0, p1, p2, p3}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->a(IIZI)Ljava/lang/Object;
 

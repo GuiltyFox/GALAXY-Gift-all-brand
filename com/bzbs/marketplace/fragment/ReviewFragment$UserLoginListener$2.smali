@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 521
+    .line 540
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener$2;->b:Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener;
 
     iput-object p2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener$2;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 3
 
     .prologue
-    .line 526
+    .line 545
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener$2;->b:Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
@@ -50,7 +50,7 @@
 
     move-result-object v0
 
-    .line 527
+    .line 546
     if-eqz v0, :cond_28
 
     const-string/jumbo v1, ""
@@ -61,7 +61,7 @@
 
     if-nez v0, :cond_28
 
-    .line 528
+    .line 547
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener$2;->a:Ljava/lang/String;
 
     const-string/jumbo v1, "send_review"
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_28
 
-    .line 529
+    .line 548
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener$2;->b:Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
@@ -81,7 +81,7 @@
 
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->onClickPost(Landroid/view/View;)V
 
-    .line 532
+    .line 551
     :cond_28
     return-void
 .end method

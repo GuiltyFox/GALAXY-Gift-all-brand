@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogLoginGift;->doLoginDevice(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/util/DialogLoginGift;->b(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 
@@ -24,7 +24,7 @@
     .registers 7
 
     .prologue
-    .line 761
+    .line 832
     iput-wide p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$15;->a:J
 
     iput-object p3, p0, Lcom/samsung/privilege/util/DialogLoginGift$15;->b:Ljava/lang/String;
@@ -44,10 +44,10 @@
     .registers 13
 
     .prologue
-    .line 780
+    .line 851
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 783
+    .line 854
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -57,10 +57,10 @@
 
     move-result-wide v0
 
-    .line 784
+    .line 855
     const-string/jumbo v2, "Login"
 
-    const-string/jumbo v3, "LoginDevice"
+    const-string/jumbo v3, "LoginFacebook"
 
     const-string/jumbo v4, "Failure"
 
@@ -70,9 +70,9 @@
 
     invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
     :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_4e
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_53
 
-    .line 789
+    .line 860
     :goto_1b
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -82,7 +82,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "(doLoginDevice|onFailure)response_code="
+    const-string/jumbo v2, "(authBuzzebees|onFailure)response_code="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -108,23 +108,28 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 791
+    .line 862
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->c()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 793
+    .line 864
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$15;->c:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->X(Landroid/content/Context;)V
+
+    .line 866
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$15;->c:Landroid/content/Context;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 794
+    .line 867
     return-void
 
-    .line 785
-    :catch_4e
+    .line 856
+    :catch_53
     move-exception v0
 
     goto :goto_1b
@@ -134,7 +139,7 @@
     .registers 13
 
     .prologue
-    .line 765
+    .line 836
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -144,10 +149,10 @@
 
     move-result-wide v0
 
-    .line 766
+    .line 837
     const-string/jumbo v2, "Login"
 
-    const-string/jumbo v3, "LoginDevice"
+    const-string/jumbo v3, "LoginFacebook"
 
     const-string/jumbo v4, "Success"
 
@@ -159,7 +164,7 @@
     :try_end_18
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_52
 
-    .line 771
+    .line 842
     :goto_18
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -169,7 +174,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "(doLoginDevice|onComplete)response_code="
+    const-string/jumbo v2, "(authBuzzebees|onComplete)response_code="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -195,15 +200,15 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 773
+    .line 844
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->c()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 775
-    const-string/jumbo v0, "2"
+    .line 846
+    const-string/jumbo v0, "1"
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$15;->b:Ljava/lang/String;
 
@@ -213,10 +218,10 @@
 
     invoke-static {p4, v0, v1, v2, v3}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 776
+    .line 847
     return-void
 
-    .line 767
+    .line 838
     :catch_52
     move-exception v0
 

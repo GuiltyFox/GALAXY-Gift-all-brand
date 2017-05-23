@@ -6,7 +6,7 @@
 # instance fields
 .field LayoutMainComman:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b9
+        value = 0x7f10025e
     .end annotation
 .end field
 
@@ -14,61 +14,61 @@
 
 .field btnClose:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002bb
+        value = 0x7f100260
     .end annotation
 .end field
 
 .field btnOK:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100204
+        value = 0x7f1001ef
     .end annotation
 .end field
 
 .field imgCampaign:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b2
+        value = 0x7f100247
     .end annotation
 .end field
 
 .field layoutRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b0
+        value = 0x7f100253
     .end annotation
 .end field
 
 .field svCondition:Landroid/widget/ScrollView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b5
+        value = 0x7f10024a
     .end annotation
 .end field
 
 .field tvCampaignDesc:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b3
+        value = 0x7f100255
     .end annotation
 .end field
 
 .field tvCondition1:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b6
+        value = 0x7f100382
     .end annotation
 .end field
 
 .field tvCondition2:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b7
+        value = 0x7f100383
     .end annotation
 .end field
 
 .field tvCondition3:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b8
+        value = 0x7f100384
     .end annotation
 .end field
 
 .field tvShowTimeRedeem:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b4
+        value = 0x7f100256
     .end annotation
 .end field
 
@@ -97,14 +97,14 @@
     .registers 8
 
     .prologue
-    const v6, 0x7f0202e1
+    const v6, 0x7f0201b7
 
     const/high16 v5, 0x41f00000    # 30.0f
 
     .line 345
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     iget-object v2, p0, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;
 
@@ -114,7 +114,7 @@
 
     sub-int/2addr v1, v2
 
-    sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
+    sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->B:I
 
     iget-object v3, p0, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;
 
@@ -133,7 +133,7 @@
 
     const/4 v2, -0x1
 
-    sget v3, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v3, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     iget-object v4, p0, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;
 
@@ -195,7 +195,7 @@
 
     iget-object v4, p0, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;
 
-    const v5, 0x7f090409
+    const v5, 0x7f09020e
 
     invoke-virtual {v4, v5}, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;->getString(I)Ljava/lang/String;
 

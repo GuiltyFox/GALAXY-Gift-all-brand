@@ -12,11 +12,11 @@
 
 .field private final mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
-.field private mMenuItemClickListener:Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
+.field mMenuItemClickListener:Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
 
-.field private mOnDismissListener:Landroid/support/v7/widget/PopupMenu$OnDismissListener;
+.field mOnDismissListener:Landroid/support/v7/widget/PopupMenu$OnDismissListener;
 
-.field private final mPopup:Landroid/support/v7/view/menu/MenuPopupHelper;
+.field final mPopup:Landroid/support/v7/view/menu/MenuPopupHelper;
 
 
 # direct methods
@@ -120,36 +120,6 @@
 
     .line 128
     return-void
-.end method
-
-.method static synthetic access$000(Landroid/support/v7/widget/PopupMenu;)Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
-    .registers 2
-
-    .prologue
-    .line 44
-    iget-object v0, p0, Landroid/support/v7/widget/PopupMenu;->mMenuItemClickListener:Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
-
-    return-object v0
-.end method
-
-.method static synthetic access$100(Landroid/support/v7/widget/PopupMenu;)Landroid/support/v7/widget/PopupMenu$OnDismissListener;
-    .registers 2
-
-    .prologue
-    .line 44
-    iget-object v0, p0, Landroid/support/v7/widget/PopupMenu;->mOnDismissListener:Landroid/support/v7/widget/PopupMenu$OnDismissListener;
-
-    return-object v0
-.end method
-
-.method static synthetic access$200(Landroid/support/v7/widget/PopupMenu;)Landroid/support/v7/view/menu/MenuPopupHelper;
-    .registers 2
-
-    .prologue
-    .line 44
-    iget-object v0, p0, Landroid/support/v7/widget/PopupMenu;->mPopup:Landroid/support/v7/view/menu/MenuPopupHelper;
-
-    return-object v0
 .end method
 
 

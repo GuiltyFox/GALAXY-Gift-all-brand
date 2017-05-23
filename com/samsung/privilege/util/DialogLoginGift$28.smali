@@ -3,7 +3,7 @@
 .source "DialogLoginGift.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/app/DatePickerDialog$OnDateSetListener;
 
 
 # annotations
@@ -15,18 +15,18 @@
 # instance fields
 .field final synthetic a:Landroid/widget/TextView;
 
-.field final synthetic b:Landroid/app/DatePickerDialog;
+.field final synthetic b:Ljava/text/SimpleDateFormat;
 
 
 # direct methods
-.method constructor <init>(Landroid/widget/TextView;Landroid/app/DatePickerDialog;)V
+.method constructor <init>(Landroid/widget/TextView;Ljava/text/SimpleDateFormat;)V
     .registers 3
 
     .prologue
-    .line 1640
+    .line 1662
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->a:Landroid/widget/TextView;
 
-    iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->b:Landroid/app/DatePickerDialog;
+    iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->b:Ljava/text/SimpleDateFormat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,93 +35,33 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 7
+.method public onDateSet(Landroid/widget/DatePicker;III)V
+    .registers 8
 
     .prologue
-    .line 1644
-    :try_start_0
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->a:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    .line 1664
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    .line 1665
+    invoke-virtual {v0, p2, p3, p4}, Ljava/util/Calendar;->set(III)V
+
+    .line 1666
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->a:Landroid/widget/TextView;
+
+    iget-object v2, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->b:Ljava/text/SimpleDateFormat;
+
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
 
     move-result-object v0
 
-    .line 1645
-    if-eqz v0, :cond_3e
-
-    const-string/jumbo v1, ""
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3e
-
-    .line 1646
-    const-string/jumbo v1, "/"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v2, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1647
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->b:Landroid/app/DatePickerDialog;
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 v2, 0x2
-
-    aget-object v2, v0, v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    const/4 v3, 0x1
-
-    aget-object v3, v0, v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v3
-
-    add-int/lit8 v3, v3, -0x1
-
-    const/4 v4, 0x0
-
-    aget-object v0, v0, v4
-
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-virtual {v1, v2, v3, v0}, Landroid/app/DatePickerDialog;->updateDate(III)V
-
-    .line 1648
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->b:Landroid/app/DatePickerDialog;
-
-    invoke-virtual {v0}, Landroid/app/DatePickerDialog;->show()V
-
-    .line 1655
-    :goto_3d
+    .line 1667
     return-void
-
-    .line 1650
-    :cond_3e
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->b:Landroid/app/DatePickerDialog;
-
-    invoke-virtual {v0}, Landroid/app/DatePickerDialog;->show()V
-    :try_end_43
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_43} :catch_44
-
-    goto :goto_3d
-
-    .line 1652
-    :catch_44
-    move-exception v0
-
-    goto :goto_3d
 .end method

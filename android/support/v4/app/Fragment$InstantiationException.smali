@@ -8,9 +8,9 @@
     .registers 3
 
     .prologue
-    .line 380
+    .line 383
     invoke-direct {p0, p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 381
+    .line 384
     return-void
 .end method

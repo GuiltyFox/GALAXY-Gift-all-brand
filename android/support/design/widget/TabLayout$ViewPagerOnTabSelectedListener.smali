@@ -15,13 +15,13 @@
     .registers 2
 
     .prologue
-    .line 1985
+    .line 2169
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1986
+    .line 2170
     iput-object p1, p0, Landroid/support/design/widget/TabLayout$ViewPagerOnTabSelectedListener;->mViewPager:Landroid/support/v4/view/ViewPager;
 
-    .line 1987
+    .line 2171
     return-void
 .end method
 
@@ -31,7 +31,7 @@
     .registers 2
 
     .prologue
-    .line 2002
+    .line 2186
     return-void
 .end method
 
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 1991
+    .line 2175
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$ViewPagerOnTabSelectedListener;->mViewPager:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1}, Landroid/support/design/widget/TabLayout$Tab;->getPosition()I
@@ -48,7 +48,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->setCurrentItem(I)V
 
-    .line 1992
+    .line 2176
     return-void
 .end method
 
@@ -56,6 +56,6 @@
     .registers 2
 
     .prologue
-    .line 1997
+    .line 2181
     return-void
 .end method

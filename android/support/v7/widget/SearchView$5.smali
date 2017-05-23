@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 402
+    .line 407
     iput-object p1, p0, Landroid/support/v7/widget/SearchView$5;->a:Landroid/support/v7/widget/SearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,12 +35,11 @@
     .registers 11
 
     .prologue
-    .line 406
+    .line 411
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$5;->a:Landroid/support/v7/widget/SearchView;
 
-    # invokes: Landroid/support/v7/widget/SearchView;->adjustDropDownSizeAndPosition()V
-    invoke-static {v0}, Landroid/support/v7/widget/SearchView;->access$300(Landroid/support/v7/widget/SearchView;)V
+    invoke-virtual {v0}, Landroid/support/v7/widget/SearchView;->adjustDropDownSizeAndPosition()V
 
-    .line 407
+    .line 412
     return-void
 .end method

@@ -9,61 +9,59 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 2
 
     .prologue
-    const/4 v2, 0x0
-
     .line 32
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     .line 33
     const/16 v1, 0x11
 
-    if-lt v0, v1, :cond_f
+    if-lt v0, v1, :cond_e
 
     .line 34
     new-instance v0, Landroid/support/v4/content/res/ConfigurationHelper$JellybeanMr1Impl;
 
-    invoke-direct {v0, v2}, Landroid/support/v4/content/res/ConfigurationHelper$JellybeanMr1Impl;-><init>(Landroid/support/v4/content/res/ConfigurationHelper$1;)V
+    invoke-direct {v0}, Landroid/support/v4/content/res/ConfigurationHelper$JellybeanMr1Impl;-><init>()V
 
     sput-object v0, Landroid/support/v4/content/res/ConfigurationHelper;->a:Landroid/support/v4/content/res/ConfigurationHelper$ConfigurationHelperImpl;
 
     .line 40
-    :goto_e
+    :goto_d
     return-void
 
     .line 35
-    :cond_f
+    :cond_e
     const/16 v1, 0xd
 
-    if-lt v0, v1, :cond_1b
+    if-lt v0, v1, :cond_1a
 
     .line 36
     new-instance v0, Landroid/support/v4/content/res/ConfigurationHelper$HoneycombMr2Impl;
 
-    invoke-direct {v0, v2}, Landroid/support/v4/content/res/ConfigurationHelper$HoneycombMr2Impl;-><init>(Landroid/support/v4/content/res/ConfigurationHelper$1;)V
+    invoke-direct {v0}, Landroid/support/v4/content/res/ConfigurationHelper$HoneycombMr2Impl;-><init>()V
 
     sput-object v0, Landroid/support/v4/content/res/ConfigurationHelper;->a:Landroid/support/v4/content/res/ConfigurationHelper$ConfigurationHelperImpl;
 
-    goto :goto_e
+    goto :goto_d
 
     .line 38
-    :cond_1b
+    :cond_1a
     new-instance v0, Landroid/support/v4/content/res/ConfigurationHelper$GingerbreadImpl;
 
-    invoke-direct {v0, v2}, Landroid/support/v4/content/res/ConfigurationHelper$GingerbreadImpl;-><init>(Landroid/support/v4/content/res/ConfigurationHelper$1;)V
+    invoke-direct {v0}, Landroid/support/v4/content/res/ConfigurationHelper$GingerbreadImpl;-><init>()V
 
     sput-object v0, Landroid/support/v4/content/res/ConfigurationHelper;->a:Landroid/support/v4/content/res/ConfigurationHelper$ConfigurationHelperImpl;
 
-    goto :goto_e
+    goto :goto_d
 .end method
 
 .method public static a(Landroid/content/res/Resources;)I
     .registers 2
 
     .prologue
-    .line 104
+    .line 113
     sget-object v0, Landroid/support/v4/content/res/ConfigurationHelper;->a:Landroid/support/v4/content/res/ConfigurationHelper$ConfigurationHelperImpl;
 
     invoke-interface {v0, p0}, Landroid/support/v4/content/res/ConfigurationHelper$ConfigurationHelperImpl;->a(Landroid/content/res/Resources;)I
@@ -77,7 +75,7 @@
     .registers 2
 
     .prologue
-    .line 114
+    .line 123
     sget-object v0, Landroid/support/v4/content/res/ConfigurationHelper;->a:Landroid/support/v4/content/res/ConfigurationHelper$ConfigurationHelperImpl;
 
     invoke-interface {v0, p0}, Landroid/support/v4/content/res/ConfigurationHelper$ConfigurationHelperImpl;->b(Landroid/content/res/Resources;)I
@@ -91,7 +89,7 @@
     .registers 2
 
     .prologue
-    .line 124
+    .line 133
     sget-object v0, Landroid/support/v4/content/res/ConfigurationHelper;->a:Landroid/support/v4/content/res/ConfigurationHelper$ConfigurationHelperImpl;
 
     invoke-interface {v0, p0}, Landroid/support/v4/content/res/ConfigurationHelper$ConfigurationHelperImpl;->c(Landroid/content/res/Resources;)I

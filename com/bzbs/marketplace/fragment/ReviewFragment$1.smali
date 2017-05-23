@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 186
+    .line 190
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$1;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -34,7 +34,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 189
+    .line 193
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$1;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getChildCount()I
@@ -43,7 +43,7 @@
 
     invoke-static {v0, v2}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a(Lcom/bzbs/marketplace/fragment/ReviewFragment;I)I
 
-    .line 190
+    .line 194
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$1;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$1;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
@@ -58,7 +58,7 @@
 
     invoke-static {v0, v2}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->b(Lcom/bzbs/marketplace/fragment/ReviewFragment;I)I
 
-    .line 191
+    .line 195
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$1;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$1;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
@@ -73,7 +73,7 @@
 
     invoke-static {v0, v2}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->c(Lcom/bzbs/marketplace/fragment/ReviewFragment;I)I
 
-    .line 193
+    .line 197
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getChildCount()I
 
     move-result v0
@@ -82,7 +82,7 @@
 
     move v0, v1
 
-    .line 195
+    .line 199
     :goto_2f
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$1;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
@@ -95,7 +95,7 @@
     :goto_36
     invoke-virtual {v2, v0}, Landroid/support/v4/widget/SwipeRefreshLayout;->setEnabled(Z)V
 
-    .line 197
+    .line 201
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$1;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->b(Lcom/bzbs/marketplace/fragment/ReviewFragment;)Z
@@ -104,7 +104,7 @@
 
     if-eqz v0, :cond_60
 
-    .line 198
+    .line 202
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$1;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->c(Lcom/bzbs/marketplace/fragment/ReviewFragment;)I
@@ -127,25 +127,25 @@
 
     if-lt v0, v2, :cond_60
 
-    .line 199
+    .line 203
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$1;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-static {v0, v1}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a(Lcom/bzbs/marketplace/fragment/ReviewFragment;Z)Z
 
-    .line 200
+    .line 204
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$1;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->f(Lcom/bzbs/marketplace/fragment/ReviewFragment;)V
 
-    .line 203
+    .line 207
     :cond_60
     return-void
 
-    .line 193
+    .line 197
     :cond_61
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$1;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
-    .line 194
+    .line 198
     invoke-static {v0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a(Lcom/bzbs/marketplace/fragment/ReviewFragment;)Landroid/support/v7/widget/LinearLayoutManager;
 
     move-result-object v0
@@ -163,6 +163,6 @@
     :cond_70
     move v0, v1
 
-    .line 195
+    .line 199
     goto :goto_36
 .end method

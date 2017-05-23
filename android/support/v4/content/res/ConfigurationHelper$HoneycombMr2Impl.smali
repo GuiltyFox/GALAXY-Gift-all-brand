@@ -4,25 +4,14 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 2
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 73
-    const/4 v0, 0x0
+    .line 77
+    invoke-direct {p0}, Landroid/support/v4/content/res/ConfigurationHelper$GingerbreadImpl;-><init>()V
 
-    invoke-direct {p0, v0}, Landroid/support/v4/content/res/ConfigurationHelper$GingerbreadImpl;-><init>(Landroid/support/v4/content/res/ConfigurationHelper$1;)V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v4/content/res/ConfigurationHelper$1;)V
-    .registers 2
-
-    .prologue
-    .line 73
-    invoke-direct {p0}, Landroid/support/v4/content/res/ConfigurationHelper$HoneycombMr2Impl;-><init>()V
-
+    .line 78
     return-void
 .end method
 
@@ -32,7 +21,7 @@
     .registers 3
 
     .prologue
-    .line 76
+    .line 82
     invoke-static {p1}, Landroid/support/v4/content/res/ConfigurationHelperHoneycombMr2;->a(Landroid/content/res/Resources;)I
 
     move-result v0
@@ -44,7 +33,7 @@
     .registers 3
 
     .prologue
-    .line 81
+    .line 87
     invoke-static {p1}, Landroid/support/v4/content/res/ConfigurationHelperHoneycombMr2;->b(Landroid/content/res/Resources;)I
 
     move-result v0
@@ -56,7 +45,7 @@
     .registers 3
 
     .prologue
-    .line 86
+    .line 92
     invoke-static {p1}, Landroid/support/v4/content/res/ConfigurationHelperHoneycombMr2;->c(Landroid/content/res/Resources;)I
 
     move-result v0

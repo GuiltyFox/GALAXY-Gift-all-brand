@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/support/design/widget/AppBarLayout$Behavior;->animateOffsetTo(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/AppBarLayout;I)V
+    value = Landroid/support/design/widget/AppBarLayout$Behavior;->animateOffsetWithDuration(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/AppBarLayout;II)V
 .end annotation
 
 
@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 813
+    .line 945
     iput-object p1, p0, Landroid/support/design/widget/AppBarLayout$Behavior$1;->this$0:Landroid/support/design/widget/AppBarLayout$Behavior;
 
     iput-object p2, p0, Landroid/support/design/widget/AppBarLayout$Behavior$1;->val$coordinatorLayout:Landroid/support/design/widget/CoordinatorLayout;
@@ -43,19 +43,21 @@
     .registers 6
 
     .prologue
-    .line 816
+    .line 948
     iget-object v0, p0, Landroid/support/design/widget/AppBarLayout$Behavior$1;->this$0:Landroid/support/design/widget/AppBarLayout$Behavior;
 
     iget-object v1, p0, Landroid/support/design/widget/AppBarLayout$Behavior$1;->val$coordinatorLayout:Landroid/support/design/widget/CoordinatorLayout;
 
     iget-object v2, p0, Landroid/support/design/widget/AppBarLayout$Behavior$1;->val$child:Landroid/support/design/widget/AppBarLayout;
 
+    .line 949
     invoke-virtual {p1}, Landroid/support/design/widget/ValueAnimatorCompat;->getAnimatedIntValue()I
 
     move-result v3
 
+    .line 948
     invoke-virtual {v0, v1, v2, v3}, Landroid/support/design/widget/AppBarLayout$Behavior;->setHeaderTopBottomOffset(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;I)I
 
-    .line 818
+    .line 950
     return-void
 .end method

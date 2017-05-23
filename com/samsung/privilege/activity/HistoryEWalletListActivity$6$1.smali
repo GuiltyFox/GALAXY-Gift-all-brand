@@ -46,7 +46,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/HistoryEWalletListActivity$6;->b:Lcom/samsung/privilege/activity/HistoryEWalletListActivity;
 
-    const v1, 0x7f100113
+    const v1, 0x7f100116
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/HistoryEWalletListActivity;->findViewById(I)Landroid/view/View;
 

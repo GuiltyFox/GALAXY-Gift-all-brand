@@ -26,7 +26,7 @@
     .registers 6
 
     .prologue
-    .line 731
+    .line 729
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$8;->a:Landroid/app/Activity;
 
     iput-object p2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$8;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet;
@@ -48,19 +48,19 @@
     .registers 7
 
     .prologue
-    .line 755
+    .line 753
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 757
+    .line 755
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$8;->a:Landroid/app/Activity;
 
     if-nez v0, :cond_8
 
-    .line 770
+    .line 768
     :goto_7
     return-void
 
-    .line 761
+    .line 759
     :cond_8
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$8;->a:Landroid/app/Activity;
 
@@ -77,17 +77,17 @@
     .registers 8
 
     .prologue
-    .line 734
+    .line 732
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$8;->a:Landroid/app/Activity;
 
     if-nez v0, :cond_5
 
-    .line 751
+    .line 749
     :cond_4
     :goto_4
     return-void
 
-    .line 736
+    .line 734
     :cond_5
     invoke-static {}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a()Ljava/lang/String;
 
@@ -123,7 +123,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 738
+    .line 736
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$8;->a:Landroid/app/Activity;
 
     new-instance v1, Lcom/samsung/privilege/holder/DashboardHolder_wallet$8$1;
@@ -132,7 +132,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 746
+    .line 744
     const-string/jumbo v0, ""
 
     invoke-virtual {p4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -141,7 +141,7 @@
 
     if-nez v0, :cond_4
 
-    .line 747
+    .line 745
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

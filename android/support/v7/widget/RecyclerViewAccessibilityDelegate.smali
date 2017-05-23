@@ -17,7 +17,7 @@
     .line 34
     invoke-direct {p0}, Landroid/support/v4/view/AccessibilityDelegateCompat;-><init>()V
 
-    .line 79
+    .line 84
     new-instance v0, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate$1;
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate$1;-><init>(Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;)V
@@ -31,39 +31,13 @@
     return-void
 .end method
 
-.method static synthetic access$000(Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;)Z
-    .registers 2
-
-    .prologue
-    .line 30
-    invoke-direct {p0}, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;->shouldIgnore()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private shouldIgnore()Z
-    .registers 2
-
-    .prologue
-    .line 39
-    iget-object v0, p0, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->hasPendingAdapterUpdates()Z
-
-    move-result v0
-
-    return v0
-.end method
-
 
 # virtual methods
-.method getItemDelegate()Landroid/support/v4/view/AccessibilityDelegateCompat;
+.method public getItemDelegate()Landroid/support/v4/view/AccessibilityDelegateCompat;
     .registers 2
 
     .prologue
-    .line 76
+    .line 81
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;->mItemDelegate:Landroid/support/v4/view/AccessibilityDelegateCompat;
 
     return-object v0
@@ -90,7 +64,7 @@
 
     if-eqz v0, :cond_25
 
-    invoke-direct {p0}, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;->shouldIgnore()Z
+    invoke-virtual {p0}, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;->shouldIgnore()Z
 
     move-result v0
 
@@ -135,7 +109,7 @@
     invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b(Ljava/lang/CharSequence;)V
 
     .line 58
-    invoke-direct {p0}, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;->shouldIgnore()Z
+    invoke-virtual {p0}, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;->shouldIgnore()Z
 
     move-result v0
 
@@ -183,7 +157,7 @@
 
     .line 47
     :cond_8
-    invoke-direct {p0}, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;->shouldIgnore()Z
+    invoke-virtual {p0}, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;->shouldIgnore()Z
 
     move-result v0
 
@@ -215,4 +189,18 @@
     const/4 v0, 0x0
 
     goto :goto_7
+.end method
+
+.method shouldIgnore()Z
+    .registers 2
+
+    .prologue
+    .line 39
+    iget-object v0, p0, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->hasPendingAdapterUpdates()Z
+
+    move-result v0
+
+    return v0
 .end method

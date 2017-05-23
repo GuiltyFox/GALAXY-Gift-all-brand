@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 284
+    .line 307
     iput-object p1, p0, Landroid/support/v7/widget/RecyclerView$1;->a:Landroid/support/v7/widget/RecyclerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,15 +35,12 @@
     .registers 3
 
     .prologue
-    .line 286
+    .line 310
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->a:Landroid/support/v7/widget/RecyclerView;
 
-    # getter for: Landroid/support/v7/widget/RecyclerView;->mFirstLayoutComplete:Z
-    invoke-static {v0}, Landroid/support/v7/widget/RecyclerView;->access$100(Landroid/support/v7/widget/RecyclerView;)Z
+    iget-boolean v0, v0, Landroid/support/v7/widget/RecyclerView;->mFirstLayoutComplete:Z
 
-    move-result v0
-
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_e
 
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->a:Landroid/support/v7/widget/RecyclerView;
 
@@ -51,40 +48,50 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_f
 
-    .line 295
-    :cond_10
-    :goto_10
+    .line 324
+    :cond_e
+    :goto_e
     return-void
 
-    .line 290
-    :cond_11
+    .line 314
+    :cond_f
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->a:Landroid/support/v7/widget/RecyclerView;
 
-    # getter for: Landroid/support/v7/widget/RecyclerView;->mLayoutFrozen:Z
-    invoke-static {v0}, Landroid/support/v7/widget/RecyclerView;->access$200(Landroid/support/v7/widget/RecyclerView;)Z
+    iget-boolean v0, v0, Landroid/support/v7/widget/RecyclerView;->mIsAttached:Z
 
-    move-result v0
+    if-nez v0, :cond_1b
 
-    if-eqz v0, :cond_20
+    .line 315
+    iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->a:Landroid/support/v7/widget/RecyclerView;
 
-    .line 291
+    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->requestLayout()V
+
+    goto :goto_e
+
+    .line 319
+    :cond_1b
+    iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->a:Landroid/support/v7/widget/RecyclerView;
+
+    iget-boolean v0, v0, Landroid/support/v7/widget/RecyclerView;->mLayoutFrozen:Z
+
+    if-eqz v0, :cond_27
+
+    .line 320
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->a:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x1
 
-    # setter for: Landroid/support/v7/widget/RecyclerView;->mLayoutRequestEaten:Z
-    invoke-static {v0, v1}, Landroid/support/v7/widget/RecyclerView;->access$302(Landroid/support/v7/widget/RecyclerView;Z)Z
+    iput-boolean v1, v0, Landroid/support/v7/widget/RecyclerView;->mLayoutRequestEaten:Z
 
-    goto :goto_10
+    goto :goto_e
 
-    .line 294
-    :cond_20
+    .line 323
+    :cond_27
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$1;->a:Landroid/support/v7/widget/RecyclerView;
 
-    # invokes: Landroid/support/v7/widget/RecyclerView;->consumePendingUpdateOperations()V
-    invoke-static {v0}, Landroid/support/v7/widget/RecyclerView;->access$400(Landroid/support/v7/widget/RecyclerView;)V
+    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->consumePendingUpdateOperations()V
 
-    goto :goto_10
+    goto :goto_e
 .end method

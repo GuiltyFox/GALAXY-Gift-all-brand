@@ -9,39 +9,37 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 2
 
     .prologue
-    const/4 v2, 0x0
-
-    .line 51
+    .line 57
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 52
+    .line 58
     const/16 v1, 0xb
 
-    if-lt v0, v1, :cond_f
+    if-lt v0, v1, :cond_e
 
-    .line 53
+    .line 59
     new-instance v0, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplHoneycomb;
 
-    invoke-direct {v0, v2}, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplHoneycomb;-><init>(Landroid/support/design/widget/ViewGroupUtils$1;)V
+    invoke-direct {v0}, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplHoneycomb;-><init>()V
 
     sput-object v0, Landroid/support/design/widget/ViewGroupUtils;->IMPL:Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImpl;
 
-    .line 57
-    :goto_e
+    .line 63
+    :goto_d
     return-void
 
-    .line 55
-    :cond_f
+    .line 61
+    :cond_e
     new-instance v0, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplBase;
 
-    invoke-direct {v0, v2}, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplBase;-><init>(Landroid/support/design/widget/ViewGroupUtils$1;)V
+    invoke-direct {v0}, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplBase;-><init>()V
 
     sput-object v0, Landroid/support/design/widget/ViewGroupUtils;->IMPL:Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImpl;
 
-    goto :goto_e
+    goto :goto_d
 .end method
 
 .method constructor <init>()V
@@ -51,7 +49,7 @@
     .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
+    .line 44
     return-void
 .end method
 
@@ -61,7 +59,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 80
+    .line 86
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -72,10 +70,10 @@
 
     invoke-virtual {p2, v2, v2, v0, v1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 81
+    .line 87
     invoke-static {p0, p1, p2}, Landroid/support/design/widget/ViewGroupUtils;->offsetDescendantRect(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 82
+    .line 88
     return-void
 .end method
 
@@ -83,11 +81,11 @@
     .registers 4
 
     .prologue
-    .line 69
+    .line 75
     sget-object v0, Landroid/support/design/widget/ViewGroupUtils;->IMPL:Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImpl;
 
     invoke-interface {v0, p0, p1, p2}, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImpl;->offsetDescendantRect(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 70
+    .line 76
     return-void
 .end method

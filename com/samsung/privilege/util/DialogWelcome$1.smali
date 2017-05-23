@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 132
+    .line 84
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogWelcome$1;->a:Landroid/os/Handler;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogWelcome$1;->b:Landroid/content/Context;
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 180
+    .line 120
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .registers 4
 
     .prologue
-    .line 175
+    .line 115
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .registers 6
 
     .prologue
-    .line 144
+    .line 87
     invoke-static {}, Lcom/samsung/privilege/util/DialogWelcome;->a()[Ljava/lang/Integer;
 
     move-result-object v0
@@ -68,7 +68,7 @@
 
     if-ne p1, v0, :cond_13
 
-    .line 148
+    .line 88
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogWelcome$1;->a:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/util/DialogWelcome$1$1;
@@ -79,7 +79,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 163
+    .line 103
     :cond_13
     const/4 v0, 0x0
 
@@ -92,37 +92,37 @@
 
     if-ge v0, v1, :cond_35
 
-    .line 164
+    .line 104
     if-ne v0, p1, :cond_2a
 
-    .line 165
+    .line 105
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogWelcome$1;->c:[Landroid/widget/ImageView;
 
     aget-object v1, v1, v0
 
-    const v2, 0x7f02034f
+    const v2, 0x7f020187
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 163
+    .line 103
     :goto_27
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_14
 
-    .line 167
+    .line 107
     :cond_2a
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogWelcome$1;->c:[Landroid/widget/ImageView;
 
     aget-object v1, v1, v0
 
-    const v2, 0x7f02034d
+    const v2, 0x7f020188
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_27
 
-    .line 170
+    .line 110
     :cond_35
     return-void
 .end method

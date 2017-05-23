@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 2141
+    .line 2139
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$25$2;->c:Lcom/samsung/privilege/activity/WalletCardActivity$25;
 
     iput p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$25$2;->a:I
@@ -43,7 +43,7 @@
     .registers 4
 
     .prologue
-    .line 2144
+    .line 2142
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$25$2;->c:Lcom/samsung/privilege/activity/WalletCardActivity$25;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$25;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -54,21 +54,21 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 2146
+    .line 2144
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$25$2;->c:Lcom/samsung/privilege/activity/WalletCardActivity$25;
 
     iget-boolean v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$25;->b:Z
 
     if-nez v0, :cond_23
 
-    .line 2147
+    .line 2145
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$25$2;->c:Lcom/samsung/privilege/activity/WalletCardActivity$25;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$25;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->c(Lcom/samsung/privilege/activity/WalletCardActivity;)V
 
-    .line 2148
+    .line 2146
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$25$2;->c:Lcom/samsung/privilege/activity/WalletCardActivity$25;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$25;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -79,7 +79,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 2150
+    .line 2148
     :cond_23
     return-void
 .end method

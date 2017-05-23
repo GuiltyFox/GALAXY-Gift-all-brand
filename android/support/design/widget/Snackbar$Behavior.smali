@@ -23,7 +23,7 @@
     .registers 2
 
     .prologue
-    .line 818
+    .line 861
     iput-object p1, p0, Landroid/support/design/widget/Snackbar$Behavior;->this$0:Landroid/support/design/widget/Snackbar;
 
     invoke-direct {p0}, Landroid/support/design/widget/SwipeDismissBehavior;-><init>()V
@@ -37,7 +37,7 @@
     .registers 3
 
     .prologue
-    .line 821
+    .line 864
     instance-of v0, p1, Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
     return v0
@@ -47,7 +47,7 @@
     .registers 6
 
     .prologue
-    .line 829
+    .line 872
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -66,14 +66,14 @@
 
     if-eqz v0, :cond_17
 
-    .line 830
+    .line 873
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_38
+    packed-switch v0, :pswitch_data_34
 
-    .line 841
+    .line 884
     :cond_17
     :goto_17
     :pswitch_17
@@ -83,7 +83,7 @@
 
     return v0
 
-    .line 832
+    .line 875
     :pswitch_1c
     invoke-static {}, Landroid/support/design/widget/SnackbarManager;->getInstance()Landroid/support/design/widget/SnackbarManager;
 
@@ -91,39 +91,33 @@
 
     iget-object v1, p0, Landroid/support/design/widget/Snackbar$Behavior;->this$0:Landroid/support/design/widget/Snackbar;
 
-    # getter for: Landroid/support/design/widget/Snackbar;->mManagerCallback:Landroid/support/design/widget/SnackbarManager$Callback;
-    invoke-static {v1}, Landroid/support/design/widget/Snackbar;->access$200(Landroid/support/design/widget/Snackbar;)Landroid/support/design/widget/SnackbarManager$Callback;
-
-    move-result-object v1
+    iget-object v1, v1, Landroid/support/design/widget/Snackbar;->mManagerCallback:Landroid/support/design/widget/SnackbarManager$Callback;
 
     invoke-virtual {v0, v1}, Landroid/support/design/widget/SnackbarManager;->cancelTimeout(Landroid/support/design/widget/SnackbarManager$Callback;)V
 
     goto :goto_17
 
-    .line 836
-    :pswitch_2a
+    .line 879
+    :pswitch_28
     invoke-static {}, Landroid/support/design/widget/SnackbarManager;->getInstance()Landroid/support/design/widget/SnackbarManager;
 
     move-result-object v0
 
     iget-object v1, p0, Landroid/support/design/widget/Snackbar$Behavior;->this$0:Landroid/support/design/widget/Snackbar;
 
-    # getter for: Landroid/support/design/widget/Snackbar;->mManagerCallback:Landroid/support/design/widget/SnackbarManager$Callback;
-    invoke-static {v1}, Landroid/support/design/widget/Snackbar;->access$200(Landroid/support/design/widget/Snackbar;)Landroid/support/design/widget/SnackbarManager$Callback;
-
-    move-result-object v1
+    iget-object v1, v1, Landroid/support/design/widget/Snackbar;->mManagerCallback:Landroid/support/design/widget/SnackbarManager$Callback;
 
     invoke-virtual {v0, v1}, Landroid/support/design/widget/SnackbarManager;->restoreTimeout(Landroid/support/design/widget/SnackbarManager$Callback;)V
 
     goto :goto_17
 
-    .line 830
-    :pswitch_data_38
+    .line 873
+    :pswitch_data_34
     .packed-switch 0x0
         :pswitch_1c
-        :pswitch_2a
+        :pswitch_28
         :pswitch_17
-        :pswitch_2a
+        :pswitch_28
     .end packed-switch
 .end method
 
@@ -131,7 +125,7 @@
     .registers 5
 
     .prologue
-    .line 818
+    .line 861
     check-cast p2, Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
     invoke-virtual {p0, p1, p2, p3}, Landroid/support/design/widget/Snackbar$Behavior;->onInterceptTouchEvent(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/Snackbar$SnackbarLayout;Landroid/view/MotionEvent;)Z

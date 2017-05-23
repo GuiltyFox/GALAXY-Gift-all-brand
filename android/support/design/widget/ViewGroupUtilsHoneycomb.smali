@@ -4,8 +4,6 @@
 
 
 # static fields
-.field private static final IDENTITY:Landroid/graphics/Matrix;
-
 .field private static final sMatrix:Ljava/lang/ThreadLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -47,13 +45,6 @@
     invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
     sput-object v0, Landroid/support/design/widget/ViewGroupUtilsHoneycomb;->sRectF:Ljava/lang/ThreadLocal;
-
-    .line 29
-    new-instance v0, Landroid/graphics/Matrix;
-
-    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
-
-    sput-object v0, Landroid/support/design/widget/ViewGroupUtilsHoneycomb;->IDENTITY:Landroid/graphics/Matrix;
 
     return-void
 .end method
@@ -154,7 +145,7 @@
     .prologue
     const/high16 v4, 0x3f000000    # 0.5f
 
-    .line 32
+    .line 31
     sget-object v0, Landroid/support/design/widget/ViewGroupUtilsHoneycomb;->sMatrix:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -163,26 +154,26 @@
 
     check-cast v0, Landroid/graphics/Matrix;
 
-    .line 33
-    if-nez v0, :cond_43
+    .line 32
+    if-nez v0, :cond_48
 
-    .line 34
+    .line 33
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 35
+    .line 34
     sget-object v1, Landroid/support/design/widget/ViewGroupUtilsHoneycomb;->sMatrix:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v1, v0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
     move-object v1, v0
 
-    .line 40
+    .line 39
     :goto_17
     invoke-static {p0, p1, v1}, Landroid/support/design/widget/ViewGroupUtilsHoneycomb;->offsetDescendantMatrix(Landroid/view/ViewParent;Landroid/view/View;Landroid/graphics/Matrix;)V
 
-    .line 42
+    .line 41
     sget-object v0, Landroid/support/design/widget/ViewGroupUtilsHoneycomb;->sRectF:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -191,16 +182,21 @@
 
     check-cast v0, Landroid/graphics/RectF;
 
-    .line 43
-    if-nez v0, :cond_29
+    .line 42
+    if-nez v0, :cond_2e
 
-    .line 44
+    .line 43
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
+    .line 44
+    sget-object v2, Landroid/support/design/widget/ViewGroupUtilsHoneycomb;->sRectF:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v2, v0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+
     .line 46
-    :cond_29
+    :cond_2e
     invoke-virtual {v0, p2}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
     .line 47
@@ -236,11 +232,9 @@
     .line 50
     return-void
 
-    .line 37
-    :cond_43
-    sget-object v1, Landroid/support/design/widget/ViewGroupUtilsHoneycomb;->IDENTITY:Landroid/graphics/Matrix;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
+    .line 36
+    :cond_48
+    invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
     move-object v1, v0
 

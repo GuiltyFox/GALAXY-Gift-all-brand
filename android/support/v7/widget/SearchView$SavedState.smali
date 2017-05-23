@@ -25,7 +25,7 @@
     .registers 1
 
     .prologue
-    .line 1371
+    .line 1380
     new-instance v0, Landroid/support/v7/widget/SearchView$SavedState$1;
 
     invoke-direct {v0}, Landroid/support/v7/widget/SearchView$SavedState$1;-><init>()V
@@ -43,10 +43,10 @@
     .registers 4
 
     .prologue
-    .line 1354
+    .line 1363
     invoke-direct {p0, p1, p2}, Landroid/support/v4/view/AbsSavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    .line 1355
+    .line 1364
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
@@ -61,7 +61,7 @@
 
     iput-boolean v0, p0, Landroid/support/v7/widget/SearchView$SavedState;->a:Z
 
-    .line 1356
+    .line 1365
     return-void
 .end method
 
@@ -69,10 +69,10 @@
     .registers 2
 
     .prologue
-    .line 1350
+    .line 1359
     invoke-direct {p0, p1}, Landroid/support/v4/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 1351
+    .line 1360
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .registers 3
 
     .prologue
-    .line 1366
+    .line 1375
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -93,7 +93,7 @@
 
     move-result-object v0
 
-    .line 1367
+    .line 1376
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -135,10 +135,10 @@
     .registers 4
 
     .prologue
-    .line 1360
+    .line 1369
     invoke-super {p0, p1, p2}, Landroid/support/v4/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1361
+    .line 1370
     iget-boolean v0, p0, Landroid/support/v7/widget/SearchView$SavedState;->a:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -147,6 +147,6 @@
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeValue(Ljava/lang/Object;)V
 
-    .line 1362
+    .line 1371
     return-void
 .end method

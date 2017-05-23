@@ -19,18 +19,18 @@
     .registers 4
 
     .prologue
-    .line 623
+    .line 747
     iput-object p1, p0, Landroid/support/design/widget/BottomSheetBehavior$SettleRunnable;->this$0:Landroid/support/design/widget/BottomSheetBehavior;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 624
+    .line 748
     iput-object p2, p0, Landroid/support/design/widget/BottomSheetBehavior$SettleRunnable;->mView:Landroid/view/View;
 
-    .line 625
+    .line 749
     iput p3, p0, Landroid/support/design/widget/BottomSheetBehavior$SettleRunnable;->mTargetState:I
 
-    .line 626
+    .line 750
     return-void
 .end method
 
@@ -40,22 +40,16 @@
     .registers 3
 
     .prologue
-    .line 630
+    .line 754
     iget-object v0, p0, Landroid/support/design/widget/BottomSheetBehavior$SettleRunnable;->this$0:Landroid/support/design/widget/BottomSheetBehavior;
 
-    # getter for: Landroid/support/design/widget/BottomSheetBehavior;->mViewDragHelper:Landroid/support/v4/widget/ViewDragHelper;
-    invoke-static {v0}, Landroid/support/design/widget/BottomSheetBehavior;->access$1200(Landroid/support/design/widget/BottomSheetBehavior;)Landroid/support/v4/widget/ViewDragHelper;
+    iget-object v0, v0, Landroid/support/design/widget/BottomSheetBehavior;->mViewDragHelper:Landroid/support/v4/widget/ViewDragHelper;
 
-    move-result-object v0
-
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_17
 
     iget-object v0, p0, Landroid/support/design/widget/BottomSheetBehavior$SettleRunnable;->this$0:Landroid/support/design/widget/BottomSheetBehavior;
 
-    # getter for: Landroid/support/design/widget/BottomSheetBehavior;->mViewDragHelper:Landroid/support/v4/widget/ViewDragHelper;
-    invoke-static {v0}, Landroid/support/design/widget/BottomSheetBehavior;->access$1200(Landroid/support/design/widget/BottomSheetBehavior;)Landroid/support/v4/widget/ViewDragHelper;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/design/widget/BottomSheetBehavior;->mViewDragHelper:Landroid/support/v4/widget/ViewDragHelper;
 
     const/4 v1, 0x1
 
@@ -63,25 +57,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_17
 
-    .line 631
+    .line 755
     iget-object v0, p0, Landroid/support/design/widget/BottomSheetBehavior$SettleRunnable;->mView:Landroid/view/View;
 
     invoke-static {v0, p0}, Landroid/support/v4/view/ViewCompat;->a(Landroid/view/View;Ljava/lang/Runnable;)V
 
-    .line 635
-    :goto_1a
+    .line 759
+    :goto_16
     return-void
 
-    .line 633
-    :cond_1b
+    .line 757
+    :cond_17
     iget-object v0, p0, Landroid/support/design/widget/BottomSheetBehavior$SettleRunnable;->this$0:Landroid/support/design/widget/BottomSheetBehavior;
 
     iget v1, p0, Landroid/support/design/widget/BottomSheetBehavior$SettleRunnable;->mTargetState:I
 
-    # invokes: Landroid/support/design/widget/BottomSheetBehavior;->setStateInternal(I)V
-    invoke-static {v0, v1}, Landroid/support/design/widget/BottomSheetBehavior;->access$600(Landroid/support/design/widget/BottomSheetBehavior;I)V
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/BottomSheetBehavior;->setStateInternal(I)V
 
-    goto :goto_1a
+    goto :goto_16
 .end method

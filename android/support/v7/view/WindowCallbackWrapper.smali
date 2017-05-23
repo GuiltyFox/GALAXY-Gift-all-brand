@@ -15,13 +15,13 @@
     .registers 4
 
     .prologue
-    .line 44
+    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
+    .line 49
     if-nez p1, :cond_e
 
-    .line 46
+    .line 50
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Window callback may not be null"
@@ -30,11 +30,11 @@
 
     throw v0
 
-    .line 48
+    .line 52
     :cond_e
     iput-object p1, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
-    .line 49
+    .line 53
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .registers 3
 
     .prologue
-    .line 73
+    .line 77
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->dispatchGenericMotionEvent(Landroid/view/MotionEvent;)Z
@@ -58,7 +58,7 @@
     .registers 3
 
     .prologue
-    .line 53
+    .line 57
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
@@ -72,7 +72,7 @@
     .registers 3
 
     .prologue
-    .line 58
+    .line 62
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
@@ -86,7 +86,7 @@
     .registers 3
 
     .prologue
-    .line 78
+    .line 82
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
@@ -100,7 +100,7 @@
     .registers 3
 
     .prologue
-    .line 63
+    .line 67
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
@@ -114,7 +114,7 @@
     .registers 3
 
     .prologue
-    .line 68
+    .line 72
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->dispatchTrackballEvent(Landroid/view/MotionEvent;)Z
@@ -128,12 +128,12 @@
     .registers 3
 
     .prologue
-    .line 163
+    .line 167
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->onActionModeFinished(Landroid/view/ActionMode;)V
 
-    .line 164
+    .line 168
     return-void
 .end method
 
@@ -141,12 +141,12 @@
     .registers 3
 
     .prologue
-    .line 158
+    .line 162
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->onActionModeStarted(Landroid/view/ActionMode;)V
 
-    .line 159
+    .line 163
     return-void
 .end method
 
@@ -154,12 +154,12 @@
     .registers 2
 
     .prologue
-    .line 123
+    .line 127
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0}, Landroid/view/Window$Callback;->onAttachedToWindow()V
 
-    .line 124
+    .line 128
     return-void
 .end method
 
@@ -167,12 +167,12 @@
     .registers 2
 
     .prologue
-    .line 113
+    .line 117
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0}, Landroid/view/Window$Callback;->onContentChanged()V
 
-    .line 114
+    .line 118
     return-void
 .end method
 
@@ -180,7 +180,7 @@
     .registers 4
 
     .prologue
-    .line 88
+    .line 92
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/Window$Callback;->onCreatePanelMenu(ILandroid/view/Menu;)Z
@@ -194,7 +194,7 @@
     .registers 3
 
     .prologue
-    .line 83
+    .line 87
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->onCreatePanelView(I)Landroid/view/View;
@@ -208,12 +208,12 @@
     .registers 2
 
     .prologue
-    .line 128
+    .line 132
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0}, Landroid/view/Window$Callback;->onDetachedFromWindow()V
 
-    .line 129
+    .line 133
     return-void
 .end method
 
@@ -221,7 +221,7 @@
     .registers 4
 
     .prologue
-    .line 103
+    .line 107
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/Window$Callback;->onMenuItemSelected(ILandroid/view/MenuItem;)Z
@@ -235,7 +235,7 @@
     .registers 4
 
     .prologue
-    .line 98
+    .line 102
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/Window$Callback;->onMenuOpened(ILandroid/view/Menu;)Z
@@ -249,12 +249,12 @@
     .registers 4
 
     .prologue
-    .line 133
+    .line 137
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/Window$Callback;->onPanelClosed(ILandroid/view/Menu;)V
 
-    .line 134
+    .line 138
     return-void
 .end method
 
@@ -262,7 +262,7 @@
     .registers 5
 
     .prologue
-    .line 93
+    .line 97
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1, p2, p3}, Landroid/view/Window$Callback;->onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
@@ -272,11 +272,35 @@
     return v0
 .end method
 
+.method public onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+    .registers 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Landroid/view/KeyboardShortcutGroup;",
+            ">;",
+            "Landroid/view/Menu;",
+            "I)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 173
+    iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
+
+    invoke-interface {v0, p1, p2, p3}, Landroid/view/Window$Callback;->onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+
+    .line 174
+    return-void
+.end method
+
 .method public onSearchRequested()Z
     .registers 2
 
     .prologue
-    .line 143
+    .line 147
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0}, Landroid/view/Window$Callback;->onSearchRequested()Z
@@ -290,7 +314,7 @@
     .registers 3
 
     .prologue
-    .line 138
+    .line 142
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->onSearchRequested(Landroid/view/SearchEvent;)Z
@@ -304,12 +328,12 @@
     .registers 3
 
     .prologue
-    .line 108
+    .line 112
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->onWindowAttributesChanged(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 109
+    .line 113
     return-void
 .end method
 
@@ -317,12 +341,12 @@
     .registers 3
 
     .prologue
-    .line 118
+    .line 122
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->onWindowFocusChanged(Z)V
 
-    .line 119
+    .line 123
     return-void
 .end method
 
@@ -330,7 +354,7 @@
     .registers 3
 
     .prologue
-    .line 148
+    .line 152
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/Window$Callback;->onWindowStartingActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
@@ -344,7 +368,7 @@
     .registers 4
 
     .prologue
-    .line 153
+    .line 157
     iget-object v0, p0, Landroid/support/v7/view/WindowCallbackWrapper;->e:Landroid/view/Window$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/Window$Callback;->onWindowStartingActionMode(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;

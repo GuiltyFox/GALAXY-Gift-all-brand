@@ -3,22 +3,12 @@
 .source "CoordinatorLayout.java"
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Landroid/support/v4/view/OnApplyWindowInsetsListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/CoordinatorLayout;
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Comparator",
-        "<",
-        "Landroid/view/View;",
-        ">;"
-    }
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroid/support/design/widget/CoordinatorLayout;->setupForInsets()V
 .end annotation
 
 
@@ -31,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 122
+    .line 2947
     iput-object p1, p0, Landroid/support/design/widget/CoordinatorLayout$1;->this$0:Landroid/support/design/widget/CoordinatorLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,82 +31,16 @@
 
 
 # virtual methods
-.method public compare(Landroid/view/View;Landroid/view/View;)I
-    .registers 6
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 125
-    if-ne p1, p2, :cond_5
-
-    move v0, v1
-
-    .line 134
-    :goto_4
-    return v0
-
-    .line 127
-    :cond_5
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
-
-    iget-object v2, p0, Landroid/support/design/widget/CoordinatorLayout$1;->this$0:Landroid/support/design/widget/CoordinatorLayout;
-
-    invoke-virtual {v0, v2, p1, p2}, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->dependsOn(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_15
-
-    .line 129
-    const/4 v0, 0x1
-
-    goto :goto_4
-
-    .line 130
-    :cond_15
-    invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
-
-    iget-object v2, p0, Landroid/support/design/widget/CoordinatorLayout$1;->this$0:Landroid/support/design/widget/CoordinatorLayout;
-
-    invoke-virtual {v0, v2, p2, p1}, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->dependsOn(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_25
-
-    .line 132
-    const/4 v0, -0x1
-
-    goto :goto_4
-
-    :cond_25
-    move v0, v1
-
-    .line 134
-    goto :goto_4
-.end method
-
-.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public onApplyWindowInsets(Landroid/view/View;Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;
     .registers 4
 
     .prologue
-    .line 122
-    check-cast p1, Landroid/view/View;
+    .line 2951
+    iget-object v0, p0, Landroid/support/design/widget/CoordinatorLayout$1;->this$0:Landroid/support/design/widget/CoordinatorLayout;
 
-    check-cast p2, Landroid/view/View;
+    invoke-virtual {v0, p2}, Landroid/support/design/widget/CoordinatorLayout;->setWindowInsets(Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;
 
-    invoke-virtual {p0, p1, p2}, Landroid/support/design/widget/CoordinatorLayout$1;->compare(Landroid/view/View;Landroid/view/View;)I
+    move-result-object v0
 
-    move-result v0
-
-    return v0
+    return-object v0
 .end method

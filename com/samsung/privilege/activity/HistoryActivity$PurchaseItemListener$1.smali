@@ -434,7 +434,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$PurchaseItemListener;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v2, 0x7f090142
+    const v2, 0x7f090261
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -467,7 +467,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$PurchaseItemListener;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v2, 0x7f090143
+    const v2, 0x7f090262
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -500,7 +500,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$PurchaseItemListener;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v2, 0x7f090144
+    const v2, 0x7f090263
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -533,7 +533,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$PurchaseItemListener;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v2, 0x7f090145
+    const v2, 0x7f090264
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 

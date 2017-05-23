@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 298
+    .line 307
     iput-object p1, p0, Landroid/support/design/widget/Snackbar$2;->this$0:Landroid/support/design/widget/Snackbar;
 
     iput-object p2, p0, Landroid/support/design/widget/Snackbar$2;->val$listener:Landroid/view/View$OnClickListener;
@@ -39,19 +39,18 @@
     .registers 4
 
     .prologue
-    .line 301
+    .line 310
     iget-object v0, p0, Landroid/support/design/widget/Snackbar$2;->val$listener:Landroid/view/View$OnClickListener;
 
     invoke-interface {v0, p1}, Landroid/view/View$OnClickListener;->onClick(Landroid/view/View;)V
 
-    .line 303
+    .line 312
     iget-object v0, p0, Landroid/support/design/widget/Snackbar$2;->this$0:Landroid/support/design/widget/Snackbar;
 
     const/4 v1, 0x1
 
-    # invokes: Landroid/support/design/widget/Snackbar;->dispatchDismiss(I)V
-    invoke-static {v0, v1}, Landroid/support/design/widget/Snackbar;->access$000(Landroid/support/design/widget/Snackbar;I)V
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/Snackbar;->dispatchDismiss(I)V
 
-    .line 304
+    .line 313
     return-void
 .end method

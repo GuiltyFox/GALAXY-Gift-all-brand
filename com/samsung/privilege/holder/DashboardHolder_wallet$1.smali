@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 230
+    .line 228
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$1;->a:Landroid/app/Activity;
 
     iput-object p2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$1;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet;
@@ -39,7 +39,7 @@
     .registers 5
 
     .prologue
-    .line 233
+    .line 231
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$1;->a:Landroid/app/Activity;
@@ -48,12 +48,12 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 234
+    .line 232
     const-string/jumbo v1, "cardId"
 
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$1;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet;
 
-    iget-object v2, v2, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->w:Landroid/widget/TextView;
+    iget-object v2, v2, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->v:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -65,11 +65,11 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 235
+    .line 233
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$1;->a:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 236
+    .line 234
     return-void
 .end method

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1996
+    .line 1994
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$24;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$24;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 1999
+    .line 1997
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$24;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$24;->a:Ljava/lang/String;
@@ -50,9 +50,9 @@
 
     move-result-object v0
 
-    .line 2000
+    .line 1998
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 2001
+    .line 1999
     return-void
 .end method

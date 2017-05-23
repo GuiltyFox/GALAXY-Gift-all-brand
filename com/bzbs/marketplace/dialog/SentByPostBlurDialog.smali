@@ -281,7 +281,7 @@
 
     sget-object v1, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog;->a:Landroid/app/Activity;
 
-    const v2, 0x7f0c010a
+    const v2, 0x7f0c0102
 
     invoke-direct {v0, v1, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -292,7 +292,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f04012d
+    const v2, 0x7f0400be
 
     const/4 v3, 0x0
 

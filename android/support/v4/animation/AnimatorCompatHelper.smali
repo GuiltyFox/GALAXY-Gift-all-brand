@@ -12,25 +12,25 @@
     .registers 2
 
     .prologue
-    .line 30
+    .line 34
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0xc
 
     if-lt v0, v1, :cond_e
 
-    .line 31
+    .line 35
     new-instance v0, Landroid/support/v4/animation/HoneycombMr1AnimatorCompatProvider;
 
     invoke-direct {v0}, Landroid/support/v4/animation/HoneycombMr1AnimatorCompatProvider;-><init>()V
 
     sput-object v0, Landroid/support/v4/animation/AnimatorCompatHelper;->a:Landroid/support/v4/animation/AnimatorProvider;
 
-    .line 35
+    .line 39
     :goto_d
     return-void
 
-    .line 33
+    .line 37
     :cond_e
     new-instance v0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider;
 
@@ -45,7 +45,7 @@
     .registers 1
 
     .prologue
-    .line 38
+    .line 42
     sget-object v0, Landroid/support/v4/animation/AnimatorCompatHelper;->a:Landroid/support/v4/animation/AnimatorProvider;
 
     invoke-interface {v0}, Landroid/support/v4/animation/AnimatorProvider;->a()Landroid/support/v4/animation/ValueAnimatorCompat;
@@ -59,11 +59,11 @@
     .registers 2
 
     .prologue
-    .line 44
+    .line 48
     sget-object v0, Landroid/support/v4/animation/AnimatorCompatHelper;->a:Landroid/support/v4/animation/AnimatorProvider;
 
     invoke-interface {v0, p0}, Landroid/support/v4/animation/AnimatorProvider;->a(Landroid/view/View;)V
 
-    .line 45
+    .line 49
     return-void
 .end method

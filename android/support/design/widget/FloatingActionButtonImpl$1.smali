@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 159
+    .line 174
     iput-object p1, p0, Landroid/support/design/widget/FloatingActionButtonImpl$1;->this$0:Landroid/support/design/widget/FloatingActionButtonImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,12 +35,12 @@
     .registers 2
 
     .prologue
-    .line 162
+    .line 177
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonImpl$1;->this$0:Landroid/support/design/widget/FloatingActionButtonImpl;
 
     invoke-virtual {v0}, Landroid/support/design/widget/FloatingActionButtonImpl;->onPreDraw()V
 
-    .line 163
+    .line 178
     const/4 v0, 0x1
 
     return v0

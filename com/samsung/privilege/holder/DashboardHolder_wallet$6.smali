@@ -26,7 +26,7 @@
     .registers 6
 
     .prologue
-    .line 598
+    .line 596
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     iput-object p2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->b:Ljava/lang/String;
@@ -50,10 +50,10 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 613
+    .line 611
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 615
+    .line 613
     invoke-static {}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a()Ljava/lang/String;
 
     move-result-object v0
@@ -88,39 +88,39 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 617
+    .line 615
     invoke-static {}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->b()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 620
+    .line 618
     :try_start_31
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 621
+    .line 619
     const-string/jumbo v1, "error"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 622
+    .line 620
     const-string/jumbo v1, "id"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 623
+    .line 621
     const-string/jumbo v2, "message"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 624
+    .line 622
     const-string/jumbo v0, "1201"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -129,7 +129,7 @@
 
     if-eqz v0, :cond_87
 
-    .line 625
+    .line 623
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->d:Landroid/app/Activity;
 
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->e:Landroid/os/Handler;
@@ -146,7 +146,7 @@
 
     invoke-static/range {v0 .. v6}, Lcom/samsung/privilege/util/DialogOTPUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 626
+    .line 624
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -175,21 +175,21 @@
     :try_end_83
     .catch Ljava/lang/Exception; {:try_start_31 .. :try_end_83} :catch_ab
 
-    .line 636
+    .line 634
     :goto_83
     invoke-static {v7}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a(Z)Z
 
-    .line 637
+    .line 635
     return-void
 
-    .line 628
+    .line 626
     :cond_87
     :try_start_87
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->d:Landroid/app/Activity;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 629
+    .line 627
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -220,16 +220,16 @@
 
     goto :goto_83
 
-    .line 631
+    .line 629
     :catch_ab
     move-exception v0
 
-    .line 632
+    .line 630
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->d:Landroid/app/Activity;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 633
+    .line 631
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -263,7 +263,7 @@
     .registers 8
 
     .prologue
-    .line 601
+    .line 599
     invoke-static {}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a()Ljava/lang/String;
 
     move-result-object v0
@@ -298,21 +298,21 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 603
+    .line 601
     invoke-static {}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->b()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 605
+    .line 603
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Z)V
 
-    .line 607
+    .line 605
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -339,11 +339,11 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 608
+    .line 606
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a(Z)Z
 
-    .line 609
+    .line 607
     return-void
 .end method

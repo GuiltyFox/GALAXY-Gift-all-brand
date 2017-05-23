@@ -40,48 +40,44 @@
     .line 128
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
-    invoke-static {v0}, Landroid/support/v7/app/AppCompatDelegateImplV9;->a(Landroid/support/v7/app/AppCompatDelegateImplV9;)I
-
-    move-result v0
+    iget v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV9;->s:I
 
     and-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_e
 
     .line 129
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
-    invoke-static {v0, v2}, Landroid/support/v7/app/AppCompatDelegateImplV9;->a(Landroid/support/v7/app/AppCompatDelegateImplV9;I)V
+    invoke-virtual {v0, v2}, Landroid/support/v7/app/AppCompatDelegateImplV9;->f(I)V
 
     .line 131
-    :cond_10
+    :cond_e
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
-    invoke-static {v0}, Landroid/support/v7/app/AppCompatDelegateImplV9;->a(Landroid/support/v7/app/AppCompatDelegateImplV9;)I
-
-    move-result v0
+    iget v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV9;->s:I
 
     and-int/lit16 v0, v0, 0x1000
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1d
 
     .line 132
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
     const/16 v1, 0x6c
 
-    invoke-static {v0, v1}, Landroid/support/v7/app/AppCompatDelegateImplV9;->a(Landroid/support/v7/app/AppCompatDelegateImplV9;I)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/app/AppCompatDelegateImplV9;->f(I)V
 
     .line 134
-    :cond_21
+    :cond_1d
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
-    invoke-static {v0, v2}, Landroid/support/v7/app/AppCompatDelegateImplV9;->a(Landroid/support/v7/app/AppCompatDelegateImplV9;Z)Z
+    iput-boolean v2, v0, Landroid/support/v7/app/AppCompatDelegateImplV9;->r:Z
 
     .line 135
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV9$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV9;
 
-    invoke-static {v0, v2}, Landroid/support/v7/app/AppCompatDelegateImplV9;->b(Landroid/support/v7/app/AppCompatDelegateImplV9;I)I
+    iput v2, v0, Landroid/support/v7/app/AppCompatDelegateImplV9;->s:I
 
     .line 136
     return-void

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1513
+    .line 1512
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener$2;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 1516
+    .line 1515
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
@@ -52,7 +52,7 @@
 
     if-ne v0, v1, :cond_36
 
-    .line 1517
+    .line 1516
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;
@@ -67,37 +67,37 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1518
+    .line 1517
     const/high16 v1, 0x4000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 1519
+    .line 1518
     const-string/jumbo v1, "action"
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener$2;->a:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1520
+    .line 1519
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1522
+    .line 1521
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->finish()V
 
-    .line 1526
+    .line 1525
     :goto_35
     return-void
 
-    .line 1524
+    .line 1523
     :cond_36
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;
 

@@ -35,7 +35,7 @@
 
     const/4 v2, 0x0
 
-    .line 589
+    .line 598
     new-instance v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     const-string/jumbo v1, "NONE"
@@ -44,7 +44,7 @@
 
     sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
-    .line 590
+    .line 599
     new-instance v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     const-string/jumbo v1, "POST_PHOTO"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->b:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
-    .line 591
+    .line 600
     new-instance v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     const-string/jumbo v1, "POST_STATUS_UPDATE"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->c:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
-    .line 588
+    .line 597
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
@@ -93,7 +93,7 @@
     .end annotation
 
     .prologue
-    .line 588
+    .line 597
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -103,7 +103,7 @@
     .registers 2
 
     .prologue
-    .line 588
+    .line 597
     const-class v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -119,7 +119,7 @@
     .registers 1
 
     .prologue
-    .line 588
+    .line 597
     sget-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->d:[Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     invoke-virtual {v0}, [Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->clone()Ljava/lang/Object;

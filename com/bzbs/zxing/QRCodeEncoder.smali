@@ -213,7 +213,7 @@
     :try_start_21
     iget-object v0, p0, Lcom/bzbs/zxing/QRCodeEncoder;->b:Landroid/app/Activity;
 
-    const v1, 0x7f090466
+    const v1, 0x7f090259
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -313,7 +313,7 @@
     :try_start_7a
     iget-object v0, p0, Lcom/bzbs/zxing/QRCodeEncoder;->b:Landroid/app/Activity;
 
-    const v1, 0x7f090462
+    const v1, 0x7f090255
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -414,7 +414,7 @@
     :try_start_d7
     iget-object v0, p0, Lcom/bzbs/zxing/QRCodeEncoder;->b:Landroid/app/Activity;
 
-    const v1, 0x7f090464
+    const v1, 0x7f090257
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -515,7 +515,7 @@
     :try_start_136
     iget-object v0, p0, Lcom/bzbs/zxing/QRCodeEncoder;->b:Landroid/app/Activity;
 
-    const v1, 0x7f090465
+    const v1, 0x7f090258
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -739,7 +739,7 @@
     :try_start_1f8
     iget-object v0, p0, Lcom/bzbs/zxing/QRCodeEncoder;->b:Landroid/app/Activity;
 
-    const v1, 0x7f090461
+    const v1, 0x7f090254
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -903,7 +903,7 @@
     :try_start_292
     iget-object v0, p0, Lcom/bzbs/zxing/QRCodeEncoder;->b:Landroid/app/Activity;
 
-    const v1, 0x7f090463
+    const v1, 0x7f090256
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1035,7 +1035,7 @@
     :try_start_45
     iget-object v0, p0, Lcom/bzbs/zxing/QRCodeEncoder;->b:Landroid/app/Activity;
 
-    const v1, 0x7f090461
+    const v1, 0x7f090254
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1213,7 +1213,7 @@
     :try_start_55
     iget-object v1, p0, Lcom/bzbs/zxing/QRCodeEncoder;->b:Landroid/app/Activity;
 
-    const v2, 0x7f090466
+    const v2, 0x7f090259
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1416,7 +1416,7 @@
     :try_start_64
     iget-object v0, p0, Lcom/bzbs/zxing/QRCodeEncoder;->b:Landroid/app/Activity;
 
-    const v1, 0x7f090466
+    const v1, 0x7f090259
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

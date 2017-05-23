@@ -32,18 +32,18 @@
     .end annotation
 
     .prologue
-    .line 292
+    .line 291
     iput-object p1, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->this$0:Landroid/support/design/widget/HeaderBehavior;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 293
+    .line 292
     iput-object p2, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->mParent:Landroid/support/design/widget/CoordinatorLayout;
 
-    .line 294
+    .line 293
     iput-object p3, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->mLayout:Landroid/view/View;
 
-    .line 295
+    .line 294
     return-void
 .end method
 
@@ -53,35 +53,29 @@
     .registers 5
 
     .prologue
-    .line 299
+    .line 298
     iget-object v0, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->mLayout:Landroid/view/View;
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_2a
 
     iget-object v0, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->this$0:Landroid/support/design/widget/HeaderBehavior;
 
-    # getter for: Landroid/support/design/widget/HeaderBehavior;->mScroller:Landroid/support/v4/widget/ScrollerCompat;
-    invoke-static {v0}, Landroid/support/design/widget/HeaderBehavior;->access$000(Landroid/support/design/widget/HeaderBehavior;)Landroid/support/v4/widget/ScrollerCompat;
+    iget-object v0, v0, Landroid/support/design/widget/HeaderBehavior;->mScroller:Landroid/support/v4/widget/ScrollerCompat;
 
-    move-result-object v0
+    if-eqz v0, :cond_2a
 
-    if-eqz v0, :cond_30
-
-    .line 300
+    .line 299
     iget-object v0, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->this$0:Landroid/support/design/widget/HeaderBehavior;
 
-    # getter for: Landroid/support/design/widget/HeaderBehavior;->mScroller:Landroid/support/v4/widget/ScrollerCompat;
-    invoke-static {v0}, Landroid/support/design/widget/HeaderBehavior;->access$000(Landroid/support/design/widget/HeaderBehavior;)Landroid/support/v4/widget/ScrollerCompat;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/design/widget/HeaderBehavior;->mScroller:Landroid/support/v4/widget/ScrollerCompat;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/ScrollerCompat;->g()Z
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_2b
 
-    .line 301
+    .line 300
     iget-object v0, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->this$0:Landroid/support/design/widget/HeaderBehavior;
 
     iget-object v1, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->mParent:Landroid/support/design/widget/CoordinatorLayout;
@@ -90,10 +84,7 @@
 
     iget-object v3, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->this$0:Landroid/support/design/widget/HeaderBehavior;
 
-    # getter for: Landroid/support/design/widget/HeaderBehavior;->mScroller:Landroid/support/v4/widget/ScrollerCompat;
-    invoke-static {v3}, Landroid/support/design/widget/HeaderBehavior;->access$000(Landroid/support/design/widget/HeaderBehavior;)Landroid/support/v4/widget/ScrollerCompat;
-
-    move-result-object v3
+    iget-object v3, v3, Landroid/support/design/widget/HeaderBehavior;->mScroller:Landroid/support/v4/widget/ScrollerCompat;
 
     invoke-virtual {v3}, Landroid/support/v4/widget/ScrollerCompat;->c()I
 
@@ -101,18 +92,18 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/support/design/widget/HeaderBehavior;->setHeaderTopBottomOffset(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;I)I
 
-    .line 303
+    .line 302
     iget-object v0, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->mLayout:Landroid/view/View;
 
     invoke-static {v0, p0}, Landroid/support/v4/view/ViewCompat;->a(Landroid/view/View;Ljava/lang/Runnable;)V
 
-    .line 308
-    :cond_30
-    :goto_30
+    .line 307
+    :cond_2a
+    :goto_2a
     return-void
 
-    .line 305
-    :cond_31
+    .line 304
+    :cond_2b
     iget-object v0, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->this$0:Landroid/support/design/widget/HeaderBehavior;
 
     iget-object v1, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->mParent:Landroid/support/design/widget/CoordinatorLayout;
@@ -121,5 +112,5 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/design/widget/HeaderBehavior;->onFlingFinished(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;)V
 
-    goto :goto_30
+    goto :goto_2a
 .end method

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1250
+    .line 1248
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$4;->a:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 3
 
     .prologue
-    .line 1253
+    .line 1251
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$4;->a:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$12$1;
@@ -48,6 +48,6 @@
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->performClick()Z
 
-    .line 1254
+    .line 1252
     return-void
 .end method

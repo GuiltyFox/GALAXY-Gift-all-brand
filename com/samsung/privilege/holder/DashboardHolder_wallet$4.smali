@@ -29,7 +29,7 @@
     .registers 6
 
     .prologue
-    .line 500
+    .line 498
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$4;->a:Landroid/app/Activity;
 
     iput-object p2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$4;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet;
@@ -51,19 +51,19 @@
     .registers 6
 
     .prologue
-    .line 503
+    .line 501
     invoke-static {}, Lcom/bzbs/util/BBUtil;->a()Z
 
     move-result v0
 
     if-nez v0, :cond_15
 
-    .line 504
+    .line 502
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$4;->a:Landroid/app/Activity;
 
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$4;->a:Landroid/app/Activity;
 
-    const v2, 0x7f0900c5
+    const v2, 0x7f090073
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -71,16 +71,16 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->b(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 519
+    .line 517
     :cond_14
     :goto_14
     return-void
 
-    .line 506
+    .line 504
     :cond_15
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$4;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet;
 
-    iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->w:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->v:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -90,7 +90,7 @@
 
     move-result-object v0
 
-    .line 508
+    .line 506
     if-eqz v0, :cond_14
 
     const-string/jumbo v1, ""
@@ -101,7 +101,7 @@
 
     if-nez v1, :cond_14
 
-    .line 514
+    .line 512
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$4;->a:Landroid/app/Activity;
 
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$4;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -110,7 +110,7 @@
 
     invoke-static {v1, v0, v2, v3}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a(Landroid/app/Activity;Ljava/lang/String;Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Lcom/samsung/privilege/holder/DashboardHolder_wallet;)V
 
-    .line 516
+    .line 514
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

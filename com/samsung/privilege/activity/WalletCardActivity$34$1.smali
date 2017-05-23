@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 3067
+    .line 3065
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$34;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34$1;->a:Ljava/lang/String;
@@ -39,21 +39,21 @@
     .registers 4
 
     .prologue
-    .line 3070
+    .line 3068
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$34;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$34;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->p:Landroid/widget/ProgressBar;
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->o:Landroid/widget/ProgressBar;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 3072
+    .line 3070
     const/4 v0, 0x0
 
-    .line 3074
+    .line 3072
     :try_start_c
     new-instance v1, Lorg/json/JSONArray;
 
@@ -65,7 +65,7 @@
 
     move-result-object v0
 
-    .line 3077
+    .line 3075
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$34;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$34;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -78,7 +78,7 @@
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    .line 3078
+    .line 3076
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$34;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$34;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -89,7 +89,7 @@
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter;->a(Ljava/util/List;)V
 
-    .line 3079
+    .line 3077
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$34;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$34;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -102,7 +102,7 @@
     :try_end_3a
     .catch Ljava/lang/Exception; {:try_start_c .. :try_end_3a} :catch_ae
 
-    .line 3089
+    .line 3087
     :goto_3a
     if-eqz v0, :cond_9c
 
@@ -119,7 +119,7 @@
 
     if-nez v0, :cond_9c
 
-    .line 3090
+    .line 3088
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -158,7 +158,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LocalFileHelper;->a(Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 3091
+    .line 3089
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -201,7 +201,7 @@
     :try_end_9c
     .catch Ljava/lang/Exception; {:try_start_3c .. :try_end_9c} :catch_ac
 
-    .line 3097
+    .line 3095
     :cond_9c
     :goto_9c
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$34;
@@ -212,23 +212,23 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->e(Lcom/samsung/privilege/activity/WalletCardActivity;Z)Z
 
-    .line 3099
+    .line 3097
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$34;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$34;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->w(Lcom/samsung/privilege/activity/WalletCardActivity;)V
 
-    .line 3100
+    .line 3098
     return-void
 
-    .line 3093
+    .line 3091
     :catch_ac
     move-exception v0
 
     goto :goto_9c
 
-    .line 3084
+    .line 3082
     :catch_ae
     move-exception v1
 

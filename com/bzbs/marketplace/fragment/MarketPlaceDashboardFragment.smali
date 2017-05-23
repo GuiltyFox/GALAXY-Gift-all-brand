@@ -6,13 +6,13 @@
 # instance fields
 .field container:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100193
+        value = 0x7f100180
     .end annotation
 .end field
 
 .field expandedImage:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006ae
+        value = 0x7f1004a5
     .end annotation
 .end field
 
@@ -39,25 +39,25 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066e
+        value = 0x7f100465
     .end annotation
 .end field
 
 .field recyclerViewMarketPlaceList:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006ab
+        value = 0x7f1004a2
     .end annotation
 .end field
 
 .field rootFooter:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006ac
+        value = 0x7f1004a3
     .end annotation
 .end field
 
 .field tvResult:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006ad
+        value = 0x7f1004a4
     .end annotation
 .end field
 
@@ -175,9 +175,9 @@
     .line 87
     :array_2e
     .array-data 4
-        0x7f0f0035
-        0x7f0f0036
-        0x7f0f0037
+        0x7f0e0028
+        0x7f0e0029
+        0x7f0e002a
     .end array-data
 .end method
 
@@ -342,7 +342,7 @@
 
     .prologue
     .line 66
-    const v0, 0x7f040151
+    const v0, 0x7f0400de
 
     return v0
 .end method
@@ -356,7 +356,7 @@
 
     check-cast v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->y:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
+    iget-object v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->z:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
 
     iput-object v0, p0, Lcom/bzbs/marketplace/fragment/MarketPlaceDashboardFragment;->i:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
 

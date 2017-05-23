@@ -31,7 +31,7 @@
     .registers 7
 
     .prologue
-    .line 522
+    .line 520
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
     iput-object p2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet;
@@ -55,19 +55,19 @@
     .registers 7
 
     .prologue
-    .line 525
+    .line 523
     invoke-static {}, Lcom/bzbs/util/BBUtil;->a()Z
 
     move-result v0
 
     if-nez v0, :cond_15
 
-    .line 526
+    .line 524
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    const v2, 0x7f0900c5
+    const v2, 0x7f090073
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -75,12 +75,12 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->b(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 560
+    .line 558
     :cond_14
     :goto_14
     return-void
 
-    .line 528
+    .line 526
     :cond_15
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
@@ -88,7 +88,7 @@
 
     move-result-object v0
 
-    .line 530
+    .line 528
     if-eqz v0, :cond_81
 
     const-string/jumbo v1, ""
@@ -99,10 +99,10 @@
 
     if-nez v0, :cond_81
 
-    .line 531
+    .line 529
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet;
 
-    iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->v:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->u:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -112,7 +112,7 @@
 
     move-result-object v0
 
-    .line 533
+    .line 531
     if-eqz v0, :cond_14
 
     const-string/jumbo v1, ""
@@ -123,17 +123,17 @@
 
     if-nez v1, :cond_14
 
-    .line 534
+    .line 532
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
     invoke-direct {v1, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 535
+    .line 533
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    const v3, 0x7f09043a
+    const v3, 0x7f09023e
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -141,10 +141,10 @@
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 536
+    .line 534
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    const v3, 0x7f0903b8
+    const v3, 0x7f0901c4
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -176,20 +176,20 @@
 
     invoke-direct {v3, p0}, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5$1;-><init>(Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;)V
 
-    .line 544
+    .line 542
     invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 549
+    .line 547
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 550
+    .line 548
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
     goto :goto_14
 
-    .line 553
+    .line 551
     :cond_81
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
@@ -197,7 +197,7 @@
 
     if-eqz v0, :cond_af
 
-    .line 554
+    .line 552
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->d:Landroid/os/Handler;
@@ -234,7 +234,7 @@
 
     goto/16 :goto_14
 
-    .line 556
+    .line 554
     :cond_af
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 

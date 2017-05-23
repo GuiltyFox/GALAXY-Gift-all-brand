@@ -79,7 +79,7 @@
     invoke-virtual {v1, v2, v3}, Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;->a(D)V
 
     .line 245
-    invoke-virtual {v0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->j()V
+    invoke-virtual {v0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->i()V
 
     .line 246
     invoke-static {v0}, Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;->b(Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;)Lcom/bzbs/marketplace/control/autoscrollviewpager/CustomDurationScroller;

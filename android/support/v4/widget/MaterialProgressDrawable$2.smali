@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/support/v4/widget/MaterialProgressDrawable;->b()V
+    value = Landroid/support/v4/widget/MaterialProgressDrawable;->a()V
 .end annotation
 
 
@@ -73,14 +73,14 @@
     .line 435
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->b:Landroid/support/v4/widget/MaterialProgressDrawable;
 
-    iget-boolean v0, v0, Landroid/support/v4/widget/MaterialProgressDrawable;->a:Z
+    iget-boolean v0, v0, Landroid/support/v4/widget/MaterialProgressDrawable;->c:Z
 
     if-eqz v0, :cond_2b
 
     .line 438
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->b:Landroid/support/v4/widget/MaterialProgressDrawable;
 
-    iput-boolean v2, v0, Landroid/support/v4/widget/MaterialProgressDrawable;->a:Z
+    iput-boolean v2, v0, Landroid/support/v4/widget/MaterialProgressDrawable;->c:Z
 
     .line 439
     const-wide/16 v0, 0x534
@@ -102,9 +102,7 @@
 
     iget-object v1, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->b:Landroid/support/v4/widget/MaterialProgressDrawable;
 
-    invoke-static {v1}, Landroid/support/v4/widget/MaterialProgressDrawable;->a(Landroid/support/v4/widget/MaterialProgressDrawable;)F
-
-    move-result v1
+    iget v1, v1, Landroid/support/v4/widget/MaterialProgressDrawable;->b:F
 
     const/high16 v2, 0x3f800000    # 1.0f
 
@@ -114,7 +112,7 @@
 
     rem-float/2addr v1, v2
 
-    invoke-static {v0, v1}, Landroid/support/v4/widget/MaterialProgressDrawable;->a(Landroid/support/v4/widget/MaterialProgressDrawable;F)F
+    iput v1, v0, Landroid/support/v4/widget/MaterialProgressDrawable;->b:F
 
     goto :goto_2a
 .end method
@@ -128,7 +126,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Landroid/support/v4/widget/MaterialProgressDrawable;->a(Landroid/support/v4/widget/MaterialProgressDrawable;F)F
+    iput v1, v0, Landroid/support/v4/widget/MaterialProgressDrawable;->b:F
 
     .line 423
     return-void

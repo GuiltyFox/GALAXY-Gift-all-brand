@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 1561
+    .line 1585
     invoke-direct {p0}, Landroid/support/v4/view/ViewCompat$JbMr2ViewCompatImpl;-><init>()V
 
     return-void
@@ -16,11 +16,11 @@
 
 
 # virtual methods
-.method public E(Landroid/view/View;)Z
+.method public F(Landroid/view/View;)Z
     .registers 3
 
     .prologue
-    .line 1579
+    .line 1603
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatKitKat;->a(Landroid/view/View;)Z
 
     move-result v0
@@ -28,11 +28,11 @@
     return v0
 .end method
 
-.method public G(Landroid/view/View;)Z
+.method public H(Landroid/view/View;)Z
     .registers 3
 
     .prologue
-    .line 1589
+    .line 1613
     invoke-static {p1}, Landroid/support/v4/view/ViewCompatKitKat;->b(Landroid/view/View;)Z
 
     move-result v0
@@ -44,10 +44,10 @@
     .registers 3
 
     .prologue
-    .line 1574
+    .line 1598
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatJB;->a(Landroid/view/View;I)V
 
-    .line 1575
+    .line 1599
     return-void
 .end method
 
@@ -55,9 +55,9 @@
     .registers 3
 
     .prologue
-    .line 1569
+    .line 1593
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatKitKat;->a(Landroid/view/View;I)V
 
-    .line 1570
+    .line 1594
     return-void
 .end method

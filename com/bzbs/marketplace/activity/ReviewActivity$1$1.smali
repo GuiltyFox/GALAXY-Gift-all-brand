@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 94
+    .line 96
     iput-object p1, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$1$1;->a:Lcom/bzbs/marketplace/activity/ReviewActivity$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 3
 
     .prologue
-    .line 97
+    .line 99
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity$1$1;->a:Lcom/bzbs/marketplace/activity/ReviewActivity$1;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/activity/ReviewActivity$1;->a:Lcom/bzbs/marketplace/activity/ReviewActivity;
@@ -44,6 +44,6 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/marketplace/activity/ReviewActivity;->a(Lcom/bzbs/marketplace/activity/ReviewActivity;Z)Z
 
-    .line 98
+    .line 100
     return-void
 .end method

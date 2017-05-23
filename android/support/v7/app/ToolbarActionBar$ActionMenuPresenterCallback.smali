@@ -13,25 +13,16 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/support/v7/app/ToolbarActionBar;)V
+.method constructor <init>(Landroid/support/v7/app/ToolbarActionBar;)V
     .registers 2
 
     .prologue
-    .line 598
+    .line 601
     iput-object p1, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v7/app/ToolbarActionBar;Landroid/support/v7/app/ToolbarActionBar$1;)V
-    .registers 3
-
-    .prologue
-    .line 598
-    invoke-direct {p0, p1}, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;-><init>(Landroid/support/v7/app/ToolbarActionBar;)V
-
+    .line 602
     return-void
 .end method
 
@@ -41,52 +32,46 @@
     .registers 5
 
     .prologue
-    .line 612
+    .line 615
     iget-boolean v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->b:Z
 
     if-eqz v0, :cond_5
 
-    .line 622
+    .line 625
     :goto_4
     return-void
 
-    .line 616
+    .line 619
     :cond_5
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->b:Z
 
-    .line 617
+    .line 620
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->c(Landroid/support/v7/app/ToolbarActionBar;)Landroid/support/v7/widget/DecorToolbar;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/ToolbarActionBar;->a:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->dismissPopupMenus()V
 
-    .line 618
+    .line 621
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
+    iget-object v0, v0, Landroid/support/v7/app/ToolbarActionBar;->c:Landroid/view/Window$Callback;
 
-    move-result-object v0
+    if-eqz v0, :cond_1e
 
-    if-eqz v0, :cond_24
-
-    .line 619
+    .line 622
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/ToolbarActionBar;->c:Landroid/view/Window$Callback;
 
     const/16 v1, 0x6c
 
     invoke-interface {v0, v1, p1}, Landroid/view/Window$Callback;->onPanelClosed(ILandroid/view/Menu;)V
 
-    .line 621
-    :cond_24
+    .line 624
+    :cond_1e
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->b:Z
@@ -98,35 +83,31 @@
     .registers 4
 
     .prologue
-    .line 603
+    .line 606
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
+    iget-object v0, v0, Landroid/support/v7/app/ToolbarActionBar;->c:Landroid/view/Window$Callback;
 
-    move-result-object v0
+    if-eqz v0, :cond_11
 
-    if-eqz v0, :cond_15
-
-    .line 604
+    .line 607
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/ToolbarActionBar;->c:Landroid/view/Window$Callback;
 
     const/16 v1, 0x6c
 
     invoke-interface {v0, v1, p1}, Landroid/view/Window$Callback;->onMenuOpened(ILandroid/view/Menu;)Z
 
-    .line 605
+    .line 608
     const/4 v0, 0x1
 
-    .line 607
-    :goto_14
+    .line 610
+    :goto_10
     return v0
 
-    :cond_15
+    :cond_11
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_10
 .end method

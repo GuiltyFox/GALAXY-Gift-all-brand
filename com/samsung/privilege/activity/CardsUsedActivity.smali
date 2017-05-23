@@ -133,7 +133,7 @@
     move-result-object v0
 
     .line 383
-    const v1, 0x7f0400dc
+    const v1, 0x7f04006f
 
     const/4 v2, 0x0
 
@@ -268,7 +268,7 @@
 
     .line 696
     :goto_3d
-    const v0, 0x7f10014e
+    const v0, 0x7f10014f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -583,7 +583,7 @@
     const/16 v6, 0x8
 
     .line 215
-    const v0, 0x7f100143
+    const v0, 0x7f100144
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -592,7 +592,7 @@
     check-cast v0, Landroid/widget/ScrollView;
 
     .line 216
-    const v1, 0x7f10014b
+    const v1, 0x7f10014c
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -601,7 +601,7 @@
     check-cast v1, Landroid/widget/ImageView;
 
     .line 217
-    const v2, 0x7f100131
+    const v2, 0x7f100134
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -612,7 +612,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/CardsUsedActivity;->f:Landroid/widget/TextView;
 
     .line 218
-    const v2, 0x7f100150
+    const v2, 0x7f100151
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -623,7 +623,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/CardsUsedActivity;->h:Landroid/widget/TextView;
 
     .line 219
-    const v2, 0x7f100156
+    const v2, 0x7f100157
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -634,7 +634,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/CardsUsedActivity;->g:Landroid/widget/TextView;
 
     .line 220
-    const v2, 0x7f100160
+    const v2, 0x7f100161
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -645,7 +645,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/CardsUsedActivity;->i:Landroid/widget/LinearLayout;
 
     .line 221
-    const v2, 0x7f10014c
+    const v2, 0x7f10014d
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -656,7 +656,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/CardsUsedActivity;->j:Landroid/widget/LinearLayout;
 
     .line 223
-    const v2, 0x7f100157
+    const v2, 0x7f100158
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -667,7 +667,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/CardsUsedActivity;->k:Landroid/widget/FrameLayout;
 
     .line 224
-    const v2, 0x7f100159
+    const v2, 0x7f10015a
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -678,7 +678,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/CardsUsedActivity;->n:Landroid/widget/RelativeLayout;
 
     .line 225
-    const v2, 0x7f10015a
+    const v2, 0x7f10015b
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -689,7 +689,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/CardsUsedActivity;->o:Landroid/widget/RelativeLayout;
 
     .line 226
-    const v2, 0x7f10014f
+    const v2, 0x7f100150
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -700,7 +700,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/CardsUsedActivity;->l:Landroid/widget/ImageView;
 
     .line 228
-    const v2, 0x7f100142
+    const v2, 0x7f100143
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -709,7 +709,7 @@
     check-cast v2, Landroid/widget/ProgressBar;
 
     .line 230
-    const v3, 0x7f100146
+    const v3, 0x7f100147
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -720,7 +720,7 @@
     iput-object v3, p0, Lcom/samsung/privilege/activity/CardsUsedActivity;->p:Landroid/widget/TextView;
 
     .line 231
-    const v3, 0x7f10015b
+    const v3, 0x7f10015c
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -731,7 +731,7 @@
     iput-object v3, p0, Lcom/samsung/privilege/activity/CardsUsedActivity;->q:Landroid/widget/LinearLayout;
 
     .line 232
-    const v3, 0x7f10014d
+    const v3, 0x7f10014e
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -742,7 +742,7 @@
     iput-object v3, p0, Lcom/samsung/privilege/activity/CardsUsedActivity;->m:Landroid/widget/ImageView;
 
     .line 234
-    const v3, 0x7f100144
+    const v3, 0x7f100145
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -751,7 +751,7 @@
     invoke-virtual {v3, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 235
-    const v3, 0x7f100163
+    const v3, 0x7f100164
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -760,7 +760,7 @@
     invoke-virtual {v3, v6}, Landroid/view/View;->setVisibility(I)V
 
     .line 236
-    const v3, 0x7f100164
+    const v3, 0x7f100165
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -805,7 +805,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v4, 0x7f0903cd
+    const v4, 0x7f0901d9
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -843,7 +843,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0903a5
+    const v4, 0x7f0901b1
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -866,7 +866,7 @@
     invoke-virtual {v2, v6}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
     .line 247
-    const v0, 0x7f10013e
+    const v0, 0x7f10013f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -882,7 +882,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 255
-    const v0, 0x7f100162
+    const v0, 0x7f100163
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -978,7 +978,7 @@
     .line 294
     const-string/jumbo v1, ""
 
-    const v2, 0x7f090283
+    const v2, 0x7f0900ed
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -1085,9 +1085,9 @@
     .registers 6
 
     .prologue
-    const v4, 0x7f100164
+    const v4, 0x7f100165
 
-    const v3, 0x7f100163
+    const v3, 0x7f100164
 
     const/16 v2, 0x8
 
@@ -1200,7 +1200,7 @@
     .line 433
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090283
+    const v1, 0x7f0900ed
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -1386,7 +1386,7 @@
     .line 551
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090283
+    const v1, 0x7f0900ed
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -1813,7 +1813,7 @@
 
     .prologue
     .line 743
-    const v0, 0x7f10014f
+    const v0, 0x7f100150
 
     :try_start_3
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
@@ -1823,7 +1823,7 @@
     check-cast v0, Landroid/widget/ImageView;
 
     .line 744
-    const v1, 0x7f100150
+    const v1, 0x7f100151
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -1871,7 +1871,7 @@
 
     .line 755
     :goto_30
-    const v0, 0x7f100151
+    const v0, 0x7f100152
 
     :try_start_33
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
@@ -1883,7 +1883,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 756
-    const v0, 0x7f100153
+    const v0, 0x7f100154
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -1971,7 +1971,7 @@
 
     .prologue
     .line 764
-    const v0, 0x7f10014f
+    const v0, 0x7f100150
 
     :try_start_3
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
@@ -1981,7 +1981,7 @@
     check-cast v0, Landroid/widget/ImageView;
 
     .line 765
-    const v1, 0x7f100150
+    const v1, 0x7f100151
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -2029,7 +2029,7 @@
 
     .line 776
     :goto_30
-    const v0, 0x7f100151
+    const v0, 0x7f100152
 
     :try_start_33
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
@@ -2041,7 +2041,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 777
-    const v0, 0x7f100153
+    const v0, 0x7f100154
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -2132,14 +2132,14 @@
     invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 93
-    const v0, 0x7f040030
+    const v0, 0x7f04002f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->setContentView(I)V
 
     .line 94
-    const v0, 0x7f05000d
+    const v0, 0x7f05000a
 
-    const v1, 0x7f050052
+    const v1, 0x7f05003f
 
     invoke-virtual {p0, v0, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->overridePendingTransition(II)V
 
@@ -2311,9 +2311,9 @@
     invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onPause()V
 
     .line 132
-    const v0, 0x7f050051
+    const v0, 0x7f05003e
 
-    const v1, 0x7f05000e
+    const v1, 0x7f05000b
 
     invoke-virtual {p0, v0, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->overridePendingTransition(II)V
 

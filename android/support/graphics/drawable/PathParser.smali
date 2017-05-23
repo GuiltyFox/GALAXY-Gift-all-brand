@@ -66,8 +66,8 @@
 
     const/4 v5, 0x1
 
-    .line 243
-    .line 245
+    .line 246
+    .line 248
     iput-boolean v1, p2, Landroid/support/graphics/drawable/PathParser$ExtractFloatResult;->b:Z
 
     move v0, v1
@@ -78,7 +78,7 @@
 
     move v4, p1
 
-    .line 248
+    .line 251
     :goto_8
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -86,26 +86,26 @@
 
     if-ge v4, v6, :cond_18
 
-    .line 251
+    .line 254
     invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v6
 
-    .line 252
+    .line 255
     sparse-switch v6, :sswitch_data_36
 
     :cond_15
     move v0, v1
 
-    .line 278
+    .line 281
     :goto_16
     if-eqz v3, :cond_33
 
-    .line 284
+    .line 287
     :cond_18
     iput v4, p2, Landroid/support/graphics/drawable/PathParser$ExtractFloatResult;->a:I
 
-    .line 285
+    .line 288
     return-void
 
     :sswitch_1b
@@ -113,16 +113,16 @@
 
     move v3, v5
 
-    .line 256
+    .line 259
     goto :goto_16
 
-    .line 259
+    .line 262
     :sswitch_1e
     if-eq v4, p1, :cond_15
 
     if-nez v0, :cond_15
 
-    .line 261
+    .line 264
     iput-boolean v5, p2, Landroid/support/graphics/drawable/PathParser$ExtractFloatResult;->b:Z
 
     move v0, v1
@@ -131,7 +131,7 @@
 
     goto :goto_16
 
-    .line 265
+    .line 268
     :sswitch_27
     if-nez v2, :cond_2c
 
@@ -139,10 +139,10 @@
 
     move v2, v5
 
-    .line 266
+    .line 269
     goto :goto_16
 
-    .line 270
+    .line 273
     :cond_2c
     iput-boolean v5, p2, Landroid/support/graphics/drawable/PathParser$ExtractFloatResult;->b:Z
 
@@ -150,22 +150,22 @@
 
     move v3, v5
 
-    .line 272
+    .line 275
     goto :goto_16
 
     :sswitch_31
     move v0, v5
 
-    .line 275
+    .line 278
     goto :goto_16
 
-    .line 248
+    .line 251
     :cond_33
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_8
 
-    .line 252
+    .line 255
     :sswitch_data_36
     .sparse-switch
         0x20 -> :sswitch_1b
@@ -178,7 +178,7 @@
 .end method
 
 .method private static a(Ljava/util/ArrayList;C[F)V
-    .registers 5
+    .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -193,9 +193,7 @@
     .line 178
     new-instance v0, Landroid/support/graphics/drawable/PathParser$PathDataNode;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p1, p2, v1}, Landroid/support/graphics/drawable/PathParser$PathDataNode;-><init>(C[FLandroid/support/graphics/drawable/PathParser$1;)V
+    invoke-direct {v0, p1, p2}, Landroid/support/graphics/drawable/PathParser$PathDataNode;-><init>(C[F)V
 
     invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -203,16 +201,58 @@
     return-void
 .end method
 
-.method static synthetic a([FII)[F
-    .registers 4
+.method static a([FII)[F
+    .registers 6
 
     .prologue
-    .line 24
-    invoke-static {p0, p1, p2}, Landroid/support/graphics/drawable/PathParser;->b([FII)[F
+    .line 44
+    if-le p1, p2, :cond_8
 
-    move-result-object v0
+    .line 45
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    return-object v0
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw v0
+
+    .line 47
+    :cond_8
+    array-length v0, p0
+
+    .line 48
+    if-ltz p1, :cond_d
+
+    if-le p1, v0, :cond_13
+
+    .line 49
+    :cond_d
+    new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
+
+    invoke-direct {v0}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
+
+    throw v0
+
+    .line 51
+    :cond_13
+    sub-int v1, p2, p1
+
+    .line 52
+    sub-int/2addr v0, p1
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    .line 53
+    new-array v1, v1, [F
+
+    .line 54
+    const/4 v2, 0x0
+
+    invoke-static {p0, p1, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 55
+    return-object v1
 .end method
 
 .method public static a(Ljava/lang/String;)[Landroid/support/graphics/drawable/PathParser$PathDataNode;
@@ -332,53 +372,52 @@
 .end method
 
 .method public static a([Landroid/support/graphics/drawable/PathParser$PathDataNode;)[Landroid/support/graphics/drawable/PathParser$PathDataNode;
-    .registers 6
+    .registers 5
 
     .prologue
-    const/4 v1, 0x0
-
     .line 110
-    if-nez p0, :cond_5
+    if-nez p0, :cond_4
 
-    move-object v0, v1
+    .line 111
+    const/4 v0, 0x0
 
     .line 117
-    :goto_4
+    :goto_3
     return-object v0
 
     .line 113
-    :cond_5
+    :cond_4
     array-length v0, p0
 
-    new-array v2, v0, [Landroid/support/graphics/drawable/PathParser$PathDataNode;
+    new-array v1, v0, [Landroid/support/graphics/drawable/PathParser$PathDataNode;
 
     .line 114
     const/4 v0, 0x0
 
-    :goto_9
-    array-length v3, p0
+    :goto_8
+    array-length v2, p0
 
-    if-ge v0, v3, :cond_18
+    if-ge v0, v2, :cond_17
 
     .line 115
-    new-instance v3, Landroid/support/graphics/drawable/PathParser$PathDataNode;
+    new-instance v2, Landroid/support/graphics/drawable/PathParser$PathDataNode;
 
-    aget-object v4, p0, v0
+    aget-object v3, p0, v0
 
-    invoke-direct {v3, v4, v1}, Landroid/support/graphics/drawable/PathParser$PathDataNode;-><init>(Landroid/support/graphics/drawable/PathParser$PathDataNode;Landroid/support/graphics/drawable/PathParser$1;)V
+    invoke-direct {v2, v3}, Landroid/support/graphics/drawable/PathParser$PathDataNode;-><init>(Landroid/support/graphics/drawable/PathParser$PathDataNode;)V
 
-    aput-object v3, v2, v0
+    aput-object v2, v1, v0
 
     .line 114
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_9
+    goto :goto_8
 
-    :cond_18
-    move-object v0, v2
+    :cond_17
+    move-object v0, v1
 
     .line 117
-    goto :goto_4
+    goto :goto_3
 .end method
 
 .method private static b(Ljava/lang/String;)[F
@@ -389,7 +428,7 @@
 
     const/4 v2, 0x0
 
-    .line 196
+    .line 199
     invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
@@ -416,17 +455,17 @@
 
     if-eqz v0, :cond_1e
 
-    .line 197
+    .line 200
     new-array v0, v2, [F
 
-    .line 227
+    .line 230
     :goto_19
     return-object v0
 
     :cond_1a
     move v0, v2
 
-    .line 196
+    .line 199
     goto :goto_b
 
     :cond_1c
@@ -434,7 +473,7 @@
 
     goto :goto_14
 
-    .line 200
+    .line 203
     :cond_1e
     :try_start_1e
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -443,14 +482,12 @@
 
     new-array v4, v0, [F
 
-    .line 205
+    .line 208
     new-instance v5, Landroid/support/graphics/drawable/PathParser$ExtractFloatResult;
 
-    const/4 v0, 0x0
+    invoke-direct {v5}, Landroid/support/graphics/drawable/PathParser$ExtractFloatResult;-><init>()V
 
-    invoke-direct {v5, v0}, Landroid/support/graphics/drawable/PathParser$ExtractFloatResult;-><init>(Landroid/support/graphics/drawable/PathParser$1;)V
-
-    .line 206
+    .line 209
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v6
@@ -461,74 +498,74 @@
 
     move v2, v7
 
-    .line 211
-    :goto_31
-    if-ge v2, v6, :cond_52
-
-    .line 212
-    invoke-static {p0, v2, v5}, Landroid/support/graphics/drawable/PathParser;->a(Ljava/lang/String;ILandroid/support/graphics/drawable/PathParser$ExtractFloatResult;)V
-
-    .line 213
-    iget v3, v5, Landroid/support/graphics/drawable/PathParser$ExtractFloatResult;->a:I
+    .line 214
+    :goto_30
+    if-ge v2, v6, :cond_51
 
     .line 215
-    if-ge v2, v3, :cond_7a
+    invoke-static {p0, v2, v5}, Landroid/support/graphics/drawable/PathParser;->a(Ljava/lang/String;ILandroid/support/graphics/drawable/PathParser$ExtractFloatResult;)V
 
     .line 216
+    iget v3, v5, Landroid/support/graphics/drawable/PathParser$ExtractFloatResult;->a:I
+
+    .line 218
+    if-ge v2, v3, :cond_79
+
+    .line 219
     add-int/lit8 v0, v1, 0x1
 
-    .line 217
+    .line 220
     invoke-virtual {p0, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 216
+    .line 219
     invoke-static {v2}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v2
 
     aput v2, v4, v1
 
-    .line 220
-    :goto_46
+    .line 223
+    :goto_45
     iget-boolean v1, v5, Landroid/support/graphics/drawable/PathParser$ExtractFloatResult;->b:Z
 
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_4c
 
     move v2, v3
 
     move v1, v0
 
-    .line 222
-    goto :goto_31
+    .line 225
+    goto :goto_30
 
-    .line 224
-    :cond_4d
+    .line 227
+    :cond_4c
     add-int/lit8 v1, v3, 0x1
 
     move v2, v1
 
     move v1, v0
 
-    goto :goto_31
+    goto :goto_30
 
-    .line 227
-    :cond_52
+    .line 230
+    :cond_51
     const/4 v0, 0x0
 
-    invoke-static {v4, v0, v1}, Landroid/support/graphics/drawable/PathParser;->b([FII)[F
-    :try_end_56
-    .catch Ljava/lang/NumberFormatException; {:try_start_1e .. :try_end_56} :catch_58
+    invoke-static {v4, v0, v1}, Landroid/support/graphics/drawable/PathParser;->a([FII)[F
+    :try_end_55
+    .catch Ljava/lang/NumberFormatException; {:try_start_1e .. :try_end_55} :catch_57
 
     move-result-object v0
 
     goto :goto_19
 
-    .line 228
-    :catch_58
+    .line 231
+    :catch_57
     move-exception v0
 
-    .line 229
+    .line 232
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -559,62 +596,8 @@
 
     throw v1
 
-    :cond_7a
+    :cond_79
     move v0, v1
 
-    goto :goto_46
-.end method
-
-.method private static b([FII)[F
-    .registers 6
-
-    .prologue
-    .line 44
-    if-le p1, p2, :cond_8
-
-    .line 45
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw v0
-
-    .line 47
-    :cond_8
-    array-length v0, p0
-
-    .line 48
-    if-ltz p1, :cond_d
-
-    if-le p1, v0, :cond_13
-
-    .line 49
-    :cond_d
-    new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
-
-    invoke-direct {v0}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>()V
-
-    throw v0
-
-    .line 51
-    :cond_13
-    sub-int v1, p2, p1
-
-    .line 52
-    sub-int/2addr v0, p1
-
-    invoke-static {v1, v0}, Ljava/lang/Math;->min(II)I
-
-    move-result v0
-
-    .line 53
-    new-array v1, v1, [F
-
-    .line 54
-    const/4 v2, 0x0
-
-    invoke-static {p0, p1, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 55
-    return-object v1
+    goto :goto_45
 .end method

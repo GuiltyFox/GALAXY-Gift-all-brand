@@ -24,15 +24,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 116
+    .line 120
     iput-object p1, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->a:Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;
 
     invoke-direct {p0}, Landroid/support/v4/view/ViewPropertyAnimatorListenerAdapter;-><init>()V
 
-    .line 117
+    .line 121
     iput-boolean v0, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->b:Z
 
-    .line 118
+    .line 122
     iput v0, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->c:I
 
     return-void
@@ -46,18 +46,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 132
+    .line 136
     iput v0, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->c:I
 
-    .line 133
+    .line 137
     iput-boolean v0, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->b:Z
 
-    .line 134
+    .line 138
     iget-object v0, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->a:Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;
 
-    invoke-static {v0}, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;->b(Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;)V
+    invoke-virtual {v0}, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;->b()V
 
-    .line 135
+    .line 139
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .registers 4
 
     .prologue
-    .line 139
+    .line 143
     iget v0, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->c:I
 
     add-int/lit8 v0, v0, 0x1
@@ -74,42 +74,36 @@
 
     iget-object v1, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->a:Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;
 
-    invoke-static {v1}, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;->c(Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;)Ljava/util/ArrayList;
-
-    move-result-object v1
+    iget-object v1, v1, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;->a:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-ne v0, v1, :cond_27
+    if-ne v0, v1, :cond_21
 
-    .line 140
+    .line 144
     iget-object v0, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->a:Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;
 
-    invoke-static {v0}, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;->a(Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;)Landroid/support/v4/view/ViewPropertyAnimatorListener;
+    iget-object v0, v0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;->b:Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
-    move-result-object v0
+    if-eqz v0, :cond_1e
 
-    if-eqz v0, :cond_24
-
-    .line 141
+    .line 145
     iget-object v0, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->a:Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;
 
-    invoke-static {v0}, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;->a(Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;)Landroid/support/v4/view/ViewPropertyAnimatorListener;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;->b:Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorListener;->onAnimationEnd(Landroid/view/View;)V
 
-    .line 143
-    :cond_24
+    .line 147
+    :cond_1e
     invoke-virtual {p0}, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->a()V
 
-    .line 145
-    :cond_27
+    .line 149
+    :cond_21
     return-void
 .end method
 
@@ -117,37 +111,33 @@
     .registers 4
 
     .prologue
-    .line 122
+    .line 126
     iget-boolean v0, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->b:Z
 
     if-eqz v0, :cond_5
 
-    .line 129
+    .line 133
     :cond_4
     :goto_4
     return-void
 
-    .line 125
+    .line 129
     :cond_5
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->b:Z
 
-    .line 126
+    .line 130
     iget-object v0, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->a:Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;
 
-    invoke-static {v0}, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;->a(Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;)Landroid/support/v4/view/ViewPropertyAnimatorListener;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;->b:Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
     if-eqz v0, :cond_4
 
-    .line 127
+    .line 131
     iget-object v0, p0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet$1;->a:Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;
 
-    invoke-static {v0}, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;->a(Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;)Landroid/support/v4/view/ViewPropertyAnimatorListener;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/view/ViewPropertyAnimatorCompatSet;->b:Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
     const/4 v1, 0x0
 

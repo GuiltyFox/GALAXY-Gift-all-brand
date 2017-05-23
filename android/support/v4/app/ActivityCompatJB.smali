@@ -8,10 +8,10 @@
     .registers 1
 
     .prologue
-    .line 42
+    .line 37
     invoke-virtual {p0}, Landroid/app/Activity;->finishAffinity()V
 
-    .line 43
+    .line 38
     return-void
 .end method
 
@@ -19,10 +19,10 @@
     .registers 4
 
     .prologue
-    .line 31
+    .line 26
     invoke-virtual {p0, p1, p2, p3}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
 
-    .line 32
+    .line 27
     return-void
 .end method
 
@@ -30,9 +30,9 @@
     .registers 8
 
     .prologue
-    .line 37
+    .line 32
     invoke-virtual/range {p0 .. p7}, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
 
-    .line 39
+    .line 34
     return-void
 .end method

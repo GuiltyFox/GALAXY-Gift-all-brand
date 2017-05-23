@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 2340
+    .line 2343
     iput-object p1, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation$1;->b:Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
 
     iput-object p2, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation$1;->a:Landroid/support/v7/widget/helper/ItemTouchHelper;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 2343
+    .line 2346
     iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation$1;->b:Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
 
     invoke-interface {p1}, Landroid/support/v4/animation/ValueAnimatorCompat;->c()F
@@ -48,6 +48,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->a(F)V
 
-    .line 2344
+    .line 2347
     return-void
 .end method

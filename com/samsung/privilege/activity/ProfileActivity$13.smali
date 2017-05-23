@@ -57,7 +57,7 @@
     .line 495
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->c:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v1, 0x7f05004e
+    const v1, 0x7f05003b
 
     invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -78,7 +78,7 @@
     .line 515
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->c:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v1, 0x7f05003c
+    const v1, 0x7f05002f
 
     invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -100,7 +100,7 @@
     :cond_31
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->c:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v1, 0x7f05004f
+    const v1, 0x7f05003c
 
     invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -121,7 +121,7 @@
     .line 541
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$13;->c:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v1, 0x7f050040
+    const v1, 0x7f050031
 
     invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 

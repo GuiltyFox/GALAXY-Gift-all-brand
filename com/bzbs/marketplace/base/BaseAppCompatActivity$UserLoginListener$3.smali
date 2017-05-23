@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 421
+    .line 430
     iput-object p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener$3;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,13 +35,13 @@
     .registers 2
 
     .prologue
-    .line 424
+    .line 433
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener$3;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l()V
 
-    .line 425
+    .line 434
     return-void
 .end method

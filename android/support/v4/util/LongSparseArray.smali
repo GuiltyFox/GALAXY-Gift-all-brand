@@ -706,6 +706,17 @@
     return-void
 .end method
 
+.method public c(J)V
+    .registers 4
+
+    .prologue
+    .line 132
+    invoke-virtual {p0, p1, p2}, Landroid/support/v4/util/LongSparseArray;->b(J)V
+
+    .line 133
+    return-void
+.end method
+
 .method public synthetic clone()Ljava/lang/Object;
     .registers 2
 

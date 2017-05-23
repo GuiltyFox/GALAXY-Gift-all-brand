@@ -20,14 +20,14 @@
     .registers 4
 
     .prologue
-    .line 2212
+    .line 2222
     const/4 v0, -0x2
 
     const/4 v1, -0x1
 
     invoke-direct {p0, v0, v1, p1}, Landroid/support/v7/widget/Toolbar$LayoutParams;-><init>(III)V
 
-    .line 2213
+    .line 2223
     return-void
 .end method
 
@@ -35,20 +35,20 @@
     .registers 4
 
     .prologue
-    .line 2202
+    .line 2212
     invoke-direct {p0, p1, p2}, Landroid/support/v7/app/ActionBar$LayoutParams;-><init>(II)V
 
-    .line 2195
+    .line 2205
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->mViewType:I
 
-    .line 2203
+    .line 2213
     const v0, 0x800013
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->gravity:I
 
-    .line 2204
+    .line 2214
     return-void
 .end method
 
@@ -56,18 +56,18 @@
     .registers 5
 
     .prologue
-    .line 2207
+    .line 2217
     invoke-direct {p0, p1, p2}, Landroid/support/v7/app/ActionBar$LayoutParams;-><init>(II)V
 
-    .line 2195
+    .line 2205
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->mViewType:I
 
-    .line 2208
+    .line 2218
     iput p3, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->gravity:I
 
-    .line 2209
+    .line 2219
     return-void
 .end method
 
@@ -75,15 +75,15 @@
     .registers 4
 
     .prologue
-    .line 2198
+    .line 2208
     invoke-direct {p0, p1, p2}, Landroid/support/v7/app/ActionBar$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 2195
+    .line 2205
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->mViewType:I
 
-    .line 2199
+    .line 2209
     return-void
 .end method
 
@@ -91,15 +91,15 @@
     .registers 3
 
     .prologue
-    .line 2222
+    .line 2232
     invoke-direct {p0, p1}, Landroid/support/v7/app/ActionBar$LayoutParams;-><init>(Landroid/support/v7/app/ActionBar$LayoutParams;)V
 
-    .line 2195
+    .line 2205
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->mViewType:I
 
-    .line 2223
+    .line 2233
     return-void
 .end method
 
@@ -107,20 +107,20 @@
     .registers 3
 
     .prologue
-    .line 2216
+    .line 2226
     invoke-direct {p0, p1}, Landroid/support/v7/app/ActionBar$LayoutParams;-><init>(Landroid/support/v7/app/ActionBar$LayoutParams;)V
 
-    .line 2195
+    .line 2205
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->mViewType:I
 
-    .line 2218
+    .line 2228
     iget v0, p1, Landroid/support/v7/widget/Toolbar$LayoutParams;->mViewType:I
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->mViewType:I
 
-    .line 2219
+    .line 2229
     return-void
 .end method
 
@@ -128,15 +128,15 @@
     .registers 3
 
     .prologue
-    .line 2233
+    .line 2243
     invoke-direct {p0, p1}, Landroid/support/v7/app/ActionBar$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2195
+    .line 2205
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->mViewType:I
 
-    .line 2234
+    .line 2244
     return-void
 .end method
 
@@ -144,18 +144,18 @@
     .registers 3
 
     .prologue
-    .line 2226
+    .line 2236
     invoke-direct {p0, p1}, Landroid/support/v7/app/ActionBar$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2195
+    .line 2205
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->mViewType:I
 
-    .line 2229
+    .line 2239
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/Toolbar$LayoutParams;->copyMarginsFromCompat(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 2230
+    .line 2240
     return-void
 .end method
 
@@ -165,26 +165,26 @@
     .registers 3
 
     .prologue
-    .line 2237
+    .line 2247
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->leftMargin:I
 
-    .line 2238
+    .line 2248
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->topMargin:I
 
-    .line 2239
+    .line 2249
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->rightMargin:I
 
-    .line 2240
+    .line 2250
     iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     iput v0, p0, Landroid/support/v7/widget/Toolbar$LayoutParams;->bottomMargin:I
 
-    .line 2241
+    .line 2251
     return-void
 .end method

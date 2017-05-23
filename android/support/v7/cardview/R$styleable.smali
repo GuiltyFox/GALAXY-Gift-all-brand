@@ -38,7 +38,7 @@
     .registers 1
 
     .prologue
-    .line 40
+    .line 41
     const/16 v0, 0xd
 
     new-array v0, v0, [I
@@ -53,9 +53,6 @@
     .array-data 4
         0x101013f
         0x1010140
-        0x7f010121
-        0x7f010122
-        0x7f010123
         0x7f010124
         0x7f010125
         0x7f010126
@@ -64,5 +61,8 @@
         0x7f010129
         0x7f01012a
         0x7f01012b
+        0x7f01012c
+        0x7f01012d
+        0x7f01012e
     .end array-data
 .end method

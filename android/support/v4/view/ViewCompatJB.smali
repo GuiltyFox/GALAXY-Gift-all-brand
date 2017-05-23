@@ -8,10 +8,21 @@
     .registers 2
 
     .prologue
-    .line 58
+    .line 59
     invoke-virtual {p0, p1}, Landroid/view/View;->setImportantForAccessibility(I)V
 
-    .line 59
+    .line 60
+    return-void
+.end method
+
+.method public static a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
+    .registers 2
+
+    .prologue
+    .line 95
+    invoke-virtual {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    .line 96
     return-void
 .end method
 
@@ -19,10 +30,10 @@
     .registers 2
 
     .prologue
-    .line 46
+    .line 47
     invoke-virtual {p0, p1}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
 
-    .line 47
+    .line 48
     return-void
 .end method
 
@@ -30,10 +41,10 @@
     .registers 4
 
     .prologue
-    .line 50
+    .line 51
     invoke-virtual {p0, p1, p2, p3}, Landroid/view/View;->postOnAnimationDelayed(Ljava/lang/Runnable;J)V
 
-    .line 51
+    .line 52
     return-void
 .end method
 
@@ -41,7 +52,7 @@
     .registers 2
 
     .prologue
-    .line 29
+    .line 30
     invoke-virtual {p0}, Landroid/view/View;->hasTransientState()Z
 
     move-result v0
@@ -53,10 +64,10 @@
     .registers 1
 
     .prologue
-    .line 37
+    .line 38
     invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
 
-    .line 38
+    .line 39
     return-void
 .end method
 
@@ -64,7 +75,7 @@
     .registers 2
 
     .prologue
-    .line 54
+    .line 55
     invoke-virtual {p0}, Landroid/view/View;->getImportantForAccessibility()I
 
     move-result v0
@@ -76,7 +87,7 @@
     .registers 2
 
     .prologue
-    .line 70
+    .line 71
     invoke-virtual {p0}, Landroid/view/View;->getParentForAccessibility()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -88,7 +99,7 @@
     .registers 2
 
     .prologue
-    .line 74
+    .line 75
     invoke-virtual {p0}, Landroid/view/View;->getMinimumWidth()I
 
     move-result v0
@@ -100,7 +111,7 @@
     .registers 2
 
     .prologue
-    .line 78
+    .line 79
     invoke-virtual {p0}, Landroid/view/View;->getMinimumHeight()I
 
     move-result v0
@@ -112,10 +123,10 @@
     .registers 1
 
     .prologue
-    .line 82
+    .line 83
     invoke-virtual {p0}, Landroid/view/View;->requestFitSystemWindows()V
 
-    .line 83
+    .line 84
     return-void
 .end method
 
@@ -123,7 +134,7 @@
     .registers 2
 
     .prologue
-    .line 86
+    .line 87
     invoke-virtual {p0}, Landroid/view/View;->getFitsSystemWindows()Z
 
     move-result v0
@@ -135,7 +146,7 @@
     .registers 2
 
     .prologue
-    .line 90
+    .line 91
     invoke-virtual {p0}, Landroid/view/View;->hasOverlappingRendering()Z
 
     move-result v0

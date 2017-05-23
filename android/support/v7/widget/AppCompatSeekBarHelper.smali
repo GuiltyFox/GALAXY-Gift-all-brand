@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->f(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->g(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -311,7 +311,7 @@
     .line 84
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatSeekBarHelper;->a:Landroid/widget/SeekBar;
 
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->h(Landroid/view/View;)I
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->g(Landroid/view/View;)I
 
     move-result v0
 

@@ -4,18 +4,6 @@
 
 
 # direct methods
-.method public static a(Landroid/graphics/drawable/Drawable;)I
-    .registers 2
-
-    .prologue
-    .line 30
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getLayoutDirection()I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public static a(Landroid/graphics/drawable/Drawable;I)Z
     .registers 3
 

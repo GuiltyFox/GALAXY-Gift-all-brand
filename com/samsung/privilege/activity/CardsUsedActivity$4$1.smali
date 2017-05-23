@@ -80,7 +80,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v4, 0x7f100149
+    const v4, 0x7f10014a
 
     invoke-virtual {v0, v4}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 

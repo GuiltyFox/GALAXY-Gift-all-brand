@@ -17,7 +17,7 @@
     .registers 1
 
     .prologue
-    .line 233
+    .line 234
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,13 +29,13 @@
     .registers 3
 
     .prologue
-    .line 235
+    .line 236
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 236
+    .line 237
     return-void
 .end method

@@ -110,7 +110,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 35
-    const v0, 0x7f040187
+    const v0, 0x7f04011b
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBookingActivity;->setContentView(I)V
 
@@ -125,7 +125,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/WebViewBookingActivity;->a()V
 
     .line 39
-    const v0, 0x7f100198
+    const v0, 0x7f100185
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBookingActivity;->findViewById(I)Landroid/view/View;
 
@@ -217,7 +217,7 @@
     if-lez v0, :cond_7f
 
     .line 113
-    const v0, 0x7f10017e
+    const v0, 0x7f100230
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBookingActivity;->findViewById(I)Landroid/view/View;
 
@@ -332,7 +332,7 @@
 
     .line 140
     :pswitch_1d
-    const v0, 0x7f100198
+    const v0, 0x7f100185
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBookingActivity;->findViewById(I)Landroid/view/View;
 

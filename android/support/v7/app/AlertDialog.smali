@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private final a:Landroid/support/v7/app/AlertController;
+.field final a:Landroid/support/v7/app/AlertController;
 
 
 # direct methods
@@ -15,14 +15,14 @@
     .registers 6
 
     .prologue
-    .line 95
-    invoke-static {p1, p2}, Landroid/support/v7/app/AlertDialog;->b(Landroid/content/Context;I)I
+    .line 98
+    invoke-static {p1, p2}, Landroid/support/v7/app/AlertDialog;->a(Landroid/content/Context;I)I
 
     move-result v0
 
     invoke-direct {p0, p1, v0}, Landroid/support/v7/app/AppCompatDialog;-><init>(Landroid/content/Context;I)V
 
-    .line 96
+    .line 99
     new-instance v0, Landroid/support/v7/app/AlertController;
 
     invoke-virtual {p0}, Landroid/support/v7/app/AlertDialog;->getContext()Landroid/content/Context;
@@ -37,52 +37,30 @@
 
     iput-object v0, p0, Landroid/support/v7/app/AlertDialog;->a:Landroid/support/v7/app/AlertController;
 
-    .line 97
+    .line 100
     return-void
 .end method
 
-.method static synthetic a(Landroid/content/Context;I)I
-    .registers 3
-
-    .prologue
-    .line 70
-    invoke-static {p0, p1}, Landroid/support/v7/app/AlertDialog;->b(Landroid/content/Context;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic a(Landroid/support/v7/app/AlertDialog;)Landroid/support/v7/app/AlertController;
-    .registers 2
-
-    .prologue
-    .line 70
-    iget-object v0, p0, Landroid/support/v7/app/AlertDialog;->a:Landroid/support/v7/app/AlertController;
-
-    return-object v0
-.end method
-
-.method private static b(Landroid/content/Context;I)I
+.method static a(Landroid/content/Context;I)I
     .registers 6
 
     .prologue
-    .line 107
+    .line 110
     const/high16 v0, 0x1000000
 
     if-lt p1, v0, :cond_5
 
-    .line 112
+    .line 115
     :goto_4
     return p1
 
-    .line 110
+    .line 113
     :cond_5
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 111
+    .line 114
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v1
@@ -93,7 +71,7 @@
 
     invoke-virtual {v1, v2, v0, v3}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    .line 112
+    .line 115
     iget p1, v0, Landroid/util/TypedValue;->resourceId:I
 
     goto :goto_4
@@ -105,15 +83,15 @@
     .registers 3
 
     .prologue
-    .line 256
+    .line 257
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatDialog;->onCreate(Landroid/os/Bundle;)V
 
-    .line 257
+    .line 258
     iget-object v0, p0, Landroid/support/v7/app/AlertDialog;->a:Landroid/support/v7/app/AlertController;
 
     invoke-virtual {v0}, Landroid/support/v7/app/AlertController;->a()V
 
-    .line 258
+    .line 259
     return-void
 .end method
 
@@ -121,7 +99,7 @@
     .registers 4
 
     .prologue
-    .line 262
+    .line 263
     iget-object v0, p0, Landroid/support/v7/app/AlertDialog;->a:Landroid/support/v7/app/AlertController;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/app/AlertController;->a(ILandroid/view/KeyEvent;)Z
@@ -130,10 +108,10 @@
 
     if-eqz v0, :cond_a
 
-    .line 263
+    .line 264
     const/4 v0, 0x1
 
-    .line 265
+    .line 266
     :goto_9
     return v0
 
@@ -149,7 +127,7 @@
     .registers 4
 
     .prologue
-    .line 270
+    .line 271
     iget-object v0, p0, Landroid/support/v7/app/AlertDialog;->a:Landroid/support/v7/app/AlertController;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/app/AlertController;->b(ILandroid/view/KeyEvent;)Z
@@ -158,10 +136,10 @@
 
     if-eqz v0, :cond_a
 
-    .line 271
+    .line 272
     const/4 v0, 0x1
 
-    .line 273
+    .line 274
     :goto_9
     return v0
 
@@ -177,14 +155,14 @@
     .registers 3
 
     .prologue
-    .line 141
+    .line 144
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 142
+    .line 145
     iget-object v0, p0, Landroid/support/v7/app/AlertDialog;->a:Landroid/support/v7/app/AlertController;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/app/AlertController;->a(Ljava/lang/CharSequence;)V
 
-    .line 143
+    .line 146
     return-void
 .end method

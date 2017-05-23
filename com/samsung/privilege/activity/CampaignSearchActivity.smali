@@ -89,7 +89,7 @@
     .line 52
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090283
+    const v1, 0x7f0900ed
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CampaignSearchActivity;->getString(I)Ljava/lang/String;
 
@@ -152,7 +152,7 @@
     .line 65
     :cond_3c
     :goto_3c
-    const v0, 0x7f100139
+    const v0, 0x7f10013c
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CampaignSearchActivity;->findViewById(I)Landroid/view/View;
 

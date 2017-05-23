@@ -27,13 +27,13 @@
     .registers 3
 
     .prologue
-    .line 315
+    .line 319
     iput-object p1, p0, Landroid/support/v7/view/menu/MenuItemWrapperICS$OnMenuItemClickListenerWrapper;->a:Landroid/support/v7/view/menu/MenuItemWrapperICS;
 
-    .line 316
+    .line 320
     invoke-direct {p0, p2}, Landroid/support/v7/view/menu/BaseWrapper;-><init>(Ljava/lang/Object;)V
 
-    .line 317
+    .line 321
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .registers 4
 
     .prologue
-    .line 321
+    .line 325
     iget-object v0, p0, Landroid/support/v7/view/menu/MenuItemWrapperICS$OnMenuItemClickListenerWrapper;->b:Ljava/lang/Object;
 
     check-cast v0, Landroid/view/MenuItem$OnMenuItemClickListener;

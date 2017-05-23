@@ -4,11 +4,17 @@
 
 
 # static fields
-.field static final a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+.field static final d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
 
 # instance fields
-.field private b:Ljava/lang/ref/WeakReference;
+.field a:Ljava/lang/Runnable;
+
+.field b:Ljava/lang/Runnable;
+
+.field c:I
+
+.field private e:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference",
@@ -18,12 +24,6 @@
         }
     .end annotation
 .end field
-
-.field private c:Ljava/lang/Runnable;
-
-.field private d:Ljava/lang/Runnable;
-
-.field private e:I
 
 
 # direct methods
@@ -44,7 +44,7 @@
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$LollipopViewPropertyAnimatorCompatImpl;-><init>()V
 
-    sput-object v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sput-object v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     .line 673
     :goto_d
@@ -61,7 +61,7 @@
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$KitKatViewPropertyAnimatorCompatImpl;-><init>()V
 
-    sput-object v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sput-object v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     goto :goto_d
 
@@ -76,7 +76,7 @@
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$JBMr2ViewPropertyAnimatorCompatImpl;-><init>()V
 
-    sput-object v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sput-object v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     goto :goto_d
 
@@ -91,7 +91,7 @@
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$JBViewPropertyAnimatorCompatImpl;-><init>()V
 
-    sput-object v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sput-object v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     goto :goto_d
 
@@ -106,7 +106,7 @@
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ICSViewPropertyAnimatorCompatImpl;-><init>()V
 
-    sput-object v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sput-object v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     goto :goto_d
 
@@ -116,7 +116,7 @@
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$BaseViewPropertyAnimatorCompatImpl;-><init>()V
 
-    sput-object v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sput-object v0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     goto :goto_d
 .end method
@@ -131,85 +131,25 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
-    iput-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->c:Ljava/lang/Runnable;
+    iput-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Ljava/lang/Runnable;
 
     .line 29
-    iput-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Ljava/lang/Runnable;
+    iput-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/Runnable;
 
     .line 30
     const/4 v0, -0x1
 
-    iput v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:I
+    iput v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->c:I
 
     .line 36
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:Ljava/lang/ref/WeakReference;
 
     .line 37
     return-void
-.end method
-
-.method static synthetic a(Landroid/support/v4/view/ViewPropertyAnimatorCompat;I)I
-    .registers 2
-
-    .prologue
-    .line 25
-    iput p1, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:I
-
-    return p1
-.end method
-
-.method static synthetic a(Landroid/support/v4/view/ViewPropertyAnimatorCompat;)Ljava/lang/Runnable;
-    .registers 2
-
-    .prologue
-    .line 25
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->c:Ljava/lang/Runnable;
-
-    return-object v0
-.end method
-
-.method static synthetic a(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Ljava/lang/Runnable;)Ljava/lang/Runnable;
-    .registers 2
-
-    .prologue
-    .line 25
-    iput-object p1, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Ljava/lang/Runnable;
-
-    return-object p1
-.end method
-
-.method static synthetic b(Landroid/support/v4/view/ViewPropertyAnimatorCompat;)Ljava/lang/Runnable;
-    .registers 2
-
-    .prologue
-    .line 25
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Ljava/lang/Runnable;
-
-    return-object v0
-.end method
-
-.method static synthetic b(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Ljava/lang/Runnable;)Ljava/lang/Runnable;
-    .registers 2
-
-    .prologue
-    .line 25
-    iput-object p1, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->c:Ljava/lang/Runnable;
-
-    return-object p1
-.end method
-
-.method static synthetic c(Landroid/support/v4/view/ViewPropertyAnimatorCompat;)I
-    .registers 2
-
-    .prologue
-    .line 25
-    iget v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:I
-
-    return v0
 .end method
 
 
@@ -219,7 +159,7 @@
 
     .prologue
     .line 809
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -230,7 +170,7 @@
     if-eqz v0, :cond_11
 
     .line 810
-    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     invoke-interface {v1, p0, v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->a(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)J
 
@@ -251,7 +191,7 @@
 
     .prologue
     .line 705
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -262,7 +202,7 @@
     if-eqz v0, :cond_f
 
     .line 706
-    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     invoke-interface {v1, p0, v0, p1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->a(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
 
@@ -276,7 +216,7 @@
 
     .prologue
     .line 688
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -287,7 +227,7 @@
     if-eqz v0, :cond_f
 
     .line 689
-    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     invoke-interface {v1, p0, v0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->a(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;J)V
 
@@ -301,7 +241,7 @@
 
     .prologue
     .line 1328
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -312,7 +252,7 @@
     if-eqz v0, :cond_f
 
     .line 1329
-    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     invoke-interface {v1, p0, v0, p1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->a(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;Landroid/support/v4/view/ViewPropertyAnimatorListener;)V
 
@@ -326,7 +266,7 @@
 
     .prologue
     .line 1347
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -337,7 +277,7 @@
     if-eqz v0, :cond_f
 
     .line 1348
-    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     invoke-interface {v1, p0, v0, p1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->a(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;Landroid/support/v4/view/ViewPropertyAnimatorUpdateListener;)V
 
@@ -351,7 +291,7 @@
 
     .prologue
     .line 828
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -362,7 +302,7 @@
     if-eqz v0, :cond_f
 
     .line 829
-    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     invoke-interface {v1, p0, v0, p1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->a(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;Landroid/view/animation/Interpolator;)V
 
@@ -376,7 +316,7 @@
 
     .prologue
     .line 739
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -387,7 +327,7 @@
     if-eqz v0, :cond_f
 
     .line 740
-    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     invoke-interface {v1, p0, v0, p1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->b(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
 
@@ -401,7 +341,7 @@
 
     .prologue
     .line 862
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -412,7 +352,7 @@
     if-eqz v0, :cond_f
 
     .line 863
-    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     invoke-interface {v1, p0, v0, p1, p2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->b(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;J)V
 
@@ -426,7 +366,7 @@
 
     .prologue
     .line 1062
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -437,7 +377,7 @@
     if-eqz v0, :cond_f
 
     .line 1063
-    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     invoke-interface {v1, p0, v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->b(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 
@@ -451,7 +391,7 @@
 
     .prologue
     .line 756
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -462,7 +402,7 @@
     if-eqz v0, :cond_f
 
     .line 757
-    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     invoke-interface {v1, p0, v0, p1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->c(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;F)V
 
@@ -476,7 +416,7 @@
 
     .prologue
     .line 1248
-    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->e:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -487,7 +427,7 @@
     if-eqz v0, :cond_f
 
     .line 1249
-    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
+    sget-object v1, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;
 
     invoke-interface {v1, p0, v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat$ViewPropertyAnimatorCompatImpl;->c(Landroid/support/v4/view/ViewPropertyAnimatorCompat;Landroid/view/View;)V
 

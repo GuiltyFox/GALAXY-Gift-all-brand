@@ -28,9 +28,9 @@
     .registers 7
 
     .prologue
-    const v5, 0x7f100177
+    const v5, 0x7f100167
 
-    const v4, 0x7f1000b5
+    const v4, 0x7f1000b9
 
     const/16 v3, 0x8
 
@@ -173,7 +173,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100176
+    const v1, 0x7f100166
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/DashboardActivity;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
@@ -366,7 +366,7 @@
     .line 45
     :cond_24
     :goto_24
-    const v0, 0x7f040034
+    const v0, 0x7f040030
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/DashboardActivity;->setContentView(I)V
 
@@ -395,7 +395,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/DashboardActivity;->a()V
 
     .line 55
-    const v0, 0x7f100176
+    const v0, 0x7f100166
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/DashboardActivity;->findViewById(I)Landroid/view/View;
 

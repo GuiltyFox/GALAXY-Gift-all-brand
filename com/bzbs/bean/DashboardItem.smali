@@ -1940,7 +1940,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0901c5
+    const v1, 0x7f0900bb
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1981,7 +1981,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0901c6
+    const v1, 0x7f09027d
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2014,7 +2014,7 @@
     if-eqz v0, :cond_17
 
     .line 163
-    const v0, 0x7f0900b5
+    const v0, 0x7f09024e
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2041,7 +2041,7 @@
     if-eqz v0, :cond_2e
 
     .line 165
-    const v0, 0x7f0900b7
+    const v0, 0x7f090250
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2125,7 +2125,7 @@
     if-eqz v0, :cond_7f
 
     .line 170
-    const v0, 0x7f09045d
+    const v0, 0x7f09024d
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

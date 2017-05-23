@@ -16,24 +16,33 @@
 
 .field protected final mLayoutManager:Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
+.field final mTmpRect:Landroid/graphics/Rect;
+
 
 # direct methods
 .method private constructor <init>(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
     .registers 3
 
     .prologue
-    .line 44
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 43
     const/high16 v0, -0x80000000
 
     iput v0, p0, Landroid/support/v7/widget/OrientationHelper;->mLastTotalSpace:I
 
     .line 45
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Landroid/support/v7/widget/OrientationHelper;->mTmpRect:Landroid/graphics/Rect;
+
+    .line 48
     iput-object p1, p0, Landroid/support/v7/widget/OrientationHelper;->mLayoutManager:Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
-    .line 46
+    .line 49
     return-void
 .end method
 
@@ -41,7 +50,7 @@
     .registers 3
 
     .prologue
-    .line 32
+    .line 33
     invoke-direct {p0, p1}, Landroid/support/v7/widget/OrientationHelper;-><init>(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
     return-void
@@ -51,7 +60,7 @@
     .registers 2
 
     .prologue
-    .line 216
+    .line 251
     new-instance v0, Landroid/support/v7/widget/OrientationHelper$1;
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/OrientationHelper$1;-><init>(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
@@ -63,10 +72,10 @@
     .registers 4
 
     .prologue
-    .line 199
+    .line 234
     packed-switch p1, :pswitch_data_16
 
-    .line 205
+    .line 240
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "invalid orientation"
@@ -75,13 +84,13 @@
 
     throw v0
 
-    .line 201
+    .line 236
     :pswitch_c
     invoke-static {p0}, Landroid/support/v7/widget/OrientationHelper;->createHorizontalHelper(Landroid/support/v7/widget/RecyclerView$LayoutManager;)Landroid/support/v7/widget/OrientationHelper;
 
     move-result-object v0
 
-    .line 203
+    .line 238
     :goto_10
     return-object v0
 
@@ -92,7 +101,7 @@
 
     goto :goto_10
 
-    .line 199
+    .line 234
     :pswitch_data_16
     .packed-switch 0x0
         :pswitch_c
@@ -104,7 +113,7 @@
     .registers 2
 
     .prologue
-    .line 302
+    .line 349
     new-instance v0, Landroid/support/v7/widget/OrientationHelper$2;
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/OrientationHelper$2;-><init>(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
@@ -151,7 +160,7 @@
     .registers 3
 
     .prologue
-    .line 68
+    .line 71
     const/high16 v0, -0x80000000
 
     iget v1, p0, Landroid/support/v7/widget/OrientationHelper;->mLastTotalSpace:I
@@ -175,6 +184,12 @@
     goto :goto_7
 .end method
 
+.method public abstract getTransformedEndWithDecoration(Landroid/view/View;)I
+.end method
+
+.method public abstract getTransformedStartWithDecoration(Landroid/view/View;)I
+.end method
+
 .method public abstract offsetChild(Landroid/view/View;I)V
 .end method
 
@@ -185,13 +200,13 @@
     .registers 2
 
     .prologue
-    .line 54
+    .line 57
     invoke-virtual {p0}, Landroid/support/v7/widget/OrientationHelper;->getTotalSpace()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v7/widget/OrientationHelper;->mLastTotalSpace:I
 
-    .line 55
+    .line 58
     return-void
 .end method

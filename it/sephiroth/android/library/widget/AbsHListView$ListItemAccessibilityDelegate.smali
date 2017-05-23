@@ -91,7 +91,7 @@
     if-ne v1, v0, :cond_57
 
     .line 2010
-    invoke-virtual {p2, v3}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->e(Z)V
+    invoke-virtual {p2, v3}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->g(Z)V
 
     .line 2011
     const/16 v0, 0x8
@@ -114,7 +114,7 @@
     invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a(I)V
 
     .line 2018
-    invoke-virtual {p2, v3}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->f(Z)V
+    invoke-virtual {p2, v3}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->h(Z)V
 
     .line 2021
     :cond_46
@@ -132,7 +132,7 @@
     invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a(I)V
 
     .line 2023
-    invoke-virtual {p2, v3}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->g(Z)V
+    invoke-virtual {p2, v3}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->i(Z)V
 
     goto :goto_17
 

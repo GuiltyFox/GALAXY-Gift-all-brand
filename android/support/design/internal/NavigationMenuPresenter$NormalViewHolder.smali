@@ -8,7 +8,7 @@
     .registers 6
 
     .prologue
-    .line 278
+    .line 292
     sget v0, Landroid/support/design/R$layout;->design_navigation_item:I
 
     const/4 v1, 0x0
@@ -19,11 +19,11 @@
 
     invoke-direct {p0, v0}, Landroid/support/design/internal/NavigationMenuPresenter$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 279
+    .line 293
     iget-object v0, p0, Landroid/support/design/internal/NavigationMenuPresenter$NormalViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v0, p3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 280
+    .line 294
     return-void
 .end method

@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private L:Ljava/lang/String;
-
 .field private M:Ljava/lang/String;
 
-.field private N:Z
+.field private N:Ljava/lang/String;
+
+.field private O:Z
 
 .field a:Landroid/os/Handler;
 
@@ -20,13 +20,13 @@
     .registers 2
 
     .prologue
-    .line 25
+    .line 27
     invoke-direct {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;-><init>()V
 
-    .line 38
+    .line 40
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->N:Z
+    iput-boolean v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->O:Z
 
     return-void
 .end method
@@ -35,8 +35,8 @@
     .registers 2
 
     .prologue
-    .line 25
-    iget-boolean v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->N:Z
+    .line 27
+    iget-boolean v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->O:Z
 
     return v0
 .end method
@@ -45,8 +45,8 @@
     .registers 2
 
     .prologue
-    .line 25
-    iput-boolean p1, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->N:Z
+    .line 27
+    iput-boolean p1, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->O:Z
 
     return p1
 .end method
@@ -55,7 +55,7 @@
     .registers 1
 
     .prologue
-    .line 133
+    .line 141
     return-void
 .end method
 
@@ -69,13 +69,13 @@
 
     const/4 v2, 0x0
 
-    .line 51
+    .line 53
     if-nez p1, :cond_82
 
-    .line 52
+    .line 54
     invoke-virtual {p0, v3}, Lcom/bzbs/marketplace/activity/ReviewActivity;->b(Z)V
 
-    .line 53
+    .line 55
     new-instance v0, Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener;
 
     const/4 v1, 0x0
@@ -84,15 +84,15 @@
 
     invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->a(Lcom/bzbs/event/LoginEvents$LoginListener;)V
 
-    .line 71
+    .line 73
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->a:Landroid/os/Handler;
 
-    .line 72
-    const v0, 0x7f090277
+    .line 74
+    const v0, 0x7f090290
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getString(I)Ljava/lang/String;
 
@@ -100,12 +100,12 @@
 
     invoke-virtual {p0, v0, v3}, Lcom/bzbs/marketplace/activity/ReviewActivity;->a(Ljava/lang/String;Z)V
 
-    .line 73
-    const v0, 0x7f020277
+    .line 75
+    const v0, 0x7f02015e
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->a(I)V
 
-    .line 74
+    .line 76
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -116,9 +116,9 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->L:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->M:Ljava/lang/String;
 
-    .line 75
+    .line 77
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -129,19 +129,19 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->M:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->N:Ljava/lang/String;
 
-    .line 76
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->M:Ljava/lang/String;
+    .line 78
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->N:Ljava/lang/String;
 
     if-nez v0, :cond_4a
 
-    .line 77
+    .line 79
     const-string/jumbo v0, ""
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->M:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->N:Ljava/lang/String;
 
-    .line 80
+    .line 82
     :cond_4a
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getIntent()Landroid/content/Intent;
 
@@ -157,8 +157,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->b:Lcom/bzbs/bean/Campaign;
 
-    .line 82
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->M:Ljava/lang/String;
+    .line 84
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->N:Ljava/lang/String;
 
     const-string/jumbo v1, "type_gift"
 
@@ -168,13 +168,13 @@
 
     if-eqz v0, :cond_73
 
-    .line 83
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->t:Landroid/widget/ImageView;
+    .line 85
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->u:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 84
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->t:Landroid/widget/ImageView;
+    .line 86
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->u:Landroid/widget/ImageView;
 
     new-instance v1, Lcom/bzbs/marketplace/activity/ReviewActivity$1;
 
@@ -182,23 +182,23 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 108
+    .line 110
     :cond_73
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->h()V
 
-    .line 111
+    .line 113
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->j()V
 
-    .line 113
+    .line 115
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/activity/ReviewActivity;->b(I)V
 
-    .line 114
+    .line 116
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->n()V
 
-    .line 115
+    .line 117
     invoke-direct {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->o()V
 
-    .line 117
+    .line 119
     :cond_82
     return-void
 .end method
@@ -207,7 +207,7 @@
     .registers 3
 
     .prologue
-    .line 42
+    .line 44
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -216,8 +216,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    .line 46
-    const v0, 0x7f040050
+    .line 48
+    const v0, 0x7f040048
 
     return v0
 .end method
@@ -226,7 +226,7 @@
     .registers 1
 
     .prologue
-    .line 138
+    .line 146
     return-void
 .end method
 
@@ -234,46 +234,46 @@
     .registers 4
 
     .prologue
-    .line 120
+    .line 128
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->C:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->D:Landroid/os/Bundle;
 
-    .line 121
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->C:Landroid/os/Bundle;
+    .line 129
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->D:Landroid/os/Bundle;
 
     const-string/jumbo v1, "ReviewActivity::Data"
-
-    iget-object v2, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->L:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 122
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->C:Landroid/os/Bundle;
-
-    const-string/jumbo v1, "ReviewActivity::Type"
 
     iget-object v2, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->M:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 124
+    .line 130
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->D:Landroid/os/Bundle;
+
+    const-string/jumbo v1, "ReviewActivity::Type"
+
+    iget-object v2, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->N:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 132
     new-instance v0, Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-direct {v0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;-><init>()V
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->D:Landroid/support/v4/app/Fragment;
+    iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->E:Landroid/support/v4/app/Fragment;
 
-    .line 125
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->D:Landroid/support/v4/app/Fragment;
+    .line 133
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->E:Landroid/support/v4/app/Fragment;
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->C:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->D:Landroid/os/Bundle;
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/Fragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 127
+    .line 135
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
@@ -282,19 +282,41 @@
 
     move-result-object v0
 
-    const v1, 0x7f100193
+    const v1, 0x7f100180
 
-    iget-object v2, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->D:Landroid/support/v4/app/Fragment;
+    iget-object v2, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->E:Landroid/support/v4/app/Fragment;
 
-    .line 128
+    .line 136
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/app/FragmentTransaction;->a(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v0
 
-    .line 129
+    .line 137
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->b()I
 
-    .line 130
+    .line 138
+    return-void
+.end method
+
+.method public onActivityResult(IILandroid/content/Intent;)V
+    .registers 6
+
+    .prologue
+    .line 123
+    invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
+
+    move-result-object v0
+
+    const v1, 0x7f100180
+
+    invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentManager;->a(I)Landroid/support/v4/app/Fragment;
+
+    move-result-object v0
+
+    .line 124
+    invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/app/Fragment;->onActivityResult(IILandroid/content/Intent;)V
+
+    .line 125
     return-void
 .end method
 
@@ -302,19 +324,19 @@
     .registers 2
 
     .prologue
-    .line 142
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->L:Ljava/lang/String;
+    .line 150
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->M:Ljava/lang/String;
 
     if-nez v0, :cond_8
 
-    .line 143
+    .line 151
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->finish()V
 
-    .line 152
+    .line 160
     :goto_7
     return-void
 
-    .line 146
+    .line 154
     :cond_8
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
@@ -326,7 +348,7 @@
 
     if-lez v0, :cond_1a
 
-    .line 147
+    .line 155
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
@@ -335,7 +357,7 @@
 
     goto :goto_7
 
-    .line 150
+    .line 158
     :cond_1a
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->finish()V
 
@@ -346,10 +368,10 @@
     .registers 3
 
     .prologue
-    .line 210
+    .line 218
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->onResume()V
 
-    .line 211
+    .line 219
     const-string/jumbo v0, "connectivity"
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -358,17 +380,17 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 212
+    .line 220
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v0
 
     if-nez v0, :cond_1e
 
-    .line 213
+    .line 221
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v1, 0x7f090252
+    const v1, 0x7f0900db
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getString(I)Ljava/lang/String;
 
@@ -376,7 +398,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->b(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 215
+    .line 223
     :cond_1e
     return-void
 .end method

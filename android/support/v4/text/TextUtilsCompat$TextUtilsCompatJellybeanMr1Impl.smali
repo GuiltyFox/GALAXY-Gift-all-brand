@@ -4,25 +4,14 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 2
+.method constructor <init>()V
+    .registers 1
 
     .prologue
-    .line 102
-    const/4 v0, 0x0
+    .line 106
+    invoke-direct {p0}, Landroid/support/v4/text/TextUtilsCompat$TextUtilsCompatImpl;-><init>()V
 
-    invoke-direct {p0, v0}, Landroid/support/v4/text/TextUtilsCompat$TextUtilsCompatImpl;-><init>(Landroid/support/v4/text/TextUtilsCompat$1;)V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v4/text/TextUtilsCompat$1;)V
-    .registers 2
-
-    .prologue
-    .line 102
-    invoke-direct {p0}, Landroid/support/v4/text/TextUtilsCompat$TextUtilsCompatJellybeanMr1Impl;-><init>()V
-
+    .line 107
     return-void
 .end method
 
@@ -32,7 +21,7 @@
     .registers 3
 
     .prologue
-    .line 111
+    .line 117
     invoke-static {p1}, Landroid/support/v4/text/TextUtilsCompatJellybeanMr1;->a(Ljava/util/Locale;)I
 
     move-result v0

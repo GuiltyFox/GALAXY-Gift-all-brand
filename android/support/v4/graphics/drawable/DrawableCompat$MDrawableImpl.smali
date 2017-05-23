@@ -36,14 +36,13 @@
     return-object p1
 .end method
 
-.method public d(Landroid/graphics/drawable/Drawable;)I
-    .registers 3
+.method public g(Landroid/graphics/drawable/Drawable;)V
+    .registers 2
 
     .prologue
-    .line 277
-    invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatApi23;->a(Landroid/graphics/drawable/Drawable;)I
+    .line 289
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->clearColorFilter()V
 
-    move-result v0
-
-    return v0
+    .line 290
+    return-void
 .end method

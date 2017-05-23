@@ -343,7 +343,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 31
-    const v0, 0x7f040051
+    const v0, 0x7f040049
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashActivity;->setContentView(I)V
 

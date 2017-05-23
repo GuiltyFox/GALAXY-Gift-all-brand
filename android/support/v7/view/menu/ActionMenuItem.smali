@@ -41,38 +41,38 @@
     .registers 8
 
     .prologue
-    .line 64
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 48
+    .line 52
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->k:I
 
-    .line 56
+    .line 60
     const/16 v0, 0x10
 
     iput v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
-    .line 65
+    .line 69
     iput-object p1, p0, Landroid/support/v7/view/menu/ActionMenuItem;->l:Landroid/content/Context;
 
-    .line 66
+    .line 70
     iput p3, p0, Landroid/support/v7/view/menu/ActionMenuItem;->a:I
 
-    .line 67
+    .line 71
     iput p2, p0, Landroid/support/v7/view/menu/ActionMenuItem;->b:I
 
-    .line 68
+    .line 72
     iput p4, p0, Landroid/support/v7/view/menu/ActionMenuItem;->c:I
 
-    .line 69
+    .line 73
     iput p5, p0, Landroid/support/v7/view/menu/ActionMenuItem;->d:I
 
-    .line 70
+    .line 74
     iput-object p6, p0, Landroid/support/v7/view/menu/ActionMenuItem;->e:Ljava/lang/CharSequence;
 
-    .line 71
+    .line 75
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .registers 3
 
     .prologue
-    .line 252
+    .line 256
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -94,7 +94,7 @@
     .registers 3
 
     .prologue
-    .line 262
+    .line 266
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -106,7 +106,7 @@
     .registers 2
 
     .prologue
-    .line 294
+    .line 298
     return-object p0
 .end method
 
@@ -114,7 +114,7 @@
     .registers 3
 
     .prologue
-    .line 233
+    .line 237
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -126,7 +126,7 @@
     .registers 2
 
     .prologue
-    .line 257
+    .line 261
     const/4 v0, 0x0
 
     return-object v0
@@ -136,10 +136,10 @@
     .registers 2
 
     .prologue
-    .line 267
+    .line 271
     invoke-virtual {p0, p1}, Landroid/support/v7/view/menu/ActionMenuItem;->setShowAsAction(I)V
 
-    .line 268
+    .line 272
     return-object p0
 .end method
 
@@ -147,7 +147,7 @@
     .registers 2
 
     .prologue
-    .line 278
+    .line 282
     const/4 v0, 0x0
 
     return v0
@@ -157,7 +157,7 @@
     .registers 2
 
     .prologue
-    .line 273
+    .line 277
     const/4 v0, 0x0
 
     return v0
@@ -167,7 +167,7 @@
     .registers 2
 
     .prologue
-    .line 247
+    .line 251
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -179,7 +179,7 @@
     .registers 2
 
     .prologue
-    .line 237
+    .line 241
     const/4 v0, 0x0
 
     return-object v0
@@ -189,7 +189,7 @@
     .registers 2
 
     .prologue
-    .line 74
+    .line 78
     iget-char v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->i:C
 
     return v0
@@ -199,7 +199,7 @@
     .registers 2
 
     .prologue
-    .line 78
+    .line 82
     iget v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->b:I
 
     return v0
@@ -209,7 +209,7 @@
     .registers 2
 
     .prologue
-    .line 82
+    .line 86
     iget-object v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->j:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -219,7 +219,7 @@
     .registers 2
 
     .prologue
-    .line 86
+    .line 90
     iget-object v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->g:Landroid/content/Intent;
 
     return-object v0
@@ -229,7 +229,7 @@
     .registers 2
 
     .prologue
-    .line 90
+    .line 94
     iget v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->a:I
 
     return v0
@@ -239,7 +239,7 @@
     .registers 2
 
     .prologue
-    .line 94
+    .line 98
     const/4 v0, 0x0
 
     return-object v0
@@ -249,7 +249,7 @@
     .registers 2
 
     .prologue
-    .line 98
+    .line 102
     iget-char v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->h:C
 
     return v0
@@ -259,7 +259,7 @@
     .registers 2
 
     .prologue
-    .line 102
+    .line 106
     iget v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->d:I
 
     return v0
@@ -269,7 +269,7 @@
     .registers 2
 
     .prologue
-    .line 106
+    .line 110
     const/4 v0, 0x0
 
     return-object v0
@@ -279,7 +279,7 @@
     .registers 2
 
     .prologue
-    .line 110
+    .line 114
     iget-object v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->e:Ljava/lang/CharSequence;
 
     return-object v0
@@ -289,7 +289,7 @@
     .registers 2
 
     .prologue
-    .line 114
+    .line 118
     iget-object v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->f:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_7
@@ -309,7 +309,7 @@
     .registers 2
 
     .prologue
-    .line 118
+    .line 122
     const/4 v0, 0x0
 
     return v0
@@ -319,7 +319,7 @@
     .registers 2
 
     .prologue
-    .line 283
+    .line 287
     const/4 v0, 0x0
 
     return v0
@@ -329,7 +329,7 @@
     .registers 2
 
     .prologue
-    .line 122
+    .line 126
     iget v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
     and-int/lit8 v0, v0, 0x1
@@ -351,7 +351,7 @@
     .registers 2
 
     .prologue
-    .line 126
+    .line 130
     iget v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
     and-int/lit8 v0, v0, 0x2
@@ -373,7 +373,7 @@
     .registers 2
 
     .prologue
-    .line 130
+    .line 134
     iget v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
     and-int/lit8 v0, v0, 0x10
@@ -395,7 +395,7 @@
     .registers 2
 
     .prologue
-    .line 134
+    .line 138
     iget v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
     and-int/lit8 v0, v0, 0x8
@@ -417,7 +417,7 @@
     .registers 3
 
     .prologue
-    .line 242
+    .line 246
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -429,7 +429,7 @@
     .registers 3
 
     .prologue
-    .line 34
+    .line 37
     invoke-virtual {p0, p1}, Landroid/support/v7/view/menu/ActionMenuItem;->a(I)Landroid/support/v4/internal/view/SupportMenuItem;
 
     move-result-object v0
@@ -441,7 +441,7 @@
     .registers 3
 
     .prologue
-    .line 34
+    .line 37
     invoke-virtual {p0, p1}, Landroid/support/v7/view/menu/ActionMenuItem;->a(Landroid/view/View;)Landroid/support/v4/internal/view/SupportMenuItem;
 
     move-result-object v0
@@ -453,10 +453,10 @@
     .registers 2
 
     .prologue
-    .line 138
+    .line 142
     iput-char p1, p0, Landroid/support/v7/view/menu/ActionMenuItem;->i:C
 
-    .line 139
+    .line 143
     return-object p0
 .end method
 
@@ -464,7 +464,7 @@
     .registers 4
 
     .prologue
-    .line 143
+    .line 147
     iget v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
     and-int/lit8 v1, v0, -0x2
@@ -478,10 +478,10 @@
 
     iput v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
-    .line 144
+    .line 148
     return-object p0
 
-    .line 143
+    .line 147
     :cond_b
     const/4 v0, 0x0
 
@@ -492,7 +492,7 @@
     .registers 4
 
     .prologue
-    .line 153
+    .line 157
     iget v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
     and-int/lit8 v1, v0, -0x3
@@ -506,10 +506,10 @@
 
     iput v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
-    .line 154
+    .line 158
     return-object p0
 
-    .line 153
+    .line 157
     :cond_b
     const/4 v0, 0x0
 
@@ -520,7 +520,7 @@
     .registers 4
 
     .prologue
-    .line 158
+    .line 162
     iget v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
     and-int/lit8 v1, v0, -0x11
@@ -534,10 +534,10 @@
 
     iput v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
-    .line 159
+    .line 163
     return-object p0
 
-    .line 158
+    .line 162
     :cond_c
     const/4 v0, 0x0
 
@@ -548,10 +548,10 @@
     .registers 3
 
     .prologue
-    .line 169
+    .line 173
     iput p1, p0, Landroid/support/v7/view/menu/ActionMenuItem;->k:I
 
-    .line 170
+    .line 174
     iget-object v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->l:Landroid/content/Context;
 
     invoke-static {v0, p1}, Landroid/support/v4/content/ContextCompat;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -560,7 +560,7 @@
 
     iput-object v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->j:Landroid/graphics/drawable/Drawable;
 
-    .line 171
+    .line 175
     return-object p0
 .end method
 
@@ -568,15 +568,15 @@
     .registers 3
 
     .prologue
-    .line 163
+    .line 167
     iput-object p1, p0, Landroid/support/v7/view/menu/ActionMenuItem;->j:Landroid/graphics/drawable/Drawable;
 
-    .line 164
+    .line 168
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->k:I
 
-    .line 165
+    .line 169
     return-object p0
 .end method
 
@@ -584,10 +584,10 @@
     .registers 2
 
     .prologue
-    .line 175
+    .line 179
     iput-object p1, p0, Landroid/support/v7/view/menu/ActionMenuItem;->g:Landroid/content/Intent;
 
-    .line 176
+    .line 180
     return-object p0
 .end method
 
@@ -595,10 +595,10 @@
     .registers 2
 
     .prologue
-    .line 180
+    .line 184
     iput-char p1, p0, Landroid/support/v7/view/menu/ActionMenuItem;->h:C
 
-    .line 181
+    .line 185
     return-object p0
 .end method
 
@@ -606,7 +606,7 @@
     .registers 3
 
     .prologue
-    .line 288
+    .line 292
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -618,10 +618,10 @@
     .registers 2
 
     .prologue
-    .line 185
+    .line 189
     iput-object p1, p0, Landroid/support/v7/view/menu/ActionMenuItem;->m:Landroid/view/MenuItem$OnMenuItemClickListener;
 
-    .line 186
+    .line 190
     return-object p0
 .end method
 
@@ -629,13 +629,13 @@
     .registers 3
 
     .prologue
-    .line 190
+    .line 194
     iput-char p1, p0, Landroid/support/v7/view/menu/ActionMenuItem;->h:C
 
-    .line 191
+    .line 195
     iput-char p2, p0, Landroid/support/v7/view/menu/ActionMenuItem;->i:C
 
-    .line 192
+    .line 196
     return-object p0
 .end method
 
@@ -643,7 +643,7 @@
     .registers 2
 
     .prologue
-    .line 230
+    .line 234
     return-void
 .end method
 
@@ -651,7 +651,7 @@
     .registers 3
 
     .prologue
-    .line 34
+    .line 37
     invoke-virtual {p0, p1}, Landroid/support/v7/view/menu/ActionMenuItem;->b(I)Landroid/support/v4/internal/view/SupportMenuItem;
 
     move-result-object v0
@@ -663,7 +663,7 @@
     .registers 3
 
     .prologue
-    .line 201
+    .line 205
     iget-object v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->l:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -676,7 +676,7 @@
 
     iput-object v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->e:Ljava/lang/CharSequence;
 
-    .line 202
+    .line 206
     return-object p0
 .end method
 
@@ -684,10 +684,10 @@
     .registers 2
 
     .prologue
-    .line 196
+    .line 200
     iput-object p1, p0, Landroid/support/v7/view/menu/ActionMenuItem;->e:Ljava/lang/CharSequence;
 
-    .line 197
+    .line 201
     return-object p0
 .end method
 
@@ -695,10 +695,10 @@
     .registers 2
 
     .prologue
-    .line 206
+    .line 210
     iput-object p1, p0, Landroid/support/v7/view/menu/ActionMenuItem;->f:Ljava/lang/CharSequence;
 
-    .line 207
+    .line 211
     return-object p0
 .end method
 
@@ -706,7 +706,7 @@
     .registers 4
 
     .prologue
-    .line 211
+    .line 215
     iget v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
     and-int/lit8 v1, v0, 0x8
@@ -720,10 +720,10 @@
 
     iput v0, p0, Landroid/support/v7/view/menu/ActionMenuItem;->n:I
 
-    .line 212
+    .line 216
     return-object p0
 
-    .line 211
+    .line 215
     :cond_b
     const/16 v0, 0x8
 

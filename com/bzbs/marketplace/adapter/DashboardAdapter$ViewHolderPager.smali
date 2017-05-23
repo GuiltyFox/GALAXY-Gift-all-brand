@@ -8,13 +8,13 @@
 
 .field pagerContainer:Lcom/bzbs/marketplace/control/viewpager/PagerContainer;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100675
+        value = 0x7f10046b
     .end annotation
 .end field
 
 .field viewPager:Landroid/support/v4/view/ViewPager;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100286
+        value = 0x7f1002da
     .end annotation
 .end field
 

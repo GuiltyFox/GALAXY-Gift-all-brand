@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final r:Landroid/app/UiModeManager;
+.field private final t:Landroid/app/UiModeManager;
 
 
 # direct methods
@@ -24,7 +24,7 @@
 
     check-cast v0, Landroid/app/UiModeManager;
 
-    iput-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV23;->r:Landroid/app/UiModeManager;
+    iput-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV23;->t:Landroid/app/UiModeManager;
 
     .line 32
     return-void
@@ -51,7 +51,7 @@
     .line 44
     if-nez p1, :cond_c
 
-    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV23;->r:Landroid/app/UiModeManager;
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV23;->t:Landroid/app/UiModeManager;
 
     .line 45
     invoke-virtual {v0}, Landroid/app/UiModeManager;->getNightMode()I

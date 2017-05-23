@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 576
+    .line 575
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->a:Landroid/app/Dialog;
@@ -39,12 +39,12 @@
     .registers 7
 
     .prologue
-    .line 578
+    .line 577
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 580
+    .line 579
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->getApplicationContext()Landroid/content/Context;
@@ -53,12 +53,12 @@
 
     invoke-static {v0}, Lcom/bzbs/data/UserLogin;->X(Landroid/content/Context;)V
 
-    .line 581
+    .line 580
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->c(Lcom/samsung/privilege/activity/WalletCardActivity;)V
 
-    .line 583
+    .line 582
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -103,6 +103,6 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 584
+    .line 583
     return-void
 .end method

@@ -223,7 +223,7 @@
     return v0
 
     :cond_4
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->l(Landroid/view/View;)I
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->k(Landroid/view/View;)I
 
     move-result v0
 
@@ -245,7 +245,7 @@
     return v0
 
     :cond_4
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->m(Landroid/view/View;)I
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->l(Landroid/view/View;)I
 
     move-result v0
 
@@ -383,7 +383,7 @@
     const/4 v0, 0x1
 
     .line 110
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->h(Landroid/view/View;)I
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->g(Landroid/view/View;)I
 
     move-result v1
 

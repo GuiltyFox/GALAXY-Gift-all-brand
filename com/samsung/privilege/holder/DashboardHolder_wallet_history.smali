@@ -50,7 +50,7 @@
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
     .line 32
-    const v0, 0x7f10020e
+    const v0, 0x7f1001f9
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -59,7 +59,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_history;->a:Landroid/view/View;
 
     .line 33
-    const v0, 0x7f10023d
+    const v0, 0x7f100228
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -68,7 +68,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_history;->b:Landroid/view/View;
 
     .line 35
-    const v0, 0x7f10023e
+    const v0, 0x7f100229
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -79,7 +79,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_history;->c:Landroid/widget/ImageView;
 
     .line 36
-    const v0, 0x7f10013c
+    const v0, 0x7f10016b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -90,7 +90,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_history;->d:Landroid/widget/TextView;
 
     .line 37
-    const v0, 0x7f10023f
+    const v0, 0x7f10022a
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -101,7 +101,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_history;->e:Landroid/widget/TextView;
 
     .line 38
-    const v0, 0x7f10017c
+    const v0, 0x7f10016e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -112,7 +112,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_history;->f:Landroid/widget/TextView;
 
     .line 39
-    const v0, 0x7f100240
+    const v0, 0x7f10022b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -123,7 +123,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_history;->g:Landroid/widget/TextView;
 
     .line 40
-    const v0, 0x7f10056d
+    const v0, 0x7f10034a
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

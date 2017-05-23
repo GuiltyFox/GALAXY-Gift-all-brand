@@ -27,7 +27,7 @@
     .registers 1
 
     .prologue
-    .line 2997
+    .line 3070
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 3
 
     .prologue
-    .line 3000
+    .line 3073
     new-instance v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$SavedState;
 
     invoke-direct {v0, p1}, Landroid/support/v7/widget/StaggeredGridLayoutManager$SavedState;-><init>(Landroid/os/Parcel;)V
@@ -51,7 +51,7 @@
     .registers 3
 
     .prologue
-    .line 3005
+    .line 3078
     new-array v0, p1, [Landroid/support/v7/widget/StaggeredGridLayoutManager$SavedState;
 
     return-object v0
@@ -61,7 +61,7 @@
     .registers 3
 
     .prologue
-    .line 2997
+    .line 3070
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/StaggeredGridLayoutManager$SavedState$1;->a(Landroid/os/Parcel;)Landroid/support/v7/widget/StaggeredGridLayoutManager$SavedState;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .registers 3
 
     .prologue
-    .line 2997
+    .line 3070
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/StaggeredGridLayoutManager$SavedState$1;->a(I)[Landroid/support/v7/widget/StaggeredGridLayoutManager$SavedState;
 
     move-result-object v0

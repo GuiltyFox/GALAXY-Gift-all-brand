@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f1006c8
+    const v6, 0x7f1004c0
 
-    const v5, 0x7f1006c4
+    const v5, 0x7f1004bb
 
-    const v4, 0x7f10067d
+    const v4, 0x7f100474
 
-    const v3, 0x7f10067c
+    const v3, 0x7f100473
 
-    const v2, 0x7f1001d9
+    const v2, 0x7f1001c4
 
     .line 11
     const-string/jumbo v0, "field \'imageProfile\'"
@@ -96,7 +96,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textDisplay:Landroid/widget/TextView;
 
     .line 15
-    const v0, 0x7f1006cb
+    const v0, 0x7f1004c3
 
     const-string/jumbo v1, "field \'textPost\'"
 
@@ -107,7 +107,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 16
-    const v1, 0x7f1006cb
+    const v1, 0x7f1004c3
 
     const-string/jumbo v2, "field \'textPost\'"
 
@@ -120,7 +120,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textPost:Landroid/widget/TextView;
 
     .line 17
-    const v0, 0x7f1006ca
+    const v0, 0x7f1004c2
 
     const-string/jumbo v1, "field \'textCreateTime\'"
 
@@ -131,7 +131,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 18
-    const v1, 0x7f1006ca
+    const v1, 0x7f1004c2
 
     const-string/jumbo v2, "field \'textCreateTime\'"
 
@@ -144,7 +144,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textCreateTime:Landroid/widget/TextView;
 
     .line 19
-    const v0, 0x7f1006c9
+    const v0, 0x7f1004c1
 
     const-string/jumbo v1, "field \'textCreateDate\'"
 
@@ -155,7 +155,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 20
-    const v1, 0x7f1006c9
+    const v1, 0x7f1004c1
 
     const-string/jumbo v2, "field \'textCreateDate\'"
 
@@ -208,7 +208,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textViewComment:Landroid/widget/TextView;
 
     .line 25
-    const v0, 0x7f1006cd
+    const v0, 0x7f1004c5
 
     const-string/jumbo v1, "field \'imageHeader\'"
 
@@ -219,7 +219,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 26
-    const v1, 0x7f1006cd
+    const v1, 0x7f1004c5
 
     const-string/jumbo v2, "field \'imageHeader\'"
 

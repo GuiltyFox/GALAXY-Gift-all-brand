@@ -32,37 +32,37 @@
     .registers 6
 
     .prologue
-    .line 966
+    .line 972
     iput-object p1, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
     invoke-direct {p0}, Landroid/support/v7/view/ActionMode;-><init>()V
 
-    .line 967
+    .line 973
     iput-object p2, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->b:Landroid/content/Context;
 
-    .line 968
+    .line 974
     iput-object p3, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->d:Landroid/support/v7/view/ActionMode$Callback;
 
-    .line 969
+    .line 975
     new-instance v0, Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-direct {v0, p2}, Landroid/support/v7/view/menu/MenuBuilder;-><init>(Landroid/content/Context;)V
 
     const/4 v1, 0x1
 
-    .line 970
+    .line 976
     invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/MenuBuilder;->setDefaultShowAsAction(I)Landroid/support/v7/view/menu/MenuBuilder;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->c:Landroid/support/v7/view/menu/MenuBuilder;
 
-    .line 971
+    .line 977
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->c:Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-virtual {v0, p0}, Landroid/support/v7/view/menu/MenuBuilder;->setCallback(Landroid/support/v7/view/menu/MenuBuilder$Callback;)V
 
-    .line 972
+    .line 978
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .registers 3
 
     .prologue
-    .line 976
+    .line 982
     new-instance v0, Landroid/support/v7/view/SupportMenuInflater;
 
     iget-object v1, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->b:Landroid/content/Context;
@@ -86,12 +86,10 @@
     .registers 3
 
     .prologue
-    .line 1059
+    .line 1065
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->i(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/content/Context;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -103,7 +101,7 @@
 
     invoke-virtual {p0, v0}, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->b(Ljava/lang/CharSequence;)V
 
-    .line 1060
+    .line 1066
     return-void
 .end method
 
@@ -111,23 +109,21 @@
     .registers 3
 
     .prologue
-    .line 1043
+    .line 1049
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->g(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContextView;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->e:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->setCustomView(Landroid/view/View;)V
 
-    .line 1044
+    .line 1050
     new-instance v0, Ljava/lang/ref/WeakReference;
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     iput-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->e:Ljava/lang/ref/WeakReference;
 
-    .line 1045
+    .line 1051
     return-void
 .end method
 
@@ -135,16 +131,14 @@
     .registers 3
 
     .prologue
-    .line 1049
+    .line 1055
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->g(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContextView;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->e:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->setSubtitle(Ljava/lang/CharSequence;)V
 
-    .line 1050
+    .line 1056
     return-void
 .end method
 
@@ -152,19 +146,17 @@
     .registers 3
 
     .prologue
-    .line 1079
+    .line 1085
     invoke-super {p0, p1}, Landroid/support/v7/view/ActionMode;->a(Z)V
 
-    .line 1080
+    .line 1086
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->g(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContextView;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->e:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->setTitleOptional(Z)V
 
-    .line 1081
+    .line 1087
     return-void
 .end method
 
@@ -172,7 +164,7 @@
     .registers 2
 
     .prologue
-    .line 981
+    .line 987
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->c:Landroid/support/v7/view/menu/MenuBuilder;
 
     return-object v0
@@ -182,12 +174,10 @@
     .registers 3
 
     .prologue
-    .line 1064
+    .line 1070
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->i(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/content/Context;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -199,7 +189,7 @@
 
     invoke-virtual {p0, v0}, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a(Ljava/lang/CharSequence;)V
 
-    .line 1065
+    .line 1071
     return-void
 .end method
 
@@ -207,16 +197,14 @@
     .registers 3
 
     .prologue
-    .line 1054
+    .line 1060
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->g(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContextView;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->e:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionBarContextView;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 1055
+    .line 1061
     return-void
 .end method
 
@@ -228,73 +216,65 @@
 
     const/4 v2, 0x0
 
-    .line 986
+    .line 992
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->a:Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->h:Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;
 
     if-eq v0, p0, :cond_9
 
-    .line 1013
+    .line 1019
     :goto_8
     return-void
 
-    .line 995
+    .line 1001
     :cond_9
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->e(Landroid/support/v7/app/WindowDecorActionBar;)Z
-
-    move-result v0
+    iget-boolean v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->l:Z
 
     iget-object v1, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v1}, Landroid/support/v7/app/WindowDecorActionBar;->f(Landroid/support/v7/app/WindowDecorActionBar;)Z
-
-    move-result v1
+    iget-boolean v1, v1, Landroid/support/v7/app/WindowDecorActionBar;->m:Z
 
     invoke-static {v0, v1, v2}, Landroid/support/v7/app/WindowDecorActionBar;->a(ZZZ)Z
 
     move-result v0
 
-    if-nez v0, :cond_56
-
-    .line 998
-    iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
-
-    iput-object p0, v0, Landroid/support/v7/app/WindowDecorActionBar;->b:Landroid/support/v7/view/ActionMode;
-
-    .line 999
-    iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
-
-    iget-object v1, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->d:Landroid/support/v7/view/ActionMode$Callback;
-
-    iput-object v1, v0, Landroid/support/v7/app/WindowDecorActionBar;->c:Landroid/support/v7/view/ActionMode$Callback;
-
-    .line 1003
-    :goto_25
-    iput-object v3, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->d:Landroid/support/v7/view/ActionMode$Callback;
+    if-nez v0, :cond_4c
 
     .line 1004
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-virtual {v0, v2}, Landroid/support/v7/app/WindowDecorActionBar;->i(Z)V
+    iput-object p0, v0, Landroid/support/v7/app/WindowDecorActionBar;->i:Landroid/support/v7/view/ActionMode;
 
-    .line 1007
+    .line 1005
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->g(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContextView;
+    iget-object v1, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->d:Landroid/support/v7/view/ActionMode$Callback;
 
-    move-result-object v0
+    iput-object v1, v0, Landroid/support/v7/app/WindowDecorActionBar;->j:Landroid/support/v7/view/ActionMode$Callback;
+
+    .line 1009
+    :goto_21
+    iput-object v3, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->d:Landroid/support/v7/view/ActionMode$Callback;
+
+    .line 1010
+    iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
+
+    invoke-virtual {v0, v2}, Landroid/support/v7/app/WindowDecorActionBar;->i(Z)V
+
+    .line 1013
+    iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
+
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->e:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->closeMode()V
 
-    .line 1008
+    .line 1014
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->h(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/DecorToolbar;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->d:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->getViewGroup()Landroid/view/ViewGroup;
 
@@ -304,57 +284,55 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->sendAccessibilityEvent(I)V
 
-    .line 1010
+    .line 1016
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->d(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarOverlayLayout;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->b:Landroid/support/v7/widget/ActionBarOverlayLayout;
 
     iget-object v1, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    iget-boolean v1, v1, Landroid/support/v7/app/WindowDecorActionBar;->d:Z
+    iget-boolean v1, v1, Landroid/support/v7/app/WindowDecorActionBar;->o:Z
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarOverlayLayout;->setHideOnContentScrollEnabled(Z)V
 
-    .line 1012
+    .line 1018
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    iput-object v3, v0, Landroid/support/v7/app/WindowDecorActionBar;->a:Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;
+    iput-object v3, v0, Landroid/support/v7/app/WindowDecorActionBar;->h:Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;
 
     goto :goto_8
 
-    .line 1001
-    :cond_56
+    .line 1007
+    :cond_4c
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->d:Landroid/support/v7/view/ActionMode$Callback;
 
     invoke-interface {v0, p0}, Landroid/support/v7/view/ActionMode$Callback;->a(Landroid/support/v7/view/ActionMode;)V
 
-    goto :goto_25
+    goto :goto_21
 .end method
 
 .method public d()V
     .registers 3
 
     .prologue
-    .line 1017
+    .line 1023
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->a:Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->h:Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;
 
     if-eq v0, p0, :cond_7
 
-    .line 1030
+    .line 1036
     :goto_6
     return-void
 
-    .line 1024
+    .line 1030
     :cond_7
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->c:Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuBuilder;->stopDispatchingItemsChanged()V
 
-    .line 1026
+    .line 1032
     :try_start_c
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->d:Landroid/support/v7/view/ActionMode$Callback;
 
@@ -364,7 +342,7 @@
     :try_end_13
     .catchall {:try_start_c .. :try_end_13} :catchall_19
 
-    .line 1028
+    .line 1034
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->c:Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
@@ -385,12 +363,12 @@
     .registers 3
 
     .prologue
-    .line 1033
+    .line 1039
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->c:Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuBuilder;->stopDispatchingItemsChanged()V
 
-    .line 1035
+    .line 1041
     :try_start_5
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->d:Landroid/support/v7/view/ActionMode$Callback;
 
@@ -402,7 +380,7 @@
 
     move-result v0
 
-    .line 1037
+    .line 1043
     iget-object v1, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->c:Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuBuilder;->startDispatchingItemsChanged()V
@@ -423,12 +401,10 @@
     .registers 2
 
     .prologue
-    .line 1069
+    .line 1075
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->g(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContextView;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->e:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->getTitle()Ljava/lang/CharSequence;
 
@@ -441,12 +417,10 @@
     .registers 2
 
     .prologue
-    .line 1074
+    .line 1080
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->g(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContextView;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->e:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->getSubtitle()Ljava/lang/CharSequence;
 
@@ -459,12 +433,10 @@
     .registers 2
 
     .prologue
-    .line 1085
+    .line 1091
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->g(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContextView;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->e:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->isTitleOptional()Z
 
@@ -477,7 +449,7 @@
     .registers 2
 
     .prologue
-    .line 1090
+    .line 1096
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->e:Ljava/lang/ref/WeakReference;
 
     if-eqz v0, :cond_d
@@ -503,19 +475,19 @@
     .registers 4
 
     .prologue
-    .line 1094
+    .line 1100
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->d:Landroid/support/v7/view/ActionMode$Callback;
 
     if-eqz v0, :cond_b
 
-    .line 1095
+    .line 1101
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->d:Landroid/support/v7/view/ActionMode$Callback;
 
     invoke-interface {v0, p0, p2}, Landroid/support/v7/view/ActionMode$Callback;->a(Landroid/support/v7/view/ActionMode;Landroid/view/MenuItem;)Z
 
     move-result v0
 
-    .line 1097
+    .line 1103
     :goto_a
     return v0
 
@@ -529,25 +501,23 @@
     .registers 3
 
     .prologue
-    .line 1121
+    .line 1127
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->d:Landroid/support/v7/view/ActionMode$Callback;
 
     if-nez v0, :cond_5
 
-    .line 1126
+    .line 1132
     :goto_4
     return-void
 
-    .line 1124
+    .line 1130
     :cond_5
     invoke-virtual {p0}, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->d()V
 
-    .line 1125
+    .line 1131
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$ActionModeImpl;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->g(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContextView;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->e:Landroid/support/v7/widget/ActionBarContextView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->showOverflowMenu()Z
 

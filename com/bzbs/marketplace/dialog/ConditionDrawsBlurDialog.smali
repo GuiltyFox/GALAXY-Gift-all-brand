@@ -536,7 +536,7 @@
 
     sget-object v1, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->a:Landroid/app/Activity;
 
-    const v2, 0x7f0c010a
+    const v2, 0x7f0c0102
 
     invoke-direct {v0, v1, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -547,7 +547,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f040109
+    const v2, 0x7f04009b
 
     const/4 v3, 0x0
 
@@ -566,7 +566,7 @@
     .line 116
     iget-object v3, v2, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->btnOK:Landroid/widget/Button;
 
-    const v4, 0x7f090376
+    const v4, 0x7f09018f
 
     invoke-virtual {p0, v4}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -577,7 +577,7 @@
     .line 117
     iget-object v3, v2, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->btnClose:Landroid/widget/Button;
 
-    const v4, 0x7f090362
+    const v4, 0x7f09017a
 
     invoke-virtual {p0, v4}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->getString(I)Ljava/lang/String;
 

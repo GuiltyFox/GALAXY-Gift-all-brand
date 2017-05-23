@@ -1,24 +1,11 @@
 .class Lcom/samsung/privilege/activity/WebViewSurveyActivity$1;
-.super Ljava/lang/Object;
+.super Lpl/aprilapps/easyphotopicker/DefaultCallback;
 .source "WebViewSurveyActivity.java"
-
-# interfaces
-.implements Lcom/koushikdutta/async/future/FutureCallback;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/WebViewSurveyActivity;->l()V
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/koushikdutta/async/future/FutureCallback",
-        "<",
-        "Lcom/google/gson/JsonArray;",
-        ">;"
-    }
+    value = Lcom/samsung/privilege/activity/WebViewSurveyActivity;->onActivityResult(IILandroid/content/Intent;)V
 .end annotation
 
 
@@ -31,202 +18,87 @@
     .registers 2
 
     .prologue
-    .line 373
+    .line 314
     iput-object p1, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$1;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lpl/aprilapps/easyphotopicker/DefaultCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Exception;Lcom/google/gson/JsonArray;)V
-    .registers 6
+.method public a(Ljava/io/File;Lpl/aprilapps/easyphotopicker/EasyImage$ImageSource;I)V
+    .registers 8
 
     .prologue
-    .line 377
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$1;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
+    const/4 v3, 0x2
 
-    const v1, 0x7f100733
+    .line 322
+    const/16 v0, 0x15
 
-    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->findViewById(I)Landroid/view/View;
+    if-eq p3, v0, :cond_9
 
-    move-result-object v0
+    const/16 v0, 0xb
 
-    const/16 v1, 0x8
+    if-ne p3, v0, :cond_39
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    .line 323
+    :cond_9
+    new-instance v0, Landroid/content/Intent;
 
-    .line 378
-    if-eqz p1, :cond_21
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$1;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
-    .line 379
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$1;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
-
-    const-string/jumbo v1, "Error uploading file."
-
-    const/4 v2, 0x1
-
-    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
-
-    .line 380
-    invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
-
-    .line 410
-    :cond_20
-    :goto_20
-    return-void
-
-    .line 392
-    :cond_21
-    invoke-static {}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->g()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "onCompleted->"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-virtual {p2}, Lcom/google/gson/JsonArray;->toString()Ljava/lang/String;
+    const-class v2, Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 324
+    const-string/jumbo v1, "image-path"
+
+    invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    move-result-object v1
+    .line 325
+    const-string/jumbo v1, "scale"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/4 v2, 0x1
 
-    move-result-object v1
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+    .line 327
+    const-string/jumbo v1, "aspectX"
 
-    .line 395
-    :try_start_40
-    new-instance v0, Lorg/json/JSONArray;
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    invoke-virtual {p2}, Lcom/google/gson/JsonArray;->toString()Ljava/lang/String;
+    .line 328
+    const-string/jumbo v1, "aspectY"
 
-    move-result-object v1
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    invoke-direct {v0, v1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
-
-    .line 396
-    invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
-
-    move-result v1
-
-    if-lez v1, :cond_20
-
-    .line 397
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "imageUrl"
-
-    invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 398
-    if-eqz v0, :cond_20
-
-    const-string/jumbo v1, ""
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_20
-
-    .line 399
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "javascript:uploadImageResult(\'"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "\');"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 400
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x13
-
-    if-lt v1, v2, :cond_94
-
-    .line 401
+    .line 330
     iget-object v1, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$1;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
-    invoke-static {v1}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->a(Lcom/samsung/privilege/activity/WebViewSurveyActivity;)Lcom/samsung/privilege/control/WebViewSurvey;
+    const/4 v2, 0x3
 
-    move-result-object v1
+    invoke-virtual {v1, v0, v2}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Lcom/samsung/privilege/control/WebViewSurvey;->evaluateJavascript(Ljava/lang/String;Landroid/webkit/ValueCallback;)V
-
-    goto :goto_20
-
-    .line 407
-    :catch_92
-    move-exception v0
-
-    goto :goto_20
-
-    .line 403
-    :cond_94
-    iget-object v1, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$1;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
-
-    invoke-static {v1}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->a(Lcom/samsung/privilege/activity/WebViewSurveyActivity;)Lcom/samsung/privilege/control/WebViewSurvey;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/samsung/privilege/control/WebViewSurvey;->loadUrl(Ljava/lang/String;)V
-    :try_end_9d
-    .catch Ljava/lang/Exception; {:try_start_40 .. :try_end_9d} :catch_92
-
-    goto :goto_20
+    .line 332
+    :cond_39
+    return-void
 .end method
 
-.method public bridge synthetic a(Ljava/lang/Exception;Ljava/lang/Object;)V
-    .registers 3
+.method public a(Ljava/lang/Exception;Lpl/aprilapps/easyphotopicker/EasyImage$ImageSource;I)V
+    .registers 4
 
     .prologue
-    .line 373
-    check-cast p2, Lcom/google/gson/JsonArray;
-
-    invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/WebViewSurveyActivity$1;->a(Ljava/lang/Exception;Lcom/google/gson/JsonArray;)V
-
+    .line 318
     return-void
 .end method

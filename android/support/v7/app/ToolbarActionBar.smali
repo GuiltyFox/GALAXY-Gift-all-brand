@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private a:Landroid/support/v7/widget/DecorToolbar;
+.field a:Landroid/support/v7/widget/DecorToolbar;
 
-.field private b:Z
+.field b:Z
 
-.field private c:Landroid/view/Window$Callback;
+.field c:Landroid/view/Window$Callback;
 
 .field private d:Z
 
@@ -98,91 +98,6 @@
     return-void
 .end method
 
-.method static synthetic a(Landroid/support/v7/app/ToolbarActionBar;Landroid/view/Menu;)Landroid/view/View;
-    .registers 3
-
-    .prologue
-    .line 47
-    invoke-direct {p0, p1}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/view/Menu;)Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private a(Landroid/view/Menu;)Landroid/view/View;
-    .registers 4
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 515
-    invoke-direct {p0, p1}, Landroid/support/v7/app/ToolbarActionBar;->b(Landroid/view/Menu;)V
-
-    .line 517
-    if-eqz p1, :cond_a
-
-    iget-object v1, p0, Landroid/support/v7/app/ToolbarActionBar;->g:Landroid/support/v7/view/menu/ListMenuPresenter;
-
-    if-nez v1, :cond_b
-
-    .line 524
-    :cond_a
-    :goto_a
-    return-object v0
-
-    .line 521
-    :cond_b
-    iget-object v1, p0, Landroid/support/v7/app/ToolbarActionBar;->g:Landroid/support/v7/view/menu/ListMenuPresenter;
-
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/ListMenuPresenter;->a()Landroid/widget/ListAdapter;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/widget/ListAdapter;->getCount()I
-
-    move-result v1
-
-    if-lez v1, :cond_a
-
-    .line 522
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar;->g:Landroid/support/v7/view/menu/ListMenuPresenter;
-
-    iget-object v1, p0, Landroid/support/v7/app/ToolbarActionBar;->a:Landroid/support/v7/widget/DecorToolbar;
-
-    invoke-interface {v1}, Landroid/support/v7/widget/DecorToolbar;->getViewGroup()Landroid/view/ViewGroup;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/ListMenuPresenter;->a(Landroid/view/ViewGroup;)Landroid/support/v7/view/menu/MenuView;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    goto :goto_a
-.end method
-
-.method static synthetic a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
-    .registers 2
-
-    .prologue
-    .line 47
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar;->c:Landroid/view/Window$Callback;
-
-    return-object v0
-.end method
-
-.method static synthetic a(Landroid/support/v7/app/ToolbarActionBar;Z)Z
-    .registers 2
-
-    .prologue
-    .line 47
-    iput-boolean p1, p0, Landroid/support/v7/app/ToolbarActionBar;->b:Z
-
-    return p1
-.end method
-
 .method private b(Landroid/view/Menu;)V
     .registers 7
 
@@ -192,11 +107,11 @@
     .line 528
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar;->g:Landroid/support/v7/view/menu/ListMenuPresenter;
 
-    if-nez v0, :cond_67
+    if-nez v0, :cond_66
 
     instance-of v0, p1, Landroid/support/v7/view/menu/MenuBuilder;
 
-    if-eqz v0, :cond_67
+    if-eqz v0, :cond_66
 
     .line 529
     check-cast p1, Landroid/support/v7/view/menu/MenuBuilder;
@@ -253,7 +168,7 @@
     .line 544
     iget v3, v1, Landroid/util/TypedValue;->resourceId:I
 
-    if-eqz v3, :cond_68
+    if-eqz v3, :cond_67
 
     .line 545
     iget v1, v1, Landroid/util/TypedValue;->resourceId:I
@@ -289,9 +204,7 @@
 
     new-instance v1, Landroid/support/v7/app/ToolbarActionBar$PanelMenuPresenterCallback;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, v2}, Landroid/support/v7/app/ToolbarActionBar$PanelMenuPresenterCallback;-><init>(Landroid/support/v7/app/ToolbarActionBar;Landroid/support/v7/app/ToolbarActionBar$1;)V
+    invoke-direct {v1, p0}, Landroid/support/v7/app/ToolbarActionBar$PanelMenuPresenterCallback;-><init>(Landroid/support/v7/app/ToolbarActionBar;)V
 
     invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/ListMenuPresenter;->setCallback(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
 
@@ -301,11 +214,11 @@
     invoke-virtual {p1, v0}, Landroid/support/v7/view/menu/MenuBuilder;->addMenuPresenter(Landroid/support/v7/view/menu/MenuPresenter;)V
 
     .line 558
-    :cond_67
+    :cond_66
     return-void
 
     .line 547
-    :cond_68
+    :cond_67
     sget v1, Landroid/support/v7/appcompat/R$style;->Theme_AppCompat_CompactMenu:I
 
     invoke-virtual {v2, v1, v4}, Landroid/content/res/Resources$Theme;->applyStyle(IZ)V
@@ -313,47 +226,25 @@
     goto :goto_41
 .end method
 
-.method static synthetic b(Landroid/support/v7/app/ToolbarActionBar;)Z
-    .registers 2
-
-    .prologue
-    .line 47
-    iget-boolean v0, p0, Landroid/support/v7/app/ToolbarActionBar;->b:Z
-
-    return v0
-.end method
-
-.method static synthetic c(Landroid/support/v7/app/ToolbarActionBar;)Landroid/support/v7/widget/DecorToolbar;
-    .registers 2
-
-    .prologue
-    .line 47
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar;->a:Landroid/support/v7/widget/DecorToolbar;
-
-    return-object v0
-.end method
-
 .method private l()Landroid/view/Menu;
-    .registers 5
+    .registers 4
 
     .prologue
-    const/4 v3, 0x0
-
     .line 590
     iget-boolean v0, p0, Landroid/support/v7/app/ToolbarActionBar;->d:Z
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_16
 
     .line 591
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar;->a:Landroid/support/v7/widget/DecorToolbar;
 
     new-instance v1, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;
 
-    invoke-direct {v1, p0, v3}, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;-><init>(Landroid/support/v7/app/ToolbarActionBar;Landroid/support/v7/app/ToolbarActionBar$1;)V
+    invoke-direct {v1, p0}, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;-><init>(Landroid/support/v7/app/ToolbarActionBar;)V
 
     new-instance v2, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;
 
-    invoke-direct {v2, p0, v3}, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;-><init>(Landroid/support/v7/app/ToolbarActionBar;Landroid/support/v7/app/ToolbarActionBar$1;)V
+    invoke-direct {v2, p0}, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;-><init>(Landroid/support/v7/app/ToolbarActionBar;)V
 
     invoke-interface {v0, v1, v2}, Landroid/support/v7/widget/DecorToolbar;->setMenuCallbacks(Landroid/support/v7/view/menu/MenuPresenter$Callback;Landroid/support/v7/view/menu/MenuBuilder$Callback;)V
 
@@ -363,7 +254,7 @@
     iput-boolean v0, p0, Landroid/support/v7/app/ToolbarActionBar;->d:Z
 
     .line 595
-    :cond_17
+    :cond_16
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar;->a:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->getMenu()Landroid/view/Menu;
@@ -389,6 +280,59 @@
     return v0
 .end method
 
+.method a(Landroid/view/Menu;)Landroid/view/View;
+    .registers 4
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 515
+    invoke-direct {p0, p1}, Landroid/support/v7/app/ToolbarActionBar;->b(Landroid/view/Menu;)V
+
+    .line 517
+    if-eqz p1, :cond_a
+
+    iget-object v1, p0, Landroid/support/v7/app/ToolbarActionBar;->g:Landroid/support/v7/view/menu/ListMenuPresenter;
+
+    if-nez v1, :cond_b
+
+    .line 524
+    :cond_a
+    :goto_a
+    return-object v0
+
+    .line 521
+    :cond_b
+    iget-object v1, p0, Landroid/support/v7/app/ToolbarActionBar;->g:Landroid/support/v7/view/menu/ListMenuPresenter;
+
+    invoke-virtual {v1}, Landroid/support/v7/view/menu/ListMenuPresenter;->a()Landroid/widget/ListAdapter;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/widget/ListAdapter;->getCount()I
+
+    move-result v1
+
+    if-lez v1, :cond_a
+
+    .line 522
+    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar;->g:Landroid/support/v7/view/menu/ListMenuPresenter;
+
+    iget-object v1, p0, Landroid/support/v7/app/ToolbarActionBar;->a:Landroid/support/v7/widget/DecorToolbar;
+
+    invoke-interface {v1}, Landroid/support/v7/widget/DecorToolbar;->getViewGroup()Landroid/view/ViewGroup;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/ListMenuPresenter;->a(Landroid/view/ViewGroup;)Landroid/support/v7/view/menu/MenuView;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    goto :goto_a
+.end method
+
 .method public a(F)V
     .registers 3
 
@@ -400,7 +344,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Landroid/support/v4/view/ViewCompat;->f(Landroid/view/View;F)V
+    invoke-static {v0, p1}, Landroid/support/v4/view/ViewCompat;->h(Landroid/view/View;F)V
 
     .line 142
     return-void

@@ -139,23 +139,13 @@
     .registers 3
 
     .prologue
-    .line 116
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public e(Landroid/graphics/drawable/Drawable;)I
-    .registers 3
-
-    .prologue
     .line 121
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public f(Landroid/graphics/drawable/Drawable;)Z
+.method public e(Landroid/graphics/drawable/Drawable;)Z
     .registers 3
 
     .prologue
@@ -165,7 +155,7 @@
     return v0
 .end method
 
-.method public g(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
+.method public f(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
     .registers 3
 
     .prologue
@@ -173,4 +163,15 @@
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+.method public g(Landroid/graphics/drawable/Drawable;)V
+    .registers 2
+
+    .prologue
+    .line 140
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->clearColorFilter()V
+
+    .line 141
+    return-void
 .end method

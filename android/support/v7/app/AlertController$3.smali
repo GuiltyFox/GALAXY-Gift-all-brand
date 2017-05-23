@@ -46,9 +46,7 @@
     .line 559
     iget-object v0, p0, Landroid/support/v7/app/AlertController$3;->c:Landroid/support/v7/app/AlertController;
 
-    invoke-static {v0}, Landroid/support/v7/app/AlertController;->i(Landroid/support/v7/app/AlertController;)Landroid/support/v4/widget/NestedScrollView;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/AlertController;->i:Landroid/support/v4/widget/NestedScrollView;
 
     iget-object v1, p0, Landroid/support/v7/app/AlertController$3;->a:Landroid/view/View;
 

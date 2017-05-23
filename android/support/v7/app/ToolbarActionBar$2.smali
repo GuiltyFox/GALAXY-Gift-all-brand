@@ -38,9 +38,7 @@
     .line 69
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$2;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/ToolbarActionBar;->c:Landroid/view/Window$Callback;
 
     const/4 v1, 0x0
 

@@ -78,7 +78,7 @@
     if-nez v0, :cond_19
 
     .line 173
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompatHC;->i(Landroid/view/View;)V
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompatHC;->j(Landroid/view/View;)V
 
     .line 175
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -93,7 +93,7 @@
     .line 177
     check-cast v0, Landroid/view/View;
 
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompatHC;->i(Landroid/view/View;)V
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompatHC;->j(Landroid/view/View;)V
 
     .line 180
     :cond_19
@@ -160,7 +160,7 @@
     if-nez v0, :cond_19
 
     .line 185
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompatHC;->i(Landroid/view/View;)V
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompatHC;->j(Landroid/view/View;)V
 
     .line 187
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -175,7 +175,7 @@
     .line 189
     check-cast v0, Landroid/view/View;
 
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompatHC;->i(Landroid/view/View;)V
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompatHC;->j(Landroid/view/View;)V
 
     .line 192
     :cond_19
@@ -274,6 +274,17 @@
     return v0
 .end method
 
+.method public static f(Landroid/view/View;F)V
+    .registers 2
+
+    .prologue
+    .line 139
+    invoke-virtual {p0, p1}, Landroid/view/View;->setPivotX(F)V
+
+    .line 140
+    return-void
+.end method
+
 .method public static g(Landroid/view/View;)F
     .registers 2
 
@@ -286,7 +297,30 @@
     return v0
 .end method
 
-.method public static h(Landroid/view/View;)V
+.method public static g(Landroid/view/View;F)V
+    .registers 2
+
+    .prologue
+    .line 143
+    invoke-virtual {p0, p1}, Landroid/view/View;->setPivotY(F)V
+
+    .line 144
+    return-void
+.end method
+
+.method public static h(Landroid/view/View;)Landroid/graphics/Matrix;
+    .registers 2
+
+    .prologue
+    .line 103
+    invoke-virtual {p0}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static i(Landroid/view/View;)V
     .registers 1
 
     .prologue
@@ -297,7 +331,7 @@
     return-void
 .end method
 
-.method private static i(Landroid/view/View;)V
+.method private static j(Landroid/view/View;)V
     .registers 3
 
     .prologue

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 476
+    .line 488
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogSerialGift$11$2;->b:Lcom/samsung/privilege/util/DialogSerialGift$11;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogSerialGift$11$2;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 3
 
     .prologue
-    .line 478
+    .line 490
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$11$2;->b:Lcom/samsung/privilege/util/DialogSerialGift$11;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogSerialGift$11;->i:Landroid/widget/TextView;
@@ -48,6 +48,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 479
+    .line 491
     return-void
 .end method

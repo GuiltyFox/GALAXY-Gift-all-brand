@@ -1,122 +1,224 @@
 .class final Lcom/samsung/privilege/util/DialogLoginGift$14;
-.super Ljava/lang/Object;
+.super Lcom/bzbs/lib/http/okhttp/ResponseListener;
 .source "DialogLoginGift.java"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/widget/ImageButton;Lcom/facebook/login/widget/LoginButton;)V
+    value = Lcom/samsung/privilege/util/DialogLoginGift;->b(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Landroid/app/Dialog;
+.field final synthetic a:J
 
-.field final synthetic b:Landroid/content/Context;
+.field final synthetic b:Ljava/lang/String;
 
-.field final synthetic c:Landroid/widget/ImageButton;
+.field final synthetic c:Landroid/content/Context;
 
-.field final synthetic d:Lcom/facebook/login/widget/LoginButton;
+.field final synthetic d:Landroid/os/Handler;
 
 
 # direct methods
-.method constructor <init>(Landroid/app/Dialog;Landroid/content/Context;Landroid/widget/ImageButton;Lcom/facebook/login/widget/LoginButton;)V
-    .registers 5
+.method constructor <init>(JLjava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
+    .registers 7
 
     .prologue
-    .line 568
-    iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->a:Landroid/app/Dialog;
+    .line 762
+    iput-wide p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->a:J
 
-    iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->b:Landroid/content/Context;
+    iput-object p3, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->b:Ljava/lang/String;
 
-    iput-object p3, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->c:Landroid/widget/ImageButton;
+    iput-object p4, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->c:Landroid/content/Context;
 
-    iput-object p4, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->d:Lcom/facebook/login/widget/LoginButton;
+    iput-object p5, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->d:Landroid/os/Handler;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 5
+.method public failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .registers 13
 
     .prologue
-    .line 570
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->a:Landroid/app/Dialog;
+    .line 781
+    invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+    .line 784
+    :try_start_3
+    new-instance v0, Ljava/util/Date;
 
-    .line 572
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->b:Landroid/content/Context;
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
 
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Z)Z
+    move-result-wide v0
 
-    .line 574
-    invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
+    .line 785
+    const-string/jumbo v2, "Login"
+
+    const-string/jumbo v3, "LoginDevice"
+
+    const-string/jumbo v4, "Failure"
+
+    iget-wide v6, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->a:J
+
+    sub-long/2addr v0, v6
+
+    invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    :try_end_1b
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_4e
+
+    .line 790
+    :goto_1b
+    invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
     move-result-object v0
 
-    const v1, 0x7f1005c2
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "(doLoginDevice|onFailure)response_code="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ",response="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 792
+    invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->c()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ImageButton;
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 575
-    invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
+    .line 794
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->c:Landroid/content/Context;
 
-    move-result-object v1
+    invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    const v2, 0x7f100181
-
-    invoke-virtual {v1, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/RelativeLayout;
-
-    .line 577
-    const/16 v2, 0x8
-
-    invoke-virtual {v0, v2}, Landroid/widget/ImageButton;->setVisibility(I)V
-
-    .line 578
-    const/4 v0, 0x0
-
-    invoke-virtual {v1, v0}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-
-    .line 580
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->c:Landroid/widget/ImageButton;
-
-    if-eqz v0, :cond_37
-
-    .line 581
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->c:Landroid/widget/ImageButton;
-
-    invoke-virtual {v0}, Landroid/widget/ImageButton;->performClick()Z
-
-    .line 584
-    :cond_37
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->d:Lcom/facebook/login/widget/LoginButton;
-
-    if-eqz v0, :cond_40
-
-    .line 585
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->d:Lcom/facebook/login/widget/LoginButton;
-
-    invoke-virtual {v0}, Lcom/facebook/login/widget/LoginButton;->performClick()Z
-
-    .line 587
-    :cond_40
+    .line 795
     return-void
+
+    .line 786
+    :catch_4e
+    move-exception v0
+
+    goto :goto_1b
+.end method
+
+.method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .registers 13
+
+    .prologue
+    .line 766
+    :try_start_0
+    new-instance v0, Ljava/util/Date;
+
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+
+    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v0
+
+    .line 767
+    const-string/jumbo v2, "Login"
+
+    const-string/jumbo v3, "LoginDevice"
+
+    const-string/jumbo v4, "Success"
+
+    iget-wide v6, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->a:J
+
+    sub-long/2addr v0, v6
+
+    invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    :try_end_18
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_52
+
+    .line 772
+    :goto_18
+    invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "(doLoginDevice|onComplete)response_code="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ",response="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 774
+    invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->c()Landroid/app/ProgressDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
+
+    .line 776
+    const-string/jumbo v0, "2"
+
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->b:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->c:Landroid/content/Context;
+
+    iget-object v3, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->d:Landroid/os/Handler;
+
+    invoke-static {p4, v0, v1, v2, v3}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
+
+    .line 777
+    return-void
+
+    .line 768
+    :catch_52
+    move-exception v0
+
+    goto :goto_18
 .end method

@@ -58,21 +58,7 @@
     goto :goto_d
 .end method
 
-.method public static a(Landroid/view/ViewConfiguration;)I
-    .registers 2
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 89
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledPagingTouchSlop()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static b(Landroid/view/ViewConfiguration;)Z
+.method public static a(Landroid/view/ViewConfiguration;)Z
     .registers 2
 
     .prologue

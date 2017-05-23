@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 708
+    .line 733
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$CheckListener;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 708
+    .line 733
     invoke-direct {p0, p1}, Lcom/bzbs/marketplace/fragment/ReviewFragment$CheckListener;-><init>(Lcom/bzbs/marketplace/fragment/ReviewFragment;)V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 5
 
     .prologue
-    .line 713
+    .line 738
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$CheckListener;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-virtual {p1}, Lcom/bzbs/marketplace/model/sticker/StickerModel$StickersEntity;->getPictureUrl()Ljava/lang/String;
@@ -48,7 +48,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a(Lcom/bzbs/marketplace/fragment/ReviewFragment;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 714
+    .line 739
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$CheckListener;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-virtual {p1}, Lcom/bzbs/marketplace/model/sticker/StickerModel$StickersEntity;->getText()Ljava/lang/String;
@@ -57,7 +57,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->b(Lcom/bzbs/marketplace/fragment/ReviewFragment;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 715
+    .line 740
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$CheckListener;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     const/4 v1, 0x1
@@ -66,6 +66,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a(Lcom/bzbs/marketplace/fragment/ReviewFragment;ZZ)V
 
-    .line 716
+    .line 741
     return-void
 .end method

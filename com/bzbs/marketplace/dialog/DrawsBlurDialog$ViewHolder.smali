@@ -8,67 +8,67 @@
 
 .field btnClose:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002bb
+        value = 0x7f100260
     .end annotation
 .end field
 
 .field imgCampaign:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b2
+        value = 0x7f100247
     .end annotation
 .end field
 
 .field layoutRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b0
+        value = 0x7f100253
     .end annotation
 .end field
 
 .field svCondition:Landroid/widget/ScrollView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b5
+        value = 0x7f10024a
     .end annotation
 .end field
 
 .field tvCampaignDesc:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b3
+        value = 0x7f100255
     .end annotation
 .end field
 
 .field tvDraws1:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002c5
+        value = 0x7f100396
     .end annotation
 .end field
 
 .field tvDraws2:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002c6
+        value = 0x7f100397
     .end annotation
 .end field
 
 .field tvDraws3:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002c7
+        value = 0x7f100398
     .end annotation
 .end field
 
 .field tvDraws4:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002c8
+        value = 0x7f100399
     .end annotation
 .end field
 
 .field tvDraws5:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002c9
+        value = 0x7f10039a
     .end annotation
 .end field
 
 .field tvShowTimeRedeem:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002b4
+        value = 0x7f100256
     .end annotation
 .end field
 
@@ -101,14 +101,14 @@
     .registers 9
 
     .prologue
-    const v6, 0x7f0202e1
+    const v6, 0x7f0201b7
 
     const/high16 v5, 0x41f00000    # 30.0f
 
     .line 172
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     iget-object v2, p0, Lcom/bzbs/marketplace/dialog/DrawsBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/DrawsBlurDialog;
 
@@ -118,7 +118,7 @@
 
     sub-int/2addr v1, v2
 
-    sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
+    sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->B:I
 
     iget-object v3, p0, Lcom/bzbs/marketplace/dialog/DrawsBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/DrawsBlurDialog;
 
@@ -137,7 +137,7 @@
 
     const/4 v2, -0x1
 
-    sget v3, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v3, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     iget-object v4, p0, Lcom/bzbs/marketplace/dialog/DrawsBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/DrawsBlurDialog;
 
@@ -183,7 +183,7 @@
 
     iget-object v4, p0, Lcom/bzbs/marketplace/dialog/DrawsBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/DrawsBlurDialog;
 
-    const v5, 0x7f090409
+    const v5, 0x7f09020e
 
     invoke-virtual {v4, v5}, Lcom/bzbs/marketplace/dialog/DrawsBlurDialog;->getString(I)Ljava/lang/String;
 

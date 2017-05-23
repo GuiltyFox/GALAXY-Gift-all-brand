@@ -58,7 +58,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f100243
+    const v2, 0x7f10022e
 
     invoke-virtual {v1, v2, v0}, Landroid/support/v4/app/FragmentTransaction;->a(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
@@ -98,7 +98,7 @@
     invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
     .line 28
-    const v0, 0x7f04005b
+    const v0, 0x7f040053
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->setContentView(I)V
 
@@ -110,7 +110,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->b:Landroid/os/Handler;
 
     .line 33
-    const v0, 0x7f1000b7
+    const v0, 0x7f1000ba
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -137,7 +137,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 37
-    const v0, 0x7f100176
+    const v0, 0x7f100166
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->findViewById(I)Landroid/view/View;
 

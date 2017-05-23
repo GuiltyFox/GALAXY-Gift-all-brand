@@ -52,7 +52,7 @@
     .line 156
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$2$1;->a:Landroid/support/v7/view/menu/CascadingMenuPopup$CascadingMenuInfo;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_19
 
     .line 159
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$2$1;->d:Landroid/support/v7/view/menu/CascadingMenuPopup$2;
@@ -61,7 +61,7 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Landroid/support/v7/view/menu/CascadingMenuPopup;->a(Landroid/support/v7/view/menu/CascadingMenuPopup;Z)Z
+    iput-boolean v1, v0, Landroid/support/v7/view/menu/CascadingMenuPopup;->d:Z
 
     .line 160
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$2$1;->a:Landroid/support/v7/view/menu/CascadingMenuPopup$CascadingMenuInfo;
@@ -75,17 +75,17 @@
 
     iget-object v0, v0, Landroid/support/v7/view/menu/CascadingMenuPopup$2;->a:Landroid/support/v7/view/menu/CascadingMenuPopup;
 
-    invoke-static {v0, v2}, Landroid/support/v7/view/menu/CascadingMenuPopup;->a(Landroid/support/v7/view/menu/CascadingMenuPopup;Z)Z
+    iput-boolean v2, v0, Landroid/support/v7/view/menu/CascadingMenuPopup;->d:Z
 
     .line 165
-    :cond_1b
+    :cond_19
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$2$1;->b:Landroid/view/MenuItem;
 
     invoke-interface {v0}, Landroid/view/MenuItem;->isEnabled()Z
 
     move-result v0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_30
 
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$2$1;->b:Landroid/view/MenuItem;
 
@@ -93,7 +93,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_30
 
     .line 166
     iget-object v0, p0, Landroid/support/v7/view/menu/CascadingMenuPopup$2$1;->c:Landroid/support/v7/view/menu/MenuBuilder;
@@ -103,6 +103,6 @@
     invoke-virtual {v0, v1, v2}, Landroid/support/v7/view/menu/MenuBuilder;->performItemAction(Landroid/view/MenuItem;I)Z
 
     .line 168
-    :cond_32
+    :cond_30
     return-void
 .end method

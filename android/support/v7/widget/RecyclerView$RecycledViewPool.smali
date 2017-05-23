@@ -31,24 +31,24 @@
     .registers 2
 
     .prologue
-    .line 4322
+    .line 4847
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4323
+    .line 4848
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mScrap:Landroid/util/SparseArray;
 
-    .line 4325
+    .line 4850
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mMaxScrap:Landroid/util/SparseIntArray;
 
-    .line 4326
+    .line 4851
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mAttachCount:I
@@ -69,7 +69,7 @@
     .end annotation
 
     .prologue
-    .line 4413
+    .line 4938
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mScrap:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -78,20 +78,20 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 4414
+    .line 4939
     if-nez v0, :cond_22
 
-    .line 4415
+    .line 4940
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4416
+    .line 4941
     iget-object v1, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mScrap:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 4417
+    .line 4942
     iget-object v1, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mMaxScrap:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
@@ -100,14 +100,14 @@
 
     if-gez v1, :cond_22
 
-    .line 4418
+    .line 4943
     iget-object v1, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mMaxScrap:Landroid/util/SparseIntArray;
 
     const/4 v2, 0x5
 
     invoke-virtual {v1, p1, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 4421
+    .line 4946
     :cond_22
     return-object v0
 .end method
@@ -118,14 +118,14 @@
     .registers 3
 
     .prologue
-    .line 4380
+    .line 4905
     iget v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mAttachCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mAttachCount:I
 
-    .line 4381
+    .line 4906
     return-void
 .end method
 
@@ -133,12 +133,12 @@
     .registers 2
 
     .prologue
-    .line 4331
+    .line 4856
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mScrap:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 4332
+    .line 4857
     return-void
 .end method
 
@@ -146,14 +146,14 @@
     .registers 2
 
     .prologue
-    .line 4384
+    .line 4909
     iget v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mAttachCount:I
 
     add-int/lit8 v0, v0, -0x1
 
     iput v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mAttachCount:I
 
-    .line 4385
+    .line 4910
     return-void
 .end method
 
@@ -161,7 +161,7 @@
     .registers 5
 
     .prologue
-    .line 4345
+    .line 4870
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mScrap:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -170,7 +170,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 4346
+    .line 4871
     if-eqz v0, :cond_20
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -179,24 +179,24 @@
 
     if-nez v1, :cond_20
 
-    .line 4347
+    .line 4872
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     add-int/lit8 v2, v1, -0x1
 
-    .line 4348
+    .line 4873
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    .line 4349
+    .line 4874
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 4352
+    .line 4877
     :goto_1f
     return-object v1
 
@@ -210,13 +210,13 @@
     .registers 5
 
     .prologue
-    .line 4401
+    .line 4926
     if-eqz p1, :cond_5
 
-    .line 4402
+    .line 4927
     invoke-virtual {p0}, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->detach()V
 
-    .line 4404
+    .line 4929
     :cond_5
     if-nez p3, :cond_e
 
@@ -224,17 +224,17 @@
 
     if-nez v0, :cond_e
 
-    .line 4405
+    .line 4930
     invoke-virtual {p0}, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->clear()V
 
-    .line 4407
+    .line 4932
     :cond_e
     if-eqz p2, :cond_13
 
-    .line 4408
+    .line 4933
     invoke-virtual {p0, p2}, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->attach(Landroid/support/v7/widget/RecyclerView$Adapter;)V
 
-    .line 4410
+    .line 4935
     :cond_13
     return-void
 .end method
@@ -243,17 +243,17 @@
     .registers 5
 
     .prologue
-    .line 4367
+    .line 4892
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
-    .line 4368
+    .line 4893
     invoke-direct {p0, v0}, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->getScrapHeapForType(I)Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 4369
+    .line 4894
     iget-object v2, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mMaxScrap:Landroid/util/SparseIntArray;
 
     invoke-virtual {v2, v0}, Landroid/util/SparseIntArray;->get(I)I
@@ -266,15 +266,15 @@
 
     if-gt v0, v2, :cond_15
 
-    .line 4377
+    .line 4902
     :goto_14
     return-void
 
-    .line 4375
+    .line 4900
     :cond_15
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->resetInternal()V
 
-    .line 4376
+    .line 4901
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_14
@@ -284,12 +284,12 @@
     .registers 5
 
     .prologue
-    .line 4335
+    .line 4860
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mMaxScrap:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 4336
+    .line 4861
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mScrap:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -298,10 +298,10 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 4337
+    .line 4862
     if-eqz v0, :cond_1f
 
-    .line 4338
+    .line 4863
     :goto_f
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -309,7 +309,7 @@
 
     if-le v1, p2, :cond_1f
 
-    .line 4339
+    .line 4864
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -320,7 +320,7 @@
 
     goto :goto_f
 
-    .line 4342
+    .line 4867
     :cond_1f
     return-void
 .end method
@@ -331,12 +331,12 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 4356
+    .line 4881
     move v1, v0
 
     move v2, v0
 
-    .line 4357
+    .line 4882
     :goto_3
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mScrap:Landroid/util/SparseArray;
 
@@ -346,7 +346,7 @@
 
     if-ge v1, v0, :cond_1e
 
-    .line 4358
+    .line 4883
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$RecycledViewPool;->mScrap:Landroid/util/SparseArray;
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -355,17 +355,17 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 4359
+    .line 4884
     if-eqz v0, :cond_1a
 
-    .line 4360
+    .line 4885
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     add-int/2addr v2, v0
 
-    .line 4357
+    .line 4882
     :cond_1a
     add-int/lit8 v0, v1, 0x1
 
@@ -373,7 +373,7 @@
 
     goto :goto_3
 
-    .line 4363
+    .line 4888
     :cond_1e
     return v2
 .end method

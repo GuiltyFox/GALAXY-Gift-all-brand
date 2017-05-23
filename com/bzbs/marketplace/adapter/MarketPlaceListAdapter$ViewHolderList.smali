@@ -12,13 +12,13 @@
 
 .field contentImageView:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006b3
+        value = 0x7f1004aa
     .end annotation
 .end field
 
 .field contentItemList:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006b1
+        value = 0x7f1004a8
     .end annotation
 .end field
 
@@ -34,55 +34,55 @@
 
 .field imageViewCover:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006af
+        value = 0x7f1004a6
     .end annotation
 .end field
 
 .field textViewCart:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006b7
+        value = 0x7f1004ae
     .end annotation
 .end field
 
 .field textViewDiscount:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100685
+        value = 0x7f10047c
     .end annotation
 .end field
 
 .field textViewFullPrice:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100684
+        value = 0x7f10047b
     .end annotation
 .end field
 
 .field textViewPrice:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100683
+        value = 0x7f10047a
     .end annotation
 .end field
 
 .field textViewTitle:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100682
+        value = 0x7f100479
     .end annotation
 .end field
 
 .field textViewType:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006b6
+        value = 0x7f1004ad
     .end annotation
 .end field
 
 .field textViewUsePoint:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006b4
+        value = 0x7f1004ab
     .end annotation
 .end field
 
 .field tvDetail:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006b5
+        value = 0x7f1004ac
     .end annotation
 .end field
 
@@ -141,7 +141,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0900b5
+    const v1, 0x7f09024e
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -154,7 +154,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0900b7
+    const v1, 0x7f090250
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -167,7 +167,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f09021c
+    const v1, 0x7f090281
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -180,7 +180,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0900b6
+    const v1, 0x7f09024f
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -193,7 +193,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0900b0
+    const v1, 0x7f090248
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -206,7 +206,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0900b1
+    const v1, 0x7f090249
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -328,13 +328,13 @@
     .registers 13
 
     .prologue
-    const v10, 0x7f0901c5
+    const v10, 0x7f0900bb
 
     const/16 v9, 0x8
 
     const/4 v8, 0x0
 
-    const v7, 0x7f0f008f
+    const v7, 0x7f0e0064
 
     const/4 v6, 0x1
 
@@ -492,7 +492,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0202de
+    const v1, 0x7f0201b4
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -503,7 +503,7 @@
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
     .line 160
-    sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+    sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     iget-object v0, p0, Lcom/bzbs/marketplace/adapter/MarketPlaceListAdapter$ViewHolderList;->a:Lcom/bzbs/marketplace/adapter/MarketPlaceListAdapter;
 
@@ -634,7 +634,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090403
+    const v3, 0x7f090208
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -696,7 +696,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090403
+    const v3, 0x7f090208
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -730,7 +730,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f09040b
+    const v2, 0x7f090210
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -761,7 +761,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0901e0
+    const v3, 0x7f09027e
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -832,7 +832,7 @@
     .line 194
     iget-object v0, p0, Lcom/bzbs/marketplace/adapter/MarketPlaceListAdapter$ViewHolderList;->textViewCart:Landroid/widget/TextView;
 
-    const v2, 0x7f0f0037
+    const v2, 0x7f0e002a
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
@@ -980,7 +980,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0900b2
+    const v2, 0x7f09024a
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1060,7 +1060,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0903f2
+    const v2, 0x7f0901f8
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1078,7 +1078,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f0901c6
+    const v3, 0x7f09027d
 
     invoke-virtual {v0, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1374,7 +1374,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0901c6
+    const v1, 0x7f09027d
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1543,7 +1543,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0901c6
+    const v1, 0x7f09027d
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1617,7 +1617,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0900b4
+    const v2, 0x7f09024c
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1652,7 +1652,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0900b3
+    const v2, 0x7f09024b
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

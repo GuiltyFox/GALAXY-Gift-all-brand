@@ -372,7 +372,7 @@
     invoke-direct {v2, v3}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
     .line 453
-    const v3, 0x7f0202aa
+    const v3, 0x7f020183
 
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -625,7 +625,7 @@
     invoke-direct {v2, v3}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
     .line 490
-    const v3, 0x7f0202aa
+    const v3, 0x7f020183
 
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
@@ -769,13 +769,13 @@
     .registers 12
 
     .prologue
-    const v8, 0x7f100587
+    const v8, 0x7f10036a
 
     const/4 v7, 0x4
 
-    const v6, 0x7f100588
+    const v6, 0x7f10036b
 
-    const v4, 0x7f100585
+    const v4, 0x7f100368
 
     const/4 v3, 0x0
 
@@ -888,7 +888,7 @@
     invoke-direct {v2, p0, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 566
-    const v0, 0x7f040106
+    const v0, 0x7f040098
 
     invoke-virtual {v2, v0}, Landroid/app/Dialog;->setContentView(I)V
 
@@ -926,7 +926,7 @@
 
     .line 578
     :goto_a1
-    const v0, 0x7f10016b
+    const v0, 0x7f10035a
 
     invoke-virtual {v2, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -2357,7 +2357,7 @@
     invoke-direct {v2, v3}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
     .line 532
-    const v3, 0x7f0202aa
+    const v3, 0x7f020183
 
     invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 

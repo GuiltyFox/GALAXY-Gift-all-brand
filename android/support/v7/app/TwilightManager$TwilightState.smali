@@ -18,22 +18,13 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>()V
     .registers 1
 
     .prologue
-    .line 191
+    .line 199
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v7/app/TwilightManager$1;)V
-    .registers 2
-
-    .prologue
-    .line 191
-    invoke-direct {p0}, Landroid/support/v7/app/TwilightManager$TwilightState;-><init>()V
-
+    .line 200
     return-void
 .end method

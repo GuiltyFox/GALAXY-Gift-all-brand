@@ -14,7 +14,7 @@
     .registers 1
 
     .prologue
-    .line 49
+    .line 51
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -28,30 +28,30 @@
     .registers 6
 
     .prologue
-    .line 342
+    .line 370
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 343
+    .line 371
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_b
 
-    .line 344
+    .line 372
     invoke-static {p0, p1}, Landroid/support/v4/content/ContextCompatApi21;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 360
+    .line 388
     :goto_a
     return-object v0
 
-    .line 345
+    .line 373
     :cond_b
     const/16 v1, 0x10
 
     if-lt v0, v1, :cond_18
 
-    .line 346
+    .line 374
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -62,26 +62,26 @@
 
     goto :goto_a
 
-    .line 353
+    .line 381
     :cond_18
     sget-object v1, Landroid/support/v4/content/ContextCompat;->a:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 354
+    .line 382
     :try_start_1b
     sget-object v0, Landroid/support/v4/content/ContextCompat;->b:Landroid/util/TypedValue;
 
     if-nez v0, :cond_26
 
-    .line 355
+    .line 383
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
     sput-object v0, Landroid/support/v4/content/ContextCompat;->b:Landroid/util/TypedValue;
 
-    .line 357
+    .line 385
     :cond_26
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -93,17 +93,17 @@
 
     invoke-virtual {v0, p1, v2, v3}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    .line 358
+    .line 386
     sget-object v0, Landroid/support/v4/content/ContextCompat;->b:Landroid/util/TypedValue;
 
     iget v0, v0, Landroid/util/TypedValue;->resourceId:I
 
-    .line 359
+    .line 387
     monitor-exit v1
     :try_end_35
     .catchall {:try_start_1b .. :try_end_35} :catchall_3e
 
-    .line 360
+    .line 388
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -114,7 +114,7 @@
 
     goto :goto_a
 
-    .line 359
+    .line 387
     :catchall_3e
     move-exception v0
 
@@ -132,33 +132,33 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 118
+    .line 121
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 119
+    .line 122
     const/16 v2, 0x10
 
     if-lt v1, v2, :cond_b
 
-    .line 120
+    .line 123
     invoke-static {p0, p1, p2}, Landroid/support/v4/content/ContextCompatJellybean;->a(Landroid/content/Context;[Landroid/content/Intent;Landroid/os/Bundle;)V
 
-    .line 126
+    .line 129
     :goto_a
     return v0
 
-    .line 122
+    .line 125
     :cond_b
     const/16 v2, 0xb
 
     if-lt v1, v2, :cond_13
 
-    .line 123
+    .line 126
     invoke-static {p0, p1}, Landroid/support/v4/content/ContextCompatHoneycomb;->a(Landroid/content/Context;[Landroid/content/Intent;)V
 
     goto :goto_a
 
-    .line 126
+    .line 129
     :cond_13
     const/4 v0, 0x0
 
@@ -169,20 +169,20 @@
     .registers 4
 
     .prologue
-    .line 310
+    .line 338
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 311
+    .line 339
     const/16 v1, 0x13
 
     if-lt v0, v1, :cond_b
 
-    .line 312
+    .line 340
     invoke-static {p0}, Landroid/support/v4/content/ContextCompatKitKat;->a(Landroid/content/Context;)[Ljava/io/File;
 
     move-result-object v0
 
-    .line 314
+    .line 342
     :goto_a
     return-object v0
 
@@ -206,20 +206,20 @@
     .registers 5
 
     .prologue
-    .line 257
+    .line 285
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 258
+    .line 286
     const/16 v1, 0x13
 
     if-lt v0, v1, :cond_b
 
-    .line 259
+    .line 287
     invoke-static {p0, p1}, Landroid/support/v4/content/ContextCompatKitKat;->a(Landroid/content/Context;Ljava/lang/String;)[Ljava/io/File;
 
     move-result-object v0
 
-    .line 261
+    .line 289
     :goto_a
     return-object v0
 
@@ -243,10 +243,10 @@
     .registers 4
 
     .prologue
-    .line 421
+    .line 449
     if-nez p1, :cond_b
 
-    .line 422
+    .line 450
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "permission is null"
@@ -255,7 +255,7 @@
 
     throw v0
 
-    .line 425
+    .line 453
     :cond_b
     invoke-static {}, Landroid/os/Process;->myPid()I
 
@@ -276,20 +276,20 @@
     .registers 4
 
     .prologue
-    .line 379
+    .line 407
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 380
+    .line 408
     const/16 v1, 0x17
 
     if-lt v0, v1, :cond_b
 
-    .line 381
+    .line 409
     invoke-static {p0, p1}, Landroid/support/v4/content/ContextCompatApi23;->a(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
-    .line 383
+    .line 411
     :goto_a
     return-object v0
 
@@ -309,20 +309,20 @@
     .registers 4
 
     .prologue
-    .line 402
+    .line 430
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 403
+    .line 431
     const/16 v1, 0x17
 
     if-lt v0, v1, :cond_b
 
-    .line 404
+    .line 432
     invoke-static {p0, p1}, Landroid/support/v4/content/ContextCompatApi23;->b(Landroid/content/Context;I)I
 
     move-result v0
 
-    .line 406
+    .line 434
     :goto_a
     return v0
 

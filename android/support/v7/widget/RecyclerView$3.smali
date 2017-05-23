@@ -17,7 +17,7 @@
     .registers 1
 
     .prologue
-    .line 415
+    .line 468
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,10 +31,10 @@
     .prologue
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 417
+    .line 471
     sub-float v0, p1, v2
 
-    .line 418
+    .line 472
     mul-float v1, v0, v0
 
     mul-float/2addr v1, v0

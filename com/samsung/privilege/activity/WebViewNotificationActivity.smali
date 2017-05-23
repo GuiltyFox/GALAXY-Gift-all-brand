@@ -206,7 +206,7 @@
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->requestWindowFeature(I)Z
 
     .line 64
-    const v0, 0x7f04018a
+    const v0, 0x7f04011e
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->setContentView(I)V
 
@@ -220,54 +220,8 @@
     .line 67
     invoke-direct {p0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->a()V
 
-    .line 70
-    const v0, 0x7f10026b
-
-    :try_start_1b
-    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    .line 71
-    if-eqz v0, :cond_3a
-
-    .line 72
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lcom/bzbs/data/AppSetting;->a(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
-
-    move-result-object v1
-
-    .line 73
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 75
-    :cond_3a
-    iget-object v1, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    :try_end_3f
-    .catch Ljava/lang/Exception; {:try_start_1b .. :try_end_3f} :catch_12e
-
     .line 80
-    :goto_3f
-    const v0, 0x7f100528
+    const v0, 0x7f10053a
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->findViewById(I)Landroid/view/View;
 
@@ -301,7 +255,7 @@
 
     const/16 v2, 0xb
 
-    if-lt v1, v2, :cond_68
+    if-lt v1, v2, :cond_41
 
     .line 88
     invoke-virtual {v0, v4}, Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V
@@ -310,7 +264,7 @@
     invoke-virtual {v0, v5}, Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V
 
     .line 92
-    :cond_68
+    :cond_41
     const-string/jumbo v1, "UTF-8"
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V
@@ -343,7 +297,7 @@
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
     .line 143
-    :try_start_8c
+    :try_start_65
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->b:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -356,10 +310,10 @@
 
     move-result v0
 
-    if-lez v0, :cond_a9
+    if-lez v0, :cond_82
 
     .line 144
-    const v0, 0x7f10017e
+    const v0, 0x7f100230
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->findViewById(I)Landroid/view/View;
 
@@ -371,13 +325,13 @@
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-    :try_end_a9
-    .catch Ljava/lang/Exception; {:try_start_8c .. :try_end_a9} :catch_12b
+    :try_end_82
+    .catch Ljava/lang/Exception; {:try_start_65 .. :try_end_82} :catch_104
 
     .line 151
-    :cond_a9
-    :goto_a9
-    if-eqz p1, :cond_c9
+    :cond_82
+    :goto_82
+    if-eqz p1, :cond_a2
 
     .line 152
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->a:Landroid/webkit/WebView;
@@ -385,7 +339,7 @@
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->restoreState(Landroid/os/Bundle;)Landroid/webkit/WebBackForwardList;
 
     .line 168
-    :goto_b0
+    :goto_89
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -397,7 +351,7 @@
     move-result v0
 
     .line 169
-    if-ne v0, v4, :cond_c8
+    if-ne v0, v4, :cond_a1
 
     .line 170
     const-string/jumbo v0, "Push Notification"
@@ -409,11 +363,11 @@
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 172
-    :cond_c8
+    :cond_a1
     return-void
 
     .line 154
-    :cond_c9
+    :cond_a2
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->b:Ljava/lang/String;
 
     .line 155
@@ -438,7 +392,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_116
+    if-eqz v1, :cond_ef
 
     .line 158
     new-instance v1, Ljava/lang/StringBuilder;
@@ -460,7 +414,7 @@
     move-result-object v0
 
     .line 163
-    :goto_f7
+    :goto_d0
     iget-object v1, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->d:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -488,10 +442,10 @@
 
     invoke-virtual {v1, v0}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    goto :goto_b0
+    goto :goto_89
 
     .line 160
-    :cond_116
+    :cond_ef
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -510,19 +464,13 @@
 
     move-result-object v0
 
-    goto :goto_f7
+    goto :goto_d0
 
     .line 147
-    :catch_12b
+    :catch_104
     move-exception v0
 
-    goto/16 :goto_a9
-
-    .line 76
-    :catch_12e
-    move-exception v0
-
-    goto/16 :goto_3f
+    goto/16 :goto_82
 .end method
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z

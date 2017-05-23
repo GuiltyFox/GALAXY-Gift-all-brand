@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 311
+    .line 325
     iput-object p1, p0, Landroid/support/design/internal/NavigationMenuPresenter$1;->this$0:Landroid/support/design/internal/NavigationMenuPresenter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,28 +37,25 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 315
+    .line 329
     check-cast p1, Landroid/support/design/internal/NavigationMenuItemView;
 
-    .line 316
+    .line 330
     iget-object v0, p0, Landroid/support/design/internal/NavigationMenuPresenter$1;->this$0:Landroid/support/design/internal/NavigationMenuPresenter;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/support/design/internal/NavigationMenuPresenter;->setUpdateSuspended(Z)V
 
-    .line 317
+    .line 331
     invoke-virtual {p1}, Landroid/support/design/internal/NavigationMenuItemView;->getItemData()Landroid/support/v7/view/menu/MenuItemImpl;
 
     move-result-object v0
 
-    .line 318
+    .line 332
     iget-object v1, p0, Landroid/support/design/internal/NavigationMenuPresenter$1;->this$0:Landroid/support/design/internal/NavigationMenuPresenter;
 
-    # getter for: Landroid/support/design/internal/NavigationMenuPresenter;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
-    invoke-static {v1}, Landroid/support/design/internal/NavigationMenuPresenter;->access$000(Landroid/support/design/internal/NavigationMenuPresenter;)Landroid/support/v7/view/menu/MenuBuilder;
-
-    move-result-object v1
+    iget-object v1, v1, Landroid/support/design/internal/NavigationMenuPresenter;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
     iget-object v2, p0, Landroid/support/design/internal/NavigationMenuPresenter$1;->this$0:Landroid/support/design/internal/NavigationMenuPresenter;
 
@@ -66,38 +63,35 @@
 
     move-result v1
 
-    .line 319
-    if-eqz v0, :cond_2c
+    .line 333
+    if-eqz v0, :cond_28
 
     invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->isCheckable()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_28
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_28
 
-    .line 320
+    .line 334
     iget-object v1, p0, Landroid/support/design/internal/NavigationMenuPresenter$1;->this$0:Landroid/support/design/internal/NavigationMenuPresenter;
 
-    # getter for: Landroid/support/design/internal/NavigationMenuPresenter;->mAdapter:Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;
-    invoke-static {v1}, Landroid/support/design/internal/NavigationMenuPresenter;->access$100(Landroid/support/design/internal/NavigationMenuPresenter;)Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;
-
-    move-result-object v1
+    iget-object v1, v1, Landroid/support/design/internal/NavigationMenuPresenter;->mAdapter:Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;
 
     invoke-virtual {v1, v0}, Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;->setCheckedItem(Landroid/support/v7/view/menu/MenuItemImpl;)V
 
-    .line 322
-    :cond_2c
+    .line 336
+    :cond_28
     iget-object v0, p0, Landroid/support/design/internal/NavigationMenuPresenter$1;->this$0:Landroid/support/design/internal/NavigationMenuPresenter;
 
     invoke-virtual {v0, v3}, Landroid/support/design/internal/NavigationMenuPresenter;->setUpdateSuspended(Z)V
 
-    .line 323
+    .line 337
     iget-object v0, p0, Landroid/support/design/internal/NavigationMenuPresenter$1;->this$0:Landroid/support/design/internal/NavigationMenuPresenter;
 
     invoke-virtual {v0, v3}, Landroid/support/design/internal/NavigationMenuPresenter;->updateMenuView(Z)V
 
-    .line 324
+    .line 338
     return-void
 .end method

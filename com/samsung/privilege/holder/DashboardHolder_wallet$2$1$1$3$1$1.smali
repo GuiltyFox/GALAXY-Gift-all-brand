@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 385
+    .line 383
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1$1$3$1$1;->a:Lcom/samsung/privilege/holder/DashboardHolder_wallet$2$1$1$3$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,6 +35,6 @@
     .registers 1
 
     .prologue
-    .line 389
+    .line 387
     return-void
 .end method

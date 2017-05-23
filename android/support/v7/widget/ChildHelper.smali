@@ -232,6 +232,7 @@
 
     if-eq p2, v4, :cond_33
 
+    .line 212
     invoke-virtual {v3}, Landroid/support/v7/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v3

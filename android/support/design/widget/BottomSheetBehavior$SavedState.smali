@@ -1,5 +1,5 @@
 .class public Landroid/support/design/widget/BottomSheetBehavior$SavedState;
-.super Landroid/view/View$BaseSavedState;
+.super Landroid/support/v4/view/AbsSavedState;
 .source "BottomSheetBehavior.java"
 
 
@@ -25,10 +25,14 @@
     .registers 1
 
     .prologue
-    .line 660
+    .line 787
     new-instance v0, Landroid/support/design/widget/BottomSheetBehavior$SavedState$1;
 
     invoke-direct {v0}, Landroid/support/design/widget/BottomSheetBehavior$SavedState$1;-><init>()V
+
+    invoke-static {v0}, Landroid/support/v4/os/ParcelableCompat;->a(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)Landroid/os/Parcelable$Creator;
+
+    move-result-object v0
 
     sput-object v0, Landroid/support/design/widget/BottomSheetBehavior$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -39,17 +43,30 @@
     .registers 3
 
     .prologue
-    .line 644
-    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
+    .line 767
+    const/4 v0, 0x0
 
-    .line 646
+    invoke-direct {p0, p1, v0}, Landroid/support/design/widget/BottomSheetBehavior$SavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    .line 768
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    .registers 4
+
+    .prologue
+    .line 771
+    invoke-direct {p0, p1, p2}, Landroid/support/v4/view/AbsSavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    .line 773
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/design/widget/BottomSheetBehavior$SavedState;->state:I
 
-    .line 647
+    .line 774
     return-void
 .end method
 
@@ -57,13 +74,13 @@
     .registers 3
 
     .prologue
-    .line 650
-    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
+    .line 777
+    invoke-direct {p0, p1}, Landroid/support/v4/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 651
+    .line 778
     iput p2, p0, Landroid/support/design/widget/BottomSheetBehavior$SavedState;->state:I
 
-    .line 652
+    .line 779
     return-void
 .end method
 
@@ -73,14 +90,14 @@
     .registers 4
 
     .prologue
-    .line 656
-    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+    .line 783
+    invoke-super {p0, p1, p2}, Landroid/support/v4/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 657
+    .line 784
     iget v0, p0, Landroid/support/design/widget/BottomSheetBehavior$SavedState;->state:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 658
+    .line 785
     return-void
 .end method

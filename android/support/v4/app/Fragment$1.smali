@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 2045
+    .line 2052
     iput-object p1, p0, Landroid/support/v4/app/Fragment$1;->a:Landroid/support/v4/app/Fragment;
 
     invoke-direct {p0}, Landroid/support/v4/app/FragmentContainer;-><init>()V
@@ -32,14 +32,14 @@
     .registers 4
 
     .prologue
-    .line 2049
+    .line 2056
     iget-object v0, p0, Landroid/support/v4/app/Fragment$1;->a:Landroid/support/v4/app/Fragment;
 
     iget-object v0, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
 
     if-nez v0, :cond_f
 
-    .line 2050
+    .line 2057
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "Fragment does not have a view"
@@ -48,7 +48,7 @@
 
     throw v0
 
-    .line 2052
+    .line 2059
     :cond_f
     iget-object v0, p0, Landroid/support/v4/app/Fragment$1;->a:Landroid/support/v4/app/Fragment;
 
@@ -65,7 +65,7 @@
     .registers 2
 
     .prologue
-    .line 2057
+    .line 2064
     iget-object v0, p0, Landroid/support/v4/app/Fragment$1;->a:Landroid/support/v4/app/Fragment;
 
     iget-object v0, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;

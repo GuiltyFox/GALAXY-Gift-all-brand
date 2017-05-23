@@ -11,10 +11,10 @@
     .registers 3
 
     .prologue
-    .line 33
+    .line 37
     invoke-direct {p0, p1, p2}, Landroid/support/v7/view/menu/MenuWrapperICS;-><init>(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenu;)V
 
-    .line 34
+    .line 38
     return-void
 .end method
 
@@ -24,7 +24,7 @@
     .registers 2
 
     .prologue
-    .line 38
+    .line 42
     iget-object v0, p0, Landroid/support/v7/view/menu/SubMenuWrapperICS;->b:Ljava/lang/Object;
 
     check-cast v0, Landroid/support/v4/internal/view/SupportSubMenu;
@@ -36,14 +36,14 @@
     .registers 2
 
     .prologue
-    .line 73
+    .line 77
     invoke-virtual {p0}, Landroid/support/v7/view/menu/SubMenuWrapperICS;->b()Landroid/support/v4/internal/view/SupportSubMenu;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/support/v4/internal/view/SupportSubMenu;->clearHeader()V
 
-    .line 74
+    .line 78
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .registers 2
 
     .prologue
-    .line 90
+    .line 94
     invoke-virtual {p0}, Landroid/support/v7/view/menu/SubMenuWrapperICS;->b()Landroid/support/v4/internal/view/SupportSubMenu;
 
     move-result-object v0
@@ -71,14 +71,14 @@
     .registers 3
 
     .prologue
-    .line 55
+    .line 59
     invoke-virtual {p0}, Landroid/support/v7/view/menu/SubMenuWrapperICS;->b()Landroid/support/v4/internal/view/SupportSubMenu;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Landroid/support/v4/internal/view/SupportSubMenu;->setHeaderIcon(I)Landroid/view/SubMenu;
 
-    .line 56
+    .line 60
     return-object p0
 .end method
 
@@ -86,14 +86,14 @@
     .registers 3
 
     .prologue
-    .line 61
+    .line 65
     invoke-virtual {p0}, Landroid/support/v7/view/menu/SubMenuWrapperICS;->b()Landroid/support/v4/internal/view/SupportSubMenu;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Landroid/support/v4/internal/view/SupportSubMenu;->setHeaderIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
 
-    .line 62
+    .line 66
     return-object p0
 .end method
 
@@ -101,14 +101,14 @@
     .registers 3
 
     .prologue
-    .line 43
+    .line 47
     invoke-virtual {p0}, Landroid/support/v7/view/menu/SubMenuWrapperICS;->b()Landroid/support/v4/internal/view/SupportSubMenu;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Landroid/support/v4/internal/view/SupportSubMenu;->setHeaderTitle(I)Landroid/view/SubMenu;
 
-    .line 44
+    .line 48
     return-object p0
 .end method
 
@@ -116,14 +116,14 @@
     .registers 3
 
     .prologue
-    .line 49
+    .line 53
     invoke-virtual {p0}, Landroid/support/v7/view/menu/SubMenuWrapperICS;->b()Landroid/support/v4/internal/view/SupportSubMenu;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Landroid/support/v4/internal/view/SupportSubMenu;->setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/SubMenu;
 
-    .line 50
+    .line 54
     return-object p0
 .end method
 
@@ -131,14 +131,14 @@
     .registers 3
 
     .prologue
-    .line 67
+    .line 71
     invoke-virtual {p0}, Landroid/support/v7/view/menu/SubMenuWrapperICS;->b()Landroid/support/v4/internal/view/SupportSubMenu;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Landroid/support/v4/internal/view/SupportSubMenu;->setHeaderView(Landroid/view/View;)Landroid/view/SubMenu;
 
-    .line 68
+    .line 72
     return-object p0
 .end method
 
@@ -146,14 +146,14 @@
     .registers 3
 
     .prologue
-    .line 78
+    .line 82
     invoke-virtual {p0}, Landroid/support/v7/view/menu/SubMenuWrapperICS;->b()Landroid/support/v4/internal/view/SupportSubMenu;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Landroid/support/v4/internal/view/SupportSubMenu;->setIcon(I)Landroid/view/SubMenu;
 
-    .line 79
+    .line 83
     return-object p0
 .end method
 
@@ -161,13 +161,13 @@
     .registers 3
 
     .prologue
-    .line 84
+    .line 88
     invoke-virtual {p0}, Landroid/support/v7/view/menu/SubMenuWrapperICS;->b()Landroid/support/v4/internal/view/SupportSubMenu;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Landroid/support/v4/internal/view/SupportSubMenu;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
 
-    .line 85
+    .line 89
     return-object p0
 .end method

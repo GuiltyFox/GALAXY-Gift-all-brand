@@ -8,13 +8,19 @@
 
 .field contentCode:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001f9
+        value = 0x7f1001e3
+    .end annotation
+.end field
+
+.field layoutMyPointRoot:Landroid/widget/LinearLayout;
+    .annotation build Lbutterknife/InjectView;
+        value = 0x7f100536
     .end annotation
 .end field
 
 .field tvCode:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001fa
+        value = 0x7f1001e4
     .end annotation
 .end field
 
@@ -34,28 +40,28 @@
     .registers 4
 
     .prologue
-    .line 72
+    .line 77
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->C:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->D:Landroid/os/Bundle;
 
-    .line 74
+    .line 79
     new-instance v0, Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-direct {v0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;-><init>()V
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->D:Landroid/support/v4/app/Fragment;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->E:Landroid/support/v4/app/Fragment;
 
-    .line 75
-    iget-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->D:Landroid/support/v4/app/Fragment;
+    .line 80
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->E:Landroid/support/v4/app/Fragment;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->C:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->D:Landroid/os/Bundle;
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/Fragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 77
+    .line 82
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
@@ -64,19 +70,19 @@
 
     move-result-object v0
 
-    const v1, 0x7f100193
+    const v1, 0x7f100180
 
-    iget-object v2, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->D:Landroid/support/v4/app/Fragment;
+    iget-object v2, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->E:Landroid/support/v4/app/Fragment;
 
-    .line 78
+    .line 83
     invoke-virtual {v0, v1, v2}, Landroid/support/v4/app/FragmentTransaction;->a(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v0
 
-    .line 79
+    .line 84
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->b()I
 
-    .line 80
+    .line 85
     return-void
 .end method
 
@@ -84,7 +90,7 @@
     .registers 1
 
     .prologue
-    .line 83
+    .line 88
     return-void
 .end method
 
@@ -92,17 +98,17 @@
     .registers 7
 
     .prologue
-    .line 124
+    .line 129
     invoke-static {}, Lcom/bzbs/marketplace/model/url/UrlModel;->getUrlCode()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 125
+    .line 130
     new-instance v2, Lcom/loopj/android/http/RequestParams;
 
     invoke-direct {v2}, Lcom/loopj/android/http/RequestParams;-><init>()V
 
-    .line 126
+    .line 131
     const-string/jumbo v0, "token"
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
@@ -113,7 +119,7 @@
 
     invoke-virtual {v2, v0, v3}, Lcom/loopj/android/http/RequestParams;->add(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 127
+    .line 132
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -140,15 +146,15 @@
 
     move-result-object v0
 
-    .line 128
+    .line 133
     const-string/jumbo v3, "platform"
 
     invoke-virtual {v2, v3, v0}, Lcom/loopj/android/http/RequestParams;->add(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 129
+    .line 134
     sget-object v0, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
 
-    .line 130
+    .line 135
     const-string/jumbo v3, "os"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -171,10 +177,10 @@
 
     invoke-virtual {v2, v3, v0}, Lcom/loopj/android/http/RequestParams;->add(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 131
+    .line 136
     const-string/jumbo v0, ""
 
-    .line 133
+    .line 138
     :try_start_56
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -194,7 +200,7 @@
     :try_end_65
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_56 .. :try_end_65} :catch_a6
 
-    .line 137
+    .line 142
     :goto_65
     const-string/jumbo v3, "client_version"
 
@@ -222,7 +228,7 @@
 
     invoke-virtual {v2, v3, v0}, Lcom/loopj/android/http/RequestParams;->add(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 138
+    .line 143
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -231,12 +237,12 @@
 
     move-result-object v0
 
-    .line 139
+    .line 144
     const-string/jumbo v3, "carrier"
 
     invoke-virtual {v2, v3, v0}, Lcom/loopj/android/http/RequestParams;->add(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 141
+    .line 146
     new-instance v0, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
@@ -247,7 +253,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->a:Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
-    .line 142
+    .line 147
     iget-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->a:Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
     new-instance v1, Lcom/samsung/privilege/activity/RequestHelpActivity$1;
@@ -256,10 +262,10 @@
 
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;->a(Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;)V
 
-    .line 157
+    .line 162
     return-void
 
-    .line 134
+    .line 139
     :catch_a6
     move-exception v3
 
@@ -274,25 +280,25 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 55
-    if-nez p1, :cond_2c
+    .line 58
+    if-nez p1, :cond_33
 
-    .line 56
+    .line 59
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RequestHelpActivity;->b(Z)V
 
-    .line 58
+    .line 61
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->j()V
 
-    .line 60
+    .line 63
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->b(I)V
 
-    .line 61
+    .line 64
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->n()V
 
-    .line 62
-    const v0, 0x7f090057
+    .line 65
+    const v0, 0x7f090052
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->getString(I)Ljava/lang/String;
 
@@ -300,27 +306,34 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/samsung/privilege/activity/RequestHelpActivity;->a(Ljava/lang/String;Z)V
 
-    .line 63
-    const v0, 0x7f0202c3
+    .line 66
+    const v0, 0x7f02019b
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->a(I)V
 
-    .line 64
+    .line 67
     const-string/jumbo v0, "Request Help"
 
     invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;)V
 
-    .line 65
+    .line 68
     invoke-direct {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->h()V
 
-    .line 66
+    .line 69
     invoke-direct {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->o()V
 
-    .line 68
-    :cond_2c
+    .line 71
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->layoutMyPointRoot:Landroid/widget/LinearLayout;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+
+    .line 73
+    :cond_33
     invoke-direct {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->p()V
 
-    .line 69
+    .line 74
     return-void
 .end method
 
@@ -328,7 +341,7 @@
     .registers 3
 
     .prologue
-    .line 47
+    .line 50
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -337,8 +350,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    .line 50
-    const v0, 0x7f040050
+    .line 53
+    const v0, 0x7f040048
 
     return v0
 .end method
@@ -347,7 +360,7 @@
     .registers 1
 
     .prologue
-    .line 88
+    .line 93
     return-void
 .end method
 
@@ -355,21 +368,21 @@
     .registers 6
 
     .prologue
-    .line 101
+    .line 106
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
 
-    const v1, 0x7f100193
+    const v1, 0x7f100180
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentManager;->a(I)Landroid/support/v4/app/Fragment;
 
     move-result-object v0
 
-    .line 102
+    .line 107
     invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/app/Fragment;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 103
+    .line 108
     return-void
 .end method
 
@@ -377,10 +390,10 @@
     .registers 1
 
     .prologue
-    .line 112
+    .line 117
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->finish()V
 
-    .line 113
+    .line 118
     return-void
 .end method
 
@@ -388,10 +401,10 @@
     .registers 3
 
     .prologue
-    .line 92
+    .line 97
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->onResume()V
 
-    .line 93
+    .line 98
     iget-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     const-string/jumbo v1, "connectivity"
@@ -402,17 +415,17 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 94
+    .line 99
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v0
 
     if-nez v0, :cond_20
 
-    .line 95
+    .line 100
     iget-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v1, 0x7f090252
+    const v1, 0x7f0900db
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RequestHelpActivity;->getString(I)Ljava/lang/String;
 
@@ -420,7 +433,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->b(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 97
+    .line 102
     :cond_20
     return-void
 .end method
@@ -429,10 +442,10 @@
     .registers 2
 
     .prologue
-    .line 161
+    .line 166
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->onStop()V
 
-    .line 162
+    .line 167
     iget-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->a:Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
     if-eqz v0, :cond_c
@@ -441,7 +454,7 @@
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;->b()V
 
-    .line 163
+    .line 168
     :cond_c
     return-void
 .end method

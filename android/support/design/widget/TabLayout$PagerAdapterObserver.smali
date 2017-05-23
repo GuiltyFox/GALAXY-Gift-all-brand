@@ -8,25 +8,16 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/support/design/widget/TabLayout;)V
+.method constructor <init>(Landroid/support/design/widget/TabLayout;)V
     .registers 2
 
     .prologue
-    .line 2005
+    .line 2190
     iput-object p1, p0, Landroid/support/design/widget/TabLayout$PagerAdapterObserver;->this$0:Landroid/support/design/widget/TabLayout;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/design/widget/TabLayout;Landroid/support/design/widget/TabLayout$1;)V
-    .registers 3
-
-    .prologue
-    .line 2005
-    invoke-direct {p0, p1}, Landroid/support/design/widget/TabLayout$PagerAdapterObserver;-><init>(Landroid/support/design/widget/TabLayout;)V
-
+    .line 2191
     return-void
 .end method
 
@@ -36,13 +27,12 @@
     .registers 2
 
     .prologue
-    .line 2008
+    .line 2195
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$PagerAdapterObserver;->this$0:Landroid/support/design/widget/TabLayout;
 
-    # invokes: Landroid/support/design/widget/TabLayout;->populateFromPagerAdapter()V
-    invoke-static {v0}, Landroid/support/design/widget/TabLayout;->access$2700(Landroid/support/design/widget/TabLayout;)V
+    invoke-virtual {v0}, Landroid/support/design/widget/TabLayout;->populateFromPagerAdapter()V
 
-    .line 2009
+    .line 2196
     return-void
 .end method
 
@@ -50,12 +40,11 @@
     .registers 2
 
     .prologue
-    .line 2013
+    .line 2200
     iget-object v0, p0, Landroid/support/design/widget/TabLayout$PagerAdapterObserver;->this$0:Landroid/support/design/widget/TabLayout;
 
-    # invokes: Landroid/support/design/widget/TabLayout;->populateFromPagerAdapter()V
-    invoke-static {v0}, Landroid/support/design/widget/TabLayout;->access$2700(Landroid/support/design/widget/TabLayout;)V
+    invoke-virtual {v0}, Landroid/support/design/widget/TabLayout;->populateFromPagerAdapter()V
 
-    .line 2014
+    .line 2201
     return-void
 .end method

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 855
+    .line 853
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$9$1;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet$9;
 
     iput-object p2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$9$1;->a:Ljava/lang/String;
@@ -39,18 +39,18 @@
     .registers 3
 
     .prologue
-    .line 857
+    .line 855
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$9$1;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet$9;
 
     iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$9;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet;
 
-    iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->o:Landroid/widget/ProgressBar;
+    iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->n:Landroid/widget/ProgressBar;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 860
+    .line 858
     :try_start_b
     new-instance v0, Lorg/json/JSONArray;
 
@@ -62,7 +62,7 @@
 
     move-result-object v0
 
-    .line 862
+    .line 860
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$9$1;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet$9;
 
     iget-object v1, v1, Lcom/samsung/privilege/holder/DashboardHolder_wallet$9;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -71,11 +71,11 @@
     :try_end_1d
     .catch Ljava/lang/Exception; {:try_start_b .. :try_end_1d} :catch_1e
 
-    .line 866
+    .line 864
     :goto_1d
     return-void
 
-    .line 863
+    .line 861
     :catch_1e
     move-exception v0
 

@@ -69,7 +69,7 @@
 
     iget-object v3, p0, Landroid/support/v4/app/BackStackRecord$3;->d:Ljava/lang/Object;
 
-    invoke-static {v0, v1, v2, v3}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord;Landroid/support/v4/app/BackStackRecord$TransitionState;ILjava/lang/Object;)V
+    invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord$TransitionState;ILjava/lang/Object;)V
 
     .line 1457
     const/4 v0, 0x1

@@ -41,7 +41,7 @@
 .end method
 
 .method public inject(Lbutterknife/ButterKnife$Finder;Lcom/samsung/privilege/activity/RequestHelpActivity;Ljava/lang/Object;)V
-    .registers 8
+    .registers 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,9 +53,11 @@
     .end annotation
 
     .prologue
-    const v3, 0x7f1001fa
+    const v4, 0x7f100536
 
-    const v2, 0x7f1001f9
+    const v3, 0x7f1001e4
+
+    const v2, 0x7f1001e3
 
     .line 9
     invoke-super {p0, p1, p2, p3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$$ViewInjector;->inject(Lbutterknife/ButterKnife$Finder;Lcom/bzbs/marketplace/base/BaseAppCompatActivity;Ljava/lang/Object;)V
@@ -101,6 +103,26 @@
     iput-object v0, p2, Lcom/samsung/privilege/activity/RequestHelpActivity;->tvCode:Landroid/widget/TextView;
 
     .line 16
+    const-string/jumbo v0, "field \'layoutMyPointRoot\'"
+
+    invoke-virtual {p1, p3, v4, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    .line 17
+    const-string/jumbo v1, "field \'layoutMyPointRoot\'"
+
+    invoke-virtual {p1, v0, v4, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout;
+
+    iput-object v0, p2, Lcom/samsung/privilege/activity/RequestHelpActivity;->layoutMyPointRoot:Landroid/widget/LinearLayout;
+
+    .line 18
     return-void
 .end method
 
@@ -139,16 +161,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 19
+    .line 21
     invoke-super {p0, p1}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$$ViewInjector;->reset(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)V
 
-    .line 21
+    .line 23
     iput-object v0, p1, Lcom/samsung/privilege/activity/RequestHelpActivity;->contentCode:Landroid/widget/LinearLayout;
 
-    .line 22
+    .line 24
     iput-object v0, p1, Lcom/samsung/privilege/activity/RequestHelpActivity;->tvCode:Landroid/widget/TextView;
 
-    .line 23
+    .line 25
+    iput-object v0, p1, Lcom/samsung/privilege/activity/RequestHelpActivity;->layoutMyPointRoot:Landroid/widget/LinearLayout;
+
+    .line 26
     return-void
 .end method
 

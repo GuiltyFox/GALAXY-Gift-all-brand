@@ -35,7 +35,7 @@
     .line 313
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->y:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
+    iget-object v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->z:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
 
     const/16 v1, 0x8
 
@@ -63,7 +63,7 @@
     .line 300
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->y:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
+    iget-object v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->z:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
 
     const/16 v1, 0x8
 

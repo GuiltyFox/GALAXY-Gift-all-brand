@@ -12,7 +12,7 @@
     .registers 1
 
     .prologue
-    .line 2463
+    .line 2468
     const/4 v0, 0x3
 
     new-array v0, v0, [I

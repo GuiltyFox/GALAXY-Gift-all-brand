@@ -53,19 +53,17 @@
     .line 195
     iget-object v1, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->f:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_c
 
     .line 196
     new-instance v1, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2}, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;-><init>(Landroid/support/v7/widget/AppCompatBackgroundHelper$1;)V
+    invoke-direct {v1}, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;-><init>()V
 
     iput-object v1, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->f:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
     .line 198
-    :cond_d
+    :cond_c
     iget-object v1, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->f:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
     .line 199
@@ -79,7 +77,7 @@
     move-result-object v2
 
     .line 202
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_1d
 
     .line 203
     iput-boolean v0, v1, Landroid/support/v7/widget/TintInfo;->e:Z
@@ -88,7 +86,7 @@
     iput-object v2, v1, Landroid/support/v7/widget/TintInfo;->b:Landroid/content/res/ColorStateList;
 
     .line 206
-    :cond_1e
+    :cond_1d
     iget-object v2, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->a:Landroid/view/View;
 
     invoke-static {v2}, Landroid/support/v4/view/ViewCompat;->B(Landroid/view/View;)Landroid/graphics/PorterDuff$Mode;
@@ -96,7 +94,7 @@
     move-result-object v2
 
     .line 207
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_29
 
     .line 208
     iput-boolean v0, v1, Landroid/support/v7/widget/TintInfo;->d:Z
@@ -105,17 +103,17 @@
     iput-object v2, v1, Landroid/support/v7/widget/TintInfo;->c:Landroid/graphics/PorterDuff$Mode;
 
     .line 212
-    :cond_2a
+    :cond_29
     iget-boolean v2, v1, Landroid/support/v7/widget/TintInfo;->e:Z
 
-    if-nez v2, :cond_32
+    if-nez v2, :cond_31
 
     iget-boolean v2, v1, Landroid/support/v7/widget/TintInfo;->d:Z
 
-    if-eqz v2, :cond_3c
+    if-eqz v2, :cond_3b
 
     .line 213
-    :cond_32
+    :cond_31
     iget-object v2, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->a:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getDrawableState()[I
@@ -125,13 +123,13 @@
     invoke-static {p1, v1, v2}, Landroid/support/v7/widget/AppCompatDrawableManager;->tintDrawable(Landroid/graphics/drawable/Drawable;Landroid/support/v7/widget/TintInfo;[I)V
 
     .line 217
-    :goto_3b
+    :goto_3a
     return v0
 
-    :cond_3c
+    :cond_3b
     const/4 v0, 0x0
 
-    goto :goto_3b
+    goto :goto_3a
 .end method
 
 .method private d()Z
@@ -297,28 +295,28 @@
     .registers 4
 
     .prologue
-    const/4 v1, 0x0
-
     .line 96
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->e:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_b
 
     .line 97
     new-instance v0, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
-    invoke-direct {v0, v1}, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;-><init>(Landroid/support/v7/widget/AppCompatBackgroundHelper$1;)V
+    invoke-direct {v0}, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->e:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
     .line 102
-    :cond_c
+    :cond_b
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->e:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
     iput-object p1, v0, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;->a:Landroid/content/res/ColorStateList;
 
     .line 103
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->e:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
+
+    const/4 v1, 0x0
 
     iput-object v1, v0, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;->b:Landroid/content/res/ColorStateList;
 
@@ -351,19 +349,17 @@
     .line 142
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->e:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_b
 
     .line 143
     new-instance v0, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;-><init>(Landroid/support/v7/widget/AppCompatBackgroundHelper$1;)V
+    invoke-direct {v0}, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->e:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
     .line 145
-    :cond_c
+    :cond_b
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->e:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
     iput-object p1, v0, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;->c:Landroid/graphics/PorterDuff$Mode;
@@ -572,25 +568,23 @@
     .registers 4
 
     .prologue
-    const/4 v1, 0x0
-
     .line 177
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_1a
 
     .line 178
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->d:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_d
 
     .line 179
     new-instance v0, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
-    invoke-direct {v0, v1}, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;-><init>(Landroid/support/v7/widget/AppCompatBackgroundHelper$1;)V
+    invoke-direct {v0}, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->d:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
     .line 181
-    :cond_e
+    :cond_d
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->d:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
 
     iput-object p1, v0, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;->b:Landroid/content/res/ColorStateList;
@@ -603,17 +597,19 @@
     iput-boolean v1, v0, Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;->e:Z
 
     .line 186
-    :goto_17
+    :goto_16
     invoke-virtual {p0}, Landroid/support/v7/widget/AppCompatBackgroundHelper;->c()V
 
     .line 187
     return-void
 
     .line 184
-    :cond_1b
-    iput-object v1, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->d:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
+    :cond_1a
+    const/4 v0, 0x0
 
-    goto :goto_17
+    iput-object v0, p0, Landroid/support/v7/widget/AppCompatBackgroundHelper;->d:Landroid/support/v7/widget/AppCompatBackgroundHelper$BackgroundTintInfo;
+
+    goto :goto_16
 .end method
 
 .method c()V

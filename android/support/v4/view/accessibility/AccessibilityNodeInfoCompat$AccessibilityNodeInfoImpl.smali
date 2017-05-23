@@ -148,7 +148,13 @@
 .method public abstract j(Ljava/lang/Object;)Z
 .end method
 
+.method public abstract k(Ljava/lang/Object;Z)V
+.end method
+
 .method public abstract k(Ljava/lang/Object;)Z
+.end method
+
+.method public abstract l(Ljava/lang/Object;Z)V
 .end method
 
 .method public abstract l(Ljava/lang/Object;)Z

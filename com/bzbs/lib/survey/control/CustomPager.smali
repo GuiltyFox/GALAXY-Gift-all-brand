@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private a:Z
+.field private d:Z
 
 
 # direct methods
@@ -18,7 +18,7 @@
     .line 14
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/bzbs/lib/survey/control/CustomPager;->a:Z
+    iput-boolean v0, p0, Lcom/bzbs/lib/survey/control/CustomPager;->d:Z
 
     .line 15
     return-void
@@ -31,7 +31,7 @@
 
     .prologue
     .line 28
-    iget-boolean v0, p0, Lcom/bzbs/lib/survey/control/CustomPager;->a:Z
+    iget-boolean v0, p0, Lcom/bzbs/lib/survey/control/CustomPager;->d:Z
 
     if-eqz v0, :cond_9
 
@@ -55,7 +55,7 @@
 
     .prologue
     .line 19
-    iget-boolean v0, p0, Lcom/bzbs/lib/survey/control/CustomPager;->a:Z
+    iget-boolean v0, p0, Lcom/bzbs/lib/survey/control/CustomPager;->d:Z
 
     if-eqz v0, :cond_9
 
@@ -79,7 +79,7 @@
 
     .prologue
     .line 36
-    iput-boolean p1, p0, Lcom/bzbs/lib/survey/control/CustomPager;->a:Z
+    iput-boolean p1, p0, Lcom/bzbs/lib/survey/control/CustomPager;->d:Z
 
     .line 37
     return-void

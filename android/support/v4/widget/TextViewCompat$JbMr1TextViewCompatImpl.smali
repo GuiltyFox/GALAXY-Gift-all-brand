@@ -26,3 +26,15 @@
     .line 113
     return-void
 .end method
+
+.method public b(Landroid/widget/TextView;)[Landroid/graphics/drawable/Drawable;
+    .registers 3
+
+    .prologue
+    .line 133
+    invoke-static {p1}, Landroid/support/v4/widget/TextViewCompatJbMr1;->a(Landroid/widget/TextView;)[Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    return-object v0
+.end method

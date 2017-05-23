@@ -1,5 +1,5 @@
 .class public Landroid/support/design/widget/NavigationView$SavedState;
-.super Landroid/view/View$BaseSavedState;
+.super Landroid/support/v4/view/AbsSavedState;
 .source "NavigationView.java"
 
 
@@ -25,17 +25,19 @@
     .registers 1
 
     .prologue
-    .line 465
+    .line 478
     new-instance v0, Landroid/support/design/widget/NavigationView$SavedState$1;
 
     invoke-direct {v0}, Landroid/support/design/widget/NavigationView$SavedState$1;-><init>()V
 
+    .line 479
     invoke-static {v0}, Landroid/support/v4/os/ParcelableCompat;->a(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)Landroid/os/Parcelable$Creator;
 
     move-result-object v0
 
     sput-object v0, Landroid/support/design/widget/NavigationView$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
 
+    .line 478
     return-void
 .end method
 
@@ -43,17 +45,17 @@
     .registers 4
 
     .prologue
-    .line 451
-    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
+    .line 464
+    invoke-direct {p0, p1, p2}, Landroid/support/v4/view/AbsSavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    .line 452
+    .line 465
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->readBundle(Ljava/lang/ClassLoader;)Landroid/os/Bundle;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/design/widget/NavigationView$SavedState;->menuState:Landroid/os/Bundle;
 
-    .line 453
+    .line 466
     return-void
 .end method
 
@@ -61,10 +63,10 @@
     .registers 2
 
     .prologue
-    .line 456
-    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
+    .line 469
+    invoke-direct {p0, p1}, Landroid/support/v4/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 457
+    .line 470
     return-void
 .end method
 
@@ -74,14 +76,14 @@
     .registers 4
 
     .prologue
-    .line 461
-    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+    .line 474
+    invoke-super {p0, p1, p2}, Landroid/support/v4/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 462
+    .line 475
     iget-object v0, p0, Landroid/support/design/widget/NavigationView$SavedState;->menuState:Landroid/os/Bundle;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    .line 463
+    .line 476
     return-void
 .end method

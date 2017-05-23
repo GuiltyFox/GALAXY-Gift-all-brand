@@ -60,11 +60,11 @@
     move-result-object v1
 
     .line 521
-    const v2, 0x7f040185
+    const v2, 0x7f040119
 
     iget-object v0, p0, Lcom/samsung/privilege/util/AnimationPointGift$4;->a:Landroid/app/Activity;
 
-    const v3, 0x7f100521
+    const v3, 0x7f1002e1
 
     invoke-virtual {v0, v3}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
     move-result-object v9
 
     .line 523
-    const v0, 0x7f100490
+    const v0, 0x7f1002e2
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -86,7 +86,7 @@
     check-cast v1, Landroid/widget/RelativeLayout;
 
     .line 524
-    const v0, 0x7f1003bd
+    const v0, 0x7f1002e5
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -95,7 +95,7 @@
     check-cast v2, Landroid/widget/ImageView;
 
     .line 525
-    const v0, 0x7f1003bc
+    const v0, 0x7f1002e6
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -104,7 +104,7 @@
     check-cast v3, Landroid/widget/ImageView;
 
     .line 526
-    const v0, 0x7f1003bb
+    const v0, 0x7f1002e7
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -113,7 +113,7 @@
     check-cast v4, Landroid/widget/ImageView;
 
     .line 527
-    const v0, 0x7f1003b9
+    const v0, 0x7f1002e9
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -122,7 +122,7 @@
     check-cast v5, Landroid/widget/ImageView;
 
     .line 528
-    const v0, 0x7f1003ba
+    const v0, 0x7f1002e8
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -131,7 +131,7 @@
     check-cast v6, Landroid/widget/ImageView;
 
     .line 529
-    const v0, 0x7f100410
+    const v0, 0x7f1002f4
 
     invoke-virtual {v9, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -140,7 +140,7 @@
     check-cast v0, Landroid/widget/ImageView;
 
     .line 530
-    const v7, 0x7f100328
+    const v7, 0x7f1002e3
 
     invoke-virtual {v9, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -149,7 +149,7 @@
     check-cast v7, Landroid/widget/ImageView;
 
     .line 531
-    const v8, 0x7f100524
+    const v8, 0x7f1002f2
 
     invoke-virtual {v9, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -160,7 +160,7 @@
     .line 538
     iget-object v10, p0, Lcom/samsung/privilege/util/AnimationPointGift$4;->a:Landroid/app/Activity;
 
-    const v11, 0x7f050018
+    const v11, 0x7f05000e
 
     invoke-static {v10, v11}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -175,7 +175,7 @@
     if-le v8, v13, :cond_b8
 
     .line 542
-    const v8, 0x7f020222
+    const v8, 0x7f02011c
 
     invoke-virtual {v0, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -199,7 +199,7 @@
     invoke-virtual {v7, v12}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 549
-    const v0, 0x7f02021f
+    const v0, 0x7f020119
 
     invoke-virtual {v7, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -236,7 +236,7 @@
 
     .line 544
     :cond_b8
-    const v8, 0x7f020221
+    const v8, 0x7f02011b
 
     invoke-virtual {v0, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -262,7 +262,7 @@
     invoke-virtual {v7, v12}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 552
-    const v0, 0x7f020220
+    const v0, 0x7f02011a
 
     invoke-virtual {v7, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -288,7 +288,7 @@
     invoke-virtual {v7, v12}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 555
-    const v0, 0x7f020223
+    const v0, 0x7f02011d
 
     invoke-virtual {v7, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 

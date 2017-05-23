@@ -8,9 +8,9 @@
     .registers 2
 
     .prologue
-    .line 303
+    .line 317
     invoke-direct {p0, p1}, Landroid/support/design/internal/NavigationMenuPresenter$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 304
+    .line 318
     return-void
 .end method

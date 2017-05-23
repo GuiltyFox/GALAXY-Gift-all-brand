@@ -105,7 +105,7 @@
     return-object v0
 .end method
 
-.method public f(Landroid/graphics/drawable/Drawable;)Z
+.method public e(Landroid/graphics/drawable/Drawable;)Z
     .registers 3
 
     .prologue
@@ -117,7 +117,7 @@
     return v0
 .end method
 
-.method public g(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
+.method public f(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
     .registers 3
 
     .prologue
@@ -127,4 +127,15 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public g(Landroid/graphics/drawable/Drawable;)V
+    .registers 2
+
+    .prologue
+    .line 255
+    invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->d(Landroid/graphics/drawable/Drawable;)V
+
+    .line 256
+    return-void
 .end method

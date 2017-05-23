@@ -29,7 +29,7 @@
 
     .prologue
     .line 577
-    packed-switch p1, :pswitch_data_26
+    packed-switch p1, :pswitch_data_24
 
     .line 585
     :cond_3
@@ -44,9 +44,7 @@
     :pswitch_8
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ToolbarCallbackWrapper;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->c(Landroid/support/v7/app/ToolbarActionBar;)Landroid/support/v7/widget/DecorToolbar;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/ToolbarActionBar;->a:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->getMenu()Landroid/view/Menu;
 
@@ -70,14 +68,14 @@
     .line 581
     iget-object v1, p0, Landroid/support/v7/app/ToolbarActionBar$ToolbarCallbackWrapper;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v1, v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;Landroid/view/Menu;)Landroid/view/View;
+    invoke-virtual {v1, v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/view/Menu;)Landroid/view/View;
 
     move-result-object v0
 
     goto :goto_7
 
     .line 577
-    :pswitch_data_26
+    :pswitch_data_24
     .packed-switch 0x0
         :pswitch_8
     .end packed-switch
@@ -93,22 +91,18 @@
     move-result v0
 
     .line 568
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_18
 
     iget-object v1, p0, Landroid/support/v7/app/ToolbarActionBar$ToolbarCallbackWrapper;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v1}, Landroid/support/v7/app/ToolbarActionBar;->b(Landroid/support/v7/app/ToolbarActionBar;)Z
+    iget-boolean v1, v1, Landroid/support/v7/app/ToolbarActionBar;->b:Z
 
-    move-result v1
-
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_18
 
     .line 569
     iget-object v1, p0, Landroid/support/v7/app/ToolbarActionBar$ToolbarCallbackWrapper;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v1}, Landroid/support/v7/app/ToolbarActionBar;->c(Landroid/support/v7/app/ToolbarActionBar;)Landroid/support/v7/widget/DecorToolbar;
-
-    move-result-object v1
+    iget-object v1, v1, Landroid/support/v7/app/ToolbarActionBar;->a:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v1}, Landroid/support/v7/widget/DecorToolbar;->setMenuPrepared()V
 
@@ -117,9 +111,9 @@
 
     const/4 v2, 0x1
 
-    invoke-static {v1, v2}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;Z)Z
+    iput-boolean v2, v1, Landroid/support/v7/app/ToolbarActionBar;->b:Z
 
     .line 572
-    :cond_1d
+    :cond_18
     return v0
 .end method

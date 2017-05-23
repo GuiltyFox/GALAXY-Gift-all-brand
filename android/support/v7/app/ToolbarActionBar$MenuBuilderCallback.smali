@@ -11,25 +11,16 @@
 
 
 # direct methods
-.method private constructor <init>(Landroid/support/v7/app/ToolbarActionBar;)V
+.method constructor <init>(Landroid/support/v7/app/ToolbarActionBar;)V
     .registers 2
 
     .prologue
-    .line 642
+    .line 650
     iput-object p1, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v7/app/ToolbarActionBar;Landroid/support/v7/app/ToolbarActionBar$1;)V
-    .registers 3
-
-    .prologue
-    .line 642
-    invoke-direct {p0, p1}, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;-><init>(Landroid/support/v7/app/ToolbarActionBar;)V
-
+    .line 651
     return-void
 .end method
 
@@ -39,7 +30,7 @@
     .registers 4
 
     .prologue
-    .line 646
+    .line 655
     const/4 v0, 0x0
 
     return v0
@@ -51,49 +42,41 @@
     .prologue
     const/16 v3, 0x6c
 
-    .line 651
+    .line 660
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
+    iget-object v0, v0, Landroid/support/v7/app/ToolbarActionBar;->c:Landroid/view/Window$Callback;
 
-    move-result-object v0
+    if-eqz v0, :cond_19
 
-    if-eqz v0, :cond_1f
-
-    .line 652
+    .line 661
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->c(Landroid/support/v7/app/ToolbarActionBar;)Landroid/support/v7/widget/DecorToolbar;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/ToolbarActionBar;->a:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->isOverflowMenuShowing()Z
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1a
 
-    .line 653
+    .line 662
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/ToolbarActionBar;->c:Landroid/view/Window$Callback;
 
     invoke-interface {v0, v3, p1}, Landroid/view/Window$Callback;->onPanelClosed(ILandroid/view/Menu;)V
 
-    .line 659
-    :cond_1f
-    :goto_1f
+    .line 668
+    :cond_19
+    :goto_19
     return-void
 
-    .line 654
-    :cond_20
+    .line 663
+    :cond_1a
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/ToolbarActionBar;->c:Landroid/view/Window$Callback;
 
     const/4 v1, 0x0
 
@@ -103,16 +86,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_19
 
-    .line 656
+    .line 665
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/ToolbarActionBar;->c:Landroid/view/Window$Callback;
 
     invoke-interface {v0, v3, p1}, Landroid/view/Window$Callback;->onMenuOpened(ILandroid/view/Menu;)Z
 
-    goto :goto_1f
+    goto :goto_19
 .end method

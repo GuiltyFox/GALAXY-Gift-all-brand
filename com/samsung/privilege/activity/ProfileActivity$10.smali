@@ -56,7 +56,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->d:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v2, 0x7f090322
+    const v2, 0x7f09015b
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 

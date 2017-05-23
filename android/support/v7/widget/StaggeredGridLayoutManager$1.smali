@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 209
+    .line 215
     iput-object p1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$1;->a:Landroid/support/v7/widget/StaggeredGridLayoutManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,12 +35,11 @@
     .registers 2
 
     .prologue
-    .line 212
+    .line 218
     iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$1;->a:Landroid/support/v7/widget/StaggeredGridLayoutManager;
 
-    # invokes: Landroid/support/v7/widget/StaggeredGridLayoutManager;->checkForGaps()Z
-    invoke-static {v0}, Landroid/support/v7/widget/StaggeredGridLayoutManager;->access$100(Landroid/support/v7/widget/StaggeredGridLayoutManager;)Z
+    invoke-virtual {v0}, Landroid/support/v7/widget/StaggeredGridLayoutManager;->checkForGaps()Z
 
-    .line 213
+    .line 219
     return-void
 .end method

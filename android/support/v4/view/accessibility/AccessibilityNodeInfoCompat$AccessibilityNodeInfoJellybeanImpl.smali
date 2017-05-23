@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public h(Ljava/lang/Object;Z)V
+.method public j(Ljava/lang/Object;Z)V
     .registers 3
 
     .prologue
@@ -27,7 +27,7 @@
     return-void
 .end method
 
-.method public i(Ljava/lang/Object;Z)V
+.method public k(Ljava/lang/Object;Z)V
     .registers 3
 
     .prologue

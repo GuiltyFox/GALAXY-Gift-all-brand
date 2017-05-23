@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 703
+    .line 768
     iput-object p1, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 706
+    .line 771
     iget-object v1, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v2, 0x1
@@ -46,15 +46,15 @@
 
     move-result-object v1
 
-    .line 707
+    .line 772
     if-nez v1, :cond_b
 
-    .line 718
+    .line 783
     :cond_a
     :goto_a
     return-object v0
 
-    .line 712
+    .line 777
     :cond_b
     iget-object v2, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
@@ -70,7 +70,7 @@
 
     move-object v0, v1
 
-    .line 718
+    .line 783
     goto :goto_a
 .end method
 
@@ -80,25 +80,28 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 723
+    .line 788
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, p1, p2, v1}, Landroid/support/v7/widget/RecyclerView;->offsetPositionRecordsForRemove(IIZ)V
 
-    .line 724
+    .line 789
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     iput-boolean v1, v0, Landroid/support/v7/widget/RecyclerView;->mItemsAddedOrRemoved:Z
 
-    .line 725
+    .line 790
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mState:Landroid/support/v7/widget/RecyclerView$State;
 
-    # += operator for: Landroid/support/v7/widget/RecyclerView$State;->mDeletedInvisibleItemCountSincePreviousLayout:I
-    invoke-static {v0, p2}, Landroid/support/v7/widget/RecyclerView$State;->access$1712(Landroid/support/v7/widget/RecyclerView$State;I)I
+    iget v1, v0, Landroid/support/v7/widget/RecyclerView$State;->mDeletedInvisibleItemCountSincePreviousLayout:I
 
-    .line 726
+    add-int/2addr v1, p2
+
+    iput v1, v0, Landroid/support/v7/widget/RecyclerView$State;->mDeletedInvisibleItemCountSincePreviousLayout:I
+
+    .line 791
     return-void
 .end method
 
@@ -106,19 +109,19 @@
     .registers 6
 
     .prologue
-    .line 736
+    .line 801
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/support/v7/widget/RecyclerView;->viewRangeUpdate(IILjava/lang/Object;)V
 
-    .line 737
+    .line 802
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/support/v7/widget/RecyclerView;->mItemsChanged:Z
 
-    .line 738
+    .line 803
     return-void
 .end method
 
@@ -126,10 +129,10 @@
     .registers 2
 
     .prologue
-    .line 742
+    .line 807
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/RecyclerView$6;->c(Landroid/support/v7/widget/AdapterHelper$UpdateOp;)V
 
-    .line 743
+    .line 808
     return-void
 .end method
 
@@ -137,21 +140,21 @@
     .registers 5
 
     .prologue
-    .line 730
+    .line 795
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, p2, v1}, Landroid/support/v7/widget/RecyclerView;->offsetPositionRecordsForRemove(IIZ)V
 
-    .line 731
+    .line 796
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/support/v7/widget/RecyclerView;->mItemsAddedOrRemoved:Z
 
-    .line 732
+    .line 797
     return-void
 .end method
 
@@ -159,10 +162,10 @@
     .registers 2
 
     .prologue
-    .line 765
+    .line 830
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/RecyclerView$6;->c(Landroid/support/v7/widget/AdapterHelper$UpdateOp;)V
 
-    .line 766
+    .line 831
     return-void
 .end method
 
@@ -170,19 +173,19 @@
     .registers 5
 
     .prologue
-    .line 770
+    .line 835
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView;->offsetPositionRecordsForInsert(II)V
 
-    .line 771
+    .line 836
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/support/v7/widget/RecyclerView;->mItemsAddedOrRemoved:Z
 
-    .line 772
+    .line 837
     return-void
 .end method
 
@@ -190,17 +193,17 @@
     .registers 7
 
     .prologue
-    .line 746
+    .line 811
     iget v0, p1, Landroid/support/v7/widget/AdapterHelper$UpdateOp;->a:I
 
     packed-switch v0, :pswitch_data_42
 
-    .line 761
+    .line 826
     :goto_5
     :pswitch_5
     return-void
 
-    .line 748
+    .line 813
     :pswitch_6
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
@@ -216,7 +219,7 @@
 
     goto :goto_5
 
-    .line 751
+    .line 816
     :pswitch_14
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
@@ -232,7 +235,7 @@
 
     goto :goto_5
 
-    .line 754
+    .line 819
     :pswitch_22
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
@@ -250,7 +253,7 @@
 
     goto :goto_5
 
-    .line 758
+    .line 823
     :pswitch_32
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
@@ -268,7 +271,7 @@
 
     goto :goto_5
 
-    .line 746
+    .line 811
     nop
 
     :pswitch_data_42
@@ -288,18 +291,18 @@
     .registers 5
 
     .prologue
-    .line 776
+    .line 841
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView;->offsetPositionRecordsForMove(II)V
 
-    .line 778
+    .line 843
     iget-object v0, p0, Landroid/support/v7/widget/RecyclerView$6;->a:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/support/v7/widget/RecyclerView;->mItemsAddedOrRemoved:Z
 
-    .line 779
+    .line 844
     return-void
 .end method

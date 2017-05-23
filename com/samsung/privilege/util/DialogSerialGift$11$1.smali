@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 435
+    .line 447
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogSerialGift$11$1;->a:Lcom/samsung/privilege/util/DialogSerialGift$11;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
     .prologue
     const/16 v2, 0x8
 
-    .line 437
+    .line 449
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$11$1;->a:Lcom/samsung/privilege/util/DialogSerialGift$11;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogSerialGift$11;->d:Landroid/widget/TextView;
@@ -46,7 +46,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 438
+    .line 450
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$11$1;->a:Lcom/samsung/privilege/util/DialogSerialGift$11;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogSerialGift$11;->e:Landroid/widget/LinearLayout;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 439
+    .line 451
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$11$1;->a:Lcom/samsung/privilege/util/DialogSerialGift$11;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogSerialGift$11;->f:Landroid/widget/LinearLayout;
@@ -64,21 +64,21 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 440
+    .line 452
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$11$1;->a:Lcom/samsung/privilege/util/DialogSerialGift$11;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogSerialGift$11;->g:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 441
+    .line 453
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$11$1;->a:Lcom/samsung/privilege/util/DialogSerialGift$11;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogSerialGift$11;->h:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 443
+    .line 455
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$11$1;->a:Lcom/samsung/privilege/util/DialogSerialGift$11;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogSerialGift$11;->i:Landroid/widget/TextView;
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 444
+    .line 456
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$11$1;->a:Lcom/samsung/privilege/util/DialogSerialGift$11;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogSerialGift$11;->i:Landroid/widget/TextView;
@@ -102,11 +102,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 446
+    .line 458
     const/4 v0, 0x1
 
     invoke-static {v0}, Lcom/samsung/privilege/util/DialogSerialGift;->a(Z)Z
 
-    .line 447
+    .line 459
     return-void
 .end method

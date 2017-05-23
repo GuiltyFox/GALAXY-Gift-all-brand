@@ -7,25 +7,31 @@
 .method public abstract A(Landroid/view/View;)Z
 .end method
 
-.method public abstract B(Landroid/view/View;)Landroid/content/res/ColorStateList;
+.method public abstract B(Landroid/view/View;)Z
 .end method
 
-.method public abstract C(Landroid/view/View;)Landroid/graphics/PorterDuff$Mode;
+.method public abstract C(Landroid/view/View;)Landroid/content/res/ColorStateList;
 .end method
 
-.method public abstract D(Landroid/view/View;)V
+.method public abstract D(Landroid/view/View;)Landroid/graphics/PorterDuff$Mode;
 .end method
 
-.method public abstract E(Landroid/view/View;)Z
+.method public abstract E(Landroid/view/View;)V
 .end method
 
-.method public abstract F(Landroid/view/View;)F
+.method public abstract F(Landroid/view/View;)Z
 .end method
 
-.method public abstract G(Landroid/view/View;)Z
+.method public abstract G(Landroid/view/View;)F
 .end method
 
 .method public abstract H(Landroid/view/View;)Z
+.end method
+
+.method public abstract I(Landroid/view/View;)Z
+.end method
+
+.method public abstract J(Landroid/view/View;)Landroid/view/Display;
 .end method
 
 .method public abstract a(II)I
@@ -53,6 +59,9 @@
 .end method
 
 .method public abstract a(Landroid/view/View;Landroid/graphics/PorterDuff$Mode;)V
+.end method
+
+.method public abstract a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 .end method
 
 .method public abstract a(Landroid/view/View;Landroid/support/v4/view/AccessibilityDelegateCompat;)V
@@ -136,7 +145,13 @@
 .method public abstract g(Landroid/view/View;)I
 .end method
 
+.method public abstract g(Landroid/view/View;F)V
+.end method
+
 .method public abstract h(Landroid/view/View;)Landroid/view/ViewParent;
+.end method
+
+.method public abstract h(Landroid/view/View;F)V
 .end method
 
 .method public abstract i(Landroid/view/View;)I
@@ -163,29 +178,29 @@
 .method public abstract p(Landroid/view/View;)F
 .end method
 
-.method public abstract q(Landroid/view/View;)I
+.method public abstract q(Landroid/view/View;)Landroid/graphics/Matrix;
 .end method
 
 .method public abstract r(Landroid/view/View;)I
 .end method
 
-.method public abstract s(Landroid/view/View;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+.method public abstract s(Landroid/view/View;)I
 .end method
 
-.method public abstract t(Landroid/view/View;)I
+.method public abstract t(Landroid/view/View;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 .end method
 
-.method public abstract u(Landroid/view/View;)V
+.method public abstract u(Landroid/view/View;)I
 .end method
 
-.method public abstract v(Landroid/view/View;)F
+.method public abstract v(Landroid/view/View;)V
 .end method
 
-.method public abstract x(Landroid/view/View;)Z
+.method public abstract w(Landroid/view/View;)F
 .end method
 
-.method public abstract y(Landroid/view/View;)V
+.method public abstract y(Landroid/view/View;)Z
 .end method
 
-.method public abstract z(Landroid/view/View;)Z
+.method public abstract z(Landroid/view/View;)V
 .end method

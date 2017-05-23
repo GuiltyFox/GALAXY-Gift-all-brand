@@ -16,23 +16,23 @@
     .registers 4
 
     .prologue
-    .line 130
+    .line 129
     iput-object p1, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->a:Landroid/support/v4/widget/CircleImageView;
 
-    .line 131
+    .line 130
     invoke-direct {p0}, Landroid/graphics/drawable/shapes/OvalShape;-><init>()V
 
-    .line 132
+    .line 131
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->c:Landroid/graphics/Paint;
 
-    .line 133
-    invoke-static {p1, p2}, Landroid/support/v4/widget/CircleImageView;->a(Landroid/support/v4/widget/CircleImageView;I)I
+    .line 132
+    iput p2, p1, Landroid/support/v4/widget/CircleImageView;->a:I
 
-    .line 134
+    .line 133
     invoke-virtual {p0}, Landroid/support/v4/widget/CircleImageView$OvalShadow;->rect()Landroid/graphics/RectF;
 
     move-result-object v0
@@ -45,7 +45,7 @@
 
     invoke-direct {p0, v0}, Landroid/support/v4/widget/CircleImageView$OvalShadow;->a(I)V
 
-    .line 135
+    .line 134
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .registers 9
 
     .prologue
-    .line 152
+    .line 151
     new-instance v0, Landroid/graphics/RadialGradient;
 
     div-int/lit8 v1, p1, 0x2
@@ -66,10 +66,7 @@
 
     iget-object v3, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->a:Landroid/support/v4/widget/CircleImageView;
 
-    .line 153
-    invoke-static {v3}, Landroid/support/v4/widget/CircleImageView;->a(Landroid/support/v4/widget/CircleImageView;)I
-
-    move-result v3
+    iget v3, v3, Landroid/support/v4/widget/CircleImageView;->a:I
 
     int-to-float v3, v3
 
@@ -77,7 +74,7 @@
 
     new-array v4, v4, [I
 
-    fill-array-data v4, :array_26
+    fill-array-data v4, :array_24
 
     const/4 v5, 0x0
 
@@ -87,20 +84,20 @@
 
     iput-object v0, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->b:Landroid/graphics/RadialGradient;
 
-    .line 155
+    .line 154
     iget-object v0, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->c:Landroid/graphics/Paint;
 
     iget-object v1, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->b:Landroid/graphics/RadialGradient;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 156
+    .line 155
     return-void
 
-    .line 153
+    .line 151
     nop
 
-    :array_26
+    :array_24
     .array-data 4
         0x3d000000    # 0.03125f
         0x0
@@ -113,21 +110,21 @@
     .registers 9
 
     .prologue
-    .line 145
+    .line 144
     iget-object v0, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->a:Landroid/support/v4/widget/CircleImageView;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/CircleImageView;->getWidth()I
 
     move-result v0
 
-    .line 146
+    .line 145
     iget-object v1, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->a:Landroid/support/v4/widget/CircleImageView;
 
     invoke-virtual {v1}, Landroid/support/v4/widget/CircleImageView;->getHeight()I
 
     move-result v1
 
-    .line 147
+    .line 146
     div-int/lit8 v2, v0, 0x2
 
     int-to-float v2, v2
@@ -144,7 +141,7 @@
 
     invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 148
+    .line 147
     div-int/lit8 v2, v0, 0x2
 
     int-to-float v2, v2
@@ -157,9 +154,7 @@
 
     iget-object v3, p0, Landroid/support/v4/widget/CircleImageView$OvalShadow;->a:Landroid/support/v4/widget/CircleImageView;
 
-    invoke-static {v3}, Landroid/support/v4/widget/CircleImageView;->a(Landroid/support/v4/widget/CircleImageView;)I
-
-    move-result v3
+    iget v3, v3, Landroid/support/v4/widget/CircleImageView;->a:I
 
     sub-int/2addr v0, v3
 
@@ -167,7 +162,7 @@
 
     invoke-virtual {p1, v2, v1, v0, p2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 149
+    .line 148
     return-void
 .end method
 
@@ -175,14 +170,14 @@
     .registers 4
 
     .prologue
-    .line 139
+    .line 138
     invoke-super {p0, p1, p2}, Landroid/graphics/drawable/shapes/OvalShape;->onResize(FF)V
 
-    .line 140
+    .line 139
     float-to-int v0, p1
 
     invoke-direct {p0, v0}, Landroid/support/v4/widget/CircleImageView$OvalShadow;->a(I)V
 
-    .line 141
+    .line 140
     return-void
 .end method

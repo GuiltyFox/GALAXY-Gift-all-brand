@@ -8,15 +8,21 @@
     .registers 1
 
     .prologue
-    .line 83
+    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 88
+    .line 90
     return-void
 .end method
 
 
 # virtual methods
+.method abstract addListener(Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;)V
+.end method
+
+.method abstract addUpdateListener(Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;)V
+.end method
+
 .method abstract cancel()V
 .end method
 
@@ -38,7 +44,7 @@
 .method abstract isRunning()Z
 .end method
 
-.method abstract setDuration(I)V
+.method abstract setDuration(J)V
 .end method
 
 .method abstract setFloatValues(FF)V
@@ -48,12 +54,6 @@
 .end method
 
 .method abstract setInterpolator(Landroid/view/animation/Interpolator;)V
-.end method
-
-.method abstract setListener(Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;)V
-.end method
-
-.method abstract setUpdateListener(Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;)V
 .end method
 
 .method abstract start()V

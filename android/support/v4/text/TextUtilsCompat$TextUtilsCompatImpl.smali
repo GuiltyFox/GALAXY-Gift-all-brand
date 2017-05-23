@@ -4,23 +4,14 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>()V
     .registers 1
 
     .prologue
-    .line 27
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method synthetic constructor <init>(Landroid/support/v4/text/TextUtilsCompat$1;)V
-    .registers 2
-
-    .prologue
-    .line 27
-    invoke-direct {p0}, Landroid/support/v4/text/TextUtilsCompat$TextUtilsCompatImpl;-><init>()V
-
+    .line 29
     return-void
 .end method
 
@@ -30,7 +21,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 90
+    .line 93
     invoke-virtual {p0, p0}, Ljava/util/Locale;->getDisplayName(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
@@ -45,17 +36,17 @@
 
     packed-switch v1, :pswitch_data_14
 
-    .line 97
+    .line 100
     :goto_10
     return v0
 
-    .line 93
+    .line 96
     :pswitch_11
     const/4 v0, 0x1
 
     goto :goto_10
 
-    .line 90
+    .line 93
     nop
 
     :pswitch_data_14
@@ -71,8 +62,8 @@
     .registers 4
 
     .prologue
-    .line 63
-    if-eqz p1, :cond_2b
+    .line 66
+    if-eqz p1, :cond_27
 
     sget-object v0, Landroid/support/v4/text/TextUtilsCompat;->a:Ljava/util/Locale;
 
@@ -80,55 +71,51 @@
 
     move-result v0
 
-    if-nez v0, :cond_2b
+    if-nez v0, :cond_27
 
-    .line 64
+    .line 67
     invoke-static {p1}, Landroid/support/v4/text/ICUCompat;->a(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 65
+    .line 68
     if-nez v0, :cond_15
 
     invoke-static {p1}, Landroid/support/v4/text/TextUtilsCompat$TextUtilsCompatImpl;->b(Ljava/util/Locale;)I
 
     move-result v0
 
-    .line 74
+    .line 77
     :goto_14
     return v0
 
-    .line 69
+    .line 72
     :cond_15
-    invoke-static {}, Landroid/support/v4/text/TextUtilsCompat;->a()Ljava/lang/String;
-
-    move-result-object v1
+    sget-object v1, Landroid/support/v4/text/TextUtilsCompat;->b:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_25
 
-    .line 70
-    invoke-static {}, Landroid/support/v4/text/TextUtilsCompat;->b()Ljava/lang/String;
+    sget-object v1, Landroid/support/v4/text/TextUtilsCompat;->c:Ljava/lang/String;
 
-    move-result-object v1
-
+    .line 73
     invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_27
 
-    .line 71
-    :cond_29
+    .line 74
+    :cond_25
     const/4 v0, 0x1
 
     goto :goto_14
 
-    .line 74
-    :cond_2b
+    .line 77
+    :cond_27
     const/4 v0, 0x0
 
     goto :goto_14

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 655
+    .line 653
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$7$1;->a:Lcom/samsung/privilege/holder/DashboardHolder_wallet$7;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 664
+    .line 662
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 669
+    .line 667
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .registers 4
 
     .prologue
-    .line 658
+    .line 656
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$7$1;->a:Lcom/samsung/privilege/holder/DashboardHolder_wallet$7;
 
     iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$7;->c:Landroid/view/View;
@@ -60,6 +60,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 659
+    .line 657
     return-void
 .end method

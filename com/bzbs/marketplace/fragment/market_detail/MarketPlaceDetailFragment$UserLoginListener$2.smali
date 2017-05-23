@@ -51,7 +51,7 @@
     move-result-object v0
 
     .line 747
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_35
 
     const-string/jumbo v1, ""
 
@@ -59,7 +59,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3d
+    if-nez v0, :cond_35
 
     .line 748
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener$2;->b:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;
@@ -93,18 +93,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3d
-
-    .line 752
-    iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener$2;->b:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;
-
-    iget-object v0, v0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->onSubmit(Landroid/view/View;)V
+    if-eqz v0, :cond_35
 
     .line 755
-    :cond_3d
+    :cond_35
     return-void
 .end method

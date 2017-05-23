@@ -44,7 +44,7 @@
     .registers 4
 
     .prologue
-    .line 193
+    .line 133
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -55,7 +55,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    .line 195
+    .line 135
     mul-float/2addr v0, p1
 
     const/high16 v1, 0x3f000000    # 0.5f
@@ -112,7 +112,7 @@
     :goto_1c
     new-instance v0, Landroid/app/Dialog;
 
-    const v1, 0x7f0c0106
+    const v1, 0x7f0c00fe
 
     invoke-direct {v0, p0, v1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -121,14 +121,14 @@
     .line 48
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    const v1, 0x7f04013d
+    const v1, 0x7f0400ce
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 50
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    const v1, 0x7f100280
+    const v1, 0x7f100460
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -136,15 +136,15 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 52
+    .line 51
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 55
+    .line 53
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    const v1, 0x7f100282
+    const v1, 0x7f1002db
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -152,7 +152,7 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 71
+    .line 55
     new-instance v4, Landroid/widget/LinearLayout$LayoutParams;
 
     invoke-static {p0, v3}, Lcom/samsung/privilege/util/DialogWelcome;->a(Landroid/content/Context;F)I
@@ -165,7 +165,7 @@
 
     invoke-direct {v4, v1, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 72
+    .line 56
     invoke-static {p0, v6}, Lcom/samsung/privilege/util/DialogWelcome;->a(Landroid/content/Context;F)I
 
     move-result v1
@@ -184,21 +184,21 @@
 
     invoke-virtual {v4, v1, v3, v5, v6}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 106
+    .line 58
     const/4 v5, 0x4
 
-    .line 107
+    .line 59
     new-array v1, v5, [Ljava/lang/Integer;
 
     sput-object v1, Lcom/samsung/privilege/util/DialogWelcome;->c:[Ljava/lang/Integer;
 
     move v3, v2
 
-    .line 108
+    .line 60
     :goto_6e
     if-ge v3, v5, :cond_d3
 
-    .line 109
+    .line 61
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -233,7 +233,7 @@
 
     move-result v1
 
-    .line 110
+    .line 62
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v6
@@ -246,7 +246,7 @@
 
     if-eqz v6, :cond_c7
 
-    .line 111
+    .line 63
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -281,7 +281,7 @@
 
     move-result v1
 
-    .line 113
+    .line 65
     :cond_c7
     sget-object v6, Lcom/samsung/privilege/util/DialogWelcome;->c:[Ljava/lang/Integer;
 
@@ -291,14 +291,14 @@
 
     aput-object v1, v6, v3
 
-    .line 108
+    .line 60
     add-int/lit8 v1, v3, 0x1
 
     move v3, v1
 
     goto :goto_6e
 
-    .line 116
+    .line 68
     :cond_d3
     sget-object v1, Lcom/samsung/privilege/util/DialogWelcome;->c:[Ljava/lang/Integer;
 
@@ -310,7 +310,7 @@
 
     move v1, v2
 
-    .line 117
+    .line 69
     :goto_db
     sget-object v5, Lcom/samsung/privilege/util/DialogWelcome;->c:[Ljava/lang/Integer;
 
@@ -320,54 +320,54 @@
 
     if-ge v1, v5, :cond_109
 
-    .line 118
+    .line 70
     new-instance v5, Landroid/widget/ImageView;
 
     invoke-direct {v5, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     aput-object v5, v3, v1
 
-    .line 119
+    .line 71
     aget-object v5, v3, v1
 
     invoke-virtual {v5, v4}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 120
+    .line 72
     if-nez v1, :cond_100
 
-    .line 121
+    .line 73
     aget-object v5, v3, v1
 
-    const v6, 0x7f02034f
+    const v6, 0x7f020187
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 125
+    .line 77
     :goto_f8
     aget-object v5, v3, v1
 
     invoke-virtual {v0, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 117
+    .line 69
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_db
 
-    .line 123
+    .line 75
     :cond_100
     aget-object v5, v3, v1
 
-    const v6, 0x7f02034d
+    const v6, 0x7f020188
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_f8
 
-    .line 128
+    .line 80
     :cond_109
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    const v1, 0x7f100281
+    const v1, 0x7f100461
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -375,10 +375,10 @@
 
     check-cast v0, Landroid/support/v4/view/ViewPager;
 
-    .line 129
+    .line 81
     invoke-virtual {v0, v2}, Landroid/support/v4/view/ViewPager;->setOffscreenPageLimit(I)V
 
-    .line 130
+    .line 82
     new-instance v1, Lcom/samsung/privilege/util/DialogWelcome$QTPagerAdapter;
 
     sget-object v2, Lcom/samsung/privilege/util/DialogWelcome;->c:[Ljava/lang/Integer;
@@ -387,14 +387,14 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->a(Landroid/support/v4/view/PagerAdapter;)V
 
-    .line 132
+    .line 84
     new-instance v1, Lcom/samsung/privilege/util/DialogWelcome$1;
 
     invoke-direct {v1, p1, p0, v3}, Lcom/samsung/privilege/util/DialogWelcome$1;-><init>(Landroid/os/Handler;Landroid/content/Context;[Landroid/widget/ImageView;)V
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->a(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
-    .line 183
+    .line 123
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -405,12 +405,12 @@
 
     move-result-object v0
 
-    .line 184
+    .line 124
     const/16 v1, 0x11
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 185
+    .line 125
     sget-object v1, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -419,12 +419,12 @@
 
     invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 187
+    .line 127
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 
-    .line 189
+    .line 129
     :cond_145
     return-void
 

@@ -20,10 +20,10 @@
     .registers 2
 
     .prologue
-    .line 638
+    .line 644
     invoke-direct {p0, p1}, Landroid/support/v4/util/LruCache;-><init>(I)V
 
-    .line 639
+    .line 645
     return-void
 .end method
 
@@ -31,11 +31,11 @@
     .registers 4
 
     .prologue
-    .line 650
-    .line 651
+    .line 656
+    .line 657
     add-int/lit8 v0, p0, 0x1f
 
-    .line 652
+    .line 658
     mul-int/lit8 v0, v0, 0x1f
 
     invoke-virtual {p1}, Landroid/graphics/PorterDuff$Mode;->hashCode()I
@@ -44,7 +44,7 @@
 
     add-int/2addr v0, v1
 
-    .line 653
+    .line 659
     return v0
 .end method
 
@@ -54,7 +54,7 @@
     .registers 4
 
     .prologue
-    .line 642
+    .line 648
     invoke-static {p1, p2}, Landroid/support/v7/widget/AppCompatDrawableManager$ColorFilterLruCache;->b(ILandroid/graphics/PorterDuff$Mode;)I
 
     move-result v0
@@ -76,7 +76,7 @@
     .registers 5
 
     .prologue
-    .line 646
+    .line 652
     invoke-static {p1, p2}, Landroid/support/v7/widget/AppCompatDrawableManager$ColorFilterLruCache;->b(ILandroid/graphics/PorterDuff$Mode;)I
 
     move-result v0

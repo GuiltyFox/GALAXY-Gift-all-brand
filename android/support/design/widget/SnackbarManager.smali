@@ -6,7 +6,7 @@
 # static fields
 .field private static final LONG_DURATION_MS:I = 0xabe
 
-.field private static final MSG_TIMEOUT:I = 0x0
+.field static final MSG_TIMEOUT:I = 0x0
 
 .field private static final SHORT_DURATION_MS:I = 0x5dc
 
@@ -57,25 +57,12 @@
     return-void
 .end method
 
-.method static synthetic access$000(Landroid/support/design/widget/SnackbarManager;Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)V
-    .registers 2
-
-    .prologue
-    .line 28
-    invoke-direct {p0, p1}, Landroid/support/design/widget/SnackbarManager;->handleTimeout(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)V
-
-    return-void
-.end method
-
 .method private cancelSnackbarLocked(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;I)Z
     .registers 5
 
     .prologue
     .line 198
-    # getter for: Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->callback:Ljava/lang/ref/WeakReference;
-    invoke-static {p1}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$200(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)Ljava/lang/ref/WeakReference;
-
-    move-result-object v0
+    iget-object v0, p1, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->callback:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -84,7 +71,7 @@
     check-cast v0, Landroid/support/design/widget/SnackbarManager$Callback;
 
     .line 199
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_14
 
     .line 201
     iget-object v1, p0, Landroid/support/design/widget/SnackbarManager;->mHandler:Landroid/os/Handler;
@@ -98,13 +85,13 @@
     const/4 v0, 0x1
 
     .line 205
-    :goto_15
+    :goto_13
     return v0
 
-    :cond_16
+    :cond_14
     const/4 v0, 0x0
 
-    goto :goto_15
+    goto :goto_13
 .end method
 
 .method static getInstance()Landroid/support/design/widget/SnackbarManager;
@@ -128,49 +115,6 @@
     sget-object v0, Landroid/support/design/widget/SnackbarManager;->sSnackbarManager:Landroid/support/design/widget/SnackbarManager;
 
     return-object v0
-.end method
-
-.method private handleTimeout(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)V
-    .registers 4
-
-    .prologue
-    .line 233
-    iget-object v1, p0, Landroid/support/design/widget/SnackbarManager;->mLock:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 234
-    :try_start_3
-    iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
-
-    if-eq v0, p1, :cond_b
-
-    iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mNextSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
-
-    if-ne v0, p1, :cond_f
-
-    .line 235
-    :cond_b
-    const/4 v0, 0x2
-
-    invoke-direct {p0, p1, v0}, Landroid/support/design/widget/SnackbarManager;->cancelSnackbarLocked(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;I)Z
-
-    .line 237
-    :cond_f
-    monitor-exit v1
-
-    .line 238
-    return-void
-
-    .line 237
-    :catchall_11
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_13
-    .catchall {:try_start_3 .. :try_end_13} :catchall_11
-
-    throw v0
 .end method
 
 .method private isCurrentSnackbarLocked(Landroid/support/design/widget/SnackbarManager$Callback;)Z
@@ -234,40 +178,31 @@
 
     .prologue
     .line 217
-    # getter for: Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
-    invoke-static {p1}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$100(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)I
-
-    move-result v0
+    iget v0, p1, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
 
     const/4 v1, -0x2
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_6
 
     .line 230
-    :goto_7
+    :goto_5
     return-void
 
     .line 222
-    :cond_8
+    :cond_6
     const/16 v0, 0xabe
 
     .line 223
-    # getter for: Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
-    invoke-static {p1}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$100(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)I
+    iget v1, p1, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
 
-    move-result v1
-
-    if-lez v1, :cond_27
+    if-lez v1, :cond_21
 
     .line 224
-    # getter for: Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
-    invoke-static {p1}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$100(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)I
-
-    move-result v0
+    iget v0, p1, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
 
     .line 228
-    :cond_14
-    :goto_14
+    :cond_e
+    :goto_e
     iget-object v1, p0, Landroid/support/design/widget/SnackbarManager;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, p1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
@@ -287,23 +222,20 @@
 
     invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    goto :goto_7
+    goto :goto_5
 
     .line 225
-    :cond_27
-    # getter for: Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
-    invoke-static {p1}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$100(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)I
-
-    move-result v1
+    :cond_21
+    iget v1, p1, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
 
     const/4 v2, -0x1
 
-    if-ne v1, v2, :cond_14
+    if-ne v1, v2, :cond_e
 
     .line 226
     const/16 v0, 0x5dc
 
-    goto :goto_14
+    goto :goto_e
 .end method
 
 .method private showNextSnackbarLocked()V
@@ -315,7 +247,7 @@
     .line 183
     iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mNextSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1a
 
     .line 184
     iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mNextSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
@@ -328,10 +260,7 @@
     .line 187
     iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
-    # getter for: Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->callback:Ljava/lang/ref/WeakReference;
-    invoke-static {v0}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$200(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)Ljava/lang/ref/WeakReference;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->callback:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -340,21 +269,21 @@
     check-cast v0, Landroid/support/design/widget/SnackbarManager$Callback;
 
     .line 188
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1b
 
     .line 189
     invoke-interface {v0}, Landroid/support/design/widget/SnackbarManager$Callback;->show()V
 
     .line 195
-    :cond_1c
-    :goto_1c
+    :cond_1a
+    :goto_1a
     return-void
 
     .line 192
-    :cond_1d
+    :cond_1b
     iput-object v1, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
-    goto :goto_1c
+    goto :goto_1a
 .end method
 
 
@@ -453,6 +382,49 @@
     monitor-exit v1
     :try_end_1e
     .catchall {:try_start_3 .. :try_end_1e} :catchall_1c
+
+    throw v0
+.end method
+
+.method handleTimeout(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)V
+    .registers 4
+
+    .prologue
+    .line 233
+    iget-object v1, p0, Landroid/support/design/widget/SnackbarManager;->mLock:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 234
+    :try_start_3
+    iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
+
+    if-eq v0, p1, :cond_b
+
+    iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mNextSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
+
+    if-ne v0, p1, :cond_f
+
+    .line 235
+    :cond_b
+    const/4 v0, 0x2
+
+    invoke-direct {p0, p1, v0}, Landroid/support/design/widget/SnackbarManager;->cancelSnackbarLocked(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;I)Z
+
+    .line 237
+    :cond_f
+    monitor-exit v1
+
+    .line 238
+    return-void
+
+    .line 237
+    :catchall_11
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_13
+    .catchall {:try_start_3 .. :try_end_13} :catchall_11
 
     throw v0
 .end method
@@ -677,13 +649,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1b
 
     .line 74
     iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
-    # setter for: Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
-    invoke-static {v0, p1}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$102(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;I)I
+    iput p1, v0, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
 
     .line 78
     iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mHandler:Landroid/os/Handler;
@@ -701,28 +672,27 @@
     monitor-exit v1
 
     .line 100
-    :goto_1b
+    :goto_1a
     return-void
 
     .line 81
-    :cond_1c
+    :cond_1b
     invoke-direct {p0, p2}, Landroid/support/design/widget/SnackbarManager;->isNextSnackbarLocked(Landroid/support/design/widget/SnackbarManager$Callback;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_37
 
     .line 83
     iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mNextSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
-    # setter for: Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
-    invoke-static {v0, p1}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$102(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;I)I
+    iput p1, v0, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
 
     .line 89
-    :goto_27
+    :goto_25
     iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_3f
 
     iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
@@ -732,36 +702,36 @@
 
     move-result v0
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_3f
 
     .line 92
     monitor-exit v1
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 99
-    :catchall_36
+    :catchall_34
     move-exception v0
 
     monitor-exit v1
-    :try_end_38
-    .catchall {:try_start_3 .. :try_end_38} :catchall_36
+    :try_end_36
+    .catchall {:try_start_3 .. :try_end_36} :catchall_34
 
     throw v0
 
     .line 86
-    :cond_39
-    :try_start_39
+    :cond_37
+    :try_start_37
     new-instance v0, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
     invoke-direct {v0, p1, p2}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;-><init>(ILandroid/support/design/widget/SnackbarManager$Callback;)V
 
     iput-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mNextSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
-    goto :goto_27
+    goto :goto_25
 
     .line 95
-    :cond_41
+    :cond_3f
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
@@ -771,8 +741,8 @@
 
     .line 99
     monitor-exit v1
-    :try_end_48
-    .catchall {:try_start_39 .. :try_end_48} :catchall_36
+    :try_end_46
+    .catchall {:try_start_37 .. :try_end_46} :catchall_34
 
-    goto :goto_1b
+    goto :goto_1a
 .end method

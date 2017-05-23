@@ -43,15 +43,15 @@
     .end annotation
 
     .prologue
-    .line 2148
+    .line 2149
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;-><init>()V
 
-    .line 2149
+    .line 2150
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->a:Ljava/util/List;
 
-    .line 2150
+    .line 2151
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .registers 3
 
     .prologue
-    .line 2154
+    .line 2155
     :try_start_0
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->a:Ljava/util/List;
 
@@ -73,15 +73,15 @@
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_8} :catch_9
 
-    .line 2156
+    .line 2157
     :goto_8
     return-object v0
 
-    .line 2155
+    .line 2156
     :catch_9
     move-exception v0
 
-    .line 2156
+    .line 2157
     const/4 v0, 0x0
 
     goto :goto_8
@@ -91,7 +91,7 @@
     .registers 6
 
     .prologue
-    .line 2166
+    .line 2167
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -108,12 +108,12 @@
 
     move-result-object v0
 
-    .line 2167
+    .line 2168
     new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;
 
     invoke-direct {v1, p0, v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;Landroid/view/View;)V
 
-    .line 2168
+    .line 2169
     return-object v1
 .end method
 
@@ -121,7 +121,7 @@
     .registers 10
 
     .prologue
-    .line 2174
+    .line 2175
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -130,33 +130,33 @@
 
     check-cast v0, Lcom/bzbs/bean/Campaign;
 
-    .line 2186
+    .line 2187
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;->d:Landroid/widget/TextView;
 
     iget-object v2, v0, Lcom/bzbs/bean/Campaign;->AgencyName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2187
+    .line 2188
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;->e:Landroid/widget/TextView;
 
     iget-object v2, v0, Lcom/bzbs/bean/Campaign;->Name:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2189
+    .line 2190
     iget v1, v0, Lcom/bzbs/bean/Campaign;->DayProceed:I
 
     const/4 v2, 0x2
 
     if-gt v1, v2, :cond_c3
 
-    .line 2190
+    .line 2191
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;->f:Landroid/widget/TextView;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v3, 0x7f0900af
+    const v3, 0x7f090067
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -164,14 +164,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2191
+    .line 2192
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;->f:Landroid/widget/TextView;
 
     sget v2, Lcom/bzbs/data/AppSetting;->e:I
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2202
+    .line 2203
     :goto_30
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -185,17 +185,17 @@
 
     if-eqz v1, :cond_12e
 
-    .line 2203
+    .line 2204
     new-instance v2, Ljava/text/DecimalFormat;
 
     const-string/jumbo v1, "#,###,###"
 
     invoke-direct {v2, v1}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
-    .line 2205
+    .line 2206
     const-string/jumbo v1, ""
 
-    .line 2207
+    .line 2208
     :try_start_47
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -203,7 +203,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v5, 0x7f0900d2
+    const v5, 0x7f09007d
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -235,20 +235,20 @@
 
     move-result-object v1
 
-    .line 2212
+    .line 2213
     :goto_6e
     iget-object v2, p1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;->g:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2213
+    .line 2214
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;->g:Landroid/widget/TextView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2218
+    .line 2219
     :goto_79
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -268,7 +268,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0202dc
+    const v2, 0x7f0201b2
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -284,7 +284,7 @@
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 2220
+    .line 2221
     const-string/jumbo v1, "Gift Campaign Details"
 
     const-string/jumbo v2, "View Relate Deal"
@@ -317,10 +317,10 @@
 
     invoke-static {v1, v2, v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2221
+    .line 2222
     return-void
 
-    .line 2193
+    .line 2194
     :cond_c3
     iget-object v1, v0, Lcom/bzbs/bean/Campaign;->ExpireDate:Ljava/lang/String;
 
@@ -344,19 +344,19 @@
 
     sub-long/2addr v2, v4
 
-    .line 2194
+    .line 2195
     const-wide/16 v4, 0x0
 
     cmp-long v1, v2, v4
 
     if-lez v1, :cond_11e
 
-    .line 2195
+    .line 2196
     const-wide/32 v4, 0x15180
 
     div-long/2addr v2, v4
 
-    .line 2196
+    .line 2197
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;->f:Landroid/widget/TextView;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -365,7 +365,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v6, 0x7f0900d3
+    const v6, 0x7f09007e
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -393,7 +393,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v4, 0x7f0900d4
+    const v4, 0x7f09007f
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -411,13 +411,13 @@
 
     goto/16 :goto_30
 
-    .line 2198
+    .line 2199
     :cond_11e
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;->f:Landroid/widget/TextView;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v3, 0x7f0900d5
+    const v3, 0x7f090080
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -427,7 +427,7 @@
 
     goto/16 :goto_30
 
-    .line 2215
+    .line 2216
     :cond_12e
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;->g:Landroid/widget/TextView;
 
@@ -437,7 +437,7 @@
 
     goto/16 :goto_79
 
-    .line 2208
+    .line 2209
     :catch_137
     move-exception v2
 
@@ -448,7 +448,7 @@
     .registers 2
 
     .prologue
-    .line 2225
+    .line 2226
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -462,10 +462,10 @@
     .registers 2
 
     .prologue
-    .line 2230
+    .line 2231
     invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView$Adapter;->onAttachedToRecyclerView(Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 2231
+    .line 2232
     return-void
 .end method
 
@@ -473,7 +473,7 @@
     .registers 3
 
     .prologue
-    .line 2144
+    .line 2145
     check-cast p1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;
 
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;I)V
@@ -485,7 +485,7 @@
     .registers 4
 
     .prologue
-    .line 2144
+    .line 2145
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter;->a(Landroid/view/ViewGroup;I)Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignRelatedAdapter$CampaignViewHolder;
 
     move-result-object v0

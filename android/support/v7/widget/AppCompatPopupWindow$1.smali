@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 128
+    .line 131
     iput-object p1, p0, Landroid/support/v7/widget/AppCompatPopupWindow$1;->a:Ljava/lang/reflect/Field;
 
     iput-object p2, p0, Landroid/support/v7/widget/AppCompatPopupWindow$1;->b:Landroid/widget/PopupWindow;
@@ -43,7 +43,7 @@
     .registers 3
 
     .prologue
-    .line 132
+    .line 135
     :try_start_0
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatPopupWindow$1;->a:Ljava/lang/reflect/Field;
 
@@ -55,7 +55,7 @@
 
     check-cast v0, Ljava/lang/ref/WeakReference;
 
-    .line 133
+    .line 136
     if-eqz v0, :cond_12
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -64,12 +64,12 @@
 
     if-nez v0, :cond_13
 
-    .line 141
+    .line 144
     :cond_12
     :goto_12
     return-void
 
-    .line 136
+    .line 139
     :cond_13
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatPopupWindow$1;->c:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
@@ -79,7 +79,7 @@
 
     goto :goto_12
 
-    .line 138
+    .line 141
     :catch_19
     move-exception v0
 

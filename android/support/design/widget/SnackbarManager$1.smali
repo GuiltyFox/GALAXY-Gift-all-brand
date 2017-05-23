@@ -54,8 +54,7 @@
 
     check-cast v0, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
-    # invokes: Landroid/support/design/widget/SnackbarManager;->handleTimeout(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)V
-    invoke-static {v1, v0}, Landroid/support/design/widget/SnackbarManager;->access$000(Landroid/support/design/widget/SnackbarManager;Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)V
+    invoke-virtual {v1, v0}, Landroid/support/design/widget/SnackbarManager;->handleTimeout(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)V
 
     .line 58
     const/4 v0, 0x1

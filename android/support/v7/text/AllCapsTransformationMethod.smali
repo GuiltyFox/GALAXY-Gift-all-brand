@@ -15,10 +15,10 @@
     .registers 3
 
     .prologue
-    .line 32
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
+    .line 37
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -31,7 +31,7 @@
 
     iput-object v0, p0, Landroid/support/v7/text/AllCapsTransformationMethod;->a:Ljava/util/Locale;
 
-    .line 34
+    .line 38
     return-void
 .end method
 
@@ -41,7 +41,7 @@
     .registers 5
 
     .prologue
-    .line 38
+    .line 42
     if-eqz p1, :cond_d
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -67,6 +67,6 @@
     .registers 6
 
     .prologue
-    .line 44
+    .line 48
     return-void
 .end method

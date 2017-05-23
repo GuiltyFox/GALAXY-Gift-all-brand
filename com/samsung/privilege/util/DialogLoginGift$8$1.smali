@@ -20,7 +20,7 @@
     .registers 4
 
     .prologue
-    .line 404
+    .line 405
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8;
 
     iput-wide p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->a:J
@@ -36,10 +36,10 @@
     .registers 13
 
     .prologue
-    .line 448
+    .line 449
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 451
+    .line 452
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -49,7 +49,7 @@
 
     move-result-wide v0
 
-    .line 452
+    .line 453
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "RequestOTP"
@@ -64,7 +64,7 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_62
 
-    .line 457
+    .line 458
     :goto_1b
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -100,21 +100,21 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 459
+    .line 460
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->c()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 460
+    .line 461
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$8;->b:Landroid/content/Context;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 462
+    .line 463
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$8;->b:Landroid/content/Context;
@@ -127,15 +127,15 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 468
+    .line 469
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Z)Z
 
-    .line 469
+    .line 470
     return-void
 
-    .line 453
+    .line 454
     :catch_62
     move-exception v0
 
@@ -146,7 +146,7 @@
     .registers 13
 
     .prologue
-    .line 408
+    .line 409
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -156,7 +156,7 @@
 
     move-result-wide v0
 
-    .line 409
+    .line 410
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "RequestOTP"
@@ -171,7 +171,7 @@
     :try_end_18
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_66
 
-    .line 414
+    .line 415
     :goto_18
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -207,7 +207,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 416
+    .line 417
     const-string/jumbo v0, "Request OTP success."
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8;
@@ -220,14 +220,14 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 417
+    .line 418
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->c()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 419
+    .line 420
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$8;->b:Landroid/content/Context;
@@ -240,15 +240,15 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 443
+    .line 444
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Z)Z
 
-    .line 444
+    .line 445
     return-void
 
-    .line 410
+    .line 411
     :catch_66
     move-exception v0
 

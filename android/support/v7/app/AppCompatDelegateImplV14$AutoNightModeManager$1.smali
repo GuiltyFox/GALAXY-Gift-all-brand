@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 324
+    .line 342
     iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -32,11 +32,11 @@
     .registers 4
 
     .prologue
-    .line 330
+    .line 348
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;
 
     invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->b()V
 
-    .line 331
+    .line 349
     return-void
 .end method

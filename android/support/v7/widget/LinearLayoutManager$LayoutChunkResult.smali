@@ -18,7 +18,7 @@
     .registers 1
 
     .prologue
-    .line 2229
+    .line 2305
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,18 +32,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2236
+    .line 2312
     iput v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mConsumed:I
 
-    .line 2237
+    .line 2313
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mFinished:Z
 
-    .line 2238
+    .line 2314
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mIgnoreConsumed:Z
 
-    .line 2239
+    .line 2315
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mFocusable:Z
 
-    .line 2240
+    .line 2316
     return-void
 .end method

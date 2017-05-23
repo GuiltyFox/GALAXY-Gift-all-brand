@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 545
+    .line 562
     iput-object p1, p0, Landroid/support/design/widget/Snackbar$8;->this$0:Landroid/support/design/widget/Snackbar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,13 +35,12 @@
     .registers 3
 
     .prologue
-    .line 548
+    .line 565
     iget-object v0, p0, Landroid/support/design/widget/Snackbar$8;->this$0:Landroid/support/design/widget/Snackbar;
 
-    # invokes: Landroid/support/design/widget/Snackbar;->onViewShown()V
-    invoke-static {v0}, Landroid/support/design/widget/Snackbar;->access$700(Landroid/support/design/widget/Snackbar;)V
+    invoke-virtual {v0}, Landroid/support/design/widget/Snackbar;->onViewShown()V
 
-    .line 549
+    .line 566
     return-void
 .end method
 
@@ -49,7 +48,7 @@
     .registers 2
 
     .prologue
-    .line 555
+    .line 572
     return-void
 .end method
 
@@ -57,6 +56,6 @@
     .registers 2
 
     .prologue
-    .line 552
+    .line 569
     return-void
 .end method

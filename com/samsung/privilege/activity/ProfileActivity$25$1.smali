@@ -59,7 +59,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/ProfileActivity$25;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v1, 0x7f1001e3
+    const v1, 0x7f1001ce
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -75,7 +75,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/ProfileActivity$25;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v1, 0x7f1001e4
+    const v1, 0x7f1001cf
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -95,7 +95,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/ProfileActivity$25;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v1, 0x7f1001e3
+    const v1, 0x7f1001ce
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 237
+    .line 316
     iput-object p1, p0, Landroid/support/design/widget/TextInputLayout$1;->this$0:Landroid/support/design/widget/TextInputLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,36 +35,31 @@
     .registers 4
 
     .prologue
-    .line 240
+    .line 319
     iget-object v0, p0, Landroid/support/design/widget/TextInputLayout$1;->this$0:Landroid/support/design/widget/TextInputLayout;
 
     const/4 v1, 0x1
 
-    # invokes: Landroid/support/design/widget/TextInputLayout;->updateLabelState(Z)V
-    invoke-static {v0, v1}, Landroid/support/design/widget/TextInputLayout;->access$100(Landroid/support/design/widget/TextInputLayout;Z)V
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/TextInputLayout;->updateLabelState(Z)V
 
-    .line 241
+    .line 320
     iget-object v0, p0, Landroid/support/design/widget/TextInputLayout$1;->this$0:Landroid/support/design/widget/TextInputLayout;
 
-    # getter for: Landroid/support/design/widget/TextInputLayout;->mCounterEnabled:Z
-    invoke-static {v0}, Landroid/support/design/widget/TextInputLayout;->access$200(Landroid/support/design/widget/TextInputLayout;)Z
+    iget-boolean v0, v0, Landroid/support/design/widget/TextInputLayout;->mCounterEnabled:Z
 
-    move-result v0
+    if-eqz v0, :cond_15
 
-    if-eqz v0, :cond_17
-
-    .line 242
+    .line 321
     iget-object v0, p0, Landroid/support/design/widget/TextInputLayout$1;->this$0:Landroid/support/design/widget/TextInputLayout;
 
     invoke-interface {p1}, Landroid/text/Editable;->length()I
 
     move-result v1
 
-    # invokes: Landroid/support/design/widget/TextInputLayout;->updateCounter(I)V
-    invoke-static {v0, v1}, Landroid/support/design/widget/TextInputLayout;->access$300(Landroid/support/design/widget/TextInputLayout;I)V
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/TextInputLayout;->updateCounter(I)V
 
-    .line 244
-    :cond_17
+    .line 323
+    :cond_15
     return-void
 .end method
 
@@ -72,7 +67,7 @@
     .registers 5
 
     .prologue
-    .line 247
+    .line 326
     return-void
 .end method
 
@@ -80,6 +75,6 @@
     .registers 5
 
     .prologue
-    .line 250
+    .line 329
     return-void
 .end method

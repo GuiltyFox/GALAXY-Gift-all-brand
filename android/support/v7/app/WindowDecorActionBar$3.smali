@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 160
+    .line 164
     iput-object p1, p0, Landroid/support/v7/app/WindowDecorActionBar$3;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,22 +35,20 @@
     .registers 3
 
     .prologue
-    .line 163
+    .line 167
     iget-object v0, p0, Landroid/support/v7/app/WindowDecorActionBar$3;->a:Landroid/support/v7/app/WindowDecorActionBar;
 
-    invoke-static {v0}, Landroid/support/v7/app/WindowDecorActionBar;->c(Landroid/support/v7/app/WindowDecorActionBar;)Landroid/support/v7/widget/ActionBarContainer;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/app/WindowDecorActionBar;->c:Landroid/support/v7/widget/ActionBarContainer;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContainer;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    .line 164
+    .line 168
     check-cast v0, Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 165
+    .line 169
     return-void
 .end method

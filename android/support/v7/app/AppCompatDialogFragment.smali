@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 32
+    .line 35
     invoke-direct {p0}, Landroid/support/v4/app/DialogFragment;-><init>()V
 
     return-void
@@ -20,7 +20,7 @@
     .registers 5
 
     .prologue
-    .line 36
+    .line 39
     new-instance v0, Landroid/support/v7/app/AppCompatDialog;
 
     invoke-virtual {p0}, Landroid/support/v7/app/AppCompatDialogFragment;->getContext()Landroid/content/Context;
@@ -40,24 +40,24 @@
     .registers 6
 
     .prologue
-    .line 42
+    .line 46
     instance-of v0, p1, Landroid/support/v7/app/AppCompatDialog;
 
     if-eqz v0, :cond_19
 
     move-object v0, p1
 
-    .line 44
+    .line 48
     check-cast v0, Landroid/support/v7/app/AppCompatDialog;
 
-    .line 45
+    .line 49
     packed-switch p2, :pswitch_data_1e
 
-    .line 59
+    .line 63
     :goto_a
     return-void
 
-    .line 47
+    .line 51
     :pswitch_b
     invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
@@ -67,7 +67,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->addFlags(I)V
 
-    .line 53
+    .line 57
     :pswitch_14
     const/4 v1, 0x1
 
@@ -75,13 +75,13 @@
 
     goto :goto_a
 
-    .line 57
+    .line 61
     :cond_19
     invoke-super {p0, p1, p2}, Landroid/support/v4/app/DialogFragment;->setupDialog(Landroid/app/Dialog;I)V
 
     goto :goto_a
 
-    .line 45
+    .line 49
     nop
 
     :pswitch_data_1e

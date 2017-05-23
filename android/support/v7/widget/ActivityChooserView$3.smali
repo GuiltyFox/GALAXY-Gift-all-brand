@@ -18,7 +18,7 @@
     .registers 3
 
     .prologue
-    .line 241
+    .line 245
     iput-object p1, p0, Landroid/support/v7/widget/ActivityChooserView$3;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-direct {p0, p2}, Landroid/support/v7/widget/ForwardingListener;-><init>(Landroid/view/View;)V
@@ -32,11 +32,10 @@
     .registers 2
 
     .prologue
-    .line 244
+    .line 248
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$3;->a:Landroid/support/v7/widget/ActivityChooserView;
 
-    # invokes: Landroid/support/v7/widget/ActivityChooserView;->getListPopupWindow()Landroid/support/v7/widget/ListPopupWindow;
-    invoke-static {v0}, Landroid/support/v7/widget/ActivityChooserView;->access$100(Landroid/support/v7/widget/ActivityChooserView;)Landroid/support/v7/widget/ListPopupWindow;
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActivityChooserView;->getListPopupWindow()Landroid/support/v7/widget/ListPopupWindow;
 
     move-result-object v0
 
@@ -47,12 +46,12 @@
     .registers 2
 
     .prologue
-    .line 249
+    .line 253
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$3;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActivityChooserView;->showPopup()Z
 
-    .line 250
+    .line 254
     const/4 v0, 0x1
 
     return v0
@@ -62,12 +61,12 @@
     .registers 2
 
     .prologue
-    .line 255
+    .line 259
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$3;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActivityChooserView;->dismissPopup()Z
 
-    .line 256
+    .line 260
     const/4 v0, 0x1
 
     return v0

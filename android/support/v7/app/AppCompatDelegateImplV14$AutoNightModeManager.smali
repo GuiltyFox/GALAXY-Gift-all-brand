@@ -20,22 +20,22 @@
     .registers 4
 
     .prologue
-    .line 299
+    .line 317
     iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->a:Landroid/support/v7/app/AppCompatDelegateImplV14;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 300
+    .line 318
     iput-object p2, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->b:Landroid/support/v7/app/TwilightManager;
 
-    .line 301
+    .line 319
     invoke-virtual {p2}, Landroid/support/v7/app/TwilightManager;->a()Z
 
     move-result v0
 
     iput-boolean v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->c:Z
 
-    .line 302
+    .line 320
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .registers 2
 
     .prologue
-    .line 306
+    .line 324
     iget-boolean v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->c:Z
 
     if-eqz v0, :cond_6
@@ -65,27 +65,27 @@
     .registers 3
 
     .prologue
-    .line 310
+    .line 328
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->b:Landroid/support/v7/app/TwilightManager;
 
     invoke-virtual {v0}, Landroid/support/v7/app/TwilightManager;->a()Z
 
     move-result v0
 
-    .line 311
+    .line 329
     iget-boolean v1, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->c:Z
 
     if-eq v0, v1, :cond_11
 
-    .line 312
+    .line 330
     iput-boolean v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->c:Z
 
-    .line 313
+    .line 331
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->a:Landroid/support/v7/app/AppCompatDelegateImplV14;
 
     invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegateImplV14;->i()Z
 
-    .line 315
+    .line 333
     :cond_11
     return-void
 .end method
@@ -94,56 +94,56 @@
     .registers 4
 
     .prologue
-    .line 318
+    .line 336
     invoke-virtual {p0}, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->d()V
 
-    .line 323
+    .line 341
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->d:Landroid/content/BroadcastReceiver;
 
     if-nez v0, :cond_e
 
-    .line 324
+    .line 342
     new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager$1;
 
     invoke-direct {v0, p0}, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager$1;-><init>(Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;)V
 
     iput-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->d:Landroid/content/BroadcastReceiver;
 
-    .line 334
+    .line 352
     :cond_e
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->e:Landroid/content/IntentFilter;
 
     if-nez v0, :cond_31
 
-    .line 335
+    .line 353
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->e:Landroid/content/IntentFilter;
 
-    .line 336
+    .line 354
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->e:Landroid/content/IntentFilter;
 
     const-string/jumbo v1, "android.intent.action.TIME_SET"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 337
+    .line 355
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->e:Landroid/content/IntentFilter;
 
     const-string/jumbo v1, "android.intent.action.TIMEZONE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 338
+    .line 356
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->e:Landroid/content/IntentFilter;
 
     const-string/jumbo v1, "android.intent.action.TIME_TICK"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 340
+    .line 358
     :cond_31
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->a:Landroid/support/v7/app/AppCompatDelegateImplV14;
 
@@ -155,7 +155,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 341
+    .line 359
     return-void
 .end method
 
@@ -163,12 +163,12 @@
     .registers 3
 
     .prologue
-    .line 344
+    .line 362
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->d:Landroid/content/BroadcastReceiver;
 
     if-eqz v0, :cond_10
 
-    .line 345
+    .line 363
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->a:Landroid/support/v7/app/AppCompatDelegateImplV14;
 
     iget-object v0, v0, Landroid/support/v7/app/AppCompatDelegateImplV14;->a:Landroid/content/Context;
@@ -177,12 +177,12 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 346
+    .line 364
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV14$AutoNightModeManager;->d:Landroid/content/BroadcastReceiver;
 
-    .line 348
+    .line 366
     :cond_10
     return-void
 .end method

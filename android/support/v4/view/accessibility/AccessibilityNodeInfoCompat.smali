@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
+.field static final a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
 
 
 # instance fields
@@ -384,16 +384,6 @@
     .end sparse-switch
 .end method
 
-.method static synthetic u()Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
-    .registers 1
-
-    .prologue
-    .line 36
-    sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
-
-    return-object v0
-.end method
-
 
 # virtual methods
 .method public a()Ljava/lang/Object;
@@ -470,14 +460,14 @@
     .registers 4
 
     .prologue
-    .line 3294
+    .line 3246
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->c(Ljava/lang/Object;Z)V
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->a(Ljava/lang/Object;Z)V
 
-    .line 3295
+    .line 3247
     return-void
 .end method
 
@@ -490,9 +480,7 @@
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
 
-    invoke-static {p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->a(Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;)Ljava/lang/Object;
-
-    move-result-object v2
+    iget-object v2, p1, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat;->E:Ljava/lang/Object;
 
     invoke-interface {v0, v1, v2}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -585,14 +573,14 @@
     .registers 4
 
     .prologue
-    .line 3318
+    .line 3270
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->d(Ljava/lang/Object;Z)V
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->b(Ljava/lang/Object;Z)V
 
-    .line 3319
+    .line 3271
     return-void
 .end method
 
@@ -652,9 +640,7 @@
 
     check-cast p1, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
 
-    invoke-static {p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;->a(Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;)Ljava/lang/Object;
-
-    move-result-object v2
+    iget-object v2, p1, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;->a:Ljava/lang/Object;
 
     invoke-interface {v0, v1, v2}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->c(Ljava/lang/Object;Ljava/lang/Object;)V
 
@@ -666,14 +652,14 @@
     .registers 4
 
     .prologue
-    .line 3343
+    .line 3294
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->h(Ljava/lang/Object;Z)V
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->e(Ljava/lang/Object;Z)V
 
-    .line 3344
+    .line 3295
     return-void
 .end method
 
@@ -742,14 +728,14 @@
     .registers 4
 
     .prologue
-    .line 3368
+    .line 3318
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->i(Ljava/lang/Object;Z)V
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->f(Ljava/lang/Object;Z)V
 
-    .line 3369
+    .line 3319
     return-void
 .end method
 
@@ -788,14 +774,14 @@
     .registers 4
 
     .prologue
-    .line 3392
+    .line 3343
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->g(Ljava/lang/Object;Z)V
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->j(Ljava/lang/Object;Z)V
 
-    .line 3393
+    .line 3344
     return-void
 .end method
 
@@ -898,14 +884,14 @@
     .registers 4
 
     .prologue
-    .line 3416
+    .line 3368
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->a(Ljava/lang/Object;Z)V
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->k(Ljava/lang/Object;Z)V
 
-    .line 3417
+    .line 3369
     return-void
 .end method
 
@@ -929,14 +915,14 @@
     .registers 4
 
     .prologue
-    .line 3440
+    .line 3392
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->e(Ljava/lang/Object;Z)V
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->i(Ljava/lang/Object;Z)V
 
-    .line 3441
+    .line 3393
     return-void
 .end method
 
@@ -960,14 +946,14 @@
     .registers 4
 
     .prologue
-    .line 3464
+    .line 3416
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->b(Ljava/lang/Object;Z)V
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->c(Ljava/lang/Object;Z)V
 
-    .line 3465
+    .line 3417
     return-void
 .end method
 
@@ -1015,14 +1001,14 @@
     .registers 4
 
     .prologue
-    .line 3512
+    .line 3440
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->f(Ljava/lang/Object;Z)V
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->g(Ljava/lang/Object;Z)V
 
-    .line 3513
+    .line 3441
     return-void
 .end method
 
@@ -1046,14 +1032,14 @@
     .registers 4
 
     .prologue
-    .line 3837
+    .line 3464
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->j(Ljava/lang/Object;Z)V
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->d(Ljava/lang/Object;Z)V
 
-    .line 3838
+    .line 3465
     return-void
 .end method
 
@@ -1073,6 +1059,21 @@
     return v0
 .end method
 
+.method public k(Z)V
+    .registers 4
+
+    .prologue
+    .line 3512
+    sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
+
+    iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
+
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->h(Ljava/lang/Object;Z)V
+
+    .line 3513
+    return-void
+.end method
+
 .method public k()Z
     .registers 3
 
@@ -1087,6 +1088,21 @@
     move-result v0
 
     return v0
+.end method
+
+.method public l(Z)V
+    .registers 4
+
+    .prologue
+    .line 3837
+    sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
+
+    iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b:Ljava/lang/Object;
+
+    invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;->l(Ljava/lang/Object;Z)V
+
+    .line 3838
+    return-void
 .end method
 
 .method public l()Z

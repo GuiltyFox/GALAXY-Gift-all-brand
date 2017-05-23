@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 148
+    .line 153
     iput-object p1, p0, Landroid/support/design/widget/NavigationView$1;->this$0:Landroid/support/design/widget/NavigationView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,44 +35,38 @@
     .registers 4
 
     .prologue
-    .line 151
+    .line 156
     iget-object v0, p0, Landroid/support/design/widget/NavigationView$1;->this$0:Landroid/support/design/widget/NavigationView;
 
-    # getter for: Landroid/support/design/widget/NavigationView;->mListener:Landroid/support/design/widget/NavigationView$OnNavigationItemSelectedListener;
-    invoke-static {v0}, Landroid/support/design/widget/NavigationView;->access$000(Landroid/support/design/widget/NavigationView;)Landroid/support/design/widget/NavigationView$OnNavigationItemSelectedListener;
+    iget-object v0, v0, Landroid/support/design/widget/NavigationView;->mListener:Landroid/support/design/widget/NavigationView$OnNavigationItemSelectedListener;
 
-    move-result-object v0
-
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_12
 
     iget-object v0, p0, Landroid/support/design/widget/NavigationView$1;->this$0:Landroid/support/design/widget/NavigationView;
 
-    # getter for: Landroid/support/design/widget/NavigationView;->mListener:Landroid/support/design/widget/NavigationView$OnNavigationItemSelectedListener;
-    invoke-static {v0}, Landroid/support/design/widget/NavigationView;->access$000(Landroid/support/design/widget/NavigationView;)Landroid/support/design/widget/NavigationView$OnNavigationItemSelectedListener;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/design/widget/NavigationView;->mListener:Landroid/support/design/widget/NavigationView$OnNavigationItemSelectedListener;
 
     invoke-interface {v0, p2}, Landroid/support/design/widget/NavigationView$OnNavigationItemSelectedListener;->onNavigationItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_12
 
     const/4 v0, 0x1
 
-    :goto_15
+    :goto_11
     return v0
 
-    :cond_16
+    :cond_12
     const/4 v0, 0x0
 
-    goto :goto_15
+    goto :goto_11
 .end method
 
 .method public onMenuModeChange(Landroid/support/v7/view/menu/MenuBuilder;)V
     .registers 2
 
     .prologue
-    .line 155
+    .line 160
     return-void
 .end method

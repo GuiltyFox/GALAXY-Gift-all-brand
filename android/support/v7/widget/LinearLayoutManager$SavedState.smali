@@ -32,7 +32,7 @@
     .registers 1
 
     .prologue
-    .line 2118
+    .line 2186
     new-instance v0, Landroid/support/v7/widget/LinearLayoutManager$SavedState$1;
 
     invoke-direct {v0}, Landroid/support/v7/widget/LinearLayoutManager$SavedState$1;-><init>()V
@@ -46,10 +46,10 @@
     .registers 1
 
     .prologue
-    .line 2082
+    .line 2150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2084
+    .line 2152
     return-void
 .end method
 
@@ -59,24 +59,24 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 2086
+    .line 2154
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2087
+    .line 2155
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
-    .line 2088
+    .line 2156
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
 
     iput v1, p0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
-    .line 2089
+    .line 2157
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v1
@@ -86,10 +86,10 @@
     :goto_16
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
 
-    .line 2090
+    .line 2158
     return-void
 
-    .line 2089
+    .line 2157
     :cond_19
     const/4 v0, 0x0
 
@@ -100,25 +100,25 @@
     .registers 3
 
     .prologue
-    .line 2092
+    .line 2160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2093
+    .line 2161
     iget v0, p1, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
     iput v0, p0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
-    .line 2094
+    .line 2162
     iget v0, p1, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
     iput v0, p0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
-    .line 2095
+    .line 2163
     iget-boolean v0, p1, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
 
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
 
-    .line 2096
+    .line 2164
     return-void
 .end method
 
@@ -128,7 +128,7 @@
     .registers 2
 
     .prologue
-    .line 2108
+    .line 2176
     const/4 v0, 0x0
 
     return v0
@@ -138,7 +138,7 @@
     .registers 2
 
     .prologue
-    .line 2099
+    .line 2167
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
     if-ltz v0, :cond_6
@@ -158,12 +158,12 @@
     .registers 2
 
     .prologue
-    .line 2103
+    .line 2171
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
-    .line 2104
+    .line 2172
     return-void
 .end method
 
@@ -171,17 +171,17 @@
     .registers 4
 
     .prologue
-    .line 2113
+    .line 2181
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorPosition:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2114
+    .line 2182
     iget v0, p0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorOffset:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2115
+    .line 2183
     iget-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager$SavedState;->mAnchorLayoutFromEnd:Z
 
     if-eqz v0, :cond_13
@@ -191,10 +191,10 @@
     :goto_f
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2116
+    .line 2184
     return-void
 
-    .line 2115
+    .line 2183
     :cond_13
     const/4 v0, 0x0
 

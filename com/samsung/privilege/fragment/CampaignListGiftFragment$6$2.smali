@@ -45,7 +45,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100113
+    const v1, 0x7f100116
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -74,7 +74,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f10066d
+    const v1, 0x7f100464
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -87,7 +87,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
-    const v2, 0x7f090374
+    const v2, 0x7f09018d
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getString(I)Ljava/lang/String;
 

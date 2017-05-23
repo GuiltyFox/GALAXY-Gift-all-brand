@@ -125,7 +125,7 @@
 
     iget-object v3, p0, Landroid/support/v4/app/BackStackRecord$2;->h:Landroid/support/v4/app/Fragment;
 
-    invoke-static {v0, v1, v2, v3}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord;Landroid/support/v4/app/BackStackRecord$TransitionState;ZLandroid/support/v4/app/Fragment;)Landroid/support/v4/util/ArrayMap;
+    invoke-virtual {v0, v1, v2, v3}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord$TransitionState;ZLandroid/support/v4/app/Fragment;)Landroid/support/v4/util/ArrayMap;
 
     move-result-object v5
 
@@ -145,7 +145,7 @@
 
     iget-object v1, p0, Landroid/support/v4/app/BackStackRecord$2;->d:Landroid/support/v4/app/BackStackRecord$TransitionState;
 
-    invoke-static {v0, v5, v1}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord;Landroid/support/v4/util/ArrayMap;Landroid/support/v4/app/BackStackRecord$TransitionState;)V
+    invoke-virtual {v0, v5, v1}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/util/ArrayMap;Landroid/support/v4/app/BackStackRecord$TransitionState;)V
 
     .line 1340
     iget-object v0, p0, Landroid/support/v4/app/BackStackRecord$2;->j:Landroid/support/v4/app/BackStackRecord;
@@ -158,7 +158,7 @@
 
     iget-boolean v4, p0, Landroid/support/v4/app/BackStackRecord$2;->g:Z
 
-    invoke-static/range {v0 .. v5}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord;Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLandroid/support/v4/util/ArrayMap;)V
+    invoke-virtual/range {v0 .. v5}, Landroid/support/v4/app/BackStackRecord;->a(Landroid/support/v4/app/BackStackRecord$TransitionState;Landroid/support/v4/app/Fragment;Landroid/support/v4/app/Fragment;ZLandroid/support/v4/util/ArrayMap;)V
 
     .line 1344
     iget-object v0, p0, Landroid/support/v4/app/BackStackRecord$2;->e:Ljava/lang/Object;

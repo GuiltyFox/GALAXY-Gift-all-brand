@@ -16,7 +16,7 @@
     .registers 2
 
     .prologue
-    .line 40
+    .line 43
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -40,15 +40,15 @@
     .registers 5
 
     .prologue
-    .line 46
+    .line 49
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 47
+    .line 50
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Landroid/support/v7/widget/AppCompatPopupWindow;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 48
+    .line 51
     return-void
 .end method
 
@@ -59,13 +59,13 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 56
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 54
+    .line 57
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/support/v7/widget/AppCompatPopupWindow;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    .line 55
+    .line 58
     return-void
 .end method
 
@@ -73,14 +73,14 @@
     .registers 8
 
     .prologue
-    .line 58
+    .line 61
     sget-object v0, Landroid/support/v7/appcompat/R$styleable;->PopupWindow:[I
 
     invoke-static {p1, p2, v0, p3, p4}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 
-    .line 60
+    .line 63
     sget v1, Landroid/support/v7/appcompat/R$styleable;->PopupWindow_overlapAnchor:I
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/TintTypedArray;->hasValue(I)Z
@@ -89,7 +89,7 @@
 
     if-eqz v1, :cond_18
 
-    .line 61
+    .line 64
     sget v1, Landroid/support/v7/appcompat/R$styleable;->PopupWindow_overlapAnchor:I
 
     const/4 v2, 0x0
@@ -100,7 +100,7 @@
 
     invoke-virtual {p0, v1}, Landroid/support/v7/widget/AppCompatPopupWindow;->a(Z)V
 
-    .line 64
+    .line 67
     :cond_18
     sget v1, Landroid/support/v7/appcompat/R$styleable;->PopupWindow_android_popupBackground:I
 
@@ -110,17 +110,17 @@
 
     invoke-virtual {p0, v1}, Landroid/support/v7/widget/AppCompatPopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 66
+    .line 69
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 67
+    .line 70
     if-eqz p4, :cond_3b
 
     const/16 v2, 0xb
 
     if-ge v1, v2, :cond_3b
 
-    .line 71
+    .line 74
     sget v1, Landroid/support/v7/appcompat/R$styleable;->PopupWindow_android_popupAnimationStyle:I
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/TintTypedArray;->hasValue(I)Z
@@ -129,7 +129,7 @@
 
     if-eqz v1, :cond_3b
 
-    .line 72
+    .line 75
     sget v1, Landroid/support/v7/appcompat/R$styleable;->PopupWindow_android_popupAnimationStyle:I
 
     const/4 v2, -0x1
@@ -140,21 +140,21 @@
 
     invoke-virtual {p0, v1}, Landroid/support/v7/widget/AppCompatPopupWindow;->setAnimationStyle(I)V
 
-    .line 77
+    .line 80
     :cond_3b
     invoke-virtual {v0}, Landroid/support/v7/widget/TintTypedArray;->recycle()V
 
-    .line 79
+    .line 82
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0xe
 
     if-ge v0, v1, :cond_47
 
-    .line 82
+    .line 85
     invoke-static {p0}, Landroid/support/v7/widget/AppCompatPopupWindow;->a(Landroid/widget/PopupWindow;)V
 
-    .line 84
+    .line 87
     :cond_47
     return-void
 .end method
@@ -163,7 +163,7 @@
     .registers 5
 
     .prologue
-    .line 116
+    .line 119
     :try_start_0
     const-class v0, Landroid/widget/PopupWindow;
 
@@ -173,34 +173,34 @@
 
     move-result-object v1
 
-    .line 117
+    .line 120
     const/4 v0, 0x1
 
     invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 119
+    .line 122
     const-class v0, Landroid/widget/PopupWindow;
 
     const-string/jumbo v2, "mOnScrollChangedListener"
 
-    .line 120
+    .line 123
     invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v2
 
-    .line 121
+    .line 124
     const/4 v0, 0x1
 
     invoke-virtual {v2, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 124
+    .line 127
     invoke-virtual {v2, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
-    .line 128
+    .line 131
     new-instance v3, Landroid/support/v7/widget/AppCompatPopupWindow$1;
 
     invoke-direct {v3, v1, p0, v0}, Landroid/support/v7/widget/AppCompatPopupWindow$1;-><init>(Ljava/lang/reflect/Field;Landroid/widget/PopupWindow;Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
@@ -209,15 +209,15 @@
     :try_end_28
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_28} :catch_29
 
-    .line 146
+    .line 149
     :goto_28
     return-void
 
-    .line 143
+    .line 146
     :catch_29
     move-exception v0
 
-    .line 144
+    .line 147
     const-string/jumbo v1, "AppCompatPopupWindow"
 
     const-string/jumbo v2, "Exception while installing workaround OnScrollChangedListener"
@@ -233,19 +233,19 @@
     .registers 3
 
     .prologue
-    .line 152
+    .line 156
     sget-boolean v0, Landroid/support/v7/widget/AppCompatPopupWindow;->a:Z
 
     if-eqz v0, :cond_7
 
-    .line 153
+    .line 157
     iput-boolean p1, p0, Landroid/support/v7/widget/AppCompatPopupWindow;->b:Z
 
-    .line 157
+    .line 161
     :goto_6
     return-void
 
-    .line 155
+    .line 159
     :cond_7
     invoke-static {p0, p1}, Landroid/support/v4/widget/PopupWindowCompat;->a(Landroid/widget/PopupWindow;Z)V
 
@@ -256,7 +256,7 @@
     .registers 5
 
     .prologue
-    .line 88
+    .line 91
     sget-boolean v0, Landroid/support/v7/widget/AppCompatPopupWindow;->a:Z
 
     if-eqz v0, :cond_d
@@ -265,18 +265,18 @@
 
     if-eqz v0, :cond_d
 
-    .line 90
+    .line 93
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
     sub-int/2addr p3, v0
 
-    .line 92
+    .line 95
     :cond_d
     invoke-super {p0, p1, p2, p3}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;II)V
 
-    .line 93
+    .line 96
     return-void
 .end method
 
@@ -287,7 +287,7 @@
     .end annotation
 
     .prologue
-    .line 98
+    .line 101
     sget-boolean v0, Landroid/support/v7/widget/AppCompatPopupWindow;->a:Z
 
     if-eqz v0, :cond_d
@@ -296,18 +296,18 @@
 
     if-eqz v0, :cond_d
 
-    .line 100
+    .line 103
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v0
 
     sub-int/2addr p3, v0
 
-    .line 102
+    .line 105
     :cond_d
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;III)V
 
-    .line 103
+    .line 106
     return-void
 .end method
 
@@ -315,7 +315,7 @@
     .registers 12
 
     .prologue
-    .line 107
+    .line 110
     sget-boolean v0, Landroid/support/v7/widget/AppCompatPopupWindow;->a:Z
 
     if-eqz v0, :cond_17
@@ -324,7 +324,7 @@
 
     if-eqz v0, :cond_17
 
-    .line 109
+    .line 112
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v0
@@ -344,10 +344,10 @@
 
     move v5, p5
 
-    .line 111
+    .line 114
     invoke-super/range {v0 .. v5}, Landroid/widget/PopupWindow;->update(Landroid/view/View;IIII)V
 
-    .line 112
+    .line 115
     return-void
 
     :cond_17

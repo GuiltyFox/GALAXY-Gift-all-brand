@@ -27,7 +27,7 @@
     .registers 1
 
     .prologue
-    .line 2270
+    .line 2280
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 2273
+    .line 2283
     new-instance v0, Landroid/support/v7/widget/Toolbar$SavedState;
 
     invoke-direct {v0, p1, p2}, Landroid/support/v7/widget/Toolbar$SavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
@@ -51,7 +51,7 @@
     .registers 3
 
     .prologue
-    .line 2278
+    .line 2288
     new-array v0, p1, [Landroid/support/v7/widget/Toolbar$SavedState;
 
     return-object v0
@@ -61,7 +61,7 @@
     .registers 4
 
     .prologue
-    .line 2270
+    .line 2280
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/Toolbar$SavedState$1;->a(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v7/widget/Toolbar$SavedState;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .registers 3
 
     .prologue
-    .line 2270
+    .line 2280
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/Toolbar$SavedState$1;->a(I)[Landroid/support/v7/widget/Toolbar$SavedState;
 
     move-result-object v0

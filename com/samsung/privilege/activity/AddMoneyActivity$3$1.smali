@@ -116,7 +116,7 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/AddMoneyActivity$3;->a:Lcom/samsung/privilege/activity/AddMoneyActivity;
 
-    const v4, 0x7f1000c9
+    const v4, 0x7f1000cc
 
     invoke-virtual {v2, v4}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
 
@@ -205,7 +205,7 @@
 
     iget-object v4, v4, Lcom/samsung/privilege/activity/AddMoneyActivity$3;->a:Lcom/samsung/privilege/activity/AddMoneyActivity;
 
-    const v5, 0x7f1000c6
+    const v5, 0x7f1000c9
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
 
@@ -222,7 +222,7 @@
 
     iget-object v4, v4, Lcom/samsung/privilege/activity/AddMoneyActivity$3;->a:Lcom/samsung/privilege/activity/AddMoneyActivity;
 
-    const v5, 0x7f1000c8
+    const v5, 0x7f1000cb
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
 
@@ -291,7 +291,7 @@
     move-result-object v9
 
     .line 183
-    const v2, 0x7f1000d1
+    const v2, 0x7f1000d4
 
     invoke-virtual {v9, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -302,7 +302,7 @@
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 184
-    const v2, 0x7f1000ca
+    const v2, 0x7f1000cd
 
     invoke-virtual {v9, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -377,7 +377,7 @@
     invoke-virtual {v3, v2}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
     .line 188
-    const v2, 0x7f1000d0
+    const v2, 0x7f1000d3
 
     invoke-virtual {v9, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

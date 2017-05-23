@@ -23,7 +23,7 @@
     .registers 1
 
     .prologue
-    .line 37
+    .line 41
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -47,12 +47,12 @@
     .registers 4
 
     .prologue
-    .line 48
+    .line 52
     const v0, 0x1010074
 
     invoke-direct {p0, p1, p2, v0}, Landroid/support/v7/view/menu/ExpandedMenuView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 49
+    .line 53
     return-void
 .end method
 
@@ -64,34 +64,34 @@
 
     const/4 v2, 0x0
 
-    .line 52
+    .line 56
     invoke-direct {p0, p1, p2}, Landroid/widget/ListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 53
+    .line 57
     invoke-virtual {p0, p0}, Landroid/support/v7/view/menu/ExpandedMenuView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 55
+    .line 59
     sget-object v0, Landroid/support/v7/view/menu/ExpandedMenuView;->a:[I
 
     invoke-static {p1, p2, v0, p3, v2}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 
-    .line 57
+    .line 61
     invoke-virtual {v0, v2}, Landroid/support/v7/widget/TintTypedArray;->hasValue(I)Z
 
     move-result v1
 
     if-eqz v1, :cond_1b
 
-    .line 58
+    .line 62
     invoke-virtual {v0, v2}, Landroid/support/v7/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/support/v7/view/menu/ExpandedMenuView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 60
+    .line 64
     :cond_1b
     invoke-virtual {v0, v3}, Landroid/support/v7/widget/TintTypedArray;->hasValue(I)Z
 
@@ -99,18 +99,18 @@
 
     if-eqz v1, :cond_28
 
-    .line 61
+    .line 65
     invoke-virtual {v0, v3}, Landroid/support/v7/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/support/v7/view/menu/ExpandedMenuView;->setDivider(Landroid/graphics/drawable/Drawable;)V
 
-    .line 63
+    .line 67
     :cond_28
     invoke-virtual {v0}, Landroid/support/v7/widget/TintTypedArray;->recycle()V
 
-    .line 64
+    .line 68
     return-void
 .end method
 
@@ -120,7 +120,7 @@
     .registers 2
 
     .prologue
-    .line 92
+    .line 96
     iget v0, p0, Landroid/support/v7/view/menu/ExpandedMenuView;->c:I
 
     return v0
@@ -130,10 +130,10 @@
     .registers 2
 
     .prologue
-    .line 68
+    .line 72
     iput-object p1, p0, Landroid/support/v7/view/menu/ExpandedMenuView;->b:Landroid/support/v7/view/menu/MenuBuilder;
 
-    .line 69
+    .line 73
     return-void
 .end method
 
@@ -141,7 +141,7 @@
     .registers 4
 
     .prologue
-    .line 81
+    .line 85
     iget-object v0, p0, Landroid/support/v7/view/menu/ExpandedMenuView;->b:Landroid/support/v7/view/menu/MenuBuilder;
 
     const/4 v1, 0x0
@@ -157,15 +157,15 @@
     .registers 2
 
     .prologue
-    .line 73
+    .line 77
     invoke-super {p0}, Landroid/widget/ListView;->onDetachedFromWindow()V
 
-    .line 76
+    .line 80
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/ExpandedMenuView;->setChildrenDrawingCacheEnabled(Z)V
 
-    .line 77
+    .line 81
     return-void
 .end method
 
@@ -173,7 +173,7 @@
     .registers 7
 
     .prologue
-    .line 87
+    .line 91
     invoke-virtual {p0}, Landroid/support/v7/view/menu/ExpandedMenuView;->getAdapter()Landroid/widget/ListAdapter;
 
     move-result-object v0
@@ -186,6 +186,6 @@
 
     invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/ExpandedMenuView;->invokeItem(Landroid/support/v7/view/menu/MenuItemImpl;)Z
 
-    .line 88
+    .line 92
     return-void
 .end method

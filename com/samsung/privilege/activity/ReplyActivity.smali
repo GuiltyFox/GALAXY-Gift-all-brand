@@ -58,7 +58,7 @@
     .registers 4
 
     .prologue
-    const v2, 0x7f100193
+    const v2, 0x7f100180
 
     .line 59
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ReplyActivity;->getIntent()Landroid/content/Intent;
@@ -77,7 +77,7 @@
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    iput-object v1, p0, Lcom/samsung/privilege/activity/ReplyActivity;->C:Landroid/os/Bundle;
+    iput-object v1, p0, Lcom/samsung/privilege/activity/ReplyActivity;->D:Landroid/os/Bundle;
 
     .line 62
     const-string/jumbo v1, "ReplyIsRequestHelp"
@@ -212,7 +212,7 @@
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ReplyActivity;->n()V
 
     .line 51
-    const v0, 0x7f0901ce
+    const v0, 0x7f0900bc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ReplyActivity;->getString(I)Ljava/lang/String;
 
@@ -248,7 +248,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 39
-    const v0, 0x7f040050
+    const v0, 0x7f040048
 
     return v0
 .end method
