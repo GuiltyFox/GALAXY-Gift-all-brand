@@ -45,7 +45,7 @@
 
     const-string/jumbo v0, "&exf"
 
-    invoke-static {p1}, Lcom/google/android/gms/analytics/internal/zzam;->a(Z)Ljava/lang/String;
+    invoke-static {p1}, Lcom/google/android/gms/analytics/internal/zzao;->a(Z)Ljava/lang/String;
 
     move-result-object v1
 

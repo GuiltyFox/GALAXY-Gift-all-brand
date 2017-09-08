@@ -320,7 +320,7 @@
 
     .prologue
     .line 134
-    invoke-static {}, Lcom/bumptech/glide/util/Util;->b()Z
+    invoke-static {}, Lcom/bumptech/glide/util/Util;->c()Z
 
     move-result v0
 
@@ -368,30 +368,29 @@
     goto :goto_d
 .end method
 
-.method public static b()Z
+.method public static b()V
     .registers 2
 
     .prologue
-    .line 152
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    .line 143
+    invoke-static {}, Lcom/bumptech/glide/util/Util;->d()Z
 
-    move-result-object v0
+    move-result v0
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    if-nez v0, :cond_f
 
-    move-result-object v1
+    .line 144
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    if-ne v0, v1, :cond_c
+    const-string/jumbo v1, "YOu must call this method on a background thread"
 
-    const/4 v0, 0x1
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    :goto_b
-    return v0
+    throw v0
 
-    :cond_c
-    const/4 v0, 0x0
-
-    goto :goto_b
+    .line 146
+    :cond_f
+    return-void
 .end method
 
 .method private static b(I)Z
@@ -418,11 +417,37 @@
 .end method
 
 .method public static c()Z
+    .registers 2
+
+    .prologue
+    .line 152
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    if-ne v0, v1, :cond_c
+
+    const/4 v0, 0x1
+
+    :goto_b
+    return v0
+
+    :cond_c
+    const/4 v0, 0x0
+
+    goto :goto_b
+.end method
+
+.method public static d()Z
     .registers 1
 
     .prologue
     .line 159
-    invoke-static {}, Lcom/bumptech/glide/util/Util;->b()Z
+    invoke-static {}, Lcom/bumptech/glide/util/Util;->c()Z
 
     move-result v0
 

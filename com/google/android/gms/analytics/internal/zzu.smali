@@ -19,16 +19,16 @@
     return-void
 .end method
 
-.method public b()Lcom/google/android/gms/internal/zzqj;
+.method public b()Lcom/google/android/gms/internal/zzmx;
     .registers 2
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzu;->D()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzu;->r()Lcom/google/android/gms/measurement/zzg;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzu;->r()Lcom/google/android/gms/analytics/zzi;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/zzg;->b()Lcom/google/android/gms/internal/zzqj;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/zzi;->b()Lcom/google/android/gms/internal/zzmx;
 
     move-result-object v0
 
@@ -36,23 +36,29 @@
 .end method
 
 .method public c()Ljava/lang/String;
-    .registers 4
+    .registers 5
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzu;->D()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzu;->b()Lcom/google/android/gms/internal/zzqj;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzu;->b()Lcom/google/android/gms/internal/zzmx;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/zzmx;->b()I
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v1
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/zzqj;->b()I
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/zzmx;->c()I
 
-    move-result v2
+    move-result v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const/16 v3, 0x17
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -61,10 +67,6 @@
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/zzqj;->c()I
-
-    move-result v0
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

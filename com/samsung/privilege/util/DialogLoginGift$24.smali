@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogLoginGift;->b(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
+    value = Lcom/samsung/privilege/util/DialogLoginGift;->b(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/Object;)V
 .end annotation
 
 
@@ -20,13 +20,15 @@
 
 .field final synthetic e:Ljava/lang/String;
 
+.field final synthetic f:Ljava/lang/Object;
+
 
 # direct methods
-.method constructor <init>(JLandroid/os/Handler;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 8
+.method constructor <init>(JLandroid/os/Handler;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 9
 
     .prologue
-    .line 1373
+    .line 1417
     iput-wide p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->a:J
 
     iput-object p3, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->b:Landroid/os/Handler;
@@ -36,6 +38,8 @@
     iput-object p5, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->d:Ljava/lang/String;
 
     iput-object p6, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->e:Ljava/lang/String;
+
+    iput-object p7, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->f:Ljava/lang/Object;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
 
@@ -48,10 +52,10 @@
     .registers 13
 
     .prologue
-    .line 1480
+    .line 1522
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 1483
+    .line 1525
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -61,7 +65,7 @@
 
     move-result-wide v0
 
-    .line 1484
+    .line 1526
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "GetProfile"
@@ -76,7 +80,7 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_51
 
-    .line 1489
+    .line 1531
     :goto_1b
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -112,7 +116,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1491
+    .line 1533
     const-string/jumbo v0, "Get Profile Data Fail!!!"
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->c:Landroid/content/Context;
@@ -121,15 +125,15 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 1492
+    .line 1534
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->c:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/bzbs/data/UserLogin;->X(Landroid/content/Context;)V
 
-    .line 1493
+    .line 1535
     return-void
 
-    .line 1485
+    .line 1527
     :catch_51
     move-exception v0
 
@@ -140,7 +144,7 @@
     .registers 13
 
     .prologue
-    .line 1377
+    .line 1421
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -150,7 +154,7 @@
 
     move-result-wide v0
 
-    .line 1378
+    .line 1422
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "GetProfile"
@@ -165,7 +169,7 @@
     :try_end_18
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_49
 
-    .line 1383
+    .line 1427
     :goto_18
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -201,7 +205,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1385
+    .line 1429
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->b:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/util/DialogLoginGift$24$1;
@@ -210,10 +214,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1476
+    .line 1518
     return-void
 
-    .line 1379
+    .line 1423
     :catch_49
     move-exception v0
 

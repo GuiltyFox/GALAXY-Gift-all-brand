@@ -50,7 +50,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/util/ResumeUtil$2;->a:Landroid/content/Context;
 
-    const v3, 0x7f09023e
+    const v3, 0x7f090257
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -59,7 +59,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/util/ResumeUtil$2;->a:Landroid/content/Context;
 
-    const v3, 0x7f090243
+    const v3, 0x7f09025a
 
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_1d
@@ -73,7 +73,7 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/util/ResumeUtil$2;->a:Landroid/content/Context;
 
-    const v3, 0x7f090244
+    const v3, 0x7f09025b
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_28

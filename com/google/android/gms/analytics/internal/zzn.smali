@@ -41,11 +41,11 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/String;)Ljava/lang/String;
 
     const-string/jumbo v1, "ClientId should be saved from worker thread"
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/zzx;->c(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/zzaa;->c(Ljava/lang/String;)V
 
     const/4 v2, 0x0
 
@@ -72,27 +72,29 @@
     .catch Ljava/io/IOException; {:try_start_b .. :try_end_20} :catch_44
     .catchall {:try_start_b .. :try_end_20} :catchall_59
 
-    const/4 v0, 0x1
+    if-eqz v2, :cond_25
 
-    if-eqz v2, :cond_26
-
-    :try_start_23
+    :try_start_22
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
-    :try_end_26
-    .catch Ljava/io/IOException; {:try_start_23 .. :try_end_26} :catch_27
+    :try_end_25
+    .catch Ljava/io/IOException; {:try_start_22 .. :try_end_25} :catch_27
+
+    :cond_25
+    :goto_25
+    const/4 v0, 0x1
 
     :cond_26
     :goto_26
     return v0
 
     :catch_27
-    move-exception v1
+    move-exception v0
 
-    const-string/jumbo v2, "Failed to close clientId writing stream"
+    const-string/jumbo v1, "Failed to close clientId writing stream"
 
-    invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zzn;->e(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzn;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_26
+    goto :goto_25
 
     :catch_2f
     move-exception v1
@@ -182,11 +184,11 @@
     move-result-object v0
 
     :try_start_4
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzn;->r()Lcom/google/android/gms/measurement/zzg;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzn;->r()Lcom/google/android/gms/analytics/zzi;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/measurement/zzg;->c()Landroid/content/Context;
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/zzi;->c()Landroid/content/Context;
 
     move-result-object v1
 
@@ -225,16 +227,16 @@
 
     const-string/jumbo v1, "ClientId should be loaded from worker thread"
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/zzx;->c(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/zzaa;->c(Ljava/lang/String;)V
 
     :try_start_7
     const-string/jumbo v1, "gaClientId"
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->openFileInput(Ljava/lang/String;)Ljava/io/FileInputStream;
     :try_end_d
-    .catch Ljava/io/FileNotFoundException; {:try_start_7 .. :try_end_d} :catch_7a
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_d} :catch_8a
-    .catchall {:try_start_7 .. :try_end_d} :catchall_a6
+    .catch Ljava/io/FileNotFoundException; {:try_start_7 .. :try_end_d} :catch_7b
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_d} :catch_8b
+    .catchall {:try_start_7 .. :try_end_d} :catchall_a7
 
     move-result-object v2
 
@@ -245,7 +247,7 @@
 
     const/4 v1, 0x0
 
-    array-length v4, v3
+    const/16 v4, 0x24
 
     invoke-virtual {v2, v3, v1, v4}, Ljava/io/FileInputStream;->read([BII)I
 
@@ -255,7 +257,7 @@
 
     move-result v1
 
-    if-lez v1, :cond_3b
+    if-lez v1, :cond_3c
 
     const-string/jumbo v1, "clientId file seems corrupted, deleting it."
 
@@ -266,37 +268,37 @@
     const-string/jumbo v1, "gaClientId"
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->deleteFile(Ljava/lang/String;)Z
-    :try_end_2d
-    .catch Ljava/io/FileNotFoundException; {:try_start_10 .. :try_end_2d} :catch_bb
-    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_2d} :catch_b9
-    .catchall {:try_start_10 .. :try_end_2d} :catchall_b7
+    :try_end_2e
+    .catch Ljava/io/FileNotFoundException; {:try_start_10 .. :try_end_2e} :catch_bc
+    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_2e} :catch_ba
+    .catchall {:try_start_10 .. :try_end_2e} :catchall_b8
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_33
 
-    :try_start_2f
+    :try_start_30
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-    :try_end_32
-    .catch Ljava/io/IOException; {:try_start_2f .. :try_end_32} :catch_33
+    :try_end_33
+    .catch Ljava/io/IOException; {:try_start_30 .. :try_end_33} :catch_34
 
-    :cond_32
-    :goto_32
+    :cond_33
+    :goto_33
     return-object v0
 
-    :catch_33
+    :catch_34
     move-exception v1
 
     const-string/jumbo v2, "Failed to close client id reading stream"
 
     invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zzn;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_32
+    goto :goto_33
 
-    :cond_3b
+    :cond_3c
     const/16 v1, 0xe
 
-    if-ge v4, v1, :cond_5c
+    if-ge v4, v1, :cond_5d
 
-    :try_start_3f
+    :try_start_40
     const-string/jumbo v1, "clientId file is empty, deleting it."
 
     invoke-virtual {p0, v1}, Lcom/google/android/gms/analytics/internal/zzn;->e(Ljava/lang/String;)V
@@ -306,31 +308,31 @@
     const-string/jumbo v1, "gaClientId"
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->deleteFile(Ljava/lang/String;)Z
-    :try_end_4e
-    .catch Ljava/io/FileNotFoundException; {:try_start_3f .. :try_end_4e} :catch_bb
-    .catch Ljava/io/IOException; {:try_start_3f .. :try_end_4e} :catch_b9
-    .catchall {:try_start_3f .. :try_end_4e} :catchall_b7
+    :try_end_4f
+    .catch Ljava/io/FileNotFoundException; {:try_start_40 .. :try_end_4f} :catch_bc
+    .catch Ljava/io/IOException; {:try_start_40 .. :try_end_4f} :catch_ba
+    .catchall {:try_start_40 .. :try_end_4f} :catchall_b8
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_33
 
-    :try_start_50
+    :try_start_51
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-    :try_end_53
-    .catch Ljava/io/IOException; {:try_start_50 .. :try_end_53} :catch_54
+    :try_end_54
+    .catch Ljava/io/IOException; {:try_start_51 .. :try_end_54} :catch_55
 
-    goto :goto_32
+    goto :goto_33
 
-    :catch_54
+    :catch_55
     move-exception v1
 
     const-string/jumbo v2, "Failed to close client id reading stream"
 
     invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zzn;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_32
+    goto :goto_33
 
-    :cond_5c
-    :try_start_5c
+    :cond_5d
+    :try_start_5d
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
 
     new-instance v1, Ljava/lang/String;
@@ -342,64 +344,64 @@
     const-string/jumbo v3, "Read client id from disk"
 
     invoke-virtual {p0, v3, v1}, Lcom/google/android/gms/analytics/internal/zzn;->a(Ljava/lang/String;Ljava/lang/Object;)V
-    :try_end_6b
-    .catch Ljava/io/FileNotFoundException; {:try_start_5c .. :try_end_6b} :catch_bb
-    .catch Ljava/io/IOException; {:try_start_5c .. :try_end_6b} :catch_b9
-    .catchall {:try_start_5c .. :try_end_6b} :catchall_b7
+    :try_end_6c
+    .catch Ljava/io/FileNotFoundException; {:try_start_5d .. :try_end_6c} :catch_bc
+    .catch Ljava/io/IOException; {:try_start_5d .. :try_end_6c} :catch_ba
+    .catchall {:try_start_5d .. :try_end_6c} :catchall_b8
 
-    if-eqz v2, :cond_70
+    if-eqz v2, :cond_71
 
-    :try_start_6d
+    :try_start_6e
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-    :try_end_70
-    .catch Ljava/io/IOException; {:try_start_6d .. :try_end_70} :catch_72
+    :try_end_71
+    .catch Ljava/io/IOException; {:try_start_6e .. :try_end_71} :catch_73
 
-    :cond_70
-    :goto_70
+    :cond_71
+    :goto_71
     move-object v0, v1
 
-    goto :goto_32
+    goto :goto_33
 
-    :catch_72
+    :catch_73
     move-exception v0
 
     const-string/jumbo v2, "Failed to close client id reading stream"
 
     invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/internal/zzn;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_70
+    goto :goto_71
 
-    :catch_7a
+    :catch_7b
     move-exception v1
 
     move-object v1, v0
 
-    :goto_7c
-    if-eqz v1, :cond_32
+    :goto_7d
+    if-eqz v1, :cond_33
 
-    :try_start_7e
+    :try_start_7f
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
-    :try_end_81
-    .catch Ljava/io/IOException; {:try_start_7e .. :try_end_81} :catch_82
+    :try_end_82
+    .catch Ljava/io/IOException; {:try_start_7f .. :try_end_82} :catch_83
 
-    goto :goto_32
+    goto :goto_33
 
-    :catch_82
+    :catch_83
     move-exception v1
 
     const-string/jumbo v2, "Failed to close client id reading stream"
 
     invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zzn;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_32
+    goto :goto_33
 
-    :catch_8a
+    :catch_8b
     move-exception v1
 
     move-object v2, v0
 
-    :goto_8c
-    :try_start_8c
+    :goto_8d
+    :try_start_8d
     const-string/jumbo v3, "Error reading client id file, deleting it"
 
     invoke-virtual {p0, v3, v1}, Lcom/google/android/gms/analytics/internal/zzn;->e(Ljava/lang/String;Ljava/lang/Object;)V
@@ -407,71 +409,71 @@
     const-string/jumbo v1, "gaClientId"
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->deleteFile(Ljava/lang/String;)Z
-    :try_end_98
-    .catchall {:try_start_8c .. :try_end_98} :catchall_b7
+    :try_end_99
+    .catchall {:try_start_8d .. :try_end_99} :catchall_b8
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_33
 
-    :try_start_9a
+    :try_start_9b
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-    :try_end_9d
-    .catch Ljava/io/IOException; {:try_start_9a .. :try_end_9d} :catch_9e
+    :try_end_9e
+    .catch Ljava/io/IOException; {:try_start_9b .. :try_end_9e} :catch_9f
 
-    goto :goto_32
+    goto :goto_33
 
-    :catch_9e
+    :catch_9f
     move-exception v1
 
     const-string/jumbo v2, "Failed to close client id reading stream"
 
     invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zzn;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_32
+    goto :goto_33
 
-    :catchall_a6
+    :catchall_a7
     move-exception v1
 
     move-object v2, v0
 
     move-object v0, v1
 
-    :goto_a9
-    if-eqz v2, :cond_ae
+    :goto_aa
+    if-eqz v2, :cond_af
 
-    :try_start_ab
+    :try_start_ac
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
-    :try_end_ae
-    .catch Ljava/io/IOException; {:try_start_ab .. :try_end_ae} :catch_af
+    :try_end_af
+    .catch Ljava/io/IOException; {:try_start_ac .. :try_end_af} :catch_b0
 
-    :cond_ae
-    :goto_ae
+    :cond_af
+    :goto_af
     throw v0
 
-    :catch_af
+    :catch_b0
     move-exception v1
 
     const-string/jumbo v2, "Failed to close client id reading stream"
 
     invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zzn;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_ae
+    goto :goto_af
 
-    :catchall_b7
+    :catchall_b8
     move-exception v0
 
-    goto :goto_a9
+    goto :goto_aa
 
-    :catch_b9
+    :catch_ba
     move-exception v1
 
-    goto :goto_8c
+    goto :goto_8d
 
-    :catch_bb
+    :catch_bc
     move-exception v1
 
     move-object v1, v2
 
-    goto :goto_7c
+    goto :goto_7d
 .end method
 
 .method protected a()V
@@ -492,7 +494,7 @@
 
     if-nez v0, :cond_17
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzn;->r()Lcom/google/android/gms/measurement/zzg;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzn;->r()Lcom/google/android/gms/analytics/zzi;
 
     move-result-object v0
 
@@ -500,7 +502,7 @@
 
     invoke-direct {v1, p0}, Lcom/google/android/gms/analytics/internal/zzn$1;-><init>(Lcom/google/android/gms/analytics/internal/zzn;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/zzg;->a(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/analytics/zzi;->a(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
 
     move-result-object v0
 
@@ -605,7 +607,7 @@
     :try_start_2
     iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzn;->a:Ljava/lang/String;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzn;->r()Lcom/google/android/gms/measurement/zzg;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzn;->r()Lcom/google/android/gms/analytics/zzi;
 
     move-result-object v0
 
@@ -613,7 +615,7 @@
 
     invoke-direct {v1, p0}, Lcom/google/android/gms/analytics/internal/zzn$2;-><init>(Lcom/google/android/gms/analytics/internal/zzn;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/zzg;->a(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/analytics/zzi;->a(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
 
     move-result-object v0
 
@@ -643,11 +645,11 @@
 .method d()Ljava/lang/String;
     .registers 2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzn;->r()Lcom/google/android/gms/measurement/zzg;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzn;->r()Lcom/google/android/gms/analytics/zzi;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/zzg;->c()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/zzi;->c()Landroid/content/Context;
 
     move-result-object v0
 

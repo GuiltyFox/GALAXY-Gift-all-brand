@@ -952,7 +952,7 @@
     :cond_a
     :goto_a
     :try_start_a
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/ManagedClientConnection;->h_()V
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/ManagedClientConnection;->i_()V
     :try_end_d
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_d} :catch_21
 
@@ -2357,7 +2357,7 @@
     :try_start_0
     iget-object v0, p0, Lcz/msebera/android/httpclient/impl/client/DefaultRequestDirector;->q:Lcz/msebera/android/httpclient/conn/ManagedClientConnection;
 
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/ManagedClientConnection;->h_()V
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/ManagedClientConnection;->i_()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_5} :catch_9
 

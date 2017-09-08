@@ -55,7 +55,7 @@
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;Z)V
 
     .line 510
-    sget-object v0, Lcom/bzbs/data/AppSetting;->k:Ljava/lang/String;
+    sget-object v0, Lcom/bzbs/data/AppSetting;->p:Ljava/lang/String;
 
     .line 512
     :try_start_14

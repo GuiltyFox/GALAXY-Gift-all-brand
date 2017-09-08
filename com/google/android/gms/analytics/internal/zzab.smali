@@ -128,9 +128,9 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-wide p3, p0, Lcom/google/android/gms/analytics/internal/zzab;->d:J
 
@@ -171,7 +171,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_5a
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -212,11 +212,13 @@
     goto :goto_29
 
     :cond_55
-    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
 
     goto :goto_14
 
-    :cond_58
+    :cond_5a
     invoke-interface {p2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -225,13 +227,13 @@
 
     move-result-object v2
 
-    :cond_60
-    :goto_60
+    :cond_62
+    :goto_62
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8c
+    if-eqz v0, :cond_8e
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -247,7 +249,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_60
+    if-nez v3, :cond_62
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -257,7 +259,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_60
+    if-eqz v3, :cond_62
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -269,22 +271,22 @@
 
     invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_60
+    goto :goto_62
 
-    :cond_8c
+    :cond_8e
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzab;->g:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
-    if-nez v0, :cond_b8
+    if-nez v0, :cond_ba
 
     const-string/jumbo v0, "_v"
 
     iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzab;->g:Ljava/lang/String;
 
-    invoke-static {v1, v0, v2}, Lcom/google/android/gms/analytics/internal/zzam;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0, v2}, Lcom/google/android/gms/analytics/internal/zzao;->a(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzab;->g:Ljava/lang/String;
 
@@ -294,7 +296,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_b2
+    if-nez v0, :cond_b4
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzab;->g:Ljava/lang/String;
 
@@ -304,14 +306,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b8
+    if-eqz v0, :cond_ba
 
-    :cond_b2
+    :cond_b4
     const-string/jumbo v0, "adid"
 
     invoke-interface {v1, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_b8
+    :cond_ba
     invoke-static {v1}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
@@ -438,7 +440,7 @@
 .method private a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .registers 5
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/String;)Ljava/lang/String;
 
     const-string/jumbo v0, "&"
 
@@ -453,7 +455,7 @@
     :goto_d
     const-string/jumbo v1, "Short param name required"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->b(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzaa;->b(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzab;->a:Ljava/util/Map;
 
@@ -695,7 +697,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzam;->a(Ljava/lang/String;)J
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzao;->a(Ljava/lang/String;)J
 
     move-result-wide v0
 
@@ -719,8 +721,6 @@
 .method public toString()Ljava/lang/String;
     .registers 7
 
-    const-wide/16 v4, 0x0
-
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
@@ -736,6 +736,8 @@
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuffer;->append(J)Ljava/lang/StringBuffer;
 
     iget-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzab;->c:J
+
+    const-wide/16 v4, 0x0
 
     cmp-long v0, v2, v4
 
@@ -754,11 +756,7 @@
     :cond_25
     iget v0, p0, Lcom/google/android/gms/analytics/internal/zzab;->e:I
 
-    int-to-long v2, v0
-
-    cmp-long v0, v2, v4
-
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_35
 
     const-string/jumbo v0, ", appUID="
 
@@ -770,7 +768,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
 
-    :cond_38
+    :cond_35
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzab;->a:Ljava/util/Map;
@@ -787,12 +785,12 @@
 
     move-result-object v2
 
-    :goto_4a
+    :goto_47
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_71
+    if-eqz v0, :cond_6e
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -820,9 +818,9 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    goto :goto_4a
+    goto :goto_47
 
-    :cond_71
+    :cond_6e
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v0

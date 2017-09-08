@@ -332,7 +332,7 @@
     if-nez v0, :cond_a1
 
     .line 214
-    invoke-interface {p2}, Lcz/msebera/android/httpclient/HttpClientConnection;->g_()V
+    invoke-interface {p2}, Lcz/msebera/android/httpclient/HttpClientConnection;->h_()V
 
     .line 217
     iget v0, p0, Lcz/msebera/android/httpclient/protocol/HttpRequestExecutor;->a:I
@@ -425,7 +425,7 @@
     .line 239
     :cond_91
     :goto_91
-    invoke-interface {p2}, Lcz/msebera/android/httpclient/HttpClientConnection;->g_()V
+    invoke-interface {p2}, Lcz/msebera/android/httpclient/HttpClientConnection;->h_()V
 
     .line 240
     const-string/jumbo v1, "http.request_sent"

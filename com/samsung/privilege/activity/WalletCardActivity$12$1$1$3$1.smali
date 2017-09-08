@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 1168
+    .line 1262
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
@@ -32,10 +32,10 @@
     .registers 8
 
     .prologue
-    .line 1232
+    .line 1326
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 1233
+    .line 1327
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v0
@@ -70,7 +70,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1235
+    .line 1329
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3;->b:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1;
@@ -87,7 +87,7 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1238
+    .line 1332
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3;->b:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1;
@@ -108,7 +108,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$12;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v2, 0x7f0901d7
+    const v2, 0x7f0901ea
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -116,7 +116,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogWallet;->a(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 1239
+    .line 1333
     return-void
 .end method
 
@@ -124,7 +124,7 @@
     .registers 16
 
     .prologue
-    .line 1171
+    .line 1265
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v0
@@ -159,7 +159,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1172
+    .line 1266
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3;->b:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1;
@@ -176,72 +176,72 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1175
+    .line 1269
     :try_start_37
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1176
+    .line 1270
     const-string/jumbo v1, "result"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1178
+    .line 1272
     const-string/jumbo v2, "issuer"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 1179
+    .line 1273
     const-string/jumbo v2, "cardId"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 1180
+    .line 1274
     const-string/jumbo v2, "imageUrl"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 1181
+    .line 1275
     const-string/jumbo v2, "merchantName"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 1182
+    .line 1276
     const-string/jumbo v2, "branchName"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1183
+    .line 1277
     const-string/jumbo v2, "amount"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->f(Lorg/json/JSONObject;Ljava/lang/String;)D
 
     move-result-wide v2
 
-    .line 1184
+    .line 1278
     const-string/jumbo v4, "balance"
 
     invoke-static {v0, v4}, Lcom/bzbs/util/JsonUtil;->f(Lorg/json/JSONObject;Ljava/lang/String;)D
 
     move-result-wide v4
 
-    .line 1185
+    .line 1279
     const-string/jumbo v8, "transactionDate"
 
     invoke-static {v0, v8}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 1187
+    .line 1281
     const-string/jumbo v10, "success"
 
     invoke-virtual {v1, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -250,7 +250,7 @@
 
     if-eqz v1, :cond_da
 
-    .line 1188
+    .line 1282
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3;->b:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1;
@@ -273,7 +273,7 @@
 
     invoke-virtual {v10, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1218
+    .line 1312
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -334,11 +334,11 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1228
+    .line 1322
     :goto_d9
     return-void
 
-    .line 1220
+    .line 1314
     :cond_da
     const-string/jumbo v1, "message"
 
@@ -346,7 +346,7 @@
 
     move-result-object v0
 
-    .line 1221
+    .line 1315
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1$3;->b:Lcom/samsung/privilege/activity/WalletCardActivity$12$1$1;
@@ -363,11 +363,11 @@
 
     goto :goto_d9
 
-    .line 1225
+    .line 1319
     :catch_ef
     move-exception v0
 
-    .line 1226
+    .line 1320
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
     goto :goto_d9

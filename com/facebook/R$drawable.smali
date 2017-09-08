@@ -40,23 +40,23 @@
 
 .field public static final com_facebook_tooltip_blue_xout:I = 0x7f020148
 
-.field public static final messenger_bubble_large_blue:I = 0x7f0201df
+.field public static final messenger_bubble_large_blue:I = 0x7f0201f8
 
-.field public static final messenger_bubble_large_white:I = 0x7f0201e0
+.field public static final messenger_bubble_large_white:I = 0x7f0201f9
 
-.field public static final messenger_bubble_small_blue:I = 0x7f0201e1
+.field public static final messenger_bubble_small_blue:I = 0x7f0201fa
 
-.field public static final messenger_bubble_small_white:I = 0x7f0201e2
+.field public static final messenger_bubble_small_white:I = 0x7f0201fb
 
-.field public static final messenger_button_blue_bg_round:I = 0x7f0201e3
+.field public static final messenger_button_blue_bg_round:I = 0x7f0201fc
 
-.field public static final messenger_button_blue_bg_selector:I = 0x7f0201e4
+.field public static final messenger_button_blue_bg_selector:I = 0x7f0201fd
 
-.field public static final messenger_button_send_round_shadow:I = 0x7f0201e5
+.field public static final messenger_button_send_round_shadow:I = 0x7f0201fe
 
-.field public static final messenger_button_white_bg_round:I = 0x7f0201e6
+.field public static final messenger_button_white_bg_round:I = 0x7f0201ff
 
-.field public static final messenger_button_white_bg_selector:I = 0x7f0201e7
+.field public static final messenger_button_white_bg_selector:I = 0x7f020200
 
 
 # direct methods

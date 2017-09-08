@@ -13,20 +13,16 @@
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/String;
-
-.field final synthetic b:Lcom/samsung/privilege/activity/WalletCardActivity$1;
+.field final synthetic a:Lcom/samsung/privilege/activity/WalletCardActivity$1;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/WalletCardActivity$1;Ljava/lang/String;)V
-    .registers 3
+.method constructor <init>(Lcom/samsung/privilege/activity/WalletCardActivity$1;)V
+    .registers 2
 
     .prologue
-    .line 248
-    iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$1;
-
-    iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1$1;->a:Ljava/lang/String;
+    .line 263
+    iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,54 +35,27 @@
     .registers 5
 
     .prologue
-    .line 251
-    invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "onPaymentSuccess:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1$1;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 256
-    :try_start_1d
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$1;
+    .line 269
+    :try_start_0
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->ai:Landroid/widget/RelativeLayout;
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->an:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0}, Landroid/widget/RelativeLayout;->performClick()Z
-    :try_end_26
-    .catch Ljava/lang/Exception; {:try_start_1d .. :try_end_26} :catch_27
+    :try_end_9
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_9} :catch_a
 
-    .line 260
-    :goto_26
+    .line 273
+    :goto_9
     return-void
 
-    .line 257
-    :catch_27
+    .line 270
+    :catch_a
     move-exception v0
 
-    .line 258
+    .line 271
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v1
@@ -115,5 +84,5 @@
 
     invoke-static {v1, v0}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_26
+    goto :goto_9
 .end method

@@ -639,7 +639,7 @@
 
     move-result-object v0
 
-    invoke-direct {v0}, Lcom/bumptech/glide/Glide;->f()Lcom/bumptech/glide/load/model/GenericLoaderFactory;
+    invoke-direct {v0}, Lcom/bumptech/glide/Glide;->g()Lcom/bumptech/glide/load/model/GenericLoaderFactory;
 
     move-result-object v0
 
@@ -731,7 +731,7 @@
     return-object v0
 .end method
 
-.method private f()Lcom/bumptech/glide/load/model/GenericLoaderFactory;
+.method private g()Lcom/bumptech/glide/load/model/GenericLoaderFactory;
     .registers 2
 
     .prologue
@@ -937,5 +937,23 @@
     invoke-interface {v0}, Lcom/bumptech/glide/load/engine/cache/MemoryCache;->a()V
 
     .line 371
+    return-void
+.end method
+
+.method public f()V
+    .registers 2
+
+    .prologue
+    .line 391
+    invoke-static {}, Lcom/bumptech/glide/util/Util;->b()V
+
+    .line 392
+    invoke-virtual {p0}, Lcom/bumptech/glide/Glide;->b()Lcom/bumptech/glide/load/engine/Engine;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/bumptech/glide/load/engine/Engine;->a()V
+
+    .line 393
     return-void
 .end method

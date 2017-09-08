@@ -11955,7 +11955,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v6, Lcom/bzbs/lib/survey/LibConst;->e:Ljava/lang/String;
+    sget-object v6, Lcom/bzbs/lib/survey/LibConst;->j:Ljava/lang/String;
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

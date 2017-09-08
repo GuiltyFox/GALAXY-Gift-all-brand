@@ -364,6 +364,25 @@
     return-object v0
 .end method
 
+.method public b(Lcom/journeyapps/barcodescanner/BarcodeCallback;)V
+    .registers 3
+
+    .prologue
+    .line 157
+    sget-object v0, Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;->c:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
+
+    iput-object v0, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->a:Lcom/journeyapps/barcodescanner/BarcodeView$DecodeMode;
+
+    .line 158
+    iput-object p1, p0, Lcom/journeyapps/barcodescanner/BarcodeView;->b:Lcom/journeyapps/barcodescanner/BarcodeCallback;
+
+    .line 159
+    invoke-direct {p0}, Lcom/journeyapps/barcodescanner/BarcodeView;->m()V
+
+    .line 160
+    return-void
+.end method
+
 .method protected c()V
     .registers 1
 

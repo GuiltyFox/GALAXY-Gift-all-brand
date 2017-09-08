@@ -197,7 +197,7 @@
 
     invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
     :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_60
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_66
 
     .line 247
     :goto_18
@@ -236,7 +236,13 @@
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 249
-    const-string/jumbo v0, "Request OTP success."
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogOTPUtil$8;->b:Landroid/content/Context;
+
+    const v1, 0x7f0900dc
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogOTPUtil$8;->b:Landroid/content/Context;
 
@@ -271,7 +277,7 @@
     return-void
 
     .line 243
-    :catch_60
+    :catch_66
     move-exception v0
 
     goto :goto_18

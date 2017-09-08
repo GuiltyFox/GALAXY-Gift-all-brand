@@ -3,7 +3,7 @@
 .source "DialogSerialGift.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnCancelListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -15,14 +15,22 @@
 # instance fields
 .field final synthetic a:Landroid/content/Context;
 
+.field final synthetic b:Landroid/widget/LinearLayout;
+
+.field final synthetic c:Landroid/widget/LinearLayout;
+
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
-    .registers 2
+.method constructor <init>(Landroid/content/Context;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;)V
+    .registers 4
 
     .prologue
-    .line 385
+    .line 446
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogSerialGift$9;->a:Landroid/content/Context;
+
+    iput-object p2, p0, Lcom/samsung/privilege/util/DialogSerialGift$9;->b:Landroid/widget/LinearLayout;
+
+    iput-object p3, p0, Lcom/samsung/privilege/util/DialogSerialGift$9;->c:Landroid/widget/LinearLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,17 +39,19 @@
 
 
 # virtual methods
-.method public onCancel(Landroid/content/DialogInterface;)V
-    .registers 3
+.method public onClick(Landroid/view/View;)V
+    .registers 5
 
     .prologue
-    .line 388
+    .line 449
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$9;->a:Landroid/content/Context;
 
-    check-cast v0, Landroid/app/Activity;
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogSerialGift$9;->b:Landroid/widget/LinearLayout;
 
-    invoke-static {v0}, Lcom/samsung/privilege/util/ScreenUtil;->d(Landroid/app/Activity;)V
+    iget-object v2, p0, Lcom/samsung/privilege/util/DialogSerialGift$9;->c:Landroid/widget/LinearLayout;
 
-    .line 389
+    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogSerialGift;->a(Landroid/content/Context;Landroid/view/View;Landroid/view/View;)V
+
+    .line 450
     return-void
 .end method

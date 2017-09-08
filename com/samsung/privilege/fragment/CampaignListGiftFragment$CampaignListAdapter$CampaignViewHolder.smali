@@ -37,7 +37,7 @@
     invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
     .line 576
-    const v0, 0x7f1001f9
+    const v0, 0x7f100223
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -46,7 +46,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter$CampaignViewHolder;->a:Landroid/view/View;
 
     .line 577
-    const v0, 0x7f100228
+    const v0, 0x7f100259
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -55,7 +55,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter$CampaignViewHolder;->b:Landroid/view/View;
 
     .line 579
-    const v0, 0x7f10010f
+    const v0, 0x7f100116
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -66,7 +66,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter$CampaignViewHolder;->c:Landroid/support/v7/widget/CardView;
 
     .line 580
-    const v0, 0x7f1000d3
+    const v0, 0x7f1000d9
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter$CampaignViewHolder;->d:Landroid/widget/LinearLayout;
 
     .line 581
-    const v0, 0x7f100111
+    const v0, 0x7f100118
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -88,7 +88,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter$CampaignViewHolder;->e:Landroid/widget/ImageView;
 
     .line 582
-    const v0, 0x7f100112
+    const v0, 0x7f100119
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -99,7 +99,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter$CampaignViewHolder;->f:Landroid/widget/TextView;
 
     .line 583
-    const v0, 0x7f100113
+    const v0, 0x7f10011a
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -110,7 +110,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter$CampaignViewHolder;->g:Landroid/widget/TextView;
 
     .line 584
-    const v0, 0x7f100115
+    const v0, 0x7f10011c
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -121,7 +121,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter$CampaignViewHolder;->h:Landroid/widget/TextView;
 
     .line 585
-    const v0, 0x7f100114
+    const v0, 0x7f10011b
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

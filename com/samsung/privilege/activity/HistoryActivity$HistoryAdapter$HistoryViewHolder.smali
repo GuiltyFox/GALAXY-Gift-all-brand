@@ -33,7 +33,7 @@
     invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
     .line 947
-    const v0, 0x7f10010f
+    const v0, 0x7f100116
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -44,7 +44,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->a:Landroid/support/v7/widget/CardView;
 
     .line 948
-    const v0, 0x7f10016a
+    const v0, 0x7f100171
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -55,7 +55,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->b:Landroid/widget/ImageView;
 
     .line 949
-    const v0, 0x7f10016b
+    const v0, 0x7f100172
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -66,7 +66,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->c:Landroid/widget/TextView;
 
     .line 950
-    const v0, 0x7f10016c
+    const v0, 0x7f100173
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->d:Landroid/widget/TextView;
 
     .line 951
-    const v0, 0x7f10016d
+    const v0, 0x7f100174
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -88,7 +88,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->e:Landroid/widget/TextView;
 
     .line 952
-    const v0, 0x7f10016e
+    const v0, 0x7f100175
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -99,7 +99,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->f:Landroid/widget/TextView;
 
     .line 953
-    const v0, 0x7f10016f
+    const v0, 0x7f100176
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

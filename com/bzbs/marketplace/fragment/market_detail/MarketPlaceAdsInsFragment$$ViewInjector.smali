@@ -53,15 +53,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f10049c
+    const v6, 0x7f1004d4
 
-    const v5, 0x7f10049b
+    const v5, 0x7f1004d3
 
-    const v4, 0x7f10049a
+    const v4, 0x7f1004d2
 
-    const v2, 0x7f10047d
+    const v2, 0x7f1004b5
 
-    const v3, 0x7f100264
+    const v3, 0x7f10029d
 
     .line 9
     invoke-super {p0, p1, p2, p3}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail$$ViewInjector;->inject(Lbutterknife/ButterKnife$Finder;Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;Ljava/lang/Object;)V
@@ -154,7 +154,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->textViewPoint:Landroid/widget/TextView;
 
     .line 28
-    const v0, 0x7f10049d
+    const v0, 0x7f1004d5
 
     const-string/jumbo v1, "field \'mainDlPb1\'"
 
@@ -165,7 +165,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 29
-    const v1, 0x7f10049d
+    const v1, 0x7f1004d5
 
     const-string/jumbo v2, "field \'mainDlPb1\'"
 
@@ -198,7 +198,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->tvPercentLoader:Landroid/widget/TextView;
 
     .line 32
-    const v0, 0x7f10049e
+    const v0, 0x7f1004d6
 
     const-string/jumbo v1, "field \'viewShadow\'"
 

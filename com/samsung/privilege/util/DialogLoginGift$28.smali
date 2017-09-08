@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 .end annotation
 
 
@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1662
+    .line 1704
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->a:Landroid/widget/TextView;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->b:Ljava/text/SimpleDateFormat;
@@ -39,15 +39,15 @@
     .registers 8
 
     .prologue
-    .line 1664
+    .line 1706
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 1665
+    .line 1707
     invoke-virtual {v0, p2, p3, p4}, Ljava/util/Calendar;->set(III)V
 
-    .line 1666
+    .line 1708
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->a:Landroid/widget/TextView;
 
     iget-object v2, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->b:Ljava/text/SimpleDateFormat;
@@ -62,6 +62,6 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1667
+    .line 1709
     return-void
 .end method

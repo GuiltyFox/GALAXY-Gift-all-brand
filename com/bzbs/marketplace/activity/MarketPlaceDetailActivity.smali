@@ -59,7 +59,7 @@
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->b(Z)V
 
     .line 86
-    invoke-direct {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->o()V
+    invoke-direct {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->p()V
 
     .line 87
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->m()V
@@ -71,7 +71,7 @@
     return-void
 .end method
 
-.method private o()V
+.method private p()V
     .registers 6
 
     .prologue
@@ -139,7 +139,7 @@
 
     const-string/jumbo v1, "BaseMarketDetail::Layout"
 
-    const v2, 0x7f0400db
+    const v2, 0x7f0400ec
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
@@ -164,7 +164,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100180
+    const v1, 0x7f100187
 
     iget-object v2, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->E:Landroid/support/v4/app/Fragment;
 
@@ -195,7 +195,7 @@
 
     const-string/jumbo v1, "BaseMarketDetail::Layout"
 
-    const v2, 0x7f0400da
+    const v2, 0x7f0400eb
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
@@ -388,7 +388,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 38
-    const v0, 0x7f040037
+    const v0, 0x7f040039
 
     return v0
 .end method
@@ -468,7 +468,7 @@
     .line 75
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v1, 0x7f0900db
+    const v1, 0x7f0900d1
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getString(I)Ljava/lang/String;
 

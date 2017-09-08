@@ -16,10 +16,10 @@
     .registers 2
 
     .prologue
-    .line 19
+    .line 35
     invoke-direct {p0}, Landroid/support/v4/app/FragmentActivity;-><init>()V
 
-    .line 20
+    .line 36
     const-string/jumbo v0, "PrivacyPolicyInsingInsingActivity"
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->a:Ljava/lang/String;
@@ -27,12 +27,16 @@
     return-void
 .end method
 
-.method private a()V
-    .registers 7
+.method private a(Landroid/os/Bundle;)V
+    .registers 8
 
     .prologue
-    .line 46
-    const v0, 0x7f1001e9
+    const/4 v5, 0x0
+
+    const/4 v4, 0x1
+
+    .line 86
+    const v0, 0x7f100213
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->findViewById(I)Landroid/view/View;
 
@@ -40,103 +44,110 @@
 
     check-cast v0, Landroid/webkit/WebView;
 
-    .line 53
-    :try_start_9
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    .line 54
-    const v2, 0x7f080002
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
-
-    move-result-object v1
-
-    .line 56
-    invoke-virtual {v1}, Ljava/io/InputStream;->available()I
-
-    move-result v2
-
-    new-array v3, v2, [B
-
-    .line 57
-    invoke-virtual {v1, v3}, Ljava/io/InputStream;->read([B)I
-
-    .line 61
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->clearCache(Z)V
-
-    .line 62
-    invoke-virtual {v0}, Landroid/webkit/WebView;->clearHistory()V
-
-    .line 63
+    .line 88
     invoke-virtual {v0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v1
 
-    const-string/jumbo v2, "utf-8"
+    .line 89
+    invoke-virtual {v1, v5}, Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V
+
+    .line 90
+    invoke-virtual {v1, v5}, Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V
+
+    .line 91
+    invoke-virtual {v1, v4}, Landroid/webkit/WebSettings;->setSupportZoom(Z)V
+
+    .line 92
+    const-string/jumbo v2, "UTF-8"
 
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V
 
-    .line 64
-    invoke-virtual {v0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+    .line 94
+    invoke-virtual {v1, v4}, Landroid/webkit/WebSettings;->setAppCacheEnabled(Z)V
+
+    .line 95
+    invoke-virtual {v1, v4}, Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V
+
+    .line 96
+    invoke-virtual {v1, v4}, Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V
+
+    .line 99
+    invoke-virtual {v1, v4}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
+
+    .line 102
+    invoke-virtual {v1, v4}, Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V
+
+    .line 103
+    invoke-virtual {v1, v4}, Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V
+
+    .line 106
+    invoke-virtual {v1, v4}, Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V
+
+    .line 108
+    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v3, 0xb
+
+    if-le v2, v3, :cond_3c
+
+    .line 110
+    invoke-virtual {v1, v5}, Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V
+
+    .line 114
+    :cond_3c
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x13
+
+    if-lt v1, v2, :cond_45
+
+    .line 115
+    invoke-static {v4}, Landroid/webkit/WebView;->setWebContentsDebuggingEnabled(Z)V
+
+    .line 118
+    :cond_45
+    if-eqz p1, :cond_4b
+
+    .line 119
+    invoke-virtual {v0, p1}, Landroid/webkit/WebView;->restoreState(Landroid/os/Bundle;)Landroid/webkit/WebBackForwardList;
+
+    .line 127
+    :goto_4a
+    return-void
+
+    .line 121
+    :cond_4b
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    const/4 v2, 0x1
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V
+    move-result-object v1
 
-    .line 66
-    const/4 v1, 0x0
+    const-string/jumbo v2, "1054"
 
-    new-instance v2, Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-direct {v2, v3}, Ljava/lang/String;-><init>([B)V
+    move-result v1
 
-    const-string/jumbo v3, "text/html"
+    if-eqz v1, :cond_62
 
-    const-string/jumbo v4, "utf-8"
+    .line 122
+    sget-object v1, Lcom/bzbs/data/AppSetting;->ae:Ljava/lang/String;
 
-    const/4 v5, 0x0
+    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    invoke-virtual/range {v0 .. v5}, Landroid/webkit/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_46
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_46} :catch_47
+    goto :goto_4a
 
-    .line 71
-    :goto_46
-    return-void
+    .line 124
+    :cond_62
+    sget-object v1, Lcom/bzbs/data/AppSetting;->ad:Ljava/lang/String;
 
-    .line 67
-    :catch_47
-    move-exception v0
+    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 69
-    const-string/jumbo v0, "error"
-
-    invoke-direct {p0, v0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->a(Ljava/lang/String;)V
-
-    goto :goto_46
-.end method
-
-.method private a(Ljava/lang/String;)V
-    .registers 4
-
-    .prologue
-    .line 79
-    iget-object v0, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->b:Landroid/os/Handler;
-
-    new-instance v1, Lcom/samsung/privilege/activity/UserTermsConditionsActivity$1;
-
-    invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity$1;-><init>(Lcom/samsung/privilege/activity/UserTermsConditionsActivity;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 86
-    return-void
+    goto :goto_4a
 .end method
 
 
@@ -145,10 +156,10 @@
     .registers 2
 
     .prologue
-    .line 89
+    .line 145
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->finish()V
 
-    .line 90
+    .line 146
     return-void
 .end method
 
@@ -156,38 +167,38 @@
     .registers 4
 
     .prologue
-    .line 27
+    .line 43
     invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 28
+    .line 44
     if-eqz p1, :cond_35
 
-    .line 29
+    .line 45
     const-string/jumbo v0, "PrivacyPolicyInsingInsingActivity"
 
     const-string/jumbo v1, "public void onCreate(Bundle savedInstanceState != null) {"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 33
+    .line 49
     :goto_e
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->requestWindowFeature(I)Z
 
-    .line 37
-    const v0, 0x7f04004f
+    .line 53
+    const v0, 0x7f04005b
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->setContentView(I)V
 
-    .line 39
+    .line 55
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->b:Landroid/os/Handler;
 
-    .line 40
+    .line 56
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->getAssets()Landroid/content/res/AssetManager;
 
     move-result-object v0
@@ -206,13 +217,13 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->c:Landroid/graphics/Typeface;
 
-    .line 42
-    invoke-direct {p0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->a()V
+    .line 59
+    invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->a(Landroid/os/Bundle;)V
 
-    .line 43
+    .line 60
     return-void
 
-    .line 31
+    .line 47
     :cond_35
     const-string/jumbo v0, "PrivacyPolicyInsingInsingActivity"
 
@@ -227,9 +238,9 @@
     .registers 1
 
     .prologue
-    .line 75
+    .line 131
     invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onResume()V
 
-    .line 76
+    .line 132
     return-void
 .end method

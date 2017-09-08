@@ -1,99 +1,159 @@
-.class Lcom/google/android/gms/common/internal/zze$zza;
-.super Lcom/google/android/gms/common/internal/zze;
+.class abstract Lcom/google/android/gms/common/internal/zze$zza;
+.super Lcom/google/android/gms/common/internal/zze$zze;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lcom/google/android/gms/common/internal/zze$zze",
+        "<",
+        "Ljava/lang/Boolean;",
+        ">;"
+    }
+.end annotation
 
 
 # instance fields
-.field p:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/android/gms/common/internal/zze;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public final a:I
+
+.field public final b:Landroid/os/Bundle;
+
+.field final synthetic c:Lcom/google/android/gms/common/internal/zze;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/List;)V
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/android/gms/common/internal/zze;",
-            ">;)V"
-        }
-    .end annotation
+.method protected constructor <init>(Lcom/google/android/gms/common/internal/zze;ILandroid/os/Bundle;)V
+    .registers 5
 
-    invoke-direct {p0}, Lcom/google/android/gms/common/internal/zze;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/zze$zza;->c:Lcom/google/android/gms/common/internal/zze;
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/zze$zza;->p:Ljava/util/List;
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/common/internal/zze$zze;-><init>(Lcom/google/android/gms/common/internal/zze;Ljava/lang/Object;)V
+
+    iput p2, p0, Lcom/google/android/gms/common/internal/zze$zza;->a:I
+
+    iput-object p3, p0, Lcom/google/android/gms/common/internal/zze$zza;->b:Landroid/os/Bundle;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lcom/google/android/gms/common/internal/zze;)Lcom/google/android/gms/common/internal/zze;
-    .registers 4
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/zze$zza;->p:Ljava/util/List;
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    new-instance v1, Lcom/google/android/gms/common/internal/zze$zza;
-
-    invoke-direct {v1, v0}, Lcom/google/android/gms/common/internal/zze$zza;-><init>(Ljava/util/List;)V
-
-    return-object v1
+.method protected abstract a(Lcom/google/android/gms/common/ConnectionResult;)V
 .end method
 
-.method public b(C)Z
-    .registers 4
+.method protected a(Ljava/lang/Boolean;)V
+    .registers 5
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/zze$zza;->p:Ljava/util/List;
+    const/4 v2, 0x1
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    const/4 v0, 0x0
 
-    move-result-object v1
+    if-nez p1, :cond_a
 
-    :cond_6
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zze$zza;->c:Lcom/google/android/gms/common/internal/zze;
 
-    move-result v0
+    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/internal/zze;->a(Lcom/google/android/gms/common/internal/zze;ILandroid/os/IInterface;)V
 
-    if-eqz v0, :cond_1a
+    :cond_9
+    :goto_9
+    return-void
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    :cond_a
+    iget v1, p0, Lcom/google/android/gms/common/internal/zze$zza;->a:I
+
+    sparse-switch v1, :sswitch_data_52
+
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zze$zza;->c:Lcom/google/android/gms/common/internal/zze;
+
+    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/internal/zze;->a(Lcom/google/android/gms/common/internal/zze;ILandroid/os/IInterface;)V
+
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zze$zza;->b:Landroid/os/Bundle;
+
+    if-eqz v1, :cond_23
+
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zze$zza;->b:Landroid/os/Bundle;
+
+    const-string/jumbo v1, "pendingIntent"
+
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/gms/common/internal/zze;
+    check-cast v0, Landroid/app/PendingIntent;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/internal/zze;->b(C)Z
+    :cond_23
+    new-instance v1, Lcom/google/android/gms/common/ConnectionResult;
 
-    move-result v0
+    iget v2, p0, Lcom/google/android/gms/common/internal/zze$zza;->a:I
 
-    if-eqz v0, :cond_6
+    invoke-direct {v1, v2, v0}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
 
-    const/4 v0, 0x1
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/internal/zze$zza;->a(Lcom/google/android/gms/common/ConnectionResult;)V
 
-    :goto_19
-    return v0
+    goto :goto_9
 
-    :cond_1a
-    const/4 v0, 0x0
+    :sswitch_2e
+    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/zze$zza;->a()Z
 
-    goto :goto_19
+    move-result v1
+
+    if-nez v1, :cond_9
+
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zze$zza;->c:Lcom/google/android/gms/common/internal/zze;
+
+    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/internal/zze;->a(Lcom/google/android/gms/common/internal/zze;ILandroid/os/IInterface;)V
+
+    new-instance v1, Lcom/google/android/gms/common/ConnectionResult;
+
+    const/16 v2, 0x8
+
+    invoke-direct {v1, v2, v0}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/internal/zze$zza;->a(Lcom/google/android/gms/common/ConnectionResult;)V
+
+    goto :goto_9
+
+    :sswitch_44
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zze$zza;->c:Lcom/google/android/gms/common/internal/zze;
+
+    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/internal/zze;->a(Lcom/google/android/gms/common/internal/zze;ILandroid/os/IInterface;)V
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string/jumbo v1, "A fatal developer error has occurred. Check the logs for further information."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :sswitch_data_52
+    .sparse-switch
+        0x0 -> :sswitch_2e
+        0xa -> :sswitch_44
+    .end sparse-switch
+.end method
+
+.method protected synthetic a(Ljava/lang/Object;)V
+    .registers 2
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/zze$zza;->a(Ljava/lang/Boolean;)V
+
+    return-void
+.end method
+
+.method protected abstract a()Z
+.end method
+
+.method protected b()V
+    .registers 1
+
+    return-void
 .end method

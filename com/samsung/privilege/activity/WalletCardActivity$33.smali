@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/WalletCardActivity;->b(I)V
+    value = Lcom/samsung/privilege/activity/WalletCardActivity;->a(I)V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 3017
+    .line 3062
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$33;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,6 +35,6 @@
     .registers 1
 
     .prologue
-    .line 3023
+    .line 3068
     return-void
 .end method

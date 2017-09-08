@@ -6,19 +6,19 @@
 # instance fields
 .field btnAddPicture:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004c7
+        value = 0x7f1004fe
     .end annotation
 .end field
 
 .field contentImagePost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004ba
+        value = 0x7f1004f1
     .end annotation
 .end field
 
 .field edtTextComment:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004bd
+        value = 0x7f1004f4
     .end annotation
 .end field
 
@@ -39,7 +39,7 @@
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004bb
+        value = 0x7f1004f2
     .end annotation
 .end field
 
@@ -53,7 +53,7 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100465
+        value = 0x7f10049d
     .end annotation
 .end field
 
@@ -65,7 +65,7 @@
 
 .field pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004b9
+        value = 0x7f1004f0
     .end annotation
 .end field
 
@@ -75,13 +75,13 @@
 
 .field recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004c8
+        value = 0x7f1004ff
     .end annotation
 .end field
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004b8
+        value = 0x7f1004ef
     .end annotation
 .end field
 
@@ -91,7 +91,7 @@
 
 .field tvResult:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004a4
+        value = 0x7f1004dc
     .end annotation
 .end field
 
@@ -443,7 +443,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_189
+    if-eqz v0, :cond_12e
 
     .line 371
     new-instance v0, Lcom/bzbs/util/DeviceHelper;
@@ -455,148 +455,63 @@
     .line 372
     invoke-virtual {v0}, Lcom/bzbs/util/DeviceHelper;->d()Ljava/lang/String;
 
-    move-result-object v0
-
     .line 373
-    sget-object v1, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
+    sget-object v0, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
 
     .line 374
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "samsung"
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "SM-G935F"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 376
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "samsung"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, " "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "SM-G935F"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 376
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "UserId= "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
-
-    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "\n"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "Name= "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
-
-    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->v(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "\n"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "Surname= "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
-
-    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->w(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "\n"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "IMEI= "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v3, "\n"
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
     const-string/jumbo v3, "osVersion= "
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "\n"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "Platform= "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    const-string/jumbo v2, "\n"
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v2, "Platform= "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -624,7 +539,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v3, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v3, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -735,13 +650,13 @@
 
     const/16 v4, 0xa
 
-    if-le v0, v4, :cond_14a
+    if-le v0, v4, :cond_ef
 
     .line 388
     iput-boolean v6, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->t:Z
 
     .line 390
-    :try_start_13d
+    :try_start_e2
     const-string/jumbo v0, "source"
 
     new-instance v4, Ljava/io/File;
@@ -751,12 +666,12 @@
     invoke-direct {v4, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v3, v0, v4}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/io/File;)V
-    :try_end_14a
-    .catch Ljava/io/FileNotFoundException; {:try_start_13d .. :try_end_14a} :catch_18a
+    :try_end_ef
+    .catch Ljava/io/FileNotFoundException; {:try_start_e2 .. :try_end_ef} :catch_12f
 
     .line 396
-    :cond_14a
-    :goto_14a
+    :cond_ef
+    :goto_ef
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -820,17 +735,17 @@
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;->a(Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;)V
 
     .line 459
-    :cond_189
+    :cond_12e
     return-void
 
     .line 391
-    :catch_18a
+    :catch_12f
     move-exception v0
 
     .line 392
     invoke-virtual {v0}, Ljava/io/FileNotFoundException;->printStackTrace()V
 
-    goto :goto_14a
+    goto :goto_ef
 .end method
 
 .method private a(Z)V
@@ -905,7 +820,7 @@
     .line 279
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->btnAddPicture:Landroid/widget/ImageView;
 
-    const v1, 0x7f020159
+    const v1, 0x7f02016c
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1602,7 +1517,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 131
-    const v0, 0x7f0400e7
+    const v0, 0x7f0400f8
 
     return v0
 .end method
@@ -1679,7 +1594,7 @@
     .registers 4
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1004c7
+            0x7f1004fe
         }
     .end annotation
 
@@ -1707,8 +1622,8 @@
     .registers 6
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1004bc,
-            0x7f1004be
+            0x7f1004f3,
+            0x7f1004f5
         }
     .end annotation
 
@@ -1722,7 +1637,7 @@
 
     move-result v0
 
-    const v1, 0x7f1004bc
+    const v1, 0x7f1004f3
 
     if-ne v0, v1, :cond_f
 
@@ -1756,7 +1671,7 @@
     .line 359
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
-    const v1, 0x7f0900db
+    const v1, 0x7f0900d1
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->getString(I)Ljava/lang/String;
 

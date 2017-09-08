@@ -97,20 +97,6 @@
     goto :goto_b
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lcom/google/android/gms/analytics/internal/zzo;
-    .registers 2
-
-    const-class v0, Lcom/google/android/gms/analytics/internal/zzo;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/analytics/internal/zzo;
-
-    return-object v0
-.end method
-
 .method public static values()[Lcom/google/android/gms/analytics/internal/zzo;
     .registers 1
 

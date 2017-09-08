@@ -101,7 +101,7 @@
     :cond_32
     iget-object v1, p0, Lcom/koushikdutta/async/http/body/MultipartFormDataBody$1;->b:Lcom/koushikdutta/async/http/body/MultipartFormDataBody;
 
-    invoke-virtual {v1}, Lcom/koushikdutta/async/http/body/MultipartFormDataBody;->d_()Lcom/koushikdutta/async/callback/DataCallback;
+    invoke-virtual {v1}, Lcom/koushikdutta/async/http/body/MultipartFormDataBody;->e_()Lcom/koushikdutta/async/callback/DataCallback;
 
     move-result-object v1
 

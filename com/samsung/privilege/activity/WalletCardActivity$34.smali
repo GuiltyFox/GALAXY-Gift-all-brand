@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/WalletCardActivity;->b(I)V
+    value = Lcom/samsung/privilege/activity/WalletCardActivity;->a(I)V
 .end annotation
 
 
@@ -22,7 +22,7 @@
     .registers 5
 
     .prologue
-    .line 3053
+    .line 3094
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iput-wide p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34;->a:J
@@ -40,10 +40,10 @@
     .registers 13
 
     .prologue
-    .line 3104
+    .line 3143
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 3107
+    .line 3146
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -53,14 +53,14 @@
 
     move-result-wide v0
 
-    .line 3108
+    .line 3147
     const-string/jumbo v2, "Wallet"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "loadQueue-"
+    const-string/jumbo v4, "loadPromotion-"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -72,7 +72,7 @@
 
     move-result-object v4
 
-    iget-object v4, v4, Lcom/bzbs/bean/DashboardItem;->wallet_queue:Ljava/lang/String;
+    iget-object v4, v4, Lcom/bzbs/bean/DashboardItem;->wallet_promotion:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -92,7 +92,7 @@
     :try_end_34
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_34} :catch_6f
 
-    .line 3113
+    .line 3152
     :goto_34
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
@@ -102,7 +102,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "(loadQueue|onFailure)response_code="
+    const-string/jumbo v2, "(loadPromotion|onFailure)response_code="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -128,7 +128,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3115
+    .line 3154
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/os/Handler;
@@ -141,17 +141,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 3128
+    .line 3167
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->e(Lcom/samsung/privilege/activity/WalletCardActivity;Z)Z
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->d(Lcom/samsung/privilege/activity/WalletCardActivity;Z)Z
 
-    .line 3129
+    .line 3168
     return-void
 
-    .line 3109
+    .line 3148
     :catch_6f
     move-exception v0
 
@@ -162,7 +162,7 @@
     .registers 13
 
     .prologue
-    .line 3057
+    .line 3098
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -172,14 +172,14 @@
 
     move-result-wide v0
 
-    .line 3058
+    .line 3099
     const-string/jumbo v2, "Wallet"
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "loadQueue-"
+    const-string/jumbo v4, "loadPromotion-"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -191,7 +191,7 @@
 
     move-result-object v4
 
-    iget-object v4, v4, Lcom/bzbs/bean/DashboardItem;->wallet_queue:Ljava/lang/String;
+    iget-object v4, v4, Lcom/bzbs/bean/DashboardItem;->wallet_promotion:Ljava/lang/String;
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -211,7 +211,7 @@
     :try_end_31
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_31} :catch_66
 
-    .line 3063
+    .line 3104
     :goto_31
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
@@ -221,7 +221,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "(loadQueue|onComplete)response_code="
+    const-string/jumbo v2, "(loadPromotion|onComplete)response_code="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -247,7 +247,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3065
+    .line 3106
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$34;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/os/Handler;
@@ -260,10 +260,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 3100
+    .line 3139
     return-void
 
-    .line 3059
+    .line 3100
     :catch_66
     move-exception v0
 

@@ -70,14 +70,14 @@
     return-void
 .end method
 
-.method public m_()V
+.method public n_()V
     .registers 2
 
     .prologue
     .line 144
     iget-object v0, p0, Lrx/internal/util/ScalarSynchronousObservable$2$1;->a:Lrx/Subscriber;
 
-    invoke-virtual {v0}, Lrx/Subscriber;->m_()V
+    invoke-virtual {v0}, Lrx/Subscriber;->n_()V
 
     .line 145
     return-void

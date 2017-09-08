@@ -6,7 +6,7 @@
 # instance fields
 .field LayoutMainComman:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10025e
+        value = 0x7f100297
     .end annotation
 .end field
 
@@ -14,43 +14,43 @@
 
 .field btnClose:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100260
+        value = 0x7f100299
     .end annotation
 .end field
 
 .field btnOK:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001ef
+        value = 0x7f100219
     .end annotation
 .end field
 
 .field imgCampaign:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100247
+        value = 0x7f100280
     .end annotation
 .end field
 
 .field layoutRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100253
+        value = 0x7f10028c
     .end annotation
 .end field
 
 .field svCondition:Landroid/widget/ScrollView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10024a
+        value = 0x7f100283
     .end annotation
 .end field
 
 .field tvCampaignDesc:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100255
+        value = 0x7f10028e
     .end annotation
 .end field
 
 .field tvError:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10039b
+        value = 0x7f1003d2
     .end annotation
 .end field
 
@@ -85,7 +85,7 @@
     .prologue
     const/high16 v6, 0x41f00000    # 30.0f
 
-    const v5, 0x7f0201b7
+    const v5, 0x7f0201cd
 
     .line 189
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
@@ -231,7 +231,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/dialog/ErrorBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ErrorBlurDialog;
 
-    const v2, 0x7f090279
+    const v2, 0x7f090290
 
     invoke-virtual {v1, v2}, Lcom/bzbs/marketplace/dialog/ErrorBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -269,7 +269,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

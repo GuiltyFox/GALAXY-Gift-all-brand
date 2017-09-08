@@ -51,7 +51,7 @@
     return p1
 .end method
 
-.method private o()V
+.method private p()V
     .registers 1
 
     .prologue
@@ -92,7 +92,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->a:Landroid/os/Handler;
 
     .line 74
-    const v0, 0x7f090290
+    const v0, 0x7f0902a7
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getString(I)Ljava/lang/String;
 
@@ -101,7 +101,7 @@
     invoke-virtual {p0, v0, v3}, Lcom/bzbs/marketplace/activity/ReviewActivity;->a(Ljava/lang/String;Z)V
 
     .line 75
-    const v0, 0x7f02015e
+    const v0, 0x7f020171
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->a(I)V
 
@@ -196,7 +196,7 @@
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->n()V
 
     .line 117
-    invoke-direct {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->o()V
+    invoke-direct {p0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->p()V
 
     .line 119
     :cond_82
@@ -217,7 +217,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 48
-    const v0, 0x7f040048
+    const v0, 0x7f04004a
 
     return v0
 .end method
@@ -282,7 +282,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100180
+    const v1, 0x7f100187
 
     iget-object v2, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->E:Landroid/support/v4/app/Fragment;
 
@@ -307,7 +307,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100180
+    const v1, 0x7f100187
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentManager;->a(I)Landroid/support/v4/app/Fragment;
 
@@ -390,7 +390,7 @@
     .line 221
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v1, 0x7f0900db
+    const v1, 0x7f0900d1
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getString(I)Ljava/lang/String;
 

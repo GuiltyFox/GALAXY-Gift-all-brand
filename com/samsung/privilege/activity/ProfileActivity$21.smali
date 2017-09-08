@@ -51,7 +51,7 @@
     .line 881
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$21;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v1, 0x7f1001cc
+    const v1, 0x7f1001d3
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 

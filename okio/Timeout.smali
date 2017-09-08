@@ -209,7 +209,7 @@
     return-void
 .end method
 
-.method public j_()J
+.method public k_()J
     .registers 3
 
     .prologue
@@ -219,7 +219,7 @@
     return-wide v0
 .end method
 
-.method public k_()Z
+.method public l_()Z
     .registers 2
 
     .prologue
@@ -229,7 +229,7 @@
     return v0
 .end method
 
-.method public l_()Lokio/Timeout;
+.method public m_()Lokio/Timeout;
     .registers 3
 
     .prologue

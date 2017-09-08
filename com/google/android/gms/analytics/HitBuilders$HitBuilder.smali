@@ -121,7 +121,7 @@
     return-object p0
 
     :cond_8
-    const-string/jumbo v0, " HitBuilder.set() called with a null paramName."
+    const-string/jumbo v0, "HitBuilder.set() called with a null paramName."
 
     invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->c(Ljava/lang/String;)V
 
@@ -129,7 +129,7 @@
 .end method
 
 .method public a()Ljava/util/Map;
-    .registers 12
+    .registers 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -143,11 +143,11 @@
 
     const/4 v2, 0x1
 
-    new-instance v5, Ljava/util/HashMap;
+    new-instance v6, Ljava/util/HashMap;
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->e:Ljava/util/Map;
 
-    invoke-direct {v5, v0}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+    invoke-direct {v6, v0}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->a:Lcom/google/android/gms/analytics/ecommerce/ProductAction;
 
@@ -159,7 +159,7 @@
 
     move-result-object v0
 
-    invoke-interface {v5, v0}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+    invoke-interface {v6, v0}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     :cond_15
     iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->c:Ljava/util/List;
@@ -191,7 +191,7 @@
 
     move-result-object v0
 
-    invoke-interface {v5, v0}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+    invoke-interface {v6, v0}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     add-int/lit8 v0, v1, 0x1
 
@@ -229,7 +229,7 @@
 
     move-result-object v0
 
-    invoke-interface {v5, v0}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+    invoke-interface {v6, v0}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     add-int/lit8 v0, v1, 0x1
 
@@ -246,18 +246,18 @@
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v6
+    move-result-object v7
 
     move v3, v2
 
     :goto_64
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d6
+    if-eqz v0, :cond_e6
 
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -271,52 +271,55 @@
 
     invoke-static {v3}, Lcom/google/android/gms/analytics/zzc;->h(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v8
+    move-result-object v9
 
     move v4, v2
 
     :goto_7f
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_ab
+    if-eqz v1, :cond_b2
 
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/android/gms/analytics/ecommerce/Product;
 
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-static {v4}, Lcom/google/android/gms/analytics/zzc;->g(I)Ljava/lang/String;
+    invoke-static {v8}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v10
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Lcom/google/android/gms/analytics/zzc;->g(I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v5
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v5
 
-    invoke-virtual {v1, v9}, Lcom/google/android/gms/analytics/ecommerce/Product;->a(Ljava/lang/String;)Ljava/util/Map;
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v11
+
+    if-eqz v11, :cond_ac
+
+    invoke-virtual {v10, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    :goto_a1
+    invoke-virtual {v1, v5}, Lcom/google/android/gms/analytics/ecommerce/Product;->a(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v1
 
-    invoke-interface {v5, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+    invoke-interface {v6, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     add-int/lit8 v1, v4, 0x1
 
@@ -324,7 +327,14 @@
 
     goto :goto_7f
 
-    :cond_ab
+    :cond_ac
+    new-instance v5, Ljava/lang/String;
+
+    invoke-direct {v5, v10}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_a1
+
+    :cond_b2
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -335,39 +345,51 @@
 
     move-result v1
 
-    if-nez v1, :cond_d2
+    if-nez v1, :cond_dc
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {v8}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v4
 
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string/jumbo v1, "nm"
 
-    move-result-object v1
-
-    const-string/jumbo v4, "nm"
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-eqz v5, :cond_e0
+
+    invoke-virtual {v4, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    :goto_d3
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v5, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v0, Ljava/lang/String;
 
-    :cond_d2
+    invoke-interface {v6, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_dc
     add-int/lit8 v0, v3, 0x1
 
     move v3, v0
 
     goto :goto_64
 
-    :cond_d6
-    return-object v5
+    :cond_e0
+    new-instance v1, Ljava/lang/String;
+
+    invoke-direct {v1, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_d3
+
+    :cond_e6
+    return-object v6
 .end method

@@ -46,7 +46,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/HistoryActivity$6;->b:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v1, 0x7f100116
+    const v1, 0x7f10011d
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 

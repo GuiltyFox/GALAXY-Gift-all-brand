@@ -8,67 +8,67 @@
 
 .field btnLike:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004c4
+        value = 0x7f1004fb
     .end annotation
 .end field
 
 .field contentView:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004bf
+        value = 0x7f1004f6
     .end annotation
 .end field
 
 .field imageHeader:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004c5
+        value = 0x7f1004fc
     .end annotation
 .end field
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004bb
+        value = 0x7f1004f2
     .end annotation
 .end field
 
 .field imageProfile:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001c4
+        value = 0x7f1001cb
     .end annotation
 .end field
 
 .field layoutLike:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100475
+        value = 0x7f1004ad
     .end annotation
 .end field
 
 .field textCreateDate:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004c1
+        value = 0x7f1004f8
     .end annotation
 .end field
 
 .field textCreateTime:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004c2
+        value = 0x7f1004f9
     .end annotation
 .end field
 
 .field textDisplay:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004c0
+        value = 0x7f1004f7
     .end annotation
 .end field
 
 .field textPost:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004c3
+        value = 0x7f1004fa
     .end annotation
 .end field
 
 .field textViewLike:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100477
+        value = 0x7f1004af
     .end annotation
 .end field
 
@@ -262,7 +262,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f02015f
+    const v1, 0x7f020172
 
     .line 333
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
@@ -351,7 +351,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0201b0
+    const v3, 0x7f0201c6
 
     invoke-static {v0, v1, v2, v3}, Lcom/bzbs/marketplace/control/InitImage;->a(Landroid/app/Activity;Landroid/widget/ImageView;Ljava/lang/String;I)V
 

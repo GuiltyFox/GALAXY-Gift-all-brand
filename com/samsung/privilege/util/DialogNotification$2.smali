@@ -17,7 +17,7 @@
     .registers 1
 
     .prologue
-    .line 131
+    .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,8 +29,8 @@
     .registers 5
 
     .prologue
-    .line 140
-    const v0, 0x7f1000d3
+    .line 144
+    const v0, 0x7f1000d9
 
     :try_start_3
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -39,14 +39,14 @@
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 141
+    .line 145
     const v1, 0x7f020078
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
     :try_end_f
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_f} :catch_1d
 
-    .line 146
+    .line 150
     :goto_f
     :try_start_f
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->g()Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter;
@@ -61,17 +61,17 @@
     :try_end_1a
     .catch Ljava/lang/Exception; {:try_start_f .. :try_end_1a} :catch_1b
 
-    .line 150
+    .line 154
     :goto_1a
     return-void
 
-    .line 147
+    .line 151
     :catch_1b
     move-exception v0
 
     goto :goto_1a
 
-    .line 142
+    .line 146
     :catch_1d
     move-exception v0
 

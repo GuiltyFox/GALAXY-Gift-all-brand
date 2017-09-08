@@ -112,7 +112,7 @@
     .line 100
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$3;->b:Landroid/content/Context;
 
-    const v1, 0x7f09011c
+    const v1, 0x7f090115
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -139,7 +139,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v2, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -242,7 +242,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$3;->b:Landroid/content/Context;
 
-    const v6, 0x7f0900ed
+    const v6, 0x7f0900e6
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -266,7 +266,7 @@
 
     move-result-object v1
 
-    sget-boolean v3, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v3, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 114
     invoke-virtual {v1, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;

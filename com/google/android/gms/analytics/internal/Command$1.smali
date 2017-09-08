@@ -56,6 +56,8 @@
 
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .registers 3
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/Command$1;->a(Landroid/os/Parcel;)Lcom/google/android/gms/analytics/internal/Command;
 
@@ -66,6 +68,8 @@
 
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .registers 3
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/Command$1;->a(I)[Lcom/google/android/gms/analytics/internal/Command;
 

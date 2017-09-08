@@ -92,7 +92,7 @@
     invoke-virtual {v0}, Lokio/Timeout;->f()Lokio/Timeout;
 
     .line 262
-    invoke-virtual {v0}, Lokio/Timeout;->l_()Lokio/Timeout;
+    invoke-virtual {v0}, Lokio/Timeout;->m_()Lokio/Timeout;
 
     .line 263
     return-void

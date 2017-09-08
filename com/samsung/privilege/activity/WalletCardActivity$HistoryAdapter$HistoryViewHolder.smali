@@ -30,14 +30,14 @@
     .registers 4
 
     .prologue
-    .line 2618
+    .line 2979
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->j:Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;
 
-    .line 2619
+    .line 2980
     invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 2620
-    const v0, 0x7f10010f
+    .line 2981
+    const v0, 0x7f100116
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -47,8 +47,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->a:Landroid/support/v7/widget/CardView;
 
-    .line 2621
-    const v0, 0x7f1000d3
+    .line 2982
+    const v0, 0x7f1000d9
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -58,8 +58,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->b:Landroid/widget/RelativeLayout;
 
-    .line 2622
-    const v0, 0x7f100229
+    .line 2983
+    const v0, 0x7f10025c
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -69,8 +69,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->c:Landroid/widget/ImageView;
 
-    .line 2623
-    const v0, 0x7f10016b
+    .line 2984
+    const v0, 0x7f100172
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -80,8 +80,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->d:Landroid/widget/TextView;
 
-    .line 2624
-    const v0, 0x7f10022a
+    .line 2985
+    const v0, 0x7f10025d
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -91,8 +91,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->e:Landroid/widget/TextView;
 
-    .line 2625
-    const v0, 0x7f10016e
+    .line 2986
+    const v0, 0x7f100175
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -102,8 +102,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->f:Landroid/widget/TextView;
 
-    .line 2626
-    const v0, 0x7f10022b
+    .line 2987
+    const v0, 0x7f10025e
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -113,8 +113,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->g:Landroid/widget/TextView;
 
-    .line 2627
-    const v0, 0x7f10022c
+    .line 2988
+    const v0, 0x7f10025f
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -124,8 +124,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->h:Landroid/widget/RelativeLayout;
 
-    .line 2628
-    const v0, 0x7f10022d
+    .line 2989
+    const v0, 0x7f100260
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -135,6 +135,6 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->i:Landroid/widget/ImageView;
 
-    .line 2629
+    .line 2990
     return-void
 .end method

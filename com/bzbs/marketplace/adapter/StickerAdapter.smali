@@ -207,7 +207,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/adapter/StickerAdapter;->a:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f0400ec
+    const v2, 0x7f0400fd
 
     const/4 v3, 0x0
 

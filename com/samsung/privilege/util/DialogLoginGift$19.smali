@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;)V
+    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/Object;)V
 .end annotation
 
 
@@ -23,13 +23,15 @@
 
 .field final synthetic e:Ljava/lang/String;
 
+.field final synthetic f:Ljava/lang/Object;
+
 
 # direct methods
-.method constructor <init>(Landroid/app/Dialog;Landroid/os/Handler;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+.method constructor <init>(Landroid/app/Dialog;Landroid/os/Handler;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 7
 
     .prologue
-    .line 1158
+    .line 1202
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$19;->a:Landroid/app/Dialog;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$19;->b:Landroid/os/Handler;
@@ -39,6 +41,8 @@
     iput-object p4, p0, Lcom/samsung/privilege/util/DialogLoginGift$19;->d:Ljava/lang/String;
 
     iput-object p5, p0, Lcom/samsung/privilege/util/DialogLoginGift$19;->e:Ljava/lang/String;
+
+    iput-object p6, p0, Lcom/samsung/privilege/util/DialogLoginGift$19;->f:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -51,12 +55,12 @@
     .registers 4
 
     .prologue
-    .line 1160
+    .line 1204
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$19;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1169
+    .line 1213
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$19;->b:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/util/DialogLoginGift$19$1;
@@ -65,6 +69,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1175
+    .line 1219
     return-void
 .end method

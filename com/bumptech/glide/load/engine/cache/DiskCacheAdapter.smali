@@ -29,6 +29,14 @@
     return-object v0
 .end method
 
+.method public a()V
+    .registers 1
+
+    .prologue
+    .line 30
+    return-void
+.end method
+
 .method public a(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/cache/DiskCache$Writer;)V
     .registers 3
 

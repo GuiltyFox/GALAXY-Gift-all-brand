@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 .end annotation
 
 
@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 2017
+    .line 2059
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$34;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$34;->b:Landroid/app/Dialog;
@@ -39,17 +39,17 @@
     .registers 6
 
     .prologue
-    .line 2020
+    .line 2062
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$34;->a:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 2021
+    .line 2063
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$34;->a:Landroid/content/Context;
 
-    const v2, 0x7f09023e
+    const v2, 0x7f090257
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -57,10 +57,10 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 2022
+    .line 2064
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$34;->a:Landroid/content/Context;
 
-    const v2, 0x7f090147
+    const v2, 0x7f090140
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -92,17 +92,17 @@
 
     invoke-direct {v3, p0}, Lcom/samsung/privilege/util/DialogLoginGift$34$1;-><init>(Lcom/samsung/privilege/util/DialogLoginGift$34;)V
 
-    .line 2031
+    .line 2073
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 2036
+    .line 2078
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 2037
+    .line 2079
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 2038
+    .line 2080
     return-void
 .end method

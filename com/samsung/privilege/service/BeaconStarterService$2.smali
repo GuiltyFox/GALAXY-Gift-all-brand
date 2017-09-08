@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 195
+    .line 193
     iput-object p1, p0, Lcom/samsung/privilege/service/BeaconStarterService$2;->a:Lcom/samsung/privilege/service/BeaconStarterService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,11 +35,11 @@
     .registers 2
 
     .prologue
-    .line 198
+    .line 196
     iget-object v0, p0, Lcom/samsung/privilege/service/BeaconStarterService$2;->a:Lcom/samsung/privilege/service/BeaconStarterService;
 
     invoke-static {v0}, Lcom/samsung/privilege/service/BeaconStarterService;->a(Lcom/samsung/privilege/service/BeaconStarterService;)V
 
-    .line 199
+    .line 197
     return-void
 .end method

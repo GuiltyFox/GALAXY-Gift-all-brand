@@ -72,7 +72,7 @@
     invoke-virtual {p1, v0}, Lrx/Subscriber;->a_(Ljava/lang/Object;)V
 
     .line 147
-    invoke-virtual {p1}, Lrx/Subscriber;->m_()V
+    invoke-virtual {p1}, Lrx/Subscriber;->n_()V
     :try_end_12
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_12} :catch_13
 

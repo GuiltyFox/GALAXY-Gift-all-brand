@@ -24,29 +24,29 @@
 
 .field public static final abc_capital_on:I = 0x7f090009
 
-.field public static final abc_font_family_body_1_material:I = 0x7f090212
+.field public static final abc_font_family_body_1_material:I = 0x7f09022b
 
-.field public static final abc_font_family_body_2_material:I = 0x7f090213
+.field public static final abc_font_family_body_2_material:I = 0x7f09022c
 
-.field public static final abc_font_family_button_material:I = 0x7f090214
+.field public static final abc_font_family_button_material:I = 0x7f09022d
 
-.field public static final abc_font_family_caption_material:I = 0x7f090215
+.field public static final abc_font_family_caption_material:I = 0x7f09022e
 
-.field public static final abc_font_family_display_1_material:I = 0x7f090216
+.field public static final abc_font_family_display_1_material:I = 0x7f09022f
 
-.field public static final abc_font_family_display_2_material:I = 0x7f090217
+.field public static final abc_font_family_display_2_material:I = 0x7f090230
 
-.field public static final abc_font_family_display_3_material:I = 0x7f090218
+.field public static final abc_font_family_display_3_material:I = 0x7f090231
 
-.field public static final abc_font_family_display_4_material:I = 0x7f090219
+.field public static final abc_font_family_display_4_material:I = 0x7f090232
 
-.field public static final abc_font_family_headline_material:I = 0x7f09021a
+.field public static final abc_font_family_headline_material:I = 0x7f090233
 
-.field public static final abc_font_family_menu_material:I = 0x7f09021b
+.field public static final abc_font_family_menu_material:I = 0x7f090234
 
-.field public static final abc_font_family_subhead_material:I = 0x7f09021c
+.field public static final abc_font_family_subhead_material:I = 0x7f090235
 
-.field public static final abc_font_family_title_material:I = 0x7f09021d
+.field public static final abc_font_family_title_material:I = 0x7f090236
 
 .field public static final abc_search_hint:I = 0x7f09000a
 
@@ -66,6 +66,6 @@
 
 .field public static final abc_toolbar_collapse_description:I = 0x7f090012
 
-.field public static final search_menu_title:I = 0x7f090042
+.field public static final search_menu_title:I = 0x7f090035
 
-.field public static final status_bar_notification_info_overflow:I = 0x7f090043
+.field public static final status_bar_notification_info_overflow:I = 0x7f090036

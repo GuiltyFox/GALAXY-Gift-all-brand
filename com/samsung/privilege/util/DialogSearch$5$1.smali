@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 244
+    .line 245
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogSearch$5$1;->b:Lcom/samsung/privilege/util/DialogSearch$5;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogSearch$5$1;->a:Ljava/lang/String;
@@ -41,8 +41,8 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 247
-    .line 249
+    .line 248
+    .line 250
     :try_start_1
     new-instance v0, Lorg/json/JSONArray;
 
@@ -54,7 +54,7 @@
 
     move-result-object v3
 
-    .line 251
+    .line 252
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -65,12 +65,12 @@
 
     if-ge v0, v1, :cond_8d
 
-    .line 252
+    .line 253
     const/4 v0, 0x1
 
     invoke-static {v0}, Lcom/samsung/privilege/util/DialogSearch;->a(Z)Z
 
-    .line 257
+    .line 258
     :goto_1a
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$5$1;->b:Lcom/samsung/privilege/util/DialogSearch$5;
 
@@ -78,14 +78,14 @@
 
     if-nez v0, :cond_97
 
-    .line 258
+    .line 259
     new-instance v0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;
 
     invoke-direct {v0, v3}, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;-><init>(Ljava/util/List;)V
 
     invoke-static {v0}, Lcom/samsung/privilege/util/DialogSearch;->a(Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;)Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;
 
-    .line 259
+    .line 260
     invoke-static {}, Lcom/samsung/privilege/util/DialogSearch;->l()Landroid/support/v7/widget/RecyclerView;
 
     move-result-object v0
@@ -96,7 +96,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$Adapter;)V
 
-    .line 265
+    .line 266
     :goto_33
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$5$1;->b:Lcom/samsung/privilege/util/DialogSearch$5;
 
@@ -110,7 +110,7 @@
 
     if-nez v0, :cond_51
 
-    .line 266
+    .line 267
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$5$1;->b:Lcom/samsung/privilege/util/DialogSearch$5;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogSearch$5;->c:Landroid/content/Context;
@@ -119,7 +119,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/util/DialogSearch$5;->c:Landroid/content/Context;
 
-    const v4, 0x7f09018d
+    const v4, 0x7f09019e
 
     invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -130,7 +130,7 @@
     :cond_51
     move v1, v2
 
-    .line 269
+    .line 270
     :goto_52
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -138,7 +138,7 @@
 
     if-ge v1, v0, :cond_93
 
-    .line 270
+    .line 271
     const-string/jumbo v4, "Search"
 
     const-string/jumbo v5, "View Output Search"
@@ -183,14 +183,14 @@
 
     invoke-static {v4, v5, v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 269
+    .line 270
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_52
 
-    .line 254
+    .line 255
     :cond_8d
     const/4 v0, 0x0
 
@@ -200,18 +200,18 @@
 
     goto :goto_1a
 
-    .line 272
+    .line 273
     :catch_92
     move-exception v0
 
-    .line 276
+    .line 277
     :cond_93
     invoke-static {v2}, Lcom/samsung/privilege/util/DialogSearch;->b(Z)Z
 
-    .line 277
+    .line 278
     return-void
 
-    .line 261
+    .line 262
     :cond_97
     :try_start_97
     invoke-static {}, Lcom/samsung/privilege/util/DialogSearch;->g()Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;
@@ -220,7 +220,7 @@
 
     invoke-virtual {v0, v3}, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;->a(Ljava/util/List;)V
 
-    .line 262
+    .line 263
     invoke-static {}, Lcom/samsung/privilege/util/DialogSearch;->g()Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;
 
     move-result-object v0

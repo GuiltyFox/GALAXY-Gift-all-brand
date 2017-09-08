@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 211
+    .line 202
     iput-object p1, p0, Lcom/samsung/privilege/activity/AboutUsActivity$4;->a:Lcom/samsung/privilege/activity/AboutUsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,9 +35,9 @@
     .registers 3
 
     .prologue
-    .line 214
+    .line 205
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 215
+    .line 206
     return-void
 .end method

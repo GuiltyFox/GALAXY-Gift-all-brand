@@ -66,7 +66,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c2
+    if-eqz v0, :cond_c1
 
     .line 3275
     iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1$1$1;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1$1;
@@ -115,7 +115,7 @@
     invoke-virtual {v1, v0}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->startActivity(Landroid/content/Intent;)V
 
     .line 3278
-    const-string/jumbo v0, "GalaxyReward"
+    sget-object v0, Lcom/bzbs/lib/survey/LibConst;->g:Ljava/lang/String;
 
     const-string/jumbo v1, "GalaxyReward"
 
@@ -123,7 +123,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c2
+    if-eqz v0, :cond_c1
 
     .line 3279
     const-string/jumbo v0, "content://someURI"
@@ -227,6 +227,6 @@
     invoke-virtual {v0, v2, v1}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->setResult(ILandroid/content/Intent;)V
 
     .line 3286
-    :cond_c2
+    :cond_c1
     return-void
 .end method

@@ -7,5 +7,5 @@
 .method public abstract b()V
 .end method
 
-.method public abstract h_()V
+.method public abstract i_()V
 .end method

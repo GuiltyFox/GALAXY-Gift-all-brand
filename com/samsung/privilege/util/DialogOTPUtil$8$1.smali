@@ -76,7 +76,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogOTPUtil$8;->e:Landroid/widget/RelativeLayout;
 
-    const v1, 0x7f020225
+    const v1, 0x7f02023f
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 

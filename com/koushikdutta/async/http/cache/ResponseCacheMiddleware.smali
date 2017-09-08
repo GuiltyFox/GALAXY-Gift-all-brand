@@ -650,7 +650,7 @@
     .line 222
     iget-object v0, p1, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$OnBodyDataOnRequestSentData;->f:Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;
 
-    invoke-interface {v0}, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;->a_()Lcom/koushikdutta/async/http/Headers;
+    invoke-interface {v0}, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;->b_()Lcom/koushikdutta/async/http/Headers;
 
     move-result-object v0
 
@@ -680,7 +680,7 @@
     .line 227
     iget-object v1, p1, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$OnBodyDataOnRequestSentData;->f:Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;
 
-    invoke-interface {v1}, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;->a_()Lcom/koushikdutta/async/http/Headers;
+    invoke-interface {v1}, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;->b_()Lcom/koushikdutta/async/http/Headers;
 
     move-result-object v1
 
@@ -706,7 +706,7 @@
 
     iget-object v4, p1, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$OnBodyDataOnRequestSentData;->f:Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;
 
-    invoke-interface {v4}, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;->b_()Ljava/lang/String;
+    invoke-interface {v4}, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;->c_()Ljava/lang/String;
 
     move-result-object v4
 
@@ -830,7 +830,7 @@
     .line 240
     iget-object v1, p1, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$OnBodyDataOnRequestSentData;->f:Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;
 
-    invoke-interface {v1}, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;->a_()Lcom/koushikdutta/async/http/Headers;
+    invoke-interface {v1}, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;->b_()Lcom/koushikdutta/async/http/Headers;
 
     move-result-object v1
 

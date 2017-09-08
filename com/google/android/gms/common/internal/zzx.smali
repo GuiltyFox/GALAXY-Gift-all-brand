@@ -1,216 +1,109 @@
-.class public final Lcom/google/android/gms/common/internal/zzx;
+.class public Lcom/google/android/gms/common/internal/zzx;
 .super Ljava/lang/Object;
 
 
+# instance fields
+.field private final a:Ljava/lang/String;
+
+
 # direct methods
-.method public static a(I)I
-    .registers 3
-
-    if-nez p0, :cond_b
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v1, "Given Integer is zero"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_b
-    return p0
-.end method
-
-.method public static a(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(TT;)TT;"
-        }
-    .end annotation
-
-    if-nez p0, :cond_b
-
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string/jumbo v1, "null reference"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_b
-    return-object p0
-.end method
-
-.method public static a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(TT;",
-            "Ljava/lang/Object;",
-            ")TT;"
-        }
-    .end annotation
-
-    if-nez p0, :cond_c
-
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_c
-    return-object p0
-.end method
-
-.method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
-
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v1, "Given String is empty or null"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_f
-    return-object p0
-.end method
-
-.method public static a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
-    .registers 4
-
-    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_10
-    return-object p0
-.end method
-
-.method public static a(Z)V
+.method private constructor <init>(Ljava/lang/String;)V
     .registers 2
 
-    if-nez p0, :cond_8
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/zzx;->a:Ljava/lang/String;
 
-    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw v0
-
-    :cond_8
     return-void
 .end method
 
-.method public static a(ZLjava/lang/Object;)V
-    .registers 4
+.method public static a(Ljava/lang/String;)Lcom/google/android/gms/common/internal/zzx;
+    .registers 2
 
-    if-nez p0, :cond_c
+    new-instance v0, Lcom/google/android/gms/common/internal/zzx;
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/zzx;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_c
-    return-void
+    return-object v0
 .end method
 
-.method public static b(Ljava/lang/String;)V
+
+# virtual methods
+.method a(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .registers 3
 
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    instance-of v0, p1, Ljava/lang/CharSequence;
+
+    if-eqz v0, :cond_7
+
+    check-cast p1, Ljava/lang/CharSequence;
+
+    :goto_6
+    return-object p1
+
+    :cond_7
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_6
+.end method
+
+.method public final a(Ljava/lang/StringBuilder;Ljava/lang/Iterable;)Ljava/lang/StringBuilder;
+    .registers 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/StringBuilder;",
+            "Ljava/lang/Iterable",
+            "<*>;)",
+            "Ljava/lang/StringBuilder;"
+        }
+    .end annotation
+
+    invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2c
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    if-eq v0, v1, :cond_10
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_10
-    return-void
-.end method
-
-.method public static b(ZLjava/lang/Object;)V
-    .registers 4
-
-    if-nez p0, :cond_c
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    throw v0
+    :goto_15
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    :cond_c
-    return-void
-.end method
+    move-result v1
 
-.method public static c(Ljava/lang/String;)V
-    .registers 3
+    if-eqz v1, :cond_2c
 
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zzx;->a:Ljava/lang/String;
 
-    move-result-object v0
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_10
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/CharSequence;
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    move-result-object v1
 
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    throw v0
+    goto :goto_15
 
-    :cond_10
-    return-void
+    :cond_2c
+    return-object p1
 .end method

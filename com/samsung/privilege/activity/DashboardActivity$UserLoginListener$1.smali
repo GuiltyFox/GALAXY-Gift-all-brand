@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/DashboardActivity$UserLoginListener;->a(Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/activity/DashboardActivity$UserLoginListener;->a(Ljava/lang/String;Ljava/lang/Object;)V
 .end annotation
 
 

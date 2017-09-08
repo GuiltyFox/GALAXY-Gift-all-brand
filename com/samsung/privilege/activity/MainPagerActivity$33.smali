@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 2281
+    .line 2329
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$33;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 4
 
     .prologue
-    .line 2284
+    .line 2332
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$33;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
@@ -48,11 +48,11 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2285
+    .line 2333
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$33;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 2286
+    .line 2334
     return-void
 .end method

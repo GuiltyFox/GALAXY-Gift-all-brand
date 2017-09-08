@@ -12,7 +12,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    sget v0, Lcom/google/android/gms/common/GoogleApiAvailability;->a:I
+    sget v0, Lcom/google/android/gms/common/zzc;->b:I
 
     div-int/lit16 v0, v0, 0x3e8
 
@@ -30,27 +30,33 @@
 
     sput-object v0, Lcom/google/android/gms/analytics/internal/zze;->a:Ljava/lang/String;
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string/jumbo v1, "ma"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zze;->a:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/android/gms/analytics/internal/zze;->a:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v2
+
+    if-eqz v2, :cond_2a
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
+    :goto_27
     sput-object v0, Lcom/google/android/gms/analytics/internal/zze;->b:Ljava/lang/String;
 
     return-void
+
+    :cond_2a
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_27
 .end method

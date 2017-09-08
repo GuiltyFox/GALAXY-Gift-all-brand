@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f100256
+    const v6, 0x7f10028f
 
-    const v5, 0x7f100255
+    const v5, 0x7f10028e
 
-    const v4, 0x7f100253
+    const v4, 0x7f10028c
 
-    const v3, 0x7f10024a
+    const v3, 0x7f100283
 
-    const v2, 0x7f100247
+    const v2, 0x7f100280
 
     .line 11
     const-string/jumbo v0, "field \'imgCampaign\'"
@@ -116,7 +116,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog$ViewHolder;->tvShowTimeRedeem:Landroid/widget/TextView;
 
     .line 17
-    const v0, 0x7f100396
+    const v0, 0x7f1003cd
 
     const-string/jumbo v1, "field \'tvDraws1\'"
 
@@ -127,7 +127,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 18
-    const v1, 0x7f100396
+    const v1, 0x7f1003cd
 
     const-string/jumbo v2, "field \'tvDraws1\'"
 
@@ -140,7 +140,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog$ViewHolder;->tvDraws1:Landroid/widget/TextView;
 
     .line 19
-    const v0, 0x7f100397
+    const v0, 0x7f1003ce
 
     const-string/jumbo v1, "field \'tvDraws2\'"
 
@@ -151,7 +151,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 20
-    const v1, 0x7f100397
+    const v1, 0x7f1003ce
 
     const-string/jumbo v2, "field \'tvDraws2\'"
 
@@ -164,7 +164,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog$ViewHolder;->tvDraws2:Landroid/widget/TextView;
 
     .line 21
-    const v0, 0x7f100398
+    const v0, 0x7f1003cf
 
     const-string/jumbo v1, "field \'tvDraws3\'"
 
@@ -175,7 +175,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 22
-    const v1, 0x7f100398
+    const v1, 0x7f1003cf
 
     const-string/jumbo v2, "field \'tvDraws3\'"
 
@@ -188,7 +188,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog$ViewHolder;->tvDraws3:Landroid/widget/TextView;
 
     .line 23
-    const v0, 0x7f100399
+    const v0, 0x7f1003d0
 
     const-string/jumbo v1, "field \'tvDraws4\'"
 
@@ -199,7 +199,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 24
-    const v1, 0x7f100399
+    const v1, 0x7f1003d0
 
     const-string/jumbo v2, "field \'tvDraws4\'"
 
@@ -232,7 +232,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog$ViewHolder;->svCondition:Landroid/widget/ScrollView;
 
     .line 27
-    const v0, 0x7f100260
+    const v0, 0x7f100299
 
     const-string/jumbo v1, "field \'btnClose\'"
 
@@ -243,7 +243,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 28
-    const v1, 0x7f100260
+    const v1, 0x7f100299
 
     const-string/jumbo v2, "field \'btnClose\'"
 

@@ -14,7 +14,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
@@ -22,7 +22,7 @@
 
     const-string/jumbo v1, "Application context can\'t be null"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzg;->a:Landroid/content/Context;
 
@@ -51,10 +51,10 @@
     return-object v0
 .end method
 
-.method protected a(Landroid/content/Context;)Lcom/google/android/gms/measurement/zzg;
+.method protected a(Landroid/content/Context;)Lcom/google/android/gms/analytics/zzi;
     .registers 3
 
-    invoke-static {p1}, Lcom/google/android/gms/measurement/zzg;->a(Landroid/content/Context;)Lcom/google/android/gms/measurement/zzg;
+    invoke-static {p1}, Lcom/google/android/gms/analytics/zzi;->a(Landroid/content/Context;)Lcom/google/android/gms/analytics/zzi;
 
     move-result-object v0
 
@@ -99,12 +99,12 @@
     return-object v0
 .end method
 
-.method protected e(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzan;
+.method protected e(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzap;
     .registers 3
 
-    new-instance v0, Lcom/google/android/gms/analytics/internal/zzan;
+    new-instance v0, Lcom/google/android/gms/analytics/internal/zzap;
 
-    invoke-direct {v0, p1}, Lcom/google/android/gms/analytics/internal/zzan;-><init>(Lcom/google/android/gms/analytics/internal/zzf;)V
+    invoke-direct {v0, p1}, Lcom/google/android/gms/analytics/internal/zzap;-><init>(Lcom/google/android/gms/analytics/internal/zzf;)V
 
     return-object v0
 .end method
@@ -129,10 +129,10 @@
     return-object v0
 .end method
 
-.method protected h(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/internal/zznl;
+.method protected h(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/common/util/zze;
     .registers 3
 
-    invoke-static {}, Lcom/google/android/gms/internal/zzno;->c()Lcom/google/android/gms/internal/zznl;
+    invoke-static {}, Lcom/google/android/gms/common/util/zzh;->c()Lcom/google/android/gms/common/util/zze;
 
     move-result-object v0
 

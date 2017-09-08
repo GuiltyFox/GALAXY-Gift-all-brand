@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 .end annotation
 
 
@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1671
+    .line 1713
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$29;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$29;->b:Landroid/widget/TextView;
@@ -39,13 +39,13 @@
     .registers 4
 
     .prologue
-    .line 1676
+    .line 1718
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$29;->a:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$29;->b:Landroid/widget/TextView;
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogMonthYear;->a(Landroid/content/Context;Landroid/widget/TextView;)V
 
-    .line 1677
+    .line 1719
     return-void
 .end method

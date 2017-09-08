@@ -474,16 +474,6 @@
     return-void
 .end method
 
-.method public d_()Lcom/koushikdutta/async/callback/DataCallback;
-    .registers 2
-
-    .prologue
-    .line 158
-    iget-object v0, p0, Lcom/koushikdutta/async/http/spdy/AsyncSpdyConnection$SpdySocket;->f:Lcom/koushikdutta/async/callback/DataCallback;
-
-    return-object v0
-.end method
-
 .method public e()Z
     .registers 5
 
@@ -523,6 +513,16 @@
 
     .line 136
     goto :goto_f
+.end method
+
+.method public e_()Lcom/koushikdutta/async/callback/DataCallback;
+    .registers 2
+
+    .prologue
+    .line 158
+    iget-object v0, p0, Lcom/koushikdutta/async/http/spdy/AsyncSpdyConnection$SpdySocket;->f:Lcom/koushikdutta/async/callback/DataCallback;
+
+    return-object v0
 .end method
 
 .method public g()Lcom/koushikdutta/async/callback/WritableCallback;

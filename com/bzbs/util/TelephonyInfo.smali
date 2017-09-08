@@ -674,8 +674,8 @@
     .registers 2
 
     .prologue
-    .line 51
-    iget-object v0, p0, Lcom/bzbs/util/TelephonyInfo;->f:Ljava/lang/String;
+    .line 19
+    iget-object v0, p0, Lcom/bzbs/util/TelephonyInfo;->b:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -684,8 +684,68 @@
     .registers 2
 
     .prologue
+    .line 27
+    iget-object v0, p0, Lcom/bzbs/util/TelephonyInfo;->c:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public c()Z
+    .registers 2
+
+    .prologue
+    .line 35
+    iget-boolean v0, p0, Lcom/bzbs/util/TelephonyInfo;->d:Z
+
+    return v0
+.end method
+
+.method public d()Z
+    .registers 2
+
+    .prologue
+    .line 43
+    iget-boolean v0, p0, Lcom/bzbs/util/TelephonyInfo;->e:Z
+
+    return v0
+.end method
+
+.method public e()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 51
+    iget-object v0, p0, Lcom/bzbs/util/TelephonyInfo;->f:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public f()Ljava/lang/String;
+    .registers 2
+
+    .prologue
     .line 55
     iget-object v0, p0, Lcom/bzbs/util/TelephonyInfo;->g:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public g()Z
+    .registers 2
+
+    .prologue
+    .line 59
+    iget-object v0, p0, Lcom/bzbs/util/TelephonyInfo;->c:Ljava/lang/String;
+
+    if-eqz v0, :cond_6
+
+    const/4 v0, 0x1
+
+    :goto_5
+    return v0
+
+    :cond_6
+    const/4 v0, 0x0
+
+    goto :goto_5
 .end method

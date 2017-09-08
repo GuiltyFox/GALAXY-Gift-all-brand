@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1863
+    .line 1911
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,10 +37,10 @@
     .prologue
     const/16 v2, 0x8
 
-    .line 1866
+    .line 1914
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    const v1, 0x7f10017b
+    const v1, 0x7f100182
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->findViewById(I)Landroid/view/View;
 
@@ -48,10 +48,10 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1867
+    .line 1915
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    const v1, 0x7f10017c
+    const v1, 0x7f100183
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->findViewById(I)Landroid/view/View;
 
@@ -59,6 +59,6 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1868
+    .line 1916
     return-void
 .end method

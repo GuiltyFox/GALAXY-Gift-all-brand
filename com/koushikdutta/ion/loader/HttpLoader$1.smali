@@ -66,7 +66,7 @@
 
     move-result-object v1
 
-    invoke-interface {p2}, Lcom/koushikdutta/async/http/AsyncHttpResponse;->a_()Lcom/koushikdutta/async/http/Headers;
+    invoke-interface {p2}, Lcom/koushikdutta/async/http/AsyncHttpResponse;->b_()Lcom/koushikdutta/async/http/Headers;
 
     move-result-object v2
 
@@ -84,7 +84,7 @@
     int-to-long v2, v0
 
     .line 37
-    invoke-interface {p2}, Lcom/koushikdutta/async/http/AsyncHttpResponse;->a_()Lcom/koushikdutta/async/http/Headers;
+    invoke-interface {p2}, Lcom/koushikdutta/async/http/AsyncHttpResponse;->b_()Lcom/koushikdutta/async/http/Headers;
 
     move-result-object v0
 

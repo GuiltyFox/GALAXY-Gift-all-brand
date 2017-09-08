@@ -66,7 +66,47 @@
     return-void
 .end method
 
-.method private declared-synchronized a()Lcom/bumptech/glide/disklrucache/DiskLruCache;
+.method public static declared-synchronized a(Ljava/io/File;I)Lcom/bumptech/glide/load/engine/cache/DiskCache;
+    .registers 4
+
+    .prologue
+    .line 45
+    const-class v1, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;
+
+    monitor-enter v1
+
+    :try_start_3
+    sget-object v0, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->a:Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;
+
+    if-nez v0, :cond_e
+
+    .line 46
+    new-instance v0, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;
+
+    invoke-direct {v0, p0, p1}, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;-><init>(Ljava/io/File;I)V
+
+    sput-object v0, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->a:Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;
+
+    .line 48
+    :cond_e
+    sget-object v0, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->a:Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;
+    :try_end_10
+    .catchall {:try_start_3 .. :try_end_10} :catchall_12
+
+    monitor-exit v1
+
+    return-object v0
+
+    .line 45
+    :catchall_12
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
+.end method
+
+.method private declared-synchronized b()Lcom/bumptech/glide/disklrucache/DiskLruCache;
     .registers 7
 
     .prologue
@@ -114,42 +154,30 @@
     throw v0
 .end method
 
-.method public static declared-synchronized a(Ljava/io/File;I)Lcom/bumptech/glide/load/engine/cache/DiskCache;
-    .registers 4
+.method private declared-synchronized c()V
+    .registers 2
 
     .prologue
-    .line 45
-    const-class v1, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;
+    .line 65
+    monitor-enter p0
 
-    monitor-enter v1
+    const/4 v0, 0x0
 
-    :try_start_3
-    sget-object v0, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->a:Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;
+    :try_start_2
+    iput-object v0, p0, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->f:Lcom/bumptech/glide/disklrucache/DiskLruCache;
+    :try_end_4
+    .catchall {:try_start_2 .. :try_end_4} :catchall_6
 
-    if-nez v0, :cond_e
+    .line 66
+    monitor-exit p0
 
-    .line 46
-    new-instance v0, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;
+    return-void
 
-    invoke-direct {v0, p0, p1}, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;-><init>(Ljava/io/File;I)V
-
-    sput-object v0, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->a:Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;
-
-    .line 48
-    :cond_e
-    sget-object v0, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->a:Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;
-    :try_end_10
-    .catchall {:try_start_3 .. :try_end_10} :catchall_12
-
-    monitor-exit v1
-
-    return-object v0
-
-    .line 45
-    :catchall_12
+    .line 65
+    :catchall_6
     move-exception v0
 
-    monitor-exit v1
+    monitor-exit p0
 
     throw v0
 .end method
@@ -172,7 +200,7 @@
 
     .line 76
     :try_start_7
-    invoke-direct {p0}, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->a()Lcom/bumptech/glide/disklrucache/DiskLruCache;
+    invoke-direct {p0}, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->b()Lcom/bumptech/glide/disklrucache/DiskLruCache;
 
     move-result-object v2
 
@@ -222,6 +250,69 @@
     goto :goto_16
 .end method
 
+.method public declared-synchronized a()V
+    .registers 4
+
+    .prologue
+    .line 129
+    monitor-enter p0
+
+    :try_start_1
+    invoke-direct {p0}, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->b()Lcom/bumptech/glide/disklrucache/DiskLruCache;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/bumptech/glide/disklrucache/DiskLruCache;->a()V
+
+    .line 130
+    invoke-direct {p0}, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->c()V
+    :try_end_b
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_b} :catch_d
+    .catchall {:try_start_1 .. :try_end_b} :catchall_22
+
+    .line 136
+    :cond_b
+    :goto_b
+    monitor-exit p0
+
+    return-void
+
+    .line 131
+    :catch_d
+    move-exception v0
+
+    .line 132
+    :try_start_e
+    const-string/jumbo v1, "DiskLruCacheWrapper"
+
+    const/4 v2, 0x5
+
+    invoke-static {v1, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_b
+
+    .line 133
+    const-string/jumbo v1, "DiskLruCacheWrapper"
+
+    const-string/jumbo v2, "Unable to clear disk cache"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_21
+    .catchall {:try_start_e .. :try_end_21} :catchall_22
+
+    goto :goto_b
+
+    .line 129
+    :catchall_22
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
 .method public a(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/cache/DiskCache$Writer;)V
     .registers 6
 
@@ -240,7 +331,7 @@
 
     .line 93
     :try_start_b
-    invoke-direct {p0}, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->a()Lcom/bumptech/glide/disklrucache/DiskLruCache;
+    invoke-direct {p0}, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->b()Lcom/bumptech/glide/disklrucache/DiskLruCache;
 
     move-result-object v1
 
@@ -360,7 +451,7 @@
 
     .line 118
     :try_start_6
-    invoke-direct {p0}, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->a()Lcom/bumptech/glide/disklrucache/DiskLruCache;
+    invoke-direct {p0}, Lcom/bumptech/glide/load/engine/cache/DiskLruCacheWrapper;->b()Lcom/bumptech/glide/disklrucache/DiskLruCache;
 
     move-result-object v1
 

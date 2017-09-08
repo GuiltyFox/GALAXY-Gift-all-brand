@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 1358
+    .line 1379
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$4;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$4;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_small;
@@ -43,7 +43,7 @@
     .registers 4
 
     .prologue
-    .line 1361
+    .line 1382
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$4;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_small;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_small;->e:Landroid/widget/ImageView;
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 1363
+    .line 1384
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$4;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_small;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_small;->e:Landroid/widget/ImageView;
@@ -63,7 +63,7 @@
 
     move-result v1
 
-    .line 1365
+    .line 1386
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$4;->b:Lcom/bzbs/bean/DashboardItem;
 
     iget-object v0, v0, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
@@ -80,28 +80,28 @@
 
     if-eqz v0, :cond_35
 
-    .line 1366
+    .line 1387
     mul-int/lit8 v0, v1, 0x1
 
     div-int/lit8 v0, v0, 0x1
 
-    .line 1371
+    .line 1392
     :goto_28
     new-instance v2, Landroid/widget/RelativeLayout$LayoutParams;
 
     invoke-direct {v2, v1, v0}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 
-    .line 1372
+    .line 1393
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$4;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_small;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_small;->e:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1373
+    .line 1394
     return-void
 
-    .line 1368
+    .line 1389
     :cond_35
     mul-int/lit8 v0, v1, 0x2
 

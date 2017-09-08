@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 324
+    .line 343
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 324
+    .line 343
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity;)V
 
     return-void
@@ -36,10 +36,18 @@
 
 # virtual methods
 .method public a(Ljava/lang/String;)V
-    .registers 5
+    .registers 2
 
     .prologue
-    .line 327
+    .line 393
+    return-void
+.end method
+
+.method public a(Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 6
+
+    .prologue
+    .line 346
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v0
@@ -64,7 +72,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 328
+    .line 347
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/os/Handler;
@@ -77,15 +85,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 335
+    .line 354
     return-void
 .end method
 
-.method public b(Ljava/lang/String;)V
-    .registers 5
+.method public b(Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 6
 
     .prologue
-    .line 339
+    .line 358
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v0
@@ -110,7 +118,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 340
+    .line 359
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/os/Handler;
@@ -123,15 +131,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 347
+    .line 366
     return-void
 .end method
 
-.method public c(Ljava/lang/String;)V
-    .registers 5
+.method public c(Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 6
 
     .prologue
-    .line 351
+    .line 370
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v0
@@ -156,7 +164,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 352
+    .line 371
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/os/Handler;
@@ -169,14 +177,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 369
-    return-void
-.end method
-
-.method public d(Ljava/lang/String;)V
-    .registers 2
-
-    .prologue
-    .line 374
+    .line 388
     return-void
 .end method

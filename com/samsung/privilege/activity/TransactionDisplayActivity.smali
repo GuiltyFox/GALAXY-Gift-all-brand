@@ -331,7 +331,7 @@
     invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 37
-    const v0, 0x7f04004e
+    const v0, 0x7f04005a
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->setContentView(I)V
 
@@ -341,7 +341,7 @@
     invoke-virtual {p0, v0, v12}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->overridePendingTransition(II)V
 
     .line 40
-    const v0, 0x7f1001ec
+    const v0, 0x7f100216
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -350,7 +350,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 41
-    const v1, 0x7f1001ee
+    const v1, 0x7f100218
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -359,7 +359,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 42
-    const v2, 0x7f10014d
+    const v2, 0x7f100154
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -370,7 +370,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->a:Landroid/widget/RelativeLayout;
 
     .line 43
-    const v2, 0x7f1001eb
+    const v2, 0x7f100215
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -381,7 +381,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->b:Landroid/widget/ImageView;
 
     .line 44
-    const v2, 0x7f1001ef
+    const v2, 0x7f100219
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -390,7 +390,7 @@
     check-cast v2, Landroid/widget/Button;
 
     .line 45
-    const v3, 0x7f1001ed
+    const v3, 0x7f100217
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 

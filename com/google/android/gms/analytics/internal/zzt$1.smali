@@ -47,11 +47,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->h()Lcom/google/android/gms/measurement/zzg;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->h()Lcom/google/android/gms/analytics/zzi;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lcom/google/android/gms/measurement/zzg;->a(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, p0}, Lcom/google/android/gms/analytics/zzi;->a(Ljava/lang/Runnable;)V
 
     :cond_17
     :goto_17

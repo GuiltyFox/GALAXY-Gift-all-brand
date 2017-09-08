@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1687
+    .line 1729
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$30$1;->a:Lcom/samsung/privilege/util/DialogLoginGift$30;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 5
 
     .prologue
-    .line 1690
+    .line 1732
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$30$1;->a:Lcom/samsung/privilege/util/DialogLoginGift$30;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$30;->c:Landroid/widget/TextView;
@@ -48,9 +48,9 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1691
+    .line 1733
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 1692
+    .line 1734
     return-void
 .end method

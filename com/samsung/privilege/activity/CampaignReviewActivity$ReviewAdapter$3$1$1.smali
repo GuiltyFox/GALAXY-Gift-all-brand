@@ -126,7 +126,7 @@
 
     move-result-object v1
 
-    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->o(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;Ljava/lang/String;)Z
     :try_end_46
     .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_46} :catch_47
     .catch Lorg/json/JSONException; {:try_start_29 .. :try_end_46} :catch_49

@@ -990,7 +990,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lokio/Timeout;->k_()Z
+    invoke-virtual {v0}, Lokio/Timeout;->l_()Z
 
     move-result v0
 

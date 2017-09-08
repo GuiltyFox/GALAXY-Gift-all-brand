@@ -1152,22 +1152,6 @@
     return v0
 .end method
 
-.method public g_()V
-    .registers 2
-
-    .prologue
-    .line 180
-    invoke-direct {p0}, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->q()Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
-
-    move-result-object v0
-
-    .line 181
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->g_()V
-
-    .line 182
-    return-void
-.end method
-
 .method public h()Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
     .registers 2
 
@@ -1186,6 +1170,35 @@
 .end method
 
 .method public h_()V
+    .registers 2
+
+    .prologue
+    .line 180
+    invoke-direct {p0}, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->q()Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
+
+    move-result-object v0
+
+    .line 181
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->h_()V
+
+    .line 182
+    return-void
+.end method
+
+.method public i()V
+    .registers 2
+
+    .prologue
+    .line 416
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->d:Z
+
+    .line 417
+    return-void
+.end method
+
+.method public i_()V
     .registers 5
 
     .prologue
@@ -1233,19 +1246,6 @@
     .catchall {:try_start_1 .. :try_end_17} :catchall_15
 
     throw v0
-.end method
-
-.method public i()V
-    .registers 2
-
-    .prologue
-    .line 416
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->d:Z
-
-    .line 417
-    return-void
 .end method
 
 .method public j()V

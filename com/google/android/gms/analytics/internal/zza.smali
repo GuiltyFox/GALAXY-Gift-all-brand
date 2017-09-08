@@ -9,7 +9,7 @@
 # instance fields
 .field private b:Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
 
-.field private final c:Lcom/google/android/gms/analytics/internal/zzaj;
+.field private final c:Lcom/google/android/gms/analytics/internal/zzal;
 
 .field private d:Ljava/lang/String;
 
@@ -34,15 +34,15 @@
 
     iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zza;->f:Ljava/lang/Object;
 
-    new-instance v0, Lcom/google/android/gms/analytics/internal/zzaj;
+    new-instance v0, Lcom/google/android/gms/analytics/internal/zzal;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzf;->d()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzf;->d()Lcom/google/android/gms/common/util/zze;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/analytics/internal/zzaj;-><init>(Lcom/google/android/gms/internal/zznl;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/analytics/internal/zzal;-><init>(Lcom/google/android/gms/common/util/zze;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zza;->c:Lcom/google/android/gms/analytics/internal/zzaj;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zza;->c:Lcom/google/android/gms/analytics/internal/zzal;
 
     return-void
 .end method
@@ -54,7 +54,7 @@
 
     const-string/jumbo v0, "MD5"
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzam;->b(Ljava/lang/String;)Ljava/security/MessageDigest;
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzao;->b(Ljava/lang/String;)Ljava/security/MessageDigest;
 
     move-result-object v0
 
@@ -96,7 +96,7 @@
 .end method
 
 .method private a(Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;)Z
-    .registers 9
+    .registers 10
 
     const/4 v1, 0x0
 
@@ -141,7 +141,7 @@
     :try_start_1d
     iget-boolean v5, p0, Lcom/google/android/gms/analytics/internal/zza;->e:Z
 
-    if-nez v5, :cond_4b
+    if-nez v5, :cond_4c
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zza;->e()Ljava/lang/String;
 
@@ -155,22 +155,25 @@
 
     :cond_2a
     :goto_2a
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v5
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    if-eqz v6, :cond_9a
+
+    invoke-virtual {v5, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    :goto_3c
     invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zza;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -179,7 +182,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_8b
+    if-eqz v5, :cond_a0
 
     const/4 v0, 0x0
 
@@ -187,17 +190,17 @@
 
     goto :goto_c
 
-    :catchall_48
+    :catchall_49
     move-exception v0
 
     monitor-exit v4
-    :try_end_4a
-    .catchall {:try_start_1d .. :try_end_4a} :catchall_48
+    :try_end_4b
+    .catchall {:try_start_1d .. :try_end_4b} :catchall_49
 
     throw v0
 
-    :cond_4b
-    :try_start_4b
+    :cond_4c
+    :try_start_4c
     iget-object v5, p0, Lcom/google/android/gms/analytics/internal/zza;->d:Ljava/lang/String;
 
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -206,27 +209,30 @@
 
     if-eqz v5, :cond_2a
 
-    if-nez p1, :cond_6e
+    if-nez p1, :cond_70
 
-    :goto_55
-    if-nez v1, :cond_73
+    :goto_56
+    if-nez v1, :cond_7b
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v1
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_75
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    :goto_6a
     invoke-direct {p0, v0}, Lcom/google/android/gms/analytics/internal/zza;->g(Ljava/lang/String;)Z
 
     move-result v0
@@ -235,30 +241,40 @@
 
     goto :goto_c
 
-    :cond_6e
+    :cond_70
     invoke-virtual {p1}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->a()Ljava/lang/String;
 
     move-result-object v1
 
-    goto :goto_55
+    goto :goto_56
 
-    :cond_73
-    new-instance v5, Ljava/lang/StringBuilder;
+    :cond_75
+    new-instance v0, Ljava/lang/String;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_6a
+
+    :cond_7b
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    if-eqz v6, :cond_94
+
+    invoke-virtual {v5, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
+    :goto_8d
     invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zza;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -267,14 +283,28 @@
 
     goto :goto_2a
 
-    :cond_8b
+    :cond_94
+    new-instance v1, Ljava/lang/String;
+
+    invoke-direct {v1, v5}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_8d
+
+    :cond_9a
+    new-instance v1, Ljava/lang/String;
+
+    invoke-direct {v1, v5}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_3c
+
+    :cond_a0
     iget-object v5, p0, Lcom/google/android/gms/analytics/internal/zza;->d:Ljava/lang/String;
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_97
+    if-eqz v1, :cond_ac
 
     monitor-exit v4
 
@@ -282,14 +312,14 @@
 
     goto/16 :goto_c
 
-    :cond_97
+    :cond_ac
     iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zza;->d:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-nez v1, :cond_cb
+    if-nez v1, :cond_e7
 
     const-string/jumbo v1, "Resetting the client id because Advertising Id changed."
 
@@ -307,37 +337,47 @@
 
     invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zza;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
-    :goto_b3
-    new-instance v2, Ljava/lang/StringBuilder;
+    :goto_c8
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v2
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-eqz v1, :cond_e1
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    :goto_da
     invoke-direct {p0, v0}, Lcom/google/android/gms/analytics/internal/zza;->g(Ljava/lang/String;)Z
 
     move-result v0
 
     monitor-exit v4
-    :try_end_c9
-    .catchall {:try_start_4b .. :try_end_c9} :catchall_48
 
     goto/16 :goto_c
 
-    :cond_cb
+    :cond_e1
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    :try_end_e6
+    .catchall {:try_start_4c .. :try_end_e6} :catchall_49
+
+    goto :goto_da
+
+    :cond_e7
     move-object v1, v3
 
-    goto :goto_b3
+    goto :goto_c8
 .end method
 
 .method private declared-synchronized f()Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
@@ -346,19 +386,19 @@
     monitor-enter p0
 
     :try_start_1
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zza;->c:Lcom/google/android/gms/analytics/internal/zzaj;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zza;->c:Lcom/google/android/gms/analytics/internal/zzal;
 
     const-wide/16 v2, 0x3e8
 
-    invoke-virtual {v0, v2, v3}, Lcom/google/android/gms/analytics/internal/zzaj;->a(J)Z
+    invoke-virtual {v0, v2, v3}, Lcom/google/android/gms/analytics/internal/zzal;->a(J)Z
 
     move-result v0
 
     if-eqz v0, :cond_1e
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zza;->c:Lcom/google/android/gms/analytics/internal/zzaj;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zza;->c:Lcom/google/android/gms/analytics/internal/zzal;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzaj;->a()V
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzal;->a()V
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zza;->d()Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;
 

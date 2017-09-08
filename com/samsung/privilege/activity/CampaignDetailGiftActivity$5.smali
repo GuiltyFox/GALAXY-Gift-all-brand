@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 746
+    .line 755
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,10 +32,10 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 7
+    .registers 8
 
     .prologue
-    .line 749
+    .line 758
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getApplicationContext()Landroid/content/Context;
@@ -46,8 +46,8 @@
 
     move-result-object v0
 
-    .line 750
-    if-eqz v0, :cond_2a
+    .line 759
+    if-eqz v0, :cond_16
 
     const-string/jumbo v1, ""
 
@@ -55,32 +55,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_16
 
-    .line 751
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogMyPoint;->a(Landroid/content/Context;Landroid/os/Handler;)V
-
-    .line 753
-    const-string/jumbo v0, "Gift Campaign Details"
-
-    const-string/jumbo v1, "Click My Points"
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 757
-    :goto_29
+    .line 766
+    :goto_15
     return-void
 
-    .line 755
-    :cond_2a
+    .line 764
+    :cond_16
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -99,7 +81,9 @@
 
     const-string/jumbo v4, "points"
 
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v5, 0x0
 
-    goto :goto_29
+    invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_15
 .end method

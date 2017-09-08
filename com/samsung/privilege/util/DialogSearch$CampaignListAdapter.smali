@@ -41,13 +41,13 @@
     .end annotation
 
     .prologue
-    .line 295
+    .line 296
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;-><init>()V
 
-    .line 296
+    .line 297
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;->a:Ljava/util/List;
 
-    .line 297
+    .line 298
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .registers 3
 
     .prologue
-    .line 301
+    .line 302
     :try_start_0
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;->a:Ljava/util/List;
 
@@ -69,15 +69,15 @@
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_8} :catch_9
 
-    .line 303
+    .line 304
     :goto_8
     return-object v0
 
-    .line 302
+    .line 303
     :catch_9
     move-exception v0
 
-    .line 303
+    .line 304
     const/4 v0, 0x0
 
     goto :goto_8
@@ -87,7 +87,7 @@
     .registers 6
 
     .prologue
-    .line 313
+    .line 314
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -96,7 +96,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400d2
+    const v1, 0x7f0400e3
 
     const/4 v2, 0x0
 
@@ -104,12 +104,12 @@
 
     move-result-object v0
 
-    .line 314
+    .line 315
     new-instance v1, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;
 
     invoke-direct {v1, p0, v0}, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;-><init>(Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;Landroid/view/View;)V
 
-    .line 315
+    .line 316
     return-object v1
 .end method
 
@@ -117,10 +117,10 @@
     .registers 10
 
     .prologue
-    .line 320
+    .line 321
     invoke-static {p2}, Lcom/samsung/privilege/util/DialogSearch;->c(I)I
 
-    .line 321
+    .line 322
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -129,35 +129,35 @@
 
     check-cast v0, Lcom/bzbs/bean/Campaign;
 
-    .line 323
+    .line 324
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->d:Landroid/widget/TextView;
 
     iget-object v2, v0, Lcom/bzbs/bean/Campaign;->AgencyName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 324
+    .line 325
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->e:Landroid/widget/TextView;
 
     iget-object v2, v0, Lcom/bzbs/bean/Campaign;->Name:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 326
+    .line 327
     iget v1, v0, Lcom/bzbs/bean/Campaign;->DayProceed:I
 
     const/4 v2, 0x2
 
     if-gt v1, v2, :cond_9e
 
-    .line 327
+    .line 328
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->f:Landroid/widget/TextView;
 
     invoke-static {}, Lcom/samsung/privilege/util/DialogSearch;->h()Landroid/content/Context;
 
     move-result-object v2
 
-    const v3, 0x7f090067
+    const v3, 0x7f09005a
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -165,14 +165,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 328
+    .line 329
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->f:Landroid/widget/TextView;
 
     sget v2, Lcom/bzbs/data/AppSetting;->e:I
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 339
+    .line 340
     :goto_35
     invoke-static {}, Lcom/samsung/privilege/util/DialogSearch;->h()Landroid/content/Context;
 
@@ -184,17 +184,17 @@
 
     if-eqz v1, :cond_10f
 
-    .line 340
+    .line 341
     new-instance v2, Ljava/text/DecimalFormat;
 
     const-string/jumbo v1, "#,###,###"
 
     invoke-direct {v2, v1}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
-    .line 342
+    .line 343
     const-string/jumbo v1, ""
 
-    .line 344
+    .line 345
     :try_start_4a
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -204,7 +204,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f09007d
+    const v5, 0x7f090071
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -236,20 +236,20 @@
 
     move-result-object v1
 
-    .line 349
+    .line 350
     :goto_73
     iget-object v2, p1, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->g:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 350
+    .line 351
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->g:Landroid/widget/TextView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 355
+    .line 356
     :goto_7e
     invoke-static {}, Lcom/samsung/privilege/util/DialogSearch;->h()Landroid/content/Context;
 
@@ -281,10 +281,10 @@
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 356
+    .line 357
     return-void
 
-    .line 330
+    .line 331
     :cond_9e
     iget-object v1, v0, Lcom/bzbs/bean/Campaign;->ExpireDate:Ljava/lang/String;
 
@@ -308,19 +308,19 @@
 
     sub-long/2addr v2, v4
 
-    .line 331
+    .line 332
     const-wide/16 v4, 0x0
 
     cmp-long v1, v2, v4
 
     if-lez v1, :cond_fd
 
-    .line 332
+    .line 333
     const-wide/32 v4, 0x15180
 
     div-long/2addr v2, v4
 
-    .line 333
+    .line 334
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->f:Landroid/widget/TextView;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -331,7 +331,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f09007e
+    const v6, 0x7f090072
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -361,7 +361,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f09007f
+    const v4, 0x7f090073
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -379,7 +379,7 @@
 
     goto/16 :goto_35
 
-    .line 335
+    .line 336
     :cond_fd
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->f:Landroid/widget/TextView;
 
@@ -387,7 +387,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090080
+    const v3, 0x7f090074
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -397,7 +397,7 @@
 
     goto/16 :goto_35
 
-    .line 352
+    .line 353
     :cond_10f
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->g:Landroid/widget/TextView;
 
@@ -407,7 +407,7 @@
 
     goto/16 :goto_7e
 
-    .line 345
+    .line 346
     :catch_118
     move-exception v2
 
@@ -427,12 +427,12 @@
     .end annotation
 
     .prologue
-    .line 308
+    .line 309
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 309
+    .line 310
     return-void
 .end method
 
@@ -440,7 +440,7 @@
     .registers 2
 
     .prologue
-    .line 360
+    .line 361
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -454,10 +454,10 @@
     .registers 2
 
     .prologue
-    .line 365
+    .line 366
     invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView$Adapter;->onAttachedToRecyclerView(Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 366
+    .line 367
     return-void
 .end method
 
@@ -465,7 +465,7 @@
     .registers 3
 
     .prologue
-    .line 291
+    .line 292
     check-cast p1, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;
 
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;->a(Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;I)V
@@ -477,7 +477,7 @@
     .registers 4
 
     .prologue
-    .line 291
+    .line 292
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;->a(Landroid/view/ViewGroup;I)Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;
 
     move-result-object v0

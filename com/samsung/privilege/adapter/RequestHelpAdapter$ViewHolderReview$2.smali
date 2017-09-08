@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 184
+    .line 174
     iput-object p1, p0, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview$2;->c:Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;
 
     iput p2, p0, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview$2;->a:I
@@ -43,7 +43,7 @@
     .registers 6
 
     .prologue
-    .line 187
+    .line 177
     iget-object v0, p0, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview$2;->c:Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;
 
     iget v1, p0, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview$2;->a:I
@@ -58,6 +58,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->a(Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;ILjava/lang/String;Ljava/io/File;)V
 
-    .line 188
+    .line 178
     return-void
 .end method

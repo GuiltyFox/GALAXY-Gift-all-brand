@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static a:Lcom/google/android/gms/analytics/internal/zzf;
+.field private static volatile a:Lcom/google/android/gms/analytics/internal/zzf;
 
 
 # instance fields
@@ -11,19 +11,19 @@
 
 .field private final c:Landroid/content/Context;
 
-.field private final d:Lcom/google/android/gms/internal/zznl;
+.field private final d:Lcom/google/android/gms/common/util/zze;
 
 .field private final e:Lcom/google/android/gms/analytics/internal/zzr;
 
 .field private final f:Lcom/google/android/gms/analytics/internal/zzaf;
 
-.field private final g:Lcom/google/android/gms/measurement/zzg;
+.field private final g:Lcom/google/android/gms/analytics/zzi;
 
 .field private final h:Lcom/google/android/gms/analytics/internal/zzb;
 
 .field private final i:Lcom/google/android/gms/analytics/internal/zzv;
 
-.field private final j:Lcom/google/android/gms/analytics/internal/zzan;
+.field private final j:Lcom/google/android/gms/analytics/internal/zzap;
 
 .field private final k:Lcom/google/android/gms/analytics/internal/zzai;
 
@@ -50,29 +50,23 @@
 
     const-string/jumbo v1, "Application context can\'t be null"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    instance-of v1, v0, Landroid/app/Application;
-
-    const-string/jumbo v2, "getApplicationContext didn\'t return the application"
-
-    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/zzx;->b(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzg;->b()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->b:Landroid/content/Context;
 
     iput-object v1, p0, Lcom/google/android/gms/analytics/internal/zzf;->c:Landroid/content/Context;
 
-    invoke-virtual {p1, p0}, Lcom/google/android/gms/analytics/internal/zzg;->h(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p1, p0}, Lcom/google/android/gms/analytics/internal/zzg;->h(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/common/util/zze;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/google/android/gms/analytics/internal/zzf;->d:Lcom/google/android/gms/internal/zznl;
+    iput-object v1, p0, Lcom/google/android/gms/analytics/internal/zzf;->d:Lcom/google/android/gms/common/util/zze;
 
     invoke-virtual {p1, p0}, Lcom/google/android/gms/analytics/internal/zzg;->g(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzr;
 
@@ -90,35 +84,37 @@
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzf;->e()Lcom/google/android/gms/analytics/internal/zzr;
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->a()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_db
-
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzf;->f()Lcom/google/android/gms/analytics/internal/zzaf;
 
     move-result-object v1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    sget-object v2, Lcom/google/android/gms/analytics/internal/zze;->a:Ljava/lang/String;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v3, "Google Analytics "
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit16 v4, v4, 0x86
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string/jumbo v4, "Google Analytics "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    sget-object v3, Lcom/google/android/gms/analytics/internal/zze;->a:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, " is starting up."
+    const-string/jumbo v3, " is starting up. To enable debug logging on a device run:\n  adb shell setprop log.tag.GAv4 DEBUG\n  adb logcat -s GAv4"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -130,7 +126,6 @@
 
     invoke-virtual {v1, v2}, Lcom/google/android/gms/analytics/internal/zzaf;->d(Ljava/lang/String;)V
 
-    :goto_63
     invoke-virtual {p1, p0}, Lcom/google/android/gms/analytics/internal/zzg;->q(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzai;
 
     move-result-object v1
@@ -139,13 +134,13 @@
 
     iput-object v1, p0, Lcom/google/android/gms/analytics/internal/zzf;->k:Lcom/google/android/gms/analytics/internal/zzai;
 
-    invoke-virtual {p1, p0}, Lcom/google/android/gms/analytics/internal/zzg;->e(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzan;
+    invoke-virtual {p1, p0}, Lcom/google/android/gms/analytics/internal/zzg;->e(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzap;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzan;->E()V
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzap;->E()V
 
-    iput-object v1, p0, Lcom/google/android/gms/analytics/internal/zzf;->j:Lcom/google/android/gms/analytics/internal/zzan;
+    iput-object v1, p0, Lcom/google/android/gms/analytics/internal/zzf;->j:Lcom/google/android/gms/analytics/internal/zzap;
 
     invoke-virtual {p1, p0}, Lcom/google/android/gms/analytics/internal/zzg;->l(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzb;
 
@@ -167,7 +162,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/analytics/internal/zzg;->a(Landroid/content/Context;)Lcom/google/android/gms/measurement/zzg;
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/analytics/internal/zzg;->a(Landroid/content/Context;)Lcom/google/android/gms/analytics/zzi;
 
     move-result-object v0
 
@@ -175,9 +170,9 @@
 
     move-result-object v6
 
-    invoke-virtual {v0, v6}, Lcom/google/android/gms/measurement/zzg;->a(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+    invoke-virtual {v0, v6}, Lcom/google/android/gms/analytics/zzi;->a(Ljava/lang/Thread$UncaughtExceptionHandler;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->g:Lcom/google/android/gms/measurement/zzg;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->g:Lcom/google/android/gms/analytics/zzi;
 
     invoke-virtual {p1, p0}, Lcom/google/android/gms/analytics/internal/zzg;->i(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/GoogleAnalytics;
 
@@ -213,25 +208,6 @@
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzf;->e()Lcom/google/android/gms/analytics/internal/zzr;
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzr;->a()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_d2
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzf;->f()Lcom/google/android/gms/analytics/internal/zzaf;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "Device AnalyticsService version"
-
-    sget-object v4, Lcom/google/android/gms/analytics/internal/zze;->a:Ljava/lang/String;
-
-    invoke-virtual {v2, v3, v4}, Lcom/google/android/gms/analytics/internal/zzaf;->b(Ljava/lang/String;Ljava/lang/Object;)V
-
-    :cond_d2
     invoke-virtual {v0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->a()V
 
     iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->l:Lcom/google/android/gms/analytics/GoogleAnalytics;
@@ -239,69 +215,16 @@
     invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzb;->b()V
 
     return-void
-
-    :cond_db
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzf;->f()Lcom/google/android/gms/analytics/internal/zzaf;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "Google Analytics "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/google/android/gms/analytics/internal/zze;->a:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, " is starting up. "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "To enable debug logging on a device run:\n"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "  adb shell setprop log.tag.GAv4 DEBUG\n"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "  adb logcat -s GAv4"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/analytics/internal/zzaf;->d(Ljava/lang/String;)V
-
-    goto/16 :goto_63
 .end method
 
 .method public static a(Landroid/content/Context;)Lcom/google/android/gms/analytics/internal/zzf;
     .registers 9
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/google/android/gms/analytics/internal/zzf;->a:Lcom/google/android/gms/analytics/internal/zzf;
 
-    if-nez v0, :cond_52
+    if-nez v0, :cond_4e
 
     const-class v1, Lcom/google/android/gms/analytics/internal/zzf;
 
@@ -310,33 +233,29 @@
     :try_start_a
     sget-object v0, Lcom/google/android/gms/analytics/internal/zzf;->a:Lcom/google/android/gms/analytics/internal/zzf;
 
-    if-nez v0, :cond_51
+    if-nez v0, :cond_4d
 
-    invoke-static {}, Lcom/google/android/gms/internal/zzno;->c()Lcom/google/android/gms/internal/zznl;
+    invoke-static {}, Lcom/google/android/gms/common/util/zzh;->c()Lcom/google/android/gms/common/util/zze;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->b()J
+    invoke-interface {v0}, Lcom/google/android/gms/common/util/zze;->b()J
 
     move-result-wide v2
 
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    new-instance v4, Lcom/google/android/gms/analytics/internal/zzg;
 
-    move-result-object v4
+    invoke-direct {v4, p0}, Lcom/google/android/gms/analytics/internal/zzg;-><init>(Landroid/content/Context;)V
 
-    new-instance v5, Lcom/google/android/gms/analytics/internal/zzg;
+    new-instance v5, Lcom/google/android/gms/analytics/internal/zzf;
 
-    invoke-direct {v5, v4}, Lcom/google/android/gms/analytics/internal/zzg;-><init>(Landroid/content/Context;)V
+    invoke-direct {v5, v4}, Lcom/google/android/gms/analytics/internal/zzf;-><init>(Lcom/google/android/gms/analytics/internal/zzg;)V
 
-    new-instance v4, Lcom/google/android/gms/analytics/internal/zzf;
-
-    invoke-direct {v4, v5}, Lcom/google/android/gms/analytics/internal/zzf;-><init>(Lcom/google/android/gms/analytics/internal/zzg;)V
-
-    sput-object v4, Lcom/google/android/gms/analytics/internal/zzf;->a:Lcom/google/android/gms/analytics/internal/zzf;
+    sput-object v5, Lcom/google/android/gms/analytics/internal/zzf;->a:Lcom/google/android/gms/analytics/internal/zzf;
 
     invoke-static {}, Lcom/google/android/gms/analytics/GoogleAnalytics;->d()V
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->b()J
+    invoke-interface {v0}, Lcom/google/android/gms/common/util/zze;->b()J
 
     move-result-wide v6
 
@@ -356,9 +275,9 @@
 
     cmp-long v0, v2, v6
 
-    if-lez v0, :cond_51
+    if-lez v0, :cond_4d
 
-    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzf;->f()Lcom/google/android/gms/analytics/internal/zzaf;
+    invoke-virtual {v5}, Lcom/google/android/gms/analytics/internal/zzf;->f()Lcom/google/android/gms/analytics/internal/zzaf;
 
     move-result-object v0
 
@@ -374,23 +293,23 @@
 
     invoke-virtual {v0, v4, v2, v3}, Lcom/google/android/gms/analytics/internal/zzaf;->c(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :cond_51
+    :cond_4d
     monitor-exit v1
-    :try_end_52
-    .catchall {:try_start_a .. :try_end_52} :catchall_55
+    :try_end_4e
+    .catchall {:try_start_a .. :try_end_4e} :catchall_51
 
-    :cond_52
+    :cond_4e
     sget-object v0, Lcom/google/android/gms/analytics/internal/zzf;->a:Lcom/google/android/gms/analytics/internal/zzf;
 
     return-object v0
 
-    :catchall_55
+    :catchall_51
     move-exception v0
 
-    :try_start_56
+    :try_start_52
     monitor-exit v1
-    :try_end_57
-    .catchall {:try_start_56 .. :try_end_57} :catchall_55
+    :try_end_53
+    .catchall {:try_start_52 .. :try_end_53} :catchall_51
 
     throw v0
 .end method
@@ -400,7 +319,7 @@
 
     const-string/jumbo v0, "Analytics service not created/initialized"
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzd;->C()Z
 
@@ -408,7 +327,7 @@
 
     const-string/jumbo v1, "Analytics service not initialized"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->b(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzaa;->b(ZLjava/lang/Object;)V
 
     return-void
 .end method
@@ -441,10 +360,10 @@
     return-object v0
 .end method
 
-.method public d()Lcom/google/android/gms/internal/zznl;
+.method public d()Lcom/google/android/gms/common/util/zze;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->d:Lcom/google/android/gms/internal/zznl;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->d:Lcom/google/android/gms/common/util/zze;
 
     return-object v0
 .end method
@@ -477,14 +396,14 @@
     return-object v0
 .end method
 
-.method public h()Lcom/google/android/gms/measurement/zzg;
+.method public h()Lcom/google/android/gms/analytics/zzi;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->g:Lcom/google/android/gms/measurement/zzg;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->g:Lcom/google/android/gms/analytics/zzi;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->g:Lcom/google/android/gms/measurement/zzg;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->g:Lcom/google/android/gms/analytics/zzi;
 
     return-object v0
 .end method
@@ -518,7 +437,7 @@
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->l:Lcom/google/android/gms/analytics/GoogleAnalytics;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->l:Lcom/google/android/gms/analytics/GoogleAnalytics;
 
@@ -528,21 +447,21 @@
 
     const-string/jumbo v1, "Analytics instance not initialized"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->b(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzaa;->b(ZLjava/lang/Object;)V
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->l:Lcom/google/android/gms/analytics/GoogleAnalytics;
 
     return-object v0
 .end method
 
-.method public l()Lcom/google/android/gms/analytics/internal/zzan;
+.method public l()Lcom/google/android/gms/analytics/internal/zzap;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->j:Lcom/google/android/gms/analytics/internal/zzan;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->j:Lcom/google/android/gms/analytics/internal/zzap;
 
     invoke-direct {p0, v0}, Lcom/google/android/gms/analytics/internal/zzf;->a(Lcom/google/android/gms/analytics/internal/zzd;)V
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->j:Lcom/google/android/gms/analytics/internal/zzan;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzf;->j:Lcom/google/android/gms/analytics/internal/zzap;
 
     return-object v0
 .end method
@@ -633,7 +552,7 @@
 .method public s()V
     .registers 1
 
-    invoke-static {}, Lcom/google/android/gms/measurement/zzg;->d()V
+    invoke-static {}, Lcom/google/android/gms/analytics/zzi;->d()V
 
     return-void
 .end method

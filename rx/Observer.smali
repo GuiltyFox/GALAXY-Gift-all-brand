@@ -26,5 +26,5 @@
     .end annotation
 .end method
 
-.method public abstract m_()V
+.method public abstract n_()V
 .end method

@@ -201,17 +201,17 @@
     .registers 3
 
     .prologue
-    .line 1528
+    .line 1529
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 1529
+    .line 1530
     const/4 v0, 0x0
 
-    .line 1531
+    .line 1532
     :goto_7
     return v0
 
@@ -256,7 +256,7 @@
     const/4 v1, 0x0
 
     .line 1085
-    const v0, 0x7f1001be
+    const v0, 0x7f1001c5
 
     :try_start_4
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
@@ -329,7 +329,7 @@
     check-cast v1, Landroid/view/LayoutInflater;
 
     .line 1098
-    const v3, 0x7f040042
+    const v3, 0x7f040044
 
     const/4 v7, 0x0
 
@@ -340,7 +340,7 @@
     move-result-object v7
 
     .line 1100
-    const v1, 0x7f1001bf
+    const v1, 0x7f1001c6
 
     invoke-virtual {v7, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -352,7 +352,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1103
-    const v1, 0x7f1001c0
+    const v1, 0x7f1001c7
 
     invoke-virtual {v7, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -361,7 +361,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 1104
-    const v2, 0x7f1001c2
+    const v2, 0x7f1001c9
 
     invoke-virtual {v7, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -370,7 +370,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 1105
-    const v3, 0x7f1001c1
+    const v3, 0x7f1001c8
 
     invoke-virtual {v7, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -518,7 +518,7 @@
 
     invoke-direct {v3, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
     :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_5} :catch_609
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_5} :catch_614
 
     .line 1200
     :try_start_5
@@ -539,7 +539,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5a3
+    if-eqz v1, :cond_5ae
 
     .line 1202
     new-instance v0, Ljava/util/Date;
@@ -596,7 +596,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "https://graph.facebook.com/"
+    sget-object v2, Lcom/bzbs/data/AppSetting;->o:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -631,8 +631,8 @@
     move-object v1, v0
 
     .line 1210
-    :goto_75
-    const v0, 0x7f1001c4
+    :goto_74
+    const v0, 0x7f1001cb
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -664,12 +664,12 @@
     move-result-object v1
 
     invoke-virtual {v1, v0}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
-    :try_end_97
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_97} :catch_89c
+    :try_end_96
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_96} :catch_8a5
 
     .line 1218
-    :goto_97
-    :try_start_97
+    :goto_96
+    :try_start_96
     const-string v0, "SM-G935F"
 
     .line 1219
@@ -698,7 +698,7 @@
     move-result-object v1
 
     .line 1220
-    const v0, 0x7f1001c5
+    const v0, 0x7f1001cc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -711,12 +711,12 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    :try_end_c4
-    .catch Ljava/lang/Exception; {:try_start_97 .. :try_end_c4} :catch_5f7
+    :try_end_c3
+    .catch Ljava/lang/Exception; {:try_start_96 .. :try_end_c3} :catch_602
 
     .line 1225
-    :goto_c4
-    :try_start_c4
+    :goto_c3
+    :try_start_c3
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -731,10 +731,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_629
+    if-eqz v0, :cond_634
 
     .line 1230
-    const v0, 0x7f1001c6
+    const v0, 0x7f1001cd
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -745,7 +745,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 1231
-    const v0, 0x7f1001c7
+    const v0, 0x7f1001ce
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -756,8 +756,8 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 1241
-    :goto_eb
-    const v0, 0x7f10016c
+    :goto_ea
+    const v0, 0x7f100173
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -774,7 +774,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1242
-    const v0, 0x7f1001c6
+    const v0, 0x7f1001cd
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -791,7 +791,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 1243
-    const v0, 0x7f1001c7
+    const v0, 0x7f1001ce
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -808,7 +808,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 1244
-    const v0, 0x7f1001d2
+    const v0, 0x7f1001d9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -888,7 +888,7 @@
     move-result-object v11
 
     .line 1256
-    if-eqz v0, :cond_641
+    if-eqz v0, :cond_64c
 
     const-string/jumbo v12, ""
 
@@ -896,9 +896,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_641
+    if-nez v0, :cond_64c
 
-    if-eqz v1, :cond_641
+    if-eqz v1, :cond_64c
 
     const-string/jumbo v0, ""
 
@@ -906,9 +906,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_641
+    if-nez v0, :cond_64c
 
-    if-eqz v4, :cond_641
+    if-eqz v4, :cond_64c
 
     const-string/jumbo v0, ""
 
@@ -916,9 +916,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_641
+    if-nez v0, :cond_64c
 
-    if-eqz v5, :cond_641
+    if-eqz v5, :cond_64c
 
     const-string/jumbo v0, ""
 
@@ -926,19 +926,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_641
+    if-nez v0, :cond_64c
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, v6, v0
 
-    if-lez v0, :cond_641
+    if-lez v0, :cond_64c
 
     const-wide/16 v0, 0x0
 
     cmp-long v0, v8, v0
 
-    if-lez v0, :cond_641
+    if-lez v0, :cond_64c
 
     .line 1257
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
@@ -950,8 +950,8 @@
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;Z)Z
 
     .line 1262
-    :goto_1b6
-    if-eqz v2, :cond_64b
+    :goto_1b5
+    if-eqz v2, :cond_656
 
     const-string/jumbo v0, ""
 
@@ -959,9 +959,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_64b
+    if-nez v0, :cond_656
 
-    if-eqz v10, :cond_64b
+    if-eqz v10, :cond_656
 
     const-string/jumbo v0, ""
 
@@ -969,9 +969,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_64b
+    if-nez v0, :cond_656
 
-    if-eqz v11, :cond_64b
+    if-eqz v11, :cond_656
 
     const-string/jumbo v0, ""
 
@@ -979,7 +979,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_64b
+    if-nez v0, :cond_656
 
     .line 1263
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
@@ -991,7 +991,7 @@
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->g(Landroid/content/Context;Z)Z
 
     .line 1268
-    :goto_1df
+    :goto_1de
     const-string/jumbo v0, "Gender"
 
     invoke-static {v3, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1005,7 +1005,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_688
+    if-nez v1, :cond_693
 
     .line 1270
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -1018,10 +1018,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_655
+    if-eqz v1, :cond_660
 
     .line 1271
-    const v0, 0x7f1001c9
+    const v0, 0x7f1001d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1029,7 +1029,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090148
+    const v1, 0x7f090141
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -1038,7 +1038,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1281
-    :goto_20f
+    :goto_20e
     const-string/jumbo v0, "Region"
 
     invoke-static {v3, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1052,7 +1052,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_754
+    if-nez v1, :cond_75f
 
     .line 1283
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -1065,10 +1065,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_699
+    if-eqz v1, :cond_6a4
 
     .line 1284
-    const v0, 0x7f1001d5
+    const v0, 0x7f1001dc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1076,7 +1076,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090167
+    const v1, 0x7f090160
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -1085,7 +1085,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1302
-    :goto_23f
+    :goto_23e
     const-string/jumbo v0, "BirthDate"
 
     invoke-static {v3, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1099,7 +1099,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_765
+    if-nez v1, :cond_770
 
     .line 1304
     invoke-static {v0}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
@@ -1140,7 +1140,7 @@
     move-result-object v1
 
     .line 1309
-    const v0, 0x7f1001cc
+    const v0, 0x7f1001d3
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1151,12 +1151,12 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1314
-    :goto_27f
+    :goto_27e
     const-wide/16 v0, 0x0
 
     cmp-long v0, v8, v0
 
-    if-lez v0, :cond_2a5
+    if-lez v0, :cond_2a4
 
     .line 1315
     new-instance v1, Ljava/text/SimpleDateFormat;
@@ -1166,7 +1166,7 @@
     invoke-direct {v1, v0}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
     .line 1316
-    const v0, 0x7f1001d8
+    const v0, 0x7f1001df
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1189,17 +1189,17 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1319
-    :cond_2a5
+    :cond_2a4
     const-string/jumbo v0, "15000"
 
     invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_776
+    if-eqz v0, :cond_781
 
     .line 1320
-    const v0, 0x7f100192
+    const v0, 0x7f100199
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1207,7 +1207,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090156
+    const v1, 0x7f09014f
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -1216,18 +1216,18 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1331
-    :cond_2c1
-    :goto_2c1
+    :cond_2c0
+    :goto_2c0
     const-string/jumbo v0, "Restaurant"
 
     invoke-virtual {v11, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    if-ltz v0, :cond_2d7
+    if-ltz v0, :cond_2d6
 
     .line 1332
-    const v0, 0x7f100194
+    const v0, 0x7f10019b
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1240,17 +1240,17 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     .line 1334
-    :cond_2d7
+    :cond_2d6
     const-string/jumbo v0, "Dessert"
 
     invoke-virtual {v11, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    if-ltz v0, :cond_2ed
+    if-ltz v0, :cond_2ec
 
     .line 1335
-    const v0, 0x7f100195
+    const v0, 0x7f10019c
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1263,17 +1263,17 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     .line 1337
-    :cond_2ed
+    :cond_2ec
     const-string/jumbo v0, "Entertainment"
 
     invoke-virtual {v11, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    if-ltz v0, :cond_303
+    if-ltz v0, :cond_302
 
     .line 1338
-    const v0, 0x7f100196
+    const v0, 0x7f10019d
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1286,17 +1286,17 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     .line 1340
-    :cond_303
+    :cond_302
     const-string/jumbo v0, "Beauty"
 
     invoke-virtual {v11, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    if-ltz v0, :cond_319
+    if-ltz v0, :cond_318
 
     .line 1341
-    const v0, 0x7f100197
+    const v0, 0x7f10019e
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1309,17 +1309,17 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     .line 1343
-    :cond_319
+    :cond_318
     const-string/jumbo v0, "Fashion"
 
     invoke-virtual {v11, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    if-ltz v0, :cond_32f
+    if-ltz v0, :cond_32e
 
     .line 1344
-    const v0, 0x7f100198
+    const v0, 0x7f10019f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1332,17 +1332,17 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     .line 1346
-    :cond_32f
+    :cond_32e
     const-string/jumbo v0, "Sport"
 
     invoke-virtual {v11, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    if-ltz v0, :cond_345
+    if-ltz v0, :cond_344
 
     .line 1347
-    const v0, 0x7f100199
+    const v0, 0x7f1001a0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1355,17 +1355,17 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     .line 1349
-    :cond_345
+    :cond_344
     const-string/jumbo v0, "Travel"
 
     invoke-virtual {v11, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    if-ltz v0, :cond_35b
+    if-ltz v0, :cond_35a
 
     .line 1350
-    const v0, 0x7f10019a
+    const v0, 0x7f1001a1
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1378,8 +1378,8 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
     .line 1353
-    :cond_35b
-    if-eqz v5, :cond_7fc
+    :cond_35a
+    if-eqz v5, :cond_807
 
     const-string/jumbo v0, ""
 
@@ -1387,7 +1387,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7fc
+    if-nez v0, :cond_807
 
     .line 1354
     const-string/jumbo v0, "+0000000000"
@@ -1396,10 +1396,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7ee
+    if-eqz v0, :cond_7f9
 
     .line 1355
-    const v0, 0x7f1001ce
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1412,8 +1412,8 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 1363
-    :goto_37e
-    const v0, 0x7f10018f
+    :goto_37d
+    const v0, 0x7f100196
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1473,13 +1473,13 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "402705486466922"
+    sget-object v1, Lcom/bzbs/data/AppSetting;->g:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_80d
+    if-eqz v0, :cond_818
 
     .line 1372
     const-string/jumbo v1, ""
@@ -1488,7 +1488,7 @@
     const-string/jumbo v0, ""
 
     .line 1374
-    if-eqz v2, :cond_3ea
+    if-eqz v2, :cond_3e8
 
     const-string/jumbo v8, ""
 
@@ -1496,7 +1496,7 @@
 
     move-result v8
 
-    if-nez v8, :cond_3ea
+    if-nez v8, :cond_3e8
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1517,8 +1517,8 @@
     const-string/jumbo v0, " "
 
     .line 1375
-    :cond_3ea
-    if-eqz v4, :cond_40d
+    :cond_3e8
+    if-eqz v4, :cond_40b
 
     const-string/jumbo v2, ""
 
@@ -1526,7 +1526,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_40d
+    if-nez v2, :cond_40b
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1551,8 +1551,8 @@
     const-string/jumbo v0, " "
 
     .line 1376
-    :cond_40d
-    if-eqz v5, :cond_430
+    :cond_40b
+    if-eqz v5, :cond_42e
 
     const-string/jumbo v2, ""
 
@@ -1560,7 +1560,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_430
+    if-nez v2, :cond_42e
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1585,8 +1585,8 @@
     const-string/jumbo v0, " "
 
     .line 1377
-    :cond_430
-    if-eqz v6, :cond_8a2
+    :cond_42e
+    if-eqz v6, :cond_8ab
 
     const-string/jumbo v2, ""
 
@@ -1594,7 +1594,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_8a2
+    if-nez v2, :cond_8ab
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1625,8 +1625,8 @@
     move-object v1, v13
 
     .line 1378
-    :goto_456
-    if-eqz v7, :cond_89f
+    :goto_454
+    if-eqz v7, :cond_8a8
 
     const-string/jumbo v2, ""
 
@@ -1634,7 +1634,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_89f
+    if-nez v2, :cond_8a8
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1661,8 +1661,8 @@
     move-object v1, v0
 
     .line 1379
-    :goto_47a
-    const v0, 0x7f10019f
+    :goto_478
+    const v0, 0x7f1001a6
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1673,8 +1673,8 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1384
-    :goto_486
-    const v0, 0x7f1001a4
+    :goto_484
+    const v0, 0x7f1001ab
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1691,7 +1691,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1385
-    const v0, 0x7f1001a6
+    const v0, 0x7f1001ad
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1708,7 +1708,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1386
-    const v0, 0x7f1001a8
+    const v0, 0x7f1001af
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1725,7 +1725,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1387
-    const v0, 0x7f1001aa
+    const v0, 0x7f1001b1
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1742,7 +1742,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1388
-    const v0, 0x7f1001ac
+    const v0, 0x7f1001b3
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1763,7 +1763,20 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "ShippingFirstName"
+    const-string/jumbo v1, "FirstName"
+
+    invoke-static {v3, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->g(Landroid/content/Context;Ljava/lang/String;)Z
+
+    .line 1391
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "LastName"
 
     invoke-static {v3, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1771,7 +1784,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->h(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1391
+    .line 1392
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1782,10 +1795,10 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->i(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1394
-    const v0, 0x7f1001af
+    .line 1395
+    const v0, 0x7f1001b6
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1793,23 +1806,23 @@
 
     check-cast v0, Lcom/samsung/privilege/control/toggle/ToggleButton;
 
-    .line 1395
+    .line 1396
     const-string/jumbo v1, "Locale"
 
     invoke-static {v3, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1396
+    .line 1397
     const-string/jumbo v2, "1054"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_820
+    if-eqz v2, :cond_82b
 
-    .line 1397
+    .line 1398
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1818,20 +1831,20 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "402705486466922"
+    sget-object v2, Lcom/bzbs/data/AppSetting;->g:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_81b
+    if-eqz v1, :cond_826
 
-    .line 1398
+    .line 1399
     invoke-virtual {v0}, Lcom/samsung/privilege/control/toggle/ToggleButton;->b()V
 
-    .line 1418
-    :goto_52e
-    const v1, 0x7f1001b0
+    .line 1419
+    :goto_539
+    const v1, 0x7f1001b7
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1839,8 +1852,8 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 1419
-    const v2, 0x7f1001ae
+    .line 1420
+    const v2, 0x7f1001b5
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1848,16 +1861,16 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 1420
+    .line 1421
     invoke-virtual {v0}, Lcom/samsung/privilege/control/toggle/ToggleButton;->a()Z
 
     move-result v0
 
     const/4 v4, 0x1
 
-    if-ne v0, v4, :cond_86d
+    if-ne v0, v4, :cond_876
 
-    .line 1421
+    .line 1422
     const-string/jumbo v0, "#2ba9e3"
 
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -1866,7 +1879,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1422
+    .line 1423
     const-string/jumbo v0, "#ebebeb"
 
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -1875,9 +1888,9 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1428
-    :goto_55b
-    const v0, 0x7f1001b9
+    .line 1429
+    :goto_566
+    const v0, 0x7f1001c0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1885,8 +1898,8 @@
 
     check-cast v0, Lcom/samsung/privilege/control/toggle/ToggleButton;
 
-    .line 1429
-    const v1, 0x7f1001ba
+    .line 1430
+    const v1, 0x7f1001c1
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1894,8 +1907,8 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 1430
-    const v2, 0x7f1001b8
+    .line 1431
+    const v2, 0x7f1001bf
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -1903,7 +1916,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 1432
+    .line 1433
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v4
@@ -1914,12 +1927,12 @@
 
     const/4 v5, 0x1
 
-    if-ne v4, v5, :cond_883
-
-    .line 1433
-    invoke-virtual {v0}, Lcom/samsung/privilege/control/toggle/ToggleButton;->b()V
+    if-ne v4, v5, :cond_88c
 
     .line 1434
+    invoke-virtual {v0}, Lcom/samsung/privilege/control/toggle/ToggleButton;->b()V
+
+    .line 1435
     const-string/jumbo v0, "#2ba9e3"
 
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -1928,7 +1941,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1435
+    .line 1436
     const-string/jumbo v0, "#ebebeb"
 
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -1937,26 +1950,26 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1442
-    :goto_598
+    .line 1443
+    :goto_5a3
     const-string/jumbo v0, "CategoryConfig"
 
     invoke-static {v3, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1443
+    .line 1444
     invoke-direct {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->b(Ljava/lang/String;)V
-    :try_end_5a2
-    .catch Ljava/lang/Exception; {:try_start_c4 .. :try_end_5a2} :catch_609
+    :try_end_5ad
+    .catch Ljava/lang/Exception; {:try_start_c3 .. :try_end_5ad} :catch_614
 
-    .line 1447
-    :goto_5a2
+    .line 1448
+    :goto_5ad
     return-void
 
     .line 1205
-    :cond_5a3
-    :try_start_5a3
+    :cond_5ae
+    :try_start_5ae
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1971,7 +1984,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_8a7
+    if-eqz v1, :cond_8b0
 
     .line 1206
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
@@ -1988,7 +2001,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v2, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2035,23 +2048,23 @@
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_5f3
-    .catch Ljava/lang/Exception; {:try_start_5a3 .. :try_end_5f3} :catch_89c
+    :try_end_5fe
+    .catch Ljava/lang/Exception; {:try_start_5ae .. :try_end_5fe} :catch_8a5
 
     move-result-object v0
 
     move-object v1, v0
 
-    goto/16 :goto_75
+    goto/16 :goto_74
 
     .line 1221
-    :catch_5f7
+    :catch_602
     move-exception v0
 
     .line 1222
-    const v0, 0x7f1001c5
+    const v0, 0x7f1001cc
 
-    :try_start_5fb
+    :try_start_606
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -2061,16 +2074,16 @@
     const-string/jumbo v1, ""
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    :try_end_607
-    .catch Ljava/lang/Exception; {:try_start_5fb .. :try_end_607} :catch_609
+    :try_end_612
+    .catch Ljava/lang/Exception; {:try_start_606 .. :try_end_612} :catch_614
 
-    goto/16 :goto_c4
-
-    .line 1444
-    :catch_609
-    move-exception v0
+    goto/16 :goto_c3
 
     .line 1445
+    :catch_614
+    move-exception v0
+
+    .line 1446
     iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2097,13 +2110,13 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto/16 :goto_5a2
+    goto/16 :goto_5ad
 
     .line 1237
-    :cond_629
-    const v0, 0x7f1001c6
+    :cond_634
+    const v0, 0x7f1001cd
 
-    :try_start_62c
+    :try_start_637
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -2113,7 +2126,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 1238
-    const v0, 0x7f1001c7
+    const v0, 0x7f1001ce
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2123,10 +2136,10 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
 
-    goto/16 :goto_eb
+    goto/16 :goto_ea
 
     .line 1259
-    :cond_641
+    :cond_64c
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2135,10 +2148,10 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;Z)Z
 
-    goto/16 :goto_1b6
+    goto/16 :goto_1b5
 
     .line 1265
-    :cond_64b
+    :cond_656
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2147,10 +2160,10 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->g(Landroid/content/Context;Z)Z
 
-    goto/16 :goto_1df
+    goto/16 :goto_1de
 
     .line 1272
-    :cond_655
+    :cond_660
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
@@ -2161,10 +2174,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_677
+    if-eqz v0, :cond_682
 
     .line 1273
-    const v0, 0x7f1001c9
+    const v0, 0x7f1001d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2172,7 +2185,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090149
+    const v1, 0x7f090142
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2180,11 +2193,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_20f
+    goto/16 :goto_20e
 
     .line 1275
-    :cond_677
-    const v0, 0x7f1001c9
+    :cond_682
+    const v0, 0x7f1001d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2196,11 +2209,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_20f
+    goto/16 :goto_20e
 
     .line 1278
-    :cond_688
-    const v0, 0x7f1001c9
+    :cond_693
+    const v0, 0x7f1001d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2212,10 +2225,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_20f
+    goto/16 :goto_20e
 
     .line 1285
-    :cond_699
+    :cond_6a4
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
@@ -2226,10 +2239,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6bb
+    if-eqz v1, :cond_6c6
 
     .line 1286
-    const v0, 0x7f1001d5
+    const v0, 0x7f1001dc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2237,7 +2250,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090166
+    const v1, 0x7f09015f
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2245,10 +2258,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_23e
 
     .line 1287
-    :cond_6bb
+    :cond_6c6
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
@@ -2259,10 +2272,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6dd
+    if-eqz v1, :cond_6e8
 
     .line 1288
-    const v0, 0x7f1001d5
+    const v0, 0x7f1001dc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2270,7 +2283,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090164
+    const v1, 0x7f09015d
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2278,10 +2291,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_23e
 
     .line 1289
-    :cond_6dd
+    :cond_6e8
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
@@ -2292,10 +2305,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6ff
+    if-eqz v1, :cond_70a
 
     .line 1290
-    const v0, 0x7f1001d5
+    const v0, 0x7f1001dc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2303,7 +2316,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090165
+    const v1, 0x7f09015e
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2311,10 +2324,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_23e
 
     .line 1291
-    :cond_6ff
+    :cond_70a
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
@@ -2325,10 +2338,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_721
+    if-eqz v1, :cond_72c
 
     .line 1292
-    const v0, 0x7f1001d5
+    const v0, 0x7f1001dc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2336,7 +2349,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090169
+    const v1, 0x7f090162
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2344,10 +2357,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_23e
 
     .line 1293
-    :cond_721
+    :cond_72c
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
@@ -2358,10 +2371,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_743
+    if-eqz v0, :cond_74e
 
     .line 1294
-    const v0, 0x7f1001d5
+    const v0, 0x7f1001dc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2369,7 +2382,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090168
+    const v1, 0x7f090161
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2377,11 +2390,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_23e
 
     .line 1296
-    :cond_743
-    const v0, 0x7f1001d5
+    :cond_74e
+    const v0, 0x7f1001dc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2393,11 +2406,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_23e
 
     .line 1299
-    :cond_754
-    const v0, 0x7f1001d5
+    :cond_75f
+    const v0, 0x7f1001dc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2409,11 +2422,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_23e
 
     .line 1311
-    :cond_765
-    const v0, 0x7f1001cc
+    :cond_770
+    const v0, 0x7f1001d3
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2425,20 +2438,20 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_27f
+    goto/16 :goto_27e
 
     .line 1321
-    :cond_776
+    :cond_781
     const-string/jumbo v0, "25000"
 
     invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_794
+    if-eqz v0, :cond_79f
 
     .line 1322
-    const v0, 0x7f100192
+    const v0, 0x7f100199
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2446,7 +2459,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090157
+    const v1, 0x7f090150
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2454,20 +2467,20 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_2c1
+    goto/16 :goto_2c0
 
     .line 1323
-    :cond_794
+    :cond_79f
     const-string/jumbo v0, "35000"
 
     invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_7b2
+    if-eqz v0, :cond_7bd
 
     .line 1324
-    const v0, 0x7f100192
+    const v0, 0x7f100199
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2475,7 +2488,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090158
+    const v1, 0x7f090151
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2483,20 +2496,20 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_2c1
+    goto/16 :goto_2c0
 
     .line 1325
-    :cond_7b2
+    :cond_7bd
     const-string/jumbo v0, "45000"
 
     invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_7d0
+    if-eqz v0, :cond_7db
 
     .line 1326
-    const v0, 0x7f100192
+    const v0, 0x7f100199
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2504,7 +2517,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090159
+    const v1, 0x7f090152
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2512,20 +2525,20 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_2c1
+    goto/16 :goto_2c0
 
     .line 1327
-    :cond_7d0
+    :cond_7db
     const-string/jumbo v0, "45001-"
 
     invoke-virtual {v10, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2c1
+    if-eqz v0, :cond_2c0
 
     .line 1328
-    const v0, 0x7f100192
+    const v0, 0x7f100199
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2533,7 +2546,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f09015a
+    const v1, 0x7f090153
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -2541,11 +2554,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_2c1
+    goto/16 :goto_2c0
 
     .line 1357
-    :cond_7ee
-    const v0, 0x7f1001ce
+    :cond_7f9
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2555,11 +2568,11 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_37e
+    goto/16 :goto_37d
 
     .line 1360
-    :cond_7fc
-    const v0, 0x7f1001ce
+    :cond_807
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2571,11 +2584,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_37e
+    goto/16 :goto_37d
 
     .line 1381
-    :cond_80d
-    const v0, 0x7f10019e
+    :cond_818
+    const v0, 0x7f1001a5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2585,25 +2598,25 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_486
+    goto/16 :goto_484
 
-    .line 1400
-    :cond_81b
+    .line 1401
+    :cond_826
     invoke-virtual {v0}, Lcom/samsung/privilege/control/toggle/ToggleButton;->c()V
 
-    goto/16 :goto_52e
+    goto/16 :goto_539
 
-    .line 1402
-    :cond_820
+    .line 1403
+    :cond_82b
     const-string/jumbo v2, "1108"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_844
+    if-eqz v2, :cond_84e
 
-    .line 1403
+    .line 1404
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -2612,36 +2625,36 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "768830479847872"
+    sget-object v2, Lcom/bzbs/data/AppSetting;->h:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_83f
+    if-eqz v1, :cond_849
 
-    .line 1404
+    .line 1405
     invoke-virtual {v0}, Lcom/samsung/privilege/control/toggle/ToggleButton;->b()V
 
-    goto/16 :goto_52e
+    goto/16 :goto_539
 
-    .line 1406
-    :cond_83f
+    .line 1407
+    :cond_849
     invoke-virtual {v0}, Lcom/samsung/privilege/control/toggle/ToggleButton;->c()V
 
-    goto/16 :goto_52e
+    goto/16 :goto_539
 
-    .line 1408
-    :cond_844
+    .line 1409
+    :cond_84e
     const-string/jumbo v2, "1109"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_868
+    if-eqz v1, :cond_871
 
-    .line 1409
+    .line 1410
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -2650,57 +2663,33 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "517155661760483"
+    sget-object v2, Lcom/bzbs/data/AppSetting;->j:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_863
+    if-eqz v1, :cond_86c
 
-    .line 1410
+    .line 1411
     invoke-virtual {v0}, Lcom/samsung/privilege/control/toggle/ToggleButton;->b()V
 
-    goto/16 :goto_52e
+    goto/16 :goto_539
 
-    .line 1412
-    :cond_863
+    .line 1413
+    :cond_86c
     invoke-virtual {v0}, Lcom/samsung/privilege/control/toggle/ToggleButton;->c()V
 
-    goto/16 :goto_52e
+    goto/16 :goto_539
 
-    .line 1415
-    :cond_868
+    .line 1416
+    :cond_871
     invoke-virtual {v0}, Lcom/samsung/privilege/control/toggle/ToggleButton;->c()V
 
-    goto/16 :goto_52e
-
-    .line 1424
-    :cond_86d
-    const-string/jumbo v0, "#ebebeb"
-
-    invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
+    goto/16 :goto_539
 
     .line 1425
-    const-string/jumbo v0, "#2ba9e3"
-
-    invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setTextColor(I)V
-
-    goto/16 :goto_55b
-
-    .line 1437
-    :cond_883
-    invoke-virtual {v0}, Lcom/samsung/privilege/control/toggle/ToggleButton;->c()V
-
-    .line 1438
+    :cond_876
     const-string/jumbo v0, "#ebebeb"
 
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -2709,7 +2698,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1439
+    .line 1426
     const-string/jumbo v0, "#2ba9e3"
 
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -2717,35 +2706,59 @@
     move-result v0
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setTextColor(I)V
-    :try_end_89a
-    .catch Ljava/lang/Exception; {:try_start_62c .. :try_end_89a} :catch_609
 
-    goto/16 :goto_598
+    goto/16 :goto_566
+
+    .line 1438
+    :cond_88c
+    invoke-virtual {v0}, Lcom/samsung/privilege/control/toggle/ToggleButton;->c()V
+
+    .line 1439
+    const-string/jumbo v0, "#ebebeb"
+
+    invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 1440
+    const-string/jumbo v0, "#2ba9e3"
+
+    invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setTextColor(I)V
+    :try_end_8a3
+    .catch Ljava/lang/Exception; {:try_start_637 .. :try_end_8a3} :catch_614
+
+    goto/16 :goto_5a3
 
     .line 1212
-    :catch_89c
+    :catch_8a5
     move-exception v0
 
-    goto/16 :goto_97
+    goto/16 :goto_96
 
-    :cond_89f
+    :cond_8a8
     move-object v1, v0
 
-    goto/16 :goto_47a
+    goto/16 :goto_478
 
-    :cond_8a2
+    :cond_8ab
     move-object v13, v0
 
     move-object v0, v1
 
     move-object v1, v13
 
-    goto/16 :goto_456
+    goto/16 :goto_454
 
-    :cond_8a7
+    :cond_8b0
     move-object v1, v0
 
-    goto/16 :goto_75
+    goto/16 :goto_74
 .end method
 
 .method static synthetic c(Lcom/samsung/privilege/activity/ProfileActivity;)Z
@@ -2920,7 +2933,7 @@
     move-result-object v1
 
     .line 242
-    const v0, 0x7f100194
+    const v0, 0x7f10019b
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2931,7 +2944,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 243
-    const v0, 0x7f100195
+    const v0, 0x7f10019c
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2942,7 +2955,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 244
-    const v0, 0x7f100196
+    const v0, 0x7f10019d
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2953,7 +2966,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 245
-    const v0, 0x7f100197
+    const v0, 0x7f10019e
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2964,7 +2977,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 246
-    const v0, 0x7f100198
+    const v0, 0x7f10019f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2975,7 +2988,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 247
-    const v0, 0x7f100199
+    const v0, 0x7f1001a0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -2986,7 +2999,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/CheckBox;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 248
-    const v0, 0x7f10019a
+    const v0, 0x7f1001a1
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3005,16 +3018,16 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "402705486466922"
+    sget-object v1, Lcom/bzbs/data/AppSetting;->g:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_353
+    if-eqz v0, :cond_351
 
     .line 251
-    const v0, 0x7f1001ce
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3023,7 +3036,7 @@
     invoke-virtual {v0, v8}, Landroid/view/View;->setEnabled(Z)V
 
     .line 252
-    const v0, 0x7f1001cf
+    const v0, 0x7f1001d6
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3032,7 +3045,7 @@
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 254
-    const v0, 0x7f1001d0
+    const v0, 0x7f1001d7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3041,7 +3054,7 @@
     invoke-virtual {v0, v8}, Landroid/view/View;->setVisibility(I)V
 
     .line 255
-    const v0, 0x7f1001d3
+    const v0, 0x7f1001da
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3050,7 +3063,7 @@
     invoke-virtual {v0, v8}, Landroid/view/View;->setVisibility(I)V
 
     .line 269
-    :goto_a3
+    :goto_a2
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -3065,10 +3078,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c5
+    if-eqz v0, :cond_c4
 
     .line 270
-    const v0, 0x7f1001c4
+    const v0, 0x7f1001cb
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3084,8 +3097,8 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 283
-    :cond_c5
-    const v0, 0x7f1001cc
+    :cond_c4
+    const v0, 0x7f1001d3
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3147,7 +3160,7 @@
     invoke-virtual {v6, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 310
-    const v0, 0x7f1001cf
+    const v0, 0x7f1001d6
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3163,7 +3176,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 328
-    const v0, 0x7f10018f
+    const v0, 0x7f100196
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3174,7 +3187,7 @@
     invoke-virtual {v0, v9}, Landroid/widget/EditText;->setEnabled(Z)V
 
     .line 329
-    const v0, 0x7f10018f
+    const v0, 0x7f100196
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3191,7 +3204,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 330
-    const v0, 0x7f100190
+    const v0, 0x7f100197
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3204,7 +3217,7 @@
     .line 334
     new-array v1, v10, [Ljava/lang/String;
 
-    const v0, 0x7f090148
+    const v0, 0x7f090141
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3212,7 +3225,7 @@
 
     aput-object v0, v1, v8
 
-    const v0, 0x7f090149
+    const v0, 0x7f090142
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3227,12 +3240,12 @@
 
     move-result-object v0
 
-    const v3, 0x7f040113
+    const v3, 0x7f040127
 
     invoke-direct {v2, v0, v3, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
     .line 337
-    const v0, 0x7f1001c9
+    const v0, 0x7f1001d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3248,7 +3261,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 361
-    const v0, 0x7f1001c9
+    const v0, 0x7f1001d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3259,7 +3272,7 @@
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setEnabled(Z)V
 
     .line 362
-    const v0, 0x7f1001c9
+    const v0, 0x7f1001d0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3276,7 +3289,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 363
-    const v0, 0x7f1001ca
+    const v0, 0x7f1001d1
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3291,7 +3304,7 @@
 
     new-array v1, v0, [Ljava/lang/String;
 
-    const v0, 0x7f090167
+    const v0, 0x7f090160
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3299,7 +3312,7 @@
 
     aput-object v0, v1, v8
 
-    const v0, 0x7f090166
+    const v0, 0x7f09015f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3307,7 +3320,7 @@
 
     aput-object v0, v1, v9
 
-    const v0, 0x7f090164
+    const v0, 0x7f09015d
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3317,7 +3330,7 @@
 
     const/4 v0, 0x3
 
-    const v2, 0x7f090165
+    const v2, 0x7f09015e
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3327,7 +3340,7 @@
 
     const/4 v0, 0x4
 
-    const v2, 0x7f090169
+    const v2, 0x7f090162
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3335,7 +3348,7 @@
 
     aput-object v2, v1, v0
 
-    const v0, 0x7f090168
+    const v0, 0x7f090161
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3350,12 +3363,12 @@
 
     move-result-object v0
 
-    const v3, 0x7f040113
+    const v3, 0x7f040127
 
     invoke-direct {v2, v0, v3, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
     .line 370
-    const v0, 0x7f1001d5
+    const v0, 0x7f1001dc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3376,7 +3389,7 @@
     move-result-object v1
 
     .line 397
-    const v0, 0x7f1001d8
+    const v0, 0x7f1001df
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3433,7 +3446,7 @@
     invoke-virtual {v6, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 415
-    const v0, 0x7f100192
+    const v0, 0x7f100199
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3444,7 +3457,7 @@
     .line 416
     new-array v1, v11, [Ljava/lang/String;
 
-    const v2, 0x7f090156
+    const v2, 0x7f09014f
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3452,7 +3465,7 @@
 
     aput-object v2, v1, v8
 
-    const v2, 0x7f090157
+    const v2, 0x7f090150
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3460,7 +3473,7 @@
 
     aput-object v2, v1, v9
 
-    const v2, 0x7f090158
+    const v2, 0x7f090151
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3470,7 +3483,7 @@
 
     const/4 v2, 0x3
 
-    const v3, 0x7f090159
+    const v3, 0x7f090152
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3480,7 +3493,7 @@
 
     const/4 v2, 0x4
 
-    const v3, 0x7f09015a
+    const v3, 0x7f090153
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3491,7 +3504,7 @@
     .line 417
     new-instance v2, Landroid/widget/ArrayAdapter;
 
-    const v3, 0x7f040113
+    const v3, 0x7f040127
 
     invoke-direct {v2, p0, v3, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
@@ -3503,7 +3516,7 @@
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 434
-    const v0, 0x7f1001b0
+    const v0, 0x7f1001b7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3512,7 +3525,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 435
-    const v1, 0x7f1001ae
+    const v1, 0x7f1001b5
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3521,7 +3534,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 436
-    const v2, 0x7f1001af
+    const v2, 0x7f1001b6
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3537,7 +3550,7 @@
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/control/toggle/ToggleButton;->a(Lcom/samsung/privilege/control/toggle/ToggleButton$OnToggleChanged;)V
 
     .line 452
-    const v1, 0x7f1001b8
+    const v1, 0x7f1001bf
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3546,7 +3559,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 453
-    const v2, 0x7f1001ba
+    const v2, 0x7f1001c1
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3555,7 +3568,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 454
-    const v3, 0x7f1001b9
+    const v3, 0x7f1001c0
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3579,16 +3592,16 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "402705486466922"
+    sget-object v2, Lcom/bzbs/data/AppSetting;->g:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_3a5
+    if-eqz v1, :cond_3a3
 
     .line 470
-    const v1, 0x7f0900b9
+    const v1, 0x7f0900ad
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3597,7 +3610,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 471
-    const v0, 0x7f100188
+    const v0, 0x7f10018f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3606,9 +3619,9 @@
     invoke-virtual {v0, v8}, Landroid/view/View;->setVisibility(I)V
 
     .line 483
-    :cond_2e4
-    :goto_2e4
-    const v0, 0x7f1001bd
+    :cond_2e2
+    :goto_2e2
+    const v0, 0x7f1001c4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3617,7 +3630,7 @@
     check-cast v0, Landroid/widget/ImageView;
 
     .line 484
-    const v1, 0x7f1001be
+    const v1, 0x7f1001c5
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3629,7 +3642,7 @@
     invoke-virtual {v1, v7}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 487
-    const v2, 0x7f1001bb
+    const v2, 0x7f1001c2
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3645,7 +3658,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 548
-    const v0, 0x7f10018c
+    const v0, 0x7f100193
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3654,7 +3667,7 @@
     check-cast v0, Landroid/widget/ImageView;
 
     .line 549
-    const v1, 0x7f10018d
+    const v1, 0x7f100194
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3663,10 +3676,10 @@
     check-cast v1, Landroid/widget/LinearLayout;
 
     .line 550
-    invoke-virtual {v1, v7}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {v1, v8}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 552
-    const v2, 0x7f10018a
+    const v2, 0x7f100191
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3682,7 +3695,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 613
-    const v0, 0x7f10019d
+    const v0, 0x7f1001a4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3698,7 +3711,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 621
-    const v0, 0x7f1001a2
+    const v0, 0x7f1001a9
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3717,8 +3730,8 @@
     return-void
 
     .line 257
-    :cond_353
-    const v0, 0x7f1001ce
+    :cond_351
+    const v0, 0x7f1001d5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3727,7 +3740,7 @@
     invoke-virtual {v0, v9}, Landroid/view/View;->setEnabled(Z)V
 
     .line 258
-    const v0, 0x7f1001cf
+    const v0, 0x7f1001d6
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3736,7 +3749,7 @@
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 260
-    const v0, 0x7f1001d0
+    const v0, 0x7f1001d7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3745,7 +3758,7 @@
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 261
-    const v0, 0x7f1001d3
+    const v0, 0x7f1001da
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3754,7 +3767,7 @@
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 263
-    const v0, 0x7f1001a0
+    const v0, 0x7f1001a7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3763,7 +3776,7 @@
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 264
-    const v0, 0x7f10019d
+    const v0, 0x7f1001a4
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3772,7 +3785,7 @@
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
     .line 265
-    const v0, 0x7f10019e
+    const v0, 0x7f1001a5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3781,7 +3794,7 @@
     invoke-virtual {v0, v8}, Landroid/view/View;->setVisibility(I)V
 
     .line 266
-    const v0, 0x7f10019f
+    const v0, 0x7f1001a6
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3789,10 +3802,10 @@
 
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
-    goto/16 :goto_a3
+    goto/16 :goto_a2
 
     .line 472
-    :cond_3a5
+    :cond_3a3
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -3801,16 +3814,16 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "768830479847872"
+    sget-object v2, Lcom/bzbs/data/AppSetting;->h:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_3cc
+    if-eqz v1, :cond_3c9
 
     .line 473
-    const v1, 0x7f0900b5
+    const v1, 0x7f0900a9
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3819,7 +3832,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 474
-    const v0, 0x7f100188
+    const v0, 0x7f10018f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3827,10 +3840,10 @@
 
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
-    goto/16 :goto_2e4
+    goto/16 :goto_2e2
 
     .line 475
-    :cond_3cc
+    :cond_3c9
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -3839,16 +3852,16 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "1525635597652592"
+    sget-object v2, Lcom/bzbs/data/AppSetting;->i:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_3e9
+    if-eqz v1, :cond_3e5
 
     .line 477
-    const v0, 0x7f100188
+    const v0, 0x7f10018f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3856,10 +3869,10 @@
 
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
-    goto/16 :goto_2e4
+    goto/16 :goto_2e2
 
     .line 478
-    :cond_3e9
+    :cond_3e5
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -3868,16 +3881,16 @@
 
     move-result-object v1
 
-    const-string/jumbo v2, "517155661760483"
+    sget-object v2, Lcom/bzbs/data/AppSetting;->j:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_2e4
+    if-eqz v1, :cond_2e2
 
     .line 479
-    const v1, 0x7f0900b7
+    const v1, 0x7f0900ab
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -3886,7 +3899,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 480
-    const v0, 0x7f100188
+    const v0, 0x7f10018f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3894,16 +3907,16 @@
 
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
-    goto/16 :goto_2e4
+    goto/16 :goto_2e2
 .end method
 
 .method private j()V
     .registers 7
 
     .prologue
-    const v5, 0x7f1001b2
+    const v5, 0x7f1001b9
 
-    const v4, 0x7f1001b1
+    const v4, 0x7f1001b8
 
     const/16 v3, 0x8
 
@@ -3931,7 +3944,7 @@
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
     .line 636
-    const v0, 0x7f1001b4
+    const v0, 0x7f1001bb
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3940,7 +3953,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 637
-    const v0, 0x7f1001b6
+    const v0, 0x7f1001bd
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -3949,7 +3962,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 638
-    const v0, 0x7f1001b5
+    const v0, 0x7f1001bc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -4001,7 +4014,7 @@
     if-lt v0, v1, :cond_4a
 
     .line 668
-    const v0, 0x7f1001b4
+    const v0, 0x7f1001bb
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -4010,7 +4023,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 669
-    const v1, 0x7f1001b6
+    const v1, 0x7f1001bd
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -4019,7 +4032,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 670
-    const v2, 0x7f1001b5
+    const v2, 0x7f1001bc
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -4109,7 +4122,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4151,7 +4164,7 @@
     .line 1146
     const-string/jumbo v1, ""
 
-    const v2, 0x7f0900ed
+    const v2, 0x7f0900e6
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -4173,7 +4186,7 @@
 
     move-result-object v1
 
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 1149
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -4227,12 +4240,12 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 1450
+    .line 1451
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->V:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->aa:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4248,7 +4261,7 @@
 
     move-result-object v0
 
-    .line 1451
+    .line 1452
     iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -4271,10 +4284,10 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1452
+    .line 1453
     const-string/jumbo v1, ""
 
-    const v2, 0x7f0900ed
+    const v2, 0x7f0900e6
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
@@ -4286,29 +4299,29 @@
 
     iput-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity;->d:Landroid/app/ProgressDialog;
 
-    .line 1453
+    .line 1454
     new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
 
-    .line 1454
+    .line 1455
     invoke-virtual {v1, p0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/app/Activity;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->V:Z
 
-    .line 1455
+    .line 1456
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    .line 1456
+    .line 1457
     invoke-virtual {v1, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 1457
+    .line 1458
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -4323,7 +4336,7 @@
 
     sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 1458
+    .line 1459
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -4332,15 +4345,15 @@
 
     invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/ProfileActivity$25;-><init>(Lcom/samsung/privilege/activity/ProfileActivity;)V
 
-    .line 1459
+    .line 1460
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 1508
+    .line 1509
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    .line 1509
+    .line 1510
     return-void
 .end method
 
@@ -4350,10 +4363,10 @@
     .registers 2
 
     .prologue
-    .line 1512
+    .line 1513
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->finish()V
 
-    .line 1513
+    .line 1514
     return-void
 .end method
 
@@ -4361,7 +4374,7 @@
     .registers 6
 
     .prologue
-    .line 1516
+    .line 1517
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -4370,7 +4383,7 @@
 
     move-result-object v0
 
-    .line 1517
+    .line 1518
     if-eqz v0, :cond_48
 
     const-string/jumbo v1, ""
@@ -4381,12 +4394,12 @@
 
     if-nez v1, :cond_48
 
-    .line 1518
+    .line 1519
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lcom/bzbs/data/AppSetting;->T:Ljava/lang/String;
+    sget-object v2, Lcom/bzbs/data/AppSetting;->Y:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4406,7 +4419,7 @@
 
     move-result-object v0
 
-    .line 1520
+    .line 1521
     new-instance v1, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
@@ -4417,22 +4430,22 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1521
+    .line 1522
     const-string/jumbo v2, "url"
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1522
+    .line 1523
     const-string/jumbo v0, "enable_webview_back"
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 1523
+    .line 1524
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1525
+    .line 1526
     :cond_48
     return-void
 .end method
@@ -4441,7 +4454,7 @@
     .registers 20
 
     .prologue
-    .line 1536
+    .line 1537
     const-string/jumbo v2, "connectivity"
 
     move-object/from16 v0, p0
@@ -4452,15 +4465,15 @@
 
     check-cast v2, Landroid/net/ConnectivityManager;
 
-    .line 1537
+    .line 1538
     invoke-virtual {v2}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v2
 
     if-nez v2, :cond_20
 
-    .line 1538
-    const v2, 0x7f0900db
+    .line 1539
+    const v2, 0x7f0900d1
 
     move-object/from16 v0, p0
 
@@ -4472,14 +4485,14 @@
 
     invoke-static {v0, v2}, Lcom/bzbs/util/DialogUtil;->b(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 1933
+    .line 1941
     :cond_1f
     :goto_1f
     return-void
 
-    .line 1542
+    .line 1543
     :cond_20
-    const v2, 0x7f1001d2
+    const v2, 0x7f1001d9
 
     move-object/from16 v0, p0
 
@@ -4489,8 +4502,8 @@
 
     check-cast v2, Landroid/widget/EditText;
 
-    .line 1543
-    const v3, 0x7f1001c6
+    .line 1544
+    const v3, 0x7f1001cd
 
     move-object/from16 v0, p0
 
@@ -4500,8 +4513,8 @@
 
     check-cast v3, Landroid/widget/EditText;
 
-    .line 1544
-    const v4, 0x7f1001c7
+    .line 1545
+    const v4, 0x7f1001ce
 
     move-object/from16 v0, p0
 
@@ -4511,8 +4524,8 @@
 
     check-cast v4, Landroid/widget/EditText;
 
-    .line 1545
-    const v5, 0x7f1001c9
+    .line 1546
+    const v5, 0x7f1001d0
 
     move-object/from16 v0, p0
 
@@ -4522,8 +4535,8 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 1546
-    const v6, 0x7f1001d5
+    .line 1547
+    const v6, 0x7f1001dc
 
     move-object/from16 v0, p0
 
@@ -4533,8 +4546,8 @@
 
     check-cast v6, Landroid/widget/TextView;
 
-    .line 1547
-    const v7, 0x7f1001cc
+    .line 1548
+    const v7, 0x7f1001d3
 
     move-object/from16 v0, p0
 
@@ -4544,8 +4557,8 @@
 
     check-cast v7, Landroid/widget/TextView;
 
-    .line 1548
-    const v8, 0x7f1001ce
+    .line 1549
+    const v8, 0x7f1001d5
 
     move-object/from16 v0, p0
 
@@ -4555,8 +4568,8 @@
 
     check-cast v8, Landroid/widget/EditText;
 
-    .line 1549
-    const v9, 0x7f10018f
+    .line 1550
+    const v9, 0x7f100196
 
     move-object/from16 v0, p0
 
@@ -4566,8 +4579,8 @@
 
     check-cast v9, Landroid/widget/EditText;
 
-    .line 1550
-    const v10, 0x7f10019e
+    .line 1551
+    const v10, 0x7f1001a5
 
     move-object/from16 v0, p0
 
@@ -4577,7 +4590,7 @@
 
     check-cast v10, Landroid/widget/EditText;
 
-    .line 1553
+    .line 1554
     invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v11
@@ -4596,8 +4609,8 @@
 
     if-gtz v11, :cond_a5
 
-    .line 1554
-    const v2, 0x7f090130
+    .line 1555
+    const v2, 0x7f090129
 
     move-object/from16 v0, p0
 
@@ -4611,7 +4624,7 @@
 
     goto/16 :goto_1f
 
-    .line 1556
+    .line 1557
     :cond_a5
     invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -4631,8 +4644,8 @@
 
     if-gtz v11, :cond_c7
 
-    .line 1557
-    const v2, 0x7f090131
+    .line 1558
+    const v2, 0x7f09012a
 
     move-object/from16 v0, p0
 
@@ -4646,7 +4659,7 @@
 
     goto/16 :goto_1f
 
-    .line 1562
+    .line 1563
     :cond_c7
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -4664,7 +4677,7 @@
 
     if-eqz v11, :cond_150
 
-    .line 1563
+    .line 1564
     invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v11
@@ -4713,7 +4726,7 @@
 
     if-nez v11, :cond_140
 
-    .line 1580
+    .line 1581
     :cond_10b
     invoke-virtual {v9}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -4733,7 +4746,7 @@
 
     if-lez v11, :cond_171
 
-    .line 1581
+    .line 1582
     invoke-virtual {v9}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v11
@@ -4750,8 +4763,8 @@
 
     if-nez v11, :cond_171
 
-    .line 1583
-    const v2, 0x7f090132
+    .line 1584
+    const v2, 0x7f09012b
 
     move-object/from16 v0, p0
 
@@ -4763,14 +4776,14 @@
 
     invoke-static {v0, v2}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 1584
+    .line 1585
     invoke-virtual {v9}, Landroid/widget/EditText;->requestFocus()Z
 
     goto/16 :goto_1f
 
-    .line 1567
+    .line 1568
     :cond_140
-    const v2, 0x7f09012e
+    const v2, 0x7f090127
 
     move-object/from16 v0, p0
 
@@ -4784,7 +4797,7 @@
 
     goto/16 :goto_1f
 
-    .line 1571
+    .line 1572
     :cond_150
     invoke-virtual {v5}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -4802,8 +4815,8 @@
 
     if-eqz v11, :cond_10b
 
-    .line 1575
-    const v2, 0x7f09012d
+    .line 1576
+    const v2, 0x7f090126
 
     move-object/from16 v0, p0
 
@@ -4817,7 +4830,7 @@
 
     goto/16 :goto_1f
 
-    .line 1601
+    .line 1602
     :cond_171
     invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -4837,7 +4850,7 @@
 
     if-lez v11, :cond_1aa
 
-    .line 1602
+    .line 1603
     invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v11
@@ -4858,8 +4871,8 @@
 
     if-eq v11, v12, :cond_1aa
 
-    .line 1604
-    const v3, 0x7f09011c
+    .line 1605
+    const v3, 0x7f090115
 
     move-object/from16 v0, p0
 
@@ -4871,18 +4884,18 @@
 
     invoke-static {v0, v3}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 1605
+    .line 1606
     invoke-virtual {v2}, Landroid/widget/EditText;->requestFocus()Z
 
     goto/16 :goto_1f
 
-    .line 1612
+    .line 1613
     :cond_1aa
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v12, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v12, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4898,7 +4911,7 @@
 
     move-result-object v11
 
-    .line 1613
+    .line 1614
     move-object/from16 v0, p0
 
     iget-object v12, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -4923,12 +4936,12 @@
 
     invoke-static {v12, v13}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1614
+    .line 1615
     new-instance v12, Lcom/bzbs/lib/http/okhttp/HttpParams;
 
     invoke-direct {v12}, Lcom/bzbs/lib/http/okhttp/HttpParams;-><init>()V
 
-    .line 1618
+    .line 1619
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v13
@@ -4945,7 +4958,7 @@
 
     if-eqz v13, :cond_253
 
-    .line 1619
+    .line 1620
     const-string/jumbo v13, "firstname"
 
     invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -4958,7 +4971,7 @@
 
     invoke-virtual {v12, v13, v14}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1620
+    .line 1621
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -4991,7 +5004,7 @@
 
     invoke-static {v13, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1621
+    .line 1622
     const-string/jumbo v3, "lastname"
 
     invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -5004,7 +5017,7 @@
 
     invoke-virtual {v12, v3, v13}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1622
+    .line 1623
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -5037,9 +5050,9 @@
 
     invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1625
+    .line 1626
     :cond_253
-    const v3, 0x7f1001d0
+    const v3, 0x7f1001d7
 
     move-object/from16 v0, p0
 
@@ -5053,7 +5066,7 @@
 
     if-nez v3, :cond_293
 
-    .line 1627
+    .line 1628
     const-string/jumbo v3, "idcard"
 
     invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -5066,7 +5079,7 @@
 
     invoke-virtual {v12, v3, v4}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1628
+    .line 1629
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -5099,7 +5112,7 @@
 
     invoke-static {v3, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1633
+    .line 1634
     :cond_293
     const-string/jumbo v2, "email"
 
@@ -5113,7 +5126,7 @@
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1634
+    .line 1635
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -5146,7 +5159,7 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1636
+    .line 1637
     invoke-virtual {v5}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -5159,7 +5172,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090148
+    const v3, 0x7f090141
 
     move-object/from16 v0, p0
 
@@ -5175,16 +5188,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6b4
+    if-eqz v2, :cond_6b3
 
-    .line 1637
+    .line 1638
     const-string/jumbo v2, "gender"
 
     const-string/jumbo v3, "female"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1638
+    .line 1639
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -5193,7 +5206,7 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1644
+    .line 1645
     :cond_2f6
     :goto_2f6
     invoke-virtual {v7}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -5212,7 +5225,7 @@
 
     if-nez v2, :cond_35d
 
-    .line 1646
+    .line 1647
     :try_start_307
     new-instance v2, Ljava/text/SimpleDateFormat;
 
@@ -5220,7 +5233,7 @@
 
     invoke-direct {v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 1647
+    .line 1648
     const-string/jumbo v3, "UTC"
 
     invoke-static {v3}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
@@ -5229,7 +5242,7 @@
 
     invoke-virtual {v2, v3}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
-    .line 1648
+    .line 1649
     invoke-virtual {v7}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -5242,7 +5255,7 @@
 
     move-result-object v2
 
-    .line 1649
+    .line 1650
     const-string/jumbo v3, "birthdate"
 
     invoke-virtual {v2}, Ljava/util/Date;->getTime()J
@@ -5259,7 +5272,7 @@
 
     invoke-virtual {v12, v3, v4}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1650
+    .line 1651
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -5296,9 +5309,9 @@
 
     invoke-static {v3, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_35d
-    .catch Ljava/text/ParseException; {:try_start_307 .. :try_end_35d} :catch_6e8
+    .catch Ljava/text/ParseException; {:try_start_307 .. :try_end_35d} :catch_6e7
 
-    .line 1657
+    .line 1658
     :cond_35d
     :goto_35d
     invoke-virtual {v8}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -5309,8 +5322,8 @@
 
     move-result-object v2
 
-    .line 1658
-    if-eqz v2, :cond_6ee
+    .line 1659
+    if-eqz v2, :cond_6ed
 
     const-string/jumbo v3, ""
 
@@ -5318,15 +5331,15 @@
 
     move-result v3
 
-    if-nez v3, :cond_6ee
+    if-nez v3, :cond_6ed
 
-    .line 1663
+    .line 1664
     :goto_370
     const-string/jumbo v3, "contact_number"
 
     invoke-virtual {v12, v3, v2}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1664
+    .line 1665
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -5351,7 +5364,7 @@
 
     invoke-static {v3, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1666
+    .line 1667
     invoke-virtual {v6}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -5364,7 +5377,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090167
+    const v3, 0x7f090160
 
     move-object/from16 v0, p0
 
@@ -5380,16 +5393,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6f3
+    if-eqz v2, :cond_6f2
 
-    .line 1667
+    .line 1668
     const-string/jumbo v2, "region"
 
     const-string/jumbo v3, "northern"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1668
+    .line 1669
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -5398,7 +5411,7 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1686
+    .line 1687
     :cond_3c3
     :goto_3c3
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
@@ -5409,17 +5422,17 @@
 
     move-result-object v2
 
-    const-string/jumbo v3, "402705486466922"
+    sget-object v3, Lcom/bzbs/data/AppSetting;->g:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_7f7
+    if-eqz v2, :cond_7f6
 
-    .line 1705
-    :goto_3d4
-    const v2, 0x7f1001d8
+    .line 1706
+    :goto_3d3
+    const v2, 0x7f1001df
 
     move-object/from16 v0, p0
 
@@ -5429,7 +5442,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 1706
+    .line 1707
     invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -5444,17 +5457,17 @@
 
     move-result v3
 
-    if-nez v3, :cond_445
+    if-nez v3, :cond_444
 
-    .line 1708
-    :try_start_3f0
+    .line 1709
+    :try_start_3ef
     new-instance v3, Ljava/text/SimpleDateFormat;
 
     const-string/jumbo v4, "dd/MM/yyyy"
 
     invoke-direct {v3, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 1709
+    .line 1710
     const-string/jumbo v4, "UTC"
 
     invoke-static {v4}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
@@ -5463,7 +5476,7 @@
 
     invoke-virtual {v3, v4}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
-    .line 1710
+    .line 1711
     invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -5476,7 +5489,7 @@
 
     move-result-object v2
 
-    .line 1711
+    .line 1712
     const-string/jumbo v3, "PhonePurchase"
 
     invoke-virtual {v2}, Ljava/util/Date;->getTime()J
@@ -5493,7 +5506,7 @@
 
     invoke-virtual {v12, v3, v4}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1712
+    .line 1713
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -5529,13 +5542,13 @@
     move-result-object v2
 
     invoke-static {v3, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_445
-    .catch Ljava/text/ParseException; {:try_start_3f0 .. :try_end_445} :catch_84d
+    :try_end_444
+    .catch Ljava/text/ParseException; {:try_start_3ef .. :try_end_444} :catch_84c
 
-    .line 1718
-    :cond_445
-    :goto_445
-    const v2, 0x7f100192
+    .line 1719
+    :cond_444
+    :goto_444
+    const v2, 0x7f100199
 
     move-object/from16 v0, p0
 
@@ -5545,7 +5558,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 1719
+    .line 1720
     invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -5558,7 +5571,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f090156
+    const v4, 0x7f09014f
 
     move-object/from16 v0, p0
 
@@ -5570,16 +5583,16 @@
 
     move-result v3
 
-    if-eqz v3, :cond_853
+    if-eqz v3, :cond_852
 
-    .line 1720
+    .line 1721
     const-string/jumbo v2, "Income"
 
     const-string/jumbo v3, "15000"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1721
+    .line 1722
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -5588,16 +5601,16 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1736
-    :cond_47e
-    :goto_47e
+    .line 1737
+    :cond_47d
+    :goto_47d
     const-string/jumbo v4, ""
 
-    .line 1737
+    .line 1738
     const-string/jumbo v3, ""
 
-    .line 1738
-    const v2, 0x7f100194
+    .line 1739
+    const v2, 0x7f10019b
 
     move-object/from16 v0, p0
 
@@ -5613,9 +5626,9 @@
 
     const/4 v5, 0x1
 
-    if-ne v2, v5, :cond_4b3
+    if-ne v2, v5, :cond_4b2
 
-    .line 1739
+    .line 1740
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -5638,16 +5651,16 @@
 
     move-result-object v3
 
-    .line 1740
+    .line 1741
     const-string/jumbo v2, ","
 
     move-object v4, v3
 
     move-object v3, v2
 
-    .line 1742
-    :cond_4b3
-    const v2, 0x7f100195
+    .line 1743
+    :cond_4b2
+    const v2, 0x7f10019c
 
     move-object/from16 v0, p0
 
@@ -5663,9 +5676,9 @@
 
     const/4 v5, 0x1
 
-    if-ne v2, v5, :cond_4e0
+    if-ne v2, v5, :cond_4df
 
-    .line 1743
+    .line 1744
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -5688,12 +5701,12 @@
 
     move-result-object v4
 
-    .line 1744
+    .line 1745
     const-string/jumbo v3, ","
 
-    .line 1746
-    :cond_4e0
-    const v2, 0x7f100196
+    .line 1747
+    :cond_4df
+    const v2, 0x7f10019d
 
     move-object/from16 v0, p0
 
@@ -5709,9 +5722,9 @@
 
     const/4 v5, 0x1
 
-    if-ne v2, v5, :cond_50d
+    if-ne v2, v5, :cond_50c
 
-    .line 1747
+    .line 1748
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -5734,12 +5747,12 @@
 
     move-result-object v4
 
-    .line 1748
+    .line 1749
     const-string/jumbo v3, ","
 
-    .line 1750
-    :cond_50d
-    const v2, 0x7f100197
+    .line 1751
+    :cond_50c
+    const v2, 0x7f10019e
 
     move-object/from16 v0, p0
 
@@ -5755,9 +5768,9 @@
 
     const/4 v5, 0x1
 
-    if-ne v2, v5, :cond_53a
+    if-ne v2, v5, :cond_539
 
-    .line 1751
+    .line 1752
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -5780,12 +5793,12 @@
 
     move-result-object v4
 
-    .line 1752
+    .line 1753
     const-string/jumbo v3, ","
 
-    .line 1754
-    :cond_53a
-    const v2, 0x7f100198
+    .line 1755
+    :cond_539
+    const v2, 0x7f10019f
 
     move-object/from16 v0, p0
 
@@ -5801,9 +5814,9 @@
 
     const/4 v5, 0x1
 
-    if-ne v2, v5, :cond_567
+    if-ne v2, v5, :cond_566
 
-    .line 1755
+    .line 1756
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -5826,12 +5839,12 @@
 
     move-result-object v4
 
-    .line 1756
+    .line 1757
     const-string/jumbo v3, ","
 
-    .line 1758
-    :cond_567
-    const v2, 0x7f100199
+    .line 1759
+    :cond_566
+    const v2, 0x7f1001a0
 
     move-object/from16 v0, p0
 
@@ -5847,9 +5860,9 @@
 
     const/4 v5, 0x1
 
-    if-ne v2, v5, :cond_594
+    if-ne v2, v5, :cond_593
 
-    .line 1759
+    .line 1760
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -5872,12 +5885,12 @@
 
     move-result-object v4
 
-    .line 1760
+    .line 1761
     const-string/jumbo v3, ","
 
-    .line 1762
-    :cond_594
-    const v2, 0x7f10019a
+    .line 1763
+    :cond_593
+    const v2, 0x7f1001a1
 
     move-object/from16 v0, p0
 
@@ -5893,9 +5906,9 @@
 
     const/4 v5, 0x1
 
-    if-ne v2, v5, :cond_5c1
+    if-ne v2, v5, :cond_5c0
 
-    .line 1763
+    .line 1764
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -5918,12 +5931,12 @@
 
     move-result-object v4
 
-    .line 1764
+    .line 1765
     const-string/jumbo v2, ","
 
-    .line 1766
-    :cond_5c1
-    if-eqz v4, :cond_5ed
+    .line 1767
+    :cond_5c0
+    if-eqz v4, :cond_5ec
 
     const-string/jumbo v2, ""
 
@@ -5931,14 +5944,14 @@
 
     move-result v2
 
-    if-nez v2, :cond_5ed
+    if-nez v2, :cond_5ec
 
-    .line 1767
+    .line 1768
     const-string/jumbo v2, "Interests"
 
     invoke-virtual {v12, v2, v4}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1768
+    .line 1769
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -5963,9 +5976,9 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1797
-    :cond_5ed
-    const v2, 0x7f1001b9
+    .line 1798
+    :cond_5ec
+    const v2, 0x7f1001c0
 
     move-object/from16 v0, p0
 
@@ -5975,7 +5988,7 @@
 
     check-cast v2, Lcom/samsung/privilege/control/toggle/ToggleButton;
 
-    .line 1798
+    .line 1799
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v3
@@ -5986,39 +5999,39 @@
 
     const/4 v4, 0x1
 
-    if-ne v3, v4, :cond_91e
+    if-ne v3, v4, :cond_91d
 
-    .line 1799
+    .line 1800
     invoke-virtual {v2}, Lcom/samsung/privilege/control/toggle/ToggleButton;->a()Z
 
     move-result v3
 
-    if-eqz v3, :cond_90d
+    if-eqz v3, :cond_90c
 
-    .line 1814
-    :cond_609
-    :goto_609
+    .line 1815
+    :cond_608
+    :goto_608
     invoke-virtual {v2}, Lcom/samsung/privilege/control/toggle/ToggleButton;->a()Z
 
     move-result v2
 
-    if-eqz v2, :cond_935
+    if-eqz v2, :cond_934
 
-    .line 1815
+    .line 1816
     const-string/jumbo v2, "device_noti_enable"
 
     const-string/jumbo v3, "true"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1816
+    .line 1817
     const-string/jumbo v2, "NotificationEnable"
 
     const-string/jumbo v3, "true"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1817
+    .line 1818
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6027,11 +6040,11 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1837
-    :goto_62b
+    .line 1838
+    :goto_62a
     const-string/jumbo v2, ""
 
-    const v3, 0x7f0900ed
+    const v3, 0x7f0900e6
 
     move-object/from16 v0, p0
 
@@ -6053,36 +6066,36 @@
 
     iput-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->d:Landroid/app/ProgressDialog;
 
-    .line 1838
+    .line 1839
     new-instance v2, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
 
-    .line 1839
+    .line 1840
     move-object/from16 v0, p0
 
     invoke-virtual {v2, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/app/Activity;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v2
 
-    sget-boolean v3, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v3, Lcom/bzbs/data/AppSetting;->V:Z
 
-    .line 1840
+    .line 1841
     invoke-virtual {v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v2
 
-    .line 1841
+    .line 1842
     invoke-virtual {v2, v11}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v2
 
-    .line 1842
+    .line 1843
     invoke-virtual {v2, v12}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpParams;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v2
 
-    .line 1843
+    .line 1844
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v3
@@ -6097,7 +6110,7 @@
 
     sget-object v3, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->b:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 1844
+    .line 1845
     invoke-virtual {v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v2
@@ -6108,7 +6121,7 @@
 
     invoke-direct {v3, v0}, Lcom/samsung/privilege/activity/ProfileActivity$26;-><init>(Lcom/samsung/privilege/activity/ProfileActivity;)V
 
-    .line 1845
+    .line 1846
     invoke-virtual {v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v2
@@ -6117,7 +6130,7 @@
 
     iput-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
-    .line 1921
+    .line 1929
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
@@ -6132,19 +6145,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6ab
+    if-eqz v2, :cond_6aa
 
-    .line 1922
+    .line 1930
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->i:Lcom/bzbs/bean/CameraData;
 
     iget-object v2, v2, Lcom/bzbs/bean/CameraData;->gPath:Ljava/lang/String;
 
-    if-eqz v2, :cond_6ab
+    if-eqz v2, :cond_6aa
 
-    .line 1924
-    :try_start_696
+    .line 1932
+    :try_start_695
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -6162,12 +6175,12 @@
     invoke-direct {v4, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v2, v3, v4}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;Ljava/io/File;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
-    :try_end_6ab
-    .catch Ljava/lang/Exception; {:try_start_696 .. :try_end_6ab} :catch_953
+    :try_end_6aa
+    .catch Ljava/lang/Exception; {:try_start_695 .. :try_end_6aa} :catch_952
 
-    .line 1931
-    :cond_6ab
-    :goto_6ab
+    .line 1939
+    :cond_6aa
+    :goto_6aa
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -6176,8 +6189,8 @@
 
     goto/16 :goto_1f
 
-    .line 1639
-    :cond_6b4
+    .line 1640
+    :cond_6b3
     invoke-virtual {v5}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -6190,7 +6203,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090149
+    const v3, 0x7f090142
 
     move-object/from16 v0, p0
 
@@ -6208,14 +6221,14 @@
 
     if-eqz v2, :cond_2f6
 
-    .line 1640
+    .line 1641
     const-string/jumbo v2, "gender"
 
     const-string/jumbo v3, "male"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1641
+    .line 1642
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6226,23 +6239,23 @@
 
     goto/16 :goto_2f6
 
-    .line 1651
-    :catch_6e8
+    .line 1652
+    :catch_6e7
     move-exception v2
 
-    .line 1652
+    .line 1653
     invoke-virtual {v2}, Ljava/text/ParseException;->printStackTrace()V
 
     goto/16 :goto_35d
 
-    .line 1661
-    :cond_6ee
+    .line 1662
+    :cond_6ed
     const-string/jumbo v2, "+0000000000"
 
     goto/16 :goto_370
 
-    .line 1669
-    :cond_6f3
+    .line 1670
+    :cond_6f2
     invoke-virtual {v6}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -6255,7 +6268,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090166
+    const v3, 0x7f09015f
 
     move-object/from16 v0, p0
 
@@ -6271,16 +6284,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_727
+    if-eqz v2, :cond_726
 
-    .line 1670
+    .line 1671
     const-string/jumbo v2, "region"
 
     const-string/jumbo v3, "northeastern"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1671
+    .line 1672
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6291,8 +6304,8 @@
 
     goto/16 :goto_3c3
 
-    .line 1672
-    :cond_727
+    .line 1673
+    :cond_726
     invoke-virtual {v6}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -6305,7 +6318,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090164
+    const v3, 0x7f09015d
 
     move-object/from16 v0, p0
 
@@ -6321,16 +6334,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_75b
+    if-eqz v2, :cond_75a
 
-    .line 1673
+    .line 1674
     const-string/jumbo v2, "region"
 
     const-string/jumbo v3, "central"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1674
+    .line 1675
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6341,8 +6354,8 @@
 
     goto/16 :goto_3c3
 
-    .line 1675
-    :cond_75b
+    .line 1676
+    :cond_75a
     invoke-virtual {v6}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -6355,7 +6368,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090165
+    const v3, 0x7f09015e
 
     move-object/from16 v0, p0
 
@@ -6371,16 +6384,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_78f
+    if-eqz v2, :cond_78e
 
-    .line 1676
+    .line 1677
     const-string/jumbo v2, "region"
 
     const-string/jumbo v3, "eastern"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1677
+    .line 1678
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6391,8 +6404,8 @@
 
     goto/16 :goto_3c3
 
-    .line 1678
-    :cond_78f
+    .line 1679
+    :cond_78e
     invoke-virtual {v6}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -6405,7 +6418,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090169
+    const v3, 0x7f090162
 
     move-object/from16 v0, p0
 
@@ -6421,16 +6434,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7c3
+    if-eqz v2, :cond_7c2
 
-    .line 1679
+    .line 1680
     const-string/jumbo v2, "region"
 
     const-string/jumbo v3, "western"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1680
+    .line 1681
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6441,8 +6454,8 @@
 
     goto/16 :goto_3c3
 
-    .line 1681
-    :cond_7c3
+    .line 1682
+    :cond_7c2
     invoke-virtual {v6}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -6455,7 +6468,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090168
+    const v3, 0x7f090161
 
     move-object/from16 v0, p0
 
@@ -6473,14 +6486,14 @@
 
     if-eqz v2, :cond_3c3
 
-    .line 1682
+    .line 1683
     const-string/jumbo v2, "region"
 
     const-string/jumbo v3, "southern"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1683
+    .line 1684
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6491,9 +6504,9 @@
 
     goto/16 :goto_3c3
 
-    .line 1689
-    :cond_7f7
-    if-eqz v10, :cond_835
+    .line 1690
+    :cond_7f6
+    if-eqz v10, :cond_834
 
     const-string/jumbo v2, ""
 
@@ -6501,9 +6514,9 @@
 
     move-result v2
 
-    if-nez v2, :cond_835
+    if-nez v2, :cond_834
 
-    .line 1690
+    .line 1691
     const-string/jumbo v2, "address"
 
     invoke-virtual {v10}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -6516,7 +6529,7 @@
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1691
+    .line 1692
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6549,22 +6562,22 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_3d4
+    goto/16 :goto_3d3
 
-    .line 1693
-    :cond_835
+    .line 1694
+    :cond_834
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
     if-eqz v2, :cond_1f
 
-    .line 1694
+    .line 1695
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
-    const v3, 0x7f09012f
+    const v3, 0x7f090128
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -6576,17 +6589,17 @@
 
     goto/16 :goto_1f
 
-    .line 1713
-    :catch_84d
+    .line 1714
+    :catch_84c
     move-exception v2
 
-    .line 1714
+    .line 1715
     invoke-virtual {v2}, Ljava/text/ParseException;->printStackTrace()V
 
-    goto/16 :goto_445
+    goto/16 :goto_444
 
-    .line 1722
-    :cond_853
+    .line 1723
+    :cond_852
     invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -6599,7 +6612,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f090157
+    const v4, 0x7f090150
 
     move-object/from16 v0, p0
 
@@ -6611,16 +6624,16 @@
 
     move-result v3
 
-    if-eqz v3, :cond_883
+    if-eqz v3, :cond_882
 
-    .line 1723
+    .line 1724
     const-string/jumbo v2, "Income"
 
     const-string/jumbo v3, "25000"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1724
+    .line 1725
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6629,10 +6642,10 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_47e
+    goto/16 :goto_47d
 
-    .line 1725
-    :cond_883
+    .line 1726
+    :cond_882
     invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -6645,7 +6658,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f090158
+    const v4, 0x7f090151
 
     move-object/from16 v0, p0
 
@@ -6657,16 +6670,16 @@
 
     move-result v3
 
-    if-eqz v3, :cond_8b3
+    if-eqz v3, :cond_8b2
 
-    .line 1726
+    .line 1727
     const-string/jumbo v2, "Income"
 
     const-string/jumbo v3, "35000"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1727
+    .line 1728
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6675,10 +6688,10 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_47e
+    goto/16 :goto_47d
 
-    .line 1728
-    :cond_8b3
+    .line 1729
+    :cond_8b2
     invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -6691,7 +6704,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f090159
+    const v4, 0x7f090152
 
     move-object/from16 v0, p0
 
@@ -6703,16 +6716,16 @@
 
     move-result v3
 
-    if-eqz v3, :cond_8e3
+    if-eqz v3, :cond_8e2
 
-    .line 1729
+    .line 1730
     const-string/jumbo v2, "Income"
 
     const-string/jumbo v3, "45000"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1730
+    .line 1731
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6721,10 +6734,10 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_47e
+    goto/16 :goto_47d
 
-    .line 1731
-    :cond_8e3
+    .line 1732
+    :cond_8e2
     invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
@@ -6743,16 +6756,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_47e
+    if-eqz v2, :cond_47d
 
-    .line 1732
+    .line 1733
     const-string/jumbo v2, "Income"
 
     const-string/jumbo v3, "45001-"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1733
+    .line 1734
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6761,10 +6774,10 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_47e
+    goto/16 :goto_47d
 
-    .line 1802
-    :cond_90d
+    .line 1803
+    :cond_90c
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v3
@@ -6773,24 +6786,24 @@
 
     invoke-static {v3, v4}, Lcom/bzbs/data/UserLogin;->i(Landroid/content/Context;Z)Z
 
-    .line 1803
+    .line 1804
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v3
 
     invoke-static {v3}, Lcom/bzbs/util/GCMUtil;->b(Landroid/content/Context;)V
 
-    goto/16 :goto_609
+    goto/16 :goto_608
 
-    .line 1806
-    :cond_91e
+    .line 1807
+    :cond_91d
     invoke-virtual {v2}, Lcom/samsung/privilege/control/toggle/ToggleButton;->a()Z
 
     move-result v3
 
-    if-eqz v3, :cond_609
+    if-eqz v3, :cond_608
 
-    .line 1807
+    .line 1808
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v3
@@ -6799,31 +6812,31 @@
 
     invoke-static {v3, v4}, Lcom/bzbs/data/UserLogin;->i(Landroid/content/Context;Z)Z
 
-    .line 1808
+    .line 1809
     invoke-virtual/range {p0 .. p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v3
 
     invoke-static {v3}, Lcom/bzbs/util/GCMUtil;->a(Landroid/content/Context;)V
 
-    goto/16 :goto_609
+    goto/16 :goto_608
 
-    .line 1819
-    :cond_935
+    .line 1820
+    :cond_934
     const-string/jumbo v2, "device_noti_enable"
 
     const-string/jumbo v3, "false"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1820
+    .line 1821
     const-string/jumbo v2, "NotificationEnable"
 
     const-string/jumbo v3, "false"
 
     invoke-virtual {v12, v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 1821
+    .line 1822
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/ProfileActivity;->b:Ljava/lang/String;
@@ -6832,16 +6845,16 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_62b
+    goto/16 :goto_62a
 
-    .line 1925
-    :catch_953
+    .line 1933
+    :catch_952
     move-exception v2
 
-    .line 1926
+    .line 1934
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    goto/16 :goto_6ab
+    goto/16 :goto_6aa
 .end method
 
 .method public f()Ljava/lang/String;
@@ -7253,7 +7266,7 @@
     iput-object v1, v0, Lcom/bzbs/bean/CameraData;->gBitmapImage:Landroid/graphics/Bitmap;
 
     .line 774
-    const v0, 0x7f1001c4
+    const v0, 0x7f1001cb
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -7511,7 +7524,7 @@
 
     .line 967
     :cond_9c
-    const v0, 0x7f1001c4
+    const v0, 0x7f1001cb
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -7523,7 +7536,7 @@
     if-eqz v0, :cond_b
 
     .line 969
-    const v1, 0x7f020247
+    const v1, 0x7f02026a
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ProfileActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -7552,7 +7565,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 126
-    const v0, 0x7f04003d
+    const v0, 0x7f04003f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->setContentView(I)V
 
@@ -7583,7 +7596,7 @@
     invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
     .line 135
-    const v0, 0x7f1000ba
+    const v0, 0x7f1000be
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -7745,7 +7758,7 @@
 
     .line 893
     :pswitch_a
-    const v0, 0x7f1001cc
+    const v0, 0x7f1001d3
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -7937,7 +7950,7 @@
 
     .line 184
     :sswitch_2e
-    const v0, 0x7f1001b4
+    const v0, 0x7f1001bb
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -7946,7 +7959,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 185
-    const v1, 0x7f1001b6
+    const v1, 0x7f1001bd
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
@@ -7955,7 +7968,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 186
-    const v2, 0x7f1001b5
+    const v2, 0x7f1001bc
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 

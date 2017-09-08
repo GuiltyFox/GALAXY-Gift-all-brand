@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1559
+    .line 1580
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$8;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$8;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_pager;
@@ -41,7 +41,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1563
+    .line 1584
     :try_start_1
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$8;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_pager;
 
@@ -49,7 +49,7 @@
 
     if-eqz v0, :cond_31
 
-    .line 1564
+    .line 1585
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$8;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_pager;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_pager;->c:Landroid/support/v4/view/ViewPager;
@@ -64,7 +64,7 @@
 
     if-le v0, v1, :cond_31
 
-    .line 1565
+    .line 1586
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$8;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_pager;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_pager;->c:Landroid/support/v4/view/ViewPager;
@@ -75,7 +75,7 @@
 
     if-lez v0, :cond_31
 
-    .line 1566
+    .line 1587
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$8;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_pager;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_pager;->c:Landroid/support/v4/view/ViewPager;
@@ -96,12 +96,12 @@
     :try_end_31
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_31} :catch_32
 
-    .line 1573
+    .line 1594
     :cond_31
     :goto_31
     return-void
 
-    .line 1570
+    .line 1591
     :catch_32
     move-exception v0
 

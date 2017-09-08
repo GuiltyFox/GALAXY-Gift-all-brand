@@ -61,13 +61,13 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "402705486466922"
+    sget-object v1, Lcom/bzbs/data/AppSetting;->g:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_24
 
     .line 1173
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$24$1;->b:Lcom/samsung/privilege/activity/ProfileActivity$24;
@@ -77,6 +77,6 @@
     invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->f(Lcom/samsung/privilege/activity/ProfileActivity;)V
 
     .line 1175
-    :cond_25
+    :cond_24
     return-void
 .end method

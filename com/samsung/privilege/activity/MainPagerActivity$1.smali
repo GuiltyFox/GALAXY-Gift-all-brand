@@ -52,7 +52,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_35
 
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->a:Lcom/bzbs/bean/MessageGCM;
 
@@ -64,7 +64,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_35
 
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->a:Lcom/bzbs/bean/MessageGCM;
 
@@ -76,10 +76,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_47
+    if-nez v0, :cond_35
+
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->a:Lcom/bzbs/bean/MessageGCM;
+
+    iget-object v0, v0, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+
+    const-string/jumbo v1, "ewallet_topup_cash"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_54
 
     .line 202
-    :cond_28
+    :cond_35
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
@@ -110,12 +122,12 @@
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 294
-    :cond_46
-    :goto_46
+    :cond_53
+    :goto_53
     return-void
 
     .line 204
-    :cond_47
+    :cond_54
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->a:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v0, v0, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
@@ -126,7 +138,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_73
+    if-eqz v0, :cond_80
 
     .line 205
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
@@ -158,10 +170,10 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;Ljava/lang/String;)V
 
-    goto :goto_46
+    goto :goto_53
 
     .line 207
-    :cond_73
+    :cond_80
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->a:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v0, v0, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
@@ -172,7 +184,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_106
+    if-eqz v0, :cond_113
 
     .line 208
     new-instance v0, Ljava/text/SimpleDateFormat;
@@ -194,7 +206,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lcom/bzbs/data/AppSetting;->V:Ljava/lang/String;
+    sget-object v2, Lcom/bzbs/data/AppSetting;->aa:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -259,7 +271,7 @@
 
     move-result-object v1
 
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 213
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -305,10 +317,10 @@
     .line 242
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    goto/16 :goto_46
+    goto/16 :goto_53
 
     .line 243
-    :cond_106
+    :cond_113
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->a:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v0, v0, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
@@ -319,16 +331,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_119
+    if-eqz v0, :cond_126
 
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->a:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v0, v0, Lcom/bzbs/bean/MessageGCM;->subject:Ljava/lang/String;
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_53
 
     .line 245
-    :cond_119
+    :cond_126
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->a:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v0, v0, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
@@ -339,16 +351,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_53
 
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->a:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v0, v0, Lcom/bzbs/bean/MessageGCM;->subject:Ljava/lang/String;
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_53
 
     .line 248
-    :try_start_12c
+    :try_start_139
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->a:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v0, v0, Lcom/bzbs/bean/MessageGCM;->subject:Ljava/lang/String;
@@ -364,7 +376,7 @@
     .line 249
     array-length v1, v0
 
-    if-ne v1, v3, :cond_46
+    if-ne v1, v3, :cond_53
 
     .line 250
     const/4 v1, 0x0
@@ -377,7 +389,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_172
+    if-eqz v1, :cond_17f
 
     .line 251
     new-instance v1, Landroid/content/Intent;
@@ -422,7 +434,7 @@
     invoke-static {v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 257
-    :cond_172
+    :cond_17f
     const/4 v1, 0x0
 
     aget-object v1, v0, v1
@@ -433,7 +445,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1c0
+    if-eqz v1, :cond_1cd
 
     .line 258
     new-instance v1, Landroid/content/Intent;
@@ -501,7 +513,7 @@
     invoke-static {v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 269
-    :cond_1c0
+    :cond_1cd
     const/4 v1, 0x0
 
     aget-object v1, v0, v1
@@ -512,7 +524,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1f3
+    if-eqz v1, :cond_200
 
     .line 270
     new-instance v1, Landroid/content/Intent;
@@ -553,7 +565,7 @@
     invoke-static {v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 276
-    :cond_1f3
+    :cond_200
     const/4 v1, 0x0
 
     aget-object v1, v0, v1
@@ -564,7 +576,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21f
+    if-eqz v1, :cond_22c
 
     .line 277
     new-instance v1, Landroid/content/Intent;
@@ -598,7 +610,7 @@
     invoke-static {v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 282
-    :cond_21f
+    :cond_22c
     const/4 v1, 0x0
 
     aget-object v1, v0, v1
@@ -609,7 +621,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_53
 
     .line 283
     new-instance v1, Landroid/content/Intent;
@@ -648,14 +660,14 @@
     aget-object v0, v0, v3
 
     invoke-static {v1, v2, v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_252
-    .catch Ljava/lang/Exception; {:try_start_12c .. :try_end_252} :catch_254
+    :try_end_25f
+    .catch Ljava/lang/Exception; {:try_start_139 .. :try_end_25f} :catch_261
 
-    goto/16 :goto_46
+    goto/16 :goto_53
 
     .line 290
-    :catch_254
+    :catch_261
     move-exception v0
 
-    goto/16 :goto_46
+    goto/16 :goto_53
 .end method

@@ -460,36 +460,74 @@
 
 .field public static final common_full_open_on_phone:I = 0x7f020149
 
-.field public static final common_ic_googleplayservices:I = 0x7f02014a
+.field public static final common_google_signin_btn_icon_dark:I = 0x7f02014a
 
-.field public static final design_fab_background:I = 0x7f020150
+.field public static final common_google_signin_btn_icon_dark_disabled:I = 0x7f02014b
 
-.field public static final design_snackbar_background:I = 0x7f020152
+.field public static final common_google_signin_btn_icon_dark_focused:I = 0x7f02014c
 
-.field public static final ic_delete:I = 0x7f020160
+.field public static final common_google_signin_btn_icon_dark_normal:I = 0x7f02014d
 
-.field public static final logo_app:I = 0x7f0201c5
+.field public static final common_google_signin_btn_icon_dark_pressed:I = 0x7f02014e
 
-.field public static final notification_template_icon_bg:I = 0x7f020259
+.field public static final common_google_signin_btn_icon_light:I = 0x7f02014f
 
-.field public static final power_bzbs:I = 0x7f02020e
+.field public static final common_google_signin_btn_icon_light_disabled:I = 0x7f020150
 
-.field public static final qrcode2x:I = 0x7f020211
+.field public static final common_google_signin_btn_icon_light_focused:I = 0x7f020151
 
-.field public static final t1_1:I = 0x7f020247
+.field public static final common_google_signin_btn_icon_light_normal:I = 0x7f020152
 
-.field public static final tm_bzbs_back_page_header:I = 0x7f02024c
+.field public static final common_google_signin_btn_icon_light_pressed:I = 0x7f020153
 
-.field public static final tm_smsg_back_border_slide:I = 0x7f02024d
+.field public static final common_google_signin_btn_text_dark:I = 0x7f020154
 
-.field public static final tm_smsg_back_bule_caption:I = 0x7f02024e
+.field public static final common_google_signin_btn_text_dark_disabled:I = 0x7f020155
 
-.field public static final tm_smsg_back_page_header:I = 0x7f02024f
+.field public static final common_google_signin_btn_text_dark_focused:I = 0x7f020156
 
-.field public static final tm_smsg_header_dotted1:I = 0x7f020250
+.field public static final common_google_signin_btn_text_dark_normal:I = 0x7f020157
 
-.field public static final tm_smsg_header_dotted2:I = 0x7f020251
+.field public static final common_google_signin_btn_text_dark_pressed:I = 0x7f020158
 
-.field public static final tm_smsg_icon_comment_01:I = 0x7f020252
+.field public static final common_google_signin_btn_text_light:I = 0x7f020159
 
-.field public static final tm_smsg_icon_comment_02:I = 0x7f020253
+.field public static final common_google_signin_btn_text_light_disabled:I = 0x7f02015a
+
+.field public static final common_google_signin_btn_text_light_focused:I = 0x7f02015b
+
+.field public static final common_google_signin_btn_text_light_normal:I = 0x7f02015c
+
+.field public static final common_google_signin_btn_text_light_pressed:I = 0x7f02015d
+
+.field public static final design_fab_background:I = 0x7f020163
+
+.field public static final design_snackbar_background:I = 0x7f020165
+
+.field public static final ic_delete:I = 0x7f020173
+
+.field public static final logo_app:I = 0x7f0201de
+
+.field public static final notification_template_icon_bg:I = 0x7f02027d
+
+.field public static final power_bzbs:I = 0x7f020227
+
+.field public static final qrcode2x:I = 0x7f02022a
+
+.field public static final t1_1:I = 0x7f02026a
+
+.field public static final tm_bzbs_back_page_header:I = 0x7f02026f
+
+.field public static final tm_smsg_back_border_slide:I = 0x7f020270
+
+.field public static final tm_smsg_back_bule_caption:I = 0x7f020271
+
+.field public static final tm_smsg_back_page_header:I = 0x7f020272
+
+.field public static final tm_smsg_header_dotted1:I = 0x7f020273
+
+.field public static final tm_smsg_header_dotted2:I = 0x7f020274
+
+.field public static final tm_smsg_icon_comment_01:I = 0x7f020275
+
+.field public static final tm_smsg_icon_comment_02:I = 0x7f020276

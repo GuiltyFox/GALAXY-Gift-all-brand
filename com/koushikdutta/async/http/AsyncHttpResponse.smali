@@ -7,7 +7,7 @@
 
 
 # virtual methods
-.method public abstract a_()Lcom/koushikdutta/async/http/Headers;
+.method public abstract b_()Lcom/koushikdutta/async/http/Headers;
 .end method
 
 .method public abstract e()Ljava/lang/String;

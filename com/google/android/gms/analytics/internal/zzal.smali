@@ -1,279 +1,99 @@
-.class public Lcom/google/android/gms/analytics/internal/zzal;
+.class Lcom/google/android/gms/analytics/internal/zzal;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/analytics/internal/zzp;
 
 
 # instance fields
-.field public a:Ljava/lang/String;
+.field private final a:Lcom/google/android/gms/common/util/zze;
 
-.field public b:D
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public g:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private b:J
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 4
-
-    const/4 v2, -0x1
+.method public constructor <init>(Lcom/google/android/gms/common/util/zze;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/high16 v0, -0x4010000000000000L    # -1.0
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->b:D
+    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzal;->a:Lcom/google/android/gms/common/util/zze;
 
-    iput v2, p0, Lcom/google/android/gms/analytics/internal/zzal;->c:I
+    return-void
+.end method
 
-    iput v2, p0, Lcom/google/android/gms/analytics/internal/zzal;->d:I
+.method public constructor <init>(Lcom/google/android/gms/common/util/zze;J)V
+    .registers 4
 
-    iput v2, p0, Lcom/google/android/gms/analytics/internal/zzal;->e:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput v2, p0, Lcom/google/android/gms/analytics/internal/zzal;->f:I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Ljava/util/HashMap;
+    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzal;->a:Lcom/google/android/gms/common/util/zze;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->g:Ljava/util/Map;
+    iput-wide p2, p0, Lcom/google/android/gms/analytics/internal/zzal;->b:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/app/Activity;)Ljava/lang/String;
+.method public a()V
     .registers 3
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->a:Lcom/google/android/gms/common/util/zze;
 
-    move-result-object v0
+    invoke-interface {v0}, Lcom/google/android/gms/common/util/zze;->b()J
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+    move-result-wide v0
 
-    move-result-object v0
+    iput-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->b:J
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzal;->a(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method
 
-.method public a(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->g:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    if-eqz v0, :cond_b
-
-    :goto_a
-    return-object v0
-
-    :cond_b
-    move-object v0, p1
-
-    goto :goto_a
-.end method
-
-.method public a()Z
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->a:Ljava/lang/String;
-
-    if-eqz v0, :cond_6
+.method public a(J)Z
+    .registers 10
 
     const/4 v0, 0x1
 
-    :goto_5
-    return v0
+    iget-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzal;->b:J
 
-    :cond_6
-    const/4 v0, 0x0
+    const-wide/16 v4, 0x0
 
-    goto :goto_5
-.end method
+    cmp-long v1, v2, v4
 
-.method public b()Ljava/lang/String;
-    .registers 2
+    if-nez v1, :cond_a
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->a:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public c()Z
-    .registers 5
-
-    iget-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->b:D
-
-    const-wide/16 v2, 0x0
-
-    cmpl-double v0, v0, v2
-
-    if-ltz v0, :cond_a
-
-    const/4 v0, 0x1
-
+    :cond_9
     :goto_9
     return v0
 
     :cond_a
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzal;->a:Lcom/google/android/gms/common/util/zze;
+
+    invoke-interface {v1}, Lcom/google/android/gms/common/util/zze;->b()J
+
+    move-result-wide v2
+
+    iget-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzal;->b:J
+
+    sub-long/2addr v2, v4
+
+    cmp-long v1, v2, p1
+
+    if-gtz v1, :cond_9
+
     const/4 v0, 0x0
 
     goto :goto_9
 .end method
 
-.method public d()D
+.method public b()V
     .registers 3
 
-    iget-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->b:D
+    const-wide/16 v0, 0x0
 
-    return-wide v0
-.end method
+    iput-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->b:J
 
-.method public e()Z
-    .registers 2
-
-    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->c:I
-
-    if-ltz v0, :cond_6
-
-    const/4 v0, 0x1
-
-    :goto_5
-    return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
-.end method
-
-.method public f()I
-    .registers 2
-
-    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->c:I
-
-    return v0
-.end method
-
-.method public g()Z
-    .registers 3
-
-    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->d:I
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_7
-
-    const/4 v0, 0x1
-
-    :goto_6
-    return v0
-
-    :cond_7
-    const/4 v0, 0x0
-
-    goto :goto_6
-.end method
-
-.method public h()Z
-    .registers 3
-
-    const/4 v0, 0x1
-
-    iget v1, p0, Lcom/google/android/gms/analytics/internal/zzal;->d:I
-
-    if-ne v1, v0, :cond_6
-
-    :goto_5
-    return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
-.end method
-
-.method public i()Z
-    .registers 3
-
-    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzal;->e:I
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_7
-
-    const/4 v0, 0x1
-
-    :goto_6
-    return v0
-
-    :cond_7
-    const/4 v0, 0x0
-
-    goto :goto_6
-.end method
-
-.method public j()Z
-    .registers 3
-
-    const/4 v0, 0x1
-
-    iget v1, p0, Lcom/google/android/gms/analytics/internal/zzal;->e:I
-
-    if-ne v1, v0, :cond_6
-
-    :goto_5
-    return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
-.end method
-
-.method public k()Z
-    .registers 3
-
-    const/4 v0, 0x1
-
-    iget v1, p0, Lcom/google/android/gms/analytics/internal/zzal;->f:I
-
-    if-ne v1, v0, :cond_6
-
-    :goto_5
-    return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
+    return-void
 .end method

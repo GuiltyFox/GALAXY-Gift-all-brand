@@ -20,7 +20,7 @@
     .registers 4
 
     .prologue
-    .line 1295
+    .line 1339
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$22$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$22;
 
     iput-wide p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$22$1;->a:J
@@ -36,10 +36,10 @@
     .registers 13
 
     .prologue
-    .line 1310
+    .line 1354
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 1313
+    .line 1357
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -49,7 +49,7 @@
 
     move-result-wide v0
 
-    .line 1314
+    .line 1358
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "PointTransferNo"
@@ -64,7 +64,7 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_23
 
-    .line 1319
+    .line 1363
     :goto_1b
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$22$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$22;
 
@@ -72,10 +72,10 @@
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 1320
+    .line 1364
     return-void
 
-    .line 1315
+    .line 1359
     :catch_23
     move-exception v0
 
@@ -86,7 +86,7 @@
     .registers 13
 
     .prologue
-    .line 1299
+    .line 1343
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -96,7 +96,7 @@
 
     move-result-wide v0
 
-    .line 1300
+    .line 1344
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "PointTransferNo"
@@ -111,7 +111,7 @@
     :try_end_18
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_3f
 
-    .line 1305
+    .line 1349
     :goto_18
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -147,10 +147,10 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1306
+    .line 1350
     return-void
 
-    .line 1301
+    .line 1345
     :catch_3f
     move-exception v0
 

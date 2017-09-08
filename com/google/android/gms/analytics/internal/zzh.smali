@@ -45,9 +45,9 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p3}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {p4}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p4}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/String;)Ljava/lang/String;
 
     iput-wide p1, p0, Lcom/google/android/gms/analytics/internal/zzh;->a:J
 

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 575
+    .line 594
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->a:Landroid/app/Dialog;
@@ -36,15 +36,15 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 7
+    .registers 8
 
     .prologue
-    .line 577
+    .line 596
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 579
+    .line 598
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->getApplicationContext()Landroid/content/Context;
@@ -53,12 +53,12 @@
 
     invoke-static {v0}, Lcom/bzbs/data/UserLogin;->X(Landroid/content/Context;)V
 
-    .line 580
+    .line 599
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->c(Lcom/samsung/privilege/activity/WalletCardActivity;)V
 
-    .line 582
+    .line 601
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$5;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -101,8 +101,10 @@
 
     const-string/jumbo v4, "wallet_need_logout"
 
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v5, 0x0
 
-    .line 583
+    invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+
+    .line 602
     return-void
 .end method

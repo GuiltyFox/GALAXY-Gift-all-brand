@@ -85,9 +85,9 @@
     :try_start_4
     sget-object v0, Lcom/samsung/privilege/GalaxyGift;->d:Lcom/google/android/gms/analytics/Tracker;
     :try_end_6
-    .catchall {:try_start_4 .. :try_end_6} :catchall_3e
+    .catchall {:try_start_4 .. :try_end_6} :catchall_3d
 
-    if-nez v0, :cond_26
+    if-nez v0, :cond_25
 
     .line 90
     :try_start_8
@@ -100,18 +100,18 @@
 
     move-result-object v2
 
-    const-string/jumbo v3, "402705486466922"
+    sget-object v3, Lcom/bzbs/data/AppSetting;->g:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_40
 
     .line 93
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->l:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->q:Z
 
-    if-ne v2, v4, :cond_2a
+    if-ne v2, v4, :cond_29
 
     .line 94
     const v2, 0x7f070007
@@ -121,44 +121,44 @@
     move-result-object v0
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->d:Lcom/google/android/gms/analytics/Tracker;
-    :try_end_26
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_26} :catch_34
-    .catchall {:try_start_8 .. :try_end_26} :catchall_3e
+    :try_end_25
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_25} :catch_33
+    .catchall {:try_start_8 .. :try_end_25} :catchall_3d
 
     .line 127
-    :cond_26
-    :goto_26
-    :try_start_26
+    :cond_25
+    :goto_25
+    :try_start_25
     sget-object v0, Lcom/samsung/privilege/GalaxyGift;->d:Lcom/google/android/gms/analytics/Tracker;
-    :try_end_28
-    .catchall {:try_start_26 .. :try_end_28} :catchall_3e
+    :try_end_27
+    .catchall {:try_start_25 .. :try_end_27} :catchall_3d
 
     monitor-exit v1
 
     return-object v0
 
     .line 96
-    :cond_2a
+    :cond_29
     const v2, 0x7f070008
 
-    :try_start_2d
+    :try_start_2c
     invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->a(I)Lcom/google/android/gms/analytics/Tracker;
 
     move-result-object v0
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->d:Lcom/google/android/gms/analytics/Tracker;
-    :try_end_33
-    .catch Ljava/lang/Exception; {:try_start_2d .. :try_end_33} :catch_34
-    .catchall {:try_start_2d .. :try_end_33} :catchall_3e
+    :try_end_32
+    .catch Ljava/lang/Exception; {:try_start_2c .. :try_end_32} :catch_33
+    .catchall {:try_start_2c .. :try_end_32} :catchall_3d
 
-    goto :goto_26
+    goto :goto_25
 
     .line 123
-    :catch_34
+    :catch_33
     move-exception v0
 
     .line 124
-    :try_start_35
+    :try_start_34
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v2, "init context not null"
@@ -166,11 +166,11 @@
     invoke-direct {v0, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     throw v0
-    :try_end_3e
-    .catchall {:try_start_35 .. :try_end_3e} :catchall_3e
+    :try_end_3d
+    .catchall {:try_start_34 .. :try_end_3d} :catchall_3d
 
     .line 88
-    :catchall_3e
+    :catchall_3d
     move-exception v0
 
     monitor-exit v1
@@ -178,24 +178,24 @@
     throw v0
 
     .line 98
-    :cond_41
-    :try_start_41
+    :cond_40
+    :try_start_40
     invoke-static {p0}, Lcom/bzbs/data/AppSetting;->e(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string/jumbo v3, "768830479847872"
+    sget-object v3, Lcom/bzbs/data/AppSetting;->h:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_66
+    if-eqz v2, :cond_64
 
     .line 99
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->l:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->q:Z
 
-    if-ne v2, v4, :cond_5c
+    if-ne v2, v4, :cond_5a
 
     .line 100
     const v2, 0x7f070002
@@ -206,10 +206,10 @@
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->d:Lcom/google/android/gms/analytics/Tracker;
 
-    goto :goto_26
+    goto :goto_25
 
     .line 102
-    :cond_5c
+    :cond_5a
     const v2, 0x7f070003
 
     invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->a(I)Lcom/google/android/gms/analytics/Tracker;
@@ -218,26 +218,26 @@
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->d:Lcom/google/android/gms/analytics/Tracker;
 
-    goto :goto_26
+    goto :goto_25
 
     .line 104
-    :cond_66
+    :cond_64
     invoke-static {p0}, Lcom/bzbs/data/AppSetting;->e(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string/jumbo v3, "517155661760483"
+    sget-object v3, Lcom/bzbs/data/AppSetting;->j:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_8b
+    if-eqz v2, :cond_88
 
     .line 105
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->l:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->q:Z
 
-    if-ne v2, v4, :cond_81
+    if-ne v2, v4, :cond_7e
 
     .line 106
     const v2, 0x7f070004
@@ -248,10 +248,10 @@
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->d:Lcom/google/android/gms/analytics/Tracker;
 
-    goto :goto_26
+    goto :goto_25
 
     .line 108
-    :cond_81
+    :cond_7e
     const v2, 0x7f070005
 
     invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->a(I)Lcom/google/android/gms/analytics/Tracker;
@@ -260,26 +260,26 @@
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->d:Lcom/google/android/gms/analytics/Tracker;
 
-    goto :goto_26
+    goto :goto_25
 
     .line 110
-    :cond_8b
+    :cond_88
     invoke-static {p0}, Lcom/bzbs/data/AppSetting;->e(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
-    const-string/jumbo v3, "1525635597652592"
+    sget-object v3, Lcom/bzbs/data/AppSetting;->i:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_b0
+    if-eqz v2, :cond_ac
 
     .line 111
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->l:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->q:Z
 
-    if-ne v2, v4, :cond_a5
+    if-ne v2, v4, :cond_a1
 
     .line 112
     const/high16 v2, 0x7f070000
@@ -290,10 +290,10 @@
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->d:Lcom/google/android/gms/analytics/Tracker;
 
-    goto :goto_26
+    goto :goto_25
 
     .line 114
-    :cond_a5
+    :cond_a1
     const v2, 0x7f070001
 
     invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->a(I)Lcom/google/android/gms/analytics/Tracker;
@@ -302,13 +302,13 @@
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->d:Lcom/google/android/gms/analytics/Tracker;
 
-    goto/16 :goto_26
+    goto/16 :goto_25
 
     .line 117
-    :cond_b0
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->l:Z
+    :cond_ac
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->q:Z
 
-    if-ne v2, v4, :cond_bf
+    if-ne v2, v4, :cond_bb
 
     .line 118
     const v2, 0x7f070007
@@ -319,10 +319,10 @@
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->d:Lcom/google/android/gms/analytics/Tracker;
 
-    goto/16 :goto_26
+    goto/16 :goto_25
 
     .line 120
-    :cond_bf
+    :cond_bb
     const v2, 0x7f070008
 
     invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/GoogleAnalytics;->a(I)Lcom/google/android/gms/analytics/Tracker;
@@ -330,11 +330,11 @@
     move-result-object v0
 
     sput-object v0, Lcom/samsung/privilege/GalaxyGift;->d:Lcom/google/android/gms/analytics/Tracker;
-    :try_end_c8
-    .catch Ljava/lang/Exception; {:try_start_41 .. :try_end_c8} :catch_34
-    .catchall {:try_start_41 .. :try_end_c8} :catchall_3e
+    :try_end_c4
+    .catch Ljava/lang/Exception; {:try_start_40 .. :try_end_c4} :catch_33
+    .catchall {:try_start_40 .. :try_end_c4} :catchall_3d
 
-    goto/16 :goto_26
+    goto/16 :goto_25
 .end method
 
 .method public static a()Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache;
@@ -1101,7 +1101,7 @@
     .line 73
     new-instance v0, Lcom/bzbs/marketplace/util/CacheLibs;
 
-    const v1, 0x7f09023e
+    const v1, 0x7f090257
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/GalaxyGift;->getString(I)Ljava/lang/String;
 

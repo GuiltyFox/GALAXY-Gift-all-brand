@@ -54,6 +54,10 @@
 
 .field public cat_header_th:Ljava/lang/String;
 
+.field public category_inactive_campaign:Ljava/lang/String;
+
+.field public category_inactive_url:Ljava/lang/String;
+
 .field public dashboard_layout:Ljava/lang/String;
 
 .field public ga_campaign_name:Ljava/lang/String;
@@ -101,6 +105,20 @@
 .field public redeem_media:Ljava/lang/String;
 
 .field public size:Ljava/lang/String;
+
+.field public stamp_agencyId:Ljava/lang/String;
+
+.field public stamp_description:Ljava/lang/String;
+
+.field public stamp_imageUrl:Ljava/lang/String;
+
+.field public stamp_issuer:Ljava/lang/String;
+
+.field public stamp_name:Ljava/lang/String;
+
+.field public stamp_stampId:Ljava/lang/String;
+
+.field public stamp_stampImageUrl:Ljava/lang/String;
 
 .field public sub_dashboard_items:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -203,7 +221,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 189
+    .line 201
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 22
@@ -473,84 +491,129 @@
     .line 92
     const-string/jumbo v0, ""
 
-    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_en:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->stamp_agencyId:Ljava/lang/String;
 
     .line 93
     const-string/jumbo v0, ""
 
-    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_th:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->stamp_issuer:Ljava/lang/String;
 
     .line 94
-    const-string/jumbo v0, "#000000"
+    const-string/jumbo v0, ""
 
-    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_color:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->stamp_stampId:Ljava/lang/String;
 
     .line 95
-    const-string/jumbo v0, "#ffffff"
+    const-string/jumbo v0, ""
 
-    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_shadow:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->stamp_imageUrl:Ljava/lang/String;
+
+    .line 96
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->stamp_name:Ljava/lang/String;
 
     .line 97
     const-string/jumbo v0, ""
 
-    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_en:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->stamp_description:Ljava/lang/String;
 
     .line 98
     const-string/jumbo v0, ""
 
-    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_th:Ljava/lang/String;
-
-    .line 99
-    const-string/jumbo v0, ""
-
-    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_image:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->stamp_stampImageUrl:Ljava/lang/String;
 
     .line 101
     const-string/jumbo v0, ""
 
-    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->sub_dashboard_key:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_en:Ljava/lang/String;
+
+    .line 102
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_th:Ljava/lang/String;
 
     .line 103
-    const-string/jumbo v0, ""
+    const-string/jumbo v0, "#000000"
 
-    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->hashtag_list_config:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_color:Ljava/lang/String;
 
     .line 104
-    const-string/jumbo v0, ""
+    const-string/jumbo v0, "#ffffff"
 
-    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->hashtag_list_agency:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_shadow:Ljava/lang/String;
 
     .line 106
-    iput v1, p0, Lcom/bzbs/bean/DashboardItem;->campaign_rotate_padding:I
-
-    .line 107
-    const-string/jumbo v0, "#00ffffff"
-
-    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->campaign_rotate_background:Ljava/lang/String;
-
-    .line 109
     const-string/jumbo v0, ""
 
-    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->ga_label:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_en:Ljava/lang/String;
+
+    .line 107
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_th:Ljava/lang/String;
+
+    .line 108
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_image:Ljava/lang/String;
 
     .line 110
     const-string/jumbo v0, ""
 
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->sub_dashboard_key:Ljava/lang/String;
+
+    .line 112
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->hashtag_list_config:Ljava/lang/String;
+
+    .line 113
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->hashtag_list_agency:Ljava/lang/String;
+
+    .line 115
+    iput v1, p0, Lcom/bzbs/bean/DashboardItem;->campaign_rotate_padding:I
+
+    .line 116
+    const-string/jumbo v0, "#00ffffff"
+
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->campaign_rotate_background:Ljava/lang/String;
+
+    .line 118
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->category_inactive_campaign:Ljava/lang/String;
+
+    .line 119
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->category_inactive_url:Ljava/lang/String;
+
+    .line 121
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->ga_label:Ljava/lang/String;
+
+    .line 122
+    const-string/jumbo v0, ""
+
     iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->ga_campaign_name:Ljava/lang/String;
 
-    .line 111
+    .line 123
     const-string/jumbo v0, ""
 
     iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->ga_category_name:Ljava/lang/String;
 
-    .line 135
+    .line 147
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/bzbs/bean/DashboardItem;->sub_dashboard_items:Ljava/util/ArrayList;
 
-    .line 191
+    .line 203
     return-void
 .end method
 
@@ -560,7 +623,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 193
+    .line 205
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 22
@@ -830,84 +893,129 @@
     .line 92
     const-string/jumbo v1, ""
 
-    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_en:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_agencyId:Ljava/lang/String;
 
     .line 93
     const-string/jumbo v1, ""
 
-    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_th:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_issuer:Ljava/lang/String;
 
     .line 94
-    const-string/jumbo v1, "#000000"
+    const-string/jumbo v1, ""
 
-    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_color:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_stampId:Ljava/lang/String;
 
     .line 95
-    const-string/jumbo v1, "#ffffff"
+    const-string/jumbo v1, ""
 
-    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_shadow:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_imageUrl:Ljava/lang/String;
+
+    .line 96
+    const-string/jumbo v1, ""
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_name:Ljava/lang/String;
 
     .line 97
     const-string/jumbo v1, ""
 
-    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_en:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_description:Ljava/lang/String;
 
     .line 98
     const-string/jumbo v1, ""
 
-    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_th:Ljava/lang/String;
-
-    .line 99
-    const-string/jumbo v1, ""
-
-    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_image:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_stampImageUrl:Ljava/lang/String;
 
     .line 101
     const-string/jumbo v1, ""
 
-    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->sub_dashboard_key:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_en:Ljava/lang/String;
+
+    .line 102
+    const-string/jumbo v1, ""
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_th:Ljava/lang/String;
 
     .line 103
-    const-string/jumbo v1, ""
+    const-string/jumbo v1, "#000000"
 
-    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->hashtag_list_config:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_color:Ljava/lang/String;
 
     .line 104
-    const-string/jumbo v1, ""
+    const-string/jumbo v1, "#ffffff"
 
-    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->hashtag_list_agency:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_shadow:Ljava/lang/String;
 
     .line 106
-    iput v0, p0, Lcom/bzbs/bean/DashboardItem;->campaign_rotate_padding:I
-
-    .line 107
-    const-string/jumbo v1, "#00ffffff"
-
-    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->campaign_rotate_background:Ljava/lang/String;
-
-    .line 109
     const-string/jumbo v1, ""
 
-    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->ga_label:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_en:Ljava/lang/String;
+
+    .line 107
+    const-string/jumbo v1, ""
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_th:Ljava/lang/String;
+
+    .line 108
+    const-string/jumbo v1, ""
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_image:Ljava/lang/String;
 
     .line 110
     const-string/jumbo v1, ""
 
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->sub_dashboard_key:Ljava/lang/String;
+
+    .line 112
+    const-string/jumbo v1, ""
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->hashtag_list_config:Ljava/lang/String;
+
+    .line 113
+    const-string/jumbo v1, ""
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->hashtag_list_agency:Ljava/lang/String;
+
+    .line 115
+    iput v0, p0, Lcom/bzbs/bean/DashboardItem;->campaign_rotate_padding:I
+
+    .line 116
+    const-string/jumbo v1, "#00ffffff"
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->campaign_rotate_background:Ljava/lang/String;
+
+    .line 118
+    const-string/jumbo v1, ""
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->category_inactive_campaign:Ljava/lang/String;
+
+    .line 119
+    const-string/jumbo v1, ""
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->category_inactive_url:Ljava/lang/String;
+
+    .line 121
+    const-string/jumbo v1, ""
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->ga_label:Ljava/lang/String;
+
+    .line 122
+    const-string/jumbo v1, ""
+
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->ga_campaign_name:Ljava/lang/String;
 
-    .line 111
+    .line 123
     const-string/jumbo v1, ""
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->ga_category_name:Ljava/lang/String;
 
-    .line 135
+    .line 147
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->sub_dashboard_items:Ljava/util/ArrayList;
 
-    .line 194
+    .line 206
     const-string/jumbo v1, "background"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -916,7 +1024,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->background:Ljava/lang/String;
 
-    .line 195
+    .line 207
     const-string/jumbo v1, "image_url"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -925,7 +1033,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->image_url:Ljava/lang/String;
 
-    .line 196
+    .line 208
     const-string/jumbo v1, "image_width"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -934,7 +1042,7 @@
 
     iput v1, p0, Lcom/bzbs/bean/DashboardItem;->image_width:I
 
-    .line 197
+    .line 209
     const-string/jumbo v1, "image_height"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -943,7 +1051,7 @@
 
     iput v1, p0, Lcom/bzbs/bean/DashboardItem;->image_height:I
 
-    .line 198
+    .line 210
     const-string/jumbo v1, "type"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -952,7 +1060,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
 
-    .line 199
+    .line 211
     const-string/jumbo v1, "line1"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -961,7 +1069,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->line1:Ljava/lang/String;
 
-    .line 200
+    .line 212
     const-string/jumbo v1, "line1_color"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -970,7 +1078,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->line1_color:Ljava/lang/String;
 
-    .line 201
+    .line 213
     const-string/jumbo v1, "line2"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -979,7 +1087,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->line2:Ljava/lang/String;
 
-    .line 202
+    .line 214
     const-string/jumbo v1, "line2_color"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -988,7 +1096,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->line2_color:Ljava/lang/String;
 
-    .line 203
+    .line 215
     const-string/jumbo v1, "campaigntype"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -997,7 +1105,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->campaigntype:Ljava/lang/String;
 
-    .line 204
+    .line 216
     const-string/jumbo v1, "campaignpoint"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -1006,7 +1114,7 @@
 
     iput v1, p0, Lcom/bzbs/bean/DashboardItem;->campaignpoint:I
 
-    .line 205
+    .line 217
     const-string/jumbo v1, "campaignbarcode"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1015,7 +1123,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->campaignbarcode:Ljava/lang/String;
 
-    .line 206
+    .line 218
     const-string/jumbo v1, "campaigndiscount"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -1024,7 +1132,7 @@
 
     iput v1, p0, Lcom/bzbs/bean/DashboardItem;->campaigndiscount:I
 
-    .line 207
+    .line 219
     const-string/jumbo v1, "id"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -1033,7 +1141,7 @@
 
     iput v1, p0, Lcom/bzbs/bean/DashboardItem;->id:I
 
-    .line 208
+    .line 220
     const-string/jumbo v1, "cat"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1042,7 +1150,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->cat:Ljava/lang/String;
 
-    .line 209
+    .line 221
     const-string/jumbo v1, "url"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1051,7 +1159,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->url:Ljava/lang/String;
 
-    .line 210
+    .line 222
     const-string/jumbo v1, "menu"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1060,7 +1168,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->menu:Ljava/lang/String;
 
-    .line 211
+    .line 223
     const-string/jumbo v1, "size"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1069,7 +1177,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->size:Ljava/lang/String;
 
-    .line 213
+    .line 225
     const-string/jumbo v1, "and_ns"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1078,7 +1186,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->and_ns:Ljava/lang/String;
 
-    .line 214
+    .line 226
     const-string/jumbo v1, "and_ns_params"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1087,7 +1195,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->and_ns_params:Ljava/lang/String;
 
-    .line 215
+    .line 227
     const-string/jumbo v1, "agency_id"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1096,7 +1204,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->agency_id:Ljava/lang/String;
 
-    .line 217
+    .line 229
     const-string/jumbo v1, "need_login"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1109,7 +1217,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->need_login:Z
 
-    .line 218
+    .line 230
     const-string/jumbo v1, "need_logout"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1122,7 +1230,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->need_logout:Z
 
-    .line 220
+    .line 232
     const-string/jumbo v1, "dashboard_layout"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1131,7 +1239,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->dashboard_layout:Ljava/lang/String;
 
-    .line 221
+    .line 233
     const-string/jumbo v1, "campaigndetail_layout"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1140,7 +1248,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->campaigndetail_layout:Ljava/lang/String;
 
-    .line 222
+    .line 234
     const-string/jumbo v1, "autoredeem"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1153,7 +1261,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->autoredeem:Z
 
-    .line 223
+    .line 235
     const-string/jumbo v1, "autoredeem_showcode"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1166,7 +1274,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->autoredeem_showcode:Z
 
-    .line 224
+    .line 236
     const-string/jumbo v1, "autoredeem_hideserial"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1179,7 +1287,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->autoredeem_hideserial:Z
 
-    .line 225
+    .line 237
     const-string/jumbo v1, "autoredeem_url"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1188,7 +1296,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->autoredeem_url:Ljava/lang/String;
 
-    .line 227
+    .line 239
     const-string/jumbo v1, "web_dis_autoresize"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1201,7 +1309,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->web_dis_autoresize:Z
 
-    .line 228
+    .line 240
     const-string/jumbo v1, "web_dis_clearcache"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1214,7 +1322,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->web_dis_clearcache:Z
 
-    .line 229
+    .line 241
     const-string/jumbo v1, "web_dis_javascript"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1227,7 +1335,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->web_dis_javascript:Z
 
-    .line 230
+    .line 242
     const-string/jumbo v1, "web_dis_javascript_cowa"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1240,7 +1348,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->web_dis_javascript_cowa:Z
 
-    .line 232
+    .line 244
     const-string/jumbo v1, "redeem_media"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1249,7 +1357,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->redeem_media:Ljava/lang/String;
 
-    .line 234
+    .line 246
     const-string/jumbo v1, "wallet_issuer"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1258,7 +1366,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_issuer:Ljava/lang/String;
 
-    .line 235
+    .line 247
     const-string/jumbo v1, "wallet_cardtype"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1267,7 +1375,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_cardtype:Ljava/lang/String;
 
-    .line 236
+    .line 248
     const-string/jumbo v1, "wallet_verify_imei"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1280,7 +1388,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_verify_imei:Z
 
-    .line 237
+    .line 249
     const-string/jumbo v1, "wallet_verify_authen"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1293,7 +1401,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_verify_authen:Z
 
-    .line 238
+    .line 250
     const-string/jumbo v1, "wallet_verify_success_redeem_campaign"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1302,7 +1410,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_verify_success_redeem_campaign:Ljava/lang/String;
 
-    .line 239
+    .line 251
     const-string/jumbo v1, "wallet_verify_success_redeem_media"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1311,7 +1419,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_verify_success_redeem_media:Ljava/lang/String;
 
-    .line 240
+    .line 252
     const-string/jumbo v1, "wallet_verify_success_buy_campaign"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1320,7 +1428,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_verify_success_buy_campaign:Ljava/lang/String;
 
-    .line 241
+    .line 253
     const-string/jumbo v1, "wallet_otp_call_create"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1333,7 +1441,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_otp_call_create:Z
 
-    .line 242
+    .line 254
     const-string/jumbo v1, "wallet_disable_payment"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1346,7 +1454,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_disable_payment:Z
 
-    .line 243
+    .line 255
     const-string/jumbo v1, "wallet_disable_amount"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1359,7 +1467,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_disable_amount:Z
 
-    .line 244
+    .line 256
     const-string/jumbo v1, "wallet_url"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1368,7 +1476,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_url:Ljava/lang/String;
 
-    .line 245
+    .line 257
     const-string/jumbo v1, "wallet_timeout"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -1377,7 +1485,7 @@
 
     iput v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_timeout:I
 
-    .line 246
+    .line 258
     const-string/jumbo v1, "wallet_card_image_url"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1386,7 +1494,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_card_image_url:Ljava/lang/String;
 
-    .line 247
+    .line 259
     const-string/jumbo v1, "wallet_card_layout_html"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1395,7 +1503,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_card_layout_html:Ljava/lang/String;
 
-    .line 248
+    .line 260
     const-string/jumbo v1, "wallet_image_active"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1404,7 +1512,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_image_active:Ljava/lang/String;
 
-    .line 249
+    .line 261
     const-string/jumbo v1, "wallet_image_inactive"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1413,7 +1521,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_image_inactive:Ljava/lang/String;
 
-    .line 250
+    .line 262
     const-string/jumbo v1, "wallet_promotion"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1422,7 +1530,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_promotion:Ljava/lang/String;
 
-    .line 251
+    .line 263
     const-string/jumbo v1, "wallet_queue"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1431,7 +1539,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_queue:Ljava/lang/String;
 
-    .line 252
+    .line 264
     const-string/jumbo v1, "wallet_dashboard_header"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1440,7 +1548,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_dashboard_header:Ljava/lang/String;
 
-    .line 253
+    .line 265
     const-string/jumbo v1, "wallet_dashboard_key_inactivate"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1449,7 +1557,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_dashboard_key_inactivate:Ljava/lang/String;
 
-    .line 254
+    .line 266
     const-string/jumbo v1, "wallet_dashboard_key_activated"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1458,7 +1566,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_dashboard_key_activated:Ljava/lang/String;
 
-    .line 255
+    .line 267
     const-string/jumbo v1, "wallet_hide_tabbar"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -1471,7 +1579,7 @@
 
     iput-boolean v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_hide_tabbar:Z
 
-    .line 256
+    .line 268
     const-string/jumbo v1, "wallet_cardid_color"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1480,7 +1588,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_cardid_color:Ljava/lang/String;
 
-    .line 257
+    .line 269
     const-string/jumbo v1, "wallet_cardid_shadow"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1489,7 +1597,70 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->wallet_cardid_shadow:Ljava/lang/String;
 
-    .line 259
+    .line 271
+    const-string/jumbo v1, "stamp_agencyId"
+
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_agencyId:Ljava/lang/String;
+
+    .line 272
+    const-string/jumbo v1, "stamp_issuer"
+
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_issuer:Ljava/lang/String;
+
+    .line 273
+    const-string/jumbo v1, "stamp_stampId"
+
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_stampId:Ljava/lang/String;
+
+    .line 274
+    const-string/jumbo v1, "stamp_imageUrl"
+
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_imageUrl:Ljava/lang/String;
+
+    .line 275
+    const-string/jumbo v1, "stamp_name"
+
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_name:Ljava/lang/String;
+
+    .line 276
+    const-string/jumbo v1, "stamp_description"
+
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_description:Ljava/lang/String;
+
+    .line 277
+    const-string/jumbo v1, "stamp_stampImageUrl"
+
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->stamp_stampImageUrl:Ljava/lang/String;
+
+    .line 279
     const-string/jumbo v1, "point_caption_en"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1498,7 +1669,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_en:Ljava/lang/String;
 
-    .line 260
+    .line 280
     const-string/jumbo v1, "point_caption_th"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1507,7 +1678,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_th:Ljava/lang/String;
 
-    .line 261
+    .line 281
     const-string/jumbo v1, "point_caption_color"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1516,7 +1687,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_color:Ljava/lang/String;
 
-    .line 262
+    .line 282
     const-string/jumbo v1, "point_caption_shadow"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1525,7 +1696,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->point_caption_shadow:Ljava/lang/String;
 
-    .line 264
+    .line 284
     const-string/jumbo v1, "cat_header_en"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1534,7 +1705,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_en:Ljava/lang/String;
 
-    .line 265
+    .line 285
     const-string/jumbo v1, "cat_header_th"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1543,7 +1714,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_th:Ljava/lang/String;
 
-    .line 266
+    .line 286
     const-string/jumbo v1, "cat_header_image"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1552,7 +1723,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->cat_header_image:Ljava/lang/String;
 
-    .line 268
+    .line 288
     const-string/jumbo v1, "sub_dashboard_key"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1561,7 +1732,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->sub_dashboard_key:Ljava/lang/String;
 
-    .line 270
+    .line 290
     const-string/jumbo v1, "hashtag_list_config"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1570,7 +1741,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->hashtag_list_config:Ljava/lang/String;
 
-    .line 271
+    .line 291
     const-string/jumbo v1, "hashtag_list_agency"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1579,7 +1750,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->hashtag_list_agency:Ljava/lang/String;
 
-    .line 273
+    .line 293
     const-string/jumbo v1, "campaign_rotate_padding"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
@@ -1588,7 +1759,7 @@
 
     iput v1, p0, Lcom/bzbs/bean/DashboardItem;->campaign_rotate_padding:I
 
-    .line 274
+    .line 294
     const-string/jumbo v1, "campaign_rotate_background"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1597,7 +1768,25 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->campaign_rotate_background:Ljava/lang/String;
 
-    .line 276
+    .line 296
+    const-string/jumbo v1, "category_inactive_campaign"
+
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->category_inactive_campaign:Ljava/lang/String;
+
+    .line 297
+    const-string/jumbo v1, "category_inactive_url"
+
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->category_inactive_url:Ljava/lang/String;
+
+    .line 299
     const-string/jumbo v1, "ga_label"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1606,7 +1795,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->ga_label:Ljava/lang/String;
 
-    .line 277
+    .line 300
     const-string/jumbo v1, "ga_campaign_name"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1615,7 +1804,7 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->ga_campaign_name:Ljava/lang/String;
 
-    .line 278
+    .line 301
     const-string/jumbo v1, "ga_category_name"
 
     invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -1624,30 +1813,30 @@
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->ga_category_name:Ljava/lang/String;
 
-    .line 281
-    :try_start_411
+    .line 304
+    :try_start_48f
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lcom/bzbs/bean/DashboardItem;->sub_dashboard_items:Ljava/util/ArrayList;
 
-    .line 283
+    .line 306
     const-string/jumbo v1, "subcampaigndetails"
 
     invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v1
 
-    .line 284
-    :goto_41f
+    .line 307
+    :goto_49d
     invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
 
     move-result v2
 
-    if-ge v0, v2, :cond_437
+    if-ge v0, v2, :cond_4b5
 
-    .line 285
+    .line 308
     iget-object v2, p0, Lcom/bzbs/bean/DashboardItem;->sub_dashboard_items:Ljava/util/ArrayList;
 
     new-instance v3, Lcom/bzbs/bean/DashboardItem;
@@ -1659,20 +1848,20 @@
     invoke-direct {v3, v4}, Lcom/bzbs/bean/DashboardItem;-><init>(Lorg/json/JSONObject;)V
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_433
-    .catch Ljava/lang/Exception; {:try_start_411 .. :try_end_433} :catch_436
+    :try_end_4b1
+    .catch Ljava/lang/Exception; {:try_start_48f .. :try_end_4b1} :catch_4b4
 
-    .line 284
+    .line 307
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_41f
+    goto :goto_49d
 
-    .line 287
-    :catch_436
+    .line 310
+    :catch_4b4
     move-exception v0
 
-    .line 290
-    :cond_437
+    .line 313
+    :cond_4b5
     return-void
 .end method
 
@@ -1694,17 +1883,17 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 293
+    .line 316
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 295
+    .line 318
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 297
+    .line 320
     const/4 v0, 0x0
 
     :goto_b
@@ -1714,23 +1903,23 @@
 
     if-ge v0, v1, :cond_65
 
-    .line 299
+    .line 322
     :try_start_11
     invoke-virtual {p0, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v1
 
-    .line 300
+    .line 323
     new-instance v4, Lcom/bzbs/bean/DashboardItem;
 
     invoke-direct {v4, v1}, Lcom/bzbs/bean/DashboardItem;-><init>(Lorg/json/JSONObject;)V
 
-    .line 301
+    .line 324
     iget-boolean v1, v4, Lcom/bzbs/bean/DashboardItem;->need_login:Z
 
     if-ne v1, v7, :cond_2f
 
-    .line 302
+    .line 325
     if-eqz v3, :cond_2c
 
     const-string/jumbo v1, ""
@@ -1741,23 +1930,23 @@
 
     if-nez v1, :cond_2c
 
-    .line 303
+    .line 326
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 297
+    .line 320
     :cond_2c
     :goto_2c
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_b
 
-    .line 305
+    .line 328
     :cond_2f
     iget-boolean v1, v4, Lcom/bzbs/bean/DashboardItem;->need_logout:Z
 
     if-ne v1, v7, :cond_61
 
-    .line 306
+    .line 329
     if-eqz v3, :cond_3e
 
     const-string/jumbo v1, ""
@@ -1768,7 +1957,7 @@
 
     if-eqz v1, :cond_2c
 
-    .line 309
+    .line 332
     :cond_3e
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_41
@@ -1776,11 +1965,11 @@
 
     goto :goto_2c
 
-    .line 314
+    .line 337
     :catch_42
     move-exception v1
 
-    .line 315
+    .line 338
     sget-object v4, Lcom/bzbs/bean/DashboardItem;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1809,7 +1998,7 @@
 
     goto :goto_2c
 
-    .line 312
+    .line 335
     :cond_61
     :try_start_61
     invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1818,7 +2007,7 @@
 
     goto :goto_2c
 
-    .line 319
+    .line 342
     :cond_65
     return-object v2
 .end method
@@ -1829,10 +2018,10 @@
     .registers 3
 
     .prologue
-    .line 114
+    .line 126
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->ga_campaign_name:Ljava/lang/String;
 
-    .line 115
+    .line 127
     const-string/jumbo v1, ""
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1841,10 +2030,10 @@
 
     if-eqz v1, :cond_d
 
-    .line 116
+    .line 128
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->line2:Ljava/lang/String;
 
-    .line 118
+    .line 130
     :cond_d
     const-string/jumbo v1, ""
 
@@ -1854,10 +2043,10 @@
 
     if-eqz v1, :cond_18
 
-    .line 119
+    .line 131
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->line1:Ljava/lang/String;
 
-    .line 121
+    .line 133
     :cond_18
     return-object v0
 .end method
@@ -1866,10 +2055,10 @@
     .registers 3
 
     .prologue
-    .line 125
+    .line 137
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->ga_category_name:Ljava/lang/String;
 
-    .line 126
+    .line 138
     const-string/jumbo v1, ""
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1878,10 +2067,10 @@
 
     if-eqz v1, :cond_d
 
-    .line 127
+    .line 139
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->line2:Ljava/lang/String;
 
-    .line 129
+    .line 141
     :cond_d
     const-string/jumbo v1, ""
 
@@ -1891,10 +2080,10 @@
 
     if-eqz v1, :cond_18
 
-    .line 130
+    .line 142
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->line1:Ljava/lang/String;
 
-    .line 132
+    .line 144
     :cond_18
     return-object v0
 .end method
@@ -1903,21 +2092,21 @@
     .registers 6
 
     .prologue
-    .line 177
+    .line 189
     new-instance v0, Ljava/text/DecimalFormat;
 
     const-string/jumbo v1, "###,###,###.##"
 
     invoke-direct {v0, v1}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
-    .line 178
+    .line 190
     iget v1, p0, Lcom/bzbs/bean/DashboardItem;->campaignpoint:I
 
     const/4 v2, 0x1
 
     if-gt v1, v2, :cond_34
 
-    .line 179
+    .line 191
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1940,7 +2129,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0900bb
+    const v1, 0x7f0900af
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1954,7 +2143,7 @@
 
     move-result-object v0
 
-    .line 181
+    .line 193
     :goto_33
     return-object v0
 
@@ -1981,7 +2170,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f09027d
+    const v1, 0x7f090294
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2002,7 +2191,7 @@
     .registers 6
 
     .prologue
-    .line 162
+    .line 174
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->campaigntype:Ljava/lang/String;
 
     const-string/jumbo v1, "0"
@@ -2013,8 +2202,8 @@
 
     if-eqz v0, :cond_17
 
-    .line 163
-    const v0, 0x7f09024e
+    .line 175
+    const v0, 0x7f090265
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2024,11 +2213,11 @@
 
     move-result-object v0
 
-    .line 172
+    .line 184
     :goto_16
     return-object v0
 
-    .line 164
+    .line 176
     :cond_17
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->campaigntype:Ljava/lang/String;
 
@@ -2040,8 +2229,8 @@
 
     if-eqz v0, :cond_2e
 
-    .line 165
-    const v0, 0x7f090250
+    .line 177
+    const v0, 0x7f090267
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2053,7 +2242,7 @@
 
     goto :goto_16
 
-    .line 166
+    .line 178
     :cond_2e
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->campaigntype:Ljava/lang/String;
 
@@ -2075,7 +2264,7 @@
 
     if-eqz v0, :cond_68
 
-    .line 167
+    .line 179
     :cond_44
     new-instance v0, Ljava/text/DecimalFormat;
 
@@ -2083,7 +2272,7 @@
 
     invoke-direct {v0, v1}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
-    .line 168
+    .line 180
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2112,7 +2301,7 @@
 
     goto :goto_16
 
-    .line 169
+    .line 181
     :cond_68
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->campaigntype:Ljava/lang/String;
 
@@ -2124,8 +2313,8 @@
 
     if-eqz v0, :cond_7f
 
-    .line 170
-    const v0, 0x7f09024d
+    .line 182
+    const v0, 0x7f090264
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2137,7 +2326,7 @@
 
     goto :goto_16
 
-    .line 172
+    .line 184
     :cond_7f
     const-string/jumbo v0, ""
 
@@ -2148,7 +2337,7 @@
     .registers 2
 
     .prologue
-    .line 186
+    .line 198
     invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
@@ -2160,7 +2349,7 @@
     .registers 4
 
     .prologue
-    .line 154
+    .line 166
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -2175,7 +2364,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 155
+    .line 167
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->image_url:Ljava/lang/String;
 
     const-string/jumbo v1, "?"
@@ -2186,7 +2375,7 @@
 
     move-result-object v0
 
-    .line 157
+    .line 169
     :goto_1b
     return-object v0
 
@@ -2200,7 +2389,7 @@
     .registers 4
 
     .prologue
-    .line 146
+    .line 158
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -2215,7 +2404,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 147
+    .line 159
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->image_url:Ljava/lang/String;
 
     const-string/jumbo v1, "?"
@@ -2226,7 +2415,7 @@
 
     move-result-object v0
 
-    .line 149
+    .line 161
     :goto_1b
     return-object v0
 
@@ -2240,7 +2429,7 @@
     .registers 4
 
     .prologue
-    .line 138
+    .line 150
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -2255,7 +2444,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 139
+    .line 151
     iget-object v0, p0, Lcom/bzbs/bean/DashboardItem;->image_url:Ljava/lang/String;
 
     const-string/jumbo v1, "?"
@@ -2266,7 +2455,7 @@
 
     move-result-object v0
 
-    .line 141
+    .line 153
     :goto_1b
     return-object v0
 

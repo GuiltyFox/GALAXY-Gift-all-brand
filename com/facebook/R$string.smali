@@ -36,7 +36,7 @@
 
 .field public static final com_facebook_tooltip_default:I = 0x7f090022
 
-.field public static final messenger_send_button_text:I = 0x7f090041
+.field public static final messenger_send_button_text:I = 0x7f090034
 
 
 # direct methods

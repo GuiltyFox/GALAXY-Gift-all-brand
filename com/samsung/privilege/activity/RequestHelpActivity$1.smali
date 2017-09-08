@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/RequestHelpActivity;->p()V
+    value = Lcom/samsung/privilege/activity/RequestHelpActivity;->q()V
 .end annotation
 
 

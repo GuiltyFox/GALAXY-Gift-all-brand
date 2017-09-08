@@ -152,7 +152,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0201b4
+    const v2, 0x7f0201ca
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 

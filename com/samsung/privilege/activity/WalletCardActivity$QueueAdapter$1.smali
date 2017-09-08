@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 3270
+    .line 3631
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$1;->a:Lcom/bzbs/bean/Place;
@@ -39,14 +39,14 @@
     .registers 8
 
     .prologue
-    .line 3273
+    .line 3634
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$1;->a:Lcom/bzbs/bean/Place;
 
     iget-object v0, v0, Lcom/bzbs/bean/Place;->mQueueItem:Lcom/bzbs/bean/QueueItem;
 
     if-eqz v0, :cond_54
 
-    .line 3274
+    .line 3635
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$1;->a:Lcom/bzbs/bean/Place;
 
     iget-object v0, v0, Lcom/bzbs/bean/Place;->mQueueItem:Lcom/bzbs/bean/QueueItem;
@@ -55,7 +55,7 @@
 
     if-nez v0, :cond_4a
 
-    .line 3275
+    .line 3636
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -68,7 +68,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogQueue;->a(Landroid/content/Context;Lcom/bzbs/bean/Place;Lcom/bzbs/bean/QueueItem;)V
 
-    .line 3283
+    .line 3644
     :goto_1b
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -112,10 +112,10 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 3284
+    .line 3645
     return-void
 
-    .line 3277
+    .line 3638
     :cond_4a
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter;
 
@@ -127,7 +127,7 @@
 
     goto :goto_1b
 
-    .line 3280
+    .line 3641
     :cond_54
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter;
 

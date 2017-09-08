@@ -121,7 +121,7 @@
     const/4 v3, 0x1
 
     .line 475
-    const v0, 0x7f10053c
+    const v0, 0x7f100570
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -564,7 +564,7 @@
 
     .prologue
     .line 384
-    const v0, 0x7f10053e
+    const v0, 0x7f100572
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -573,7 +573,7 @@
     check-cast v0, Landroid/widget/ProgressBar;
 
     .line 385
-    const v1, 0x7f10053f
+    const v1, 0x7f100573
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -586,7 +586,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v3, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v3, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -694,7 +694,7 @@
     invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 391
-    const v3, 0x7f10053d
+    const v3, 0x7f100571
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->findViewById(I)Landroid/view/View;
 
@@ -1642,7 +1642,7 @@
     invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
     .line 124
-    const v0, 0x7f040120
+    const v0, 0x7f040134
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->setContentView(I)V
 
@@ -1666,7 +1666,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->c:Lcom/facebook/CallbackManager;
 
     .line 130
-    const v0, 0x7f10053d
+    const v0, 0x7f100571
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->findViewById(I)Landroid/view/View;
 

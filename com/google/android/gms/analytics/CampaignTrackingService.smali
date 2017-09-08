@@ -30,17 +30,17 @@
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_3} :catch_15
 
     :try_start_3
-    sget-object v0, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->b:Lcom/google/android/gms/internal/zzse;
+    sget-object v0, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->b:Lcom/google/android/gms/internal/zzxr;
 
     if-eqz v0, :cond_10
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/zzse;->b()Z
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/zzxr;->b()Z
 
     move-result v2
 
     if-eqz v2, :cond_10
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/zzse;->a()V
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/zzxr;->a()V
 
     :cond_10
     monitor-exit v1
@@ -69,7 +69,7 @@
 .method public static a(Landroid/content/Context;)Z
     .registers 3
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/google/android/gms/analytics/CampaignTrackingService;->b:Ljava/lang/Boolean;
 
@@ -85,9 +85,9 @@
     return v0
 
     :cond_e
-    const-class v0, Lcom/google/android/gms/analytics/CampaignTrackingService;
+    const-string/jumbo v0, "com.google.android.gms.analytics.CampaignTrackingService"
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/analytics/internal/zzam;->a(Landroid/content/Context;Ljava/lang/Class;)Z
+    invoke-static {p0, v0}, Lcom/google/android/gms/analytics/internal/zzao;->a(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -198,23 +198,14 @@
 
     move-result-object v2
 
-    const/4 v0, 0x0
-
     invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzf;->e()Lcom/google/android/gms/analytics/internal/zzr;
 
-    move-result-object v3
+    const-string/jumbo v0, "referrer"
 
-    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzr;->a()Z
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v3
+    move-result-object v0
 
-    if-eqz v3, :cond_44
-
-    const-string/jumbo v3, "Unexpected installation campaign (package side)"
-
-    invoke-virtual {v2, v3}, Lcom/google/android/gms/analytics/internal/zzaf;->f(Ljava/lang/String;)V
-
-    :goto_1d
     invoke-direct {p0}, Lcom/google/android/gms/analytics/CampaignTrackingService;->b()Landroid/os/Handler;
 
     move-result-object v3
@@ -223,24 +214,15 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4c
+    if-eqz v4, :cond_36
 
     invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzf;->e()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->a()Z
-
-    move-result v0
-
-    if-nez v0, :cond_37
 
     const-string/jumbo v0, "No campaign found on com.android.vending.INSTALL_REFERRER \"referrer\" extra"
 
     invoke-virtual {v2, v0}, Lcom/google/android/gms/analytics/internal/zzaf;->e(Ljava/lang/String;)V
 
-    :cond_37
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzf;->h()Lcom/google/android/gms/measurement/zzg;
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzf;->h()Lcom/google/android/gms/analytics/zzi;
 
     move-result-object v0
 
@@ -248,26 +230,17 @@
 
     invoke-direct {v1, p0, v2, v3, p3}, Lcom/google/android/gms/analytics/CampaignTrackingService$1;-><init>(Lcom/google/android/gms/analytics/CampaignTrackingService;Lcom/google/android/gms/analytics/internal/zzaf;Landroid/os/Handler;I)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/zzg;->a(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/analytics/zzi;->a(Ljava/lang/Runnable;)V
 
-    :goto_43
+    :goto_35
     return v8
 
-    :cond_44
-    const-string/jumbo v0, "referrer"
-
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_1d
-
-    :cond_4c
+    :cond_36
     invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzf;->e()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->e()I
+    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->d()I
 
     move-result v4
 
@@ -275,9 +248,9 @@
 
     move-result v5
 
-    if-gt v5, v4, :cond_71
+    if-gt v5, v4, :cond_5b
 
-    :goto_5a
+    :goto_44
     const-string/jumbo v4, "CampaignTrackingService called. startId, campaign"
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -296,9 +269,9 @@
 
     invoke-virtual {v1, v0, v4}, Lcom/google/android/gms/analytics/internal/zzb;->a(Ljava/lang/String;Ljava/lang/Runnable;)V
 
-    goto :goto_43
+    goto :goto_35
 
-    :cond_71
+    :cond_5b
     const-string/jumbo v5, "Campaign data exceed the maximum supported size and will be clipped. size, limit"
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -321,5 +294,5 @@
 
     move-result-object v0
 
-    goto :goto_5a
+    goto :goto_44
 .end method

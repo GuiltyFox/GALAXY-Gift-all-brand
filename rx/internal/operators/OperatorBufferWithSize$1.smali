@@ -145,7 +145,7 @@
     return-void
 .end method
 
-.method public m_()V
+.method public n_()V
     .registers 3
 
     .prologue
@@ -172,7 +172,7 @@
     :cond_c
     iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->b:Lrx/Subscriber;
 
-    invoke-virtual {v0}, Lrx/Subscriber;->m_()V
+    invoke-virtual {v0}, Lrx/Subscriber;->n_()V
 
     .line 127
     :goto_11

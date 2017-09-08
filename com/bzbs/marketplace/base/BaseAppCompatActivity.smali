@@ -101,16 +101,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 113
+    .line 110
     sput v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
-    .line 114
+    .line 111
     sput v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->B:I
 
-    .line 115
+    .line 112
     sput v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->C:I
 
-    .line 124
+    .line 121
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/String;
@@ -136,13 +136,13 @@
 
     const/4 v1, 0x0
 
-    .line 79
+    .line 76
     invoke-direct {p0}, Landroid/support/v7/app/AppCompatActivity;-><init>()V
 
-    .line 81
+    .line 78
     iput-boolean v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->c:Z
 
-    .line 82
+    .line 79
     const-class v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -151,33 +151,33 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->a:Ljava/lang/String;
 
-    .line 86
+    .line 83
     iput-wide v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->d:D
 
     iput-wide v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->e:D
 
-    .line 89
+    .line 86
     iput-boolean v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->f:Z
 
-    .line 91
+    .line 88
     iput-object p0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    .line 126
+    .line 123
     sget-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->H:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
-    .line 130
+    .line 127
     iput-boolean v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->I:Z
 
-    .line 574
+    .line 580
     new-instance v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;
 
     invoke-direct {v0, p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;-><init>(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)V
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->K:Landroid/view/View$OnClickListener;
 
-    .line 684
+    .line 692
     new-instance v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;
 
     invoke-direct {v0, p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;-><init>(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)V
@@ -191,7 +191,7 @@
     .registers 2
 
     .prologue
-    .line 79
+    .line 76
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->a:Ljava/lang/String;
 
     return-object v0
@@ -201,7 +201,7 @@
     .registers 2
 
     .prologue
-    .line 79
+    .line 76
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->b:Landroid/os/Handler;
 
     return-object v0
@@ -213,7 +213,7 @@
     .registers 4
 
     .prologue
-    .line 275
+    .line 272
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -224,7 +224,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    .line 277
+    .line 274
     mul-float/2addr v0, p1
 
     const/high16 v1, 0x3f000000    # 0.5f
@@ -240,25 +240,25 @@
     .registers 4
 
     .prologue
-    .line 258
+    .line 255
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->t:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_b
 
-    .line 259
+    .line 256
     if-eqz p1, :cond_c
 
-    .line 260
+    .line 257
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->t:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 264
+    .line 261
     :cond_b
     :goto_b
     return-void
 
-    .line 262
+    .line 259
     :cond_c
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->t:Landroid/widget/ImageView;
 
@@ -276,24 +276,24 @@
     .registers 4
 
     .prologue
-    .line 239
+    .line 236
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->i:Landroid/widget/TextView;
 
     if-eqz v0, :cond_10
 
-    .line 241
+    .line 238
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->i:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 242
+    .line 239
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->i:Landroid/widget/TextView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 244
+    .line 241
     :cond_10
     return-void
 .end method
@@ -302,12 +302,12 @@
     .registers 8
 
     .prologue
-    .line 642
+    .line 650
     new-instance v0, Lcom/loopj/android/http/RequestParams;
 
     invoke-direct {v0}, Lcom/loopj/android/http/RequestParams;-><init>()V
 
-    .line 643
+    .line 651
     const-string/jumbo v1, "token"
 
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getApplicationContext()Landroid/content/Context;
@@ -320,14 +320,14 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 644
+    .line 652
     const-string/jumbo v1, "type"
 
     const-string/jumbo v2, "content"
 
     invoke-virtual {v0, v1, v2}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 646
+    .line 654
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -340,7 +340,7 @@
 
     move-result-object v1
 
-    .line 648
+    .line 656
     new-instance v2, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
     iget-object v3, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
@@ -355,7 +355,7 @@
 
     invoke-virtual {v2, v0}, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;->a(Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;)V
 
-    .line 669
+    .line 677
     return-void
 .end method
 
@@ -363,35 +363,35 @@
     .registers 14
 
     .prologue
-    .line 604
+    .line 612
     invoke-static {}, Lcom/facebook/CallbackManager$Factory;->create()Lcom/facebook/CallbackManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->F:Lcom/facebook/CallbackManager;
 
-    .line 605
+    .line 613
     new-instance v1, Lcom/facebook/share/widget/ShareDialog;
 
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-direct {v1, v0}, Lcom/facebook/share/widget/ShareDialog;-><init>(Landroid/app/Activity;)V
 
-    .line 606
+    .line 614
     new-instance v0, Lcom/bzbs/util/ConnectionDetector;
 
     iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-direct {v0, v2}, Lcom/bzbs/util/ConnectionDetector;-><init>(Landroid/content/Context;)V
 
-    .line 607
+    .line 615
     invoke-virtual {v0}, Lcom/bzbs/util/ConnectionDetector;->a()Z
 
     move-result v0
 
     if-nez v0, :cond_3f
 
-    .line 608
+    .line 616
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -400,19 +400,19 @@
 
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090253
+    const v3, 0x7f09026a
 
     invoke-virtual {p0, v3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    const v4, 0x7f09023e
+    const v4, 0x7f090257
 
     invoke-virtual {p0, v4}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    const v5, 0x7f09027f
+    const v5, 0x7f090296
 
     invoke-virtual {p0, v5}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -422,27 +422,27 @@
 
     invoke-static/range {v0 .. v6}, Lcom/bzbs/marketplace/dialog/util/DialogUtils;->a(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 638
+    .line 646
     :goto_3e
     return-void
 
-    .line 612
+    .line 620
     :cond_3f
     new-instance v0, Lcom/facebook/share/model/ShareLinkContent$Builder;
 
     invoke-direct {v0}, Lcom/facebook/share/model/ShareLinkContent$Builder;-><init>()V
 
-    .line 613
+    .line 621
     invoke-virtual {v0, p2}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setContentTitle(Ljava/lang/String;)Lcom/facebook/share/model/ShareLinkContent$Builder;
 
     move-result-object v0
 
-    .line 614
+    .line 622
     invoke-virtual {v0, p3}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setContentDescription(Ljava/lang/String;)Lcom/facebook/share/model/ShareLinkContent$Builder;
 
     move-result-object v0
 
-    .line 615
+    .line 623
     invoke-static {p4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
@@ -451,7 +451,7 @@
 
     move-result-object v0
 
-    .line 616
+    .line 624
     invoke-static {p5}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
@@ -462,12 +462,12 @@
 
     check-cast v0, Lcom/facebook/share/model/ShareLinkContent$Builder;
 
-    .line 617
+    .line 625
     invoke-virtual {v0}, Lcom/facebook/share/model/ShareLinkContent$Builder;->build()Lcom/facebook/share/model/ShareLinkContent;
 
     move-result-object v0
 
-    .line 619
+    .line 627
     iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->F:Lcom/facebook/CallbackManager;
 
     new-instance v3, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$6;
@@ -476,7 +476,7 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/facebook/share/widget/ShareDialog;->registerCallback(Lcom/facebook/CallbackManager;Lcom/facebook/FacebookCallback;)V
 
-    .line 637
+    .line 645
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-static {v1, v0}, Lcom/facebook/share/widget/ShareDialog;->show(Landroid/app/Activity;Lcom/facebook/share/model/ShareContent;)V
@@ -488,32 +488,32 @@
     .registers 5
 
     .prologue
-    .line 247
+    .line 244
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->i:Landroid/widget/TextView;
 
     if-eqz v0, :cond_11
 
-    .line 249
+    .line 246
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->i:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 251
+    .line 248
     if-eqz p2, :cond_12
 
     const/4 v0, 0x0
 
-    .line 253
+    .line 250
     :goto_c
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->i:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 255
+    .line 252
     :cond_11
     return-void
 
-    .line 251
+    .line 248
     :cond_12
     const/16 v0, 0x8
 
@@ -524,7 +524,7 @@
     .registers 4
 
     .prologue
-    .line 309
+    .line 306
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x10
@@ -533,7 +533,7 @@
 
     if-eqz p1, :cond_8
 
-    .line 312
+    .line 309
     :cond_8
     return-void
 .end method
@@ -546,7 +546,7 @@
 
     const/4 v1, 0x0
 
-    .line 555
+    .line 561
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->p:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_b
@@ -555,12 +555,12 @@
 
     if-nez v0, :cond_c
 
-    .line 565
+    .line 571
     :cond_b
     :goto_b
     return-void
 
-    .line 558
+    .line 564
     :cond_c
     iget-object v3, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->w:Landroid/widget/RelativeLayout;
 
@@ -571,20 +571,20 @@
     :goto_11
     invoke-virtual {v3, v0}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 559
+    .line 565
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->n:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 560
+    .line 566
     if-nez p2, :cond_20
 
-    .line 561
+    .line 567
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->n:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 563
+    .line 569
     :cond_20
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->n:Landroid/widget/TextView;
 
@@ -594,7 +594,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 564
+    .line 570
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->w:Landroid/widget/RelativeLayout;
 
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->K:Landroid/view/View$OnClickListener;
@@ -606,7 +606,7 @@
     :cond_31
     move v0, v2
 
-    .line 558
+    .line 564
     goto :goto_11
 .end method
 
@@ -614,14 +614,14 @@
     .registers 3
 
     .prologue
-    .line 220
+    .line 217
     invoke-static {p1}, Luk/co/chrisjenx/calligraphy/CalligraphyContextWrapper;->a(Landroid/content/Context;)Landroid/content/ContextWrapper;
 
     move-result-object v0
 
     invoke-super {p0, v0}, Landroid/support/v7/app/AppCompatActivity;->attachBaseContext(Landroid/content/Context;)V
 
-    .line 221
+    .line 218
     return-void
 .end method
 
@@ -629,21 +629,21 @@
     .registers 4
 
     .prologue
-    .line 267
+    .line 264
     if-nez p1, :cond_9
 
-    .line 268
+    .line 265
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->h:Landroid/support/v7/widget/Toolbar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/Toolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 271
+    .line 268
     :goto_8
     return-void
 
-    .line 270
+    .line 267
     :cond_9
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->h:Landroid/support/v7/widget/Toolbar;
 
@@ -656,15 +656,15 @@
     .registers 4
 
     .prologue
-    .line 678
+    .line 686
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->o:Landroid/widget/LinearLayout;
 
     if-eqz v0, :cond_f
 
-    .line 679
+    .line 687
     iput-boolean p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->I:Z
 
-    .line 680
+    .line 688
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->o:Landroid/widget/LinearLayout;
 
     if-eqz p1, :cond_10
@@ -674,11 +674,11 @@
     :goto_c
     invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 682
+    .line 690
     :cond_f
     return-void
 
-    .line 680
+    .line 688
     :cond_10
     const/4 v0, 0x0
 
@@ -689,17 +689,17 @@
     .registers 3
 
     .prologue
-    .line 720
+    .line 728
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
 
     if-eqz v0, :cond_9
 
-    .line 721
+    .line 729
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
 
     invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setVisibility(I)V
 
-    .line 723
+    .line 731
     :cond_9
     return-void
 .end method
@@ -708,7 +708,7 @@
     .registers 7
 
     .prologue
-    .line 701
+    .line 709
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
@@ -731,12 +731,12 @@
 
     if-nez v0, :cond_37
 
-    .line 702
+    .line 710
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->a(ZI)V
 
-    .line 703
+    .line 711
     new-instance v0, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
@@ -763,7 +763,7 @@
 
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;->a(Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;)V
 
-    .line 717
+    .line 725
     :cond_37
     return-void
 .end method
@@ -772,10 +772,10 @@
     .registers 2
 
     .prologue
-    .line 405
+    .line 402
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->finish()V
 
-    .line 406
+    .line 403
     return-void
 .end method
 
@@ -789,14 +789,14 @@
     .registers 2
 
     .prologue
-    .line 224
+    .line 221
     invoke-static {}, Lcom/facebook/CallbackManager$Factory;->create()Lcom/facebook/CallbackManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->F:Lcom/facebook/CallbackManager;
 
-    .line 225
+    .line 222
     return-void
 .end method
 
@@ -806,21 +806,21 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 234
+    .line 231
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->b()Landroid/support/v7/app/ActionBar;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/app/ActionBar;->b(Z)V
 
-    .line 235
+    .line 232
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->b()Landroid/support/v7/app/ActionBar;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/app/ActionBar;->a(Z)V
 
-    .line 236
+    .line 233
     return-void
 .end method
 
@@ -828,10 +828,10 @@
     .registers 6
 
     .prologue
-    .line 281
+    .line 278
     const/4 v0, 0x0
 
-    .line 282
+    .line 279
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -846,10 +846,10 @@
 
     move-result v1
 
-    .line 283
+    .line 280
     if-lez v1, :cond_1c
 
-    .line 284
+    .line 281
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -858,7 +858,7 @@
 
     move-result v0
 
-    .line 286
+    .line 283
     :cond_1c
     return v0
 .end method
@@ -867,16 +867,16 @@
     .registers 7
 
     .prologue
-    .line 317
+    .line 314
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->j:Landroid/widget/TextView;
 
     if-nez v0, :cond_5
 
-    .line 375
+    .line 372
     :goto_4
     return-void
 
-    .line 320
+    .line 317
     :cond_5
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -884,14 +884,14 @@
 
     invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
-    .line 322
+    .line 319
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 323
+    .line 320
     if-eqz v0, :cond_6e
 
     const-string/jumbo v1, ""
@@ -902,10 +902,10 @@
 
     if-nez v1, :cond_6e
 
-    .line 324
+    .line 321
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l:Landroid/widget/TextView;
 
-    const v2, 0x7f0901fc
+    const v2, 0x7f090215
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -913,7 +913,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 325
+    .line 322
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->j:Landroid/widget/TextView;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -948,10 +948,10 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 326
+    .line 323
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->m:Landroid/widget/TextView;
 
-    const v2, 0x7f09027d
+    const v2, 0x7f090294
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -959,12 +959,12 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 327
+    .line 324
     invoke-static {v0}, Lcom/bzbs/marketplace/model/url/UrlModel;->getUrlPoint(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 328
+    .line 325
     new-instance v1, Lcom/bzbs/marketplace/asynctask/point/PointAsynctask;
 
     iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
@@ -979,11 +979,11 @@
 
     goto :goto_4
 
-    .line 371
+    .line 368
     :cond_6e
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l:Landroid/widget/TextView;
 
-    const v1, 0x7f0901fd
+    const v1, 0x7f090216
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -991,10 +991,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 372
+    .line 369
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->j:Landroid/widget/TextView;
 
-    const v1, 0x7f0901fe
+    const v1, 0x7f090217
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -1002,7 +1002,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 373
+    .line 370
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->m:Landroid/widget/TextView;
 
     const-string/jumbo v1, ""
@@ -1016,16 +1016,16 @@
     .registers 3
 
     .prologue
-    .line 540
+    .line 537
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->r:Landroid/widget/RelativeLayout;
 
     if-nez v0, :cond_5
 
-    .line 545
+    .line 542
     :goto_4
     return-void
 
-    .line 544
+    .line 541
     :cond_5
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->r:Landroid/widget/RelativeLayout;
 
@@ -1040,16 +1040,16 @@
     .registers 3
 
     .prologue
-    .line 548
+    .line 545
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->s:Landroid/widget/ImageView;
 
     if-nez v0, :cond_5
 
-    .line 552
+    .line 549
     :goto_4
     return-void
 
-    .line 551
+    .line 548
     :cond_5
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->s:Landroid/widget/ImageView;
 
@@ -1060,42 +1060,73 @@
     goto :goto_4
 .end method
 
+.method public o()V
+    .registers 3
+
+    .prologue
+    .line 552
+    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->s:Landroid/widget/ImageView;
+
+    if-nez v0, :cond_5
+
+    .line 558
+    :goto_4
+    return-void
+
+    .line 555
+    :cond_5
+    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->s:Landroid/widget/ImageView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    .line 557
+    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->s:Landroid/widget/ImageView;
+
+    iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->K:Landroid/view/View$OnClickListener;
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    goto :goto_4
+.end method
+
 .method public onActivityResult(IILandroid/content/Intent;)V
     .registers 5
 
     .prologue
-    .line 673
+    .line 681
     invoke-super {p0, p1, p2, p3}, Landroid/support/v7/app/AppCompatActivity;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 674
+    .line 682
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->F:Lcom/facebook/CallbackManager;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/facebook/CallbackManager;->onActivityResult(IILandroid/content/Intent;)Z
 
-    .line 675
+    .line 683
     return-void
 .end method
 
 .method public onClickUpdate(Landroid/view/View;)V
-    .registers 7
+    .registers 8
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f100537,
-            0x7f100538,
-            0x7f100539
+            0x7f10056b,
+            0x7f10056c,
+            0x7f10056d
         }
     .end annotation
 
     .prologue
-    .line 384
+    .line 381
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 385
-    if-eqz v0, :cond_45
+    .line 382
+    if-eqz v0, :cond_1f
 
     const-string/jumbo v1, ""
 
@@ -1103,71 +1134,39 @@
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_1f
 
-    .line 386
+    .line 383
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     instance-of v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_18
 
-    .line 387
-    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
-
-    iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->b:Landroid/os/Handler;
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogMyPoint;->a(Landroid/content/Context;Landroid/os/Handler;)V
-
-    .line 389
-    const-string/jumbo v0, "BZB Marketplace"
-
-    const-string/jumbo v1, "Click My Points"
-
-    const-string/jumbo v2, "Marketplace | My Points"
-
-    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 402
-    :cond_2a
-    :goto_2a
+    .line 399
+    :cond_17
+    :goto_17
     return-void
 
-    .line 390
-    :cond_2b
+    .line 387
+    :cond_18
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     instance-of v0, v0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_17
 
-    .line 391
-    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
-
-    iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->b:Landroid/os/Handler;
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogMyPoint;->a(Landroid/content/Context;Landroid/os/Handler;)V
+    goto :goto_17
 
     .line 393
-    const-string/jumbo v0, "BZB Marketplace"
-
-    const-string/jumbo v1, "Click My Points"
-
-    const-string/jumbo v2, "Marketplace | My Points"
-
-    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_2a
-
-    .line 396
-    :cond_45
+    :cond_1f
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     instance-of v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    if-eqz v0, :cond_57
+    if-eqz v0, :cond_31
 
-    .line 397
+    .line 394
     const-string/jumbo v0, "BZB Marketplace"
 
     const-string/jumbo v1, "Click You Are Not Logged In"
@@ -1176,8 +1175,8 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 400
-    :cond_57
+    .line 397
+    :cond_31
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->b:Landroid/os/Handler;
@@ -1188,9 +1187,11 @@
 
     const-string/jumbo v4, "account"
 
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v5, 0x0
 
-    goto :goto_2a
+    invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_17
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
@@ -1199,17 +1200,17 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 139
+    .line 136
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 141
+    .line 138
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->b:Landroid/os/Handler;
 
-    .line 143
+    .line 140
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -1222,14 +1223,14 @@
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->a(Z)V
 
-    .line 144
+    .line 141
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->f()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->setContentView(I)V
 
-    .line 147
+    .line 144
     :try_start_20
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1237,7 +1238,7 @@
 
     if-lt v0, v1, :cond_34
 
-    .line 150
+    .line 147
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -1252,7 +1253,7 @@
     :try_end_34
     .catch Ljava/lang/Exception; {:try_start_20 .. :try_end_34} :catch_16d
 
-    .line 156
+    .line 153
     :cond_34
     :goto_34
     invoke-static {p0}, Lcom/tbruyelle/rxpermissions/RxPermissions;->a(Landroid/content/Context;)Lcom/tbruyelle/rxpermissions/RxPermissions;
@@ -1261,23 +1262,23 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->J:Lcom/tbruyelle/rxpermissions/RxPermissions;
 
-    .line 157
+    .line 154
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->J:Lcom/tbruyelle/rxpermissions/RxPermissions;
 
     invoke-virtual {v0, v2}, Lcom/tbruyelle/rxpermissions/RxPermissions;->a(Z)V
 
-    .line 159
+    .line 156
     invoke-static {p0}, Lbutterknife/ButterKnife;->inject(Landroid/app/Activity;)V
 
-    .line 160
+    .line 157
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->y:Landroid/os/Handler;
 
-    .line 161
-    const v0, 0x7f100529
+    .line 158
+    const v0, 0x7f10055d
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1287,8 +1288,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->h:Landroid/support/v7/widget/Toolbar;
 
-    .line 162
-    const v0, 0x7f100479
+    .line 159
+    const v0, 0x7f1004b1
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1298,8 +1299,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->i:Landroid/widget/TextView;
 
-    .line 163
-    const v0, 0x7f100538
+    .line 160
+    const v0, 0x7f10056c
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1309,8 +1310,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->j:Landroid/widget/TextView;
 
-    .line 164
-    const v0, 0x7f100536
+    .line 161
+    const v0, 0x7f10056a
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1320,8 +1321,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->k:Landroid/widget/LinearLayout;
 
-    .line 165
-    const v0, 0x7f100537
+    .line 162
+    const v0, 0x7f10056b
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1331,8 +1332,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l:Landroid/widget/TextView;
 
-    .line 166
-    const v0, 0x7f100539
+    .line 163
+    const v0, 0x7f10056d
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1342,8 +1343,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->m:Landroid/widget/TextView;
 
-    .line 167
-    const v0, 0x7f10052f
+    .line 164
+    const v0, 0x7f100564
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1353,8 +1354,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->o:Landroid/widget/LinearLayout;
 
-    .line 168
-    const v0, 0x7f10052d
+    .line 165
+    const v0, 0x7f100562
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1364,8 +1365,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->p:Landroid/widget/ImageView;
 
-    .line 169
-    const v0, 0x7f10052e
+    .line 166
+    const v0, 0x7f100563
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1375,8 +1376,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->n:Landroid/widget/TextView;
 
-    .line 170
-    const v0, 0x7f10052c
+    .line 167
+    const v0, 0x7f100561
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1386,8 +1387,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->w:Landroid/widget/RelativeLayout;
 
-    .line 171
-    const v0, 0x7f100531
+    .line 168
+    const v0, 0x7f100566
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1397,8 +1398,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->x:Landroid/widget/LinearLayout;
 
-    .line 172
-    const v0, 0x7f100178
+    .line 169
+    const v0, 0x7f10017f
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1408,8 +1409,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->q:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
 
-    .line 173
-    const v0, 0x7f100534
+    .line 170
+    const v0, 0x7f100568
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1419,8 +1420,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->r:Landroid/widget/RelativeLayout;
 
-    .line 174
-    const v0, 0x7f100532
+    .line 171
+    const v0, 0x7f100560
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1430,8 +1431,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->s:Landroid/widget/ImageView;
 
-    .line 175
-    const v0, 0x7f100535
+    .line 172
+    const v0, 0x7f100569
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1441,8 +1442,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->t:Landroid/widget/ImageView;
 
-    .line 176
-    const v0, 0x7f100533
+    .line 173
+    const v0, 0x7f100567
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1452,8 +1453,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->u:Landroid/widget/ImageView;
 
-    .line 177
-    const v0, 0x7f10052b
+    .line 174
+    const v0, 0x7f10055f
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1463,8 +1464,8 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->v:Landroid/widget/ImageView;
 
-    .line 179
-    const v0, 0x7f1004d6
+    .line 176
+    const v0, 0x7f10050f
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1474,17 +1475,17 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
 
-    .line 180
+    .line 177
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->h:Landroid/support/v7/widget/Toolbar;
 
     if-eqz v0, :cond_122
 
-    .line 181
+    .line 178
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->h:Landroid/support/v7/widget/Toolbar;
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->a(Landroid/support/v7/widget/Toolbar;)V
 
-    .line 185
+    .line 182
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->v:Landroid/widget/ImageView;
 
     new-instance v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$1;
@@ -1493,13 +1494,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 194
+    .line 191
     :cond_122
     new-instance v0, Landroid/util/DisplayMetrics;
 
     invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 195
+    .line 192
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getWindowManager()Landroid/view/WindowManager;
 
     move-result-object v1
@@ -1510,17 +1511,17 @@
 
     invoke-virtual {v1, v0}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 196
+    .line 193
     iget v1, v0, Landroid/util/DisplayMetrics;->heightPixels:I
 
     sput v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->B:I
 
-    .line 197
+    .line 194
     iget v1, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
     sput v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
-    .line 198
+    .line 195
     iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
 
     const/high16 v1, 0x42440000    # 49.0f
@@ -1539,23 +1540,23 @@
 
     sput v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->C:I
 
-    .line 199
+    .line 196
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-static {v0}, Lcom/bzbs/data/AppSetting;->l(Landroid/content/Context;)V
 
-    .line 201
+    .line 198
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->i()V
 
-    .line 202
+    .line 199
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g()V
 
-    .line 204
+    .line 201
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/util/ScreenUtils;->a(Landroid/app/Activity;)V
 
-    .line 206
+    .line 203
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
@@ -1568,13 +1569,13 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 215
+    .line 212
     invoke-virtual {p0, p1}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->a(Landroid/os/Bundle;)V
 
-    .line 216
+    .line 213
     return-void
 
-    .line 152
+    .line 149
     :catch_16d
     move-exception v0
 
@@ -1585,7 +1586,7 @@
     .registers 4
 
     .prologue
-    .line 291
+    .line 288
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v0
@@ -1594,10 +1595,10 @@
 
     if-ne v0, v1, :cond_c
 
-    .line 292
+    .line 289
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->onBackPressed()V
 
-    .line 294
+    .line 291
     :cond_c
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
@@ -1610,22 +1611,22 @@
     .registers 3
 
     .prologue
-    .line 456
+    .line 453
     invoke-super {p0}, Landroid/support/v7/app/AppCompatActivity;->onPause()V
 
-    .line 458
+    .line 455
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->M:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;
 
     invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->b(Lcom/bzbs/event/LoginEvents$LoginListener;)V
 
-    .line 461
+    .line 458
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
 
     if-lt v0, v1, :cond_20
 
-    .line 462
+    .line 459
     const-string/jumbo v0, "android.permission.ACCESS_FINE_LOCATION"
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->checkSelfPermission(Ljava/lang/String;)I
@@ -1642,7 +1643,7 @@
 
     if-eqz v0, :cond_20
 
-    .line 474
+    .line 471
     :cond_20
     return-void
 .end method
@@ -1651,10 +1652,10 @@
     .registers 3
 
     .prologue
-    .line 480
+    .line 477
     invoke-super {p0}, Landroid/support/v7/app/AppCompatActivity;->onResume()V
 
-    .line 482
+    .line 479
     new-instance v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;
 
     const/4 v1, 0x0
@@ -1663,25 +1664,25 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->M:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;
 
-    .line 483
+    .line 480
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->M:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;
 
     invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->a(Lcom/bzbs/event/LoginEvents$LoginListener;)V
 
-    .line 484
+    .line 481
     iget-boolean v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->f:Z
 
     if-eqz v0, :cond_14
 
-    .line 497
+    .line 494
     :cond_14
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-static {v0}, Lcom/bzbs/data/AppSetting;->l(Landroid/content/Context;)V
 
-    .line 499
+    .line 496
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l()V
 
-    .line 535
+    .line 532
     return-void
 .end method

@@ -97,7 +97,7 @@
     move-result-object v0
 
     .line 71
-    invoke-static {}, Lcom/bumptech/glide/util/Util;->c()Z
+    invoke-static {}, Lcom/bumptech/glide/util/Util;->d()Z
 
     move-result v1
 

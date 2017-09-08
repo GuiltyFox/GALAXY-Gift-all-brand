@@ -121,7 +121,7 @@
     :cond_6
     const-string/jumbo v0, ""
 
-    const v1, 0x7f0900ed
+    const v1, 0x7f0900e6
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -188,7 +188,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -267,7 +267,7 @@
 
     move-result-object v1
 
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 800
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -351,7 +351,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v2, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -414,7 +414,7 @@
     .line 490
     const-string/jumbo v2, ""
 
-    const v3, 0x7f0900ed
+    const v3, 0x7f0900e6
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -801,7 +801,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v2, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -870,7 +870,7 @@
     .line 507
     const-string/jumbo v3, ""
 
-    const v4, 0x7f0900ed
+    const v4, 0x7f0900e6
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -1012,7 +1012,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1071,7 +1071,7 @@
     .line 669
     const-string/jumbo v2, ""
 
-    const v3, 0x7f0900ed
+    const v3, 0x7f0900e6
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -1093,7 +1093,7 @@
 
     move-result-object v2
 
-    sget-boolean v3, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v3, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 672
     invoke-virtual {v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -1212,7 +1212,7 @@
 
     .prologue
     .line 114
-    const v0, 0x7f100163
+    const v0, 0x7f10016a
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -1262,7 +1262,7 @@
 
     .prologue
     .line 127
-    const v0, 0x7f100116
+    const v0, 0x7f10011d
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -1374,7 +1374,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 83
-    const v0, 0x7f040031
+    const v0, 0x7f040033
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->setContentView(I)V
 
@@ -1386,7 +1386,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->b:Landroid/os/Handler;
 
     .line 88
-    const v0, 0x7f1000ba
+    const v0, 0x7f1000be
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener;->b(Ljava/lang/String;)V
+    value = Lcom/bzbs/marketplace/activity/ReviewActivity$UserLoginListener;->b(Ljava/lang/String;Ljava/lang/Object;)V
 .end annotation
 
 

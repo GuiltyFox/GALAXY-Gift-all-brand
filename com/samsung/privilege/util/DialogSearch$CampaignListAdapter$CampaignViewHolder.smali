@@ -26,14 +26,14 @@
     .registers 4
 
     .prologue
-    .line 377
+    .line 378
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->h:Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter;
 
-    .line 378
+    .line 379
     invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 379
-    const v0, 0x7f10010f
+    .line 380
+    const v0, 0x7f100116
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -43,8 +43,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->a:Landroid/support/v7/widget/CardView;
 
-    .line 380
-    const v0, 0x7f1000d3
+    .line 381
+    const v0, 0x7f1000d9
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -54,8 +54,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->b:Landroid/widget/LinearLayout;
 
-    .line 381
-    const v0, 0x7f100111
+    .line 382
+    const v0, 0x7f100118
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -65,8 +65,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->c:Landroid/widget/ImageView;
 
-    .line 382
-    const v0, 0x7f100112
+    .line 383
+    const v0, 0x7f100119
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -76,8 +76,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->d:Landroid/widget/TextView;
 
-    .line 383
-    const v0, 0x7f100113
+    .line 384
+    const v0, 0x7f10011a
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -87,8 +87,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->e:Landroid/widget/TextView;
 
-    .line 384
-    const v0, 0x7f100115
+    .line 385
+    const v0, 0x7f10011c
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -98,8 +98,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->f:Landroid/widget/TextView;
 
-    .line 385
-    const v0, 0x7f100114
+    .line 386
+    const v0, 0x7f10011b
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -109,6 +109,6 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$CampaignListAdapter$CampaignViewHolder;->g:Landroid/widget/TextView;
 
-    .line 386
+    .line 387
     return-void
 .end method

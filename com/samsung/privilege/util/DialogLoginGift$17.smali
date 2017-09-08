@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Landroid/os/Handler;)V
+    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/Object;)V
 .end annotation
 
 
@@ -27,7 +27,7 @@
     .registers 5
 
     .prologue
-    .line 1117
+    .line 1161
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->a:Landroid/app/Dialog;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/widget/ImageView;
@@ -47,19 +47,19 @@
     .registers 6
 
     .prologue
-    .line 1119
+    .line 1163
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1120
+    .line 1164
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1122
+    .line 1166
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/widget/ImageView;
 
     new-instance v1, Lcom/samsung/privilege/util/DialogLoginGift$17$1;
@@ -70,6 +70,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/ImageView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1128
+    .line 1172
     return-void
 .end method

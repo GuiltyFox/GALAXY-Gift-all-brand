@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 .end annotation
 
 
@@ -20,13 +20,15 @@
 
 .field final synthetic e:Ljava/lang/String;
 
+.field final synthetic f:Ljava/lang/Object;
+
 
 # direct methods
-.method constructor <init>(JLandroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 8
+.method constructor <init>(JLandroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 9
 
     .prologue
-    .line 294
+    .line 298
     iput-wide p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$7;->a:J
 
     iput-object p3, p0, Lcom/samsung/privilege/util/DialogLoginGift$7;->b:Landroid/content/Context;
@@ -36,6 +38,8 @@
     iput-object p5, p0, Lcom/samsung/privilege/util/DialogLoginGift$7;->d:Ljava/lang/String;
 
     iput-object p6, p0, Lcom/samsung/privilege/util/DialogLoginGift$7;->e:Ljava/lang/String;
+
+    iput-object p7, p0, Lcom/samsung/privilege/util/DialogLoginGift$7;->f:Ljava/lang/Object;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
 
@@ -48,10 +52,10 @@
     .registers 13
 
     .prologue
-    .line 328
+    .line 332
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 331
+    .line 335
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -61,7 +65,7 @@
 
     move-result-wide v0
 
-    .line 332
+    .line 336
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "CheckVersionNote"
@@ -76,7 +80,7 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_4e
 
-    .line 337
+    .line 341
     :goto_1b
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -112,22 +116,22 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 339
+    .line 343
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->c()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 340
+    .line 344
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$7;->b:Landroid/content/Context;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 341
+    .line 345
     return-void
 
-    .line 333
+    .line 337
     :catch_4e
     move-exception v0
 
@@ -138,7 +142,7 @@
     .registers 13
 
     .prologue
-    .line 298
+    .line 302
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -148,7 +152,7 @@
 
     move-result-wide v0
 
-    .line 299
+    .line 303
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "CheckVersionNote"
@@ -163,7 +167,7 @@
     :try_end_18
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_52
 
-    .line 304
+    .line 308
     :goto_18
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -199,14 +203,14 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 306
+    .line 310
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->c()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 308
+    .line 312
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$7;->b:Landroid/content/Context;
 
     check-cast v0, Landroid/app/Activity;
@@ -217,10 +221,10 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 324
+    .line 328
     return-void
 
-    .line 300
+    .line 304
     :catch_52
     move-exception v0
 

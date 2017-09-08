@@ -127,7 +127,7 @@
 
     if-nez v1, :cond_5c
 
-    invoke-interface {p0}, Lcom/koushikdutta/async/DataEmitter;->d_()Lcom/koushikdutta/async/callback/DataCallback;
+    invoke-interface {p0}, Lcom/koushikdutta/async/DataEmitter;->e_()Lcom/koushikdutta/async/callback/DataCallback;
 
     move-result-object v0
 
@@ -149,7 +149,7 @@
 
     if-ne v1, v2, :cond_1
 
-    invoke-interface {p0}, Lcom/koushikdutta/async/DataEmitter;->d_()Lcom/koushikdutta/async/callback/DataCallback;
+    invoke-interface {p0}, Lcom/koushikdutta/async/DataEmitter;->e_()Lcom/koushikdutta/async/callback/DataCallback;
 
     move-result-object v1
 

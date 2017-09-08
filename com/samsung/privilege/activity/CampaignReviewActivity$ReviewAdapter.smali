@@ -100,7 +100,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f04002d
+    const v1, 0x7f04002f
 
     const/4 v2, 0x0
 
@@ -181,7 +181,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v5, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v5, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -426,7 +426,7 @@
     .line 543
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->u:Landroid/widget/ImageView;
 
-    const v2, 0x7f0201c0
+    const v2, 0x7f0201d9
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -561,7 +561,7 @@
     :cond_19d
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->u:Landroid/widget/ImageView;
 
-    const v2, 0x7f0201c1
+    const v2, 0x7f0201da
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 

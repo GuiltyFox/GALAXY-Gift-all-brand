@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogSearch;->a(Landroid/content/Context;Landroid/os/Handler;)V
+    value = Lcom/samsung/privilege/util/DialogSearch;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
 .end annotation
 
 
@@ -19,10 +19,12 @@
 
 .field final synthetic c:Landroid/widget/EditText;
 
+.field final synthetic d:Ljava/lang/String;
+
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Landroid/os/Handler;Landroid/widget/EditText;)V
-    .registers 4
+.method constructor <init>(Landroid/content/Context;Landroid/os/Handler;Landroid/widget/EditText;Ljava/lang/String;)V
+    .registers 5
 
     .prologue
     .line 96
@@ -32,6 +34,8 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/util/DialogSearch$1;->c:Landroid/widget/EditText;
 
+    iput-object p4, p0, Lcom/samsung/privilege/util/DialogSearch$1;->d:Ljava/lang/String;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,7 +44,7 @@
 
 # virtual methods
 .method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .registers 8
+    .registers 9
 
     .prologue
     const/4 v1, 0x0
@@ -48,7 +52,7 @@
     .line 99
     const/4 v0, 0x3
 
-    if-ne p2, v0, :cond_57
+    if-ne p2, v0, :cond_59
 
     .line 100
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$1;->a:Landroid/content/Context;
@@ -73,7 +77,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/util/DialogSearch$1;->a:Landroid/content/Context;
 
-    const v3, 0x7f0900db
+    const v3, 0x7f0900d1
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -107,7 +111,9 @@
 
     move-result-object v3
 
-    invoke-static {v0, v2, v3, v1}, Lcom/samsung/privilege/util/DialogSearch;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;I)V
+    iget-object v4, p0, Lcom/samsung/privilege/util/DialogSearch$1;->d:Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v4, v1}, Lcom/samsung/privilege/util/DialogSearch;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;I)V
 
     .line 108
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSearch$1;->a:Landroid/content/Context;
@@ -139,7 +145,7 @@
 
     goto :goto_24
 
-    :cond_57
+    :cond_59
     move v0, v1
 
     .line 115

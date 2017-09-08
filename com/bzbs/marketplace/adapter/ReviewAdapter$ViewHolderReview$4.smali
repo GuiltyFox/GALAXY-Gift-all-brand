@@ -64,7 +64,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v4, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v4, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -149,7 +149,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f02017d
+    const v5, 0x7f020190
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -274,7 +274,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f02017c
+    const v4, 0x7f02018f
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

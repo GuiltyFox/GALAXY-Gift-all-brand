@@ -5,6 +5,12 @@
 .implements Landroid/app/Application$ActivityLifecycleCallbacks;
 
 
+# annotations
+.annotation build Landroid/annotation/TargetApi;
+    value = 0xe
+.end annotation
+
+
 # instance fields
 .field final synthetic a:Lcom/google/android/gms/analytics/GoogleAnalytics;
 

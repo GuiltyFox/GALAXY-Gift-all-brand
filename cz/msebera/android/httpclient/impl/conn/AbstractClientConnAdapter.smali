@@ -474,7 +474,7 @@
     return v0
 .end method
 
-.method public g_()V
+.method public h_()V
     .registers 2
 
     .prologue
@@ -487,13 +487,26 @@
     invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->a(Lcz/msebera/android/httpclient/conn/OperatedClientConnection;)V
 
     .line 201
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->g_()V
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->h_()V
 
     .line 202
     return-void
 .end method
 
-.method public declared-synchronized h_()V
+.method public i()V
+    .registers 2
+
+    .prologue
+    .line 301
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->c:Z
+
+    .line 302
+    return-void
+.end method
+
+.method public declared-synchronized i_()V
     .registers 5
 
     .prologue
@@ -540,19 +553,6 @@
     monitor-exit p0
 
     throw v0
-.end method
-
-.method public i()V
-    .registers 2
-
-    .prologue
-    .line 301
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->c:Z
-
-    .line 302
-    return-void
 .end method
 
 .method public j()V

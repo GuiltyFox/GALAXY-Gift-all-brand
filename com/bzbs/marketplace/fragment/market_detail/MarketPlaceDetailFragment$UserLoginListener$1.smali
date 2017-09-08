@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;->a(Ljava/lang/String;)V
+    value = Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;->a(Ljava/lang/String;Ljava/lang/Object;)V
 .end annotation
 
 
@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 723
+    .line 822
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener$1;->b:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;
 
     iput-object p2, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener$1;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 3
 
     .prologue
-    .line 726
+    .line 825
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener$1;->b:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
@@ -50,8 +50,8 @@
 
     move-result-object v0
 
-    .line 728
-    if-eqz v0, :cond_35
+    .line 827
+    if-eqz v0, :cond_3c
 
     const-string/jumbo v1, ""
 
@@ -59,9 +59,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_35
+    if-nez v0, :cond_3c
 
-    .line 729
+    .line 828
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener$1;->b:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_2a
 
-    .line 730
+    .line 829
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener$1;->b:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
@@ -83,7 +83,7 @@
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->l()V
 
-    .line 732
+    .line 831
     :cond_2a
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener$1;->a:Ljava/lang/String;
 
@@ -95,7 +95,15 @@
 
     if-eqz v0, :cond_35
 
-    .line 736
+    .line 835
     :cond_35
+    iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener$1;->b:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;
+
+    iget-object v0, v0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$UserLoginListener;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
+
+    invoke-static {v0}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->d(Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;)V
+
+    .line 837
+    :cond_3c
     return-void
 .end method

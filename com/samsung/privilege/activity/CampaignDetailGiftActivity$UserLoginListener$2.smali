@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->b(Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->b(Ljava/lang/String;Ljava/lang/Object;)V
 .end annotation
 
 
@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 602
+    .line 609
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->a:Ljava/lang/String;
@@ -41,7 +41,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 605
+    .line 612
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -52,7 +52,7 @@
 
     invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
-    .line 607
+    .line 614
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->a:Ljava/lang/String;
 
     const-string/jumbo v1, "redeem"
@@ -63,7 +63,7 @@
 
     if-eqz v0, :cond_55
 
-    .line 608
+    .line 615
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -76,7 +76,7 @@
 
     move-result-object v0
 
-    .line 609
+    .line 616
     if-eqz v0, :cond_4d
 
     const-string/jumbo v1, ""
@@ -87,14 +87,14 @@
 
     if-nez v0, :cond_4d
 
-    .line 610
+    .line 617
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0, v4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Z)Z
 
-    .line 611
+    .line 618
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -119,7 +119,7 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;ILcom/bzbs/bean/NFCTag;ZZ)V
 
-    .line 632
+    .line 639
     :cond_4d
     :goto_4d
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
@@ -128,10 +128,10 @@
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->e(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
 
-    .line 633
+    .line 640
     return-void
 
-    .line 613
+    .line 620
     :cond_55
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->a:Ljava/lang/String;
 
@@ -143,7 +143,7 @@
 
     if-eqz v0, :cond_8f
 
-    .line 614
+    .line 621
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -156,7 +156,7 @@
 
     move-result-object v0
 
-    .line 615
+    .line 622
     if-eqz v0, :cond_4d
 
     const-string/jumbo v1, ""
@@ -167,7 +167,7 @@
 
     if-nez v0, :cond_4d
 
-    .line 616
+    .line 623
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -192,7 +192,7 @@
 
     goto :goto_4d
 
-    .line 618
+    .line 625
     :cond_8f
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->a:Ljava/lang/String;
 
@@ -204,7 +204,7 @@
 
     if-eqz v0, :cond_d1
 
-    .line 619
+    .line 626
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -217,7 +217,7 @@
 
     move-result-object v0
 
-    .line 620
+    .line 627
     if-eqz v0, :cond_4d
 
     const-string/jumbo v1, ""
@@ -228,7 +228,7 @@
 
     if-nez v0, :cond_4d
 
-    .line 621
+    .line 628
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -251,7 +251,7 @@
 
     invoke-static {v0, v1, v2, v4, v4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;ILcom/bzbs/bean/NFCTag;ZZ)V
 
-    .line 622
+    .line 629
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -260,7 +260,7 @@
 
     goto/16 :goto_4d
 
-    .line 624
+    .line 631
     :cond_d1
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->a:Ljava/lang/String;
 
@@ -272,7 +272,7 @@
 
     if-eqz v0, :cond_4d
 
-    .line 625
+    .line 632
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -285,7 +285,7 @@
 
     move-result-object v0
 
-    .line 626
+    .line 633
     if-eqz v0, :cond_4d
 
     const-string/jumbo v1, ""
@@ -296,7 +296,7 @@
 
     if-nez v0, :cond_4d
 
-    .line 627
+    .line 634
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -319,7 +319,7 @@
 
     invoke-static {v0, v1, v2, v4, v4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;ILcom/bzbs/bean/NFCTag;ZZ)V
 
-    .line 628
+    .line 635
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;

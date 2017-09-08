@@ -5,7 +5,7 @@
 # static fields
 .field static a:Ljava/lang/Object;
 
-.field static b:Lcom/google/android/gms/internal/zzse;
+.field static b:Lcom/google/android/gms/internal/zzxr;
 
 .field static c:Ljava/lang/Boolean;
 
@@ -23,18 +23,10 @@
     return-void
 .end method
 
-.method public constructor <init>()V
-    .registers 1
-
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
-
-    return-void
-.end method
-
 .method public static a(Landroid/content/Context;)Z
     .registers 3
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->c:Ljava/lang/Boolean;
 
@@ -50,11 +42,11 @@
     return v0
 
     :cond_e
-    const-class v0, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;
+    const-string/jumbo v0, "com.google.android.gms.analytics.CampaignTrackingReceiver"
 
     const/4 v1, 0x1
 
-    invoke-static {p0, v0, v1}, Lcom/google/android/gms/analytics/internal/zzam;->a(Landroid/content/Context;Ljava/lang/Class;Z)Z
+    invoke-static {p0, v0, v1}, Lcom/google/android/gms/analytics/internal/zzao;->a(Landroid/content/Context;Ljava/lang/String;Z)Z
 
     move-result v0
 
@@ -86,8 +78,8 @@
     return-object v0
 .end method
 
-.method protected a(Ljava/lang/String;)V
-    .registers 2
+.method protected a(Landroid/content/Context;Ljava/lang/String;)V
+    .registers 3
 
     return-void
 .end method
@@ -103,6 +95,16 @@
 
     move-result-object v1
 
+    if-nez p2, :cond_11
+
+    const-string/jumbo v0, "CampaignTrackingReceiver received null intent"
+
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/analytics/internal/zzaf;->e(Ljava/lang/String;)V
+
+    :goto_10
+    return-void
+
+    :cond_11
     const-string/jumbo v2, "referrer"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -123,58 +125,42 @@
 
     move-result v3
 
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_31
 
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_2f
+    if-eqz v3, :cond_38
 
-    :cond_28
+    :cond_31
     const-string/jumbo v0, "CampaignTrackingReceiver received unexpected intent without referrer extra"
 
     invoke-virtual {v1, v0}, Lcom/google/android/gms/analytics/internal/zzaf;->e(Ljava/lang/String;)V
 
-    :goto_2e
-    return-void
+    goto :goto_10
 
-    :cond_2f
+    :cond_38
     invoke-static {p1}, Lcom/google/android/gms/analytics/CampaignTrackingService;->a(Landroid/content/Context;)Z
 
     move-result v3
 
-    if-nez v3, :cond_3b
+    if-nez v3, :cond_44
 
     const-string/jumbo v4, "CampaignTrackingService not registered or disabled. Installation tracking not possible. See http://goo.gl/8Rd3yj for instructions."
 
     invoke-virtual {v1, v4}, Lcom/google/android/gms/analytics/internal/zzaf;->e(Ljava/lang/String;)V
 
-    :cond_3b
-    invoke-virtual {p0, v2}, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->a(Ljava/lang/String;)V
+    :cond_44
+    invoke-virtual {p0, p1, v2}, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->a(Landroid/content/Context;Ljava/lang/String;)V
 
     invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->e()Lcom/google/android/gms/analytics/internal/zzr;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4f
-
-    const-string/jumbo v0, "Received unexpected installation campaign on package side"
-
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/analytics/internal/zzaf;->f(Ljava/lang/String;)V
-
-    goto :goto_2e
-
-    :cond_4f
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->a()Ljava/lang/Class;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v4, Landroid/content/Intent;
 
@@ -188,70 +174,70 @@
 
     monitor-enter v2
 
-    :try_start_64
+    :try_start_5f
     invoke-virtual {p1, v4}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    if-nez v3, :cond_6e
+    if-nez v3, :cond_69
 
     monitor-exit v2
 
-    goto :goto_2e
+    goto :goto_10
 
-    :catchall_6b
+    :catchall_66
     move-exception v0
 
     monitor-exit v2
-    :try_end_6d
-    .catchall {:try_start_64 .. :try_end_6d} :catchall_6b
+    :try_end_68
+    .catchall {:try_start_5f .. :try_end_68} :catchall_66
 
     throw v0
 
-    :cond_6e
-    :try_start_6e
-    sget-object v0, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->b:Lcom/google/android/gms/internal/zzse;
+    :cond_69
+    :try_start_69
+    sget-object v0, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->b:Lcom/google/android/gms/internal/zzxr;
 
-    if-nez v0, :cond_83
+    if-nez v0, :cond_7e
 
-    new-instance v0, Lcom/google/android/gms/internal/zzse;
+    new-instance v0, Lcom/google/android/gms/internal/zzxr;
 
     const/4 v3, 0x1
 
     const-string/jumbo v4, "Analytics campaign WakeLock"
 
-    invoke-direct {v0, p1, v3, v4}, Lcom/google/android/gms/internal/zzse;-><init>(Landroid/content/Context;ILjava/lang/String;)V
+    invoke-direct {v0, p1, v3, v4}, Lcom/google/android/gms/internal/zzxr;-><init>(Landroid/content/Context;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->b:Lcom/google/android/gms/internal/zzse;
+    sput-object v0, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->b:Lcom/google/android/gms/internal/zzxr;
 
-    sget-object v0, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->b:Lcom/google/android/gms/internal/zzse;
+    sget-object v0, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->b:Lcom/google/android/gms/internal/zzxr;
 
     const/4 v3, 0x0
 
-    invoke-virtual {v0, v3}, Lcom/google/android/gms/internal/zzse;->a(Z)V
+    invoke-virtual {v0, v3}, Lcom/google/android/gms/internal/zzxr;->a(Z)V
 
-    :cond_83
-    sget-object v0, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->b:Lcom/google/android/gms/internal/zzse;
+    :cond_7e
+    sget-object v0, Lcom/google/android/gms/analytics/CampaignTrackingReceiver;->b:Lcom/google/android/gms/internal/zzxr;
 
     const-wide/16 v4, 0x3e8
 
-    invoke-virtual {v0, v4, v5}, Lcom/google/android/gms/internal/zzse;->a(J)V
-    :try_end_8a
-    .catch Ljava/lang/SecurityException; {:try_start_6e .. :try_end_8a} :catch_8c
-    .catchall {:try_start_6e .. :try_end_8a} :catchall_6b
+    invoke-virtual {v0, v4, v5}, Lcom/google/android/gms/internal/zzxr;->a(J)V
+    :try_end_85
+    .catch Ljava/lang/SecurityException; {:try_start_69 .. :try_end_85} :catch_87
+    .catchall {:try_start_69 .. :try_end_85} :catchall_66
 
-    :goto_8a
-    :try_start_8a
+    :goto_85
+    :try_start_85
     monitor-exit v2
 
-    goto :goto_2e
+    goto :goto_10
 
-    :catch_8c
+    :catch_87
     move-exception v0
 
     const-string/jumbo v0, "CampaignTrackingService service at risk of not starting. For more reliable installation campaign reports, add the WAKE_LOCK permission to your manifest. See http://goo.gl/8Rd3yj for instructions."
 
     invoke-virtual {v1, v0}, Lcom/google/android/gms/analytics/internal/zzaf;->e(Ljava/lang/String;)V
-    :try_end_93
-    .catchall {:try_start_8a .. :try_end_93} :catchall_6b
+    :try_end_8e
+    .catchall {:try_start_85 .. :try_end_8e} :catchall_66
 
-    goto :goto_8a
+    goto :goto_85
 .end method

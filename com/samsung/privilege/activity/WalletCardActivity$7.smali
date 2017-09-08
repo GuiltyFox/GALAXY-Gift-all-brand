@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 829
+    .line 877
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,30 +35,14 @@
     .registers 8
 
     .prologue
-    .line 832
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
+    const/4 v2, 0x1
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->m:Landroid/widget/RelativeLayout;
-
-    const v1, 0x7f0e0038
-
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
-
-    .line 833
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->l:Landroid/widget/ImageView;
-
-    const v1, 0x7f0201ab
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 834
+    .line 882
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->n:Landroid/widget/TextView;
 
-    const-string/jumbo v1, "#ffffff"
+    const-string/jumbo v1, "#277cbc"
 
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
@@ -66,30 +50,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 836
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->y:Landroid/widget/RelativeLayout;
-
-    const v1, 0x7f0e0037
-
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
-
-    .line 837
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->x:Landroid/widget/ImageView;
-
-    const v1, 0x7f0201a6
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 838
+    .line 886
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->z:Landroid/widget/TextView;
 
-    const-string/jumbo v1, "#006cac"
+    const-string/jumbo v1, "#9c9c9c"
 
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
@@ -97,25 +63,87 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 839
+    .line 888
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->A:Landroid/widget/TextView;
+    const v1, 0x7f05001a
 
-    const-string/jumbo v1, "#006cac"
+    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
-    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    move-result-object v0
 
-    move-result v1
+    .line 889
+    invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+    .line 890
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    .line 841
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->B:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->clearAnimation()V
+
+    .line 891
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->B:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setAnimation(Landroid/view/animation/Animation;)V
+
+    .line 892
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->B:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+
+    .line 893
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->B:Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 895
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    const v1, 0x7f05003a
+
+    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+
+    move-result-object v0
+
+    .line 896
+    invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
+
+    .line 897
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->E:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->clearAnimation()V
+
+    .line 898
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->E:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setAnimation(Landroid/view/animation/Animation;)V
+
+    .line 899
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->E:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+
+    .line 901
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$7;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->i(Lcom/samsung/privilege/activity/WalletCardActivity;)V
 
-    .line 843
+    .line 903
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -160,6 +188,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 844
+    .line 904
     return-void
 .end method

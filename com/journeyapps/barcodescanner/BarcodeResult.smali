@@ -52,7 +52,21 @@
     return-object v0
 .end method
 
-.method public b()[B
+.method public b()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 109
+    iget-object v0, p0, Lcom/journeyapps/barcodescanner/BarcodeResult;->a:Lcom/google/zxing/Result;
+
+    invoke-virtual {v0}, Lcom/google/zxing/Result;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public c()[B
     .registers 2
 
     .prologue
@@ -66,7 +80,7 @@
     return-object v0
 .end method
 
-.method public c()Lcom/google/zxing/BarcodeFormat;
+.method public d()Lcom/google/zxing/BarcodeFormat;
     .registers 2
 
     .prologue
@@ -80,7 +94,7 @@
     return-object v0
 .end method
 
-.method public d()Ljava/util/Map;
+.method public e()Ljava/util/Map;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {

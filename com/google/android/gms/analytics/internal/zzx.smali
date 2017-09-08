@@ -39,13 +39,13 @@
 
     const/4 v0, 0x0
 
-    const/16 v2, 0x9
-
     invoke-static {}, Lcom/google/android/gms/analytics/internal/zzx;->a()I
 
-    move-result v3
+    move-result v2
 
-    if-ge v3, v2, :cond_b
+    const/16 v3, 0x9
+
+    if-ge v2, v3, :cond_b
 
     :goto_a
     return v0

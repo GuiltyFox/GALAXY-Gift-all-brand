@@ -646,7 +646,7 @@
     invoke-virtual {v0, v5}, Lrx/subjects/PublishSubject;->a_(Ljava/lang/Object;)V
 
     .line 326
-    invoke-virtual {v0}, Lrx/subjects/PublishSubject;->m_()V
+    invoke-virtual {v0}, Lrx/subjects/PublishSubject;->n_()V
 
     .line 315
     add-int/lit8 v0, v3, 0x1
@@ -803,7 +803,7 @@
     check-cast v0, Lrx/subjects/Subject;
 
     .line 309
-    invoke-virtual {v0}, Lrx/subjects/Subject;->m_()V
+    invoke-virtual {v0}, Lrx/subjects/Subject;->n_()V
 
     goto :goto_10
 

@@ -20,7 +20,7 @@
     .registers 3
 
     .prologue
-    .line 212
+    .line 221
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$1;->a:Landroid/support/v4/view/ViewPager;
@@ -36,7 +36,7 @@
     .registers 3
 
     .prologue
-    .line 215
+    .line 224
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -45,11 +45,11 @@
 
     if-nez v0, :cond_9
 
-    .line 229
+    .line 238
     :goto_8
     return-void
 
-    .line 217
+    .line 226
     :cond_9
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 

@@ -43,15 +43,15 @@
     .end annotation
 
     .prologue
-    .line 2816
+    .line 3177
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;-><init>()V
 
-    .line 2817
+    .line 3178
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->a:Ljava/util/List;
 
-    .line 2818
+    .line 3179
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .registers 6
 
     .prologue
-    .line 2834
+    .line 3195
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400d2
+    const v1, 0x7f040061
 
     const/4 v2, 0x0
 
@@ -78,12 +78,12 @@
 
     move-result-object v0
 
-    .line 2835
+    .line 3196
     new-instance v1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;
 
     invoke-direct {v1, p0, v0}, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;Landroid/view/View;)V
 
-    .line 2836
+    .line 3197
     return-object v1
 .end method
 
@@ -99,7 +99,7 @@
 
     const/16 v7, 0x8
 
-    .line 2841
+    .line 3202
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -108,10 +108,10 @@
 
     check-cast v0, Lcom/bzbs/bean/Campaign;
 
-    .line 2843
+    .line 3204
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->t(Lcom/samsung/privilege/activity/WalletCardActivity;)I
+    invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->x(Lcom/samsung/privilege/activity/WalletCardActivity;)I
 
     move-result v1
 
@@ -119,25 +119,25 @@
 
     if-ne v1, v2, :cond_114
 
-    .line 2844
+    .line 3205
     if-eqz p2, :cond_1c
 
     if-eq p2, v3, :cond_1c
 
     if-ne p2, v4, :cond_108
 
-    .line 2845
+    .line 3206
     :cond_1c
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->a:Landroid/view/View;
 
     invoke-virtual {v1, v8}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2846
+    .line 3207
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->b:Landroid/view/View;
 
     invoke-virtual {v1, v7}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2861
+    .line 3222
     :goto_26
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->f:Landroid/widget/TextView;
 
@@ -145,24 +145,24 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2862
+    .line 3223
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->g:Landroid/widget/TextView;
 
     iget-object v2, v0, Lcom/bzbs/bean/Campaign;->Name:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2864
+    .line 3225
     iget v1, v0, Lcom/bzbs/bean/Campaign;->DayProceed:I
 
     if-gt v1, v4, :cond_130
 
-    .line 2865
+    .line 3226
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->h:Landroid/widget/TextView;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v3, 0x7f090067
+    const v3, 0x7f09005a
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -170,14 +170,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2866
+    .line 3227
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->h:Landroid/widget/TextView;
 
     sget v2, Lcom/bzbs/data/AppSetting;->e:I
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2878
+    .line 3239
     :goto_4d
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
@@ -191,17 +191,17 @@
 
     if-eqz v1, :cond_1a1
 
-    .line 2879
+    .line 3240
     new-instance v2, Ljava/text/DecimalFormat;
 
     const-string/jumbo v1, "#,###,###"
 
     invoke-direct {v2, v1}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
-    .line 2881
+    .line 3242
     const-string/jumbo v1, ""
 
-    .line 2883
+    .line 3244
     :try_start_64
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -209,7 +209,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v5, 0x7f09007d
+    const v5, 0x7f090071
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -241,18 +241,18 @@
 
     move-result-object v1
 
-    .line 2888
+    .line 3249
     :goto_8b
     iget-object v2, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->i:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2889
+    .line 3250
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->i:Landroid/widget/TextView;
 
     invoke-virtual {v1, v8}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2894
+    .line 3255
     :goto_95
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
@@ -272,7 +272,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0201b4
+    const v2, 0x7f0201ca
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -288,7 +288,7 @@
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 2896
+    .line 3257
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->d:Landroid/widget/LinearLayout;
 
     new-instance v2, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$1;
@@ -297,7 +297,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2909
+    .line 3270
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -360,55 +360,55 @@
 
     invoke-static {v1, v2, v0, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 2910
+    .line 3271
     return-void
 
-    .line 2848
+    .line 3209
     :cond_108
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->a:Landroid/view/View;
 
     invoke-virtual {v1, v7}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2849
+    .line 3210
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->b:Landroid/view/View;
 
     invoke-virtual {v1, v7}, Landroid/view/View;->setVisibility(I)V
 
     goto/16 :goto_26
 
-    .line 2852
+    .line 3213
     :cond_114
     if-eqz p2, :cond_118
 
     if-ne p2, v3, :cond_124
 
-    .line 2853
+    .line 3214
     :cond_118
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->a:Landroid/view/View;
 
     invoke-virtual {v1, v8}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2854
+    .line 3215
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->b:Landroid/view/View;
 
     invoke-virtual {v1, v7}, Landroid/view/View;->setVisibility(I)V
 
     goto/16 :goto_26
 
-    .line 2856
+    .line 3217
     :cond_124
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->a:Landroid/view/View;
 
     invoke-virtual {v1, v7}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2857
+    .line 3218
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->b:Landroid/view/View;
 
     invoke-virtual {v1, v7}, Landroid/view/View;->setVisibility(I)V
 
     goto/16 :goto_26
 
-    .line 2868
+    .line 3229
     :cond_130
     iget-object v1, v0, Lcom/bzbs/bean/Campaign;->ExpireDate:Ljava/lang/String;
 
@@ -432,19 +432,19 @@
 
     sub-long/2addr v2, v4
 
-    .line 2869
+    .line 3230
     const-wide/16 v4, 0x0
 
     cmp-long v1, v2, v4
 
     if-lez v1, :cond_192
 
-    .line 2870
+    .line 3231
     const-wide/32 v4, 0x15180
 
     div-long/2addr v2, v4
 
-    .line 2871
+    .line 3232
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->h:Landroid/widget/TextView;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -453,7 +453,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v6, 0x7f09007e
+    const v6, 0x7f090072
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -481,7 +481,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v4, 0x7f09007f
+    const v4, 0x7f090073
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -497,7 +497,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2875
+    .line 3236
     :goto_189
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->h:Landroid/widget/TextView;
 
@@ -507,13 +507,13 @@
 
     goto/16 :goto_4d
 
-    .line 2873
+    .line 3234
     :cond_192
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->h:Landroid/widget/TextView;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v3, 0x7f090080
+    const v3, 0x7f090074
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -523,7 +523,7 @@
 
     goto :goto_189
 
-    .line 2891
+    .line 3252
     :cond_1a1
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->i:Landroid/widget/TextView;
 
@@ -531,7 +531,7 @@
 
     goto/16 :goto_95
 
-    .line 2884
+    .line 3245
     :catch_1a8
     move-exception v2
 
@@ -551,12 +551,12 @@
     .end annotation
 
     .prologue
-    .line 2829
+    .line 3190
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 2830
+    .line 3191
     return-void
 .end method
 
@@ -564,7 +564,7 @@
     .registers 2
 
     .prologue
-    .line 2914
+    .line 3275
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -578,10 +578,10 @@
     .registers 2
 
     .prologue
-    .line 2919
+    .line 3280
     invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView$Adapter;->onAttachedToRecyclerView(Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 2920
+    .line 3281
     return-void
 .end method
 
@@ -589,7 +589,7 @@
     .registers 3
 
     .prologue
-    .line 2812
+    .line 3173
     check-cast p1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;
 
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->a(Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;I)V
@@ -601,7 +601,7 @@
     .registers 4
 
     .prologue
-    .line 2812
+    .line 3173
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->a(Landroid/view/ViewGroup;I)Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;
 
     move-result-object v0

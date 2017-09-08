@@ -48,7 +48,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->V:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->aa:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -97,7 +97,7 @@
     .line 80
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogQueue$4;->a:Landroid/app/Dialog;
 
-    const v3, 0x7f10041a
+    const v3, 0x7f100451
 
     invoke-virtual {v0, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -163,7 +163,7 @@
 
     move-result-object v0
 
-    sget-boolean v3, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v3, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 86
     invoke-virtual {v0, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 2031
+    .line 2073
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->a:Lcom/samsung/privilege/util/DialogLoginGift$34;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,9 +35,9 @@
     .registers 3
 
     .prologue
-    .line 2033
+    .line 2075
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 2034
+    .line 2076
     return-void
 .end method

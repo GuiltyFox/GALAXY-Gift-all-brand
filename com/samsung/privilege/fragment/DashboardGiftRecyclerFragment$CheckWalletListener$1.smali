@@ -13,20 +13,16 @@
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/String;
-
-.field final synthetic b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
+.field final synthetic a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;Ljava/lang/String;)V
-    .registers 3
+.method constructor <init>(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;)V
+    .registers 2
 
     .prologue
-    .line 291
-    iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
-
-    iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->a:Ljava/lang/String;
+    .line 302
+    iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,39 +35,8 @@
     .registers 5
 
     .prologue
-    .line 294
-    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
-
-    iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
-
-    invoke-static {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "onPaymentSuccess:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 296
-    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
+    .line 305
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
@@ -79,18 +44,18 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Ljava/util/ArrayList;)V
 
-    .line 299
-    :try_start_29
-    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
+    .line 308
+    :try_start_8
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->c:Lcom/samsung/privilege/holder/DashboardHolder_wallet;
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1b
 
-    .line 300
-    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
+    .line 309
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
@@ -99,20 +64,20 @@
     iget-object v0, v0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->M:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0}, Landroid/widget/RelativeLayout;->performClick()Z
-    :try_end_3c
-    .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_3c} :catch_3d
+    :try_end_1b
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_1b} :catch_1c
 
-    .line 305
-    :cond_3c
-    :goto_3c
+    .line 314
+    :cond_1b
+    :goto_1b
     return-void
 
-    .line 302
-    :catch_3d
+    .line 311
+    :catch_1c
     move-exception v0
 
-    .line 303
-    iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
+    .line 312
+    iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
 
     iget-object v1, v1, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
@@ -144,5 +109,5 @@
 
     invoke-static {v1, v0}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_3c
+    goto :goto_1b
 .end method

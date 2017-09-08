@@ -45,18 +45,18 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f1004c0
+    const v6, 0x7f1004f8
 
-    const v5, 0x7f1004bb
+    const v2, 0x7f1004f7
 
-    const v4, 0x7f100474
+    const v5, 0x7f1004f2
 
-    const v3, 0x7f100473
+    const v4, 0x7f1004ac
 
-    const v2, 0x7f1001c4
+    const v3, 0x7f1004ab
 
     .line 11
-    const-string/jumbo v0, "field \'imageProfile\'"
+    const-string/jumbo v0, "field \'textDisplay\'"
 
     invoke-virtual {p1, p3, v2, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
@@ -65,29 +65,9 @@
     check-cast v0, Landroid/view/View;
 
     .line 12
-    const-string/jumbo v1, "field \'imageProfile\'"
-
-    invoke-virtual {p1, v0, v2, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->imageProfile:Landroid/widget/ImageView;
-
-    .line 13
-    const-string/jumbo v0, "field \'textDisplay\'"
-
-    invoke-virtual {p1, p3, v6, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    .line 14
     const-string/jumbo v1, "field \'textDisplay\'"
 
-    invoke-virtual {p1, v0, v6, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v2, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -95,8 +75,8 @@
 
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textDisplay:Landroid/widget/TextView;
 
-    .line 15
-    const v0, 0x7f1004c3
+    .line 13
+    const v0, 0x7f1004fa
 
     const-string/jumbo v1, "field \'textPost\'"
 
@@ -106,8 +86,8 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 16
-    const v1, 0x7f1004c3
+    .line 14
+    const v1, 0x7f1004fa
 
     const-string/jumbo v2, "field \'textPost\'"
 
@@ -119,8 +99,8 @@
 
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textPost:Landroid/widget/TextView;
 
-    .line 17
-    const v0, 0x7f1004c2
+    .line 15
+    const v0, 0x7f1004f9
 
     const-string/jumbo v1, "field \'textCreateTime\'"
 
@@ -130,8 +110,8 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 18
-    const v1, 0x7f1004c2
+    .line 16
+    const v1, 0x7f1004f9
 
     const-string/jumbo v2, "field \'textCreateTime\'"
 
@@ -143,23 +123,19 @@
 
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textCreateTime:Landroid/widget/TextView;
 
-    .line 19
-    const v0, 0x7f1004c1
+    .line 17
+    const-string/jumbo v0, "field \'textCreateDate\'"
 
-    const-string/jumbo v1, "field \'textCreateDate\'"
-
-    invoke-virtual {p1, p3, v0, v1}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p3, v6, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/View;
 
-    .line 20
-    const v1, 0x7f1004c1
+    .line 18
+    const-string/jumbo v1, "field \'textCreateDate\'"
 
-    const-string/jumbo v2, "field \'textCreateDate\'"
-
-    invoke-virtual {p1, v0, v1, v2}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v6, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -167,7 +143,7 @@
 
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textCreateDate:Landroid/widget/TextView;
 
-    .line 21
+    .line 19
     const-string/jumbo v0, "field \'imagePost\'"
 
     invoke-virtual {p1, p3, v5, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
@@ -176,7 +152,7 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 22
+    .line 20
     const-string/jumbo v1, "field \'imagePost\'"
 
     invoke-virtual {p1, v0, v5, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
@@ -187,7 +163,7 @@
 
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->imagePost:Landroid/widget/ImageView;
 
-    .line 23
+    .line 21
     const-string/jumbo v0, "field \'textViewComment\'"
 
     invoke-virtual {p1, p3, v4, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
@@ -196,7 +172,7 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 24
+    .line 22
     const-string/jumbo v1, "field \'textViewComment\'"
 
     invoke-virtual {p1, v0, v4, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
@@ -207,8 +183,8 @@
 
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textViewComment:Landroid/widget/TextView;
 
-    .line 25
-    const v0, 0x7f1004c5
+    .line 23
+    const v0, 0x7f1004fc
 
     const-string/jumbo v1, "field \'imageHeader\'"
 
@@ -218,8 +194,8 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 26
-    const v1, 0x7f1004c5
+    .line 24
+    const v1, 0x7f1004fc
 
     const-string/jumbo v2, "field \'imageHeader\'"
 
@@ -231,7 +207,7 @@
 
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->imageHeader:Landroid/widget/ImageView;
 
-    .line 27
+    .line 25
     const-string/jumbo v0, "field \'layoutComment\'"
 
     invoke-virtual {p1, p3, v3, v0}, Lbutterknife/ButterKnife$Finder;->findRequiredView(Ljava/lang/Object;ILjava/lang/String;)Ljava/lang/Object;
@@ -240,7 +216,7 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 28
+    .line 26
     const-string/jumbo v1, "field \'layoutComment\'"
 
     invoke-virtual {p1, v0, v3, v1}, Lbutterknife/ButterKnife$Finder;->castView(Landroid/view/View;ILjava/lang/String;)Ljava/lang/Object;
@@ -251,7 +227,7 @@
 
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->layoutComment:Landroid/widget/LinearLayout;
 
-    .line 29
+    .line 27
     return-void
 .end method
 
@@ -278,34 +254,31 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 32
-    iput-object v0, p1, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->imageProfile:Landroid/widget/ImageView;
-
-    .line 33
+    .line 30
     iput-object v0, p1, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textDisplay:Landroid/widget/TextView;
 
-    .line 34
+    .line 31
     iput-object v0, p1, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textPost:Landroid/widget/TextView;
 
-    .line 35
+    .line 32
     iput-object v0, p1, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textCreateTime:Landroid/widget/TextView;
 
-    .line 36
+    .line 33
     iput-object v0, p1, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textCreateDate:Landroid/widget/TextView;
 
-    .line 37
+    .line 34
     iput-object v0, p1, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->imagePost:Landroid/widget/ImageView;
 
-    .line 38
+    .line 35
     iput-object v0, p1, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textViewComment:Landroid/widget/TextView;
 
-    .line 39
+    .line 36
     iput-object v0, p1, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->imageHeader:Landroid/widget/ImageView;
 
-    .line 40
+    .line 37
     iput-object v0, p1, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->layoutComment:Landroid/widget/LinearLayout;
 
-    .line 41
+    .line 38
     return-void
 .end method
 

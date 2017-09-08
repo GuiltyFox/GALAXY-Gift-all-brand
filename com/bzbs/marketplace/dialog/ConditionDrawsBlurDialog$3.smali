@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->h()V
+    value = Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->f()V
 .end annotation
 
 
@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 159
+    .line 162
     iput-object p1, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$3;->a:Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
 
     invoke-direct {p0}, Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;-><init>()V
@@ -32,41 +32,36 @@
     .registers 8
 
     .prologue
-    .line 164
+    .line 167
     iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$3;->a:Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
 
-    invoke-static {v0}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->b(Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;)Landroid/app/ProgressDialog;
+    invoke-static {v0}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->a(Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;)Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     if-eqz v0, :cond_11
 
-    .line 165
+    .line 168
     iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$3;->a:Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
 
-    invoke-static {v0}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->b(Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;)Landroid/app/ProgressDialog;
+    invoke-static {v0}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->a(Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;)Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 167
+    .line 171
     :cond_11
-    iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$3;->a:Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
-
-    invoke-virtual {v0}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->dismiss()V
-
-    .line 169
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->f()Landroid/app/Activity;
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Landroid/app/Activity;
 
     move-result-object v0
 
     instance-of v0, v0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_22
 
-    .line 170
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->f()Landroid/app/Activity;
+    .line 172
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Landroid/app/Activity;
 
     move-result-object v0
 
@@ -74,13 +69,18 @@
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->l()V
 
-    .line 172
-    :cond_27
+    .line 174
+    :cond_22
     const/16 v0, 0xc8
 
     if-ne p1, v0, :cond_4f
 
-    .line 173
+    .line 175
+    iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$3;->a:Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
+
+    invoke-virtual {v0}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->dismiss()V
+
+    .line 176
     new-instance v0, Lcom/google/gson/Gson;
 
     invoke-direct {v0}, Lcom/google/gson/Gson;-><init>()V
@@ -97,8 +97,8 @@
 
     check-cast v0, Lcom/bzbs/marketplace/model/dialog/ConditionDrawSuccessModel;
 
-    .line 174
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->f()Landroid/app/Activity;
+    .line 177
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Landroid/app/Activity;
 
     move-result-object v0
 
@@ -108,22 +108,30 @@
 
     move-result-object v1
 
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->h()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     move-result-object v2
 
     invoke-static {v0, v1, v2}, Lcom/bzbs/marketplace/dialog/util/DialogUtils;->a(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;)V
 
-    .line 183
+    .line 194
     :cond_4e
     :goto_4e
     return-void
 
-    .line 176
-    :cond_4f
-    if-eqz p3, :cond_4e
-
     .line 179
+    :cond_4f
+    if-nez p3, :cond_57
+
+    .line 180
+    iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$3;->a:Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
+
+    invoke-virtual {v0}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->dismiss()V
+
+    goto :goto_4e
+
+    .line 183
+    :cond_57
     new-instance v0, Lcom/google/gson/Gson;
 
     invoke-direct {v0}, Lcom/google/gson/Gson;-><init>()V
@@ -140,11 +148,66 @@
 
     check-cast v0, Lcom/bzbs/marketplace/model/dialog/ErrorDialogModel;
 
-    .line 180
+    .line 184
     if-eqz v0, :cond_4e
 
-    .line 181
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->f()Landroid/app/Activity;
+    .line 185
+    invoke-virtual {v0}, Lcom/bzbs/marketplace/model/dialog/ErrorDialogModel;->getError()Lcom/bzbs/marketplace/model/dialog/ErrorDialogModel$ErrorEntity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/bzbs/marketplace/model/dialog/ErrorDialogModel$ErrorEntity;->getCode()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "409"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_9b
+
+    invoke-virtual {v0}, Lcom/bzbs/marketplace/model/dialog/ErrorDialogModel;->getError()Lcom/bzbs/marketplace/model/dialog/ErrorDialogModel$ErrorEntity;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/bzbs/marketplace/model/dialog/ErrorDialogModel$ErrorEntity;->getId()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "1201"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_9b
+
+    .line 186
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->i()Lcom/bzbs/event/CallbackOTPDialog;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_4e
+
+    .line 187
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->i()Lcom/bzbs/event/CallbackOTPDialog;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/bzbs/event/CallbackOTPDialog;->a()V
+
+    goto :goto_4e
+
+    .line 189
+    :cond_9b
+    iget-object v1, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$3;->a:Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
+
+    invoke-virtual {v1}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->dismiss()V
+
+    .line 190
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Landroid/app/Activity;
 
     move-result-object v1
 
@@ -154,7 +217,7 @@
 
     move-result-object v2
 
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->h()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     move-result-object v3
 
@@ -175,9 +238,9 @@
     .registers 5
 
     .prologue
-    .line 187
+    .line 198
     invoke-virtual {p0, p1, p2, p3}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$3;->a(I[Lcz/msebera/android/httpclient/Header;[B)V
 
-    .line 188
+    .line 199
     return-void
 .end method

@@ -29,7 +29,7 @@
     .registers 6
 
     .prologue
-    .line 592
+    .line 533
     iput-object p1, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->e:Lcom/samsung/privilege/service/BeaconStarterService;
 
     iput-object p2, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->a:Landroid/app/Dialog;
@@ -53,12 +53,12 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 595
+    .line 536
     iget-object v0, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 597
+    .line 538
     iget-object v0, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->b:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v0, v0, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
@@ -71,7 +71,7 @@
 
     if-eqz v0, :cond_aa
 
-    .line 598
+    .line 539
     iget-object v0, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->b:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v0, v0, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
@@ -92,7 +92,7 @@
 
     if-eqz v0, :cond_c6
 
-    .line 599
+    .line 540
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->e:Lcom/samsung/privilege/service/BeaconStarterService;
@@ -105,12 +105,12 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 600
+    .line 541
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 601
+    .line 542
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -135,7 +135,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 602
+    .line 543
     const-string/jumbo v1, "campaign_id"
 
     iget-object v2, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->b:Lcom/bzbs/bean/MessageGCM;
@@ -148,12 +148,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 603
+    .line 544
     const-string/jumbo v1, "from_noti"
 
     invoke-virtual {v0, v1, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 604
+    .line 545
     const-string/jumbo v1, "from_noti_type"
 
     iget-object v2, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->b:Lcom/bzbs/bean/MessageGCM;
@@ -162,7 +162,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 605
+    .line 546
     const-string/jumbo v1, "from_noti_alert"
 
     iget-object v2, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->b:Lcom/bzbs/bean/MessageGCM;
@@ -171,12 +171,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 606
+    .line 547
     iget-object v1, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->e:Lcom/samsung/privilege/service/BeaconStarterService;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/service/BeaconStarterService;->startActivity(Landroid/content/Intent;)V
 
-    .line 626
+    .line 567
     :goto_81
     const-string/jumbo v0, "Push Notification"
 
@@ -214,12 +214,12 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 630
+    .line 571
     :cond_aa
     :try_start_aa
     const-string/jumbo v0, "notification"
 
-    .line 631
+    .line 572
     iget-object v1, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->e:Lcom/samsung/privilege/service/BeaconStarterService;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/service/BeaconStarterService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -228,14 +228,14 @@
 
     check-cast v0, Landroid/app/NotificationManager;
 
-    .line 632
+    .line 573
     iget v1, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->c:I
 
     invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
     :try_end_ba
     .catch Ljava/lang/Exception; {:try_start_aa .. :try_end_ba} :catch_148
 
-    .line 637
+    .line 578
     :goto_ba
     iget-object v0, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->e:Lcom/samsung/privilege/service/BeaconStarterService;
 
@@ -245,12 +245,12 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->d:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 638
+    .line 579
     return-void
 
-    .line 608
+    .line 549
     :cond_c6
     new-instance v0, Landroid/content/Intent;
 
@@ -264,7 +264,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 609
+    .line 550
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -289,24 +289,24 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 610
+    .line 551
     new-instance v1, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;
 
     invoke-direct {v1}, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;-><init>()V
 
-    .line 611
+    .line 552
     iget-object v2, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->b:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v2, v2, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;->setID(Ljava/lang/String;)V
 
-    .line 612
+    .line 553
     new-instance v2, Landroid/os/Bundle;
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    .line 613
+    .line 554
     const-string/jumbo v3, "ItemMarketPlace"
 
     invoke-static {v1}, Lorg/parceler/Parcels;->a(Ljava/lang/Object;)Landroid/os/Parcelable;
@@ -315,7 +315,7 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 614
+    .line 555
     iget-object v1, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->b:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v1, v1, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
@@ -328,18 +328,18 @@
 
     if-eqz v1, :cond_140
 
-    .line 615
+    .line 556
     const-string/jumbo v1, "ItemMarketPlace::Ads::Ins"
 
     invoke-virtual {v2, v1, v4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 619
+    .line 560
     :goto_11c
     const-string/jumbo v1, "from_noti"
 
     invoke-virtual {v0, v1, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 620
+    .line 561
     const-string/jumbo v1, "from_noti_type"
 
     iget-object v3, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->b:Lcom/bzbs/bean/MessageGCM;
@@ -348,7 +348,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 621
+    .line 562
     const-string/jumbo v1, "from_noti_alert"
 
     iget-object v3, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->b:Lcom/bzbs/bean/MessageGCM;
@@ -357,17 +357,17 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 622
+    .line 563
     invoke-virtual {v0, v2}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 623
+    .line 564
     iget-object v1, p0, Lcom/samsung/privilege/service/BeaconStarterService$5;->e:Lcom/samsung/privilege/service/BeaconStarterService;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/service/BeaconStarterService;->startActivity(Landroid/content/Intent;)V
 
     goto/16 :goto_81
 
-    .line 617
+    .line 558
     :cond_140
     const-string/jumbo v1, "ItemMarketPlace::Ads::Ins"
 
@@ -377,7 +377,7 @@
 
     goto :goto_11c
 
-    .line 633
+    .line 574
     :catch_148
     move-exception v0
 

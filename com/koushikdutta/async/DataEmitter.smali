@@ -13,7 +13,7 @@
 .method public abstract d()V
 .end method
 
-.method public abstract d_()Lcom/koushikdutta/async/callback/DataCallback;
+.method public abstract e_()Lcom/koushikdutta/async/callback/DataCallback;
 .end method
 
 .method public abstract h()Lcom/koushikdutta/async/callback/CompletedCallback;

@@ -432,7 +432,7 @@
 
     .prologue
     .line 276
-    invoke-virtual {p0}, Lokio/AsyncTimeout;->i_()Z
+    invoke-virtual {p0}, Lokio/AsyncTimeout;->j_()Z
 
     move-result v0
 
@@ -459,7 +459,7 @@
 
     .prologue
     .line 287
-    invoke-virtual {p0}, Lokio/AsyncTimeout;->i_()Z
+    invoke-virtual {p0}, Lokio/AsyncTimeout;->j_()Z
 
     move-result v0
 
@@ -496,12 +496,12 @@
 
     .line 73
     :cond_d
-    invoke-virtual {p0}, Lokio/AsyncTimeout;->j_()J
+    invoke-virtual {p0}, Lokio/AsyncTimeout;->k_()J
 
     move-result-wide v0
 
     .line 74
-    invoke-virtual {p0}, Lokio/AsyncTimeout;->k_()Z
+    invoke-virtual {p0}, Lokio/AsyncTimeout;->l_()Z
 
     move-result v2
 
@@ -530,7 +530,7 @@
     goto :goto_1d
 .end method
 
-.method public final i_()Z
+.method public final j_()Z
     .registers 3
 
     .prologue

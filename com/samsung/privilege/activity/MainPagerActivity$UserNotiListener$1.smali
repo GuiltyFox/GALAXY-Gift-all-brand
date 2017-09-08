@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener;->a(Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener;->a(Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1573
+    .line 1616
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,13 +35,13 @@
     .registers 2
 
     .prologue
-    .line 1576
+    .line 1619
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->f()V
 
-    .line 1577
+    .line 1620
     return-void
 .end method

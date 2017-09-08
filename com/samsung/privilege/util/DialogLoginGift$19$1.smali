@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1169
+    .line 1213
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$19$1;->a:Lcom/samsung/privilege/util/DialogLoginGift$19;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,10 +32,10 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .registers 6
 
     .prologue
-    .line 1172
+    .line 1216
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$19$1;->a:Lcom/samsung/privilege/util/DialogLoginGift$19;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$19;->c:Landroid/content/Context;
@@ -52,8 +52,12 @@
 
     iget-object v3, v3, Lcom/samsung/privilege/util/DialogLoginGift$19;->b:Landroid/os/Handler;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;)V
+    iget-object v4, p0, Lcom/samsung/privilege/util/DialogLoginGift$19$1;->a:Lcom/samsung/privilege/util/DialogLoginGift$19;
 
-    .line 1173
+    iget-object v4, v4, Lcom/samsung/privilege/util/DialogLoginGift$19;->f:Ljava/lang/Object;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/Object;)V
+
+    .line 1217
     return-void
 .end method

@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 2394
+    .line 2442
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
@@ -32,10 +32,10 @@
     .registers 8
 
     .prologue
-    .line 2404
+    .line 2452
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 2405
+    .line 2453
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
@@ -72,12 +72,12 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2407
+    .line 2455
     const-string/jumbo v0, "failure"
 
-    invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->d(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->a(Ljava/lang/String;)V
 
-    .line 2408
+    .line 2456
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .registers 8
 
     .prologue
-    .line 2397
+    .line 2445
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$36;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
@@ -122,11 +122,11 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2399
+    .line 2447
     const-string/jumbo v0, "successfully"
 
-    invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->d(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->a(Ljava/lang/String;)V
 
-    .line 2400
+    .line 2448
     return-void
 .end method

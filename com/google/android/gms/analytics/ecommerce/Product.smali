@@ -34,7 +34,7 @@
 
 # virtual methods
 .method public a(Ljava/lang/String;)Ljava/util/Map;
-    .registers 7
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,7 +67,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_43
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -75,11 +75,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -89,23 +85,39 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-eqz v5, :cond_3d
+
+    invoke-virtual {v4, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
+    :goto_33
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
 
     invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_f
 
-    :cond_3a
+    :cond_3d
+    new-instance v1, Ljava/lang/String;
+
+    invoke-direct {v1, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_33
+
+    :cond_43
     return-object v2
 .end method
 
@@ -114,7 +126,7 @@
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Product;->a:Ljava/util/Map;
 
-    invoke-static {v0}, Lcom/google/android/gms/measurement/zze;->a(Ljava/util/Map;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/analytics/zzg;->a(Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object v0
 

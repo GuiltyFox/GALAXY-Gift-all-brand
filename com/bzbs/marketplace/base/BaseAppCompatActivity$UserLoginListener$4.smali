@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;->d(Ljava/lang/String;)V
+    value = Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;->a(Ljava/lang/String;)V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 440
+    .line 437
     iput-object p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$UserLoginListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,6 +35,6 @@
     .registers 1
 
     .prologue
-    .line 444
+    .line 441
     return-void
 .end method

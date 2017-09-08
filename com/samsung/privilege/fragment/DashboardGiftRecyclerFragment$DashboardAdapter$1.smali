@@ -26,7 +26,7 @@
     .registers 7
 
     .prologue
-    .line 1166
+    .line 1187
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$1;->e:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     iput-wide p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$1;->a:J
@@ -48,10 +48,10 @@
     .registers 13
 
     .prologue
-    .line 1205
+    .line 1226
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 1208
+    .line 1229
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -61,7 +61,7 @@
 
     move-result-wide v0
 
-    .line 1209
+    .line 1230
     const-string/jumbo v2, "Dashboard"
 
     const-string/jumbo v3, "getPointsOther"
@@ -76,11 +76,11 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_1c
 
-    .line 1213
+    .line 1234
     :goto_1b
     return-void
 
-    .line 1210
+    .line 1231
     :catch_1c
     move-exception v0
 
@@ -91,7 +91,7 @@
     .registers 13
 
     .prologue
-    .line 1170
+    .line 1191
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -101,7 +101,7 @@
 
     move-result-wide v0
 
-    .line 1171
+    .line 1192
     const-string/jumbo v2, "Dashboard"
 
     const-string/jumbo v3, "getPointsOther"
@@ -116,7 +116,7 @@
     :try_end_18
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_af
 
-    .line 1176
+    .line 1197
     :goto_18
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$1;->e:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
@@ -156,20 +156,20 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1179
+    .line 1200
     :try_start_42
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1180
+    .line 1201
     const-string/jumbo v1, "points"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
     move-result-wide v0
 
-    .line 1181
+    .line 1202
     iget-object v2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$1;->e:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     iget-object v2, v2, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -182,14 +182,14 @@
     :try_end_59
     .catch Ljava/lang/Exception; {:try_start_42 .. :try_end_59} :catch_88
 
-    .line 1187
+    .line 1208
     :goto_59
     :try_start_59
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1188
+    .line 1209
     const-string/jumbo v1, "updated_points_other"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
@@ -202,7 +202,7 @@
 
     move-result-wide v0
 
-    .line 1189
+    .line 1210
     iget-object v2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$1;->e:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     iget-object v2, v2, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -213,7 +213,7 @@
 
     invoke-static {v2, v0, v1}, Lcom/bzbs/data/UserLogin;->d(Landroid/content/Context;J)Z
 
-    .line 1191
+    .line 1212
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$1;->e:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -230,15 +230,15 @@
     :try_end_87
     .catch Ljava/lang/Exception; {:try_start_59 .. :try_end_87} :catch_ad
 
-    .line 1201
+    .line 1222
     :goto_87
     return-void
 
-    .line 1182
+    .line 1203
     :catch_88
     move-exception v0
 
-    .line 1183
+    .line 1204
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$1;->e:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     iget-object v1, v1, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -273,13 +273,13 @@
 
     goto :goto_59
 
-    .line 1198
+    .line 1219
     :catch_ad
     move-exception v0
 
     goto :goto_87
 
-    .line 1172
+    .line 1193
     :catch_af
     move-exception v0
 

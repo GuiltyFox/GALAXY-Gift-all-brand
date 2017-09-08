@@ -347,6 +347,23 @@
     return-void
 .end method
 
+.method public b(Lcom/journeyapps/barcodescanner/BarcodeCallback;)V
+    .registers 4
+
+    .prologue
+    .line 205
+    iget-object v0, p0, Lcom/journeyapps/barcodescanner/CompoundBarcodeView;->a:Lcom/journeyapps/barcodescanner/BarcodeView;
+
+    new-instance v1, Lcom/journeyapps/barcodescanner/CompoundBarcodeView$WrappedCallback;
+
+    invoke-direct {v1, p0, p1}, Lcom/journeyapps/barcodescanner/CompoundBarcodeView$WrappedCallback;-><init>(Lcom/journeyapps/barcodescanner/CompoundBarcodeView;Lcom/journeyapps/barcodescanner/BarcodeCallback;)V
+
+    invoke-virtual {v0, v1}, Lcom/journeyapps/barcodescanner/BarcodeView;->b(Lcom/journeyapps/barcodescanner/BarcodeCallback;)V
+
+    .line 206
+    return-void
+.end method
+
 .method public c()Lcom/journeyapps/barcodescanner/BarcodeView;
     .registers 2
 

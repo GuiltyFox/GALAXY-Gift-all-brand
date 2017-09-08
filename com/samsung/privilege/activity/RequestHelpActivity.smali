@@ -8,19 +8,19 @@
 
 .field contentCode:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001e3
+        value = 0x7f1001ea
     .end annotation
 .end field
 
 .field layoutMyPointRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100536
+        value = 0x7f10056a
     .end annotation
 .end field
 
 .field tvCode:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001e4
+        value = 0x7f1001eb
     .end annotation
 .end field
 
@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100180
+    const v1, 0x7f100187
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->E:Landroid/support/v4/app/Fragment;
 
@@ -86,7 +86,7 @@
     return-void
 .end method
 
-.method private o()V
+.method private p()V
     .registers 1
 
     .prologue
@@ -94,7 +94,7 @@
     return-void
 .end method
 
-.method private p()V
+.method private q()V
     .registers 7
 
     .prologue
@@ -125,7 +125,6 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v3, "samsung"
-
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -298,7 +297,7 @@
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->n()V
 
     .line 65
-    const v0, 0x7f090052
+    const v0, 0x7f090045
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->getString(I)Ljava/lang/String;
 
@@ -307,7 +306,7 @@
     invoke-virtual {p0, v0, v1}, Lcom/samsung/privilege/activity/RequestHelpActivity;->a(Ljava/lang/String;Z)V
 
     .line 66
-    const v0, 0x7f02019b
+    const v0, 0x7f0201ae
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->a(I)V
 
@@ -320,7 +319,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->h()V
 
     .line 69
-    invoke-direct {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->o()V
+    invoke-direct {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->p()V
 
     .line 71
     iget-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->layoutMyPointRoot:Landroid/widget/LinearLayout;
@@ -331,7 +330,7 @@
 
     .line 73
     :cond_33
-    invoke-direct {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->p()V
+    invoke-direct {p0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->q()V
 
     .line 74
     return-void
@@ -351,7 +350,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 53
-    const v0, 0x7f040048
+    const v0, 0x7f04004a
 
     return v0
 .end method
@@ -373,7 +372,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100180
+    const v1, 0x7f100187
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentManager;->a(I)Landroid/support/v4/app/Fragment;
 
@@ -425,7 +424,7 @@
     .line 100
     iget-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v1, 0x7f0900db
+    const v1, 0x7f0900d1
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/RequestHelpActivity;->getString(I)Ljava/lang/String;
 

@@ -6,7 +6,7 @@
 # instance fields
 .field LayoutMainComman:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10025e
+        value = 0x7f100297
     .end annotation
 .end field
 
@@ -14,61 +14,61 @@
 
 .field btnClose:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100260
+        value = 0x7f100299
     .end annotation
 .end field
 
 .field btnOK:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001ef
+        value = 0x7f100219
     .end annotation
 .end field
 
 .field imgCampaign:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100247
+        value = 0x7f100280
     .end annotation
 .end field
 
 .field layoutRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100253
+        value = 0x7f10028c
     .end annotation
 .end field
 
 .field svCondition:Landroid/widget/ScrollView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10024a
+        value = 0x7f100283
     .end annotation
 .end field
 
 .field tvCampaignDesc:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100255
+        value = 0x7f10028e
     .end annotation
 .end field
 
 .field tvCondition1:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100382
+        value = 0x7f1003b9
     .end annotation
 .end field
 
 .field tvCondition2:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100383
+        value = 0x7f1003ba
     .end annotation
 .end field
 
 .field tvCondition3:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100384
+        value = 0x7f1003bb
     .end annotation
 .end field
 
 .field tvShowTimeRedeem:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100256
+        value = 0x7f10028f
     .end annotation
 .end field
 
@@ -78,18 +78,18 @@
     .registers 3
 
     .prologue
-    .line 250
+    .line 261
     iput-object p1, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 251
+    .line 262
     invoke-static {p0, p2}, Lbutterknife/ButterKnife;->inject(Ljava/lang/Object;Landroid/view/View;)V
 
-    .line 253
+    .line 264
     invoke-direct {p0}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->a()V
 
-    .line 254
+    .line 265
     return-void
 .end method
 
@@ -97,11 +97,11 @@
     .registers 8
 
     .prologue
-    const v6, 0x7f0201b7
+    const v6, 0x7f0201cd
 
     const/high16 v5, 0x41f00000    # 30.0f
 
-    .line 257
+    .line 268
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     sget v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
@@ -128,7 +128,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    .line 258
+    .line 269
     new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
 
     const/4 v2, -0x1
@@ -149,19 +149,19 @@
 
     invoke-direct {v1, v2, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 259
+    .line 270
     iget-object v2, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->layoutRoot:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v0}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 260
+    .line 271
     iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->tvCondition3:Landroid/widget/TextView;
 
     const/16 v2, 0xf
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setAutoLinkMask(I)V
 
-    .line 261
+    .line 272
     iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->tvCondition3:Landroid/widget/TextView;
 
     invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
@@ -170,14 +170,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 263
+    .line 274
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     const-string/jumbo v2, "dd MMM yyyy HH:mm"
 
     invoke-direct {v0, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
-    .line 264
+    .line 275
     new-instance v2, Ljava/util/Date;
 
     invoke-direct {v2}, Ljava/util/Date;-><init>()V
@@ -186,7 +186,7 @@
 
     move-result-object v0
 
-    .line 265
+    .line 276
     iget-object v2, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->tvShowTimeRedeem:Landroid/widget/TextView;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -195,7 +195,7 @@
 
     iget-object v4, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
 
-    const v5, 0x7f09020e
+    const v5, 0x7f090227
 
     invoke-virtual {v4, v5}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -221,13 +221,13 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 266
+    .line 277
     iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->imgCampaign:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 267
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->f()Landroid/app/Activity;
+    .line 278
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Landroid/app/Activity;
 
     move-result-object v0
 
@@ -235,7 +235,7 @@
 
     move-result-object v0
 
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->h()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     move-result-object v1
 
@@ -243,7 +243,7 @@
 
     move-result-object v1
 
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->h()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     move-result-object v2
 
@@ -271,10 +271,10 @@
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 268
+    .line 279
     iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->tvCampaignDesc:Landroid/widget/TextView;
 
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->h()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     move-result-object v1
 
@@ -284,10 +284,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 269
+    .line 280
     iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->tvCondition1:Landroid/widget/TextView;
 
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->h()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     move-result-object v1
 
@@ -297,8 +297,8 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 270
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+    .line 281
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->h()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     move-result-object v0
 
@@ -318,10 +318,10 @@
 
     if-eqz v0, :cond_f0
 
-    .line 271
+    .line 282
     iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->tvCondition3:Landroid/widget/TextView;
 
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->h()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     move-result-object v1
 
@@ -335,15 +335,15 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 275
+    .line 286
     :goto_ef
     return-void
 
-    .line 273
+    .line 284
     :cond_f0
     iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->tvCondition3:Landroid/widget/TextView;
 
-    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->g()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
+    invoke-static {}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->h()Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
 
     move-result-object v1
 

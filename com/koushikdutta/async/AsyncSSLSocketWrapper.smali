@@ -1175,16 +1175,6 @@
     return-void
 .end method
 
-.method public d_()Lcom/koushikdutta/async/callback/DataCallback;
-    .registers 2
-
-    .prologue
-    .line 441
-    iget-object v0, p0, Lcom/koushikdutta/async/AsyncSSLSocketWrapper;->k:Lcom/koushikdutta/async/callback/DataCallback;
-
-    return-object v0
-.end method
-
 .method public e()V
     .registers 3
 
@@ -1221,6 +1211,16 @@
     .line 234
     :cond_1c
     return-void
+.end method
+
+.method public e_()Lcom/koushikdutta/async/callback/DataCallback;
+    .registers 2
+
+    .prologue
+    .line 441
+    iget-object v0, p0, Lcom/koushikdutta/async/AsyncSSLSocketWrapper;->k:Lcom/koushikdutta/async/callback/DataCallback;
+
+    return-object v0
 .end method
 
 .method public g()Lcom/koushikdutta/async/callback/WritableCallback;

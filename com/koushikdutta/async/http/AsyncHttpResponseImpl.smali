@@ -324,16 +324,6 @@
     return-void
 .end method
 
-.method public a_()Lcom/koushikdutta/async/http/Headers;
-    .registers 2
-
-    .prologue
-    .line 108
-    iget-object v0, p0, Lcom/koushikdutta/async/http/AsyncHttpResponseImpl;->j:Lcom/koushikdutta/async/http/Headers;
-
-    return-object v0
-.end method
-
 .method public b(Lcom/koushikdutta/async/DataEmitter;)Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;
     .registers 2
 
@@ -406,12 +396,12 @@
     return-void
 .end method
 
-.method public b_()Ljava/lang/String;
+.method public b_()Lcom/koushikdutta/async/http/Headers;
     .registers 2
 
     .prologue
-    .line 144
-    iget-object v0, p0, Lcom/koushikdutta/async/http/AsyncHttpResponseImpl;->m:Ljava/lang/String;
+    .line 108
+    iget-object v0, p0, Lcom/koushikdutta/async/http/AsyncHttpResponseImpl;->j:Lcom/koushikdutta/async/http/Headers;
 
     return-object v0
 .end method
@@ -426,7 +416,17 @@
     return-object v0
 .end method
 
-.method public c_()Lcom/koushikdutta/async/DataSink;
+.method public c_()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 144
+    iget-object v0, p0, Lcom/koushikdutta/async/http/AsyncHttpResponseImpl;->m:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public d_()Lcom/koushikdutta/async/DataSink;
     .registers 2
 
     .prologue
@@ -503,7 +503,7 @@
 
     .prologue
     .line 226
-    invoke-virtual {p0}, Lcom/koushikdutta/async/http/AsyncHttpResponseImpl;->a_()Lcom/koushikdutta/async/http/Headers;
+    invoke-virtual {p0}, Lcom/koushikdutta/async/http/AsyncHttpResponseImpl;->b_()Lcom/koushikdutta/async/http/Headers;
 
     move-result-object v0
 

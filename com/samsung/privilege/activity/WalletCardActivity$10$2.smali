@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 900
+    .line 984
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$10$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$10;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +35,10 @@
     .registers 9
 
     .prologue
-    .line 902
+    .line 986
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 904
+    .line 988
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$10$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$10;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$10;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -49,7 +49,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Ljava/lang/String;Z)V
 
-    .line 906
+    .line 990
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -98,6 +98,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 907
+    .line 991
     return-void
 .end method

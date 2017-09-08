@@ -31,7 +31,7 @@
     .registers 2
 
     .prologue
-    .line 2487
+    .line 2511
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,12 +45,12 @@
     .registers 7
 
     .prologue
-    .line 2490
+    .line 2514
     invoke-virtual {p1}, Lcom/facebook/share/Sharer$Result;->getPostId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2491
+    .line 2515
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v1
@@ -75,7 +75,7 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2492
+    .line 2516
     if-eqz v0, :cond_2a
 
     const-string/jumbo v1, ""
@@ -86,13 +86,13 @@
 
     if-eqz v1, :cond_52
 
-    .line 2493
+    .line 2517
     :cond_2a
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0}, Ljava/util/Date;-><init>()V
 
-    .line 2494
+    .line 2518
     invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
     move-result-wide v0
@@ -101,7 +101,7 @@
 
     move-result-object v0
 
-    .line 2495
+    .line 2519
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v1
@@ -126,7 +126,7 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2497
+    .line 2521
     :cond_52
     if-eqz v0, :cond_e2
 
@@ -138,25 +138,25 @@
 
     if-nez v1, :cond_e2
 
-    .line 2498
+    .line 2522
     invoke-static {}, Lcom/facebook/AccessToken;->getCurrentAccessToken()Lcom/facebook/AccessToken;
 
     move-result-object v1
 
-    .line 2499
+    .line 2523
     if-eqz v1, :cond_e2
 
-    .line 2500
+    .line 2524
     new-instance v2, Lcom/bzbs/lib/http/okhttp/HttpParams;
 
     invoke-direct {v2}, Lcom/bzbs/lib/http/okhttp/HttpParams;-><init>()V
 
-    .line 2502
+    .line 2526
     const-string/jumbo v3, "post_id"
 
     invoke-virtual {v2, v3, v0}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 2503
+    .line 2527
     const-string/jumbo v0, "access_token"
 
     invoke-virtual {v1}, Lcom/facebook/AccessToken;->getToken()Ljava/lang/String;
@@ -165,12 +165,12 @@
 
     invoke-virtual {v2, v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
-    .line 2505
+    .line 2529
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -186,7 +186,7 @@
 
     move-result-object v0
 
-    .line 2506
+    .line 2530
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v1
@@ -211,38 +211,38 @@
 
     invoke-static {v1, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2507
+    .line 2531
     new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    .line 2508
+    .line 2532
     invoke-virtual {v1, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/app/Activity;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    sget-boolean v3, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v3, Lcom/bzbs/data/AppSetting;->V:Z
 
-    .line 2509
+    .line 2533
     invoke-virtual {v1, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    .line 2510
+    .line 2534
     invoke-virtual {v1, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 2511
+    .line 2535
     invoke-virtual {v0, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpParams;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    .line 2512
+    .line 2536
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -257,7 +257,7 @@
 
     sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->b:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 2513
+    .line 2537
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -266,15 +266,15 @@
 
     invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20$1;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;)V
 
-    .line 2514
+    .line 2538
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 2541
+    .line 2565
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    .line 2544
+    .line 2568
     :cond_e2
     return-void
 .end method
@@ -283,7 +283,7 @@
     .registers 1
 
     .prologue
-    .line 2549
+    .line 2573
     return-void
 .end method
 
@@ -291,7 +291,7 @@
     .registers 2
 
     .prologue
-    .line 2554
+    .line 2578
     return-void
 .end method
 
@@ -299,7 +299,7 @@
     .registers 2
 
     .prologue
-    .line 2487
+    .line 2511
     check-cast p1, Lcom/facebook/share/Sharer$Result;
 
     invoke-virtual {p0, p1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;->a(Lcom/facebook/share/Sharer$Result;)V

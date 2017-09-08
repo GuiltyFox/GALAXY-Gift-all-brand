@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 124
+    .line 127
     iput-object p1, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$2;->a:Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,11 +35,11 @@
     .registers 3
 
     .prologue
-    .line 127
+    .line 130
     iget-object v0, p0, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$2;->a:Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
 
-    invoke-static {v0}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->a(Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;)V
+    invoke-virtual {v0}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->f()V
 
-    .line 128
+    .line 131
     return-void
 .end method

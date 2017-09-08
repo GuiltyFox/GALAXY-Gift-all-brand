@@ -4,4 +4,4 @@
 
 
 # static fields
-.field public static final white_radius:I = 0x7f020256
+.field public static final white_radius:I = 0x7f020279

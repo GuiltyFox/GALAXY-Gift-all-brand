@@ -6,9 +6,9 @@
 # static fields
 .field public static final zxing_back_button:I = 0x7f100011
 
-.field public static final zxing_barcode_scanner:I = 0x7f100543
+.field public static final zxing_barcode_scanner:I = 0x7f100577
 
-.field public static final zxing_barcode_surface:I = 0x7f100540
+.field public static final zxing_barcode_surface:I = 0x7f100574
 
 .field public static final zxing_camera_error:I = 0x7f100012
 
@@ -22,6 +22,6 @@
 
 .field public static final zxing_prewiew_size_ready:I = 0x7f100017
 
-.field public static final zxing_status_view:I = 0x7f100542
+.field public static final zxing_status_view:I = 0x7f100576
 
-.field public static final zxing_viewfinder_view:I = 0x7f100541
+.field public static final zxing_viewfinder_view:I = 0x7f100575

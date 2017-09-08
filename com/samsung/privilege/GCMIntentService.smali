@@ -25,7 +25,7 @@
     .registers 2
 
     .prologue
-    .line 46
+    .line 63
     const-class v0, Lcom/samsung/privilege/GCMIntentService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -34,12 +34,12 @@
 
     sput-object v0, Lcom/samsung/privilege/GCMIntentService;->TAG:Ljava/lang/String;
 
-    .line 48
+    .line 65
     const-wide/16 v0, -0x1
 
     sput-wide v0, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
 
-    .line 745
+    .line 608
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
@@ -53,20 +53,20 @@
     .registers 4
 
     .prologue
-    .line 51
+    .line 68
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    sget-object v2, Lcom/bzbs/data/AppSetting;->g:Ljava/lang/String;
+    sget-object v2, Lcom/bzbs/data/AppSetting;->k:Ljava/lang/String;
 
     aput-object v2, v0, v1
 
     invoke-direct {p0, v0}, Lcom/google/android/gcm/GCMBaseIntentService;-><init>([Ljava/lang/String;)V
 
-    .line 52
+    .line 69
     sget-object v0, Lcom/samsung/privilege/GCMIntentService;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -79,7 +79,7 @@
 
     move-result-object v1
 
-    sget-object v2, Lcom/bzbs/data/AppSetting;->g:Ljava/lang/String;
+    sget-object v2, Lcom/bzbs/data/AppSetting;->k:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -91,7 +91,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 53
+    .line 70
     return-void
 .end method
 
@@ -99,7 +99,7 @@
     .registers 1
 
     .prologue
-    .line 44
+    .line 61
     sget-object v0, Lcom/samsung/privilege/GCMIntentService;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -109,7 +109,7 @@
     .registers 7
 
     .prologue
-    .line 44
+    .line 61
     invoke-direct/range {p0 .. p6}, Lcom/samsung/privilege/GCMIntentService;->processNotiCampaign(Landroid/content/Context;ILcom/bzbs/bean/MessageGCM;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -119,12 +119,12 @@
     .registers 2
 
     .prologue
-    .line 748
+    .line 611
     sget-object v0, Lcom/samsung/privilege/GCMIntentService;->mGCMMessageListeners:Ljava/util/LinkedList;
 
     invoke-virtual {v0, p0}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 749
+    .line 612
     return-void
 .end method
 
@@ -132,20 +132,314 @@
     .registers 1
 
     .prologue
-    .line 756
+    .line 619
     sget-object v0, Lcom/samsung/privilege/GCMIntentService;->mGCMMessageListeners:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
 
-    .line 757
+    .line 620
     return-void
+.end method
+
+.method private getNotificationIcon()I
+    .registers 4
+
+    .prologue
+    const v2, 0x7f020196
+
+    .line 591
+    .line 592
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x15
+
+    if-lt v0, v1, :cond_d
+
+    const/4 v0, 0x1
+
+    .line 593
+    :goto_a
+    if-eqz v0, :cond_c
+
+    :cond_c
+    return v2
+
+    .line 592
+    :cond_d
+    const/4 v0, 0x0
+
+    goto :goto_a
+.end method
+
+.method private notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
+    .registers 16
+
+    .prologue
+    const/4 v10, 0x1
+
+    .line 536
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0xb
+
+    if-lt v0, v1, :cond_a9
+
+    .line 537
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    long-to-int v2, v0
+
+    .line 540
+    invoke-virtual {p0}, Lcom/samsung/privilege/GCMIntentService;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x7f020196
+
+    invoke-static {v0, v1}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    .line 542
+    new-instance v1, Ljava/util/Date;
+
+    invoke-direct {v1}, Ljava/util/Date;-><init>()V
+
+    .line 543
+    invoke-virtual {v1}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v4
+
+    sget-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
+
+    const-wide/32 v8, 0xea60
+
+    add-long/2addr v6, v8
+
+    cmp-long v3, v4, v6
+
+    if-lez v3, :cond_aa
+
+    .line 544
+    new-instance v3, Landroid/support/v4/app/NotificationCompat$Builder;
+
+    invoke-direct {v3, p1}, Landroid/support/v4/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;)V
+
+    .line 545
+    invoke-direct {p0}, Lcom/samsung/privilege/GCMIntentService;->getNotificationIcon()I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/support/v4/app/NotificationCompat$Builder;->a(I)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v3
+
+    .line 546
+    invoke-virtual {v3, v0}, Landroid/support/v4/app/NotificationCompat$Builder;->a(Landroid/graphics/Bitmap;)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 547
+    invoke-virtual {v0, p2}, Landroid/support/v4/app/NotificationCompat$Builder;->a(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 548
+    invoke-virtual {v0, p3}, Landroid/support/v4/app/NotificationCompat$Builder;->b(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 549
+    invoke-virtual {v0, v10}, Landroid/support/v4/app/NotificationCompat$Builder;->a(Z)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 550
+    invoke-virtual {v0, p4}, Landroid/support/v4/app/NotificationCompat$Builder;->a(Landroid/app/PendingIntent;)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    const/4 v3, 0x2
+
+    .line 551
+    invoke-static {v3}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Landroid/support/v4/app/NotificationCompat$Builder;->a(Landroid/net/Uri;)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 552
+    invoke-virtual {v0}, Landroid/support/v4/app/NotificationCompat$Builder;->a()Landroid/app/Notification;
+
+    move-result-object v0
+
+    .line 554
+    invoke-virtual {v1}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v4
+
+    sput-wide v4, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
+
+    move-object v1, v0
+
+    .line 567
+    :goto_5f
+    :try_start_5f
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v3, 0x15
+
+    if-lt v0, v3, :cond_9d
+
+    .line 568
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const-string/jumbo v3, "right_icon"
+
+    const-string/jumbo v4, "id"
+
+    const-class v5, Landroid/R;
+
+    invoke-virtual {v5}, Ljava/lang/Class;->getPackage()Ljava/lang/Package;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/Package;->getName()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v3, v4, v5}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 570
+    if-eqz v0, :cond_9d
+
+    .line 571
+    iget-object v3, v1, Landroid/app/Notification;->contentIntent:Landroid/app/PendingIntent;
+
+    if-eqz v3, :cond_89
+
+    .line 572
+    iget-object v3, v1, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+
+    const/4 v4, 0x4
+
+    invoke-virtual {v3, v0, v4}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    .line 574
+    :cond_89
+    iget-object v3, v1, Landroid/app/Notification;->headsUpContentView:Landroid/widget/RemoteViews;
+
+    if-eqz v3, :cond_93
+
+    .line 575
+    iget-object v3, v1, Landroid/app/Notification;->headsUpContentView:Landroid/widget/RemoteViews;
+
+    const/4 v4, 0x4
+
+    invoke-virtual {v3, v0, v4}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    .line 577
+    :cond_93
+    iget-object v3, v1, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+
+    if-eqz v3, :cond_9d
+
+    .line 578
+    iget-object v3, v1, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+
+    const/4 v4, 0x4
+
+    invoke-virtual {v3, v0, v4}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    :try_end_9d
+    .catch Ljava/lang/Exception; {:try_start_5f .. :try_end_9d} :catch_d1
+
+    .line 585
+    :cond_9d
+    :goto_9d
+    const-string/jumbo v0, "notification"
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/GCMIntentService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/NotificationManager;
+
+    .line 586
+    invoke-virtual {v0, v2, v1}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+
+    .line 588
+    :cond_a9
+    return-void
+
+    .line 556
+    :cond_aa
+    new-instance v1, Landroid/support/v4/app/NotificationCompat$Builder;
+
+    invoke-direct {v1, p1}, Landroid/support/v4/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;)V
+
+    .line 557
+    invoke-direct {p0}, Lcom/samsung/privilege/GCMIntentService;->getNotificationIcon()I
+
+    move-result v3
+
+    invoke-virtual {v1, v3}, Landroid/support/v4/app/NotificationCompat$Builder;->a(I)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v1
+
+    .line 558
+    invoke-virtual {v1, v0}, Landroid/support/v4/app/NotificationCompat$Builder;->a(Landroid/graphics/Bitmap;)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 559
+    invoke-virtual {v0, p2}, Landroid/support/v4/app/NotificationCompat$Builder;->a(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 560
+    invoke-virtual {v0, p3}, Landroid/support/v4/app/NotificationCompat$Builder;->b(Ljava/lang/CharSequence;)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 561
+    invoke-virtual {v0, v10}, Landroid/support/v4/app/NotificationCompat$Builder;->a(Z)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 562
+    invoke-virtual {v0, p4}, Landroid/support/v4/app/NotificationCompat$Builder;->a(Landroid/app/PendingIntent;)Landroid/support/v4/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 563
+    invoke-virtual {v0}, Landroid/support/v4/app/NotificationCompat$Builder;->a()Landroid/app/Notification;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    goto :goto_5f
+
+    .line 581
+    :catch_d1
+    move-exception v0
+
+    goto :goto_9d
 .end method
 
 .method public static onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
     .registers 3
 
     .prologue
-    .line 760
+    .line 623
     sget-object v0, Lcom/samsung/privilege/GCMIntentService;->mGCMMessageListeners:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
@@ -165,533 +459,355 @@
 
     check-cast v0, Lcom/samsung/privilege/GCMIntentService$GCMMessageListener;
 
-    .line 761
+    .line 624
     invoke-interface {v0, p0}, Lcom/samsung/privilege/GCMIntentService$GCMMessageListener;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 
     goto :goto_6
 
-    .line 763
+    .line 626
     :cond_16
     return-void
 .end method
 
 .method private processNotiCampaign(Landroid/content/Context;ILcom/bzbs/bean/MessageGCM;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 19
+    .registers 13
 
     .prologue
-    .line 634
+    const/4 v5, 0x0
+
+    const/4 v4, 0x1
+
+    .line 489
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
-    move-result v2
+    move-result v0
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    invoke-static {p1, v2}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
+    invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
-    .line 636
+    .line 491
     invoke-static {p1, p3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 637
+    .line 492
     invoke-static {p3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 638
-    iget-object v2, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 493
+    iget-object v0, p3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-static {v2}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;)V
+    iget-object v1, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 640
+    invoke-static {v0, v1}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 495
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;)Z
 
-    move-result v2
+    move-result v0
 
-    const/4 v3, 0x1
+    if-ne v0, v4, :cond_b6
 
-    if-ne v2, v3, :cond_f0
+    .line 496
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 641
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/16 v3, 0xb
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
-    if-lt v2, v3, :cond_f0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 645
+    move-result-object v0
+
+    const-string/jumbo v1, "api/campaign/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "/picture?type=large"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 497
     invoke-static {p1}, Lcom/bzbs/data/AppSetting;->f(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    move-object/from16 v0, p6
+    invoke-virtual {p6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v0
 
-    move-result v2
+    if-eqz v0, :cond_b7
 
-    if-eqz v2, :cond_f1
+    .line 498
+    new-instance v0, Landroid/content/Intent;
 
-    .line 654
+    const-class v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 500
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "com.samsung.privilege.service"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    long-to-int v3, v2
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 656
-    new-instance v2, Landroid/content/Intent;
+    move-result-object v1
 
-    const-class v4, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-direct {v2, p1, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    move-result-object v1
 
-    .line 658
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    .line 501
+    const-string/jumbo v1, "campaign_id"
 
-    const-string/jumbo v5, "com.samsung.privilege.service"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v6
-
-    invoke-virtual {v4, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 659
-    const-string/jumbo v4, "campaign_id"
-
-    invoke-static/range {p5 .. p5}, Lcom/bzbs/util/BBUtil;->b(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
-
-    .line 660
-    const-string/jumbo v4, "from_noti"
-
-    const/4 v5, 0x1
-
-    invoke-virtual {v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 661
-    const-string/jumbo v4, "from_noti_type"
-
-    iget-object v5, p3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
-
-    invoke-virtual {v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 662
-    const-string/jumbo v4, "from_noti_alert"
-
-    iget-object v5, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    invoke-virtual {v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 663
-    const/4 v4, 0x0
-
-    invoke-static {p1, p2, v2, v4}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    invoke-static {p5}, Lcom/bzbs/util/BBUtil;->b(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v2
 
-    .line 666
-    new-instance v4, Landroid/app/Notification$Builder;
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    invoke-direct {v4, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
+    .line 502
+    const-string/jumbo v1, "from_noti"
 
-    .line 667
-    const v5, 0x7f020183
+    invoke-virtual {v0, v1, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
+    .line 503
+    const-string/jumbo v1, "from_noti_type"
 
-    move-result-object v5
+    iget-object v2, p3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 668
-    move-object/from16 v0, p4
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-virtual {v5, v0}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+    .line 504
+    const-string/jumbo v1, "from_noti_alert"
 
-    move-result-object v5
+    iget-object v2, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    iget-object v6, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 669
-    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+    .line 505
+    invoke-static {p1, p2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
-    move-result-object v5
+    move-result-object v0
 
-    const/4 v6, 0x1
+    .line 507
+    iget-object v1, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 670
-    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
+    invoke-direct {p0, p1, p4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    move-result-object v5
+    .line 509
+    const-string/jumbo v0, "Push Notification"
 
-    .line 671
-    invoke-virtual {v5, v2}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+    const-string/jumbo v1, "View Campaign"
 
-    .line 673
-    new-instance v2, Ljava/util/Date;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 674
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v6
-
-    sget-wide v8, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    const-wide/32 v10, 0xea60
-
-    add-long/2addr v8, v10
-
-    cmp-long v5, v6, v8
-
-    if-lez v5, :cond_bb
-
-    .line 675
-    const/4 v5, 0x2
-
-    invoke-static {v5}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
-
-    .line 676
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v6
-
-    sput-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    .line 679
-    :cond_bb
-    const-string/jumbo v2, "notification"
-
-    invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v2, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    check-cast v2, Landroid/app/NotificationManager;
+    const-string/jumbo v3, "|"
 
-    .line 680
-    invoke-virtual {v4}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    .line 681
-    invoke-virtual {v2, v3, v4}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+    iget-object v3, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 683
-    const-string/jumbo v2, "Push Notification"
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v3, "View Campaign"
+    move-result-object v2
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v2
 
-    move-object/from16 v0, p5
+    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "|"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v2, v3, v4}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 731
-    :cond_f0
-    :goto_f0
+    .line 533
+    :cond_b6
+    :goto_b6
     return-void
 
-    .line 686
-    :cond_f1
+    .line 511
+    :cond_b7
+    new-instance v0, Landroid/content/Intent;
+
+    const-class v1, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;
+
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 512
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "com.samsung.privilege.service"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
-    long-to-int v3, v2
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 688
-    new-instance v2, Landroid/content/Intent;
+    move-result-object v1
 
-    const-class v4, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-direct {v2, p1, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    move-result-object v1
 
-    .line 689
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    .line 513
+    new-instance v1, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;
 
-    const-string/jumbo v5, "com.samsung.privilege.service"
+    invoke-direct {v1}, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;-><init>()V
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 514
+    invoke-virtual {v1, p5}, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;->setID(Ljava/lang/String;)V
 
-    move-result-object v4
+    .line 515
+    new-instance v2, Landroid/os/Bundle;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    move-result-wide v6
+    .line 516
+    const-string/jumbo v3, "ItemMarketPlace"
 
-    invoke-virtual {v4, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lorg/parceler/Parcels;->a(Ljava/lang/Object;)Landroid/os/Parcelable;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    move-result-object v4
+    .line 517
+    iget-object v1, p3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-virtual {v2, v4}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    const-string/jumbo v3, "ads"
 
-    .line 690
-    new-instance v4, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-direct {v4}, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;-><init>()V
+    move-result v1
 
-    .line 691
-    move-object/from16 v0, p5
+    if-eqz v1, :cond_148
 
-    invoke-virtual {v4, v0}, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;->setID(Ljava/lang/String;)V
+    .line 518
+    const-string/jumbo v1, "ItemMarketPlace::Ads::Ins"
 
-    .line 692
-    new-instance v5, Landroid/os/Bundle;
+    invoke-virtual {v2, v1, v4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
+    .line 522
+    :goto_101
+    const-string/jumbo v1, "from_noti"
 
-    .line 693
-    const-string/jumbo v6, "ItemMarketPlace"
+    invoke-virtual {v0, v1, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    invoke-static {v4}, Lorg/parceler/Parcels;->a(Ljava/lang/Object;)Landroid/os/Parcelable;
+    .line 523
+    const-string/jumbo v1, "from_noti_type"
 
-    move-result-object v4
+    iget-object v3, p3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-virtual {v5, v6, v4}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 694
-    iget-object v4, p3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+    .line 524
+    const-string/jumbo v1, "from_noti_alert"
 
-    const-string/jumbo v6, "ads"
+    iget-object v3, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    invoke-virtual {v4, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    move-result v4
+    .line 525
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    if-eqz v4, :cond_1da
+    .line 526
+    invoke-static {p1, p2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
-    .line 695
-    const-string/jumbo v4, "ItemMarketPlace::Ads::Ins"
+    move-result-object v0
 
-    const/4 v6, 0x1
+    .line 528
+    iget-object v1, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    invoke-virtual {v5, v4, v6}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    invoke-direct {p0, p1, p4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    .line 699
-    :goto_143
-    const-string/jumbo v4, "from_noti"
+    .line 530
+    const-string/jumbo v0, "Push Notification"
 
-    const/4 v6, 0x1
+    const-string/jumbo v1, "View Bzbs Campaign"
 
-    invoke-virtual {v2, v4, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    .line 700
-    const-string/jumbo v4, "from_noti_type"
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v6, p3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
-
-    invoke-virtual {v2, v4, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 701
-    const-string/jumbo v4, "from_noti_alert"
-
-    iget-object v6, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    invoke-virtual {v2, v4, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 702
-    invoke-virtual {v2, v5}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
-
-    .line 703
-    const/4 v4, 0x0
-
-    invoke-static {p1, p2, v2, v4}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    invoke-virtual {v2, p5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 706
-    new-instance v4, Landroid/app/Notification$Builder;
+    const-string/jumbo v3, "|"
 
-    invoke-direct {v4, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
-
-    .line 707
-    const v5, 0x7f020183
-
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    .line 708
-    move-object/from16 v0, p4
-
-    invoke-virtual {v5, v0}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    iget-object v6, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    .line 709
-    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    const/4 v6, 0x1
-
-    .line 710
-    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    .line 711
-    invoke-virtual {v5, v2}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
-
-    .line 713
-    new-instance v2, Ljava/util/Date;
-
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
-
-    .line 714
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v6
-
-    sget-wide v8, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    const-wide/32 v10, 0xea60
-
-    add-long/2addr v8, v10
-
-    cmp-long v5, v6, v8
-
-    if-lez v5, :cond_1a3
-
-    .line 715
-    const/4 v5, 0x2
-
-    invoke-static {v5}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
-
-    .line 716
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v6
-
-    sput-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    .line 719
-    :cond_1a3
-    const-string/jumbo v2, "notification"
-
-    invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    check-cast v2, Landroid/app/NotificationManager;
+    iget-object v3, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 720
-    invoke-virtual {v4}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    .line 721
-    invoke-virtual {v2, v3, v4}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 723
-    const-string/jumbo v2, "Push Notification"
+    move-result-object v2
 
-    const-string/jumbo v3, "View Bzbs Campaign"
+    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    goto/16 :goto_b6
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    .line 520
+    :cond_148
+    const-string/jumbo v1, "ItemMarketPlace::Ads::Ins"
 
-    move-object/from16 v0, p5
+    invoke-virtual {v2, v1, v5}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "|"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v2, v3, v4}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    goto/16 :goto_f0
-
-    .line 697
-    :cond_1da
-    const-string/jumbo v4, "ItemMarketPlace::Ads::Ins"
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v5, v4, v6}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
-
-    goto/16 :goto_143
+    goto :goto_101
 .end method
 
 .method public static removeGCMMessageListener(Lcom/samsung/privilege/GCMIntentService$GCMMessageListener;)V
     .registers 2
 
     .prologue
-    .line 752
+    .line 615
     sget-object v0, Lcom/samsung/privilege/GCMIntentService;->mGCMMessageListeners:Ljava/util/LinkedList;
 
     invoke-virtual {v0, p0}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
 
-    .line 753
+    .line 616
     return-void
 .end method
 
@@ -701,7 +817,7 @@
     .registers 6
 
     .prologue
-    .line 735
+    .line 598
     const-string/jumbo v0, "GCM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -724,28 +840,26 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 736
+    .line 599
     return-void
 .end method
 
 .method protected onMessage(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 15
+    .registers 14
 
     .prologue
-    const/16 v11, 0xb
-
     const/4 v5, 0x0
 
     const/4 v1, 0x1
 
-    .line 71
-    :try_start_4
+    .line 88
+    :try_start_2
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 72
-    if-eqz v0, :cond_7d
+    .line 89
+    if-eqz v0, :cond_7b
 
     const-string/jumbo v2, ""
 
@@ -753,26 +867,26 @@
 
     move-result v0
 
-    if-nez v0, :cond_7d
+    if-nez v0, :cond_7b
 
-    .line 73
+    .line 90
     sget-object v0, Lcom/samsung/privilege/GCMIntentService;->TAG:Ljava/lang/String;
 
     const-string/jumbo v2, "onMessage"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/LogUtil;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 74
+    .line 91
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v2
 
-    .line 76
+    .line 93
     new-instance v3, Lcom/bzbs/bean/MessageGCM;
 
     invoke-direct {v3}, Lcom/bzbs/bean/MessageGCM;-><init>()V
 
-    .line 77
+    .line 94
     invoke-virtual {v2}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -781,13 +895,13 @@
 
     move-result-object v4
 
-    :cond_2c
-    :goto_2c
+    :cond_2a
+    :goto_2a
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d6
+    if-eqz v0, :cond_d4
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -795,15 +909,15 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 78
-    if-eqz v0, :cond_2c
+    .line 95
+    if-eqz v0, :cond_2a
 
-    .line 79
+    .line 96
     invoke-virtual {v2, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 80
+    .line 97
     sget-object v7, Lcom/samsung/privilege/GCMIntentService;->TAG:Ljava/lang/String;
 
     const-string/jumbo v8, "  onMessage: %s=%s"
@@ -826,27 +940,27 @@
 
     invoke-static {v7, v8}, Lcom/bzbs/util/LogUtil;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 81
+    .line 98
     const-string/jumbo v7, "collapse_key"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_7e
+    if-eqz v7, :cond_7c
 
-    .line 82
+    .line 99
     iput-object v6, v3, Lcom/bzbs/bean/MessageGCM;->collapse_key:Ljava/lang/String;
-    :try_end_5e
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_5e} :catch_5f
+    :try_end_5c
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_5c} :catch_5d
 
-    goto :goto_2c
+    goto :goto_2a
 
-    .line 628
-    :catch_5f
+    .line 483
+    :catch_5d
     move-exception v0
 
-    .line 629
+    .line 484
     sget-object v1, Lcom/samsung/privilege/GCMIntentService;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -873,124 +987,124 @@
 
     invoke-static {v1, v0}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 631
-    :cond_7d
-    :goto_7d
+    .line 486
+    :cond_7b
+    :goto_7b
     return-void
 
-    .line 83
-    :cond_7e
-    :try_start_7e
+    .line 100
+    :cond_7c
+    :try_start_7c
     const-string/jumbo v7, "from"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_8a
+    if-eqz v7, :cond_88
 
-    .line 84
+    .line 101
     iput-object v6, v3, Lcom/bzbs/bean/MessageGCM;->from:Ljava/lang/String;
 
-    goto :goto_2c
+    goto :goto_2a
 
-    .line 85
-    :cond_8a
+    .line 102
+    :cond_88
     const-string/jumbo v7, "type"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_96
+    if-eqz v7, :cond_94
 
-    .line 86
+    .line 103
     iput-object v6, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    goto :goto_2c
+    goto :goto_2a
 
-    .line 87
-    :cond_96
+    .line 104
+    :cond_94
     const-string/jumbo v7, "alert"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_a2
+    if-eqz v7, :cond_a0
 
-    .line 88
+    .line 105
     iput-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    goto :goto_2c
+    goto :goto_2a
 
-    .line 89
-    :cond_a2
+    .line 106
+    :cond_a0
     const-string/jumbo v7, "object_id"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_af
+    if-eqz v7, :cond_ad
 
-    .line 90
+    .line 107
     iput-object v6, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
-    goto/16 :goto_2c
+    goto/16 :goto_2a
 
-    .line 91
-    :cond_af
+    .line 108
+    :cond_ad
     const-string/jumbo v7, "subject"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_bc
+    if-eqz v7, :cond_ba
 
-    .line 92
+    .line 109
     iput-object v6, v3, Lcom/bzbs/bean/MessageGCM;->subject:Ljava/lang/String;
 
-    goto/16 :goto_2c
+    goto/16 :goto_2a
 
-    .line 93
-    :cond_bc
+    .line 110
+    :cond_ba
     const-string/jumbo v7, "agency_id"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_c9
+    if-eqz v7, :cond_c7
 
-    .line 94
+    .line 111
     iput-object v6, v3, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
-    goto/16 :goto_2c
+    goto/16 :goto_2a
 
-    .line 95
-    :cond_c9
+    .line 112
+    :cond_c7
     const-string/jumbo v7, "url"
 
     invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2a
 
-    .line 96
+    .line 113
     iput-object v6, v3, Lcom/bzbs/bean/MessageGCM;->url:Ljava/lang/String;
 
-    goto/16 :goto_2c
+    goto/16 :goto_2a
 
-    .line 101
-    :cond_d6
+    .line 118
+    :cond_d4
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->S(Landroid/content/Context;)Ljava/util/ArrayList;
 
     move-result-object v4
 
-    .line 103
+    .line 120
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
     const-string/jumbo v2, ""
@@ -999,9 +1113,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_bec
+    if-nez v0, :cond_a31
 
-    .line 104
+    .line 121
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v2, "cat"
@@ -1010,7 +1124,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_fb
+    if-nez v0, :cond_f9
 
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
@@ -1020,23 +1134,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_156
+    if-eqz v0, :cond_154
 
-    :cond_fb
+    :cond_f9
     move v0, v5
 
-    .line 117
-    :goto_fc
-    if-nez v0, :cond_7d
+    .line 134
+    :goto_fa
+    if-nez v0, :cond_7b
 
-    .line 118
-    const v0, 0x7f09023e
+    .line 135
+    const v0, 0x7f090257
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 119
+    .line 136
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v2, "campaign"
@@ -1045,12 +1159,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_121
+    if-eqz v0, :cond_11f
 
-    .line 120
+    .line 137
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->subject:Ljava/lang/String;
 
-    if-eqz v0, :cond_121
+    if-eqz v0, :cond_11f
 
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->subject:Ljava/lang/String;
 
@@ -1060,20 +1174,20 @@
 
     move-result v0
 
-    if-nez v0, :cond_121
+    if-nez v0, :cond_11f
 
-    .line 121
+    .line 138
     iget-object v4, v3, Lcom/bzbs/bean/MessageGCM;->subject:Ljava/lang/String;
 
-    .line 125
-    :cond_121
+    .line 142
+    :cond_11f
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
     long-to-int v2, v6
 
-    .line 126
+    .line 143
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v6, "campaign"
@@ -1082,7 +1196,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_13c
+    if-nez v0, :cond_13a
 
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
@@ -1092,13 +1206,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d7
+    if-eqz v0, :cond_1d5
 
-    .line 127
-    :cond_13c
+    .line 144
+    :cond_13a
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
-    if-eqz v0, :cond_173
+    if-eqz v0, :cond_171
 
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
@@ -1108,9 +1222,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_173
+    if-nez v0, :cond_171
 
-    .line 128
+    .line 145
     iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
     iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
@@ -1121,27 +1235,27 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/samsung/privilege/GCMIntentService;->processNotiCampaign(Landroid/content/Context;ILcom/bzbs/bean/MessageGCM;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_7d
+    goto/16 :goto_7b
 
-    :cond_156
+    :cond_154
     move v2, v5
 
-    .line 107
-    :goto_157
+    .line 124
+    :goto_155
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-ge v2, v0, :cond_bec
+    if-ge v2, v0, :cond_a31
 
-    .line 108
+    .line 125
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/bzbs/bean/MessageGCM;
 
-    .line 109
+    .line 126
     iget-object v0, v0, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
     iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
@@ -1150,28 +1264,28 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16f
+    if-eqz v0, :cond_16d
 
     move v0, v1
 
-    .line 111
-    goto :goto_fc
+    .line 128
+    goto :goto_fa
 
-    .line 107
-    :cond_16f
+    .line 124
+    :cond_16d
     add-int/lit8 v0, v2, 0x1
 
     move v2, v0
 
-    goto :goto_157
+    goto :goto_155
 
-    .line 130
-    :cond_173
+    .line 147
+    :cond_171
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1193,7 +1307,7 @@
 
     move-result-object v0
 
-    .line 131
+    .line 148
     sget-object v1, Lcom/samsung/privilege/GCMIntentService;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1216,29 +1330,29 @@
 
     invoke-static {v1, v4}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 132
+    .line 149
     new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
 
-    .line 133
+    .line 150
     invoke-virtual {v1, p1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/content/Context;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    sget-boolean v4, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v4, Lcom/bzbs/data/AppSetting;->V:Z
 
-    .line 134
+    .line 151
     invoke-virtual {v1, v4}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    .line 135
+    .line 152
     invoke-virtual {v1, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 136
+    .line 153
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
@@ -1249,7 +1363,7 @@
 
     sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 137
+    .line 154
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -1258,18 +1372,18 @@
 
     invoke-direct {v1, p0, v3, p1, v2}, Lcom/samsung/privilege/GCMIntentService$1;-><init>(Lcom/samsung/privilege/GCMIntentService;Lcom/bzbs/bean/MessageGCM;Landroid/content/Context;I)V
 
-    .line 138
+    .line 155
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 163
+    .line 180
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    goto/16 :goto_7d
+    goto/16 :goto_7b
 
-    .line 165
-    :cond_1d7
+    .line 182
+    :cond_1d5
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v6, "badge"
@@ -1278,9 +1392,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2ab
+    if-eqz v0, :cond_252
 
-    .line 166
+    .line 183
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
     move-result v0
@@ -1289,195 +1403,97 @@
 
     invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
-    .line 167
+    .line 184
     invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 168
+    .line 185
     invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 169
-    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 186
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;)V
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 171
+    invoke-static {v0, v5}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 188
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-ne v0, v1, :cond_7d
+    if-ne v0, v1, :cond_7b
 
-    .line 172
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v11, :cond_7d
-
-    .line 173
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    long-to-int v1, v0
-
-    .line 175
+    .line 189
     new-instance v0, Landroid/content/Intent;
 
-    const-class v5, Lcom/samsung/privilege/activity/MainPagerActivity;
+    const-class v1, Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-direct {v0, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 176
-    new-instance v5, Ljava/lang/StringBuilder;
+    .line 190
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "com.samsung.privilege.service"
+    const-string/jumbo v5, "com.samsung.privilege.service"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 177
-    const-string/jumbo v5, "messageGCM"
+    .line 191
+    const-string/jumbo v1, "messageGCM"
 
-    invoke-virtual {v0, v5, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 178
-    const-string/jumbo v5, "notificationId"
-
-    invoke-virtual {v0, v5, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    .line 179
-    const-string/jumbo v5, "from_noti"
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 180
-    const-string/jumbo v5, "from_noti_type"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 181
-    const-string/jumbo v5, "from_noti_alert"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 182
-    const/4 v5, 0x0
-
-    invoke-static {p1, v2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v0
-
-    .line 184
-    new-instance v2, Landroid/app/Notification$Builder;
-
-    invoke-direct {v2, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
-
-    .line 185
-    const v5, 0x7f020183
-
-    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    .line 186
-    invoke-virtual {v5, v4}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
-
-    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    .line 187
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
+    .line 192
+    const-string/jumbo v1, "from_noti"
 
     const/4 v5, 0x1
 
-    .line 188
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
-
-    move-result-object v4
-
-    .line 189
-    invoke-virtual {v4, v0}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
-
-    .line 191
-    new-instance v0, Ljava/util/Date;
-
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
-
-    .line 192
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sget-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    const-wide/32 v8, 0xea60
-
-    add-long/2addr v6, v8
-
-    cmp-long v4, v4, v6
-
-    if-lez v4, :cond_28e
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     .line 193
-    const/4 v4, 0x2
+    const-string/jumbo v1, "from_noti_type"
 
-    invoke-static {v4}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 194
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+    const-string/jumbo v1, "from_noti_alert"
 
-    move-result-wide v4
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    sput-wide v4, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 197
-    :cond_28e
-    const-string/jumbo v0, "notification"
+    .line 195
+    const/4 v1, 0x0
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v2, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    check-cast v0, Landroid/app/NotificationManager;
+    .line 197
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
     .line 198
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
-
-    move-result-object v2
-
-    .line 199
-    invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-
-    .line 201
     const-string/jumbo v0, "Push Notification"
 
     const-string/jumbo v1, "View Badge Blink"
@@ -1486,10 +1502,10 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_7d
+    goto/16 :goto_7b
 
-    .line 204
-    :cond_2ab
+    .line 200
+    :cond_252
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v6, "comment"
@@ -1498,9 +1514,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3db
+    if-eqz v0, :cond_32f
 
-    .line 205
+    .line 201
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
     move-result v0
@@ -1509,275 +1525,68 @@
 
     invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
-    .line 206
+    .line 202
     invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 207
+    .line 203
     invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 208
-    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 204
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;)V
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 210
+    invoke-static {v0, v5}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 206
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-ne v0, v1, :cond_7d
+    if-ne v0, v1, :cond_7b
 
-    .line 211
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v11, :cond_7d
-
-    .line 212
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    long-to-int v1, v0
-
-    .line 215
+    .line 208
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
-    const-string/jumbo v5, "|"
+    const-string/jumbo v1, "|"
 
-    invoke-virtual {v0, v5}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 216
-    const/4 v5, -0x1
+    .line 209
+    const/4 v1, -0x1
 
-    if-le v0, v5, :cond_3b2
+    if-le v0, v1, :cond_307
 
-    .line 217
-    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
+    .line 210
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {v5, v6, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 218
-    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
-
-    const-string/jumbo v6, "f-"
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v5
-
-    if-ltz v5, :cond_37c
-
-    .line 219
-    new-instance v5, Landroid/content/Intent;
-
-    const-class v6, Lcom/samsung/privilege/activity/ReplyActivity;
-
-    invoke-direct {v5, p1, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 220
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v7, "com.samsung.privilege.service"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v8
-
-    invoke-virtual {v6, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 221
-    const-string/jumbo v6, "ReplyKeyBuzz"
-
-    invoke-virtual {v5, v6, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 222
-    const-string/jumbo v0, "ReplyIsRequestHelp"
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v5, v0, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 223
-    const/4 v0, 0x0
-
-    invoke-static {p1, v2, v5, v0}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    invoke-virtual {v1, v5, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 243
-    :goto_32b
-    new-instance v2, Landroid/app/Notification$Builder;
+    .line 211
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
-    invoke-direct {v2, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
+    const-string/jumbo v5, "f-"
 
-    .line 244
-    const v5, 0x7f020183
+    invoke-virtual {v1, v5}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
+    move-result v1
 
-    move-result-object v5
+    if-ltz v1, :cond_2d2
 
-    .line 245
-    invoke-virtual {v5, v4}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+    .line 212
+    new-instance v1, Landroid/content/Intent;
 
-    move-result-object v4
+    const-class v5, Lcom/samsung/privilege/activity/ReplyActivity;
 
-    iget-object v3, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    invoke-direct {v1, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 246
-    invoke-virtual {v4, v3}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v3
-
-    const/4 v4, 0x1
-
-    .line 247
-    invoke-virtual {v3, v4}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
-
-    move-result-object v3
-
-    .line 248
-    invoke-virtual {v3, v0}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
-
-    .line 250
-    new-instance v0, Ljava/util/Date;
-
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
-
-    .line 251
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sget-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    const-wide/32 v8, 0xea60
-
-    add-long/2addr v6, v8
-
-    cmp-long v3, v4, v6
-
-    if-lez v3, :cond_36a
-
-    .line 252
-    const/4 v3, 0x2
-
-    invoke-static {v3}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
-
-    .line 253
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sput-wide v4, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    .line 256
-    :cond_36a
-    const-string/jumbo v0, "notification"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/NotificationManager;
-
-    .line 257
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
-
-    move-result-object v2
-
-    .line 258
-    invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-
-    goto/16 :goto_7d
-
-    .line 227
-    :cond_37c
-    new-instance v5, Landroid/content/Intent;
-
-    const-class v6, Lcom/samsung/privilege/activity/ReplyActivity;
-
-    invoke-direct {v5, p1, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 228
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v7, "com.samsung.privilege.service"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v8
-
-    invoke-virtual {v6, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 229
-    const-string/jumbo v6, "ReplyKeyBuzz"
-
-    invoke-virtual {v5, v6, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 230
-    const-string/jumbo v0, "ReplyIsRequestHelp"
-
-    const/4 v6, 0x0
-
-    invoke-virtual {v5, v0, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 231
-    const/4 v0, 0x0
-
-    invoke-static {p1, v2, v5, v0}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v0
-
-    goto/16 :goto_32b
-
-    .line 236
-    :cond_3b2
-    new-instance v0, Landroid/content/Intent;
-
-    const-class v5, Lcom/samsung/privilege/activity/RequestHelpActivity;
-
-    invoke-direct {v0, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 237
+    .line 213
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1800,19 +1609,133 @@
 
     move-result-object v5
 
-    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 238
-    const/4 v5, 0x0
+    .line 214
+    const-string/jumbo v5, "ReplyKeyBuzz"
 
-    invoke-static {p1, v2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    invoke-virtual {v1, v5, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 215
+    const-string/jumbo v0, "ReplyIsRequestHelp"
+
+    const/4 v5, 0x1
+
+    invoke-virtual {v1, v0, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 216
+    const/4 v0, 0x0
+
+    invoke-static {p1, v2, v1, v0}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    goto/16 :goto_32b
+    .line 236
+    :goto_2cb
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 261
-    :cond_3db
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
+
+    goto/16 :goto_7b
+
+    .line 220
+    :cond_2d2
+    new-instance v1, Landroid/content/Intent;
+
+    const-class v5, Lcom/samsung/privilege/activity/ReplyActivity;
+
+    invoke-direct {v1, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 221
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "com.samsung.privilege.service"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v6
+
+    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 222
+    const-string/jumbo v5, "ReplyKeyBuzz"
+
+    invoke-virtual {v1, v5, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 223
+    const-string/jumbo v0, "ReplyIsRequestHelp"
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v1, v0, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 224
+    const/4 v0, 0x0
+
+    invoke-static {p1, v2, v1, v0}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v0
+
+    goto :goto_2cb
+
+    .line 229
+    :cond_307
+    new-instance v0, Landroid/content/Intent;
+
+    const-class v1, Lcom/samsung/privilege/activity/RequestHelpActivity;
+
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 230
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "com.samsung.privilege.service"
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v6
+
+    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 231
+    const/4 v1, 0x0
+
+    invoke-static {p1, v2, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v0
+
+    goto :goto_2cb
+
+    .line 238
+    :cond_32f
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v6, "link"
@@ -1821,9 +1744,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4b3
+    if-eqz v0, :cond_3b6
 
-    .line 262
+    .line 239
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
     move-result v0
@@ -1832,199 +1755,106 @@
 
     invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
-    .line 263
+    .line 240
     invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 264
+    .line 241
     invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 265
-    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 242
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;)V
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 267
+    invoke-static {v0, v5}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 244
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-ne v0, v1, :cond_7d
+    if-ne v0, v1, :cond_7b
 
-    .line 268
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v11, :cond_7d
-
-    .line 269
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    long-to-int v1, v0
-
-    .line 271
+    .line 245
     new-instance v0, Landroid/content/Intent;
 
-    const-class v5, Lcom/samsung/privilege/activity/WebViewNotificationActivity;
+    const-class v1, Lcom/samsung/privilege/activity/WebViewNotificationActivity;
 
-    invoke-direct {v0, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 272
-    new-instance v5, Ljava/lang/StringBuilder;
+    .line 246
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "com.samsung.privilege.service"
+    const-string/jumbo v5, "com.samsung.privilege.service"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 273
-    const-string/jumbo v5, "url"
+    .line 247
+    const-string/jumbo v1, "url"
 
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->url:Ljava/lang/String;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->url:Ljava/lang/String;
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 274
-    const-string/jumbo v5, "message"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 275
-    const-string/jumbo v5, "from_noti"
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 276
-    const-string/jumbo v5, "from_noti_type"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 277
-    const-string/jumbo v5, "from_noti_alert"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 278
-    const/4 v5, 0x0
-
-    invoke-static {p1, v2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v0
-
-    .line 280
-    new-instance v2, Landroid/app/Notification$Builder;
-
-    invoke-direct {v2, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
-
-    .line 281
-    const v5, 0x7f020183
-
-    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    .line 282
-    invoke-virtual {v5, v4}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
+    .line 248
+    const-string/jumbo v1, "message"
 
     iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 283
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    move-result-object v4
+    .line 249
+    const-string/jumbo v1, "from_noti"
 
     const/4 v5, 0x1
 
-    .line 284
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    move-result-object v4
+    .line 250
+    const-string/jumbo v1, "from_noti_type"
 
-    .line 285
-    invoke-virtual {v4, v0}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 287
-    new-instance v0, Ljava/util/Date;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+    .line 251
+    const-string/jumbo v1, "from_noti_alert"
 
-    .line 288
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    move-result-wide v4
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    sget-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
+    .line 252
+    const/4 v1, 0x0
 
-    const-wide/32 v8, 0xea60
-
-    add-long/2addr v6, v8
-
-    cmp-long v4, v4, v6
-
-    if-lez v4, :cond_496
-
-    .line 289
-    const/4 v4, 0x2
-
-    invoke-static {v4}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
-
-    .line 290
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sput-wide v4, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    .line 293
-    :cond_496
-    const-string/jumbo v0, "notification"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v2, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    check-cast v0, Landroid/app/NotificationManager;
+    .line 254
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 294
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    move-result-object v2
-
-    .line 295
-    invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-
-    .line 297
+    .line 255
     const-string/jumbo v0, "Push Notification"
 
     const-string/jumbo v1, "View Link"
@@ -2033,10 +1863,10 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_7d
+    goto/16 :goto_7b
 
-    .line 300
-    :cond_4b3
+    .line 257
+    :cond_3b6
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v6, "cat"
@@ -2045,9 +1875,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_68a
+    if-eqz v0, :cond_4e7
 
-    .line 301
+    .line 258
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
     move-result v0
@@ -2056,28 +1886,30 @@
 
     invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
-    .line 302
+    .line 259
     invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 303
+    .line 260
     invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 304
-    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 261
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;)V
+    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 306
+    invoke-static {v0, v6}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 263
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-ne v0, v1, :cond_7d
+    if-ne v0, v1, :cond_7b
 
-    .line 308
+    .line 265
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
-    if-eqz v0, :cond_5c2
+    if-eqz v0, :cond_473
 
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
@@ -2087,9 +1919,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_5c2
+    if-nez v0, :cond_473
 
-    .line 309
+    .line 266
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/GCMIntentService;->getApplicationContext()Landroid/content/Context;
@@ -2104,182 +1936,87 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5bf
+    if-eqz v0, :cond_471
 
     move v0, v1
 
-    .line 318
-    :goto_4f8
-    if-ne v0, v1, :cond_5c5
+    .line 275
+    :goto_3fd
+    if-ne v0, v1, :cond_475
 
-    .line 319
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v11, :cond_7d
-
-    .line 320
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    long-to-int v1, v0
-
-    .line 322
+    .line 276
     new-instance v0, Landroid/content/Intent;
 
-    const-class v5, Lcom/samsung/privilege/activity/MainPagerActivity;
+    const-class v1, Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-direct {v0, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 323
-    new-instance v5, Ljava/lang/StringBuilder;
+    .line 277
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "com.samsung.privilege.service"
+    const-string/jumbo v5, "com.samsung.privilege.service"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 324
-    const-string/jumbo v5, "category_noti"
+    .line 278
+    const-string/jumbo v1, "category_noti"
 
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 325
-    const-string/jumbo v5, "from_noti"
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 326
-    const-string/jumbo v5, "from_noti_type"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 327
-    const-string/jumbo v5, "from_noti_alert"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 328
-    const/4 v5, 0x0
-
-    invoke-static {p1, v2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v0
-
-    .line 330
-    new-instance v2, Landroid/app/Notification$Builder;
-
-    invoke-direct {v2, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
-
-    .line 331
-    const v5, 0x7f020183
-
-    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    .line 332
-    invoke-virtual {v5, v4}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
-
-    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    .line 333
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
+    .line 279
+    const-string/jumbo v1, "from_noti"
 
     const/4 v5, 0x1
 
-    .line 334
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    move-result-object v4
+    .line 280
+    const-string/jumbo v1, "from_noti_type"
 
-    .line 335
-    invoke-virtual {v4, v0}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 337
-    new-instance v0, Ljava/util/Date;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+    .line 281
+    const-string/jumbo v1, "from_noti_alert"
 
-    .line 338
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    move-result-wide v4
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    sget-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
+    .line 282
+    const/4 v1, 0x0
 
-    const-wide/32 v8, 0xea60
-
-    add-long/2addr v6, v8
-
-    cmp-long v4, v4, v6
-
-    if-lez v4, :cond_588
-
-    .line 339
-    const/4 v4, 0x2
-
-    invoke-static {v4}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
-
-    .line 340
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sput-wide v4, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    .line 343
-    :cond_588
-    const-string/jumbo v0, "notification"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v2, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    check-cast v0, Landroid/app/NotificationManager;
+    .line 284
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 344
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    move-result-object v2
-
-    .line 345
-    invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-
-    .line 347
+    .line 285
     const-string/jumbo v0, "Push Notification"
 
     const-string/jumbo v1, "View Category"
@@ -2312,189 +2049,94 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_7d
+    goto/16 :goto_7b
 
-    :cond_5bf
+    :cond_471
     move v0, v5
 
-    .line 312
-    goto/16 :goto_4f8
+    .line 269
+    goto :goto_3fd
 
-    :cond_5c2
+    :cond_473
     move v0, v1
 
-    .line 315
-    goto/16 :goto_4f8
+    .line 272
+    goto :goto_3fd
 
-    .line 350
-    :cond_5c5
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v11, :cond_7d
-
-    .line 351
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    long-to-int v1, v0
-
-    .line 353
+    .line 287
+    :cond_475
     new-instance v0, Landroid/content/Intent;
 
-    const-class v5, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+    const-class v1, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    invoke-direct {v0, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 354
-    new-instance v5, Ljava/lang/StringBuilder;
+    .line 288
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "com.samsung.privilege.service"
+    const-string/jumbo v5, "com.samsung.privilege.service"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 355
-    const-string/jumbo v5, "catId"
+    .line 289
+    const-string/jumbo v1, "catId"
 
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 356
-    const-string/jumbo v5, "from_noti"
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 357
-    const-string/jumbo v5, "from_noti_type"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 358
-    const-string/jumbo v5, "from_noti_alert"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 359
-    const/4 v5, 0x0
-
-    invoke-static {p1, v2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v0
-
-    .line 361
-    new-instance v2, Landroid/app/Notification$Builder;
-
-    invoke-direct {v2, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
-
-    .line 362
-    const v5, 0x7f020183
-
-    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    .line 363
-    invoke-virtual {v5, v4}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
-
-    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    .line 364
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
+    .line 290
+    const-string/jumbo v1, "from_noti"
 
     const/4 v5, 0x1
 
-    .line 365
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    move-result-object v4
+    .line 291
+    const-string/jumbo v1, "from_noti_type"
 
-    .line 366
-    invoke-virtual {v4, v0}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 368
-    new-instance v0, Ljava/util/Date;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+    .line 292
+    const-string/jumbo v1, "from_noti_alert"
 
-    .line 369
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    move-result-wide v4
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    sget-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
+    .line 293
+    const/4 v1, 0x0
 
-    const-wide/32 v8, 0xea60
-
-    add-long/2addr v6, v8
-
-    cmp-long v4, v4, v6
-
-    if-lez v4, :cond_653
-
-    .line 370
-    const/4 v4, 0x2
-
-    invoke-static {v4}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
-
-    .line 371
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sput-wide v4, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    .line 374
-    :cond_653
-    const-string/jumbo v0, "notification"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v2, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    check-cast v0, Landroid/app/NotificationManager;
+    .line 295
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 375
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    move-result-object v2
-
-    .line 376
-    invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-
-    .line 378
+    .line 296
     const-string/jumbo v0, "Push Notification"
 
     const-string/jumbo v1, "View Bzbs Category"
@@ -2527,10 +2169,10 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_7d
+    goto/16 :goto_7b
 
-    .line 382
-    :cond_68a
+    .line 299
+    :cond_4e7
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v5, "ewallet_pay"
@@ -2539,7 +2181,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_6a0
+    if-nez v0, :cond_4fd
 
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
@@ -2549,10 +2191,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_799
+    if-eqz v0, :cond_5a5
 
-    .line 383
-    :cond_6a0
+    .line 300
+    :cond_4fd
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
     move-result v0
@@ -2561,190 +2203,97 @@
 
     invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
-    .line 384
+    .line 301
     invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 385
+    .line 302
     invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 386
-    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 303
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;)V
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 388
+    invoke-static {v0, v5}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 305
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-ne v0, v1, :cond_773
+    if-ne v0, v1, :cond_57f
 
-    .line 389
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v11, :cond_773
-
-    .line 390
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    long-to-int v1, v0
-
-    .line 393
+    .line 306
     new-instance v0, Landroid/content/Intent;
 
-    const-class v5, Lcom/samsung/privilege/activity/MainPagerActivity;
+    const-class v1, Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-direct {v0, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 394
-    new-instance v5, Ljava/lang/StringBuilder;
+    .line 307
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "com.samsung.privilege.service"
+    const-string/jumbo v5, "com.samsung.privilege.service"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 395
-    const-string/jumbo v5, "messageGCM"
+    .line 308
+    const-string/jumbo v1, "messageGCM"
 
-    invoke-virtual {v0, v5, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 396
-    const-string/jumbo v5, "from_noti"
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 397
-    const-string/jumbo v5, "from_noti_type"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 398
-    const-string/jumbo v5, "from_noti_alert"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 399
-    const/4 v5, 0x0
-
-    invoke-static {p1, v2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v0
-
-    .line 401
-    new-instance v2, Landroid/app/Notification$Builder;
-
-    invoke-direct {v2, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
-
-    .line 402
-    const v5, 0x7f020183
-
-    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    .line 403
-    invoke-virtual {v5, v4}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
-
-    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    .line 404
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
+    .line 309
+    const-string/jumbo v1, "from_noti"
 
     const/4 v5, 0x1
 
-    .line 405
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    move-result-object v4
+    .line 310
+    const-string/jumbo v1, "from_noti_type"
 
-    .line 406
-    invoke-virtual {v4, v0}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 408
-    new-instance v0, Ljava/util/Date;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+    .line 311
+    const-string/jumbo v1, "from_noti_alert"
 
-    .line 409
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    move-result-wide v4
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    sget-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
+    .line 312
+    const/4 v1, 0x0
 
-    const-wide/32 v8, 0xea60
-
-    add-long/2addr v6, v8
-
-    cmp-long v4, v4, v6
-
-    if-lez v4, :cond_746
-
-    .line 410
-    const/4 v4, 0x2
-
-    invoke-static {v4}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
-
-    .line 411
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sput-wide v4, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    .line 414
-    :cond_746
-    const-string/jumbo v0, "notification"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v2, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    check-cast v0, Landroid/app/NotificationManager;
+    .line 314
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 415
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    move-result-object v2
-
-    .line 416
-    invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-
-    .line 418
+    .line 315
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v1, "ewallet_pay"
@@ -2753,9 +2302,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_77b
+    if-eqz v0, :cond_587
 
-    .line 420
+    .line 316
     const-string/jumbo v0, "Push Notification"
 
     const-string/jumbo v1, "Payment Success"
@@ -2770,17 +2319,17 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 428
-    :cond_773
-    :goto_773
+    .line 322
+    :cond_57f
+    :goto_57f
     const-string/jumbo v0, "payment success"
 
     invoke-static {v0}, Lcom/bzbs/event/WalletEvents;->a(Ljava/lang/String;)V
 
-    goto/16 :goto_7d
+    goto/16 :goto_7b
 
-    .line 421
-    :cond_77b
+    .line 317
+    :cond_587
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v1, "ewallet_refund"
@@ -2789,9 +2338,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_773
+    if-eqz v0, :cond_57f
 
-    .line 423
+    .line 318
     const-string/jumbo v0, "Push Notification"
 
     const-string/jumbo v1, "Refund Success"
@@ -2806,10 +2355,144 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    goto :goto_773
+    goto :goto_57f
 
-    .line 429
-    :cond_799
+    .line 323
+    :cond_5a5
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+
+    const-string/jumbo v5, "ewallet_topup_cash"
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_62e
+
+    .line 324
+    invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
+
+    .line 325
+    invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
+
+    .line 326
+    invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
+
+    .line 327
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-static {v0, v5}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 329
+    invoke-static {p1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;)Z
+
+    move-result v0
+
+    if-ne v0, v1, :cond_627
+
+    .line 330
+    new-instance v0, Landroid/content/Intent;
+
+    const-class v1, Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 331
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v5, "com.samsung.privilege.service"
+
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v6
+
+    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 332
+    const-string/jumbo v1, "messageGCM"
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+
+    .line 333
+    const-string/jumbo v1, "from_noti"
+
+    const/4 v5, 0x1
+
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 334
+    const-string/jumbo v1, "from_noti_type"
+
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 335
+    const-string/jumbo v1, "from_noti_alert"
+
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 336
+    const/4 v1, 0x0
+
+    invoke-static {p1, v2, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v0
+
+    .line 338
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
+
+    .line 339
+    const-string/jumbo v0, "Push Notification"
+
+    const-string/jumbo v1, "Topup Cash Success"
+
+    const-string/jumbo v2, ""
+
+    const-wide/16 v4, 0x1
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-static {v0, v1, v2, v4}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+
+    .line 342
+    :cond_627
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/bzbs/event/WalletEvents;->b(Ljava/lang/String;)V
+
+    goto/16 :goto_7b
+
+    .line 343
+    :cond_62e
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v5, "message"
@@ -2818,7 +2501,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_87b
+    if-eqz v0, :cond_6b9
 
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
@@ -2828,14 +2511,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_87b
+    if-eqz v0, :cond_6b9
 
-    .line 430
+    .line 344
     const-string/jumbo v0, "queue"
 
     iput-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 432
+    .line 346
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
     move-result v0
@@ -2844,205 +2527,107 @@
 
     invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
-    .line 433
+    .line 347
     invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 434
+    .line 348
     invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 435
-    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 349
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;)V
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 437
+    invoke-static {v0, v5}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 351
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-ne v0, v1, :cond_7d
+    if-ne v0, v1, :cond_7b
 
-    .line 438
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v11, :cond_7d
-
-    .line 439
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    long-to-int v1, v0
-
-    .line 441
+    .line 352
     new-instance v0, Landroid/content/Intent;
 
-    const-class v5, Lcom/samsung/privilege/activity/MainPagerActivity;
+    const-class v1, Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-direct {v0, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 442
-    new-instance v5, Ljava/lang/StringBuilder;
+    .line 353
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "com.samsung.privilege.service"
+    const-string/jumbo v5, "com.samsung.privilege.service"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 443
-    const-string/jumbo v5, "messageGCM"
+    .line 354
+    const-string/jumbo v1, "messageGCM"
 
-    invoke-virtual {v0, v5, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 444
-    const-string/jumbo v5, "notificationId"
+    .line 355
+    const-string/jumbo v1, "from_noti"
 
-    invoke-virtual {v0, v5, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    const/4 v5, 0x1
 
-    .line 445
-    const-string/jumbo v5, "from_noti"
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    const/4 v6, 0x1
+    .line 356
+    const-string/jumbo v1, "from_noti_type"
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 446
-    const-string/jumbo v5, "from_noti_type"
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+    .line 357
+    const-string/jumbo v1, "from_noti_alert"
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 447
-    const-string/jumbo v5, "from_noti_alert"
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 358
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 448
-    const/4 v5, 0x0
-
-    invoke-static {p1, v2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    invoke-static {p1, v2, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    .line 450
-    new-instance v2, Landroid/app/Notification$Builder;
+    .line 360
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    invoke-direct {v2, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    .line 451
-    const v5, 0x7f020183
-
-    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    .line 452
-    invoke-virtual {v5, v4}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
-
-    iget-object v3, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    .line 453
-    invoke-virtual {v4, v3}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v3
-
-    const/4 v4, 0x1
-
-    .line 454
-    invoke-virtual {v3, v4}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
-
-    move-result-object v3
-
-    .line 455
-    invoke-virtual {v3, v0}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
-
-    .line 457
-    new-instance v0, Ljava/util/Date;
-
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
-
-    .line 458
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sget-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    const-wide/32 v8, 0xea60
-
-    add-long/2addr v6, v8
-
-    cmp-long v3, v4, v6
-
-    if-lez v3, :cond_860
-
-    .line 459
-    const/4 v3, 0x2
-
-    invoke-static {v3}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
-
-    .line 460
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sput-wide v4, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    .line 463
-    :cond_860
-    const-string/jumbo v0, "notification"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/NotificationManager;
-
-    .line 464
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
-
-    move-result-object v2
-
-    .line 465
-    invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-
-    .line 467
+    .line 361
     const-string/jumbo v0, "Push Notification"
 
     const-string/jumbo v1, "View Msg"
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_7d
+    goto/16 :goto_7b
 
-    .line 470
-    :cond_87b
+    .line 363
+    :cond_6b9
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v5, "message"
@@ -3051,9 +2636,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_94d
+    if-eqz v0, :cond_734
 
-    .line 471
+    .line 364
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
     move-result v0
@@ -3062,205 +2647,107 @@
 
     invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
-    .line 472
+    .line 365
     invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 473
+    .line 366
     invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 474
-    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 367
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;)V
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 476
+    invoke-static {v0, v5}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 369
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-ne v0, v1, :cond_7d
+    if-ne v0, v1, :cond_7b
 
-    .line 477
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v11, :cond_7d
-
-    .line 478
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    long-to-int v1, v0
-
-    .line 480
+    .line 370
     new-instance v0, Landroid/content/Intent;
 
-    const-class v5, Lcom/samsung/privilege/activity/MainPagerActivity;
+    const-class v1, Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-direct {v0, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 481
-    new-instance v5, Ljava/lang/StringBuilder;
+    .line 371
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "com.samsung.privilege.service"
+    const-string/jumbo v5, "com.samsung.privilege.service"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 482
-    const-string/jumbo v5, "messageGCM"
+    .line 372
+    const-string/jumbo v1, "messageGCM"
 
-    invoke-virtual {v0, v5, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 483
-    const-string/jumbo v5, "notificationId"
+    .line 373
+    const-string/jumbo v1, "from_noti"
 
-    invoke-virtual {v0, v5, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    const/4 v5, 0x1
 
-    .line 484
-    const-string/jumbo v5, "from_noti"
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    const/4 v6, 0x1
+    .line 374
+    const-string/jumbo v1, "from_noti_type"
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 485
-    const-string/jumbo v5, "from_noti_type"
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+    .line 375
+    const-string/jumbo v1, "from_noti_alert"
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 486
-    const-string/jumbo v5, "from_noti_alert"
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 376
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 487
-    const/4 v5, 0x0
-
-    invoke-static {p1, v2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    invoke-static {p1, v2, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    .line 489
-    new-instance v2, Landroid/app/Notification$Builder;
+    .line 378
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    invoke-direct {v2, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    .line 490
-    const v5, 0x7f020183
-
-    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    .line 491
-    invoke-virtual {v5, v4}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
-
-    iget-object v3, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    .line 492
-    invoke-virtual {v4, v3}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v3
-
-    const/4 v4, 0x1
-
-    .line 493
-    invoke-virtual {v3, v4}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
-
-    move-result-object v3
-
-    .line 494
-    invoke-virtual {v3, v0}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
-
-    .line 496
-    new-instance v0, Ljava/util/Date;
-
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
-
-    .line 497
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sget-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    const-wide/32 v8, 0xea60
-
-    add-long/2addr v6, v8
-
-    cmp-long v3, v4, v6
-
-    if-lez v3, :cond_932
-
-    .line 498
-    const/4 v3, 0x2
-
-    invoke-static {v3}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
-
-    .line 499
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sput-wide v4, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    .line 502
-    :cond_932
-    const-string/jumbo v0, "notification"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/NotificationManager;
-
-    .line 503
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
-
-    move-result-object v2
-
-    .line 504
-    invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-
-    .line 506
+    .line 379
     const-string/jumbo v0, "Push Notification"
 
     const-string/jumbo v1, "View Msg"
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_7d
+    goto/16 :goto_7b
 
-    .line 509
-    :cond_94d
+    .line 381
+    :cond_734
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v5, "dashboard"
@@ -3269,9 +2756,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a37
+    if-eqz v0, :cond_7cd
 
-    .line 510
+    .line 382
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
     move-result v0
@@ -3280,192 +2767,99 @@
 
     invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
-    .line 511
+    .line 383
     invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 512
+    .line 384
     invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 513
-    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 385
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;)V
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 515
+    invoke-static {v0, v5}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 387
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-ne v0, v1, :cond_7d
+    if-ne v0, v1, :cond_7b
 
-    .line 516
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v11, :cond_7d
-
-    .line 517
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    long-to-int v1, v0
-
-    .line 519
+    .line 388
     new-instance v0, Landroid/content/Intent;
 
-    const-class v5, Lcom/samsung/privilege/activity/MainPagerActivity;
+    const-class v1, Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-direct {v0, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 520
-    new-instance v5, Ljava/lang/StringBuilder;
+    .line 389
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "com.samsung.privilege.service"
+    const-string/jumbo v5, "com.samsung.privilege.service"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 521
-    const-string/jumbo v5, "dashboard_key"
+    .line 390
+    const-string/jumbo v1, "dashboard_key"
 
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 522
-    const-string/jumbo v5, "from_noti"
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 523
-    const-string/jumbo v5, "from_noti_type"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 524
-    const-string/jumbo v5, "from_noti_alert"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 525
-    const/4 v5, 0x0
-
-    invoke-static {p1, v2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v0
-
-    .line 527
-    new-instance v2, Landroid/app/Notification$Builder;
-
-    invoke-direct {v2, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
-
-    .line 528
-    const v5, 0x7f020183
-
-    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    .line 529
-    invoke-virtual {v5, v4}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
-
-    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    .line 530
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
+    .line 391
+    const-string/jumbo v1, "from_noti"
 
     const/4 v5, 0x1
 
-    .line 531
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    move-result-object v4
+    .line 392
+    const-string/jumbo v1, "from_noti_type"
 
-    .line 532
-    invoke-virtual {v4, v0}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 534
-    new-instance v0, Ljava/util/Date;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+    .line 393
+    const-string/jumbo v1, "from_noti_alert"
 
-    .line 535
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    move-result-wide v4
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    sget-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
+    .line 394
+    const/4 v1, 0x0
 
-    const-wide/32 v8, 0xea60
-
-    add-long/2addr v6, v8
-
-    cmp-long v4, v4, v6
-
-    if-lez v4, :cond_a00
-
-    .line 536
-    const/4 v4, 0x2
-
-    invoke-static {v4}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
-
-    .line 537
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sput-wide v4, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    .line 540
-    :cond_a00
-    const-string/jumbo v0, "notification"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v2, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    check-cast v0, Landroid/app/NotificationManager;
+    .line 396
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 541
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    move-result-object v2
-
-    .line 542
-    invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-
-    .line 544
+    .line 397
     const-string/jumbo v0, "Push Notification"
 
     const-string/jumbo v1, "View Dashboard"
@@ -3498,10 +2892,10 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_7d
+    goto/16 :goto_7b
 
-    .line 547
-    :cond_a37
+    .line 399
+    :cond_7cd
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v5, "resume"
@@ -3510,9 +2904,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b10
+    if-eqz v0, :cond_84f
 
-    .line 548
+    .line 400
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
     move-result v0
@@ -3521,203 +2915,105 @@
 
     invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
-    .line 549
+    .line 401
     invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 550
+    .line 402
     invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 551
-    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 403
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;)V
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 553
+    invoke-static {v0, v5}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 405
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;)Z
 
     move-result v0
 
-    if-ne v0, v1, :cond_b07
+    if-ne v0, v1, :cond_846
 
-    .line 554
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    if-lt v0, v11, :cond_b07
-
-    .line 555
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    long-to-int v1, v0
-
-    .line 557
+    .line 406
     new-instance v0, Landroid/content/Intent;
 
-    const-class v5, Lcom/samsung/privilege/activity/MainPagerActivity;
+    const-class v1, Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-direct {v0, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 558
-    new-instance v5, Ljava/lang/StringBuilder;
+    .line 407
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "com.samsung.privilege.service"
+    const-string/jumbo v5, "com.samsung.privilege.service"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 559
-    const-string/jumbo v5, "messageGCM"
+    .line 408
+    const-string/jumbo v1, "messageGCM"
 
-    invoke-virtual {v0, v5, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 560
-    const-string/jumbo v5, "notificationId"
+    .line 409
+    const-string/jumbo v1, "from_noti"
 
-    invoke-virtual {v0, v5, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    const/4 v5, 0x1
 
-    .line 561
-    const-string/jumbo v5, "from_noti"
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    const/4 v6, 0x1
+    .line 410
+    const-string/jumbo v1, "from_noti_type"
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 562
-    const-string/jumbo v5, "from_noti_type"
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+    .line 411
+    const-string/jumbo v1, "from_noti_alert"
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 563
-    const-string/jumbo v5, "from_noti_alert"
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 412
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 564
-    const/4 v5, 0x0
-
-    invoke-static {p1, v2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    invoke-static {p1, v2, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    .line 566
-    new-instance v2, Landroid/app/Notification$Builder;
+    .line 414
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    invoke-direct {v2, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    .line 567
-    const v5, 0x7f020183
-
-    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    .line 568
-    invoke-virtual {v5, v4}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
-
-    iget-object v3, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    .line 569
-    invoke-virtual {v4, v3}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v3
-
-    const/4 v4, 0x1
-
-    .line 570
-    invoke-virtual {v3, v4}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
-
-    move-result-object v3
-
-    .line 571
-    invoke-virtual {v3, v0}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
-
-    .line 573
-    new-instance v0, Ljava/util/Date;
-
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
-
-    .line 574
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sget-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    const-wide/32 v8, 0xea60
-
-    add-long/2addr v6, v8
-
-    cmp-long v3, v4, v6
-
-    if-lez v3, :cond_aee
-
-    .line 575
-    const/4 v3, 0x2
-
-    invoke-static {v3}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
-
-    .line 576
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sput-wide v4, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    .line 579
-    :cond_aee
-    const-string/jumbo v0, "notification"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/NotificationManager;
-
-    .line 580
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
-
-    move-result-object v2
-
-    .line 581
-    invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-
-    .line 583
+    .line 415
     const-string/jumbo v0, "Push Notification"
 
     const-string/jumbo v1, "View Msg"
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 587
-    :cond_b07
+    .line 418
+    :cond_846
     const/4 v0, 0x0
 
     const/4 v1, 0x0
@@ -3728,21 +3024,21 @@
 
     invoke-static {p1, v0, v1, v2, v3}, Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;ZZ)V
 
-    goto/16 :goto_7d
+    goto/16 :goto_7b
 
-    .line 588
-    :cond_b10
+    .line 419
+    :cond_84f
     iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    const-string/jumbo v1, "marketplace"
+    const-string/jumbo v5, "marketplace"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_7d
+    if-eqz v0, :cond_8da
 
-    .line 589
+    .line 420
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
     move-result v0
@@ -3751,178 +3047,85 @@
 
     invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
-    .line 590
+    .line 421
     invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 591
+    .line 422
     invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 592
-    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+    .line 423
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;)V
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 594
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-static {v0, v1}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-lt v0, v11, :cond_7d
-
-    .line 595
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    long-to-int v1, v0
-
-    .line 597
+    .line 425
     new-instance v0, Landroid/content/Intent;
 
-    const-class v5, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+    const-class v1, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    invoke-direct {v0, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 598
-    new-instance v5, Ljava/lang/StringBuilder;
+    .line 426
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "com.samsung.privilege.service"
+    const-string/jumbo v5, "com.samsung.privilege.service"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v0, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 599
-    const-string/jumbo v5, "from_noti"
-
-    const/4 v6, 0x1
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 600
-    const-string/jumbo v5, "from_noti_type"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 601
-    const-string/jumbo v5, "from_noti_alert"
-
-    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 602
-    const/4 v5, 0x0
-
-    invoke-static {p1, v2, v0, v5}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v0
-
-    .line 604
-    new-instance v2, Landroid/app/Notification$Builder;
-
-    invoke-direct {v2, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
-
-    .line 605
-    const v5, 0x7f020183
-
-    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    .line 606
-    invoke-virtual {v5, v4}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
-
-    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
-
-    .line 607
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object v4
+    .line 427
+    const-string/jumbo v1, "from_noti"
 
     const/4 v5, 0x1
 
-    .line 608
-    invoke-virtual {v4, v5}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    move-result-object v4
+    .line 428
+    const-string/jumbo v1, "from_noti_type"
 
-    .line 609
-    invoke-virtual {v4, v0}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 611
-    new-instance v0, Ljava/util/Date;
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+    .line 429
+    const-string/jumbo v1, "from_noti_alert"
 
-    .line 612
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    move-result-wide v4
+    invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    sget-wide v6, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
+    .line 430
+    const/4 v1, 0x0
 
-    const-wide/32 v8, 0xea60
-
-    add-long/2addr v6, v8
-
-    cmp-long v4, v4, v6
-
-    if-lez v4, :cond_bb5
-
-    .line 613
-    const/4 v4, 0x2
-
-    invoke-static {v4}, Landroid/media/RingtoneManager;->getDefaultUri(I)Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v4}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
-
-    .line 614
-    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v4
-
-    sput-wide v4, Lcom/samsung/privilege/GCMIntentService;->gLastTimePlaySound:J
-
-    .line 617
-    :cond_bb5
-    const-string/jumbo v0, "notification"
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v2, v0, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    check-cast v0, Landroid/app/NotificationManager;
+    .line 432
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 618
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->getNotification()Landroid/app/Notification;
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
 
-    move-result-object v2
-
-    .line 619
-    invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
-
-    .line 621
+    .line 433
     const-string/jumbo v0, "Push Notification"
 
     const-string/jumbo v1, "View Bzbs Category"
@@ -3954,22 +3157,359 @@
     move-result-object v2
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_bea
-    .catch Ljava/lang/Exception; {:try_start_7e .. :try_end_bea} :catch_5f
 
-    goto/16 :goto_7d
+    goto/16 :goto_7b
 
-    :cond_bec
+    .line 434
+    :cond_8da
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+
+    const-string/jumbo v5, "stamp"
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_998
+
+    .line 435
+    const v0, 0x7f090188
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 436
+    const-string/jumbo v5, "@Stamp"
+
+    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-virtual {v0, v5, v6}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 437
+    iput-object v0, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    .line 439
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
+
+    .line 440
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
+
+    const-string/jumbo v6, "|"
+
+    const-string/jumbo v7, "#"
+
+    invoke-virtual {v5, v6, v7}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string/jumbo v6, "#"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 441
+    array-length v6, v5
+
+    if-lt v6, v1, :cond_912
+
+    .line 442
+    const/4 v0, 0x0
+
+    aget-object v0, v5, v0
+
+    .line 445
+    :cond_912
+    invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-static {p1, v1}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
+
+    .line 446
+    invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
+
+    .line 447
+    invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
+
+    .line 448
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-static {v1, v5}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 450
+    new-instance v1, Landroid/content/Intent;
+
+    const-class v5, Lcom/samsung/privilege/activity/StampDetailGiftActivity;
+
+    invoke-direct {v1, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 451
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "com.samsung.privilege.service"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v6
+
+    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 452
+    const-string/jumbo v5, "issuer"
+
+    invoke-virtual {v1, v5, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 453
+    const-string/jumbo v0, "from_noti"
+
+    const/4 v5, 0x1
+
+    invoke-virtual {v1, v0, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 454
+    const-string/jumbo v0, "from_noti_type"
+
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+
+    invoke-virtual {v1, v0, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 455
+    const-string/jumbo v0, "from_noti_alert"
+
+    iget-object v5, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-virtual {v1, v0, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 456
+    const/4 v0, 0x0
+
+    invoke-static {p1, v2, v1, v0}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v0
+
+    .line 458
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
+
+    .line 459
+    const-string/jumbo v0, "Push Notification"
+
+    const-string/jumbo v1, "View Stamp"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v4, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v4, "|"
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto/16 :goto_7b
+
+    .line 460
+    :cond_998
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+
+    const-string/jumbo v1, "cart"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7b
+
+    .line 461
+    invoke-static {p1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    invoke-static {p1, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
+
+    .line 462
+    invoke-static {p1, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessageGCM;)V
+
+    .line 463
+    invoke-static {v3}, Lcom/samsung/privilege/GCMIntentService;->onGCMMessage(Lcom/bzbs/bean/MessageGCM;)V
+
+    .line 464
+    iget-object v0, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-static {v0, v1}, Lcom/bzbs/event/NotiEvents;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 466
+    invoke-static {p1}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/bzbs/marketplace/model/url/UrlModel;->getUrlBasketToolbar(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 468
+    new-instance v1, Landroid/content/Intent;
+
+    const-class v5, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;
+
+    invoke-direct {v1, p1, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 469
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v6, "com.samsung.privilege.service"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v6
+
+    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 470
+    const-string/jumbo v5, "from_noti"
+
+    const/4 v6, 0x1
+
+    invoke-virtual {v1, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 471
+    const-string/jumbo v5, "from_noti_type"
+
+    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
+
+    invoke-virtual {v1, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 472
+    const-string/jumbo v5, "from_noti_alert"
+
+    iget-object v6, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-virtual {v1, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 473
+    const-string/jumbo v5, "url"
+
+    invoke-virtual {v1, v5, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 474
+    const/4 v0, 0x0
+
+    invoke-static {p1, v2, v1, v0}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v0
+
+    .line 476
+    iget-object v1, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-direct {p0, p1, v4, v1, v0}, Lcom/samsung/privilege/GCMIntentService;->notifyNotification(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;)V
+
+    .line 477
+    const-string/jumbo v0, "Push Notification"
+
+    const-string/jumbo v1, "View Shopping Cart"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v4, v3, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v4, "|"
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, v3, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_a2f
+    .catch Ljava/lang/Exception; {:try_start_7c .. :try_end_a2f} :catch_5d
+
+    goto/16 :goto_7b
+
+    :cond_a31
     move v0, v5
 
-    goto/16 :goto_fc
+    goto/16 :goto_fa
 .end method
 
 .method protected onRecoverableError(Landroid/content/Context;Ljava/lang/String;)Z
     .registers 6
 
     .prologue
-    .line 740
+    .line 603
     const-string/jumbo v0, "GCM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -3992,7 +3532,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 742
+    .line 605
     const/4 v0, 0x1
 
     return v0
@@ -4002,7 +3542,7 @@
     .registers 6
 
     .prologue
-    .line 57
+    .line 74
     sget-object v0, Lcom/samsung/privilege/GCMIntentService;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4025,13 +3565,13 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 58
-    invoke-static {p1, p2}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Ljava/lang/String;)Z
+    .line 75
+    invoke-static {p1, p2}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 60
+    .line 77
     invoke-static {p1}, Lcom/bzbs/util/GCMUtil;->c(Landroid/content/Context;)V
 
-    .line 61
+    .line 78
     return-void
 .end method
 
@@ -4039,7 +3579,7 @@
     .registers 6
 
     .prologue
-    .line 65
+    .line 82
     sget-object v0, Lcom/samsung/privilege/GCMIntentService;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4062,6 +3602,6 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 66
+    .line 83
     return-void
 .end method

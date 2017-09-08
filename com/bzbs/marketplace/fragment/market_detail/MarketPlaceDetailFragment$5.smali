@@ -3,12 +3,12 @@
 .source "MarketPlaceDetailFragment.java"
 
 # interfaces
-.implements Lcom/bzbs/marketplace/listener/OnShareSuccessListener;
+.implements Lcom/bzbs/event/CallbackOTPDialog;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->onShare(Landroid/view/View;)V
+    value = Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->doSubmit(ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 673
+    .line 557
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$5;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,33 +31,41 @@
 
 
 # virtual methods
-.method public a(I)V
-    .registers 5
+.method public a()V
+    .registers 10
 
     .prologue
-    .line 676
-    const-string/jumbo v0, "share"
+    const/4 v6, 0x0
 
-    .line 677
-    new-instance v1, Landroid/os/Handler;
-
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
-
-    iget-object v2, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$5;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
-
-    iget-object v2, v2, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->a:Landroid/app/Activity;
-
-    invoke-static {p1, v0, v1, v2}, Lcom/bzbs/lib/survey/util/AnimationPoint;->a(ILjava/lang/String;Landroid/os/Handler;Landroid/app/Activity;)V
-
-    .line 678
+    .line 565
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$5;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->a:Landroid/app/Activity;
 
-    check-cast v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+    iget-object v1, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$5;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
 
-    invoke-virtual {v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l()V
+    invoke-static {v1}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->b(Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;)Landroid/os/Handler;
 
-    .line 679
+    move-result-object v1
+
+    const-string/jumbo v2, ""
+
+    const-string/jumbo v3, "CampaignDetailGiftActivity"
+
+    const-string/jumbo v4, "redeem"
+
+    iget-object v5, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$5;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
+
+    iget-object v5, v5, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->r:Lcom/bzbs/bean/CampaignView;
+
+    iget-object v5, v5, Lcom/bzbs/bean/CampaignView;->Name:Ljava/lang/String;
+
+    const/4 v8, 0x0
+
+    move v7, v6
+
+    invoke-static/range {v0 .. v8}, Lcom/samsung/privilege/util/DialogOTPUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/Object;)V
+
+    .line 566
     return-void
 .end method

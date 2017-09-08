@@ -3,58 +3,68 @@
 
 
 # static fields
-.field public static a:Lcom/google/android/gms/internal/zzmt;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/zzmt",
-            "<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final a:Landroid/content/ComponentName;
 
-.field public static b:Lcom/google/android/gms/internal/zzmt;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/android/gms/internal/zzmt",
-            "<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static b:I
+
+.field public static c:I
+
+.field public static d:I
+
+.field public static e:I
+
+.field public static f:I
+
+.field public static g:I
+
+.field public static h:I
+
+.field public static i:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 4
 
-    const/16 v2, 0x64
+    const/4 v3, 0x1
 
-    const-string/jumbo v0, "gms:common:stats:max_num_of_events"
+    new-instance v0, Landroid/content/ComponentName;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string/jumbo v1, "com.google.android.gms"
 
-    move-result-object v1
+    const-string/jumbo v2, "com.google.android.gms.common.stats.GmsCoreStatsService"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/zzmt;->a(Ljava/lang/String;Ljava/lang/Integer;)Lcom/google/android/gms/internal/zzmt;
+    invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v0
+    sput-object v0, Lcom/google/android/gms/common/stats/zzc;->a:Landroid/content/ComponentName;
 
-    sput-object v0, Lcom/google/android/gms/common/stats/zzc;->a:Lcom/google/android/gms/internal/zzmt;
+    const/4 v0, 0x0
 
-    const-string/jumbo v0, "gms:common:stats:max_chunk_size"
+    sput v0, Lcom/google/android/gms/common/stats/zzc;->b:I
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    sput v3, Lcom/google/android/gms/common/stats/zzc;->c:I
 
-    move-result-object v1
+    const/4 v0, 0x2
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/internal/zzmt;->a(Ljava/lang/String;Ljava/lang/Integer;)Lcom/google/android/gms/internal/zzmt;
+    sput v0, Lcom/google/android/gms/common/stats/zzc;->d:I
 
-    move-result-object v0
+    const/4 v0, 0x4
 
-    sput-object v0, Lcom/google/android/gms/common/stats/zzc;->b:Lcom/google/android/gms/internal/zzmt;
+    sput v0, Lcom/google/android/gms/common/stats/zzc;->e:I
+
+    const/16 v0, 0x8
+
+    sput v0, Lcom/google/android/gms/common/stats/zzc;->f:I
+
+    const/16 v0, 0x10
+
+    sput v0, Lcom/google/android/gms/common/stats/zzc;->g:I
+
+    const/16 v0, 0x20
+
+    sput v0, Lcom/google/android/gms/common/stats/zzc;->h:I
+
+    sput v3, Lcom/google/android/gms/common/stats/zzc;->i:I
 
     return-void
 .end method

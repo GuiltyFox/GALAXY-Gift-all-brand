@@ -14,37 +14,37 @@
 
 .field btnAddPicture:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004c7
+        value = 0x7f1004fe
     .end annotation
 .end field
 
 .field btnAddSticker:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004ca
+        value = 0x7f100501
     .end annotation
 .end field
 
 .field contentImagePost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004ba
+        value = 0x7f1004f1
     .end annotation
 .end field
 
 .field contentPager:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004cb
+        value = 0x7f100502
     .end annotation
 .end field
 
 .field contentPost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004b7
+        value = 0x7f1004ee
     .end annotation
 .end field
 
 .field edtTextComment:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004bd
+        value = 0x7f1004f4
     .end annotation
 .end field
 
@@ -65,7 +65,7 @@
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004bb
+        value = 0x7f1004f2
     .end annotation
 .end field
 
@@ -86,7 +86,7 @@
 
 .field listViewHorizontal:Lit/sephiroth/android/library/widget/HListView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004cc
+        value = 0x7f100503
     .end annotation
 .end field
 
@@ -94,7 +94,7 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100465
+        value = 0x7f10049d
     .end annotation
 .end field
 
@@ -106,7 +106,7 @@
 
 .field pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004b9
+        value = 0x7f1004f0
     .end annotation
 .end field
 
@@ -116,13 +116,13 @@
 
 .field recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004c8
+        value = 0x7f1004ff
     .end annotation
 .end field
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004b8
+        value = 0x7f1004ef
     .end annotation
 .end field
 
@@ -132,7 +132,7 @@
 
 .field tvNoData:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004c9
+        value = 0x7f100500
     .end annotation
 .end field
 
@@ -142,7 +142,7 @@
 
 .field viewPager:Landroid/support/v4/view/ViewPager;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002da
+        value = 0x7f100313
     .end annotation
 .end field
 
@@ -512,7 +512,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -720,7 +720,7 @@
     :cond_ce
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a:Landroid/app/Activity;
 
-    const v1, 0x7f090200
+    const v1, 0x7f090219
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->getString(I)Ljava/lang/String;
 
@@ -1844,7 +1844,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 161
-    const v0, 0x7f0400e9
+    const v0, 0x7f0400fa
 
     return v0
 .end method
@@ -1919,8 +1919,8 @@
     .registers 5
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1004c7,
-            0x7f1004ca
+            0x7f1004fe,
+            0x7f100501
         }
     .end annotation
 
@@ -1974,7 +1974,7 @@
 
     .line 575
     :pswitch_data_22
-    .packed-switch 0x7f1004c7
+    .packed-switch 0x7f1004fe
         :pswitch_f
         :pswitch_e
         :pswitch_e
@@ -1986,7 +1986,7 @@
     .registers 4
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1004bc
+            0x7f1004f3
         }
     .end annotation
 
@@ -2003,14 +2003,16 @@
 .end method
 
 .method public onClickPost(Landroid/view/View;)V
-    .registers 7
+    .registers 8
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1004be
+            0x7f1004f5
         }
     .end annotation
 
     .prologue
+    const/4 v5, 0x0
+
     .line 411
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a:Landroid/app/Activity;
 
@@ -2027,12 +2029,12 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_1f
 
     .line 413
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a:Landroid/app/Activity;
 
-    const v1, 0x7f0900db
+    const v1, 0x7f0900d1
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->getString(I)Ljava/lang/String;
 
@@ -2041,11 +2043,11 @@
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->b(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 519
-    :goto_1d
+    :goto_1e
     return-void
 
     .line 417
-    :cond_1e
+    :cond_1f
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a:Landroid/app/Activity;
 
     invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
@@ -2053,7 +2055,7 @@
     move-result-object v0
 
     .line 418
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_4b
 
     const-string/jumbo v1, ""
 
@@ -2061,7 +2063,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_4b
 
     .line 419
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a:Landroid/app/Activity;
@@ -2091,36 +2093,34 @@
     .line 420
     invoke-virtual {v0, v1}, Lrx/Observable;->a(Lrx/functions/Action1;)Lrx/Subscription;
 
-    goto :goto_1d
+    goto :goto_1e
 
     .line 516
-    :cond_4a
+    :cond_4b
     new-instance v0, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener;-><init>(Lcom/bzbs/marketplace/fragment/ReviewFragment;Lcom/bzbs/marketplace/fragment/ReviewFragment$1;)V
+    invoke-direct {v0, p0, v5}, Lcom/bzbs/marketplace/fragment/ReviewFragment$UserLoginListener;-><init>(Lcom/bzbs/marketplace/fragment/ReviewFragment;Lcom/bzbs/marketplace/fragment/ReviewFragment$1;)V
 
     invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->a(Lcom/bzbs/event/LoginEvents$LoginListener;)V
 
     .line 517
-    iget-object v1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a:Landroid/app/Activity;
-
-    iget-object v2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->f:Landroid/os/Handler;
-
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a:Landroid/app/Activity;
 
-    check-cast v0, Lcom/bzbs/marketplace/activity/ReviewActivity;
+    iget-object v1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->f:Landroid/os/Handler;
 
-    iget-object v0, v0, Lcom/bzbs/marketplace/activity/ReviewActivity;->F:Lcom/facebook/CallbackManager;
+    iget-object v2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a:Landroid/app/Activity;
+
+    check-cast v2, Lcom/bzbs/marketplace/activity/ReviewActivity;
+
+    iget-object v2, v2, Lcom/bzbs/marketplace/activity/ReviewActivity;->F:Lcom/facebook/CallbackManager;
 
     const-string/jumbo v3, "BZB Campaign Review"
 
     const-string/jumbo v4, "send_review"
 
-    invoke-static {v1, v2, v0, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto :goto_1d
+    goto :goto_1e
 .end method
 
 .method public onDestroyView()V

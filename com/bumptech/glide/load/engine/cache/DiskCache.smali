@@ -7,6 +7,9 @@
 .method public abstract a(Lcom/bumptech/glide/load/Key;)Ljava/io/File;
 .end method
 
+.method public abstract a()V
+.end method
+
 .method public abstract a(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/cache/DiskCache$Writer;)V
 .end method
 

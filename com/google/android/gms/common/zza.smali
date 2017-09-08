@@ -41,51 +41,49 @@
 
 
 # virtual methods
-.method public a()Landroid/os/IBinder;
-    .registers 3
+.method public a(JLjava/util/concurrent/TimeUnit;)Landroid/os/IBinder;
+    .registers 7
 
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    const-string/jumbo v0, "BlockingServiceConnection.getServiceWithTimeout() called on main thread"
 
-    move-result-object v0
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzaa;->c(Ljava/lang/String;)V
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    iget-boolean v0, p0, Lcom/google/android/gms/common/zza;->a:Z
 
-    move-result-object v1
-
-    if-ne v0, v1, :cond_13
+    if-eqz v0, :cond_13
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v1, "BlockingServiceConnection.getService() called on main thread"
+    const-string/jumbo v1, "Cannot call get on this connection more than once"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :cond_13
-    iget-boolean v0, p0, Lcom/google/android/gms/common/zza;->a:Z
-
-    if-eqz v0, :cond_1d
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v0
-
-    :cond_1d
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/gms/common/zza;->a:Z
 
     iget-object v0, p0, Lcom/google/android/gms/common/zza;->b:Ljava/util/concurrent/BlockingQueue;
 
-    invoke-interface {v0}, Ljava/util/concurrent/BlockingQueue;->take()Ljava/lang/Object;
+    invoke-interface {v0, p1, p2, p3}, Ljava/util/concurrent/BlockingQueue;->poll(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/os/IBinder;
 
+    if-nez v0, :cond_29
+
+    new-instance v0, Ljava/util/concurrent/TimeoutException;
+
+    const-string/jumbo v1, "Timed out waiting for the service connection"
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/TimeoutException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_29
     return-object v0
 .end method
 

@@ -18,14 +18,14 @@
     .registers 4
 
     .prologue
-    .line 1984
+    .line 2005
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_webview;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
-    .line 1985
+    .line 2006
     invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 1986
-    const v0, 0x7f1001f9
+    .line 2007
+    const v0, 0x7f100223
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -33,8 +33,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_webview;->a:Landroid/view/View;
 
-    .line 1987
-    const v0, 0x7f100228
+    .line 2008
+    const v0, 0x7f100259
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -42,8 +42,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_webview;->b:Landroid/view/View;
 
-    .line 1989
-    const v0, 0x7f10034b
+    .line 2010
+    const v0, 0x7f100382
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -53,6 +53,6 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_webview;->c:Landroid/webkit/WebView;
 
-    .line 1990
+    .line 2011
     return-void
 .end method

@@ -225,7 +225,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lcom/bzbs/lib/survey/LibConst;->f:Ljava/lang/String;
+    sget-object v2, Lcom/bzbs/lib/survey/LibConst;->k:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -331,7 +331,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lcom/bzbs/lib/survey/LibConst;->f:Ljava/lang/String;
+    sget-object v2, Lcom/bzbs/lib/survey/LibConst;->k:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

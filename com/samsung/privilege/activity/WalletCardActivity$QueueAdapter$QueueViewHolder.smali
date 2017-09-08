@@ -36,14 +36,14 @@
     .registers 4
 
     .prologue
-    .line 3330
+    .line 3691
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->m:Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter;
 
-    .line 3331
+    .line 3692
     invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 3333
-    const v0, 0x7f1001f9
+    .line 3694
+    const v0, 0x7f100223
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -51,8 +51,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->a:Landroid/view/View;
 
-    .line 3334
-    const v0, 0x7f100228
+    .line 3695
+    const v0, 0x7f100259
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -60,8 +60,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->b:Landroid/view/View;
 
-    .line 3336
-    const v0, 0x7f10010f
+    .line 3697
+    const v0, 0x7f100116
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -71,8 +71,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->c:Landroid/support/v7/widget/CardView;
 
-    .line 3337
-    const v0, 0x7f1000d3
+    .line 3698
+    const v0, 0x7f1000d9
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -82,8 +82,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->d:Landroid/widget/RelativeLayout;
 
-    .line 3338
-    const v0, 0x7f1004af
+    .line 3699
+    const v0, 0x7f1004e7
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -93,8 +93,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->e:Landroid/widget/ImageView;
 
-    .line 3339
-    const v0, 0x7f1004b1
+    .line 3700
+    const v0, 0x7f1004e9
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -104,8 +104,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->f:Landroid/widget/LinearLayout;
 
-    .line 3340
-    const v0, 0x7f1004b2
+    .line 3701
+    const v0, 0x7f1004ea
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -115,8 +115,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->g:Landroid/widget/TextView;
 
-    .line 3341
-    const v0, 0x7f1004b3
+    .line 3702
+    const v0, 0x7f1001f3
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -126,8 +126,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->h:Landroid/widget/TextView;
 
-    .line 3342
-    const v0, 0x7f1004b4
+    .line 3703
+    const v0, 0x7f1004eb
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -137,8 +137,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->i:Landroid/widget/TextView;
 
-    .line 3343
-    const v0, 0x7f100112
+    .line 3704
+    const v0, 0x7f100119
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -148,8 +148,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->j:Landroid/widget/TextView;
 
-    .line 3344
-    const v0, 0x7f10010a
+    .line 3705
+    const v0, 0x7f100111
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -159,8 +159,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->k:Landroid/widget/TextView;
 
-    .line 3345
-    const v0, 0x7f1004b5
+    .line 3706
+    const v0, 0x7f1004ec
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -170,6 +170,6 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$QueueAdapter$QueueViewHolder;->l:Landroid/widget/LinearLayout;
 
-    .line 3346
+    .line 3707
     return-void
 .end method

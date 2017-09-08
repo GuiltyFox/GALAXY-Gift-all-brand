@@ -4,8 +4,8 @@
 
 
 # static fields
-.field public static final viewfinder_border:I = 0x7f0e0097
+.field public static final viewfinder_border:I = 0x7f0e00a0
 
-.field public static final viewfinder_laser:I = 0x7f0e0098
+.field public static final viewfinder_laser:I = 0x7f0e00a1
 
-.field public static final viewfinder_mask:I = 0x7f0e0099
+.field public static final viewfinder_mask:I = 0x7f0e00a2

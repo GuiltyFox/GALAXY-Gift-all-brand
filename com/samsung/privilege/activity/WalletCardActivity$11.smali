@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1039
+    .line 1128
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 8
 
     .prologue
-    .line 1042
+    .line 1131
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -48,7 +48,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1044
+    .line 1133
     const-string/jumbo v1, "issuer"
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1045
+    .line 1134
     const-string/jumbo v1, "issuer_name"
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -74,12 +74,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1046
+    .line 1135
     const-string/jumbo v1, "cardId"
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity;->M:Landroid/widget/TextView;
+    iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity;->R:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -91,12 +91,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1047
+    .line 1136
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1049
+    .line 1138
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -141,6 +141,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1050
+    .line 1139
     return-void
 .end method

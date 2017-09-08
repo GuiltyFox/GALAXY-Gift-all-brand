@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 828
+    .line 837
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->a:Landroid/widget/TextView;
@@ -39,12 +39,12 @@
     .registers 6
 
     .prologue
-    const v3, 0x7f090199
+    const v3, 0x7f0901aa
 
-    .line 831
+    .line 840
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v1, 0x7f10010a
+    const v1, 0x7f100111
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->findViewById(I)Landroid/view/View;
 
@@ -52,7 +52,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 832
+    .line 841
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->a:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -75,17 +75,17 @@
 
     if-eqz v1, :cond_38
 
-    .line 833
+    .line 842
     const/16 v1, 0x3e8
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 834
+    .line 843
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->a:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v2, 0x7f09017a
+    const v2, 0x7f09018b
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -93,17 +93,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 839
+    .line 848
     :goto_37
     return-void
 
-    .line 836
+    .line 845
     :cond_38
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 837
+    .line 846
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->a:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;

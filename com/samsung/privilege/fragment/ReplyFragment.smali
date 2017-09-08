@@ -6,31 +6,31 @@
 # instance fields
 .field btnPost:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004be
+        value = 0x7f1004f5
     .end annotation
 .end field
 
 .field contentCancel:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004bc
+        value = 0x7f1004f3
     .end annotation
 .end field
 
 .field contentImagePost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004ba
+        value = 0x7f1004f1
     .end annotation
 .end field
 
 .field contentPost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004b7
+        value = 0x7f1004ee
     .end annotation
 .end field
 
 .field edtTextComment:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004bd
+        value = 0x7f1004f4
     .end annotation
 .end field
 
@@ -51,7 +51,7 @@
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004bb
+        value = 0x7f1004f2
     .end annotation
 .end field
 
@@ -65,7 +65,7 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100465
+        value = 0x7f10049d
     .end annotation
 .end field
 
@@ -81,7 +81,7 @@
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004b8
+        value = 0x7f1004ef
     .end annotation
 .end field
 
@@ -731,7 +731,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 116
-    const v0, 0x7f0400e5
+    const v0, 0x7f0400f6
 
     return v0
 .end method
@@ -817,7 +817,7 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1004be
+            0x7f1004f5
         }
     .end annotation
 
@@ -827,7 +827,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

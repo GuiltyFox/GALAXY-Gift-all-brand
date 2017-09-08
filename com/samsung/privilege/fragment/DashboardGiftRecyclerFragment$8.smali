@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 2483
+    .line 2510
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$8;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$8;->a:Lcom/bzbs/bean/DashboardItem;
@@ -39,10 +39,17 @@
     .registers 9
 
     .prologue
-    .line 2485
+    .line 2512
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 2487
+    .line 2514
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$8;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+
+    iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$8;->a:Lcom/bzbs/bean/DashboardItem;
+
+    invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->b(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Lcom/bzbs/bean/DashboardItem;)V
+
+    .line 2516
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -69,7 +76,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "Click No Campaign Autoredeem"
+    const-string/jumbo v1, "Click Yes Campaign Autoredeem"
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -111,6 +118,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 2488
+    .line 2517
     return-void
 .end method

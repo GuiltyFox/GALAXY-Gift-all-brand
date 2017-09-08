@@ -34,29 +34,33 @@
 .end method
 
 .method private f()Landroid/app/PendingIntent;
-    .registers 5
+    .registers 6
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     new-instance v0, Landroid/content/Intent;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->o()Landroid/content/Context;
-
-    move-result-object v1
-
-    const-class v2, Lcom/google/android/gms/analytics/AnalyticsReceiver;
-
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
     const-string/jumbo v1, "com.google.android.gms.analytics.ANALYTICS_DISPATCH"
 
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    new-instance v1, Landroid/content/ComponentName;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->o()Landroid/content/Context;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "com.google.android.gms.analytics.AnalyticsReceiver"
+
+    invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->o()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-static {v1, v3, v0, v3}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    invoke-static {v1, v4, v0, v4}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
@@ -81,7 +85,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->j()J
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->i()J
 
     move-result-wide v0
 
@@ -89,7 +93,7 @@
 
     cmp-long v0, v0, v2
 
-    if-lez v0, :cond_3e
+    if-lez v0, :cond_3f
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->o()Landroid/content/Context;
 
@@ -105,9 +109,9 @@
 
     move-result-object v2
 
-    const-class v3, Lcom/google/android/gms/analytics/AnalyticsReceiver;
+    const-string/jumbo v3, "com.google.android.gms.analytics.AnalyticsReceiver"
 
-    invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     const/4 v2, 0x2
 
@@ -115,11 +119,11 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_3f
 
     iget-boolean v0, v0, Landroid/content/pm/ActivityInfo;->enabled:Z
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_3f
 
     const-string/jumbo v0, "Receiver registered. Using alarm for local dispatch."
 
@@ -128,17 +132,17 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->a:Z
-    :try_end_3e
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_3e} :catch_3f
+    :try_end_3f
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_3f} :catch_40
 
-    :cond_3e
-    :goto_3e
+    :cond_3f
+    :goto_3f
     return-void
 
-    :catch_3f
+    :catch_40
     move-exception v0
 
-    goto :goto_3e
+    goto :goto_3f
 .end method
 
 .method public b()Z
@@ -170,13 +174,13 @@
 
     const-string/jumbo v1, "Receiver not registered"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->a(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzaa;->a(ZLjava/lang/Object;)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->j()J
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->i()J
 
     move-result-wide v0
 
@@ -186,11 +190,11 @@
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->e()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->n()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->n()Lcom/google/android/gms/common/util/zze;
 
     move-result-object v2
 
-    invoke-interface {v2}, Lcom/google/android/gms/internal/zznl;->b()J
+    invoke-interface {v2}, Lcom/google/android/gms/common/util/zze;->b()J
 
     move-result-wide v2
 

@@ -48,7 +48,7 @@
     .line 411
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewSurveyActivity$2;->a:Lcom/samsung/privilege/activity/WebViewSurveyActivity;
 
-    const v1, 0x7f10053d
+    const v1, 0x7f100571
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/WebViewSurveyActivity;->findViewById(I)Landroid/view/View;
 

@@ -1,27 +1,42 @@
-.class public Lcom/google/android/gms/analytics/internal/zzak;
-.super Lcom/google/android/gms/analytics/internal/zzq;
+.class public final Lcom/google/android/gms/analytics/internal/zzak;
+.super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/analytics/internal/zzq",
-        "<",
-        "Lcom/google/android/gms/analytics/internal/zzal;",
-        ">;"
-    }
-.end annotation
+# static fields
+.field private static a:Ljava/lang/Boolean;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/analytics/internal/zzf;)V
+.method public static a(Landroid/content/Context;)Z
     .registers 3
 
-    new-instance v0, Lcom/google/android/gms/analytics/internal/zzak$zza;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v0, p1}, Lcom/google/android/gms/analytics/internal/zzak$zza;-><init>(Lcom/google/android/gms/analytics/internal/zzf;)V
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzak;->a:Ljava/lang/Boolean;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/analytics/internal/zzq;-><init>(Lcom/google/android/gms/analytics/internal/zzf;Lcom/google/android/gms/analytics/internal/zzq$zza;)V
+    if-eqz v0, :cond_e
 
-    return-void
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzak;->a:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    :goto_d
+    return v0
+
+    :cond_e
+    const-string/jumbo v0, "com.google.android.gms.analytics.AnalyticsService"
+
+    invoke-static {p0, v0}, Lcom/google/android/gms/analytics/internal/zzao;->a(Landroid/content/Context;Ljava/lang/String;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    sput-object v1, Lcom/google/android/gms/analytics/internal/zzak;->a:Ljava/lang/Boolean;
+
+    goto :goto_d
 .end method

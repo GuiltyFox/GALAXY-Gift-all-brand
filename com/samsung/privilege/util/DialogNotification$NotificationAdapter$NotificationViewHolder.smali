@@ -22,14 +22,14 @@
     .registers 4
 
     .prologue
-    .line 365
+    .line 369
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->f:Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter;
 
-    .line 366
+    .line 370
     invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 367
-    const v0, 0x7f10010f
+    .line 371
+    const v0, 0x7f100116
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -39,8 +39,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->a:Landroid/support/v7/widget/CardView;
 
-    .line 368
-    const v0, 0x7f1000d3
+    .line 372
+    const v0, 0x7f1000d9
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -50,8 +50,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->b:Landroid/widget/LinearLayout;
 
-    .line 369
-    const v0, 0x7f100111
+    .line 373
+    const v0, 0x7f100118
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -61,8 +61,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
 
-    .line 370
-    const v0, 0x7f100112
+    .line 374
+    const v0, 0x7f100119
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -72,8 +72,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->d:Landroid/widget/TextView;
 
-    .line 371
-    const v0, 0x7f100113
+    .line 375
+    const v0, 0x7f10011a
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -83,6 +83,6 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->e:Landroid/widget/TextView;
 
-    .line 372
+    .line 376
     return-void
 .end method

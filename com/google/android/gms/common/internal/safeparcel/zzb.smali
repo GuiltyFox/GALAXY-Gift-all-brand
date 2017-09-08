@@ -23,6 +23,18 @@
     return-void
 .end method
 
+.method public static a(Landroid/os/Parcel;ID)V
+    .registers 6
+
+    const/16 v0, 0x8
+
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;II)V
+
+    invoke-virtual {p0, p2, p3}, Landroid/os/Parcel;->writeDouble(D)V
+
+    return-void
+.end method
+
 .method public static a(Landroid/os/Parcel;IF)V
     .registers 4
 
@@ -59,6 +71,116 @@
     return-void
 .end method
 
+.method public static a(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V
+    .registers 5
+
+    if-nez p2, :cond_9
+
+    if-eqz p3, :cond_8
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;II)V
+
+    :cond_8
+    :goto_8
+    return-void
+
+    :cond_9
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;I)I
+
+    move-result v0
+
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
+
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->c(Landroid/os/Parcel;I)V
+
+    goto :goto_8
+.end method
+
+.method public static a(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+    .registers 5
+
+    if-nez p2, :cond_9
+
+    if-eqz p3, :cond_8
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;II)V
+
+    :cond_8
+    :goto_8
+    return-void
+
+    :cond_9
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;I)I
+
+    move-result v0
+
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->c(Landroid/os/Parcel;I)V
+
+    goto :goto_8
+.end method
+
+.method public static a(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    .registers 6
+
+    if-nez p2, :cond_9
+
+    if-eqz p4, :cond_8
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;II)V
+
+    :cond_8
+    :goto_8
+    return-void
+
+    :cond_9
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;I)I
+
+    move-result v0
+
+    invoke-interface {p2, p0, p3}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
+
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->c(Landroid/os/Parcel;I)V
+
+    goto :goto_8
+.end method
+
+.method public static a(Landroid/os/Parcel;ILjava/lang/Integer;Z)V
+    .registers 5
+
+    if-nez p2, :cond_9
+
+    if-eqz p3, :cond_8
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;II)V
+
+    :cond_8
+    :goto_8
+    return-void
+
+    :cond_9
+    const/4 v0, 0x4
+
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;II)V
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_8
+.end method
+
 .method public static a(Landroid/os/Parcel;ILjava/lang/String;Z)V
     .registers 5
 
@@ -87,7 +209,7 @@
 .end method
 
 .method public static a(Landroid/os/Parcel;ILjava/util/List;Z)V
-    .registers 5
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -95,10 +217,99 @@
             "I",
             "Ljava/util/List",
             "<",
-            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
             ">;Z)V"
         }
     .end annotation
+
+    const/4 v0, 0x0
+
+    if-nez p2, :cond_9
+
+    if-eqz p3, :cond_8
+
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;II)V
+
+    :cond_8
+    :goto_8
+    return-void
+
+    :cond_9
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;I)I
+
+    move-result v2
+
+    invoke-interface {p2}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    invoke-virtual {p0, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    move v1, v0
+
+    :goto_15
+    if-ge v1, v3, :cond_28
+
+    invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_15
+
+    :cond_28
+    invoke-static {p0, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->c(Landroid/os/Parcel;I)V
+
+    goto :goto_8
+.end method
+
+.method public static a(Landroid/os/Parcel;IS)V
+    .registers 4
+
+    const/4 v0, 0x4
+
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;II)V
+
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/os/Parcel;IZ)V
+    .registers 4
+
+    const/4 v0, 0x4
+
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;II)V
+
+    if-eqz p2, :cond_b
+
+    const/4 v0, 0x1
+
+    :goto_7
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
+
+    :cond_b
+    const/4 v0, 0x0
+
+    goto :goto_7
+.end method
+
+.method public static a(Landroid/os/Parcel;I[IZ)V
+    .registers 5
 
     if-nez p2, :cond_9
 
@@ -117,11 +328,112 @@
 
     move-result v0
 
-    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeIntArray([I)V
 
     invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->c(Landroid/os/Parcel;I)V
 
     goto :goto_8
+.end method
+
+.method public static a(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
+    .registers 10
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Landroid/os/Parcelable;",
+            ">(",
+            "Landroid/os/Parcel;",
+            "I[TT;IZ)V"
+        }
+    .end annotation
+
+    const/4 v1, 0x0
+
+    if-nez p2, :cond_9
+
+    if-eqz p4, :cond_8
+
+    invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;II)V
+
+    :cond_8
+    :goto_8
+    return-void
+
+    :cond_9
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;I)I
+
+    move-result v2
+
+    array-length v3, p2
+
+    invoke-virtual {p0, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    move v0, v1
+
+    :goto_12
+    if-ge v0, v3, :cond_22
+
+    aget-object v4, p2, v0
+
+    if-nez v4, :cond_1e
+
+    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    :goto_1b
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_12
+
+    :cond_1e
+    invoke-static {p0, v4, p3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
+
+    goto :goto_1b
+
+    :cond_22
+    invoke-static {p0, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->c(Landroid/os/Parcel;I)V
+
+    goto :goto_8
+.end method
+
+.method private static a(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
+    .registers 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Landroid/os/Parcelable;",
+            ">(",
+            "Landroid/os/Parcel;",
+            "TT;I)V"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v1
+
+    invoke-interface {p1, p0, p2}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
+
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v2
+
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    sub-int v0, v2, v1
+
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {p0, v2}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    return-void
 .end method
 
 .method private static b(Landroid/os/Parcel;I)I
@@ -172,6 +484,44 @@
     goto :goto_e
 .end method
 
+.method public static b(Landroid/os/Parcel;ILjava/util/List;Z)V
+    .registers 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/os/Parcel;",
+            "I",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;Z)V"
+        }
+    .end annotation
+
+    if-nez p2, :cond_9
+
+    if-eqz p3, :cond_8
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;II)V
+
+    :cond_8
+    :goto_8
+    return-void
+
+    :cond_9
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;I)I
+
+    move-result v0
+
+    invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
+
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->c(Landroid/os/Parcel;I)V
+
+    goto :goto_8
+.end method
+
 .method private static c(Landroid/os/Parcel;I)V
     .registers 5
 
@@ -190,4 +540,74 @@
     invoke-virtual {p0, v0}, Landroid/os/Parcel;->setDataPosition(I)V
 
     return-void
+.end method
+
+.method public static c(Landroid/os/Parcel;ILjava/util/List;Z)V
+    .registers 9
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Landroid/os/Parcelable;",
+            ">(",
+            "Landroid/os/Parcel;",
+            "I",
+            "Ljava/util/List",
+            "<TT;>;Z)V"
+        }
+    .end annotation
+
+    const/4 v2, 0x0
+
+    if-nez p2, :cond_9
+
+    if-eqz p3, :cond_8
+
+    invoke-static {p0, p1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;II)V
+
+    :cond_8
+    :goto_8
+    return-void
+
+    :cond_9
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->b(Landroid/os/Parcel;I)I
+
+    move-result v3
+
+    invoke-interface {p2}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    invoke-virtual {p0, v4}, Landroid/os/Parcel;->writeInt(I)V
+
+    move v1, v2
+
+    :goto_15
+    if-ge v1, v4, :cond_2a
+
+    invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/Parcelable;
+
+    if-nez v0, :cond_26
+
+    invoke-virtual {p0, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    :goto_22
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_15
+
+    :cond_26
+    invoke-static {p0, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
+
+    goto :goto_22
+
+    :cond_2a
+    invoke-static {p0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->c(Landroid/os/Parcel;I)V
+
+    goto :goto_8
 .end method

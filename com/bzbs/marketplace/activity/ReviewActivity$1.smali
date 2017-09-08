@@ -32,7 +32,7 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 7
+    .registers 8
 
     .prologue
     .line 90
@@ -122,7 +122,9 @@
 
     const-string/jumbo v4, "review"
 
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v5, 0x0
+
+    invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_41
 .end method

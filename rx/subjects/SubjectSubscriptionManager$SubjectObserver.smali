@@ -466,14 +466,14 @@
     return-void
 .end method
 
-.method public m_()V
+.method public n_()V
     .registers 2
 
     .prologue
     .line 231
     iget-object v0, p0, Lrx/subjects/SubjectSubscriptionManager$SubjectObserver;->a:Lrx/Observer;
 
-    invoke-interface {v0}, Lrx/Observer;->m_()V
+    invoke-interface {v0}, Lrx/Observer;->n_()V
 
     .line 232
     return-void

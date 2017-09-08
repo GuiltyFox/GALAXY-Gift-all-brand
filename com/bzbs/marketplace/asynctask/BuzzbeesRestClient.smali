@@ -17,7 +17,7 @@
 
     .prologue
     .line 14
-    sget-object v0, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v0, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     sput-object v0, Lcom/bzbs/marketplace/asynctask/BuzzbeesRestClient;->a:Ljava/lang/String;
 

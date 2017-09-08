@@ -105,13 +105,13 @@
     if-ne v0, v1, :cond_14
 
     .line 48
-    invoke-interface {p1}, Lcom/bzbs/event/NetworkStateReceiver$NetworkStateReceiverListener;->e_()V
+    invoke-interface {p1}, Lcom/bzbs/event/NetworkStateReceiver$NetworkStateReceiverListener;->f_()V
 
     goto :goto_6
 
     .line 50
     :cond_14
-    invoke-interface {p1}, Lcom/bzbs/event/NetworkStateReceiver$NetworkStateReceiverListener;->f_()V
+    invoke-interface {p1}, Lcom/bzbs/event/NetworkStateReceiver$NetworkStateReceiverListener;->g_()V
 
     goto :goto_6
 .end method

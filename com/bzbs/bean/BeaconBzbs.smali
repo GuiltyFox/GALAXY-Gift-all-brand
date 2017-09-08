@@ -75,12 +75,12 @@
     iput v3, p0, Lcom/bzbs/bean/BeaconBzbs;->Beacon_Waiting:I
 
     .line 18
-    sget v0, Lcom/bzbs/data/AppSetting;->ab:I
+    sget v0, Lcom/bzbs/data/AppSetting;->ai:I
 
     iput v0, p0, Lcom/bzbs/bean/BeaconBzbs;->StepIn_TimeOut:I
 
     .line 19
-    sget v0, Lcom/bzbs/data/AppSetting;->ab:I
+    sget v0, Lcom/bzbs/data/AppSetting;->ai:I
 
     iput v0, p0, Lcom/bzbs/bean/BeaconBzbs;->StepOut_TimeOut:I
 
@@ -162,7 +162,7 @@
     .line 32
     const-string/jumbo v0, "StepIn_TimeOut"
 
-    sget v1, Lcom/bzbs/data/AppSetting;->ab:I
+    sget v1, Lcom/bzbs/data/AppSetting;->ai:I
 
     invoke-static {p1, v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;I)I
 
@@ -173,7 +173,7 @@
     .line 33
     const-string/jumbo v0, "StepOut_TimeOut"
 
-    sget v1, Lcom/bzbs/data/AppSetting;->ab:I
+    sget v1, Lcom/bzbs/data/AppSetting;->ai:I
 
     invoke-static {p1, v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;I)I
 

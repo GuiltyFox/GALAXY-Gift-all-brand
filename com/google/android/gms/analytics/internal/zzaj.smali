@@ -1,99 +1,58 @@
-.class Lcom/google/android/gms/analytics/internal/zzaj;
+.class public final Lcom/google/android/gms/analytics/internal/zzaj;
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field private final a:Lcom/google/android/gms/internal/zznl;
+# static fields
+.field static a:Ljava/lang/Object;
 
-.field private b:J
+.field static b:Ljava/lang/Boolean;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/internal/zznl;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzaj;->a:Lcom/google/android/gms/internal/zznl;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/gms/internal/zznl;J)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzaj;->a:Lcom/google/android/gms/internal/zznl;
-
-    iput-wide p2, p0, Lcom/google/android/gms/analytics/internal/zzaj;->b:J
+    sput-object v0, Lcom/google/android/gms/analytics/internal/zzaj;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public a()V
+.method public static a(Landroid/content/Context;)Z
     .registers 3
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzaj;->a:Lcom/google/android/gms/internal/zznl;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->b()J
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzaj;->b:Ljava/lang/Boolean;
 
-    move-result-wide v0
+    if-eqz v0, :cond_e
 
-    iput-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzaj;->b:J
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzaj;->b:Ljava/lang/Boolean;
 
-    return-void
-.end method
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-.method public a(J)Z
-    .registers 10
+    move-result v0
 
-    const/4 v0, 0x1
-
-    iget-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzaj;->b:J
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v1, v2, v4
-
-    if-nez v1, :cond_a
-
-    :cond_9
-    :goto_9
+    :goto_d
     return v0
 
-    :cond_a
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzaj;->a:Lcom/google/android/gms/internal/zznl;
+    :cond_e
+    const-string/jumbo v0, "com.google.android.gms.analytics.AnalyticsReceiver"
 
-    invoke-interface {v1}, Lcom/google/android/gms/internal/zznl;->b()J
+    const/4 v1, 0x0
 
-    move-result-wide v2
+    invoke-static {p0, v0, v1}, Lcom/google/android/gms/analytics/internal/zzao;->a(Landroid/content/Context;Ljava/lang/String;Z)Z
 
-    iget-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzaj;->b:J
+    move-result v0
 
-    sub-long/2addr v2, v4
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    cmp-long v1, v2, p1
+    move-result-object v1
 
-    if-gtz v1, :cond_9
+    sput-object v1, Lcom/google/android/gms/analytics/internal/zzaj;->b:Ljava/lang/Boolean;
 
-    const/4 v0, 0x0
-
-    goto :goto_9
-.end method
-
-.method public b()V
-    .registers 3
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzaj;->b:J
-
-    return-void
+    goto :goto_d
 .end method

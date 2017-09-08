@@ -89,7 +89,7 @@
     .line 52
     const-string/jumbo v0, ""
 
-    const v1, 0x7f0900ed
+    const v1, 0x7f0900e6
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CampaignSearchActivity;->getString(I)Ljava/lang/String;
 
@@ -152,7 +152,7 @@
     .line 65
     :cond_3c
     :goto_3c
-    const v0, 0x7f10013c
+    const v0, 0x7f100143
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CampaignSearchActivity;->findViewById(I)Landroid/view/View;
 
@@ -165,7 +165,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v2, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -299,7 +299,7 @@
 
     move-result-object v1
 
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 76
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -361,7 +361,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 32
-    const v0, 0x7f04002e
+    const v0, 0x7f040030
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CampaignSearchActivity;->setContentView(I)V
 

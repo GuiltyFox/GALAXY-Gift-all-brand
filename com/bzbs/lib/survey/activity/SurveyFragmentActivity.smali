@@ -2769,7 +2769,7 @@
 
     .line 4295
     :cond_32
-    const-string/jumbo v0, "GalaxyReward"
+    sget-object v0, Lcom/bzbs/lib/survey/LibConst;->g:Ljava/lang/String;
 
     const-string/jumbo v1, "GalaxyReward"
 
@@ -2777,7 +2777,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_89
+    if-eqz v0, :cond_88
 
     .line 4299
     const-string/jumbo v0, "content://someURI"
@@ -2849,14 +2849,14 @@
     invoke-virtual {p0, v4, v1}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->setResult(ILandroid/content/Intent;)V
 
     .line 4308
-    :cond_89
+    :cond_88
     invoke-virtual {p0}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->finish()V
 
     .line 4310
     invoke-direct {p0}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->t()V
 
     .line 4325
-    :try_start_8f
+    :try_start_8e
     iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->G:Lcom/bzbs/lib/survey/bean/Campaign;
 
     iget-object v0, v0, Lcom/bzbs/lib/survey/bean/Campaign;->aq:Lcom/bzbs/lib/survey/bean/CampaignExtra;
@@ -2875,7 +2875,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10b
+    if-eqz v0, :cond_10a
 
     .line 4326
     iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->G:Lcom/bzbs/lib/survey/bean/Campaign;
@@ -2888,7 +2888,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10c
+    if-eqz v0, :cond_10b
 
     .line 4327
     iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->G:Lcom/bzbs/lib/survey/bean/Campaign;
@@ -2975,12 +2975,12 @@
     invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 4396
-    :cond_10b
-    :goto_10b
+    :cond_10a
+    :goto_10a
     return-void
 
     .line 4349
-    :cond_10c
+    :cond_10b
     iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->G:Lcom/bzbs/lib/survey/bean/Campaign;
 
     iget-object v0, v0, Lcom/bzbs/lib/survey/bean/Campaign;->aq:Lcom/bzbs/lib/survey/bean/CampaignExtra;
@@ -3039,16 +3039,16 @@
     const-wide/16 v4, 0x1f4
 
     invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-    :try_end_14c
-    .catch Ljava/lang/Exception; {:try_start_8f .. :try_end_14c} :catch_14d
+    :try_end_14b
+    .catch Ljava/lang/Exception; {:try_start_8e .. :try_end_14b} :catch_14c
 
-    goto :goto_10b
+    goto :goto_10a
 
     .line 4392
-    :catch_14d
+    :catch_14c
     move-exception v0
 
-    goto :goto_10b
+    goto :goto_10a
 .end method
 
 .method private a(ILjava/lang/String;)Z
@@ -7479,7 +7479,7 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "fonts/kit55p.ttf"
+    sget-object v1, Lcom/bzbs/lib/survey/LibConst;->e:Ljava/lang/String;
 
     invoke-static {v0, v1}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
 

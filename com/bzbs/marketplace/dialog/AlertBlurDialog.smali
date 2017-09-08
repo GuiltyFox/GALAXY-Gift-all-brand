@@ -458,7 +458,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040094
+    const v1, 0x7f0400a4
 
     invoke-virtual {v0, v1, v2, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -468,7 +468,7 @@
     invoke-virtual {v5, v2}, Landroid/app/Dialog;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 173
-    const v0, 0x7f100254
+    const v0, 0x7f10028d
 
     invoke-virtual {v6, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -477,7 +477,7 @@
     check-cast v0, Landroid/widget/RelativeLayout;
 
     .line 174
-    const v1, 0x7f1000ba
+    const v1, 0x7f1000be
 
     invoke-virtual {v6, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -486,7 +486,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 175
-    const v2, 0x7f1001ef
+    const v2, 0x7f100219
 
     invoke-virtual {v6, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -495,7 +495,7 @@
     check-cast v2, Landroid/widget/Button;
 
     .line 176
-    const v3, 0x7f100260
+    const v3, 0x7f100299
 
     invoke-virtual {v6, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -504,7 +504,7 @@
     check-cast v3, Landroid/widget/Button;
 
     .line 177
-    const v4, 0x7f10035a
+    const v4, 0x7f100391
 
     invoke-virtual {v6, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

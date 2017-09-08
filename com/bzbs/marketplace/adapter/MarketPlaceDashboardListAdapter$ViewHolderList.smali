@@ -8,25 +8,25 @@
 
 .field contentItemList:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004a8
+        value = 0x7f1004e0
     .end annotation
 .end field
 
 .field contentList:Landroid/support/v7/widget/CardView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10038c
+        value = 0x7f1003c3
     .end annotation
 .end field
 
 .field imageViewCover:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004a6
+        value = 0x7f1004de
     .end annotation
 .end field
 
 .field recyclerViewMarketPlaceList:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004a2
+        value = 0x7f1004da
     .end annotation
 .end field
 
@@ -72,7 +72,7 @@
     .registers 9
 
     .prologue
-    const v5, 0x7f0201b3
+    const v5, 0x7f0201c9
 
     const/4 v4, 0x0
 

@@ -46,7 +46,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignReviewActivity$6;->b:Lcom/samsung/privilege/activity/CampaignReviewActivity;
 
-    const v1, 0x7f100116
+    const v1, 0x7f10011d
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->findViewById(I)Landroid/view/View;
 

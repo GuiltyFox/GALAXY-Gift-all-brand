@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 561
+    .line 639
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogSerialGift$13;->a:Landroid/view/View;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogSerialGift$13;->b:Landroid/content/Context;
@@ -43,14 +43,14 @@
     .registers 4
 
     .prologue
-    .line 569
+    .line 647
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$13;->a:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 571
+    .line 649
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$13;->b:Landroid/content/Context;
 
     const v1, 0x7f05001a
@@ -59,29 +59,29 @@
 
     move-result-object v0
 
-    .line 572
+    .line 650
     new-instance v1, Lcom/samsung/privilege/util/DialogSerialGift$13$1;
 
     invoke-direct {v1, p0}, Lcom/samsung/privilege/util/DialogSerialGift$13$1;-><init>(Lcom/samsung/privilege/util/DialogSerialGift$13;)V
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 589
+    .line 667
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogSerialGift$13;->c:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->clearAnimation()V
 
-    .line 590
+    .line 668
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogSerialGift$13;->c:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setAnimation(Landroid/view/animation/Animation;)V
 
-    .line 591
+    .line 669
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogSerialGift$13;->c:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 592
+    .line 670
     return-void
 .end method
 
@@ -89,7 +89,7 @@
     .registers 2
 
     .prologue
-    .line 597
+    .line 675
     return-void
 .end method
 
@@ -97,6 +97,6 @@
     .registers 2
 
     .prologue
-    .line 565
+    .line 643
     return-void
 .end method

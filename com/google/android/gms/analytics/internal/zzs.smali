@@ -35,13 +35,13 @@
 .end method
 
 .method public a(I)V
-    .registers 5
+    .registers 6
 
     iput p1, p0, Lcom/google/android/gms/analytics/internal/zzs;->a:I
 
     iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzs;->b:Z
 
-    if-nez v0, :cond_37
+    if-nez v0, :cond_41
 
     sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->c:Lcom/google/android/gms/analytics/internal/zzy$zza;
 
@@ -51,16 +51,6 @@
 
     check-cast v0, Ljava/lang/String;
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "Logger is deprecated. To enable debug logging, please run:\nadb shell setprop log.tag."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
     sget-object v1, Lcom/google/android/gms/analytics/internal/zzy;->c:Lcom/google/android/gms/analytics/internal/zzy$zza;
 
     invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzy$zza;->a()Ljava/lang/Object;
@@ -68,6 +58,26 @@
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x5b
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string/jumbo v3, "Logger is deprecated. To enable debug logging, please run:\nadb shell setprop log.tag."
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -89,7 +99,7 @@
 
     iput-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzs;->b:Z
 
-    :cond_37
+    :cond_41
     return-void
 .end method
 

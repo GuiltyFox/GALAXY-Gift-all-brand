@@ -5,8 +5,6 @@
 # instance fields
 .field private a:Z
 
-.field private b:Z
-
 
 # direct methods
 .method protected constructor <init>(Lcom/google/android/gms/analytics/internal/zzf;)V
@@ -24,21 +22,17 @@
 
     iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzd;->a:Z
 
-    if-eqz v0, :cond_a
-
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzd;->b:Z
-
-    if-nez v0, :cond_a
+    if-eqz v0, :cond_6
 
     const/4 v0, 0x1
 
-    :goto_9
+    :goto_5
     return v0
 
-    :cond_a
+    :cond_6
     const/4 v0, 0x0
 
-    goto :goto_9
+    goto :goto_5
 .end method
 
 .method protected D()V

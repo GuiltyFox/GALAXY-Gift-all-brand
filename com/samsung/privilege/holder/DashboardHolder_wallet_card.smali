@@ -48,7 +48,7 @@
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
     .line 41
-    const v0, 0x7f1001f9
+    const v0, 0x7f100223
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -57,7 +57,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->a:Landroid/view/View;
 
     .line 42
-    const v0, 0x7f100228
+    const v0, 0x7f100259
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -66,7 +66,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->b:Landroid/view/View;
 
     .line 44
-    const v0, 0x7f10010f
+    const v0, 0x7f100116
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->c:Landroid/support/v7/widget/CardView;
 
     .line 45
-    const v0, 0x7f10014b
+    const v0, 0x7f100152
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -88,7 +88,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->d:Landroid/widget/ImageView;
 
     .line 46
-    const v0, 0x7f100312
+    const v0, 0x7f100349
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -99,7 +99,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->e:Landroid/widget/ImageView;
 
     .line 47
-    const v0, 0x7f100314
+    const v0, 0x7f10034b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -110,7 +110,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->f:Landroid/widget/LinearLayout;
 
     .line 48
-    const v0, 0x7f100315
+    const v0, 0x7f10034c
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

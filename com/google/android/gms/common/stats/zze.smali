@@ -2,243 +2,129 @@
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field private final a:J
-
-.field private final b:I
-
-.field private final c:Landroid/support/v4/util/SimpleArrayMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/support/v4/util/SimpleArrayMap",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Long;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
-.method public constructor <init>()V
-    .registers 4
-
-    const/16 v2, 0xa
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-wide/32 v0, 0xea60
-
-    iput-wide v0, p0, Lcom/google/android/gms/common/stats/zze;->a:J
-
-    iput v2, p0, Lcom/google/android/gms/common/stats/zze;->b:I
-
-    new-instance v0, Landroid/support/v4/util/SimpleArrayMap;
-
-    invoke-direct {v0, v2}, Landroid/support/v4/util/SimpleArrayMap;-><init>(I)V
-
-    iput-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
-
-    return-void
-.end method
-
-.method public constructor <init>(IJ)V
+.method public static a(Landroid/os/PowerManager$WakeLock;Ljava/lang/String;)Ljava/lang/String;
     .registers 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p2, p0, Lcom/google/android/gms/common/stats/zze;->a:J
-
-    iput p1, p0, Lcom/google/android/gms/common/stats/zze;->b:I
-
-    new-instance v0, Landroid/support/v4/util/SimpleArrayMap;
-
-    invoke-direct {v0}, Landroid/support/v4/util/SimpleArrayMap;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
-
-    return-void
-.end method
-
-.method private a(JJ)V
-    .registers 10
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
-
-    invoke-virtual {v0}, Landroid/support/v4/util/SimpleArrayMap;->size()I
+    invoke-static {}, Landroid/os/Process;->myPid()I
 
     move-result v0
 
-    add-int/lit8 v0, v0, -0x1
+    int-to-long v0, v0
 
-    move v1, v0
+    const/16 v2, 0x20
 
-    :goto_9
-    if-ltz v1, :cond_26
+    shl-long/2addr v0, v2
 
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/util/SimpleArrayMap;->c(I)Ljava/lang/Object;
+    move-result v2
+
+    int-to-long v2, v2
+
+    or-long/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    sub-long v2, p3, v2
-
-    cmp-long v0, v2, p1
-
-    if-lez v0, :cond_22
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
-
-    invoke-virtual {v0, v1}, Landroid/support/v4/util/SimpleArrayMap;->d(I)Ljava/lang/Object;
-
-    :cond_22
-    add-int/lit8 v0, v1, -0x1
-
-    move v1, v0
-
-    goto :goto_9
-
-    :cond_26
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(Ljava/lang/String;)Ljava/lang/Long;
-    .registers 9
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v2
-
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/zze;->a:J
-
-    monitor-enter p0
-
-    :goto_7
-    :try_start_7
-    iget-object v4, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
-
-    invoke-virtual {v4}, Landroid/support/v4/util/SimpleArrayMap;->size()I
-
-    move-result v4
-
-    iget v5, p0, Lcom/google/android/gms/common/stats/zze;->b:I
-
-    if-lt v4, v5, :cond_42
-
-    invoke-direct {p0, v0, v1, v2, v3}, Lcom/google/android/gms/common/stats/zze;->a(JJ)V
-
-    const-wide/16 v4, 0x2
-
-    div-long/2addr v0, v4
-
-    const-string/jumbo v4, "ConnectionTracker"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "The max capacity "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    iget v6, p0, Lcom/google/android/gms/common/stats/zze;->b:I
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string/jumbo v6, " is not enough. Current durationThreshold is: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_7
-
-    :catchall_3f
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_41
-    .catchall {:try_start_7 .. :try_end_41} :catchall_3f
-
-    throw v0
-
-    :cond_42
-    :try_start_42
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, p1, v1}, Landroid/support/v4/util/SimpleArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1f
+
+    const-string/jumbo p1, ""
+
+    :cond_1f
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Long;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    monitor-exit p0
-    :try_end_4f
-    .catchall {:try_start_42 .. :try_end_4f} :catchall_3f
+    move-result v2
 
+    if-eqz v2, :cond_2e
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_2d
     return-object v0
+
+    :cond_2e
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_2d
 .end method
 
-.method public b(Ljava/lang/String;)Z
+.method static a(Ljava/lang/String;)Ljava/lang/String;
+    .registers 2
+
+    const-string/jumbo v0, "com.google.android.gms"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    const/4 p0, 0x0
+
+    :cond_a
+    return-object p0
+.end method
+
+.method static a(Ljava/util/List;)Ljava/util/List;
     .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;)",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 
-    monitor-enter p0
+    if-eqz p0, :cond_18
 
-    :try_start_1
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/util/SimpleArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    if-eqz v0, :cond_c
+    if-ne v0, v1, :cond_18
 
-    const/4 v0, 0x1
+    const-string/jumbo v0, "com.google.android.gms"
 
-    :goto_a
-    monitor-exit p0
+    const/4 v1, 0x0
 
-    return v0
+    invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    :cond_c
-    const/4 v0, 0x0
+    move-result-object v1
 
-    goto :goto_a
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :catchall_e
-    move-exception v0
+    move-result v0
 
-    monitor-exit p0
-    :try_end_10
-    .catchall {:try_start_1 .. :try_end_10} :catchall_e
+    if-eqz v0, :cond_18
 
-    throw v0
+    const/4 p0, 0x0
+
+    :cond_18
+    return-object p0
 .end method

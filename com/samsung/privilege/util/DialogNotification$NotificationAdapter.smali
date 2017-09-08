@@ -41,13 +41,13 @@
     .end annotation
 
     .prologue
-    .line 293
+    .line 297
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;-><init>()V
 
-    .line 294
+    .line 298
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter;->a:Ljava/util/List;
 
-    .line 295
+    .line 299
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .registers 3
 
     .prologue
-    .line 299
+    .line 303
     :try_start_0
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter;->a:Ljava/util/List;
 
@@ -69,15 +69,15 @@
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_8} :catch_9
 
-    .line 301
+    .line 305
     :goto_8
     return-object v0
 
-    .line 300
+    .line 304
     :catch_9
     move-exception v0
 
-    .line 301
+    .line 305
     const/4 v0, 0x0
 
     goto :goto_8
@@ -87,7 +87,7 @@
     .registers 6
 
     .prologue
-    .line 311
+    .line 315
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -96,7 +96,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f04003a
+    const v1, 0x7f04003c
 
     const/4 v2, 0x0
 
@@ -104,12 +104,12 @@
 
     move-result-object v0
 
-    .line 312
+    .line 316
     new-instance v1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;
 
     invoke-direct {v1, p0, v0}, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;-><init>(Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter;Landroid/view/View;)V
 
-    .line 313
+    .line 317
     return-object v1
 .end method
 
@@ -117,10 +117,10 @@
     .registers 6
 
     .prologue
-    .line 318
+    .line 322
     invoke-static {p2}, Lcom/samsung/privilege/util/DialogNotification;->c(I)I
 
-    .line 319
+    .line 323
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -129,7 +129,7 @@
 
     check-cast v0, Lcom/bzbs/bean/MessageGCM;
 
-    .line 321
+    .line 325
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->i()Landroid/content/Context;
 
     move-result-object v1
@@ -150,38 +150,38 @@
 
     move-result-object v1
 
-    .line 322
+    .line 326
     iget-object v2, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->d:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 323
+    .line 327
     iget-object v2, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->e:Landroid/widget/TextView;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 325
+    .line 329
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->d:Landroid/widget/TextView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 326
+    .line 330
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->d:Landroid/widget/TextView;
 
     iget-object v2, v0, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 327
+    .line 331
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->e:Landroid/widget/TextView;
 
     iget-object v2, v0, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 329
+    .line 333
     iget-object v1, v0, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
     const-string/jumbo v2, "campaign"
@@ -202,7 +202,7 @@
 
     if-eqz v1, :cond_91
 
-    .line 330
+    .line 334
     :cond_54
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->i()Landroid/content/Context;
 
@@ -218,7 +218,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0201b0
+    const v2, 0x7f0201c6
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -238,7 +238,7 @@
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 339
+    .line 343
     :goto_78
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->i()Landroid/content/Context;
 
@@ -250,23 +250,23 @@
 
     if-ge p2, v1, :cond_bc
 
-    .line 340
+    .line 344
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->b:Landroid/widget/LinearLayout;
 
     const v2, 0x7f020079
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
-    .line 345
+    .line 349
     :goto_8a
     const-string/jumbo v1, "View"
 
     invoke-static {v1, v0}, Lcom/samsung/privilege/util/DialogNotification;->a(Ljava/lang/String;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 346
+    .line 350
     return-void
 
-    .line 331
+    .line 335
     :cond_91
     iget-object v1, v0, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
@@ -278,40 +278,40 @@
 
     if-eqz v1, :cond_ac
 
-    .line 332
-    iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
-
-    const v2, 0x7f020185
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 333
-    iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
-
-    sget-object v2, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    goto :goto_78
-
-    .line 335
-    :cond_ac
-    iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
-
-    const v2, 0x7f020184
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
-
     .line 336
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
 
+    const v2, 0x7f020198
+
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 337
+    iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
+
     sget-object v2, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     goto :goto_78
 
-    .line 342
+    .line 339
+    :cond_ac
+    iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
+
+    const v2, 0x7f020197
+
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 340
+    iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
+
+    sget-object v2, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+
+    goto :goto_78
+
+    .line 346
     :cond_bc
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->b:Landroid/widget/LinearLayout;
 
@@ -326,7 +326,7 @@
     .registers 2
 
     .prologue
-    .line 350
+    .line 354
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -340,10 +340,10 @@
     .registers 2
 
     .prologue
-    .line 355
+    .line 359
     invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView$Adapter;->onAttachedToRecyclerView(Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 356
+    .line 360
     return-void
 .end method
 
@@ -351,7 +351,7 @@
     .registers 3
 
     .prologue
-    .line 289
+    .line 293
     check-cast p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;
 
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter;->a(Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;I)V
@@ -363,7 +363,7 @@
     .registers 4
 
     .prologue
-    .line 289
+    .line 293
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter;->a(Landroid/view/ViewGroup;I)Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;
 
     move-result-object v0

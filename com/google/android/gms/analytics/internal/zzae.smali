@@ -85,7 +85,7 @@
 .end method
 
 .method public static a(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 4
+    .registers 6
 
     invoke-static {}, Lcom/google/android/gms/analytics/internal/zzaf;->b()Lcom/google/android/gms/analytics/internal/zzaf;
 
@@ -115,23 +115,47 @@
 
     if-eqz v0, :cond_9
 
-    if-eqz p1, :cond_3f
+    if-eqz p1, :cond_56
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string/jumbo v1, ":"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ":"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -141,7 +165,7 @@
 
     move-object v1, v0
 
-    :goto_33
+    :goto_4a
     sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->c:Lcom/google/android/gms/analytics/internal/zzy$zza;
 
     invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->a()Ljava/lang/Object;
@@ -154,10 +178,10 @@
 
     goto :goto_9
 
-    :cond_3f
+    :cond_56
     move-object v1, p0
 
-    goto :goto_33
+    goto :goto_4a
 .end method
 
 .method public static a(I)Z

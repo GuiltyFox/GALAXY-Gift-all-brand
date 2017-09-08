@@ -114,7 +114,7 @@
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 37
-    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 39
     invoke-static {p0}, Lcom/bzbs/util/GCMUtil;->c(Landroid/content/Context;)V
@@ -182,7 +182,7 @@
     .line 58
     const-string/jumbo v0, ""
 
-    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 60
     invoke-static {p0}, Lcom/bzbs/util/GCMUtil;->c(Landroid/content/Context;)V
@@ -279,7 +279,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v2, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v2, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -515,7 +515,7 @@
 
     .line 101
     :cond_149
-    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->m(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 103
     sget-object v0, Lcom/bzbs/util/GCMUtil;->a:Ljava/lang/String;

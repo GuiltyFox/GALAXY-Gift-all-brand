@@ -320,54 +320,6 @@
     goto :goto_19
 .end method
 
-.method private a()Ljava/lang/ref/ReferenceQueue;
-    .registers 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/lang/ref/ReferenceQueue",
-            "<",
-            "Lcom/bumptech/glide/load/engine/EngineResource",
-            "<*>;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 302
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine;->h:Ljava/lang/ref/ReferenceQueue;
-
-    if-nez v0, :cond_1b
-
-    .line 303
-    new-instance v0, Ljava/lang/ref/ReferenceQueue;
-
-    invoke-direct {v0}, Ljava/lang/ref/ReferenceQueue;-><init>()V
-
-    iput-object v0, p0, Lcom/bumptech/glide/load/engine/Engine;->h:Ljava/lang/ref/ReferenceQueue;
-
-    .line 304
-    invoke-static {}, Landroid/os/Looper;->myQueue()Landroid/os/MessageQueue;
-
-    move-result-object v0
-
-    .line 305
-    new-instance v1, Lcom/bumptech/glide/load/engine/Engine$RefQueueIdleHandler;
-
-    iget-object v2, p0, Lcom/bumptech/glide/load/engine/Engine;->e:Ljava/util/Map;
-
-    iget-object v3, p0, Lcom/bumptech/glide/load/engine/Engine;->h:Ljava/lang/ref/ReferenceQueue;
-
-    invoke-direct {v1, v2, v3}, Lcom/bumptech/glide/load/engine/Engine$RefQueueIdleHandler;-><init>(Ljava/util/Map;Ljava/lang/ref/ReferenceQueue;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/MessageQueue;->addIdleHandler(Landroid/os/MessageQueue$IdleHandler;)V
-
-    .line 307
-    :cond_1b
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine;->h:Ljava/lang/ref/ReferenceQueue;
-
-    return-object v0
-.end method
-
 .method private static a(Ljava/lang/String;JLcom/bumptech/glide/load/Key;)V
     .registers 9
 
@@ -458,7 +410,7 @@
 
     new-instance v2, Lcom/bumptech/glide/load/engine/Engine$ResourceWeakReference;
 
-    invoke-direct {p0}, Lcom/bumptech/glide/load/engine/Engine;->a()Ljava/lang/ref/ReferenceQueue;
+    invoke-direct {p0}, Lcom/bumptech/glide/load/engine/Engine;->b()Ljava/lang/ref/ReferenceQueue;
 
     move-result-object v3
 
@@ -467,6 +419,54 @@
     invoke-interface {v1, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_3
+.end method
+
+.method private b()Ljava/lang/ref/ReferenceQueue;
+    .registers 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/lang/ref/ReferenceQueue",
+            "<",
+            "Lcom/bumptech/glide/load/engine/EngineResource",
+            "<*>;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 302
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine;->h:Ljava/lang/ref/ReferenceQueue;
+
+    if-nez v0, :cond_1b
+
+    .line 303
+    new-instance v0, Ljava/lang/ref/ReferenceQueue;
+
+    invoke-direct {v0}, Ljava/lang/ref/ReferenceQueue;-><init>()V
+
+    iput-object v0, p0, Lcom/bumptech/glide/load/engine/Engine;->h:Ljava/lang/ref/ReferenceQueue;
+
+    .line 304
+    invoke-static {}, Landroid/os/Looper;->myQueue()Landroid/os/MessageQueue;
+
+    move-result-object v0
+
+    .line 305
+    new-instance v1, Lcom/bumptech/glide/load/engine/Engine$RefQueueIdleHandler;
+
+    iget-object v2, p0, Lcom/bumptech/glide/load/engine/Engine;->e:Ljava/util/Map;
+
+    iget-object v3, p0, Lcom/bumptech/glide/load/engine/Engine;->h:Ljava/lang/ref/ReferenceQueue;
+
+    invoke-direct {v1, v2, v3}, Lcom/bumptech/glide/load/engine/Engine$RefQueueIdleHandler;-><init>(Ljava/util/Map;Ljava/lang/ref/ReferenceQueue;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/MessageQueue;->addIdleHandler(Landroid/os/MessageQueue$IdleHandler;)V
+
+    .line 307
+    :cond_1b
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine;->h:Ljava/lang/ref/ReferenceQueue;
+
+    return-object v0
 .end method
 
 
@@ -765,6 +765,23 @@
     goto/16 :goto_4d
 .end method
 
+.method public a()V
+    .registers 2
+
+    .prologue
+    .line 298
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine;->g:Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;
+
+    invoke-virtual {v0}, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->a()Lcom/bumptech/glide/load/engine/cache/DiskCache;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/bumptech/glide/load/engine/cache/DiskCache;->a()V
+
+    .line 299
+    return-void
+.end method
+
 .method public a(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/EngineResource;)V
     .registers 6
     .annotation system Ldalvik/annotation/Signature;
@@ -798,7 +815,7 @@
 
     new-instance v1, Lcom/bumptech/glide/load/engine/Engine$ResourceWeakReference;
 
-    invoke-direct {p0}, Lcom/bumptech/glide/load/engine/Engine;->a()Ljava/lang/ref/ReferenceQueue;
+    invoke-direct {p0}, Lcom/bumptech/glide/load/engine/Engine;->b()Ljava/lang/ref/ReferenceQueue;
 
     move-result-object v2
 

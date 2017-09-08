@@ -116,7 +116,7 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/AddMoneyActivity$3;->a:Lcom/samsung/privilege/activity/AddMoneyActivity;
 
-    const v4, 0x7f1000cc
+    const v4, 0x7f1000ce
 
     invoke-virtual {v2, v4}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
 
@@ -205,7 +205,7 @@
 
     iget-object v4, v4, Lcom/samsung/privilege/activity/AddMoneyActivity$3;->a:Lcom/samsung/privilege/activity/AddMoneyActivity;
 
-    const v5, 0x7f1000c9
+    const v5, 0x7f1000cb
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
 
@@ -222,7 +222,7 @@
 
     iget-object v4, v4, Lcom/samsung/privilege/activity/AddMoneyActivity$3;->a:Lcom/samsung/privilege/activity/AddMoneyActivity;
 
-    const v5, 0x7f1000cb
+    const v5, 0x7f1000cd
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
 
@@ -280,7 +280,7 @@
     check-cast v2, Landroid/view/LayoutInflater;
 
     .line 181
-    const v3, 0x7f04001e
+    const v3, 0x7f04001f
 
     const/4 v9, 0x0
 
@@ -291,7 +291,7 @@
     move-result-object v9
 
     .line 183
-    const v2, 0x7f1000d4
+    const v2, 0x7f1000da
 
     invoke-virtual {v9, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -302,7 +302,7 @@
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 184
-    const v2, 0x7f1000cd
+    const v2, 0x7f1000cf
 
     invoke-virtual {v9, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -315,7 +315,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v10, Lcom/bzbs/data/AppSetting;->S:Ljava/lang/String;
+    sget-object v10, Lcom/bzbs/data/AppSetting;->X:Ljava/lang/String;
 
     invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -377,7 +377,7 @@
     invoke-virtual {v3, v2}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
     .line 188
-    const v2, 0x7f1000d3
+    const v2, 0x7f1000d9
 
     invoke-virtual {v9, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

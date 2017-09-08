@@ -138,42 +138,42 @@
     return-void
 .end method
 
-.method public j_()J
+.method public k_()J
     .registers 3
 
     .prologue
     .line 46
     iget-object v0, p0, Lokio/ForwardingTimeout;->a:Lokio/Timeout;
 
-    invoke-virtual {v0}, Lokio/Timeout;->j_()J
+    invoke-virtual {v0}, Lokio/Timeout;->k_()J
 
     move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public k_()Z
+.method public l_()Z
     .registers 2
 
     .prologue
     .line 50
     iget-object v0, p0, Lokio/ForwardingTimeout;->a:Lokio/Timeout;
 
-    invoke-virtual {v0}, Lokio/Timeout;->k_()Z
+    invoke-virtual {v0}, Lokio/Timeout;->l_()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public l_()Lokio/Timeout;
+.method public m_()Lokio/Timeout;
     .registers 2
 
     .prologue
     .line 62
     iget-object v0, p0, Lokio/ForwardingTimeout;->a:Lokio/Timeout;
 
-    invoke-virtual {v0}, Lokio/Timeout;->l_()Lokio/Timeout;
+    invoke-virtual {v0}, Lokio/Timeout;->m_()Lokio/Timeout;
 
     move-result-object v0
 

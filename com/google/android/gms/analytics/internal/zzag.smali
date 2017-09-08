@@ -34,7 +34,7 @@
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzag;->b:Lcom/google/android/gms/analytics/internal/zzf;
 

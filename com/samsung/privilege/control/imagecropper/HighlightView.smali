@@ -120,7 +120,7 @@
     iput-object v1, p0, Lcom/samsung/privilege/control/imagecropper/HighlightView;->m:Landroid/graphics/drawable/Drawable;
 
     .line 61
-    const v1, 0x7f0201bf
+    const v1, 0x7f0201d8
 
     .line 62
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;

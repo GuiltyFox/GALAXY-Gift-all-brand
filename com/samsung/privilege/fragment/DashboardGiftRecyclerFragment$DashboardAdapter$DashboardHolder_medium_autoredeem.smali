@@ -34,14 +34,14 @@
     .registers 4
 
     .prologue
-    .line 2007
+    .line 2028
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;->l:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
-    .line 2008
+    .line 2029
     invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 2009
-    const v0, 0x7f1001f9
+    .line 2030
+    const v0, 0x7f100223
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -49,8 +49,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;->a:Landroid/view/View;
 
-    .line 2010
-    const v0, 0x7f100228
+    .line 2031
+    const v0, 0x7f100259
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -58,8 +58,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;->b:Landroid/view/View;
 
-    .line 2012
-    const v0, 0x7f10031a
+    .line 2033
+    const v0, 0x7f100351
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -69,8 +69,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;->c:Landroid/widget/LinearLayout;
 
-    .line 2013
-    const v0, 0x7f100312
+    .line 2034
+    const v0, 0x7f100349
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -80,8 +80,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;->d:Landroid/widget/ImageView;
 
-    .line 2014
-    const v0, 0x7f100317
+    .line 2035
+    const v0, 0x7f10034e
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -91,8 +91,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;->e:Landroid/widget/LinearLayout;
 
-    .line 2015
-    const v0, 0x7f100318
+    .line 2036
+    const v0, 0x7f10034f
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -102,8 +102,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;->f:Landroid/widget/TextView;
 
-    .line 2016
-    const v0, 0x7f100319
+    .line 2037
+    const v0, 0x7f100350
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -113,8 +113,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;->g:Landroid/widget/TextView;
 
-    .line 2017
-    const v0, 0x7f10031c
+    .line 2038
+    const v0, 0x7f100353
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -124,8 +124,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;->h:Landroid/widget/TextView;
 
-    .line 2018
-    const v0, 0x7f10031d
+    .line 2039
+    const v0, 0x7f100354
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -135,8 +135,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;->i:Landroid/widget/TextView;
 
-    .line 2019
-    const v0, 0x7f10031e
+    .line 2040
+    const v0, 0x7f100355
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -146,8 +146,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;->j:Landroid/widget/TextView;
 
-    .line 2020
-    const v0, 0x7f10031f
+    .line 2041
+    const v0, 0x7f100356
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -157,6 +157,6 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;->k:Landroid/widget/TextView;
 
-    .line 2021
+    .line 2042
     return-void
 .end method

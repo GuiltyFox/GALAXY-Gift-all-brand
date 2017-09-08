@@ -8,19 +8,19 @@
 
 .field contentList:Landroid/support/v7/widget/CardView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10038c
+        value = 0x7f1003c3
     .end annotation
 .end field
 
 .field imageViewCover:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004a6
+        value = 0x7f1004de
     .end annotation
 .end field
 
 .field tvSeemore:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004a7
+        value = 0x7f1004df
     .end annotation
 .end field
 
@@ -224,7 +224,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0201b4
+    const v1, 0x7f0201ca
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 

@@ -8,7 +8,7 @@
 
 .field itemSticker:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004d0
+        value = 0x7f100507
     .end annotation
 .end field
 
@@ -87,7 +87,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0201b0
+    const v3, 0x7f0201c6
 
     invoke-static {v0, v1, v2, v3}, Lcom/bzbs/marketplace/control/InitImage;->a(Landroid/app/Activity;Landroid/widget/ImageView;Ljava/lang/String;I)V
 

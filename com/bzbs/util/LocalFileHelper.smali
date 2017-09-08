@@ -97,7 +97,7 @@
     const/4 v0, 0x0
 
     .line 233
-    const-string/jumbo v1, "PREF"
+    sget-object v1, Lcom/bzbs/data/AppSetting;->aj:Ljava/lang/String;
 
     const-string/jumbo v2, "SD"
 
@@ -105,10 +105,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_89
+    if-eqz v1, :cond_88
 
     .line 235
-    :try_start_d
+    :try_start_c
     new-instance v1, Ljava/io/File;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -140,13 +140,13 @@
 
     move-result v2
 
-    if-nez v2, :cond_33
+    if-nez v2, :cond_32
 
     .line 237
     invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
 
     .line 240
-    :cond_33
+    :cond_32
     new-instance v2, Ljava/io/File;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -174,13 +174,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_55
+    if-eqz v3, :cond_54
 
     .line 242
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
     .line 247
-    :cond_55
+    :cond_54
     add-int/lit8 v0, v0, 0x1
 
     .line 248
@@ -221,26 +221,26 @@
 
     move-result v3
 
-    if-eqz v3, :cond_88
+    if-eqz v3, :cond_87
 
     .line 250
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
-    :try_end_84
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_84} :catch_125
+    :try_end_83
+    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_83} :catch_124
 
     .line 254
     const/16 v2, 0x64
 
-    if-lt v0, v2, :cond_55
+    if-lt v0, v2, :cond_54
 
     .line 274
-    :cond_88
-    :goto_88
+    :cond_87
+    :goto_87
     return-void
 
     .line 263
-    :cond_89
-    :try_start_89
+    :cond_88
+    :try_start_88
     sget-object v0, Lcom/bzbs/util/LocalFileHelper;->b:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -323,7 +323,7 @@
     move-result v0
 
     .line 267
-    if-nez v0, :cond_88
+    if-nez v0, :cond_87
 
     .line 268
     sget-object v0, Lcom/bzbs/util/LocalFileHelper;->a:Ljava/lang/String;
@@ -347,13 +347,13 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_f9
-    .catch Ljava/lang/Exception; {:try_start_89 .. :try_end_f9} :catch_fa
+    :try_end_f8
+    .catch Ljava/lang/Exception; {:try_start_88 .. :try_end_f8} :catch_f9
 
-    goto :goto_88
+    goto :goto_87
 
     .line 270
-    :catch_fa
+    :catch_f9
     move-exception v0
 
     .line 271
@@ -393,13 +393,13 @@
 
     invoke-static {v1, v0}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_88
+    goto/16 :goto_87
 
     .line 258
-    :catch_125
+    :catch_124
     move-exception v0
 
-    goto/16 :goto_88
+    goto/16 :goto_87
 .end method
 
 .method public static a(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
@@ -407,7 +407,7 @@
 
     .prologue
     .line 277
-    const-string/jumbo v0, "PREF"
+    sget-object v0, Lcom/bzbs/data/AppSetting;->aj:Ljava/lang/String;
 
     const-string/jumbo v1, "SD"
 
@@ -415,10 +415,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5b
+    if-eqz v0, :cond_5a
 
     .line 279
-    :try_start_c
+    :try_start_b
     new-instance v0, Ljava/io/File;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -450,13 +450,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_32
+    if-nez v1, :cond_31
 
     .line 281
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
     .line 283
-    :cond_32
+    :cond_31
     new-instance v1, Ljava/io/File;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -494,18 +494,18 @@
 
     .line 287
     invoke-virtual {v0}, Ljava/io/FileWriter;->close()V
-    :try_end_5a
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_5a} :catch_11e
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_5a} :catch_11b
+    :try_end_59
+    .catch Ljava/io/IOException; {:try_start_b .. :try_end_59} :catch_11d
+    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_59} :catch_11a
 
     .line 311
-    :cond_5a
-    :goto_5a
+    :cond_59
+    :goto_59
     return-void
 
     .line 295
-    :cond_5b
-    :try_start_5b
+    :cond_5a
+    :try_start_5a
     sget-object v0, Lcom/bzbs/util/LocalFileHelper;->b:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -551,7 +551,7 @@
     move-result v1
 
     .line 298
-    if-nez v1, :cond_a2
+    if-nez v1, :cond_a1
 
     .line 299
     sget-object v1, Lcom/bzbs/util/LocalFileHelper;->a:Ljava/lang/String;
@@ -577,7 +577,7 @@
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 301
-    :cond_a2
+    :cond_a1
     new-instance v1, Ljava/util/Date;
 
     invoke-direct {v1}, Ljava/util/Date;-><init>()V
@@ -625,7 +625,7 @@
     move-result v0
 
     .line 304
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_59
 
     .line 305
     sget-object v0, Lcom/bzbs/util/LocalFileHelper;->a:Ljava/lang/String;
@@ -649,13 +649,13 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_ee
-    .catch Ljava/lang/Exception; {:try_start_5b .. :try_end_ee} :catch_f0
+    :try_end_ed
+    .catch Ljava/lang/Exception; {:try_start_5a .. :try_end_ed} :catch_ef
 
-    goto/16 :goto_5a
+    goto/16 :goto_59
 
     .line 307
-    :catch_f0
+    :catch_ef
     move-exception v0
 
     .line 308
@@ -695,19 +695,19 @@
 
     invoke-static {v1, v0}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_5a
+    goto/16 :goto_59
 
     .line 290
-    :catch_11b
+    :catch_11a
     move-exception v0
 
-    goto/16 :goto_5a
+    goto/16 :goto_59
 
     .line 288
-    :catch_11e
+    :catch_11d
     move-exception v0
 
-    goto/16 :goto_5a
+    goto/16 :goto_59
 .end method
 
 .method public static a()Z
@@ -829,7 +829,7 @@
 
     .prologue
     .line 314
-    const-string/jumbo v0, "PREF"
+    sget-object v0, Lcom/bzbs/data/AppSetting;->aj:Ljava/lang/String;
 
     const-string/jumbo v1, "SD"
 
@@ -837,10 +837,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_5c
 
     .line 316
-    :try_start_c
+    :try_start_b
     new-instance v0, Ljava/io/File;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -881,11 +881,11 @@
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-    :try_end_39
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_39} :catch_58
+    :try_end_38
+    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_38} :catch_57
 
     .line 320
-    :try_start_39
+    :try_start_38
     new-instance v2, Ljava/io/BufferedReader;
 
     new-instance v3, Ljava/io/FileReader;
@@ -895,12 +895,12 @@
     invoke-direct {v2, v3}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
     .line 323
-    :goto_43
+    :goto_42
     invoke-virtual {v2}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_52
 
     .line 324
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -909,42 +909,42 @@
     const/16 v0, 0xa
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-    :try_end_51
-    .catch Ljava/io/IOException; {:try_start_39 .. :try_end_51} :catch_52
-    .catch Ljava/lang/Exception; {:try_start_39 .. :try_end_51} :catch_b3
+    :try_end_50
+    .catch Ljava/io/IOException; {:try_start_38 .. :try_end_50} :catch_51
+    .catch Ljava/lang/Exception; {:try_start_38 .. :try_end_50} :catch_b2
 
-    goto :goto_43
+    goto :goto_42
 
     .line 327
-    :catch_52
+    :catch_51
     move-exception v0
 
     .line 333
-    :cond_53
-    :goto_53
-    :try_start_53
+    :cond_52
+    :goto_52
+    :try_start_52
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_56
-    .catch Ljava/lang/Exception; {:try_start_53 .. :try_end_56} :catch_58
+    :try_end_55
+    .catch Ljava/lang/Exception; {:try_start_52 .. :try_end_55} :catch_57
 
     move-result-object v0
 
     .line 343
-    :goto_57
+    :goto_56
     return-object v0
 
     .line 334
-    :catch_58
+    :catch_57
     move-exception v0
 
     .line 335
     const-string/jumbo v0, ""
 
-    goto :goto_57
+    goto :goto_56
 
     .line 339
-    :cond_5d
-    :try_start_5d
+    :cond_5c
+    :try_start_5c
     sget-object v0, Lcom/bzbs/util/LocalFileHelper;->b:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -981,15 +981,15 @@
     const-string/jumbo v2, ""
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    :try_end_84
-    .catch Ljava/lang/Exception; {:try_start_5d .. :try_end_84} :catch_86
+    :try_end_83
+    .catch Ljava/lang/Exception; {:try_start_5c .. :try_end_83} :catch_85
 
     move-result-object v0
 
-    goto :goto_57
+    goto :goto_56
 
     .line 341
-    :catch_86
+    :catch_85
     move-exception v0
 
     .line 342
@@ -1032,13 +1032,13 @@
     .line 343
     const-string/jumbo v0, ""
 
-    goto :goto_57
+    goto :goto_56
 
     .line 329
-    :catch_b3
+    :catch_b2
     move-exception v0
 
-    goto :goto_53
+    goto :goto_52
 .end method
 
 .method public static c(Ljava/lang/String;Landroid/content/Context;)J
@@ -1048,7 +1048,7 @@
     const-wide/16 v0, 0x0
 
     .line 349
-    const-string/jumbo v2, "PREF"
+    sget-object v2, Lcom/bzbs/data/AppSetting;->aj:Ljava/lang/String;
 
     const-string/jumbo v3, "SD"
 
@@ -1056,10 +1056,10 @@
 
     move-result v2
 
-    if-eqz v2, :cond_55
+    if-eqz v2, :cond_54
 
     .line 351
-    :try_start_e
+    :try_start_d
     new-instance v2, Ljava/io/File;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1125,19 +1125,19 @@
     sget-object v4, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-virtual {v4, v2, v3}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
-    :try_end_53
-    .catch Ljava/lang/Exception; {:try_start_e .. :try_end_53} :catch_c3
+    :try_end_52
+    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_52} :catch_c2
 
     move-result-wide v0
 
     .line 375
-    :cond_54
-    :goto_54
+    :cond_53
+    :goto_53
     return-wide v0
 
     .line 363
-    :cond_55
-    :try_start_55
+    :cond_54
+    :try_start_54
     sget-object v2, Lcom/bzbs/util/LocalFileHelper;->b:Ljava/lang/String;
 
     const/4 v3, 0x0
@@ -1186,7 +1186,7 @@
     .line 365
     cmp-long v4, v2, v0
 
-    if-lez v4, :cond_54
+    if-lez v4, :cond_53
 
     .line 366
     new-instance v4, Ljava/util/Date;
@@ -1204,15 +1204,15 @@
     sget-object v4, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-virtual {v4, v2, v3}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
-    :try_end_97
-    .catch Ljava/lang/Exception; {:try_start_55 .. :try_end_97} :catch_99
+    :try_end_96
+    .catch Ljava/lang/Exception; {:try_start_54 .. :try_end_96} :catch_98
 
     move-result-wide v0
 
-    goto :goto_54
+    goto :goto_53
 
     .line 373
-    :catch_99
+    :catch_98
     move-exception v2
 
     .line 374
@@ -1252,13 +1252,13 @@
 
     invoke-static {v3, v2}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_54
+    goto :goto_53
 
     .line 358
-    :catch_c3
+    :catch_c2
     move-exception v2
 
-    goto :goto_54
+    goto :goto_53
 .end method
 
 .method public static c(Landroid/content/Context;)V
@@ -1268,7 +1268,7 @@
     const/4 v0, 0x0
 
     .line 381
-    const-string/jumbo v1, "PREF"
+    sget-object v1, Lcom/bzbs/data/AppSetting;->aj:Ljava/lang/String;
 
     const-string/jumbo v2, "SD"
 
@@ -1276,10 +1276,10 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_3a
 
     .line 383
-    :try_start_d
+    :try_start_c
     new-instance v1, Ljava/io/File;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1307,7 +1307,7 @@
     invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     .line 384
-    if-eqz v1, :cond_4c
+    if-eqz v1, :cond_4b
 
     .line 385
     invoke-virtual {v1}, Ljava/io/File;->listFiles()[Ljava/io/File;
@@ -1317,24 +1317,24 @@
     .line 387
     array-length v2, v1
 
-    :goto_31
-    if-ge v0, v2, :cond_4c
+    :goto_30
+    if-ge v0, v2, :cond_4b
 
     aget-object v3, v1, v0
 
     .line 388
     invoke-virtual {v3}, Ljava/io/File;->delete()Z
-    :try_end_38
-    .catch Ljava/lang/Exception; {:try_start_d .. :try_end_38} :catch_6c
+    :try_end_37
+    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_37} :catch_6b
 
     .line 387
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_31
+    goto :goto_30
 
     .line 396
-    :cond_3b
-    :try_start_3b
+    :cond_3a
+    :try_start_3a
     sget-object v0, Lcom/bzbs/util/LocalFileHelper;->b:Ljava/lang/String;
 
     const/4 v1, 0x0
@@ -1353,16 +1353,16 @@
 
     .line 399
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-    :try_end_4c
-    .catch Ljava/lang/Exception; {:try_start_3b .. :try_end_4c} :catch_4d
+    :try_end_4b
+    .catch Ljava/lang/Exception; {:try_start_3a .. :try_end_4b} :catch_4c
 
     .line 404
-    :cond_4c
-    :goto_4c
+    :cond_4b
+    :goto_4b
     return-void
 
     .line 400
-    :catch_4d
+    :catch_4c
     move-exception v0
 
     .line 401
@@ -1392,13 +1392,13 @@
 
     invoke-static {v1, v0}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_4c
+    goto :goto_4b
 
     .line 391
-    :catch_6c
+    :catch_6b
     move-exception v0
 
-    goto :goto_4c
+    goto :goto_4b
 .end method
 
 .method public static d(Landroid/content/Context;)V

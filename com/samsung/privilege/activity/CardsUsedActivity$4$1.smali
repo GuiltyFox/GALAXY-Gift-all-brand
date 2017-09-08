@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 454
+    .line 459
     iput-object p1, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 6
 
     .prologue
-    .line 459
+    .line 464
     :try_start_0
     new-instance v0, Lorg/json/JSONObject;
 
@@ -47,26 +47,26 @@
 
     invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 460
+    .line 465
     const-string/jumbo v1, "result"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 461
+    .line 466
     const-string/jumbo v1, "code"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 462
+    .line 467
     const-string/jumbo v2, "expirein"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
     move-result-wide v2
 
-    .line 464
+    .line 469
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
@@ -75,12 +75,12 @@
 
     invoke-static {v0, v4}, Lcom/samsung/privilege/activity/CardsUsedActivity;->a(Lcom/samsung/privilege/activity/CardsUsedActivity;Z)Z
 
-    .line 467
+    .line 472
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v4, 0x7f10014a
+    const v4, 0x7f100151
 
     invoke-virtual {v0, v4}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -90,7 +90,7 @@
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 468
+    .line 473
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
@@ -103,7 +103,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 469
+    .line 474
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
@@ -116,7 +116,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 470
+    .line 475
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
@@ -129,7 +129,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 471
+    .line 476
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
@@ -142,7 +142,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 472
+    .line 477
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
@@ -153,9 +153,9 @@
 
     const-string/jumbo v4, "1033"
 
-    invoke-static {v0, v4}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v0, v4}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 473
+    .line 478
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
@@ -166,7 +166,7 @@
 
     invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
-    .line 475
+    .line 480
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
@@ -179,7 +179,7 @@
 
     invoke-static {v0, v4, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->a(Lcom/samsung/privilege/activity/CardsUsedActivity;ZLjava/lang/String;)V
 
-    .line 477
+    .line 482
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
@@ -192,7 +192,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 478
+    .line 483
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
@@ -205,14 +205,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 481
+    .line 486
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->a()V
 
-    .line 482
+    .line 487
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
@@ -221,15 +221,15 @@
     :try_end_b1
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_b1} :catch_b2
 
-    .line 487
+    .line 492
     :goto_b1
     return-void
 
-    .line 483
+    .line 488
     :catch_b2
     move-exception v0
 
-    .line 484
+    .line 489
     invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
 
     goto :goto_b1

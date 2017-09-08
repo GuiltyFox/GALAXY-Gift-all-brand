@@ -12,7 +12,7 @@
 
 .field container:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100180
+        value = 0x7f100187
     .end annotation
 .end field
 
@@ -22,7 +22,7 @@
 
 .field expandedImage:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004a5
+        value = 0x7f1004dd
     .end annotation
 .end field
 
@@ -41,19 +41,19 @@
 
 .field recyclerViewMarketPlaceList:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004a2
+        value = 0x7f1004da
     .end annotation
 .end field
 
 .field rootFooter:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004a3
+        value = 0x7f1004db
     .end annotation
 .end field
 
 .field tvResult:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1004a4
+        value = 0x7f1004dc
     .end annotation
 .end field
 

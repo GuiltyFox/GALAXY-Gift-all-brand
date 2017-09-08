@@ -123,7 +123,7 @@
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
     .line 119
-    const v0, 0x7f1001f9
+    const v0, 0x7f100223
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -132,7 +132,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a:Landroid/view/View;
 
     .line 120
-    const v0, 0x7f100228
+    const v0, 0x7f100259
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -141,7 +141,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->b:Landroid/view/View;
 
     .line 122
-    const v0, 0x7f1001fd
+    const v0, 0x7f100226
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -152,7 +152,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->c:Landroid/widget/ImageView;
 
     .line 124
-    const v0, 0x7f100148
+    const v0, 0x7f10014f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -163,7 +163,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->d:Landroid/widget/LinearLayout;
 
     .line 125
-    const v0, 0x7f100149
+    const v0, 0x7f100150
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -174,7 +174,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->e:Landroid/widget/TextView;
 
     .line 126
-    const v0, 0x7f100349
+    const v0, 0x7f100380
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -185,7 +185,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->f:Landroid/widget/RelativeLayout;
 
     .line 128
-    const v0, 0x7f1001fc
+    const v0, 0x7f100225
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -196,7 +196,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->g:Landroid/widget/RelativeLayout;
 
     .line 129
-    const v0, 0x7f1001fb
+    const v0, 0x7f100224
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -207,7 +207,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->h:Landroid/widget/RelativeLayout;
 
     .line 131
-    const v0, 0x7f100207
+    const v0, 0x7f100232
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -218,7 +218,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->i:Landroid/widget/LinearLayout;
 
     .line 132
-    const v0, 0x7f100146
+    const v0, 0x7f10014d
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -229,7 +229,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->j:Landroid/widget/LinearLayout;
 
     .line 133
-    const v0, 0x7f1001fa
+    const v0, 0x7f10022b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -240,7 +240,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->k:Landroid/widget/TextView;
 
     .line 134
-    const v0, 0x7f10020c
+    const v0, 0x7f100238
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -251,7 +251,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->l:Landroid/widget/ProgressBar;
 
     .line 135
-    const v0, 0x7f100208
+    const v0, 0x7f100233
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -262,7 +262,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->m:Landroid/widget/RelativeLayout;
 
     .line 136
-    const v0, 0x7f10021a
+    const v0, 0x7f100249
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -273,7 +273,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->n:Landroid/widget/ProgressBar;
 
     .line 137
-    const v0, 0x7f100217
+    const v0, 0x7f100245
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -284,7 +284,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->o:Landroid/widget/RelativeLayout;
 
     .line 138
-    const v0, 0x7f10015f
+    const v0, 0x7f100166
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -295,7 +295,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->p:Landroid/widget/TextView;
 
     .line 139
-    const v0, 0x7f100160
+    const v0, 0x7f100167
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -306,7 +306,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->q:Landroid/widget/TextView;
 
     .line 141
-    const v0, 0x7f10021b
+    const v0, 0x7f10024a
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -317,7 +317,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->r:Landroid/widget/LinearLayout;
 
     .line 142
-    const v0, 0x7f10021c
+    const v0, 0x7f10024b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -328,7 +328,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->s:Landroid/widget/LinearLayout;
 
     .line 143
-    const v0, 0x7f10021d
+    const v0, 0x7f10024c
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -339,7 +339,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->t:Landroid/widget/TextView;
 
     .line 145
-    const v0, 0x7f100222
+    const v0, 0x7f100253
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -350,7 +350,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->u:Landroid/widget/TextView;
 
     .line 146
-    const v0, 0x7f100223
+    const v0, 0x7f100254
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -361,7 +361,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->v:Landroid/widget/TextView;
 
     .line 147
-    const v0, 0x7f100225
+    const v0, 0x7f100256
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -372,7 +372,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->w:Landroid/widget/TextView;
 
     .line 148
-    const v0, 0x7f100226
+    const v0, 0x7f100257
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -383,7 +383,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->x:Landroid/widget/TextView;
 
     .line 149
-    const v0, 0x7f100227
+    const v0, 0x7f100258
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -394,7 +394,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->y:Landroid/widget/ProgressBar;
 
     .line 151
-    const v0, 0x7f100220
+    const v0, 0x7f100251
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -405,7 +405,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->z:Landroid/widget/RelativeLayout;
 
     .line 152
-    const v0, 0x7f100221
+    const v0, 0x7f100252
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -416,7 +416,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->A:Landroid/widget/TextView;
 
     .line 155
-    const v0, 0x7f100150
+    const v0, 0x7f100157
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -427,7 +427,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->C:Landroid/widget/ImageView;
 
     .line 156
-    const v0, 0x7f100151
+    const v0, 0x7f100158
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -438,7 +438,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->D:Landroid/widget/TextView;
 
     .line 157
-    const v0, 0x7f100156
+    const v0, 0x7f10015d
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -449,7 +449,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->E:Landroid/widget/TextView;
 
     .line 158
-    const v0, 0x7f100157
+    const v0, 0x7f10015e
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -460,7 +460,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->F:Landroid/widget/TextView;
 
     .line 159
-    const v0, 0x7f100134
+    const v0, 0x7f10013b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -471,7 +471,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->G:Landroid/widget/TextView;
 
     .line 160
-    const v0, 0x7f10014f
+    const v0, 0x7f100156
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -482,7 +482,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->H:Landroid/widget/LinearLayout;
 
     .line 161
-    const v0, 0x7f100131
+    const v0, 0x7f100138
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -493,7 +493,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->I:Landroid/widget/LinearLayout;
 
     .line 162
-    const v0, 0x7f10014e
+    const v0, 0x7f100155
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -504,7 +504,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->J:Landroid/widget/ImageView;
 
     .line 163
-    const v0, 0x7f100152
+    const v0, 0x7f100159
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -515,7 +515,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->K:Landroid/widget/LinearLayout;
 
     .line 164
-    const v0, 0x7f100154
+    const v0, 0x7f10015b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -526,7 +526,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->L:Landroid/widget/LinearLayout;
 
     .line 165
-    const v0, 0x7f100205
+    const v0, 0x7f100230
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -537,7 +537,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->M:Landroid/widget/RelativeLayout;
 
     .line 166
-    const v0, 0x7f1004fb
+    const v0, 0x7f10052f
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -575,7 +575,7 @@
     .registers 15
 
     .prologue
-    const v7, 0x7f0901b1
+    const v7, 0x7f0901c2
 
     const/4 v6, 0x4
 
@@ -658,7 +658,7 @@
     .line 186
     iget-object v0, p4, Lcom/bzbs/bean/DashboardItem;->wallet_issuer:Ljava/lang/String;
 
-    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->w(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->v(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -688,7 +688,7 @@
     :goto_67
     iget-object v0, p4, Lcom/bzbs/bean/DashboardItem;->wallet_issuer:Ljava/lang/String;
 
-    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->w(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->v(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -719,7 +719,7 @@
     :goto_84
     iget-object v0, p4, Lcom/bzbs/bean/DashboardItem;->wallet_issuer:Ljava/lang/String;
 
-    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->x(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->w(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -741,7 +741,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v4, 0x7f0901d9
+    const v4, 0x7f0901ec
 
     invoke-virtual {p0, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -792,7 +792,7 @@
     .line 221
     iget-object v0, v2, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->A:Landroid/widget/TextView;
 
-    const v1, 0x7f090073
+    const v1, 0x7f090067
 
     invoke-virtual {p0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -983,7 +983,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v3, 0x7f0901d9
+    const v3, 0x7f0901ec
 
     invoke-virtual {p0, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1040,7 +1040,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->V:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->aa:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1153,7 +1153,7 @@
     .line 588
     const-string/jumbo v2, ""
 
-    const v3, 0x7f0900ed
+    const v3, 0x7f0900e6
 
     invoke-virtual {p0, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1175,7 +1175,7 @@
 
     move-result-object v2
 
-    sget-boolean v3, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v3, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 591
     invoke-virtual {v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -1262,7 +1262,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1409,7 +1409,7 @@
 
     move-result-object v1
 
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 725
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -1655,7 +1655,7 @@
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v7, 0x7f09007d
+    const v7, 0x7f090071
 
     invoke-virtual {p0, v7}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1725,7 +1725,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v5, 0x7f09007e
+    const v5, 0x7f090072
 
     invoke-virtual {p0, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1751,7 +1751,7 @@
 
     move-result-object v0
 
-    const v5, 0x7f09007f
+    const v5, 0x7f090073
 
     invoke-virtual {p0, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1781,7 +1781,7 @@
 
     .line 806
     :cond_105
-    const v0, 0x7f090080
+    const v0, 0x7f090074
 
     invoke-virtual {p0, v0}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1854,7 +1854,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->V:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->aa:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1920,7 +1920,7 @@
 
     move-result-object v1
 
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 842
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;

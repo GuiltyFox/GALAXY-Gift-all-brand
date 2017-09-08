@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static final a:Lcom/google/android/gms/common/GoogleApiAvailability;
+.field private static final a:Lcom/google/android/gms/common/zzc;
 
 .field private static final b:Ljava/lang/Object;
 
@@ -14,11 +14,11 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    invoke-static {}, Lcom/google/android/gms/common/GoogleApiAvailability;->a()Lcom/google/android/gms/common/GoogleApiAvailability;
+    invoke-static {}, Lcom/google/android/gms/common/zzc;->b()Lcom/google/android/gms/common/zzc;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/security/ProviderInstaller;->a:Lcom/google/android/gms/common/GoogleApiAvailability;
+    sput-object v0, Lcom/google/android/gms/security/ProviderInstaller;->a:Lcom/google/android/gms/common/zzc;
 
     new-instance v0, Ljava/lang/Object;
 

@@ -375,7 +375,7 @@
     .line 167
     iget-object v0, p0, Lrx/internal/operators/OperatorConcat$ConcatSubscriber;->e:Lrx/Subscriber;
 
-    invoke-virtual {v0}, Lrx/Subscriber;->m_()V
+    invoke-virtual {v0}, Lrx/Subscriber;->n_()V
 
     .line 181
     :cond_1f
@@ -440,12 +440,12 @@
     .line 178
     iget-object v0, p0, Lrx/internal/operators/OperatorConcat$ConcatSubscriber;->e:Lrx/Subscriber;
 
-    invoke-virtual {v0}, Lrx/Subscriber;->m_()V
+    invoke-virtual {v0}, Lrx/Subscriber;->n_()V
 
     goto :goto_1f
 .end method
 
-.method public m_()V
+.method public n_()V
     .registers 3
 
     .prologue

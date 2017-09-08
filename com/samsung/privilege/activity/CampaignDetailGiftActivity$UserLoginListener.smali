@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 562
+    .line 569
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 562
+    .line 569
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
 
     return-void
@@ -36,10 +36,18 @@
 
 # virtual methods
 .method public a(Ljava/lang/String;)V
-    .registers 4
+    .registers 2
 
     .prologue
-    .line 565
+    .line 667
+    return-void
+.end method
+
+.method public a(Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 5
+
+    .prologue
+    .line 572
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
@@ -52,15 +60,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 598
+    .line 605
     return-void
 .end method
 
-.method public b(Ljava/lang/String;)V
-    .registers 4
+.method public b(Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 5
 
     .prologue
-    .line 602
+    .line 609
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
@@ -73,15 +81,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 635
+    .line 642
     return-void
 .end method
 
-.method public c(Ljava/lang/String;)V
-    .registers 4
+.method public c(Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 5
 
     .prologue
-    .line 639
+    .line 646
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
@@ -94,14 +102,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 655
-    return-void
-.end method
-
-.method public d(Ljava/lang/String;)V
-    .registers 2
-
-    .prologue
-    .line 660
+    .line 662
     return-void
 .end method

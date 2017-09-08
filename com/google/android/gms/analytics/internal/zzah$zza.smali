@@ -44,7 +44,7 @@
 
     const/4 v2, 0x1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     iget v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->b:I
 
@@ -56,7 +56,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzr;->m()I
+    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzr;->l()I
 
     move-result v3
 
@@ -103,7 +103,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->e()I
+    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->d()I
 
     move-result v4
 
@@ -149,7 +149,7 @@
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->g()I
+    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->f()I
 
     move-result v4
 
@@ -171,7 +171,7 @@
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->c:Ljava/io/ByteArrayOutputStream;
 
-    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzah;->c()[B
+    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzah;->d()[B
 
     move-result-object v1
 

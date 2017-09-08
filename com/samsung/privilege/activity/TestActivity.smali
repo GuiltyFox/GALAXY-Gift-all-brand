@@ -45,7 +45,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 19
-    const v0, 0x7f04004b
+    const v0, 0x7f040057
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TestActivity;->setContentView(I)V
 

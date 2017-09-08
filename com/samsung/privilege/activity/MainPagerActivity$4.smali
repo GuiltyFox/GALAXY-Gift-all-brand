@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->e(Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->c(Ljava/lang/String;)V
 .end annotation
 
 
@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 489
+    .line 539
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 492
+    .line 542
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->a:Ljava/lang/String;
@@ -50,9 +50,9 @@
 
     move-result-object v0
 
-    .line 493
+    .line 543
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 494
+    .line 544
     return-void
 .end method

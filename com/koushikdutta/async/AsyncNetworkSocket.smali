@@ -678,16 +678,6 @@
     return-void
 .end method
 
-.method public d_()Lcom/koushikdutta/async/callback/DataCallback;
-    .registers 2
-
-    .prologue
-    .line 206
-    iget-object v0, p0, Lcom/koushikdutta/async/AsyncNetworkSocket;->e:Lcom/koushikdutta/async/callback/DataCallback;
-
-    return-object v0
-.end method
-
 .method public e()V
     .registers 2
 
@@ -714,6 +704,16 @@
     move-exception v0
 
     goto :goto_a
+.end method
+
+.method public e_()Lcom/koushikdutta/async/callback/DataCallback;
+    .registers 2
+
+    .prologue
+    .line 206
+    iget-object v0, p0, Lcom/koushikdutta/async/AsyncNetworkSocket;->e:Lcom/koushikdutta/async/callback/DataCallback;
+
+    return-object v0
 .end method
 
 .method public g()Lcom/koushikdutta/async/callback/WritableCallback;

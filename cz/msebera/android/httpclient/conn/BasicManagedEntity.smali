@@ -285,7 +285,7 @@
     :try_start_5
     iget-object v0, p0, Lcz/msebera/android/httpclient/conn/BasicManagedEntity;->a:Lcz/msebera/android/httpclient/conn/ManagedClientConnection;
 
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/ManagedClientConnection;->h_()V
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/ManagedClientConnection;->i_()V
     :try_end_a
     .catchall {:try_start_5 .. :try_end_a} :catchall_d
 
@@ -357,7 +357,7 @@
     return-object v0
 .end method
 
-.method public h_()V
+.method public i_()V
     .registers 1
 
     .prologue

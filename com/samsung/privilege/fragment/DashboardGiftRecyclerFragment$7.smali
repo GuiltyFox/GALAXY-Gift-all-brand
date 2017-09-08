@@ -1,123 +1,191 @@
 .class Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;
-.super Ljava/lang/Object;
+.super Lcom/bzbs/lib/http/okhttp/ResponseListener;
 .source "DashboardGiftRecyclerFragment.java"
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Lcom/bzbs/bean/DashboardItem;)V
+    value = Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->d(Ljava/util/ArrayList;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Lcom/bzbs/bean/DashboardItem;
+.field final synthetic a:Landroid/widget/ProgressBar;
 
-.field final synthetic b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+.field final synthetic b:Ljava/util/ArrayList;
+
+.field final synthetic c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Lcom/bzbs/bean/DashboardItem;)V
-    .registers 3
+.method constructor <init>(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Landroid/widget/ProgressBar;Ljava/util/ArrayList;)V
+    .registers 4
 
     .prologue
-    .line 2489
-    iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+    .line 834
+    iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->a:Lcom/bzbs/bean/DashboardItem;
+    iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->a:Landroid/widget/ProgressBar;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->b:Ljava/util/ArrayList;
+
+    invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .registers 9
+.method public failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .registers 8
 
     .prologue
-    .line 2491
-    invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
+    .line 892
+    invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 2493
-    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+    .line 894
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->a:Lcom/bzbs/bean/DashboardItem;
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->b(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Lcom/bzbs/bean/DashboardItem;)V
-
-    .line 2495
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v1, "Dashboard "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v2, "header_en"
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v1, v2}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Ljava/lang/String;)Ljava/lang/String;
+    const-string/jumbo v2, "(getWalletCardList|onFailure)response_code="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ",response="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 896
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+
+    invoke-virtual {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-nez v0, :cond_34
 
-    move-result-object v0
-
-    const-string/jumbo v1, "Click Yes Campaign Autoredeem"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v3, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->a:Lcom/bzbs/bean/DashboardItem;
-
-    iget v3, v3, Lcom/bzbs/bean/DashboardItem;->id:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "|"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->a:Lcom/bzbs/bean/DashboardItem;
-
-    invoke-virtual {v3}, Lcom/bzbs/bean/DashboardItem;->GetCampaignNameForGA()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-wide/16 v4, 0x1
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
-
-    .line 2496
+    .line 909
+    :goto_33
     return-void
+
+    .line 898
+    :cond_34
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+
+    invoke-virtual {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7$2;
+
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7$2;-><init>(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;)V
+
+    invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    .line 908
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+
+    invoke-virtual {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
+
+    goto :goto_33
+.end method
+
+.method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .registers 8
+
+    .prologue
+    .line 837
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+
+    invoke-static {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "(getWalletCardList|onComplete)response_code="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ",response="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 839
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+
+    invoke-virtual {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    if-nez v0, :cond_31
+
+    .line 888
+    :goto_30
+    return-void
+
+    .line 841
+    :cond_31
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+
+    invoke-virtual {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7$1;
+
+    invoke-direct {v1, p0, p4}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7$1;-><init>(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    goto :goto_30
 .end method

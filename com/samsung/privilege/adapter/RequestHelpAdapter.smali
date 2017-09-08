@@ -88,7 +88,7 @@
     .registers 4
 
     .prologue
-    .line 214
+    .line 204
     iget-object v0, p0, Lcom/samsung/privilege/adapter/RequestHelpAdapter;->b:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
@@ -101,7 +101,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    .line 216
+    .line 206
     mul-float/2addr v0, p1
 
     const/high16 v1, 0x3f000000    # 0.5f
@@ -240,7 +240,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/adapter/RequestHelpAdapter;->a:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f0400e8
+    const v2, 0x7f0400f9
 
     const/4 v3, 0x0
 

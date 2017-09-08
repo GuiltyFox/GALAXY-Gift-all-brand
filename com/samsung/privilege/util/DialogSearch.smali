@@ -99,8 +99,8 @@
     return-object p0
 .end method
 
-.method public static a(Landroid/content/Context;Landroid/os/Handler;)V
-    .registers 7
+.method public static a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
+    .registers 8
 
     .prologue
     const/4 v4, 0x1
@@ -151,14 +151,14 @@
     .line 90
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v2, 0x7f0400bd
+    const v2, 0x7f0400cd
 
     invoke-virtual {v0, v2}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 93
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v2, 0x7f1000ba
+    const v2, 0x7f1000be
 
     invoke-virtual {v0, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -183,7 +183,7 @@
     .line 95
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v2, 0x7f10013c
+    const v2, 0x7f100143
 
     invoke-virtual {v0, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -194,7 +194,7 @@
     .line 96
     new-instance v2, Lcom/samsung/privilege/util/DialogSearch$1;
 
-    invoke-direct {v2, p0, p1, v0}, Lcom/samsung/privilege/util/DialogSearch$1;-><init>(Landroid/content/Context;Landroid/os/Handler;Landroid/widget/EditText;)V
+    invoke-direct {v2, p0, p1, v0, p2}, Lcom/samsung/privilege/util/DialogSearch$1;-><init>(Landroid/content/Context;Landroid/os/Handler;Landroid/widget/EditText;Ljava/lang/String;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
@@ -220,7 +220,7 @@
     :goto_68
     sget-object v1, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v3, 0x7f100435
+    const v3, 0x7f10046c
 
     invoke-virtual {v1, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -256,7 +256,7 @@
 
     new-instance v2, Lcom/samsung/privilege/util/DialogSearch$2;
 
-    invoke-direct {v2, p0, p1, v0}, Lcom/samsung/privilege/util/DialogSearch$2;-><init>(Landroid/content/Context;Landroid/os/Handler;Landroid/widget/EditText;)V
+    invoke-direct {v2, p0, p1, v0, p2}, Lcom/samsung/privilege/util/DialogSearch$2;-><init>(Landroid/content/Context;Landroid/os/Handler;Landroid/widget/EditText;Ljava/lang/String;)V
 
     invoke-virtual {v1, v2}, Landroid/support/v7/widget/RecyclerView;->addOnScrollListener(Landroid/support/v7/widget/RecyclerView$OnScrollListener;)V
 
@@ -278,7 +278,7 @@
     .line 196
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v1, 0x7f1003ef
+    const v1, 0x7f100426
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -296,7 +296,7 @@
     .line 204
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v1, 0x7f1003f0
+    const v1, 0x7f100427
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -403,12 +403,12 @@
     .end packed-switch
 .end method
 
-.method static synthetic a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;I)V
-    .registers 4
+.method static synthetic a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;I)V
+    .registers 5
 
     .prologue
     .line 59
-    invoke-static {p0, p1, p2, p3}, Lcom/samsung/privilege/util/DialogSearch;->b(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;I)V
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/samsung/privilege/util/DialogSearch;->b(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;I)V
 
     return-void
 .end method
@@ -433,8 +433,8 @@
     return p0
 .end method
 
-.method private static b(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;I)V
-    .registers 8
+.method private static b(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;I)V
+    .registers 9
 
     .prologue
     .line 220
@@ -442,7 +442,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -508,7 +508,7 @@
 
     move-result-object v0
 
-    .line 223
+    .line 224
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -517,9 +517,13 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "&byConfig=true&config=campaign_all"
+    const-string/jumbo v1, "&byConfig=true&config="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -527,13 +531,13 @@
 
     move-result-object v0
 
-    .line 224
+    .line 225
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 225
-    if-eqz v1, :cond_6d
+    .line 226
+    if-eqz v1, :cond_71
 
     const-string/jumbo v2, ""
 
@@ -541,13 +545,13 @@
 
     move-result v1
 
-    if-nez v1, :cond_6d
-
-    .line 228
-    :cond_6d
-    if-lez p3, :cond_87
+    if-nez v1, :cond_71
 
     .line 229
+    :cond_71
+    if-lez p4, :cond_8b
+
+    .line 230
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -562,7 +566,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -570,8 +574,8 @@
 
     move-result-object v0
 
-    .line 232
-    :cond_87
+    .line 233
+    :cond_8b
     sget-object v1, Lcom/samsung/privilege/util/DialogSearch;->a:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -594,29 +598,29 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 233
+    .line 234
     new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
 
-    .line 234
+    .line 235
     invoke-virtual {v1, p0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/content/Context;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->V:Z
 
-    .line 235
+    .line 236
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    .line 236
+    .line 237
     invoke-virtual {v1, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 237
+    .line 238
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
@@ -627,24 +631,24 @@
 
     sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 238
+    .line 239
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
     new-instance v1, Lcom/samsung/privilege/util/DialogSearch$5;
 
-    invoke-direct {v1, p1, p3, p0}, Lcom/samsung/privilege/util/DialogSearch$5;-><init>(Landroid/os/Handler;ILandroid/content/Context;)V
+    invoke-direct {v1, p1, p4, p0}, Lcom/samsung/privilege/util/DialogSearch$5;-><init>(Landroid/os/Handler;ILandroid/content/Context;)V
 
-    .line 239
+    .line 240
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 288
+    .line 289
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    .line 289
+    .line 290
     return-void
 .end method
 

@@ -196,26 +196,26 @@
     return-void
 .end method
 
-.method public d_()Lcom/koushikdutta/async/callback/DataCallback;
-    .registers 2
-
-    .prologue
-    .line 116
-    iget-object v0, p0, Lcom/koushikdutta/async/http/server/AsyncHttpServerRequestImpl;->m:Lcom/koushikdutta/async/AsyncSocket;
-
-    invoke-interface {v0}, Lcom/koushikdutta/async/AsyncSocket;->d_()Lcom/koushikdutta/async/callback/DataCallback;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public e()Ljava/lang/String;
     .registers 2
 
     .prologue
     .line 87
     iget-object v0, p0, Lcom/koushikdutta/async/http/server/AsyncHttpServerRequestImpl;->p:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public e_()Lcom/koushikdutta/async/callback/DataCallback;
+    .registers 2
+
+    .prologue
+    .line 116
+    iget-object v0, p0, Lcom/koushikdutta/async/http/server/AsyncHttpServerRequestImpl;->m:Lcom/koushikdutta/async/AsyncSocket;
+
+    invoke-interface {v0}, Lcom/koushikdutta/async/AsyncSocket;->e_()Lcom/koushikdutta/async/callback/DataCallback;
+
+    move-result-object v0
 
     return-object v0
 .end method

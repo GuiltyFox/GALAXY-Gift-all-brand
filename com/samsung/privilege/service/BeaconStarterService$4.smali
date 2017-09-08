@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 582
+    .line 523
     iput-object p1, p0, Lcom/samsung/privilege/service/BeaconStarterService$4;->c:Lcom/samsung/privilege/service/BeaconStarterService;
 
     iput-object p2, p0, Lcom/samsung/privilege/service/BeaconStarterService$4;->a:Landroid/app/Dialog;
@@ -43,12 +43,12 @@
     .registers 4
 
     .prologue
-    .line 585
+    .line 526
     iget-object v0, p0, Lcom/samsung/privilege/service/BeaconStarterService$4;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 587
+    .line 528
     iget-object v0, p0, Lcom/samsung/privilege/service/BeaconStarterService$4;->c:Lcom/samsung/privilege/service/BeaconStarterService;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/service/BeaconStarterService;->getApplicationContext()Landroid/content/Context;
@@ -57,8 +57,8 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/service/BeaconStarterService$4;->b:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 588
+    .line 529
     return-void
 .end method

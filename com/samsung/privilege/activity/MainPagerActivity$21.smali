@@ -20,7 +20,7 @@
     .registers 4
 
     .prologue
-    .line 1814
+    .line 1862
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$21;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iput-wide p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$21;->a:J
@@ -36,10 +36,10 @@
     .registers 13
 
     .prologue
-    .line 1851
+    .line 1899
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 1854
+    .line 1902
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -49,7 +49,7 @@
 
     move-result-wide v0
 
-    .line 1855
+    .line 1903
     const-string/jumbo v2, "MainPager"
 
     const-string/jumbo v3, "getPoints"
@@ -64,11 +64,11 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_1c
 
-    .line 1859
+    .line 1907
     :goto_1b
     return-void
 
-    .line 1856
+    .line 1904
     :catch_1c
     move-exception v0
 
@@ -79,7 +79,7 @@
     .registers 13
 
     .prologue
-    .line 1818
+    .line 1866
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -89,7 +89,7 @@
 
     move-result-wide v0
 
-    .line 1819
+    .line 1867
     const-string/jumbo v2, "MainPager"
 
     const-string/jumbo v3, "getPoints"
@@ -104,7 +104,7 @@
     :try_end_18
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_a1
 
-    .line 1824
+    .line 1872
     :goto_18
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$21;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
@@ -142,20 +142,20 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1827
+    .line 1875
     :try_start_40
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1828
+    .line 1876
     const-string/jumbo v1, "points"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
     move-result-wide v0
 
-    .line 1829
+    .line 1877
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$21;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
@@ -164,7 +164,7 @@
 
     invoke-static {v2, v0, v1}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;J)Z
 
-    .line 1831
+    .line 1879
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$21;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/MainPagerActivity$21$1;
@@ -175,14 +175,14 @@
     :try_end_5f
     .catch Ljava/lang/Exception; {:try_start_40 .. :try_end_5f} :catch_7c
 
-    .line 1841
+    .line 1889
     :goto_5f
     :try_start_5f
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1842
+    .line 1890
     const-string/jumbo v1, "updated_points_other"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
@@ -195,7 +195,7 @@
 
     move-result-wide v0
 
-    .line 1843
+    .line 1891
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$21;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
@@ -206,15 +206,15 @@
     :try_end_7b
     .catch Ljava/lang/Exception; {:try_start_5f .. :try_end_7b} :catch_9f
 
-    .line 1847
+    .line 1895
     :goto_7b
     return-void
 
-    .line 1836
+    .line 1884
     :catch_7c
     move-exception v0
 
-    .line 1837
+    .line 1885
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$21;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
@@ -247,13 +247,13 @@
 
     goto :goto_5f
 
-    .line 1844
+    .line 1892
     :catch_9f
     move-exception v0
 
     goto :goto_7b
 
-    .line 1820
+    .line 1868
     :catch_a1
     move-exception v0
 

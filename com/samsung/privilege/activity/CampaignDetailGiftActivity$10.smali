@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 871
+    .line 880
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$10;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
@@ -32,10 +32,10 @@
     .registers 5
 
     .prologue
-    .line 893
+    .line 902
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 896
+    .line 905
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .registers 8
 
     .prologue
-    .line 874
+    .line 883
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -78,20 +78,20 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 877
+    .line 886
     :try_start_26
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 878
+    .line 887
     const-string/jumbo v1, "points"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
     move-result-wide v0
 
-    .line 879
+    .line 888
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$10;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getApplicationContext()Landroid/content/Context;
@@ -100,7 +100,7 @@
 
     invoke-static {v2, v0, v1}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;J)Z
 
-    .line 881
+    .line 890
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$10;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$10$1;
@@ -111,11 +111,11 @@
     :try_end_45
     .catch Ljava/lang/Exception; {:try_start_26 .. :try_end_45} :catch_46
 
-    .line 889
+    .line 898
     :goto_45
     return-void
 
-    .line 886
+    .line 895
     :catch_46
     move-exception v0
 

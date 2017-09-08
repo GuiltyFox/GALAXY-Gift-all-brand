@@ -4,11 +4,51 @@
 
 
 # direct methods
+.method public static a(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bzbs/event/CallbackOTPDialog;)Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
+    .registers 19
+
+    .prologue
+    .line 67
+    const/16 v2, 0x8
+
+    const/high16 v3, 0x40800000    # 4.0f
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-object v6, p3
+
+    move-object v7, p4
+
+    move-object/from16 v8, p5
+
+    move-object/from16 v9, p6
+
+    move-object/from16 v10, p7
+
+    invoke-static/range {v0 .. v10}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->a(Landroid/app/Activity;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;IFZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bzbs/event/CallbackOTPDialog;)Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
+
+    move-result-object v0
+
+    .line 68
+    const-string/jumbo v1, "blur_sample"
+
+    invoke-virtual {v0, p1, v1}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
+
+    .line 69
+    return-object v0
+.end method
+
 .method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .registers 4
 
     .prologue
-    .line 91
+    .line 94
     const-string/jumbo v0, ""
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -17,7 +57,7 @@
 
     if-nez v0, :cond_14
 
-    .line 92
+    .line 95
     const-string/jumbo v0, "?"
 
     const-string/jumbo v1, "-large?"
@@ -26,7 +66,7 @@
 
     move-result-object v0
 
-    .line 94
+    .line 97
     :goto_13
     return-object v0
 
@@ -35,7 +75,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -70,7 +110,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 155
+    .line 158
     const/16 v2, 0x8
 
     const/high16 v3, 0x40800000    # 4.0f
@@ -85,12 +125,12 @@
 
     move-result-object v0
 
-    .line 156
+    .line 159
     const-string/jumbo v1, "blur_sample"
 
     invoke-virtual {v0, p1, v1}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 157
+    .line 160
     return-void
 .end method
 
@@ -100,7 +140,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 61
+    .line 62
     const/16 v2, 0x8
 
     const/high16 v3, 0x40800000    # 4.0f
@@ -115,12 +155,12 @@
 
     move-result-object v0
 
-    .line 62
+    .line 63
     const-string/jumbo v1, "blur_sample"
 
     invoke-virtual {v0, p1, v1}, Lcom/bzbs/marketplace/dialog/DrawsBlurDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 63
+    .line 64
     return-void
 .end method
 
@@ -128,12 +168,12 @@
     .registers 23
 
     .prologue
-    .line 101
+    .line 104
     new-instance v2, Ljava/util/Date;
 
     invoke-direct {v2}, Ljava/util/Date;-><init>()V
 
-    .line 102
+    .line 105
     invoke-virtual {v2}, Ljava/util/Date;->getTime()J
 
     move-result-wide v4
@@ -142,7 +182,7 @@
 
     div-long v10, v4, v6
 
-    .line 103
+    .line 106
     invoke-virtual {v2}, Ljava/util/Date;->getTime()J
 
     move-result-wide v2
@@ -151,7 +191,7 @@
 
     div-long v12, v2, v4
 
-    .line 107
+    .line 110
     invoke-virtual/range {p2 .. p2}, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->getID()Ljava/lang/String;
 
     move-result-object v2
@@ -160,27 +200,27 @@
 
     move-result v3
 
-    .line 108
+    .line 111
     invoke-virtual/range {p2 .. p2}, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->getAgencyName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 109
+    .line 112
     invoke-virtual/range {p2 .. p2}, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->getName()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 110
+    .line 113
     invoke-virtual/range {p3 .. p3}, Lcom/bzbs/marketplace/model/dialog/ConfirmOnDialogDealsGetModel;->getExpireIn()J
 
     move-result-wide v6
 
-    .line 111
+    .line 114
     invoke-virtual/range {p3 .. p3}, Lcom/bzbs/marketplace/model/dialog/ConfirmOnDialogDealsGetModel;->getSerial()Ljava/lang/String;
 
     move-result-object v8
 
-    .line 112
+    .line 115
     invoke-virtual/range {p3 .. p3}, Lcom/bzbs/marketplace/model/dialog/ConfirmOnDialogDealsGetModel;->getPrivilegeMessage()Ljava/lang/String;
 
     move-result-object v9
@@ -189,7 +229,7 @@
 
     invoke-direct {v2}, Lcom/google/gson/Gson;-><init>()V
 
-    .line 115
+    .line 118
     move-object/from16 v0, p2
 
     invoke-virtual {v2, v0}, Lcom/google/gson/Gson;->a(Ljava/lang/Object;)Ljava/lang/String;
@@ -206,19 +246,19 @@
 
     move-object/from16 v2, p0
 
-    .line 105
+    .line 108
     invoke-static/range {v2 .. v18}, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->a(Landroid/app/Activity;ILjava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;JJLjava/lang/String;IFZZ)Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;
 
     move-result-object v2
 
-    .line 118
+    .line 121
     const-string/jumbo v3, "blur_sample"
 
     move-object/from16 v0, p1
 
     invoke-virtual {v2, v0, v3}, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 119
+    .line 122
     return-void
 .end method
 
@@ -228,7 +268,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 122
+    .line 125
     const/16 v3, 0x8
 
     const/high16 v4, 0x40800000    # 4.0f
@@ -245,50 +285,12 @@
 
     move-result-object v0
 
-    .line 123
+    .line 126
     const-string/jumbo v1, "blur_sample"
 
     invoke-virtual {v0, p1, v1}, Lcom/bzbs/marketplace/dialog/ErrorBlurDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 124
-    return-void
-.end method
-
-.method public static a(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 17
-
-    .prologue
-    .line 66
-    const/16 v2, 0x8
-
-    const/high16 v3, 0x40800000    # 4.0f
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p2
-
-    move-object v6, p3
-
-    move-object v7, p4
-
-    move-object v8, p5
-
-    move-object/from16 v9, p6
-
-    invoke-static/range {v0 .. v9}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->a(Landroid/app/Activity;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;IFZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;
-
-    move-result-object v0
-
-    .line 67
-    const-string/jumbo v1, "blur_sample"
-
-    invoke-virtual {v0, p1, v1}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
-
-    .line 68
+    .line 127
     return-void
 .end method
 
@@ -296,7 +298,7 @@
     .registers 17
 
     .prologue
-    .line 45
+    .line 46
     const/16 v6, 0x8
 
     const/high16 v7, 0x40800000    # 4.0f
@@ -321,12 +323,12 @@
 
     move-result-object v0
 
-    .line 46
+    .line 47
     const-string/jumbo v1, "blur_sample"
 
     invoke-virtual {v0, p1, v1}, Lcom/bzbs/marketplace/dialog/AlertBlurDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 47
+    .line 48
     return-void
 .end method
 
@@ -334,7 +336,7 @@
     .registers 19
 
     .prologue
-    .line 50
+    .line 51
     const/16 v7, 0x8
 
     const/high16 v8, 0x40800000    # 4.0f
@@ -361,50 +363,20 @@
 
     move-result-object v0
 
-    .line 51
+    .line 52
     const-string/jumbo v1, "blur_sample"
 
     invoke-virtual {v0, p1, v1}, Lcom/bzbs/marketplace/dialog/AlertBlurDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 52
+    .line 53
     return-void
 .end method
 
-.method public static b(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;)V
-    .registers 9
+.method public static b(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bzbs/event/CallbackOTPDialog;)Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;
+    .registers 19
 
     .prologue
-    const/4 v4, 0x0
-
-    .line 81
-    const/16 v2, 0x8
-
-    const/high16 v3, 0x40800000    # 4.0f
-
-    move-object v0, p0
-
-    move-object v1, p2
-
-    move v5, v4
-
-    invoke-static/range {v0 .. v5}, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog;->a(Landroid/app/Activity;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;IFZZ)Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog;
-
-    move-result-object v0
-
-    .line 82
-    const-string/jumbo v1, "blur_sample"
-
-    invoke-virtual {v0, p1, v1}, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
-
-    .line 83
-    return-void
-.end method
-
-.method public static b(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 17
-
-    .prologue
-    .line 76
+    .line 78
     const/16 v2, 0x8
 
     const/high16 v3, 0x40800000    # 4.0f
@@ -421,19 +393,51 @@
 
     move-object v7, p4
 
-    move-object v8, p5
+    move-object/from16 v8, p5
 
     move-object/from16 v9, p6
 
-    invoke-static/range {v0 .. v9}, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;->a(Landroid/app/Activity;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;IFZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;
+    move-object/from16 v10, p7
+
+    invoke-static/range {v0 .. v10}, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;->a(Landroid/app/Activity;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;IFZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/bzbs/event/CallbackOTPDialog;)Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;
 
     move-result-object v0
 
-    .line 77
+    .line 79
     const-string/jumbo v1, "blur_sample"
 
     invoke-virtual {v0, p1, v1}, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
 
-    .line 78
+    .line 80
+    return-object v0
+.end method
+
+.method public static b(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;)V
+    .registers 9
+
+    .prologue
+    const/4 v4, 0x0
+
+    .line 84
+    const/16 v2, 0x8
+
+    const/high16 v3, 0x40800000    # 4.0f
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move v5, v4
+
+    invoke-static/range {v0 .. v5}, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog;->a(Landroid/app/Activity;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;IFZZ)Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog;
+
+    move-result-object v0
+
+    .line 85
+    const-string/jumbo v1, "blur_sample"
+
+    invoke-virtual {v0, p1, v1}, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog;->show(Landroid/support/v4/app/FragmentManager;Ljava/lang/String;)V
+
+    .line 86
     return-void
 .end method

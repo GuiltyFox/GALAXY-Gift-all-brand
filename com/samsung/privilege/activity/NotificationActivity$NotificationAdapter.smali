@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f04003a
+    const v1, 0x7f04003c
 
     const/4 v2, 0x0
 
@@ -208,7 +208,7 @@
     :cond_6c
     iget-object v0, p1, Lcom/samsung/privilege/activity/NotificationActivity$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
 
-    const v1, 0x7f020185
+    const v1, 0x7f020198
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

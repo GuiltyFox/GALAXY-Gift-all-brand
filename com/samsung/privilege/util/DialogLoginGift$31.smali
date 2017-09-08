@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 .end annotation
 
 
@@ -27,7 +27,7 @@
     .registers 5
 
     .prologue
-    .line 1701
+    .line 1743
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$31;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$31;->b:Landroid/widget/ArrayAdapter;
@@ -47,7 +47,7 @@
     .registers 5
 
     .prologue
-    .line 1704
+    .line 1746
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$31;->a:Landroid/content/Context;
@@ -56,7 +56,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$31;->a:Landroid/content/Context;
 
-    const v2, 0x7f090161
+    const v2, 0x7f09015a
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -76,13 +76,13 @@
 
     move-result-object v0
 
-    .line 1710
+    .line 1752
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 1711
+    .line 1753
     return-void
 .end method

@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f1004ba
+    const v6, 0x7f1004f1
 
-    const v5, 0x7f1004b9
+    const v5, 0x7f1004f0
 
-    const v4, 0x7f1004b8
+    const v4, 0x7f1004ef
 
-    const v3, 0x7f1004a4
+    const v3, 0x7f1004dc
 
-    const v2, 0x7f100465
+    const v2, 0x7f10049d
 
     .line 11
     const-string/jumbo v0, "field \'recyclerView\'"
@@ -116,7 +116,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/fragment/RequestHelpFragment;->pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
 
     .line 17
-    const v0, 0x7f1004c7
+    const v0, 0x7f1004fe
 
     const-string/jumbo v1, "field \'btnAddPicture\' and method \'onClickAdd\'"
 
@@ -127,7 +127,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 18
-    const v1, 0x7f1004c7
+    const v1, 0x7f1004fe
 
     const-string/jumbo v2, "field \'btnAddPicture\'"
 
@@ -147,7 +147,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 27
-    const v0, 0x7f1004bb
+    const v0, 0x7f1004f2
 
     const-string/jumbo v1, "field \'imagePost\'"
 
@@ -158,7 +158,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 28
-    const v1, 0x7f1004bb
+    const v1, 0x7f1004f2
 
     const-string/jumbo v2, "field \'imagePost\'"
 
@@ -191,7 +191,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/fragment/RequestHelpFragment;->contentImagePost:Landroid/widget/LinearLayout;
 
     .line 31
-    const v0, 0x7f1004bd
+    const v0, 0x7f1004f4
 
     const-string/jumbo v1, "field \'edtTextComment\'"
 
@@ -202,7 +202,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 32
-    const v1, 0x7f1004bd
+    const v1, 0x7f1004f4
 
     const-string/jumbo v2, "field \'edtTextComment\'"
 
@@ -215,7 +215,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/fragment/RequestHelpFragment;->edtTextComment:Landroid/widget/EditText;
 
     .line 33
-    const v0, 0x7f1004c8
+    const v0, 0x7f1004ff
 
     const-string/jumbo v1, "field \'recyclerItemBelow\'"
 
@@ -226,7 +226,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 34
-    const v1, 0x7f1004c8
+    const v1, 0x7f1004ff
 
     const-string/jumbo v2, "field \'recyclerItemBelow\'"
 
@@ -259,7 +259,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/fragment/RequestHelpFragment;->tvResult:Landroid/widget/TextView;
 
     .line 37
-    const v0, 0x7f1004bc
+    const v0, 0x7f1004f3
 
     const-string/jumbo v1, "method \'onClickCancel\'"
 
@@ -277,7 +277,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 46
-    const v0, 0x7f1004be
+    const v0, 0x7f1004f5
 
     const-string/jumbo v1, "method \'onClickCancel\'"
 

@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/analytics/Tracker;Ljava/lang/Thread$UncaughtExceptionHandler;Landroid/content/Context;)V
-    .registers 6
+    .registers 7
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -65,34 +65,33 @@
 
     iput-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->c:Landroid/content/Context;
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string/jumbo v1, "ExceptionReporter created, original handler is "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    if-nez p2, :cond_4c
+    if-nez p2, :cond_49
 
     const-string/jumbo v0, "null"
 
-    :goto_40
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_37
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_52
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    :goto_45
     invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->b(Ljava/lang/String;)V
 
     return-void
 
-    :cond_4c
+    :cond_49
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -101,7 +100,14 @@
 
     move-result-object v0
 
-    goto :goto_40
+    goto :goto_37
+
+    :cond_52
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_45
 .end method
 
 
@@ -136,7 +142,7 @@
 .end method
 
 .method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
-    .registers 6
+    .registers 7
 
     const-string/jumbo v0, "UncaughtException"
 
@@ -144,7 +150,7 @@
 
     if-eqz v1, :cond_13
 
-    if-eqz p1, :cond_5b
+    if-eqz p1, :cond_58
 
     invoke-virtual {p1}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
@@ -158,24 +164,23 @@
     move-result-object v0
 
     :cond_13
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string/jumbo v2, "Reporting uncaught exception: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_5a
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
+    :goto_24
     invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzae;->b(Ljava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->b:Lcom/google/android/gms/analytics/Tracker;
@@ -210,7 +215,7 @@
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->a:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_57
 
     const-string/jumbo v0, "Passing exception to the original handler"
 
@@ -220,11 +225,18 @@
 
     invoke-interface {v0, p1, p2}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
 
-    :cond_5a
+    :cond_57
     return-void
 
-    :cond_5b
+    :cond_58
     const/4 v0, 0x0
 
     goto :goto_d
+
+    :cond_5a
+    new-instance v1, Ljava/lang/String;
+
+    invoke-direct {v1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_24
 .end method

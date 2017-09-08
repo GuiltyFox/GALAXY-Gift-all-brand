@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 414
+    .line 421
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +39,12 @@
 
     const/4 v2, 0x0
 
-    .line 418
-    .line 419
+    .line 425
+    .line 426
     :try_start_2
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v3, 0x7f1000c7
+    const v3, 0x7f1000c9
 
     invoke-virtual {v0, v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->findViewById(I)Landroid/view/View;
 
@@ -52,7 +52,7 @@
 
     check-cast v0, Landroid/widget/ScrollView;
 
-    .line 420
+    .line 427
     invoke-virtual {v0}, Landroid/widget/ScrollView;->getVisibility()I
 
     move-result v0
@@ -63,11 +63,11 @@
 
     move v0, v1
 
-    .line 424
+    .line 431
     :goto_16
     if-ne v0, v1, :cond_35
 
-    .line 425
+    .line 432
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -76,7 +76,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 426
+    .line 433
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -99,12 +99,12 @@
     :try_end_35
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_35} :catch_36
 
-    .line 431
+    .line 438
     :cond_35
     :goto_35
     return-void
 
-    .line 428
+    .line 435
     :catch_36
     move-exception v0
 

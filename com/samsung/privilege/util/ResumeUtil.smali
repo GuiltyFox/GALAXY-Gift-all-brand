@@ -78,7 +78,7 @@
     const-string/jumbo v0, ""
 
     .line 410
-    const v1, 0x7f09023e
+    const v1, 0x7f090257
 
     :try_start_18
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -88,7 +88,7 @@
     move-result-object v1
 
     .line 411
-    const v2, 0x7f09005d
+    const v2, 0x7f090050
 
     :try_start_1f
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -167,7 +167,7 @@
     const-string/jumbo v0, ""
 
     .line 424
-    const v1, 0x7f09023e
+    const v1, 0x7f090257
 
     :try_start_60
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -177,7 +177,7 @@
     move-result-object v1
 
     .line 425
-    const v2, 0x7f090059
+    const v2, 0x7f09004c
 
     :try_start_67
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -254,7 +254,7 @@
     const-string/jumbo v0, ""
 
     .line 438
-    const v1, 0x7f09023e
+    const v1, 0x7f090257
 
     :try_start_a8
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -264,7 +264,7 @@
     move-result-object v1
 
     .line 439
-    const v2, 0x7f09005a
+    const v2, 0x7f09004d
 
     :try_start_af
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -440,7 +440,7 @@
     invoke-static {v3, v6}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 137
-    sget v3, Lcom/bzbs/data/AppSetting;->Y:I
+    sget v3, Lcom/bzbs/data/AppSetting;->af:I
 
     int-to-long v6, v3
 
@@ -478,7 +478,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -586,7 +586,6 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v1, "samsung"
-
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -943,7 +942,7 @@
 
     move-result-object v0
 
-    sget-boolean v1, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v1, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 213
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -1094,7 +1093,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v3, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v3, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1147,7 +1146,7 @@
 
     move-result-object v1
 
-    sget-boolean v3, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v3, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 351
     invoke-virtual {v1, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -1244,7 +1243,7 @@
 
     move-result-object v1
 
-    sget v2, Lcom/bzbs/data/AppSetting;->Y:I
+    sget v2, Lcom/bzbs/data/AppSetting;->af:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

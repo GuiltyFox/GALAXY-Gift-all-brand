@@ -131,12 +131,12 @@
     move-result-object v1
 
     .line 60
-    invoke-virtual {v1}, Lcom/bzbs/util/TelephonyInfo;->a()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/bzbs/util/TelephonyInfo;->e()Ljava/lang/String;
 
     move-result-object v0
 
     .line 61
-    invoke-virtual {v1}, Lcom/bzbs/util/TelephonyInfo;->b()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/bzbs/util/TelephonyInfo;->f()Ljava/lang/String;
 
     move-result-object v1
 

@@ -14,7 +14,7 @@
     .registers 1
 
     .prologue
-    .line 532
+    .line 536
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
 
     return-void
@@ -26,10 +26,10 @@
     .registers 8
 
     .prologue
-    .line 552
+    .line 556
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 554
+    .line 558
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->k()Ljava/lang/String;
 
     move-result-object v0
@@ -64,7 +64,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 555
+    .line 559
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .registers 8
 
     .prologue
-    .line 535
+    .line 539
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->k()Ljava/lang/String;
 
     move-result-object v0
@@ -107,7 +107,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 538
+    .line 542
     :try_start_26
     new-instance v0, Lorg/json/JSONArray;
 
@@ -117,14 +117,14 @@
 
     move-result-object v0
 
-    .line 540
+    .line 544
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     if-lez v1, :cond_49
 
-    .line 541
+    .line 545
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -137,7 +137,7 @@
 
     check-cast v0, Lcom/bzbs/bean/QueueItem;
 
-    .line 543
+    .line 547
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->i()Landroid/content/Context;
 
     move-result-object v1
@@ -148,12 +148,12 @@
     :try_end_49
     .catch Ljava/lang/Exception; {:try_start_26 .. :try_end_49} :catch_4a
 
-    .line 548
+    .line 552
     :cond_49
     :goto_49
     return-void
 
-    .line 545
+    .line 549
     :catch_4a
     move-exception v0
 

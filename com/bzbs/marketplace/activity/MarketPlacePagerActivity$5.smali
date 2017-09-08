@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->o()V
+    value = Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->p()V
 .end annotation
 
 
@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 296
+    .line 295
     iput-object p1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     invoke-direct {p0}, Lcom/bzbs/marketplace/asynctask/marketplace/MarketPlaceMenuAsynctask$CallbackList;-><init>()V
@@ -32,7 +32,7 @@
     .registers 7
 
     .prologue
-    .line 313
+    .line 312
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->z:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
@@ -41,7 +41,7 @@
 
     invoke-virtual {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setVisibility(I)V
 
-    .line 314
+    .line 313
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .end annotation
 
     .prologue
-    .line 300
+    .line 299
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->z:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
@@ -69,18 +69,18 @@
 
     invoke-virtual {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setVisibility(I)V
 
-    .line 301
+    .line 300
     const-string/jumbo v0, ""
 
-    .line 302
+    .line 301
     if-eqz p3, :cond_13
 
-    .line 303
+    .line 302
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
 
-    .line 305
+    .line 304
     :cond_13
     iget-object v1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
@@ -92,12 +92,12 @@
 
     invoke-direct {v3, p0}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5$1;-><init>(Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5;)V
 
-    .line 306
+    .line 305
     invoke-virtual {v3}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5$1;->b()Ljava/lang/reflect/Type;
 
     move-result-object v3
 
-    .line 305
+    .line 304
     invoke-virtual {v2, v0, v3}, Lcom/google/gson/Gson;->a(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
 
     move-result-object v0
@@ -106,12 +106,12 @@
 
     iput-object v0, v1, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->b:Ljava/util/ArrayList;
 
-    .line 308
+    .line 307
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->f(Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;)V
 
-    .line 309
+    .line 308
     return-void
 .end method
 
@@ -119,21 +119,21 @@
     .registers 12
 
     .prologue
-    .line 318
+    .line 317
     invoke-super/range {p0 .. p7}, Lcom/bzbs/marketplace/asynctask/marketplace/MarketPlaceMenuAsynctask$CallbackList;->a(Ljava/lang/String;JJJ)V
 
-    .line 319
+    .line 318
     const-string/jumbo v0, ""
 
-    .line 320
+    .line 319
     if-eqz p1, :cond_d
 
-    .line 321
+    .line 320
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, p1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    .line 323
+    .line 322
     :cond_d
     iget-object v1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
@@ -145,12 +145,12 @@
 
     invoke-direct {v3, p0}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5$2;-><init>(Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5;)V
 
-    .line 324
+    .line 323
     invoke-virtual {v3}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5$2;->b()Ljava/lang/reflect/Type;
 
     move-result-object v3
 
-    .line 323
+    .line 322
     invoke-virtual {v2, v0, v3}, Lcom/google/gson/Gson;->a(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
 
     move-result-object v0
@@ -159,11 +159,11 @@
 
     iput-object v0, v1, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->b:Ljava/util/ArrayList;
 
-    .line 325
+    .line 324
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->f(Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;)V
 
-    .line 326
+    .line 325
     return-void
 .end method

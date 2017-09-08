@@ -199,7 +199,7 @@
     .line 149
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->b:Landroid/view/View;
 
-    const v1, 0x7f100463
+    const v1, 0x7f10049b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -361,7 +361,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v5, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v5, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -548,7 +548,7 @@
 
     move-result-object v1
 
-    sget-boolean v4, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v4, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 341
     invoke-virtual {v1, v4}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -737,7 +737,7 @@
     .line 216
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->b:Landroid/view/View;
 
-    const v1, 0x7f100116
+    const v1, 0x7f10011d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1073,7 +1073,7 @@
 
     .prologue
     .line 77
-    const v0, 0x7f0400d1
+    const v0, 0x7f0400e2
 
     const/4 v1, 0x0
 

@@ -24,7 +24,7 @@
     .registers 5
 
     .prologue
-    .line 2351
+    .line 2375
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->a:Landroid/widget/ImageView;
@@ -44,10 +44,10 @@
     .registers 8
 
     .prologue
-    .line 2377
+    .line 2401
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 2379
+    .line 2403
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -82,14 +82,14 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2381
+    .line 2405
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     const-string/jumbo v1, "UNLIKE Fail!!!"
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->b(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)V
 
-    .line 2383
+    .line 2407
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
@@ -102,7 +102,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2390
+    .line 2414
     return-void
 .end method
 
@@ -110,7 +110,7 @@
     .registers 8
 
     .prologue
-    .line 2354
+    .line 2378
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -145,7 +145,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2356
+    .line 2380
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
@@ -158,11 +158,11 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 2372
+    .line 2396
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->b(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
 
-    .line 2373
+    .line 2397
     return-void
 .end method

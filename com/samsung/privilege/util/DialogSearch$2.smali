@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogSearch;->a(Landroid/content/Context;Landroid/os/Handler;)V
+    value = Lcom/samsung/privilege/util/DialogSearch;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;)V
 .end annotation
 
 
@@ -16,10 +16,12 @@
 
 .field final synthetic c:Landroid/widget/EditText;
 
+.field final synthetic d:Ljava/lang/String;
+
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Landroid/os/Handler;Landroid/widget/EditText;)V
-    .registers 4
+.method constructor <init>(Landroid/content/Context;Landroid/os/Handler;Landroid/widget/EditText;Ljava/lang/String;)V
+    .registers 5
 
     .prologue
     .line 143
@@ -29,6 +31,8 @@
 
     iput-object p3, p0, Lcom/samsung/privilege/util/DialogSearch$2;->c:Landroid/widget/EditText;
 
+    iput-object p4, p0, Lcom/samsung/privilege/util/DialogSearch$2;->d:Ljava/lang/String;
+
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
@@ -37,7 +41,7 @@
 
 # virtual methods
 .method public onScrolled(Landroid/support/v7/widget/RecyclerView;II)V
-    .registers 8
+    .registers 9
 
     .prologue
     .line 146
@@ -67,13 +71,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_4c
 
     invoke-static {}, Lcom/samsung/privilege/util/DialogSearch;->c()Z
 
     move-result v0
 
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_4c
 
     .line 151
     invoke-static {}, Lcom/samsung/privilege/util/DialogSearch;->d()I
@@ -90,7 +94,7 @@
 
     move-result v1
 
-    if-lt v0, v1, :cond_4a
+    if-lt v0, v1, :cond_4c
 
     .line 152
     invoke-static {}, Lcom/samsung/privilege/util/DialogSearch;->f()I
@@ -116,9 +120,11 @@
 
     move-result-object v3
 
-    invoke-static {v1, v2, v3, v0}, Lcom/samsung/privilege/util/DialogSearch;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;I)V
+    iget-object v4, p0, Lcom/samsung/privilege/util/DialogSearch$2;->d:Ljava/lang/String;
+
+    invoke-static {v1, v2, v3, v4, v0}, Lcom/samsung/privilege/util/DialogSearch;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;I)V
 
     .line 156
-    :cond_4a
+    :cond_4c
     return-void
 .end method

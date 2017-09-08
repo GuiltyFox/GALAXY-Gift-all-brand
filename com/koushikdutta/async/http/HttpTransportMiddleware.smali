@@ -47,7 +47,7 @@
     :cond_11
     iget-object v0, p1, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$OnRequestSentData;->f:Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;
 
-    invoke-interface {v0}, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;->c_()Lcom/koushikdutta/async/DataSink;
+    invoke-interface {v0}, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;->d_()Lcom/koushikdutta/async/DataSink;
 
     move-result-object v0
 
@@ -58,7 +58,7 @@
     .line 108
     iget-object v0, p1, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$OnRequestSentData;->f:Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;
 
-    invoke-interface {v0}, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;->c_()Lcom/koushikdutta/async/DataSink;
+    invoke-interface {v0}, Lcom/koushikdutta/async/http/AsyncHttpClientMiddleware$ResponseHead;->d_()Lcom/koushikdutta/async/DataSink;
 
     move-result-object v0
 

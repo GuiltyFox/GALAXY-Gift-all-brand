@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1302
+    .line 1396
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$12$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 1305
+    .line 1399
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$12$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$12$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$12;
@@ -48,6 +48,6 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1306
+    .line 1400
     return-void
 .end method

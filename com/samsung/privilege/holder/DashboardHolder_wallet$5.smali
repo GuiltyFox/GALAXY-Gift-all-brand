@@ -52,22 +52,24 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 7
+    .registers 8
 
     .prologue
+    const/4 v5, 0x0
+
     .line 523
     invoke-static {}, Lcom/bzbs/util/BBUtil;->a()Z
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_16
 
     .line 524
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    const v2, 0x7f090073
+    const v2, 0x7f090067
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -76,12 +78,12 @@
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->b(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 558
-    :cond_14
-    :goto_14
+    :cond_15
+    :goto_15
     return-void
 
     .line 526
-    :cond_15
+    :cond_16
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
     invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
@@ -89,7 +91,7 @@
     move-result-object v0
 
     .line 528
-    if-eqz v0, :cond_81
+    if-eqz v0, :cond_82
 
     const-string/jumbo v1, ""
 
@@ -97,7 +99,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_81
+    if-nez v0, :cond_82
 
     .line 529
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->b:Lcom/samsung/privilege/holder/DashboardHolder_wallet;
@@ -113,7 +115,7 @@
     move-result-object v0
 
     .line 531
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_15
 
     const-string/jumbo v1, ""
 
@@ -121,7 +123,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_14
+    if-nez v1, :cond_15
 
     .line 532
     new-instance v1, Landroid/app/AlertDialog$Builder;
@@ -133,7 +135,7 @@
     .line 533
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    const v3, 0x7f09023e
+    const v3, 0x7f090257
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -144,7 +146,7 @@
     .line 534
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    const v3, 0x7f0901c4
+    const v3, 0x7f0901d7
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -187,26 +189,26 @@
     .line 548
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    goto :goto_14
+    goto :goto_15
 
     .line 551
-    :cond_81
+    :cond_82
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
     instance-of v0, v0, Lcom/samsung/privilege/activity/DashboardActivity;
 
-    if-eqz v0, :cond_af
+    if-eqz v0, :cond_b0
 
     .line 552
-    iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
-
-    iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->d:Landroid/os/Handler;
-
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    check-cast v0, Lcom/samsung/privilege/activity/DashboardActivity;
+    iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->d:Landroid/os/Handler;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardActivity;->a:Lcom/facebook/CallbackManager;
+    iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
+
+    check-cast v2, Lcom/samsung/privilege/activity/DashboardActivity;
+
+    iget-object v2, v2, Lcom/samsung/privilege/activity/DashboardActivity;->a:Lcom/facebook/CallbackManager;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -230,21 +232,21 @@
 
     const-string/jumbo v4, "wallet"
 
-    invoke-static {v1, v2, v0, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto/16 :goto_14
+    goto/16 :goto_15
 
     .line 554
-    :cond_af
-    iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
-
-    iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->d:Landroid/os/Handler;
-
+    :cond_b0
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    check-cast v0, Lcom/samsung/privilege/activity/MainPagerActivity;
+    iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->d:Landroid/os/Handler;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity;->a:Lcom/facebook/CallbackManager;
+    iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
+
+    check-cast v2, Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    iget-object v2, v2, Lcom/samsung/privilege/activity/MainPagerActivity;->a:Lcom/facebook/CallbackManager;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -268,7 +270,7 @@
 
     const-string/jumbo v4, "wallet"
 
-    invoke-static {v1, v2, v0, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
-    goto/16 :goto_14
+    goto/16 :goto_15
 .end method

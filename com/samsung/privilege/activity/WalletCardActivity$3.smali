@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 294
+    .line 312
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$3;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,23 +35,48 @@
     .registers 8
 
     .prologue
-    const v5, 0x7f100166
+    const v5, 0x7f10016d
 
     const/4 v4, 0x0
 
-    .line 297
+    .line 315
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$3;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 298
+    .line 316
     invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v0
 
-    .line 299
+    .line 317
+    invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "pixel="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 318
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v1
@@ -78,7 +103,7 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 300
+    .line 319
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v1
@@ -105,7 +130,7 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 301
+    .line 320
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v1
@@ -132,12 +157,12 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 303
+    .line 322
     iget v0, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
     int-to-double v0, v0
 
-    const-wide v2, 0x4082c00000000000L    # 600.0
+    const-wide v2, 0x4080e00000000000L    # 540.0
 
     div-double/2addr v0, v2
 
@@ -147,14 +172,14 @@
 
     double-to-int v1, v0
 
-    .line 304
+    .line 323
     new-instance v0, Landroid/widget/RelativeLayout$LayoutParams;
 
     const/4 v2, -0x1
 
     invoke-direct {v0, v2, v1}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 
-    .line 305
+    .line 324
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$3;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-virtual {v2, v5}, Lcom/samsung/privilege/activity/WalletCardActivity;->findViewById(I)Landroid/view/View;
@@ -163,7 +188,7 @@
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 306
+    .line 325
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$3;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-virtual {v0, v5}, Lcom/samsung/privilege/activity/WalletCardActivity;->findViewById(I)Landroid/view/View;
@@ -172,7 +197,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 308
+    .line 327
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$3;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->b(Lcom/samsung/privilege/activity/WalletCardActivity;)Z
@@ -181,12 +206,12 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_a0
+    if-ne v0, v2, :cond_bb
 
-    .line 309
+    .line 328
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$3;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v2, 0x7f1001f0
+    const v2, 0x7f10021a
 
     invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->findViewById(I)Landroid/view/View;
 
@@ -196,13 +221,13 @@
 
     invoke-virtual {v0, v4, v4}, Landroid/widget/ScrollView;->scrollTo(II)V
 
-    .line 311
-    :cond_a0
+    .line 330
+    :cond_bb
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$3;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0, v4}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;Z)Z
 
-    .line 313
+    .line 332
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v0
@@ -237,6 +262,6 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 314
+    .line 333
     return-void
 .end method

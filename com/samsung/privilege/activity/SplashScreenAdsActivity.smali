@@ -377,7 +377,7 @@
     const-wide/16 v2, 0x0
 
     .line 89
-    sget v0, Lcom/bzbs/data/AppSetting;->aa:I
+    sget v0, Lcom/bzbs/data/AppSetting;->ah:I
 
     int-to-long v4, v0
 
@@ -536,7 +536,7 @@
     .line 126
     iget-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->c:Landroid/app/ProgressDialog;
 
-    const v1, 0x7f0400b8
+    const v1, 0x7f0400c8
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setContentView(I)V
 
@@ -545,7 +545,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -606,7 +606,7 @@
 
     move-result-object v1
 
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 131
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -774,7 +774,7 @@
     .line 54
     :cond_17
     :goto_17
-    const v0, 0x7f040114
+    const v0, 0x7f040128
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->setContentView(I)V
 

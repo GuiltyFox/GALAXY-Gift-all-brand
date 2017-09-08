@@ -61,7 +61,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_4f
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -81,7 +81,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_3f
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -99,25 +99,31 @@
 
     move-result-object v0
 
+    check-cast v0, Ljava/lang/String;
+
     invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_f
 
-    :cond_3d
+    :cond_3f
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, Ljava/lang/String;
+
     invoke-interface {v2, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_f
 
-    :cond_49
-    invoke-static {v2}, Lcom/google/android/gms/measurement/zze;->a(Ljava/util/Map;)Ljava/lang/String;
+    :cond_4f
+    invoke-static {v2}, Lcom/google/android/gms/analytics/zzg;->a(Ljava/util/Map;)Ljava/lang/String;
 
     move-result-object v0
 

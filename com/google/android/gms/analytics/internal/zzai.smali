@@ -30,7 +30,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->G()J
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->E()J
 
     move-result-wide v4
 
@@ -156,11 +156,11 @@
     return-wide v0
 
     :cond_20
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai;->n()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai;->n()Lcom/google/android/gms/common/util/zze;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->a()J
+    invoke-interface {v0}, Lcom/google/android/gms/common/util/zze;->a()J
 
     move-result-wide v0
 
@@ -190,12 +190,12 @@
     goto :goto_1d
 .end method
 
-.method public c()Lcom/google/android/gms/analytics/internal/zzaj;
+.method public c()Lcom/google/android/gms/analytics/internal/zzal;
     .registers 5
 
-    new-instance v0, Lcom/google/android/gms/analytics/internal/zzaj;
+    new-instance v0, Lcom/google/android/gms/analytics/internal/zzal;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai;->n()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai;->n()Lcom/google/android/gms/common/util/zze;
 
     move-result-object v1
 
@@ -203,7 +203,7 @@
 
     move-result-wide v2
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/analytics/internal/zzaj;-><init>(Lcom/google/android/gms/internal/zznl;J)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/android/gms/analytics/internal/zzal;-><init>(Lcom/google/android/gms/common/util/zze;J)V
 
     return-object v0
 .end method
@@ -248,11 +248,11 @@
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai;->D()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai;->n()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai;->n()Lcom/google/android/gms/common/util/zze;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->a()J
+    invoke-interface {v0}, Lcom/google/android/gms/common/util/zze;->a()J
 
     move-result-wide v0
 

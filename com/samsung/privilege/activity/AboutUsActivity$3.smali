@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 198
+    .line 189
     iput-object p1, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->b:Lcom/samsung/privilege/activity/AboutUsActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->a:Landroid/widget/EditText;
@@ -39,7 +39,7 @@
     .registers 7
 
     .prologue
-    .line 201
+    .line 192
     iget-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->a:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -50,7 +50,7 @@
 
     move-result-object v0
 
-    .line 203
+    .line 194
     if-eqz v0, :cond_31
 
     const-string/jumbo v1, ""
@@ -61,7 +61,7 @@
 
     if-nez v1, :cond_31
 
-    .line 204
+    .line 195
     new-instance v1, Landroid/content/Intent;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->b:Lcom/samsung/privilege/activity/AboutUsActivity;
@@ -74,7 +74,7 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 206
+    .line 197
     const-string/jumbo v2, "campaign_id"
 
     invoke-static {v0}, Lcom/bzbs/util/BBUtil;->b(Ljava/lang/String;)Ljava/lang/Integer;
@@ -83,12 +83,12 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 207
+    .line 198
     iget-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->b:Lcom/samsung/privilege/activity/AboutUsActivity;
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AboutUsActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 209
+    .line 200
     :cond_31
     return-void
 .end method

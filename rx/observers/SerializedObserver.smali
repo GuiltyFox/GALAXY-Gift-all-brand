@@ -424,7 +424,7 @@
     goto :goto_5e
 .end method
 
-.method public m_()V
+.method public n_()V
     .registers 3
 
     .prologue
@@ -517,7 +517,7 @@
     .line 183
     iget-object v0, p0, Lrx/observers/SerializedObserver;->a:Lrx/Observer;
 
-    invoke-interface {v0}, Lrx/Observer;->m_()V
+    invoke-interface {v0}, Lrx/Observer;->n_()V
 
     goto :goto_4
 .end method

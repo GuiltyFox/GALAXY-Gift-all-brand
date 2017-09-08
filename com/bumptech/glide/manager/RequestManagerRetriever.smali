@@ -206,7 +206,7 @@
 
     .prologue
     .line 122
-    invoke-static {}, Lcom/bumptech/glide/util/Util;->c()Z
+    invoke-static {}, Lcom/bumptech/glide/util/Util;->d()Z
 
     move-result v0
 
@@ -267,7 +267,7 @@
 
     .line 85
     :cond_b
-    invoke-static {}, Lcom/bumptech/glide/util/Util;->b()Z
+    invoke-static {}, Lcom/bumptech/glide/util/Util;->c()Z
 
     move-result v0
 
@@ -420,7 +420,7 @@
 
     .prologue
     .line 99
-    invoke-static {}, Lcom/bumptech/glide/util/Util;->c()Z
+    invoke-static {}, Lcom/bumptech/glide/util/Util;->d()Z
 
     move-result v0
 

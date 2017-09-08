@@ -24,6 +24,8 @@
 .method private a(Landroid/database/sqlite/SQLiteDatabase;)V
     .registers 10
 
+    const/4 v7, 0x4
+
     const/4 v0, 0x1
 
     const/4 v1, 0x0
@@ -34,9 +36,7 @@
 
     move-result-object v3
 
-    const/4 v2, 0x4
-
-    new-array v4, v2, [Ljava/lang/String;
+    new-array v4, v7, [Ljava/lang/String;
 
     const-string/jumbo v2, "hit_id"
 
@@ -58,65 +58,69 @@
 
     aput-object v5, v4, v2
 
-    array-length v5, v4
-
     move v2, v1
 
-    :goto_24
-    if-ge v2, v5, :cond_4b
+    :goto_23
+    if-ge v2, v7, :cond_4d
 
-    aget-object v6, v4, v2
+    aget-object v5, v4, v2
 
-    invoke-interface {v3, v6}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    invoke-interface {v3, v5}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v6
 
-    if-nez v7, :cond_48
+    if-nez v6, :cond_4a
 
-    new-instance v0, Landroid/database/sqlite/SQLiteException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v1, Landroid/database/sqlite/SQLiteException;
 
     const-string/jumbo v2, "Database hits2 is missing required column: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result-object v1
+    move-result v3
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v3, :cond_44
 
-    move-result-object v1
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Landroid/database/sqlite/SQLiteException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    throw v0
+    :goto_40
+    invoke-direct {v1, v0}, Landroid/database/sqlite/SQLiteException;-><init>(Ljava/lang/String;)V
 
-    :cond_48
+    throw v1
+
+    :cond_44
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_40
+
+    :cond_4a
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_24
+    goto :goto_23
 
-    :cond_4b
+    :cond_4d
     const-string/jumbo v2, "hit_app_id"
 
     invoke-interface {v3, v2}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_63
+    if-nez v2, :cond_65
 
-    :goto_54
+    :goto_56
     invoke-interface {v3}, Ljava/util/Set;->isEmpty()Z
 
     move-result v1
 
-    if-nez v1, :cond_65
+    if-nez v1, :cond_67
 
     new-instance v0, Landroid/database/sqlite/SQLiteException;
 
@@ -126,19 +130,19 @@
 
     throw v0
 
-    :cond_63
+    :cond_65
     move v0, v1
 
-    goto :goto_54
+    goto :goto_56
 
-    :cond_65
-    if-eqz v0, :cond_6d
+    :cond_67
+    if-eqz v0, :cond_6f
 
     const-string/jumbo v0, "ALTER TABLE hits2 ADD COLUMN hit_app_id INTEGER"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    :cond_6d
+    :cond_6f
     return-void
 .end method
 
@@ -272,7 +276,17 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x16
+
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string/jumbo v2, "SELECT * FROM "
 
@@ -300,34 +314,34 @@
 
     move-result-object v2
 
-    :try_start_25
+    :try_start_2f
     invoke-interface {v2}, Landroid/database/Cursor;->getColumnNames()[Ljava/lang/String;
 
     move-result-object v3
 
     const/4 v0, 0x0
 
-    :goto_2a
+    :goto_34
     array-length v4, v3
 
-    if-ge v0, v4, :cond_35
+    if-ge v0, v4, :cond_3f
 
     aget-object v4, v3, v0
 
     invoke-interface {v1, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-    :try_end_32
-    .catchall {:try_start_25 .. :try_end_32} :catchall_39
+    :try_end_3c
+    .catchall {:try_start_2f .. :try_end_3c} :catchall_43
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2a
+    goto :goto_34
 
-    :cond_35
+    :cond_3f
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
     return-object v1
 
-    :catchall_39
+    :catchall_43
     move-exception v0
 
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
@@ -338,6 +352,8 @@
 .method private b(Landroid/database/sqlite/SQLiteDatabase;)V
     .registers 8
 
+    const/4 v5, 0x6
+
     const/4 v0, 0x0
 
     const-string/jumbo v1, "properties"
@@ -346,9 +362,7 @@
 
     move-result-object v1
 
-    const/4 v2, 0x6
-
-    new-array v2, v2, [Ljava/lang/String;
+    new-array v2, v5, [Ljava/lang/String;
 
     const-string/jumbo v3, "app_uid"
 
@@ -384,54 +398,58 @@
 
     aput-object v4, v2, v3
 
-    array-length v3, v2
+    :goto_2e
+    if-ge v0, v5, :cond_58
 
-    :goto_2f
-    if-ge v0, v3, :cond_56
+    aget-object v3, v2, v0
 
-    aget-object v4, v2, v0
+    invoke-interface {v1, v3}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    invoke-interface {v1, v4}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    move-result v4
 
-    move-result v5
+    if-nez v4, :cond_55
 
-    if-nez v5, :cond_53
-
-    new-instance v0, Landroid/database/sqlite/SQLiteException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v1, Landroid/database/sqlite/SQLiteException;
 
     const-string/jumbo v2, "Database properties is missing required column: "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result-object v1
+    move-result v3
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v3, :cond_4f
 
-    move-result-object v1
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Landroid/database/sqlite/SQLiteException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    throw v0
+    :goto_4b
+    invoke-direct {v1, v0}, Landroid/database/sqlite/SQLiteException;-><init>(Ljava/lang/String;)V
 
-    :cond_53
+    throw v1
+
+    :cond_4f
+    new-instance v0, Ljava/lang/String;
+
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    goto :goto_4b
+
+    :cond_55
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2f
+    goto :goto_2e
 
-    :cond_56
+    :cond_58
     invoke-interface {v1}, Ljava/util/Set;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_65
+    if-nez v0, :cond_67
 
     new-instance v0, Landroid/database/sqlite/SQLiteException;
 
@@ -441,7 +459,7 @@
 
     throw v0
 
-    :cond_65
+    :cond_67
     return-void
 .end method
 
@@ -452,13 +470,13 @@
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzj;->a(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzaj;
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzj;->a(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzal;
 
     move-result-object v0
 
     const-wide/32 v2, 0x36ee80
 
-    invoke-virtual {v0, v2, v3}, Lcom/google/android/gms/analytics/internal/zzaj;->a(J)Z
+    invoke-virtual {v0, v2, v3}, Lcom/google/android/gms/analytics/internal/zzal;->a(J)Z
 
     move-result v0
 
@@ -488,11 +506,11 @@
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzj;->a(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzaj;
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzj;->a(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzal;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzaj;->a()V
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzal;->a()V
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
@@ -525,11 +543,11 @@
 
     iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
-    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzj;->a(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzaj;
+    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzj;->a(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzal;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzaj;->b()V
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzal;->b()V
     :try_end_4f
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_42 .. :try_end_4f} :catch_50
 

@@ -13,8 +13,6 @@
 
 .field private volatile d:J
 
-.field private e:Z
-
 
 # direct methods
 .method constructor <init>(Lcom/google/android/gms/analytics/internal/zzf;)V
@@ -22,7 +20,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzt;->a:Lcom/google/android/gms/analytics/internal/zzf;
 
@@ -54,7 +52,7 @@
 .method static synthetic b(Lcom/google/android/gms/analytics/internal/zzt;)Z
     .registers 2
 
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzt;->e:Z
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -132,11 +130,11 @@
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzt;->a:Lcom/google/android/gms/analytics/internal/zzf;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->d()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->d()Lcom/google/android/gms/common/util/zze;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->a()J
+    invoke-interface {v0}, Lcom/google/android/gms/common/util/zze;->a()J
 
     move-result-wide v0
 
@@ -189,11 +187,11 @@
     :cond_9
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzt;->a:Lcom/google/android/gms/analytics/internal/zzf;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->d()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->d()Lcom/google/android/gms/common/util/zze;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->a()J
+    invoke-interface {v0}, Lcom/google/android/gms/common/util/zze;->a()J
 
     move-result-wide v0
 
@@ -235,11 +233,11 @@
     :cond_11
     iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzt;->a:Lcom/google/android/gms/analytics/internal/zzf;
 
-    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzf;->d()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzf;->d()Lcom/google/android/gms/common/util/zze;
 
     move-result-object v2
 
-    invoke-interface {v2}, Lcom/google/android/gms/internal/zznl;->a()J
+    invoke-interface {v2}, Lcom/google/android/gms/common/util/zze;->a()J
 
     move-result-wide v2
 

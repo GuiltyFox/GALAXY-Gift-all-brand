@@ -98,7 +98,7 @@
     :cond_6
     const-string/jumbo v0, ""
 
-    const v1, 0x7f0900ed
+    const v1, 0x7f0900e6
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->getString(I)Ljava/lang/String;
 
@@ -165,7 +165,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -254,7 +254,7 @@
 
     move-result-object v1
 
-    sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->V:Z
 
     .line 368
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
@@ -482,7 +482,7 @@
 
     .prologue
     .line 111
-    const v0, 0x7f100117
+    const v0, 0x7f10011e
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->findViewById(I)Landroid/view/View;
 
@@ -532,7 +532,7 @@
 
     .prologue
     .line 119
-    const v0, 0x7f100116
+    const v0, 0x7f10011d
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->findViewById(I)Landroid/view/View;
 
@@ -641,7 +641,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 78
-    const v0, 0x7f040028
+    const v0, 0x7f04002a
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->setContentView(I)V
 

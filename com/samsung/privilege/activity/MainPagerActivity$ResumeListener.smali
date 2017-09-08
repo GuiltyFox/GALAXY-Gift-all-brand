@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 1594
+    .line 1637
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$ResumeListener;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 1594
+    .line 1637
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/MainPagerActivity$ResumeListener;-><init>(Lcom/samsung/privilege/activity/MainPagerActivity;)V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 6
 
     .prologue
-    .line 1597
+    .line 1640
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$ResumeListener;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
@@ -66,11 +66,11 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1599
+    .line 1642
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$ResumeListener;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->h(Lcom/samsung/privilege/activity/MainPagerActivity;)V
 
-    .line 1600
+    .line 1643
     return-void
 .end method

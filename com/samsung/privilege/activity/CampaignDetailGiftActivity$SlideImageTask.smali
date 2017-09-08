@@ -12,7 +12,7 @@
     .registers 2
 
     .prologue
-    .line 1878
+    .line 1902
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
@@ -26,7 +26,7 @@
     .registers 3
 
     .prologue
-    .line 1880
+    .line 1904
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;
@@ -35,6 +35,6 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1929
+    .line 1953
     return-void
 .end method

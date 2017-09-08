@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 883
+    .line 967
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$10;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,19 +37,19 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 886
+    .line 970
     invoke-static {}, Lcom/bzbs/util/BBUtil;->a()Z
 
     move-result v0
 
     if-nez v0, :cond_46
 
-    .line 887
+    .line 971
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$10;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$10;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v2, 0x7f090073
+    const v2, 0x7f090067
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -57,7 +57,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->b(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 924
+    .line 1008
     :cond_15
     :goto_15
     new-instance v0, Ljava/lang/StringBuilder;
@@ -104,10 +104,10 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 925
+    .line 1009
     return-void
 
-    .line 889
+    .line 973
     :cond_46
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$10;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
@@ -119,7 +119,7 @@
 
     move-result-object v0
 
-    .line 891
+    .line 975
     if-eqz v0, :cond_ca
 
     const-string/jumbo v1, ""
@@ -130,10 +130,10 @@
 
     if-nez v0, :cond_ca
 
-    .line 892
+    .line 976
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$10;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->L:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->Q:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -143,7 +143,7 @@
 
     move-result-object v0
 
-    .line 894
+    .line 978
     if-eqz v0, :cond_15
 
     const-string/jumbo v1, ""
@@ -154,7 +154,7 @@
 
     if-nez v0, :cond_15
 
-    .line 895
+    .line 979
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$10;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->d(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
@@ -165,7 +165,7 @@
 
     if-ne v0, v2, :cond_85
 
-    .line 896
+    .line 980
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$10;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     const-string/jumbo v1, "doActivateCard"
@@ -174,7 +174,7 @@
 
     goto :goto_15
 
-    .line 898
+    .line 982
     :cond_85
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
@@ -182,10 +182,10 @@
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 899
+    .line 983
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$10;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v2, 0x7f09023e
+    const v2, 0x7f090257
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -193,10 +193,10 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 900
+    .line 984
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$10;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v2, 0x7f0901c4
+    const v2, 0x7f0901d7
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -228,20 +228,20 @@
 
     invoke-direct {v3, p0}, Lcom/samsung/privilege/activity/WalletCardActivity$10$1;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity$10;)V
 
-    .line 908
+    .line 992
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 915
+    .line 999
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 916
+    .line 1000
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
     goto/16 :goto_15
 
-    .line 920
+    .line 1004
     :cond_ca
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$10;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
@@ -285,7 +285,9 @@
 
     const-string/jumbo v4, "inactivate"
 
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v5, 0x0
+
+    invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
     goto/16 :goto_15
 .end method

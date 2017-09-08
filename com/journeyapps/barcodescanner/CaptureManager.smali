@@ -157,7 +157,7 @@
     .line 303
     const-string/jumbo v0, "SCAN_RESULT_FORMAT"
 
-    invoke-virtual {p0}, Lcom/journeyapps/barcodescanner/BarcodeResult;->c()Lcom/google/zxing/BarcodeFormat;
+    invoke-virtual {p0}, Lcom/journeyapps/barcodescanner/BarcodeResult;->d()Lcom/google/zxing/BarcodeFormat;
 
     move-result-object v1
 
@@ -168,7 +168,7 @@
     invoke-virtual {v2, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 304
-    invoke-virtual {p0}, Lcom/journeyapps/barcodescanner/BarcodeResult;->b()[B
+    invoke-virtual {p0}, Lcom/journeyapps/barcodescanner/BarcodeResult;->c()[B
 
     move-result-object v0
 
@@ -186,7 +186,7 @@
 
     .line 308
     :cond_34
-    invoke-virtual {p0}, Lcom/journeyapps/barcodescanner/BarcodeResult;->d()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/journeyapps/barcodescanner/BarcodeResult;->e()Ljava/util/Map;
 
     move-result-object v1
 

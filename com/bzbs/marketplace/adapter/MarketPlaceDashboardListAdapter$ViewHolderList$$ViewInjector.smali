@@ -45,13 +45,13 @@
     .end annotation
 
     .prologue
-    const v5, 0x7f1004a8
+    const v5, 0x7f1004e0
 
-    const v4, 0x7f1004a6
+    const v4, 0x7f1004de
 
-    const v3, 0x7f1004a2
+    const v3, 0x7f1004da
 
-    const v2, 0x7f10038c
+    const v2, 0x7f1003c3
 
     .line 11
     const-string/jumbo v0, "field \'imageViewCover\'"

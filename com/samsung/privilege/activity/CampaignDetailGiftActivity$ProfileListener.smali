@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 669
+    .line 676
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ProfileListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 669
+    .line 676
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ProfileListener;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 1
 
     .prologue
-    .line 673
+    .line 680
     return-void
 .end method
 
@@ -47,7 +47,34 @@
     .registers 11
 
     .prologue
-    .line 677
+    .line 684
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ProfileListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->b(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Z)Z
+
+    .line 685
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ProfileListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0, p1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 686
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ProfileListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0, p2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->b(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 687
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ProfileListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0, p3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->c(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 688
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ProfileListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0, p4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->d(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 689
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ProfileListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     const/4 v1, 0x0
@@ -62,6 +89,6 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 678
+    .line 690
     return-void
 .end method

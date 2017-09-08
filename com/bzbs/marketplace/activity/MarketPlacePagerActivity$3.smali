@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 182
+    .line 181
     iput-object p1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,14 +35,14 @@
     .registers 10
 
     .prologue
-    .line 185
+    .line 184
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v0
 
-    const v1, 0x7f040117
+    const v1, 0x7f04012b
 
     const/4 v2, 0x0
 
@@ -50,8 +50,8 @@
 
     move-result-object v4
 
-    .line 186
-    const v0, 0x7f10051f
+    .line 185
+    const v0, 0x7f100553
 
     invoke-virtual {v4, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -59,8 +59,8 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 187
-    const v1, 0x7f100112
+    .line 186
+    const v1, 0x7f100119
 
     invoke-virtual {v4, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -68,14 +68,14 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 191
+    .line 190
     sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->A:I
 
     div-int/lit8 v2, v2, 0x4
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setMinWidth(I)V
 
-    .line 193
+    .line 192
     iget-object v2, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     invoke-virtual {v2}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->getAssets()Landroid/content/res/AssetManager;
@@ -96,27 +96,27 @@
 
     move-result-object v2
 
-    .line 194
+    .line 193
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 196
+    .line 195
     if-nez p2, :cond_4d
 
-    .line 198
-    const v2, 0x7f090204
+    .line 197
+    const v2, 0x7f09021d
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
-    .line 199
-    const v1, 0x7f02017f
+    .line 198
+    const v1, 0x7f020192
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 217
+    .line 216
     :goto_4c
     return-object v4
 
-    .line 202
+    .line 201
     :cond_4d
     iget-object v2, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
@@ -128,7 +128,7 @@
 
     check-cast v2, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;
 
-    .line 204
+    .line 203
     iget-object v3, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     invoke-static {v3}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->d(Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;)Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
@@ -147,7 +147,7 @@
 
     if-eqz v3, :cond_be
 
-    .line 205
+    .line 204
     iget-object v3, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     iget-object v3, v3, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->b:Ljava/util/ArrayList;
@@ -164,13 +164,13 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 208
+    .line 207
     :goto_7b
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v3, Lcom/bzbs/data/AppSetting;->S:Ljava/lang/String;
+    sget-object v3, Lcom/bzbs/data/AppSetting;->X:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -200,7 +200,7 @@
 
     move-result-object v1
 
-    .line 210
+    .line 209
     :try_start_a0
     iget-object v2, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
@@ -232,13 +232,13 @@
 
     goto :goto_4c
 
-    .line 211
+    .line 210
     :catch_bc
     move-exception v0
 
     goto :goto_4c
 
-    .line 206
+    .line 205
     :cond_be
     iget-object v3, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 

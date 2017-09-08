@@ -202,7 +202,6 @@
 
     .line 246
     const-string v2, "samsung"
-
     .line 247
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 

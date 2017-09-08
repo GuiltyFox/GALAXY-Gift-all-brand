@@ -53,11 +53,11 @@
     .end annotation
 
     .prologue
-    const v4, 0x7f100536
+    const v4, 0x7f10056a
 
-    const v3, 0x7f1001e4
+    const v3, 0x7f1001eb
 
-    const v2, 0x7f1001e3
+    const v2, 0x7f1001ea
 
     .line 9
     invoke-super {p0, p1, p2, p3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$$ViewInjector;->inject(Lbutterknife/ButterKnife$Finder;Lcom/bzbs/marketplace/base/BaseAppCompatActivity;Ljava/lang/Object;)V

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1265
+    .line 1285
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$13;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$13;->a:Landroid/widget/TextView;
@@ -39,10 +39,10 @@
     .registers 4
 
     .prologue
-    .line 1268
+    .line 1288
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$13;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v1, 0x7f10010b
+    const v1, 0x7f100112
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->findViewById(I)Landroid/view/View;
 
@@ -50,7 +50,7 @@
 
     check-cast v0, Landroid/widget/RelativeLayout;
 
-    .line 1270
+    .line 1290
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$13;->a:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getLineCount()I
@@ -61,16 +61,16 @@
 
     if-le v1, v2, :cond_19
 
-    .line 1271
+    .line 1291
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 1275
+    .line 1295
     :goto_18
     return-void
 
-    .line 1273
+    .line 1293
     :cond_19
     const/16 v1, 0x8
 

@@ -65,7 +65,7 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-static {}, Lcom/google/android/gms/common/stats/zzb;->a()Lcom/google/android/gms/common/stats/zzb;
+    invoke-static {}, Lcom/google/android/gms/common/stats/zza;->a()Lcom/google/android/gms/common/stats/zza;
 
     move-result-object v3
 
@@ -88,7 +88,7 @@
 
     const/16 v5, 0x81
 
-    invoke-virtual {v3, v2, v1, v4, v5}, Lcom/google/android/gms/common/stats/zzb;->a(Landroid/content/Context;Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+    invoke-virtual {v3, v2, v1, v4, v5}, Lcom/google/android/gms/common/stats/zza;->a(Landroid/content/Context;Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
 
     move-result v1
 
@@ -123,7 +123,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->w()J
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->v()J
 
     move-result-wide v0
 
@@ -186,7 +186,7 @@
 
     const-string/jumbo v0, "AnalyticsServiceConnection.onServiceConnected"
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->b(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzaa;->b(Ljava/lang/String;)V
 
     monitor-enter p0
 
@@ -244,7 +244,7 @@
     if-nez v0, :cond_65
 
     :try_start_32
-    invoke-static {}, Lcom/google/android/gms/common/stats/zzb;->a()Lcom/google/android/gms/common/stats/zzb;
+    invoke-static {}, Lcom/google/android/gms/common/stats/zza;->a()Lcom/google/android/gms/common/stats/zza;
 
     move-result-object v0
 
@@ -260,7 +260,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/common/stats/zzb;->a(Landroid/content/Context;Landroid/content/ServiceConnection;)V
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/common/stats/zza;->a(Landroid/content/Context;Landroid/content/ServiceConnection;)V
     :try_end_45
     .catch Ljava/lang/IllegalArgumentException; {:try_start_32 .. :try_end_45} :catch_83
     .catchall {:try_start_32 .. :try_end_45} :catchall_60
@@ -333,7 +333,7 @@
 
     iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzi$zza;->a:Lcom/google/android/gms/analytics/internal/zzi;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzi;->r()Lcom/google/android/gms/measurement/zzg;
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzi;->r()Lcom/google/android/gms/analytics/zzi;
 
     move-result-object v1
 
@@ -341,7 +341,7 @@
 
     invoke-direct {v2, p0, v0}, Lcom/google/android/gms/analytics/internal/zzi$zza$1;-><init>(Lcom/google/android/gms/analytics/internal/zzi$zza;Lcom/google/android/gms/analytics/internal/zzac;)V
 
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/measurement/zzg;->a(Ljava/lang/Runnable;)V
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/analytics/zzi;->a(Ljava/lang/Runnable;)V
 
     goto :goto_45
 
@@ -363,11 +363,11 @@
 
     const-string/jumbo v0, "AnalyticsServiceConnection.onServiceDisconnected"
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->b(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzaa;->b(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzi$zza;->a:Lcom/google/android/gms/analytics/internal/zzi;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzi;->r()Lcom/google/android/gms/measurement/zzg;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzi;->r()Lcom/google/android/gms/analytics/zzi;
 
     move-result-object v0
 
@@ -375,7 +375,7 @@
 
     invoke-direct {v1, p0, p1}, Lcom/google/android/gms/analytics/internal/zzi$zza$2;-><init>(Lcom/google/android/gms/analytics/internal/zzi$zza;Landroid/content/ComponentName;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/measurement/zzg;->a(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/analytics/zzi;->a(Ljava/lang/Runnable;)V
 
     return-void
 .end method

@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 2514
+    .line 2538
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
@@ -32,10 +32,10 @@
     .registers 8
 
     .prologue
-    .line 2536
+    .line 2560
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 2538
+    .line 2562
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -70,7 +70,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2539
+    .line 2563
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .registers 9
 
     .prologue
-    .line 2517
+    .line 2541
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v0
@@ -113,33 +113,33 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2520
+    .line 2544
     :try_start_26
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 2521
+    .line 2545
     const-string/jumbo v1, "buzzebees"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 2522
+    .line 2546
     const-string/jumbo v1, "points"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 2523
+    .line 2547
     if-lez v0, :cond_54
 
-    .line 2524
+    .line 2548
     const-string/jumbo v1, "share"
 
-    .line 2525
+    .line 2549
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -154,7 +154,7 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/bzbs/lib/survey/util/AnimationPoint;->a(ILjava/lang/String;Landroid/os/Handler;Landroid/app/Activity;)V
 
-    .line 2527
+    .line 2551
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$20;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -163,12 +163,12 @@
     :try_end_54
     .catch Ljava/lang/Exception; {:try_start_26 .. :try_end_54} :catch_55
 
-    .line 2532
+    .line 2556
     :cond_54
     :goto_54
     return-void
 
-    .line 2529
+    .line 2553
     :catch_55
     move-exception v0
 

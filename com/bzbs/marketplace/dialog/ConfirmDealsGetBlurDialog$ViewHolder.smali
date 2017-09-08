@@ -6,7 +6,7 @@
 # instance fields
 .field LayoutMainComman:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10025e
+        value = 0x7f100297
     .end annotation
 .end field
 
@@ -14,55 +14,55 @@
 
 .field btnClose:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100260
+        value = 0x7f100299
     .end annotation
 .end field
 
 .field btnOK:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001ef
+        value = 0x7f100219
     .end annotation
 .end field
 
 .field imgCampaign:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100247
+        value = 0x7f100280
     .end annotation
 .end field
 
 .field layoutRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100253
+        value = 0x7f10028c
     .end annotation
 .end field
 
 .field svCondition:Landroid/widget/ScrollView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10024a
+        value = 0x7f100283
     .end annotation
 .end field
 
 .field tvCampaignClose:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100386
+        value = 0x7f1003bd
     .end annotation
 .end field
 
 .field tvCampaignDesc:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100255
+        value = 0x7f10028e
     .end annotation
 .end field
 
 .field tvCampaignUse:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100385
+        value = 0x7f1003bc
     .end annotation
 .end field
 
 .field tvShowTimeRedeem:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100256
+        value = 0x7f10028f
     .end annotation
 .end field
 
@@ -91,7 +91,7 @@
     .registers 8
 
     .prologue
-    const v6, 0x7f0201b7
+    const v6, 0x7f0201cd
 
     const/high16 v5, 0x41f00000    # 30.0f
 
@@ -173,7 +173,7 @@
 
     iget-object v4, p0, Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog;
 
-    const v5, 0x7f09020e
+    const v5, 0x7f090227
 
     invoke-virtual {v4, v5}, Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -335,7 +335,7 @@
     .line 242
     iget-object v1, p0, Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog;
 
-    const v2, 0x7f0901a8
+    const v2, 0x7f0901b9
 
     invoke-virtual {v1, v2}, Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -344,7 +344,7 @@
     .line 243
     iget-object v2, p0, Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog;
 
-    const v3, 0x7f090253
+    const v3, 0x7f09026a
 
     invoke-virtual {v2, v3}, Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -353,7 +353,7 @@
     .line 244
     iget-object v3, p0, Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog;
 
-    const v4, 0x7f0902a3
+    const v4, 0x7f0902ba
 
     invoke-virtual {v3, v4}, Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -410,7 +410,7 @@
     .line 245
     iget-object v3, p0, Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog;
 
-    const v4, 0x7f0902a2
+    const v4, 0x7f0902b9
 
     invoke-virtual {v3, v4}, Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog;->getString(I)Ljava/lang/String;
 

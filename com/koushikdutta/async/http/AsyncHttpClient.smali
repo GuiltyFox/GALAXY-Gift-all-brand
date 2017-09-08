@@ -182,7 +182,7 @@
 
     if-eqz v0, :cond_5a
 
-    invoke-virtual {p3}, Lcom/koushikdutta/async/http/AsyncHttpResponseImpl;->d_()Lcom/koushikdutta/async/callback/DataCallback;
+    invoke-virtual {p3}, Lcom/koushikdutta/async/http/AsyncHttpResponseImpl;->e_()Lcom/koushikdutta/async/callback/DataCallback;
 
     move-result-object v0
 

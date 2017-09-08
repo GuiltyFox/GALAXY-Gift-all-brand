@@ -1,209 +1,377 @@
-.class public final Lcom/google/android/gms/internal/zzqp;
-.super Lcom/google/android/gms/measurement/zze;
+.class public abstract Lcom/google/android/gms/internal/zzqp;
+.super Lcom/google/android/gms/internal/zzro;
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/android/gms/measurement/zze",
-        "<",
-        "Lcom/google/android/gms/internal/zzqp;",
-        ">;"
-    }
-.end annotation
+# interfaces
+.implements Landroid/content/DialogInterface$OnCancelListener;
 
 
 # instance fields
-.field public a:Ljava/lang/String;
+.field protected a:Z
 
-.field public b:J
+.field protected b:Z
 
-.field public c:Ljava/lang/String;
+.field protected final c:Lcom/google/android/gms/common/GoogleApiAvailability;
 
-.field public d:Ljava/lang/String;
+.field private e:Lcom/google/android/gms/common/ConnectionResult;
+
+.field private f:I
+
+.field private final g:Landroid/os/Handler;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
+.method protected constructor <init>(Lcom/google/android/gms/internal/zzrp;)V
+    .registers 3
 
-    invoke-direct {p0}, Lcom/google/android/gms/measurement/zze;-><init>()V
+    invoke-static {}, Lcom/google/android/gms/common/GoogleApiAvailability;->a()Lcom/google/android/gms/common/GoogleApiAvailability;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/zzqp;-><init>(Lcom/google/android/gms/internal/zzrp;Lcom/google/android/gms/common/GoogleApiAvailability;)V
 
     return-void
 .end method
 
+.method constructor <init>(Lcom/google/android/gms/internal/zzrp;Lcom/google/android/gms/common/GoogleApiAvailability;)V
+    .registers 5
 
-# virtual methods
-.method public a()Ljava/lang/String;
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/zzro;-><init>(Lcom/google/android/gms/internal/zzrp;)V
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/google/android/gms/internal/zzqp;->f:I
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/zzqp;->g:Landroid/os/Handler;
+
+    iput-object p2, p0, Lcom/google/android/gms/internal/zzqp;->c:Lcom/google/android/gms/common/GoogleApiAvailability;
+
+    return-void
+.end method
+
+.method static synthetic a(Lcom/google/android/gms/internal/zzqp;)Lcom/google/android/gms/common/ConnectionResult;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->a:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->e:Lcom/google/android/gms/common/ConnectionResult;
 
     return-object v0
 .end method
 
-.method public a(J)V
-    .registers 4
+.method static synthetic b(Lcom/google/android/gms/internal/zzqp;)I
+    .registers 2
 
-    iput-wide p1, p0, Lcom/google/android/gms/internal/zzqp;->b:J
+    iget v0, p0, Lcom/google/android/gms/internal/zzqp;->f:I
+
+    return v0
+.end method
+
+
+# virtual methods
+.method public a()V
+    .registers 2
+
+    invoke-super {p0}, Lcom/google/android/gms/internal/zzro;->a()V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/gms/internal/zzqp;->a:Z
 
     return-void
 .end method
 
-.method public a(Lcom/google/android/gms/internal/zzqp;)V
-    .registers 6
+.method public a(IILandroid/content/Intent;)V
+    .registers 9
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->a:Ljava/lang/String;
+    const/16 v4, 0x12
 
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    const/16 v2, 0xd
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    packed-switch p1, :pswitch_data_4a
+
+    :cond_9
+    :goto_9
+    move v0, v1
+
+    :cond_a
+    if-eqz v0, :cond_3e
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/zzqp;->d()V
+
+    :goto_f
+    return-void
+
+    :pswitch_10
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzqp;->c:Lcom/google/android/gms/common/GoogleApiAvailability;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/zzqp;->f()Landroid/app/Activity;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/google/android/gms/common/GoogleApiAvailability;->a(Landroid/content/Context;)I
+
+    move-result v2
+
+    if-nez v2, :cond_48
+
+    :goto_1c
+    iget-object v1, p0, Lcom/google/android/gms/internal/zzqp;->e:Lcom/google/android/gms/common/ConnectionResult;
+
+    invoke-virtual {v1}, Lcom/google/android/gms/common/ConnectionResult;->c()I
+
+    move-result v1
+
+    if-ne v1, v4, :cond_a
+
+    if-ne v2, v4, :cond_a
+
+    goto :goto_f
+
+    :pswitch_27
+    const/4 v3, -0x1
+
+    if-eq p2, v3, :cond_a
+
+    if-nez p2, :cond_9
+
+    if-eqz p3, :cond_46
+
+    const-string/jumbo v0, "<<ResolutionFailureErrorDetail>>"
+
+    invoke-virtual {p3, v0, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    if-nez v0, :cond_d
+    :goto_35
+    new-instance v2, Lcom/google/android/gms/common/ConnectionResult;
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->a:Ljava/lang/String;
+    const/4 v3, 0x0
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqp;->a(Ljava/lang/String;)V
+    invoke-direct {v2, v0, v3}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
 
-    :cond_d
-    iget-wide v0, p0, Lcom/google/android/gms/internal/zzqp;->b:J
+    iput-object v2, p0, Lcom/google/android/gms/internal/zzqp;->e:Lcom/google/android/gms/common/ConnectionResult;
 
-    const-wide/16 v2, 0x0
+    goto :goto_9
 
-    cmp-long v0, v0, v2
+    :cond_3e
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->e:Lcom/google/android/gms/common/ConnectionResult;
 
-    if-eqz v0, :cond_1a
+    iget v1, p0, Lcom/google/android/gms/internal/zzqp;->f:I
 
-    iget-wide v0, p0, Lcom/google/android/gms/internal/zzqp;->b:J
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/internal/zzqp;->a(Lcom/google/android/gms/common/ConnectionResult;I)V
 
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/internal/zzqp;->a(J)V
+    goto :goto_f
 
-    :cond_1a
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->c:Ljava/lang/String;
+    :cond_46
+    move v0, v2
 
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    goto :goto_35
+
+    :cond_48
+    move v0, v1
+
+    goto :goto_1c
+
+    :pswitch_data_4a
+    .packed-switch 0x1
+        :pswitch_27
+        :pswitch_10
+    .end packed-switch
+.end method
+
+.method public a(Landroid/os/Bundle;)V
+    .registers 5
+
+    invoke-super {p0, p1}, Lcom/google/android/gms/internal/zzro;->a(Landroid/os/Bundle;)V
+
+    if-eqz p1, :cond_34
+
+    const-string/jumbo v0, "resolving_error"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    if-nez v0, :cond_27
+    iput-boolean v0, p0, Lcom/google/android/gms/internal/zzqp;->b:Z
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->c:Ljava/lang/String;
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqp;->b:Z
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqp;->b(Ljava/lang/String;)V
+    if-eqz v0, :cond_34
 
-    :cond_27
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->d:Ljava/lang/String;
+    const-string/jumbo v0, "failed_client_id"
 
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    const/4 v1, -0x1
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
-    if-nez v0, :cond_34
+    iput v0, p0, Lcom/google/android/gms/internal/zzqp;->f:I
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->d:Ljava/lang/String;
+    new-instance v1, Lcom/google/android/gms/common/ConnectionResult;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqp;->c(Ljava/lang/String;)V
+    const-string/jumbo v0, "failed_status"
+
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    const-string/jumbo v0, "failed_resolution"
+
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/PendingIntent;
+
+    invoke-direct {v1, v2, v0}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+
+    iput-object v1, p0, Lcom/google/android/gms/internal/zzqp;->e:Lcom/google/android/gms/common/ConnectionResult;
 
     :cond_34
     return-void
 .end method
 
-.method public bridge synthetic a(Lcom/google/android/gms/measurement/zze;)V
+.method protected abstract a(Lcom/google/android/gms/common/ConnectionResult;I)V
+.end method
+
+.method public b()V
     .registers 2
 
-    check-cast p1, Lcom/google/android/gms/internal/zzqp;
+    invoke-super {p0}, Lcom/google/android/gms/internal/zzro;->b()V
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/zzqp;->a(Lcom/google/android/gms/internal/zzqp;)V
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/android/gms/internal/zzqp;->a:Z
 
     return-void
 .end method
 
-.method public a(Ljava/lang/String;)V
+.method public b(Landroid/os/Bundle;)V
+    .registers 4
+
+    invoke-super {p0, p1}, Lcom/google/android/gms/internal/zzro;->b(Landroid/os/Bundle;)V
+
+    const-string/jumbo v0, "resolving_error"
+
+    iget-boolean v1, p0, Lcom/google/android/gms/internal/zzqp;->b:Z
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqp;->b:Z
+
+    if-eqz v0, :cond_2f
+
+    const-string/jumbo v0, "failed_client_id"
+
+    iget v1, p0, Lcom/google/android/gms/internal/zzqp;->f:I
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    const-string/jumbo v0, "failed_status"
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/zzqp;->e:Lcom/google/android/gms/common/ConnectionResult;
+
+    invoke-virtual {v1}, Lcom/google/android/gms/common/ConnectionResult;->c()I
+
+    move-result v1
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    const-string/jumbo v0, "failed_resolution"
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/zzqp;->e:Lcom/google/android/gms/common/ConnectionResult;
+
+    invoke-virtual {v1}, Lcom/google/android/gms/common/ConnectionResult;->d()Landroid/app/PendingIntent;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    :cond_2f
+    return-void
+.end method
+
+.method public b(Lcom/google/android/gms/common/ConnectionResult;I)V
+    .registers 6
+
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqp;->b:Z
+
+    if-nez v0, :cond_16
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/gms/internal/zzqp;->b:Z
+
+    iput p2, p0, Lcom/google/android/gms/internal/zzqp;->f:I
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzqp;->e:Lcom/google/android/gms/common/ConnectionResult;
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->g:Landroid/os/Handler;
+
+    new-instance v1, Lcom/google/android/gms/internal/zzqp$zza;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lcom/google/android/gms/internal/zzqp$zza;-><init>(Lcom/google/android/gms/internal/zzqp;Lcom/google/android/gms/internal/zzqp$1;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    :cond_16
+    return-void
+.end method
+
+.method protected abstract c()V
+.end method
+
+.method protected d()V
     .registers 2
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzqp;->a:Ljava/lang/String;
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/google/android/gms/internal/zzqp;->f:I
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/android/gms/internal/zzqp;->b:Z
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/zzqp;->e:Lcom/google/android/gms/common/ConnectionResult;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/zzqp;->c()V
 
     return-void
 .end method
 
-.method public b()J
-    .registers 3
-
-    iget-wide v0, p0, Lcom/google/android/gms/internal/zzqp;->b:J
-
-    return-wide v0
-.end method
-
-.method public b(Ljava/lang/String;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzqp;->c:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public c()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->c:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public c(Ljava/lang/String;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzqp;->d:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public d()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->d:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public toString()Ljava/lang/String;
+.method public onCancel(Landroid/content/DialogInterface;)V
     .registers 5
 
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v0, Lcom/google/android/gms/common/ConnectionResult;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    const/16 v1, 0xd
 
-    const-string/jumbo v1, "variableName"
+    const/4 v2, 0x0
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzqp;->a:Ljava/lang/String;
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
 
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget v1, p0, Lcom/google/android/gms/internal/zzqp;->f:I
 
-    const-string/jumbo v1, "timeInMillis"
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/internal/zzqp;->a(Lcom/google/android/gms/common/ConnectionResult;I)V
 
-    iget-wide v2, p0, Lcom/google/android/gms/internal/zzqp;->b:J
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/zzqp;->d()V
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string/jumbo v1, "category"
-
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzqp;->c:Ljava/lang/String;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const-string/jumbo v1, "label"
-
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzqp;->d:Ljava/lang/String;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/zzqp;->a(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

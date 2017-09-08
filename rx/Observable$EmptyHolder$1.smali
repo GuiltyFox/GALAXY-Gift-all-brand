@@ -61,7 +61,7 @@
 
     .prologue
     .line 1073
-    invoke-virtual {p1}, Lrx/Subscriber;->m_()V
+    invoke-virtual {p1}, Lrx/Subscriber;->n_()V
 
     .line 1074
     return-void

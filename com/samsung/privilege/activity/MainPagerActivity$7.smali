@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 764
+    .line 801
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
@@ -32,15 +32,15 @@
     .registers 6
 
     .prologue
-    .line 819
+    .line 856
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 821
+    .line 858
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 822
+    .line 859
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .registers 9
 
     .prologue
-    .line 767
+    .line 804
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
@@ -85,7 +85,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 769
+    .line 806
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->b(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/app/ProgressDialog;
@@ -94,13 +94,13 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 772
+    .line 809
     :try_start_31
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 774
+    .line 811
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     new-instance v2, Lcom/bzbs/bean/NFCResult;
@@ -109,16 +109,16 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;Lcom/bzbs/bean/NFCResult;)Lcom/bzbs/bean/NFCResult;
 
-    .line 776
+    .line 813
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    const v1, 0x7f0900d4
+    const v1, 0x7f0900ca
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 777
+    .line 814
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->c(Lcom/samsung/privilege/activity/MainPagerActivity;)Lcom/bzbs/bean/NFCResult;
@@ -145,7 +145,7 @@
 
     if-nez v1, :cond_6c
 
-    .line 778
+    .line 815
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->c(Lcom/samsung/privilege/activity/MainPagerActivity;)Lcom/bzbs/bean/NFCResult;
@@ -154,7 +154,7 @@
 
     iget-object v0, v0, Lcom/bzbs/bean/NFCResult;->alert_no_plan:Ljava/lang/String;
 
-    .line 782
+    .line 819
     :cond_6c
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
@@ -184,7 +184,7 @@
 
     if-nez v1, :cond_9d
 
-    .line 783
+    .line 820
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     new-instance v2, Lcom/samsung/privilege/activity/MainPagerActivity$7$1;
@@ -193,7 +193,7 @@
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 805
+    .line 842
     :goto_92
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
@@ -203,11 +203,11 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 815
+    .line 852
     :goto_9c
     return-void
 
-    .line 788
+    .line 825
     :cond_9d
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
@@ -225,7 +225,7 @@
 
     if-ne v0, v1, :cond_da
 
-    .line 789
+    .line 826
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/MainPagerActivity$7$2;
@@ -238,11 +238,11 @@
 
     goto :goto_92
 
-    .line 812
+    .line 849
     :catch_b7
     move-exception v0
 
-    .line 813
+    .line 850
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
@@ -275,7 +275,7 @@
 
     goto :goto_9c
 
-    .line 795
+    .line 832
     :cond_da
     :try_start_da
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;

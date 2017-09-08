@@ -5,29 +5,29 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/WalletCardActivity;->a(Ljava/lang/String;I)V
+    value = Lcom/samsung/privilege/activity/WalletCardActivity;->a(ZZ)V
 .end annotation
 
 
 # instance fields
 .field final synthetic a:J
 
-.field final synthetic b:I
+.field final synthetic b:Z
 
 .field final synthetic c:Lcom/samsung/privilege/activity/WalletCardActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/WalletCardActivity;JI)V
+.method constructor <init>(Lcom/samsung/privilege/activity/WalletCardActivity;JZ)V
     .registers 5
 
     .prologue
-    .line 2393
+    .line 2378
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$28;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iput-wide p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$28;->a:J
 
-    iput p4, p0, Lcom/samsung/privilege/activity/WalletCardActivity$28;->b:I
+    iput-boolean p4, p0, Lcom/samsung/privilege/activity/WalletCardActivity$28;->b:Z
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
 
@@ -40,10 +40,10 @@
     .registers 13
 
     .prologue
-    .line 2452
+    .line 2489
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 2455
+    .line 2492
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -53,10 +53,10 @@
 
     move-result-wide v0
 
-    .line 2456
+    .line 2493
     const-string/jumbo v2, "Wallet"
 
-    const-string/jumbo v3, "loadHistory"
+    const-string/jumbo v3, "getWalletCardList"
 
     const-string/jumbo v4, "Failure"
 
@@ -66,9 +66,9 @@
 
     invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
     :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_56
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_4c
 
-    .line 2461
+    .line 2498
     :goto_1b
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
@@ -78,7 +78,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "(loadHistory|onFailure)response_code="
+    const-string/jumbo v2, "(getWalletCardList|onFailure)response_code="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -104,31 +104,20 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2467
+    .line 2500
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$28;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/os/Handler;
-
-    move-result-object v0
 
     new-instance v1, Lcom/samsung/privilege/activity/WalletCardActivity$28$2;
 
-    invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/WalletCardActivity$28$2;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity$28;)V
+    invoke-direct {v1, p0, p2, p4}, Lcom/samsung/privilege/activity/WalletCardActivity$28$2;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity$28;ILjava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 2474
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$28;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->c(Lcom/samsung/privilege/activity/WalletCardActivity;Z)Z
-
-    .line 2475
+    .line 2511
     return-void
 
-    .line 2457
-    :catch_56
+    .line 2494
+    :catch_4c
     move-exception v0
 
     goto :goto_1b
@@ -138,7 +127,7 @@
     .registers 13
 
     .prologue
-    .line 2397
+    .line 2382
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -148,10 +137,10 @@
 
     move-result-wide v0
 
-    .line 2398
+    .line 2383
     const-string/jumbo v2, "Wallet"
 
-    const-string/jumbo v3, "loadHistory"
+    const-string/jumbo v3, "getWalletCardList"
 
     const-string/jumbo v4, "Success"
 
@@ -161,9 +150,9 @@
 
     invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
     :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_4d
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_49
 
-    .line 2403
+    .line 2388
     :goto_18
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
@@ -173,7 +162,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "(loadHistory|onComplete)response_code="
+    const-string/jumbo v2, "(getWalletCardList|onComplete)response_code="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -199,24 +188,20 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2407
+    .line 2390
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$28;->c:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/os/Handler;
-
-    move-result-object v0
 
     new-instance v1, Lcom/samsung/privilege/activity/WalletCardActivity$28$1;
 
     invoke-direct {v1, p0, p4}, Lcom/samsung/privilege/activity/WalletCardActivity$28$1;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity$28;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 2448
+    .line 2485
     return-void
 
-    .line 2399
-    :catch_4d
+    .line 2384
+    :catch_49
     move-exception v0
 
     goto :goto_18

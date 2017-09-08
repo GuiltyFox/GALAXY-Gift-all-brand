@@ -36,7 +36,15 @@
 
 # virtual methods
 .method public a(Ljava/lang/String;)V
-    .registers 4
+    .registers 2
+
+    .prologue
+    .line 208
+    return-void
+.end method
+
+.method public a(Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 5
 
     .prologue
     .line 165
@@ -54,8 +62,8 @@
     return-void
 .end method
 
-.method public b(Ljava/lang/String;)V
-    .registers 4
+.method public b(Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 5
 
     .prologue
     .line 184
@@ -73,18 +81,10 @@
     return-void
 .end method
 
-.method public c(Ljava/lang/String;)V
-    .registers 2
+.method public c(Ljava/lang/String;Ljava/lang/Object;)V
+    .registers 3
 
     .prologue
     .line 203
-    return-void
-.end method
-
-.method public d(Ljava/lang/String;)V
-    .registers 2
-
-    .prologue
-    .line 208
     return-void
 .end method

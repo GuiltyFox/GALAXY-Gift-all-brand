@@ -206,7 +206,7 @@
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->requestWindowFeature(I)Z
 
     .line 64
-    const v0, 0x7f04011e
+    const v0, 0x7f040132
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->setContentView(I)V
 
@@ -221,7 +221,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->a()V
 
     .line 80
-    const v0, 0x7f10053a
+    const v0, 0x7f10056e
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->findViewById(I)Landroid/view/View;
 
@@ -313,7 +313,7 @@
     if-lez v0, :cond_82
 
     .line 144
-    const v0, 0x7f100230
+    const v0, 0x7f100269
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->findViewById(I)Landroid/view/View;
 

@@ -14,9 +14,9 @@
 # instance fields
 .field private final c:Lcom/google/android/gms/analytics/internal/zzj$zza;
 
-.field private final d:Lcom/google/android/gms/analytics/internal/zzaj;
+.field private final d:Lcom/google/android/gms/analytics/internal/zzal;
 
-.field private final e:Lcom/google/android/gms/analytics/internal/zzaj;
+.field private final e:Lcom/google/android/gms/analytics/internal/zzal;
 
 
 # direct methods
@@ -97,25 +97,25 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/internal/zzd;-><init>(Lcom/google/android/gms/analytics/internal/zzf;)V
 
-    new-instance v0, Lcom/google/android/gms/analytics/internal/zzaj;
+    new-instance v0, Lcom/google/android/gms/analytics/internal/zzal;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->n()Lcom/google/android/gms/internal/zznl;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/analytics/internal/zzaj;-><init>(Lcom/google/android/gms/internal/zznl;)V
-
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->d:Lcom/google/android/gms/analytics/internal/zzaj;
-
-    new-instance v0, Lcom/google/android/gms/analytics/internal/zzaj;
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->n()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->n()Lcom/google/android/gms/common/util/zze;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/analytics/internal/zzaj;-><init>(Lcom/google/android/gms/internal/zznl;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/analytics/internal/zzal;-><init>(Lcom/google/android/gms/common/util/zze;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->e:Lcom/google/android/gms/analytics/internal/zzaj;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->d:Lcom/google/android/gms/analytics/internal/zzal;
+
+    new-instance v0, Lcom/google/android/gms/analytics/internal/zzal;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->n()Lcom/google/android/gms/common/util/zze;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/analytics/internal/zzal;-><init>(Lcom/google/android/gms/common/util/zze;)V
+
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->e:Lcom/google/android/gms/analytics/internal/zzal;
 
     invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzj;->G()Ljava/lang/String;
 
@@ -141,7 +141,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->y()I
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->x()I
 
     move-result v0
 
@@ -192,56 +192,15 @@
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->a()Z
-
-    move-result v0
-
-    if-nez v0, :cond_13
-
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->A()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->z()Ljava/lang/String;
 
     move-result-object v0
 
-    :goto_12
     return-object v0
-
-    :cond_13
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_26
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->A()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_12
-
-    :cond_26
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->B()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_12
 .end method
 
 .method private a(Ljava/lang/String;[Ljava/lang/String;)J
@@ -383,10 +342,10 @@
     throw v0
 .end method
 
-.method static synthetic a(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzaj;
+.method static synthetic a(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzal;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->e:Lcom/google/android/gms/analytics/internal/zzaj;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->e:Lcom/google/android/gms/analytics/internal/zzal;
 
     return-object v0
 .end method
@@ -405,7 +364,7 @@
         }
     .end annotation
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Landroid/net/Uri$Builder;
 
@@ -478,7 +437,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->o()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->n()Ljava/lang/String;
 
     move-result-object v0
 
@@ -490,7 +449,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->p()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->o()Ljava/lang/String;
 
     move-result-object v0
 
@@ -510,7 +469,7 @@
 .method private static c(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
     .registers 6
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Landroid/net/Uri$Builder;
 
@@ -612,9 +571,9 @@
 .method public a(JLjava/lang/String;Ljava/lang/String;)J
     .registers 10
 
-    invoke-static {p3}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {p4}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p4}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/String;)Ljava/lang/String;
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
 
@@ -823,7 +782,7 @@
 .end method
 
 .method a(Ljava/lang/String;)Ljava/util/Map;
-    .registers 7
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -837,7 +796,7 @@
         }
     .end annotation
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -847,7 +806,7 @@
 
     new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v0, v4}, Ljava/util/HashMap;-><init>(I)V
+    invoke-direct {v0, v3}, Ljava/util/HashMap;-><init>(I)V
 
     :goto_c
     return-object v0
@@ -860,7 +819,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_23
 
     :goto_16
     new-instance v0, Ljava/net/URI;
@@ -869,50 +828,41 @@
 
     const-string/jumbo v1, "UTF-8"
 
-    invoke-static {v0, v1}, Lorg/apache/http/client/utils/URLEncodedUtils;->parse(Ljava/net/URI;Ljava/lang/String;)Ljava/util/List;
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/util/zzn;->a(Ljava/net/URI;Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v0
 
-    new-instance v1, Ljava/util/HashMap;
+    goto :goto_c
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    :cond_23
+    const-string/jumbo v0, "?"
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
+    if-eqz v2, :cond_35
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p1
 
-    :goto_2f
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    goto :goto_16
 
-    move-result v0
+    :cond_35
+    new-instance p1, Ljava/lang/String;
 
-    if-eqz v0, :cond_69
+    invoke-direct {p1, v0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    :try_end_3a
+    .catch Ljava/net/URISyntaxException; {:try_start_d .. :try_end_3a} :catch_3b
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    goto :goto_16
 
-    move-result-object v0
-
-    check-cast v0, Lorg/apache/http/NameValuePair;
-
-    invoke-interface {v0}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v0}, Lorg/apache/http/NameValuePair;->getValue()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_46
-    .catch Ljava/net/URISyntaxException; {:try_start_d .. :try_end_46} :catch_47
-
-    goto :goto_2f
-
-    :catch_47
+    :catch_3b
     move-exception v0
 
     const-string/jumbo v1, "Error parsing hit parameters"
@@ -921,36 +871,7 @@
 
     new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v0, v4}, Ljava/util/HashMap;-><init>(I)V
-
-    goto :goto_c
-
-    :cond_54
-    :try_start_54
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v1, "?"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_67
-    .catch Ljava/net/URISyntaxException; {:try_start_54 .. :try_end_67} :catch_47
-
-    move-result-object p1
-
-    goto :goto_16
-
-    :cond_69
-    move-object v0, v1
+    invoke-direct {v0, v3}, Ljava/util/HashMap;-><init>(I)V
 
     goto :goto_c
 .end method
@@ -964,7 +885,7 @@
 .method public a(JLjava/lang/String;)V
     .registers 11
 
-    invoke-static {p3}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/String;)Ljava/lang/String;
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
 
@@ -1015,7 +936,7 @@
 .method public a(Lcom/google/android/gms/analytics/internal/zzab;)V
     .registers 8
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
 
@@ -1141,7 +1062,7 @@
 .method public a(Lcom/google/android/gms/analytics/internal/zzh;)V
     .registers 8
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
 
@@ -1278,7 +1199,7 @@
         }
     .end annotation
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzaa;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
 
@@ -1454,7 +1375,7 @@
     if-ltz v2, :cond_97
 
     :goto_9
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->a(Z)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzaa;->b(Z)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
 
@@ -1582,7 +1503,7 @@
 
     move-result-object v2
 
-    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzam;->d(Ljava/lang/String;)Z
+    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzao;->d(Ljava/lang/String;)Z
 
     move-result v5
 
@@ -1811,7 +1732,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->z()I
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->y()I
 
     move-result v10
 
@@ -2073,11 +1994,11 @@
 
     invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj;->d:Lcom/google/android/gms/analytics/internal/zzaj;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj;->d:Lcom/google/android/gms/analytics/internal/zzal;
 
     const-wide/32 v2, 0x5265c00
 
-    invoke-virtual {v1, v2, v3}, Lcom/google/android/gms/analytics/internal/zzaj;->a(J)Z
+    invoke-virtual {v1, v2, v3}, Lcom/google/android/gms/analytics/internal/zzal;->a(J)Z
 
     move-result v1
 
@@ -2087,9 +2008,9 @@
     return v0
 
     :cond_13
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj;->d:Lcom/google/android/gms/analytics/internal/zzaj;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj;->d:Lcom/google/android/gms/analytics/internal/zzal;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzaj;->a()V
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzal;->a()V
 
     const-string/jumbo v1, "Deleting stale hits (if any)"
 
@@ -2099,11 +2020,11 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->n()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->n()Lcom/google/android/gms/common/util/zze;
 
     move-result-object v2
 
-    invoke-interface {v2}, Lcom/google/android/gms/internal/zznl;->a()J
+    invoke-interface {v2}, Lcom/google/android/gms/common/util/zze;->a()J
 
     move-result-wide v2
 
@@ -2141,7 +2062,7 @@
 .end method
 
 .method g(Ljava/lang/String;)Ljava/util/Map;
-    .registers 7
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -2155,7 +2076,7 @@
         }
     .end annotation
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2165,81 +2086,52 @@
 
     new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v0, v4}, Ljava/util/HashMap;-><init>(I)V
+    invoke-direct {v0, v3}, Ljava/util/HashMap;-><init>(I)V
 
     :goto_c
     return-object v0
 
     :cond_d
     :try_start_d
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
     const-string/jumbo v1, "?"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_2b
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
+    :goto_1e
     new-instance v1, Ljava/net/URI;
 
     invoke-direct {v1, v0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
 
     const-string/jumbo v0, "UTF-8"
 
-    invoke-static {v1, v0}, Lorg/apache/http/client/utils/URLEncodedUtils;->parse(Ljava/net/URI;Ljava/lang/String;)Ljava/util/List;
+    invoke-static {v1, v0}, Lcom/google/android/gms/common/util/zzn;->a(Ljava/net/URI;Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v0
 
-    new-instance v1, Ljava/util/HashMap;
+    goto :goto_c
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    :cond_2b
+    new-instance v0, Ljava/lang/String;
 
-    move-result v2
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+    :try_end_30
+    .catch Ljava/net/URISyntaxException; {:try_start_d .. :try_end_30} :catch_31
 
-    invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
+    goto :goto_1e
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_3a
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5f
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/apache/http/NameValuePair;
-
-    invoke-interface {v0}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v0}, Lorg/apache/http/NameValuePair;->getValue()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_51
-    .catch Ljava/net/URISyntaxException; {:try_start_d .. :try_end_51} :catch_52
-
-    goto :goto_3a
-
-    :catch_52
+    :catch_31
     move-exception v0
 
     const-string/jumbo v1, "Error parsing property parameters"
@@ -2248,12 +2140,7 @@
 
     new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v0, v4}, Ljava/util/HashMap;-><init>(I)V
-
-    goto :goto_c
-
-    :cond_5f
-    move-object v0, v1
+    invoke-direct {v0, v3}, Ljava/util/HashMap;-><init>(I)V
 
     goto :goto_c
 .end method

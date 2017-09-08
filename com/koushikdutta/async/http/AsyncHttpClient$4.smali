@@ -730,7 +730,7 @@
 
     .line 435
     :cond_3e
-    invoke-virtual {p0}, Lcom/koushikdutta/async/http/AsyncHttpClient$4;->a_()Lcom/koushikdutta/async/http/Headers;
+    invoke-virtual {p0}, Lcom/koushikdutta/async/http/AsyncHttpClient$4;->b_()Lcom/koushikdutta/async/http/Headers;
 
     move-result-object v0
 

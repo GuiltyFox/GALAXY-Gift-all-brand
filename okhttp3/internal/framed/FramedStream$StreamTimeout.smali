@@ -64,7 +64,7 @@
 
     .prologue
     .line 608
-    invoke-virtual {p0}, Lokhttp3/internal/framed/FramedStream$StreamTimeout;->i_()Z
+    invoke-virtual {p0}, Lokhttp3/internal/framed/FramedStream$StreamTimeout;->j_()Z
 
     move-result v0
 

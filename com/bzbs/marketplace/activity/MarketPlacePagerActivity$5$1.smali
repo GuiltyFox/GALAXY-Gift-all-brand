@@ -29,7 +29,7 @@
     .registers 2
 
     .prologue
-    .line 305
+    .line 304
     iput-object p1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5$1;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$5;
 
     invoke-direct {p0}, Lcom/google/gson/reflect/TypeToken;-><init>()V

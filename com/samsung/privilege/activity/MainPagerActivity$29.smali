@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 2151
+    .line 2199
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 5
 
     .prologue
-    .line 2158
+    .line 2206
     :try_start_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -43,7 +43,7 @@
 
     if-lt v0, v1, :cond_32
 
-    .line 2159
+    .line 2207
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     const-string/jumbo v1, "android.permission.CAMERA"
@@ -52,10 +52,10 @@
 
     move-result v0
 
-    .line 2160
+    .line 2208
     if-eqz v0, :cond_22
 
-    .line 2172
+    .line 2220
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     const/4 v1, 0x1
@@ -72,11 +72,11 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->requestPermissions([Ljava/lang/String;I)V
 
-    .line 2182
+    .line 2230
     :goto_21
     return-void
 
-    .line 2174
+    .line 2222
     :cond_22
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
@@ -86,11 +86,11 @@
 
     goto :goto_21
 
-    .line 2179
+    .line 2227
     :catch_28
     move-exception v0
 
-    .line 2180
+    .line 2228
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     const-string/jumbo v1, "Can not open QRCode Scanner!"
@@ -99,7 +99,7 @@
 
     goto :goto_21
 
-    .line 2177
+    .line 2225
     :cond_32
     :try_start_32
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;

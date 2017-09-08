@@ -300,7 +300,7 @@
     .line 211
     const-string/jumbo v0, ""
 
-    invoke-static {v0}, Lcom/bzbs/event/WalletEvents;->b(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/bzbs/event/WalletEvents;->c(Ljava/lang/String;)V
 
     .line 221
     :cond_e0

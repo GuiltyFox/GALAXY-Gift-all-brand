@@ -141,7 +141,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 44
-    const v0, 0x7f04011f
+    const v0, 0x7f040133
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->setContentView(I)V
 
@@ -156,7 +156,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->a()V
 
     .line 48
-    const v0, 0x7f10053b
+    const v0, 0x7f10056f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -184,7 +184,7 @@
     if-ne v0, v3, :cond_3d
 
     .line 55
-    const v0, 0x7f100249
+    const v0, 0x7f100282
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -197,7 +197,7 @@
 
     .line 59
     :cond_3d
-    const v0, 0x7f100185
+    const v0, 0x7f10018c
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -289,7 +289,7 @@
     if-lez v0, :cond_a7
 
     .line 150
-    const v0, 0x7f100230
+    const v0, 0x7f100269
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -502,7 +502,7 @@
 
     .line 199
     :pswitch_1d
-    const v0, 0x7f100185
+    const v0, 0x7f10018c
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 

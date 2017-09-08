@@ -184,7 +184,7 @@
     return-void
 .end method
 
-.method public m_()V
+.method public n_()V
     .registers 4
 
     .prologue
@@ -246,7 +246,7 @@
     :try_start_22
     iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$2;->c:Lrx/Subscriber;
 
-    invoke-virtual {v0}, Lrx/Subscriber;->m_()V
+    invoke-virtual {v0}, Lrx/Subscriber;->n_()V
     :try_end_27
     .catchall {:try_start_22 .. :try_end_27} :catchall_2d
 

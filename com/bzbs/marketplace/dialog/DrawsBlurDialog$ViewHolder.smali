@@ -8,67 +8,67 @@
 
 .field btnClose:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100260
+        value = 0x7f100299
     .end annotation
 .end field
 
 .field imgCampaign:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100247
+        value = 0x7f100280
     .end annotation
 .end field
 
 .field layoutRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100253
+        value = 0x7f10028c
     .end annotation
 .end field
 
 .field svCondition:Landroid/widget/ScrollView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10024a
+        value = 0x7f100283
     .end annotation
 .end field
 
 .field tvCampaignDesc:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100255
+        value = 0x7f10028e
     .end annotation
 .end field
 
 .field tvDraws1:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100396
+        value = 0x7f1003cd
     .end annotation
 .end field
 
 .field tvDraws2:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100397
+        value = 0x7f1003ce
     .end annotation
 .end field
 
 .field tvDraws3:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100398
+        value = 0x7f1003cf
     .end annotation
 .end field
 
 .field tvDraws4:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100399
+        value = 0x7f1003d0
     .end annotation
 .end field
 
 .field tvDraws5:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10039a
+        value = 0x7f1003d1
     .end annotation
 .end field
 
 .field tvShowTimeRedeem:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100256
+        value = 0x7f10028f
     .end annotation
 .end field
 
@@ -101,7 +101,7 @@
     .registers 9
 
     .prologue
-    const v6, 0x7f0201b7
+    const v6, 0x7f0201cd
 
     const/high16 v5, 0x41f00000    # 30.0f
 
@@ -183,7 +183,7 @@
 
     iget-object v4, p0, Lcom/bzbs/marketplace/dialog/DrawsBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/DrawsBlurDialog;
 
-    const v5, 0x7f09020e
+    const v5, 0x7f090227
 
     invoke-virtual {v4, v5}, Lcom/bzbs/marketplace/dialog/DrawsBlurDialog;->getString(I)Ljava/lang/String;
 

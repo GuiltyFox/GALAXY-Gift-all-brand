@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 197
+    .line 201
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogNotification$6;->a:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 3
 
     .prologue
-    .line 200
+    .line 204
     new-instance v0, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter;
 
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->i()Landroid/content/Context;
@@ -50,7 +50,7 @@
 
     invoke-static {v0}, Lcom/samsung/privilege/util/DialogNotification;->a(Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter;)Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter;
 
-    .line 201
+    .line 205
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->j()Landroid/support/v7/widget/RecyclerView;
 
     move-result-object v0
@@ -61,13 +61,13 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$Adapter;)V
 
-    .line 203
+    .line 207
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogNotification$6;->a:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setRefreshing(Z)V
 
-    .line 204
+    .line 208
     return-void
 .end method

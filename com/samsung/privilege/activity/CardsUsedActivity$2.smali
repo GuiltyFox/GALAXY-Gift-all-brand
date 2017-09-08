@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 261
+    .line 266
     iput-object p1, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$2;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 7
 
     .prologue
-    .line 265
+    .line 270
     :try_start_0
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$2;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
@@ -47,19 +47,19 @@
 
     move-result-object v0
 
-    .line 267
+    .line 272
     iget v1, v0, Lcom/bzbs/bean/HistoryCardsList;->status:I
 
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_10
 
-    .line 283
+    .line 288
     :cond_f
     :goto_f
     return-void
 
-    .line 270
+    .line 275
     :cond_10
     iget-object v1, v0, Lcom/bzbs/bean/HistoryCardsList;->transactionId:Ljava/lang/String;
 
@@ -75,7 +75,7 @@
 
     if-nez v1, :cond_f
 
-    .line 271
+    .line 276
     new-instance v1, Landroid/content/Intent;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$2;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
@@ -88,33 +88,33 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 272
+    .line 277
     const-string/jumbo v2, "Issuer"
 
     iget-object v3, v0, Lcom/bzbs/bean/HistoryCardsList;->Issuer:Ljava/lang/String;
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 273
+    .line 278
     const-string/jumbo v2, "TransactionId"
 
     iget-object v3, v0, Lcom/bzbs/bean/HistoryCardsList;->transactionId:Ljava/lang/String;
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 274
+    .line 279
     const-string/jumbo v2, "Message"
 
     iget-object v0, v0, Lcom/bzbs/bean/HistoryCardsList;->message:Ljava/lang/String;
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 275
+    .line 280
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$2;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 277
+    .line 282
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -149,7 +149,7 @@
 
     goto :goto_f
 
-    .line 280
+    .line 285
     :catch_6c
     move-exception v0
 

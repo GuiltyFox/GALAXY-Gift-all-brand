@@ -161,7 +161,7 @@
 
     invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
     :try_end_18
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_96
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_97
 
     .line 498
     :goto_18
@@ -250,7 +250,7 @@
     .line 510
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$14;->b:Landroid/content/Context;
 
-    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->e(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->d(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 513
     :cond_71
@@ -274,19 +274,21 @@
     :cond_81
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$14;->d:Ljava/lang/String;
 
-    invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->c(Ljava/lang/String;)V
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/bzbs/event/LoginEvents;->c(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 520
     invoke-static {}, Lcom/bzbs/event/ProfileEvents;->b()V
-    :try_end_89
-    .catch Ljava/lang/Exception; {:try_start_3e .. :try_end_89} :catch_8a
+    :try_end_8a
+    .catch Ljava/lang/Exception; {:try_start_3e .. :try_end_8a} :catch_8b
 
     .line 524
-    :goto_89
+    :goto_8a
     return-void
 
     .line 521
-    :catch_8a
+    :catch_8b
     move-exception v0
 
     .line 522
@@ -298,10 +300,10 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil;->a(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
 
-    goto :goto_89
+    goto :goto_8a
 
     .line 494
-    :catch_96
+    :catch_97
     move-exception v0
 
     goto :goto_18

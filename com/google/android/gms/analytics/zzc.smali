@@ -16,7 +16,7 @@
 .end method
 
 .method private static a(Ljava/lang/String;I)Ljava/lang/String;
-    .registers 3
+    .registers 4
 
     const/4 v0, 0x1
 
@@ -34,7 +34,17 @@
     :cond_d
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0xb
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

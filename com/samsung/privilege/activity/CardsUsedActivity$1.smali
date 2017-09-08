@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 248
+    .line 253
     iput-object p1, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$1;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,11 +35,11 @@
     .registers 3
 
     .prologue
-    .line 251
+    .line 256
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$1;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CardsUsedActivity;->finish()V
 
-    .line 252
+    .line 257
     return-void
 .end method

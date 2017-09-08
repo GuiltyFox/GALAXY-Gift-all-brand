@@ -13,24 +13,20 @@
 
 
 # instance fields
-.field final synthetic a:Landroid/content/Context;
+.field final synthetic a:Lcom/bzbs/bean/Purchasing;
 
-.field final synthetic b:Landroid/widget/LinearLayout;
-
-.field final synthetic c:Landroid/widget/LinearLayout;
+.field final synthetic b:Landroid/content/Context;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;Landroid/widget/LinearLayout;Landroid/widget/LinearLayout;)V
-    .registers 4
+.method constructor <init>(Lcom/bzbs/bean/Purchasing;Landroid/content/Context;)V
+    .registers 3
 
     .prologue
-    .line 340
-    iput-object p1, p0, Lcom/samsung/privilege/util/DialogSerialGift$3;->a:Landroid/content/Context;
+    .line 386
+    iput-object p1, p0, Lcom/samsung/privilege/util/DialogSerialGift$3;->a:Lcom/bzbs/bean/Purchasing;
 
-    iput-object p2, p0, Lcom/samsung/privilege/util/DialogSerialGift$3;->b:Landroid/widget/LinearLayout;
-
-    iput-object p3, p0, Lcom/samsung/privilege/util/DialogSerialGift$3;->c:Landroid/widget/LinearLayout;
+    iput-object p2, p0, Lcom/samsung/privilege/util/DialogSerialGift$3;->b:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,18 +36,59 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 5
+    .registers 6
 
     .prologue
-    .line 343
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$3;->a:Landroid/content/Context;
+    .line 389
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogSerialGift$3;->b:Landroid/widget/LinearLayout;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v2, p0, Lcom/samsung/privilege/util/DialogSerialGift$3;->c:Landroid/widget/LinearLayout;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->Z:Ljava/lang/String;
 
-    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogSerialGift;->a(Landroid/content/Context;Landroid/view/View;Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 344
+    move-result-object v0
+
+    const-string/jumbo v1, "logistic/status.html?code="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogSerialGift$3;->a:Lcom/bzbs/bean/Purchasing;
+
+    iget-object v1, v1, Lcom/bzbs/bean/Purchasing;->ParcelNo:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 391
+    new-instance v1, Landroid/content/Intent;
+
+    iget-object v2, p0, Lcom/samsung/privilege/util/DialogSerialGift$3;->b:Landroid/content/Context;
+
+    const-class v3, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;
+
+    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 392
+    const-string/jumbo v2, "url"
+
+    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 393
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogSerialGift$3;->b:Landroid/content/Context;
+
+    check-cast v0, Landroid/app/Activity;
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+
+    .line 394
     return-void
 .end method

@@ -79,7 +79,6 @@
     .prologue
     .line 43
     const-string v0, "samsung"
-
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0

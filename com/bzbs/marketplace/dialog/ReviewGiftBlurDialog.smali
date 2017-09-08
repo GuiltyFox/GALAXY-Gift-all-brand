@@ -266,7 +266,7 @@
     if-eqz v0, :cond_be
 
     .line 404
-    const v0, 0x7f0900bd
+    const v0, 0x7f0900b1
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -280,7 +280,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -446,7 +446,7 @@
     if-eqz v0, :cond_d4
 
     .line 406
-    const v0, 0x7f0900be
+    const v0, 0x7f0900b2
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -469,7 +469,7 @@
     if-eqz v0, :cond_ea
 
     .line 408
-    const v0, 0x7f0900bf
+    const v0, 0x7f0900b3
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -492,7 +492,7 @@
     if-eqz v0, :cond_100
 
     .line 410
-    const v0, 0x7f0900c0
+    const v0, 0x7f0900b4
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -515,7 +515,7 @@
     if-eqz v0, :cond_116
 
     .line 412
-    const v0, 0x7f0900c1
+    const v0, 0x7f0900b5
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -721,7 +721,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0400bc
+    const v2, 0x7f0400cc
 
     const/4 v3, 0x0
 
